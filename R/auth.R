@@ -1,3 +1,5 @@
+
+
 ## R6 based various API authentication factory
 ## classes
 #' @title Authentication
@@ -175,171 +177,171 @@
 #' auth$get_refresh_token()
 #'
 # main code
-Authentication <- R6::R6Class(
-  "Authentication",
-  public = list(
-    client_id = NULL,
-    client_secret = NULL,
-    scope = NULL,
-    redirect_uri = NULL,
-    authorization_code = NULL,
-    access_token = NULL,
-    refresh_token = NULL,
-    expires_in = NULL,
-    token_type = NULL,
-    state = NULL,
-    error = NULL,
-    error_description = NULL,
-    error_uri = NULL,
-    error_code = NULL,
-    error_description = NULL,
-    initialize = function(client_id = NULL, client_secret = NULL, scope = NULL,
-                          redirect_uri = NULL, authorization_code = NULL,
-                          access_token = NULL, refresh_token = NULL,
-                          expires_in = NULL, token_type = NULL,
-                          state = NULL, error = NULL,
-                          error_description = NULL, error_uri = NULL,
-                          error_code = NULL) {
-      self$client_id <- client_id
-      self$client_secret <- client_secret
-      self$scope <- scope
-      self$redirect_uri <- redirect_uri
-      self$authorization_code <- authorization_code
-      self$access_token <- access_token
-      self$refresh_token <- refresh_token
-      self$expires_in <- expires_in
-      self$token_type <- token_type
-      self$state <- state
-      self$error <- error
-      self$error_description <- error_description
-      self$error_uri <- error_uri
-      self$error_code <- error_code
-    },
-    authenticate = function() {
-      stop("authenticate() method not implemented")
-    },
-    get_token = function() {
-      return(self$access_token)
-    },
-    set_token = function(token) {
-      self$access_token <- token
-    },
-    get_headers = function() {
-      return(list(Authorization = paste("Bearer", self$access_token)))
-    },
-    set_headers = function(headers) {
-      self$headers <- headers
-    },
-    get_config = function() {
-      return(list(client_id = self$client_id,
-                  client_secret = self$client_secret,
-                  scope = self$scope,
-                  redirect_uri = self$redirect_uri))
-    },
-    set_config = function(config) {
-      self$client_id <- config$client_id
-      self$client_secret <- config$client_secret
-      self$scope <- config$scope
-      self$redirect_uri <- config$redirect_uri
-    },
-    get_url = function() {
-      return(self$url)
-    },
-    set_url = function(url) {
-      self$url <- url
-    },
-    get_client_id = function() {
-      return(self$client_id)
-    },
-    set_client_id = function(client_id) {
-      self$client_id <- client_id
-    },
-    get_client_secret = function() {
-      return(self$client_secret)
-    },
-    set_client_secret = function(client_secret) {
-      self$client_secret <- client_secret
-    },
-    get_scope = function() {
-      return(self$scope)
-    },
-    set_scope = function(scope) {
-      self$scope <- scope
-    },
-    get_redirect_uri = function() {
-      return(self$redirect_uri)
-    },
-    set_redirect_uri = function(redirect_uri) {
-      self$redirect_uri <- redirect_uri
-    },
-    get_authorization_code = function() {
-      return(self$authorization_code)
-    },
-    set_authorization_code = function(authorization_code) {
-      self$authorization_code <- authorization_code
-    },
-    get_access_token = function() {
-      return(self$access_token)
-    },
-    set_access_token = function(access_token) {
-      self$access_token <- access_token
-    },
-    get_refresh_token = function() {
-      return(self$refresh_token)
-    },
-    set_refresh_token = function(refresh_token) {
-      self$refresh_token <- refresh_token
-    },
-    get_expires_in = function() {
-      return(self$expires_in)
-    },
-    set_expires_in = function(expires_in) {
-      self$expires_in <- expires_in
-    },
-    get_token_type = function() {
-      return(self$token_type)
-    },
-    set_token_type = function(token_type) {
-      self$token_type <- token_type
-    },
-    get_state = function() {
-      return(self$state)
-    },
-    set_state = function(state) {
-      self$state <- state
-    },
-    get_error = function() {
-      return(self$error)
-    },
-    set_error = function(error) {
-      self$error <- error
-    },
-    get_error_description = function() {
-      return(self$error_description)
-    },
-    set_error_description = function(error_description) {
-      self$error_description <- error_description
-    },
-    get_error_uri = function() {
-      return(self$error_uri)
-    },
-    set_error_uri = function(error_uri) {
-      self$error_uri <- error_uri
-    },
-    get_error_code = function() {
-      return(self$error_code)
-    },
-    set_error_code = function(error_code) {
-      self$error_code <- error_code
-    },
-    get_error_description = function() {
-      return(self$error_description)
-    },
-    set_error_description = function(error_description) {
-      self$error_description <- error_description
-    }
-    )
-)
+# Authentication <- R6::R6Class(
+#   "Authentication",
+#   public = list(
+#     client_id = NULL,
+#     client_secret = NULL,
+#     scope = NULL,
+#     redirect_uri = NULL,
+#     authorization_code = NULL,
+#     access_token = NULL,
+#     refresh_token = NULL,
+#     expires_in = NULL,
+#     token_type = NULL,
+#     state = NULL,
+#     error = NULL,
+#     error_description = NULL,
+#     error_uri = NULL,
+#     error_code = NULL,
+#     error_description = NULL,
+#     initialize = function(client_id = NULL, client_secret = NULL, scope = NULL,
+#                           redirect_uri = NULL, authorization_code = NULL,
+#                           access_token = NULL, refresh_token = NULL,
+#                           expires_in = NULL, token_type = NULL,
+#                           state = NULL, error = NULL,
+#                           error_description = NULL, error_uri = NULL,
+#                           error_code = NULL) {
+#       self$client_id <- client_id
+#       self$client_secret <- client_secret
+#       self$scope <- scope
+#       self$redirect_uri <- redirect_uri
+#       self$authorization_code <- authorization_code
+#       self$access_token <- access_token
+#       self$refresh_token <- refresh_token
+#       self$expires_in <- expires_in
+#       self$token_type <- token_type
+#       self$state <- state
+#       self$error <- error
+#       self$error_description <- error_description
+#       self$error_uri <- error_uri
+#       self$error_code <- error_code
+#     },
+#     authenticate = function() {
+#       stop("authenticate() method not implemented")
+#     },
+#     get_token = function() {
+#       return(self$access_token)
+#     },
+#     set_token = function(token) {
+#       self$access_token <- token
+#     },
+#     get_headers = function() {
+#       return(list(Authorization = paste("Bearer", self$access_token)))
+#     },
+#     set_headers = function(headers) {
+#       self$headers <- headers
+#     },
+#     get_config = function() {
+#       return(list(client_id = self$client_id,
+#                   client_secret = self$client_secret,
+#                   scope = self$scope,
+#                   redirect_uri = self$redirect_uri))
+#     },
+#     set_config = function(config) {
+#       self$client_id <- config$client_id
+#       self$client_secret <- config$client_secret
+#       self$scope <- config$scope
+#       self$redirect_uri <- config$redirect_uri
+#     },
+#     get_url = function() {
+#       return(self$url)
+#     },
+#     set_url = function(url) {
+#       self$url <- url
+#     },
+#     get_client_id = function() {
+#       return(self$client_id)
+#     },
+#     set_client_id = function(client_id) {
+#       self$client_id <- client_id
+#     },
+#     get_client_secret = function() {
+#       return(self$client_secret)
+#     },
+#     set_client_secret = function(client_secret) {
+#       self$client_secret <- client_secret
+#     },
+#     get_scope = function() {
+#       return(self$scope)
+#     },
+#     set_scope = function(scope) {
+#       self$scope <- scope
+#     },
+#     get_redirect_uri = function() {
+#       return(self$redirect_uri)
+#     },
+#     set_redirect_uri = function(redirect_uri) {
+#       self$redirect_uri <- redirect_uri
+#     },
+#     get_authorization_code = function() {
+#       return(self$authorization_code)
+#     },
+#     set_authorization_code = function(authorization_code) {
+#       self$authorization_code <- authorization_code
+#     },
+#     get_access_token = function() {
+#       return(self$access_token)
+#     },
+#     set_access_token = function(access_token) {
+#       self$access_token <- access_token
+#     },
+#     get_refresh_token = function() {
+#       return(self$refresh_token)
+#     },
+#     set_refresh_token = function(refresh_token) {
+#       self$refresh_token <- refresh_token
+#     },
+#     get_expires_in = function() {
+#       return(self$expires_in)
+#     },
+#     set_expires_in = function(expires_in) {
+#       self$expires_in <- expires_in
+#     },
+#     get_token_type = function() {
+#       return(self$token_type)
+#     },
+#     set_token_type = function(token_type) {
+#       self$token_type <- token_type
+#     },
+#     get_state = function() {
+#       return(self$state)
+#     },
+#     set_state = function(state) {
+#       self$state <- state
+#     },
+#     get_error = function() {
+#       return(self$error)
+#     },
+#     set_error = function(error) {
+#       self$error <- error
+#     },
+#     get_error_description = function() {
+#       return(self$error_description)
+#     },
+#     set_error_description = function(error_description) {
+#       self$error_description <- error_description
+#     },
+#     get_error_uri = function() {
+#       return(self$error_uri)
+#     },
+#     set_error_uri = function(error_uri) {
+#       self$error_uri <- error_uri
+#     },
+#     get_error_code = function() {
+#       return(self$error_code)
+#     },
+#     set_error_code = function(error_code) {
+#       self$error_code <- error_code
+#     },
+#     get_error_description = function() {
+#       return(self$error_description)
+#     },
+#     set_error_description = function(error_description) {
+#       self$error_description <- error_description
+#     }
+#     )
+# )
 
 
 

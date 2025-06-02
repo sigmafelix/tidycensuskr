@@ -4,8 +4,8 @@ Version: 0.0.0.9000
 Authors@R:
     c(
        person("Insang", "Song", , "geoissong@snu.ac.kr", role = c("aut", "cre")),
-       person("Sohyun", "Park", , "", role = c("aut", "cre")),
-       person("Hyesop", "Shin", , "", role = c("aut", "cre"))
+       person("Sohyun", "Park", , "", role = c("aut", "ctb")),
+       person("Hyesop", "Shin", , "", role = c("aut", "ctb"))
     )
 Description:
     Census and administrative data in South Korea are a basic source of
