@@ -1,0 +1,37 @@
+Package: habit
+Title: HArmonised Boundaries and Integrated Tables for Census and Administrative Data in South Korea
+Version: 0.0.0.9000
+Authors@R:
+    c(
+       person("Insang", "Song", , "geoissong@snu.ac.kr", role = c("aut", "cre")),
+       person("Sohyun", "Park", , "", role = c("aut", "ctb")),
+       person("Hyesop", "Shin", , "", role = c("aut", "ctb"))
+    )
+Description:
+    Census and administrative data in South Korea are a basic source of
+    quantitative and mixed-methods research for social and urban scientists.
+    This package provides a `sf`-based standardized workflow based on
+    direct open API access to the major census and administrative data sources
+    and pre-generated files in South Korea.
+License: MIT
+LazyData: true
+Depends:
+    R (>= 3.5.0)
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Imports:
+    sf,
+    rmapshaper,
+    dplyr,
+    stringr,
+    httr2,
+    purrr,
+    rlang,
+    kosis,
+    R6
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Encoding: UTF-8
+URL: https://github.com/sigmafelix/habit
+BugReports: https://github.com/sigmafelix/habit/issues
