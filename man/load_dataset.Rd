@@ -4,11 +4,13 @@
 \alias{load_dataset}
 \title{Load KOSIS dataset}
 \usage{
-load_dataset(type, year, ...)
+load_dataset(type, cache = TRUE, ...)
 }
 \arguments{
 \item{type}{Statistics type. e.g., "population", "economy", etc.
 See \code{?stat_types}}
+
+\item{cache}{Whether to cache the downloaded data. Default is TRUE.}
 
 \item{...}{Additional arguments passed to the \code{kosis} function.}
 }

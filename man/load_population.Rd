@@ -4,12 +4,12 @@
 \alias{load_population}
 \title{Experimental function to load population data from KOSIS}
 \usage{
-load_population(year)
+load_population(year, cache = TRUE)
 }
 \arguments{
 \item{year}{The year for which to load the population data.}
 
-\item{...}{Additional arguments passed to the \code{kosis} function.}
+\item{cache}{Whether to cache the downloaded data. Default is TRUE.}
 }
 \value{
 A data frame containing the population data for the specified year.
@@ -20,6 +20,7 @@ Experimental function to load population data from KOSIS
 \note{
 This function is experimental and may change in future versions.
 It only supports loading raw population data in a single year.
+Reference table ID: DT_1IN1509
 }
 \examples{
 \dontrun{

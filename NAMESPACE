@@ -2,7 +2,9 @@
 
 export(load_dataset)
 export(load_districts)
+export(load_employment)
 export(load_population)
 export(set_kosis_key)
 importFrom(kosis,getStatDataFromURL)
 importFrom(kosis,kosis.setKey)
+importFrom(rappdirs,user_cache_dir)

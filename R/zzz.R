@@ -1,4 +1,10 @@
 ###
+.onAttach <- function(libname, pkgname) {
+  packageStartupMessage(
+    sprintf("tidycensuskr %s (%s)", utils::packageVersion(pkgname), Sys.Date())
+  )
+}
+
 
 #' Set KOSIS API Key from a File
 #'
