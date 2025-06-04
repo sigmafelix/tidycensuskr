@@ -7,6 +7,9 @@
 load_districts(crs = NULL)
 }
 \arguments{
+\item{crs}{Coordinate Reference System (CRS) to transform the polygons to.
+If \code{NULL}, the original CRS is used.}
+
 \item{...}{Additional arguments passed to the \code{sf} function.}
 }
 \value{

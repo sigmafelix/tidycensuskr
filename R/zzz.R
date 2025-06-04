@@ -8,11 +8,14 @@
 
 #' Set KOSIS API Key from a File
 #'
-#' @param file A character string specifying the path to the file containing the KOSIS API key.
+#' @param file A character string specifying the path to the file
+#'   containing the KOSIS API key.
 #' @return NULL
 #' @export
-#' @description This function reads a KOSIS API key from a specified file and sets it for use in KOSIS API calls.
-#' @details The file should contain the API key as a single line of text. If the file does not exist, an error will be raised.
+#' @description This function reads a KOSIS API key from a specified file and
+#'   sets it for use in KOSIS API calls.
+#' @details The file should contain the API key as a single line of text.
+#'   If the file does not exist, an error will be raised.
 #' @importFrom kosis kosis.setKey
 set_kosis_key <- function(file) {
   # Check if the file exists
@@ -40,13 +43,16 @@ set_kosis_key <- function(file) {
 
 
 #' Load `sf` district polygons
-#'
+#' @param crs Coordinate Reference System (CRS) to transform the polygons to.
+#'   If `NULL`, the original CRS is used.
 #' @param ... Additional arguments passed to the `sf` function.
+#' @importFrom sf st_transform
 #' @return An `sf` object containing the district polygons.
 #' @export
 load_districts <- function(crs = NULL) {
   # Load the district polygons using the sf package
-  load(system.file("extdata", "sgg2020.RData", package = "habit"))
+  sf_sgg_2020 <- NULL
+  load(system.file("extdata", "sgg2020.RData", package = "tidycensuskr"))
   if (!is.null(crs)) {
     # Transform the CRS if specified
     districts <- sf::st_transform(sf_sgg_2020, crs)

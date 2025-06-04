@@ -3,10 +3,11 @@ Harmonizing census geographic boundaries and data tables in Korea
 
 
 ## Installation
+- The package is in a private GitHub repository, so you need to have a GitHub account and generate a personal access token with `repo` permissions.
 
 ```r
 rlang::check_installed("remotes")
-remotes::install_github("sigmafelix/tidycensuskr")
+remotes::install_github("sigmafelix/tidycensuskr", auth_token = "__YOUR_GITHUB_TOKEN__")
 ```
 
 - After cloning the repository, you can also install the package using:
@@ -18,12 +19,15 @@ devtools::install(quick = TRUE)
 ## Usage
 
 ```r
-library(habit)
+library(tidycensuskr)
 library(kosis)
 library(sf)
 options(sf_use_s2 = FALSE)
+
 # register KOSIS API Key if necessary
-kosis::kosis.setKey("_YOUR_API_KEY_")
+tidycensuskr::set_kosis_key("__your_api_key_file__")
+# The line above is equivalent to:
+# kosis::kosis.setKey("_YOUR_API_KEY_")
 
 sgg2020 <- load_districts()
 pop <- load_population(year = 2020)
