@@ -1,12 +1,23 @@
 Package: tidycensuskr 
 Title: HArmonised Boundaries and Integrated Tables for Census and Administrative Data in South Korea
 Version: 0.0.1.9000
-Authors@R:
-    c(
-       person("Insang", "Song", , "geoissong@snu.ac.kr", role = c("aut", "cre")),
-       person("Sohyun", "Park", , "", role = c("aut", "ctb")),
-       person("Hyesop", "Shin", , "", role = c("aut", "ctb"))
-    )
+Authors@R: c(
+    person(given = "Insang", 
+          family = "Song", 
+          role = c("aut", "cre"), 
+          email = "geoissong@snu.ac.kr", 
+          comment = c(ORCID = "0000")),
+    person(given = "Sohyun", 
+          family = "Park", 
+          role = c("aut", "ctb"),
+          email = "spark230@gmu.edu",
+          comment = c(ORCID = "0000")),
+    person(given = "Hyesop", 
+          family = "Shin", 
+          role = c("aut", "ctb"),
+          email = "hyesop.shin@auckland.ac.nz",
+          comment = c(ORCID = "0000-0003-2637-7933"))
+          )
 Description:
     Census and administrative data in South Korea are a basic source of
     quantitative and mixed-methods research for social and urban scientists.
