@@ -2,6 +2,7 @@ library(sf)
 library(janitor)
 library(V8)
 library(stringi)
+library(dplyr)
 sf_use_s2(F)
 
 sf_sgg_2020 <-
@@ -133,16 +134,21 @@ df_pop2 <- df_pop %>%
 
 df_mort_clean <- df_mortality %>%
   dplyr::transmute(
-    sigungu_cd = C2, 
+    sigungu_cd = as.integer(C2), 
     sex_cd = C3,
     category = "All causes",
     r_mortality_100k = DT) %>%
   tidyr::pivot_wider(
     names_from = sex_cd,
     values_from = r_mortality_100k
+  ) %>%
+  dplyr::inner_join(
+    sgg_lookup[, c("sigungu_cd", "sido_en", "sigungu_1_en")],
+    by = "sigungu_cd",
+    multiple = "first"
   )
-names(df_mort_clean)[seq(3, 5)] <-
-  paste0("r_mortality_100k_", c("total", "male", "female"))
+# names(df_mort_clean)[seq(3, 5)] <-
+#   paste0("r_mortality_100k_", c("total", "male", "female"))
 
 write.csv(df_tax_compact, "tools/tax_global_2020.csv", row.names = FALSE, fileEncoding = "UTF-8")
 write.csv(df_tax_income_compact, "tools/tax_income_2020.csv", row.names = FALSE, fileEncoding = "UTF-8")
@@ -150,7 +156,78 @@ write.csv(df_mort_clean, "tools/mortality_cleaned_2020.csv", row.names = FALSE, 
 write.csv(df_pop2, "tools/population_cleaned_2020.csv", row.names = FALSE, fileEncoding = "UTF-8")
 
 
+# consolidate all data into one long data.frame
+df_tax_long <- df_tax_compact %>%
+  dplyr::select(2:5) %>%
+  tidyr::pivot_longer(
+    cols = "tax_global_total_milkrw"
+  ) %>%
+  dplyr::mutate(
+    type = "tax",
+    class1 = "global",
+    class2 = "total",
+    unit = "million KRW"
+  ) %>%
+  dplyr::select(-name)
+df_tax_income_long <- df_tax_income_compact %>%
+  dplyr::select(2:5) %>%
+  tidyr::pivot_longer(
+    cols = "tax_income_total_milkrw"
+  ) %>%
+  dplyr::mutate(
+    type = "tax",
+    class1 = "income",
+    class2 = "total",
+    unit = "million KRW"
+  ) %>%
+  dplyr::select(-name)
+df_pop_long <- df_pop2 %>%
+  dplyr::select(-2) %>%
+  tidyr::pivot_longer(
+    cols = 2:7
+  ) %>%
+  tidyr::separate(col = "name", into = c("type", "class1", "class2"), sep = "_")
+df_mort_long <- df_mort_clean %>%
+  tidyr::pivot_longer(
+    cols = 3:5
+  ) %>%
+  dplyr::mutate(
+    class2 = dplyr::case_when(
+      name == "0" ~ "total",
+      name == "1" ~ "male",
+      name == "2" ~ "female",
+      TRUE  ~ NA_character_
+    ),
+    unit = "per 100k population",
+    type = "mortality"
+  ) %>%
+  dplyr::rename(class1 = category) %>%
+  dplyr::select(-name)
 
+
+# Bind all long tables
+censuskor <-
+  dplyr::bind_rows(
+    df_tax_long,
+    df_tax_income_long,
+    df_pop_long,
+    df_mort_long
+  ) %>%
+  dplyr::rename(
+    adm1 = sido_en,
+    adm2 = sigungu_1_en,
+    adm2_other = sigun_en,
+    adm2_code = sigungu_cd
+  ) %>%
+  dplyr::mutate(
+    year = 2020
+  ) %>%
+  dplyr::select(
+    year, adm1, adm2, adm2_other, adm2_code,
+    type, class1, class2, unit, value
+  )
+
+usethis::use_data(censuskor, overwrite = TRUE)
 
 df_tax_k <- cbind(df_tax, sggnm_si)
 df_tax_k[, c("C1_NM", "sigungu_1_kr")]
