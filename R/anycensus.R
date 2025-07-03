@@ -54,6 +54,10 @@ anycensus <- function(codes = NULL,
 #' @param year  Integer: 2020.
 #' @param level Character: "adm1" for province-level or "adm2" for municipal-level. Defaults to "adm2".
 #' @return A data.frame object containing census data for the specified codes and year.
+#' @examples
+#' anycensusk(codes = "21", type = "mortality")
+#' @importFrom dplyr filter mutate
+#' @importFrom tidyr pivot_wider
 #' @export
 anycensusk <- function(codes = NULL,
                       type  = c("population", "tax", "mortality"),
