@@ -3,6 +3,7 @@
   packageStartupMessage(
     sprintf("tidycensuskr %s (%s)", utils::packageVersion(pkgname), Sys.Date())
   )
+  data("censuskor")
 }
 
 
