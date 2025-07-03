@@ -86,6 +86,72 @@ sggnm_si <- sggnm %>%
   .[c(1:157, 159:166, 158, 167:227, 229, 228), ]
 
 
+
+### Subset
+sgg_lookup <- read.csv("inst/extdata/lookup_district_code.csv", fileEncoding = "EUC-KR")
+df_tax_compact <- df_tax %>%
+  dplyr::transmute(
+    sgg_tax_global = C1,
+    tax_global_total_milkrw = DT
+  ) %>%
+  dplyr::inner_join(
+    sgg_lookup[, c("sgg_tax_global", "sido_en", "sigun_en", "sigungu_cd")],
+    multiple = "first"
+  )
+df_tax_income_compact <- df_tax_income %>%
+  dplyr::transmute(
+    sgg_tax_income = C1,
+    tax_income_total_milkrw = DT
+  ) %>%
+  dplyr::inner_join(
+    sgg_lookup[, c("sgg_tax_income", "sido_en", "sigun_en", "sigungu_cd")],
+    multiple = "first"
+  )
+
+df_pop2 <- df_pop %>%
+  dplyr::mutate(
+    sex = plyr::mapvalues(C2, c(0, 1, 2), c("total", "male", "female")),
+    type = plyr::mapvalues(ITM_ID, c("T00", "T60"), c("population", "population_nonrelative"))
+  ) %>%
+  dplyr::select(C1, C1_NM, sex, type, DT) %>%
+  tidyr::pivot_wider(
+    names_from = c(type, sex),
+    values_from = DT
+  ) %>%
+  dplyr::rename(
+    sigungu_cd = C1,
+    sigungu_kr = C1_NM
+  ) %>%
+  dplyr::mutate(
+    sigungu_cd = as.integer(sigungu_cd)
+  ) %>%
+  dplyr::inner_join(
+    sgg_lookup[, c("sigungu_cd", "sido_en", "sigungu_1_en")],
+    by = "sigungu_cd",
+    multiple = "first"
+  )
+
+df_mort_clean <- df_mortality %>%
+  dplyr::transmute(
+    sigungu_cd = C2, 
+    sex_cd = C3,
+    category = "All causes",
+    r_mortality_100k = DT) %>%
+  tidyr::pivot_wider(
+    names_from = sex_cd,
+    values_from = r_mortality_100k
+  )
+names(df_mort_clean)[seq(3, 5)] <-
+  paste0("r_mortality_100k_", c("total", "male", "female"))
+
+write.csv(df_tax_compact, "tools/tax_global_2020.csv", row.names = FALSE, fileEncoding = "UTF-8")
+write.csv(df_tax_income_compact, "tools/tax_income_2020.csv", row.names = FALSE, fileEncoding = "UTF-8")
+write.csv(df_mort_clean, "tools/mortality_cleaned_2020.csv", row.names = FALSE, fileEncoding = "UTF-8")
+write.csv(df_pop2, "tools/population_cleaned_2020.csv", row.names = FALSE, fileEncoding = "UTF-8")
+
+
+
+
 df_tax_k <- cbind(df_tax, sggnm_si)
 df_tax_k[, c("C1_NM", "sigungu_1_kr")]
 
@@ -103,18 +169,18 @@ df_tax_income2 <- df_tax_income %>%
     values_from = DT
   )
 
-dim(df_tax)
 
-df_pop2 <- df_pop %>%
-  dplyr::mutate(
-    sex = plyr::mapvalues(C2, c(0, 1, 2), c("total", "male", "female")),
-    type = plyr::mapvalues(ITM_ID, c("T00", "T60"), c("members_ordinary", "nonrelative"))
-  ) %>%
-  dplyr::select(C1, C1_NM, sex, type, DT) %>%
-  tidyr::pivot_wider(
-    names_from = c(type, sex),
-    values_from = DT
-  )
+
+dim(df_tax)
+lookup_sgg_tax <- df_tax[, c("C1", "C1_NM")]
+lookup_sgg_tax_income <- df_tax_income[, c("C1", "C1_NM")] %>% dplyr::distinct()
+names(lookup_sgg_tax_income) <- c("C1_income", "C1_NM_income")
+lookup_sgg_tax_bind <- dplyr::bind_cols(lookup_sgg_tax, lookup_sgg_tax_income)
+
+write.csv(lookup_sgg_tax_bind, "tools/lookup_sgg_tax.csv", row.names = FALSE, fileEncoding = "UTF-8")
+write.csv(df_pop2, "tools/population_2020.csv", row.names = FALSE, fileEncoding = "UTF-8")
+
+
 
 
 
@@ -124,3 +190,4 @@ save(df_tax, df_tax_income, df_mortality, df_pop,
 head(df_tax)
 head(df_pop)
 
+library(fuzzyjoin)
