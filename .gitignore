@@ -1,3 +1,5 @@
 .Rproj.user
 data-raw/
 **/.DS_Store
+docs
+inst/doc

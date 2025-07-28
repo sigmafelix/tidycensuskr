@@ -1,5 +1,6 @@
-# `tidycensuskr`
+# About `tidycensuskr`
 Harmonizing census geographic boundaries and data tables in Korea
+*Why are we doing all these jazz?*
 
 
 ## Installation
