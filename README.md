@@ -64,6 +64,18 @@ seoul <- anycensus(11, 2020, simplify = "df")
 plot_census_map(seoul, variable = "population_density")
 ```
 
+## `anycensusk()`
+- The package loads an attached dataset `censuskor` that contains the census data for 2020. This dataset is automatically loaded upon loading the package
+- The function `anycensusk()` allows you to query census data for specific district or province codes and types of data (population, tax, mortality) for the year 2020.
+
+
+```r
+library(tidycensuskr)
+
+# loading Seoul population data
+tidycensuskr::anycensusk(codes = "Seoul", type = "population")
+```
+
 
 
 ## 2. Boundaries

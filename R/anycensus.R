@@ -47,3 +47,74 @@ anycensus <- function(codes = NULL,
 
 
 
+#' Query Korean census data by admin code (province or municipality) and year
+#'
+#' @param codes Integer or character vector of admin codes (e.g. 11, 26) or admin names (e.g. "Seoul").
+#' @param type character: "population", "tax", or "mortality". Defaults to "population".
+#' @param year  Integer: 2020.
+#' @param level Character: "adm1" for province-level or "adm2" for municipal-level. Defaults to "adm2".
+#' @return A data.frame object containing census data for the specified codes and year.
+#' @examples
+#' anycensusk(codes = "21", type = "mortality")
+#' @importFrom dplyr filter mutate
+#' @importFrom tidyr pivot_wider
+#' @export
+anycensusk <- function(codes = NULL,
+                      type  = c("population", "tax", "mortality"),
+                      year  = 2020,
+                      level = c("adm1", "adm2")) {
+  type     <- match.arg(type)
+  level    <- match.arg(level)
+  df       <- censuskor
+
+  unit <- NULL
+
+  stopifnot(year %in% c(2020))
+  suppressWarnings(
+    cond_chr <- all(is.na(as.integer(codes)))
+  )
+
+  if (cond_chr) {
+    query_col <- "adm1"
+  } else {
+    query_col <- "adm2_code"
+    stopifnot(nchar(codes) == 2)
+  }
+
+  if (is.null(codes)) {
+    codes <- unique(df[[query_col]])
+  } else {
+    codes <- as.character(codes)
+    if (cond_chr) {
+      codes <- unique(df[[query_col]][df[[query_col]] %in% codes])
+    } else {
+      codes <- as.integer(codes)
+    }
+  }
+  dfe <- df[
+    df[["year"]] == year & df[["type"]] == type,
+  ] |>
+    dplyr::filter(
+      grepl(sprintf("^(%s)", paste(codes, collapse = "|")), .data[[query_col]]) |
+      .data[[query_col]] %in% codes
+    )
+
+  # post-processing when levels are multiple
+  dfe <- dfe |>
+    dplyr::mutate(
+      unit = abbreviate(unit, minlength = 3)
+    ) |>
+    tidyr::pivot_wider(
+      names_from = c("class1", "class2", "unit"),
+      values_from = "value"
+    )
+  # clean up the column names
+  names(dfe) <- gsub(
+    pattern = "_NA",
+    replacement = "",
+    perl = TRUE,
+    x = names(dfe)
+  )
+  dfe
+}
+

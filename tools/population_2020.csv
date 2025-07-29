@@ -1,0 +1,262 @@
+sggcd,sggnm_kr,population_total,population_nonrelative_total,population_male,population_nonrelative_male,population_female,population_nonrelative_female,,sido_kr,sigungu_kr,sigungu_1_kr,sigungu_2_kr,sido_en,sigun_en,sigungu_1_en,sigungu_2_en,sdsgg_en,base_year
+11010,종로구,129548,4902,61912,2448,67636,2454,,서울특별시,종로구,종로구,종로구,Seoul,Jongno-gu,Jongno-gu,Jongno-gu,Jongno-gu Seoul,2020
+11020,중구,114165,5036,54695,2506,59470,2530,,서울특별시,중구,중구,중구,Seoul,Jung-gu,Jung-gu,Jung-gu,Jung-gu Seoul,2020
+11030,용산구,199442,8568,94573,4268,104869,4300,,서울특별시,용산구,용산구,용산구,Seoul,Yongsan-gu,Yongsan-gu,Yongsan-gu,Yongsan-gu Seoul,2020
+11040,성동구,263868,7119,127131,3561,136737,3558,,서울특별시,성동구,성동구,성동구,Seoul,Seongdong-gu,Seongdong-gu,Seongdong-gu,Seongdong-gu Seoul,2020
+11050,광진구,321416,9255,153569,4407,167847,4848,,서울특별시,광진구,광진구,광진구,Seoul,Gwangjin-gu,Gwangjin-gu,Gwangjin-gu,Gwangjin-gu Seoul,2020
+11060,동대문구,326843,8757,158824,4408,168019,4349,,서울특별시,동대문구,동대문구,동대문구,Seoul,Dongdaemun-gu,Dongdaemun-gu,Dongdaemun-gu,Dongdaemun-gu Seoul,2020
+11070,중랑구,366044,7869,177901,4019,188143,3850,,서울특별시,중랑구,중랑구,중랑구,Seoul,Jungnang-gu,Jungnang-gu,Jungnang-gu,Jungnang-gu Seoul,2020
+11080,성북구,407265,9137,193822,4391,213443,4746,,서울특별시,성북구,성북구,성북구,Seoul,Seongbuk-gu,Seongbuk-gu,Seongbuk-gu,Seongbuk-gu Seoul,2020
+11090,강북구,274648,6155,131568,3083,143080,3072,,서울특별시,강북구,강북구,강북구,Seoul,Gangbuk-gu,Gangbuk-gu,Gangbuk-gu,Gangbuk-gu Seoul,2020
+11100,도봉구,292856,5061,140759,2592,152097,2469,,서울특별시,도봉구,도봉구,도봉구,Seoul,Dobong-gu,Dobong-gu,Dobong-gu,Dobong-gu Seoul,2020
+11110,노원구,476548,8279,226873,4138,249675,4141,,서울특별시,노원구,노원구,노원구,Seoul,Nowon-gu,Nowon-gu,Nowon-gu,Nowon-gu Seoul,2020
+11120,은평구,442002,10589,207882,5066,234120,5523,,서울특별시,은평구,은평구,은평구,Seoul,Eunpyeong-gu,Eunpyeong-gu,Eunpyeong-gu,Eunpyeong-gu Seoul,2020
+11130,서대문구,293455,8364,137728,3990,155727,4374,,서울특별시,서대문구,서대문구,서대문구,Seoul,Seodaemun-gu,Seodaemun-gu,Seodaemun-gu,Seodaemun-gu Seoul,2020
+11140,마포구,344866,12988,160138,6028,184728,6960,,서울특별시,마포구,마포구,마포구,Seoul,Mapo-gu,Mapo-gu,Mapo-gu,Mapo-gu Seoul,2020
+11150,양천구,413952,6687,200490,3419,213462,3268,,서울특별시,양천구,양천구,양천구,Seoul,Yangcheon-gu,Yangcheon-gu,Yangcheon-gu,Yangcheon-gu Seoul,2020
+11160,강서구,537347,16403,255359,8282,281988,8121,,서울특별시,강서구,강서구,강서구,Seoul,Gangseo-gu,Gangseo-gu,Gangseo-gu,Gangseo-gu Seoul,2020
+11170,구로구,378092,10229,184267,5236,193825,4993,,서울특별시,구로구,구로구,구로구,Seoul,Guro-gu,Guro-gu,Guro-gu,Guro-gu Seoul,2020
+11180,금천구,219602,6673,109532,3524,110070,3149,,서울특별시,금천구,금천구,금천구,Seoul,Geumcheon-gu,Geumcheon-gu,Geumcheon-gu,Geumcheon-gu Seoul,2020
+11190,영등포구,355332,11683,172607,5859,182725,5824,,서울특별시,영등포구,영등포구,영등포구,Seoul,Yeongdeungpo-gu,Yeongdeungpo-gu,Yeongdeungpo-gu,Yeongdeungpo-gu Seoul,2020
+11200,동작구,361991,8973,174125,4408,187866,4565,,서울특별시,동작구,동작구,동작구,Seoul,Dongjak-gu,Dongjak-gu,Dongjak-gu,Dongjak-gu Seoul,2020
+11210,관악구,461910,20185,230653,10880,231257,9305,,서울특별시,관악구,관악구,관악구,Seoul,Gwanak-gu,Gwanak-gu,Gwanak-gu,Gwanak-gu Seoul,2020
+11220,서초구,375801,8540,178355,4271,197446,4269,,서울특별시,서초구,서초구,서초구,Seoul,Seocho-gu,Seocho-gu,Seocho-gu,Seocho-gu Seoul,2020
+11230,강남구,499355,16346,237607,8189,261748,8157,,서울특별시,강남구,강남구,강남구,Seoul,Gangnam-gu,Gangnam-gu,Gangnam-gu,Gangnam-gu Seoul,2020
+11240,송파구,616529,15340,294130,7598,322399,7742,,서울특별시,송파구,송파구,송파구,Seoul,Songpa-gu,Songpa-gu,Songpa-gu,Songpa-gu Seoul,2020
+11250,강동구,436034,8979,211373,4655,224661,4324,,서울특별시,강동구,강동구,강동구,Seoul,Gangdong-gu,Gangdong-gu,Gangdong-gu,Gangdong-gu Seoul,2020
+21010,중구,36857,1466,17677,756,19180,710,,부산광역시,중구,중구,중구,Busan,Jung-gu,Jung-gu,Jung-gu,Jung-gu Busan,2020
+21020,서구,98638,2162,46949,1102,51689,1060,,부산광역시,서구,서구,서구,Busan,Seo-gu,Seo-gu,Seo-gu,Seo-gu Busan,2020
+21030,동구,83549,2304,40221,1196,43328,1108,,부산광역시,동구,동구,동구,Busan,Dong-gu,Dong-gu,Dong-gu,Dong-gu Busan,2020
+21040,영도구,101502,1911,49452,1023,52050,888,,부산광역시,영도구,영도구,영도구,Busan,Yeongdo-gu,Yeongdo-gu,Yeongdo-gu,Yeongdo-gu Busan,2020
+21050,부산진구,344860,10165,164121,5140,180739,5025,,부산광역시,부산진구,부산진구,부산진구,Busan,Busanjin-gu,Busanjin-gu,Busanjin-gu,Busanjin-gu Busan,2020
+21060,동래구,259149,3654,124467,1800,134682,1854,,부산광역시,동래구,동래구,동래구,Busan,Dongnae-gu,Dongnae-gu,Dongnae-gu,Dongnae-gu Busan,2020
+21070,남구,244798,5583,118633,2978,126165,2605,,부산광역시,남구,남구,남구,Busan,Nam-gu,Nam-gu,Nam-gu,Nam-gu Busan,2020
+21080,북구,264231,3243,129038,1741,135193,1502,,부산광역시,북구,북구,북구,Busan,Buk-gu,Buk-gu,Buk-gu,Buk-gu Busan,2020
+21090,해운대구,361942,6490,172575,3282,189367,3208,,부산광역시,해운대구,해운대구,해운대구,Busan,Haeundae-gu,Haeundae-gu,Haeundae-gu,Haeundae-gu Busan,2020
+21100,사하구,286095,4885,140980,2635,145115,2250,,부산광역시,사하구,사하구,사하구,Busan,Saha-gu,Saha-gu,Saha-gu,Saha-gu Busan,2020
+21110,금정구,208264,3768,101417,1975,106847,1793,,부산광역시,금정구,금정구,금정구,Busan,Geumjeong-gu,Geumjeong-gu,Geumjeong-gu,Geumjeong-gu Busan,2020
+21120,강서구,135722,2752,69407,1558,66315,1194,,부산광역시,강서구,강서구,강서구,Busan,Gangseo-gu,Gangseo-gu,Gangseo-gu,Gangseo-gu Busan,2020
+21130,연제구,194193,3676,92109,1845,102084,1831,,부산광역시,연제구,연제구,연제구,Busan,Yeonje-gu,Yeonje-gu,Yeonje-gu,Yeonje-gu Busan,2020
+21140,수영구,165447,4733,77395,2363,88052,2370,,부산광역시,수영구,수영구,수영구,Busan,Suyeong-gu,Suyeong-gu,Suyeong-gu,Suyeong-gu Busan,2020
+21150,사상구,196481,3735,97636,2001,98845,1734,,부산광역시,사상구,사상구,사상구,Busan,Sasang-gu,Sasang-gu,Sasang-gu,Sasang-gu Busan,2020
+21510,기장군,169448,3300,83443,1796,86005,1504,,부산광역시,기장군,기장군,기장군,Busan,Gijang-gun,Gijang-gun,Gijang-gun,Gijang-gun Busan,2020
+22010,중구,83408,2210,39622,1105,43786,1105,,대구광역시,중구,중구,중구,Daegu,Jung-gu,Jung-gu,Jung-gu,Jung-gu Daegu,2020
+22020,동구,328212,5352,159497,2762,168715,2590,,대구광역시,동구,동구,동구,Daegu,Dong-gu,Dong-gu,Dong-gu,Dong-gu Daegu,2020
+22030,서구,154688,2218,76278,1179,78410,1039,,대구광역시,서구,서구,서구,Daegu,Seo-gu,Seo-gu,Seo-gu,Seo-gu Daegu,2020
+22040,남구,134854,2888,64208,1466,70646,1422,,대구광역시,남구,남구,남구,Daegu,Nam-gu,Nam-gu,Nam-gu,Nam-gu Daegu,2020
+22050,북구,412175,5439,203694,3035,208481,2404,,대구광역시,북구,북구,북구,Daegu,Buk-gu,Buk-gu,Buk-gu,Buk-gu Daegu,2020
+22060,수성구,388599,3926,186668,2015,201931,1911,,대구광역시,수성구,수성구,수성구,Daegu,Suseong-gu,Suseong-gu,Suseong-gu,Suseong-gu Daegu,2020
+22070,달서구,516604,5787,252148,3144,264456,2643,,대구광역시,달서구,달서구,달서구,Daegu,Dalseo-gu,Dalseo-gu,Dalseo-gu,Dalseo-gu Daegu,2020
+22510,달성군,252021,3762,126697,2056,125324,1706,,대구광역시,달성군,달성군,달성군,Daegu,Dalseong-gun,Dalseong-gun,Dalseong-gun,Dalseong-gun Daegu,2020
+22520,군위군,20912,502,10355,259,10557,243,,대구광역시,군위군,군위군,군위군,Daegu,Gunwi-gun,Gunwi-gun,Gunwi-gun,Gunwi-gun Daegu,2020
+23010,중구,148726,6426,76135,3583,72591,2843,,인천광역시,중구,중구,중구,Incheon,Jung-gu,Jung-gu,Jung-gu,Jung-gu Incheon,2020
+23020,동구,57456,1437,28463,771,28993,666,,인천광역시,동구,동구,동구,Incheon,Dong-gu,Dong-gu,Dong-gu,Dong-gu Incheon,2020
+23040,연수구,371516,7665,183099,4292,188417,3373,,인천광역시,연수구,연수구,연수구,Incheon,Yeonsu-gu,Yeonsu-gu,Yeonsu-gu,Yeonsu-gu Incheon,2020
+23050,남동구,475389,12375,234175,6871,241214,5504,,인천광역시,남동구,남동구,남동구,Incheon,Namdong-gu,Namdong-gu,Namdong-gu,Namdong-gu Incheon,2020
+23060,부평구,469557,12955,229368,6885,240189,6070,,인천광역시,부평구,부평구,부평구,Incheon,Bupyeong-gu,Bupyeong-gu,Bupyeong-gu,Bupyeong-gu Incheon,2020
+23070,계양구,269847,6505,133055,3632,136792,2873,,인천광역시,계양구,계양구,계양구,Incheon,Gyeyang-gu,Gyeyang-gu,Gyeyang-gu,Gyeyang-gu Incheon,2020
+23080,서구,595707,14436,297677,8222,298030,6214,,인천광역시,서구,서구,서구,Incheon,Seo-gu,Seo-gu,Seo-gu,Seo-gu Incheon,2020
+23090,미추홀구,390448,13501,195168,7572,195280,5929,,인천광역시,미추홀구,미추홀구,미추홀구,Incheon,Michuhol-gu,Michuhol-gu,Michuhol-gu,Michuhol-gu Incheon,2020
+23510,강화군,62544,1463,31047,761,31497,702,,인천광역시,강화군,강화군,강화군,Incheon,Ganghwa-gun,Ganghwa-gun,Ganghwa-gun,Ganghwa-gun Incheon,2020
+23520,옹진군,18061,1355,10161,968,7900,387,,인천광역시,옹진군,옹진군,옹진군,Incheon,Ongjin-gun,Ongjin-gun,Ongjin-gun,Ongjin-gun Incheon,2020
+24010,동구,105552,2772,52037,1445,53515,1327,,광주광역시,동구,동구,동구,Gwangju,Dong-gu,Dong-gu,Dong-gu,Dong-gu Gwangju,2020
+24020,서구,277388,5436,135228,2880,142160,2556,,광주광역시,서구,서구,서구,Gwangju,Seo-gu,Seo-gu,Seo-gu,Seo-gu Gwangju,2020
+24030,남구,204533,2939,97938,1528,106595,1411,,광주광역시,남구,남구,남구,Gwangju,Nam-gu,Nam-gu,Nam-gu,Nam-gu Gwangju,2020
+24040,북구,413120,7350,203123,3995,209997,3355,,광주광역시,북구,북구,북구,Gwangju,Buk-gu,Buk-gu,Buk-gu,Buk-gu Gwangju,2020
+24050,광산구,387736,6862,193940,3923,193796,2939,,광주광역시,광산구,광산구,광산구,Gwangju,Gwangsan-gu,Gwangsan-gu,Gwangsan-gu,Gwangsan-gu Gwangju,2020
+25010,동구,215377,5270,107962,2979,107415,2291,,대전광역시,동구,동구,동구,Daejeon,Dong-gu,Dong-gu,Dong-gu,Dong-gu Daejeon,2020
+25020,중구,213069,4397,103748,2348,109321,2049,,대전광역시,중구,중구,중구,Daejeon,Jung-gu,Jung-gu,Jung-gu,Jung-gu Daejeon,2020
+25030,서구,452001,11101,221388,5971,230613,5130,,대전광역시,서구,서구,서구,Daejeon,Seo-gu,Seo-gu,Seo-gu,Seo-gu Daejeon,2020
+25040,유성구,353619,8031,179125,4734,174494,3297,,대전광역시,유성구,유성구,유성구,Daejeon,Yuseong-gu,Yuseong-gu,Yuseong-gu,Yuseong-gu Daejeon,2020
+25050,대덕구,164815,3583,83193,2078,81622,1505,,대전광역시,대덕구,대덕구,대덕구,Daejeon,Daedeok-gu,Daedeok-gu,Daedeok-gu,Daedeok-gu Daejeon,2020
+26010,중구,198454,2300,99629,1237,98825,1063,,울산광역시,중구,중구,중구,Ulsan,Jung-gu,Jung-gu,Jung-gu,Jung-gu Ulsan,2020
+26020,남구,296317,6356,150229,3665,146088,2691,,울산광역시,남구,남구,남구,Ulsan,Nam-gu,Nam-gu,Nam-gu,Nam-gu Ulsan,2020
+26030,동구,145657,2043,75216,1268,70441,775,,울산광역시,동구,동구,동구,Ulsan,Dong-gu,Dong-gu,Dong-gu,Dong-gu Ulsan,2020
+26040,북구,208128,2487,106797,1484,101331,1003,,울산광역시,북구,북구,북구,Ulsan,Buk-gu,Buk-gu,Buk-gu,Buk-gu Ulsan,2020
+26510,울주군,206254,4201,105867,2546,100387,1655,,울산광역시,울주군,울주군,울주군,Ulsan,Ulju-gun,Ulju-gun,Ulju-gun,Ulju-gun Ulsan,2020
+29010,세종시,371001,7327,184026,4095,186975,3232,,세종특별자치시,세종시,세종시,세종시,Sejong City,Sejong City,Sejong City,Sejong City,Sejong City Sejong City,2020
+31010,수원시,1149558,30152,573852,16220,575706,13932,,경기도,수원시 ,수원시 ,,Gyeonggi-do,Suwon-si,,,,
+31011,장안구,257615,5231,128432,2808,129183,2423,,경기도,수원시 장안구,수원시 ,장안구,Gyeonggi-do,Suwon-si,Jangan-gu,Jangan-gu Suwon-si,Jangan-gu Suwon-si Gyeonggi-do,2020
+31012,권선구,354861,9211,177563,5017,177298,4194,,경기도,수원시 권선구,수원시 ,권선구,Gyeonggi-do,Suwon-si,Gwonseon-gu,Gwonseon-gu Suwon-si,Gwonseon-gu Suwon-si Gyeonggi-do,2020
+31013,팔달구,189803,7465,94802,4032,95001,3433,,경기도,수원시 팔달구,수원시 ,팔달구,Gyeonggi-do,Suwon-si,Paldal-gu,Paldal-gu Suwon-si,Paldal-gu Suwon-si Gyeonggi-do,2020
+31014,영통구,347279,8245,173055,4363,174224,3882,,경기도,수원시 영통구,수원시 ,영통구,Gyeonggi-do,Suwon-si,Yeongtong-gu,Yeongtong-gu Suwon-si,Yeongtong-gu Suwon-si Gyeonggi-do,2020
+31020,성남시,867550,19048,426691,10038,440859,9010,,경기도,성남시 ,성남시 ,,Gyeonggi-do,Seongnam-si,,,,
+31021,수정구,220763,4902,111039,2713,109724,2189,,경기도,성남시 수정구,성남시 ,수정구,Gyeonggi-do,Seongnam-si,Sujeong-gu,Sujeong-gu Seongnam-si,Sujeong-gu Seongnam-si Gyeonggi-do,2020
+31022,중원구,204189,5432,102205,2978,101984,2454,,경기도,성남시 중원구,성남시 ,중원구,Gyeonggi-do,Seongnam-si,Jungwon-gu,Jungwon-gu Seongnam-si,Jungwon-gu Seongnam-si Gyeonggi-do,2020
+31023,분당구,442598,8714,213447,4347,229151,4367,,경기도,성남시 분당구,성남시 ,분당구,Gyeonggi-do,Seongnam-si,Bundang-gu,Bundang-gu Seongnam-si,Bundang-gu Seongnam-si Gyeonggi-do,2020
+31030,의정부시,444578,9321,216833,4930,227745,4391,,경기도,의정부시,의정부시,의정부시,Gyeonggi-do,Uijeongbu-si,Uijeongbu-si,Uijeongbu-si,Uijeongbu-si Gyeonggi-do,2020
+31040,안양시,520538,10678,255231,5699,265307,4979,,경기도,안양시 ,안양시,,Gyeonggi-do,Anyang-si,,,,2020
+31041,만안구,222292,5177,110075,2848,112217,2329,,경기도,안양시 만안구,안양시,만안구,Gyeonggi-do,Anyang-si,Manan-gu,Manan-gu Anyang-si,Manan-gu Anyang-si Gyeonggi-do,2020
+31042,동안구,298246,5501,145156,2851,153090,2650,,경기도,안양시 동안구,안양시,동안구,Gyeonggi-do,Anyang-si,Dongan-gu,Dongan-gu Anyang-si,Dongan-gu Anyang-si Gyeonggi-do,2020
+31050,부천시,751913,16359,368922,8666,382991,7693,,경기도,부천시,부천시,부천시,Gyeonggi-do,Bucheon-si,Bucheon-si,Bucheon-si,Bucheon-si Gyeonggi-do,2020
+31060,광명시,267948,4957,130418,2582,137530,2375,,경기도,광명시,광명시,광명시,Gyeonggi-do,Gwangmyeong-si,Gwangmyeong-si,Gwangmyeong-si,Gwangmyeong-si Gyeonggi-do,2020
+31070,평택시,563004,22131,292986,13733,270018,8398,,경기도,평택시,평택시,평택시,Gyeonggi-do,Pyeongtaek-si,Pyeongtaek-si,Pyeongtaek-si,Pyeongtaek-si Gyeonggi-do,2020
+31080,동두천시,83563,2336,41409,1302,42154,1034,,경기도,동두천시,동두천시,동두천시,Gyeonggi-do,Dongducheon-si,Dongducheon-si,Dongducheon-si,Dongducheon-si Gyeonggi-do,2020
+31090,안산시,608837,16779,308613,9364,300224,7415,,경기도,안산시 ,안산시,,Gyeonggi-do,Ansan-si,,,,2020
+31091,상록구,323520,8340,163341,4619,160179,3721,,경기도,안산시 상록구,안산시,상록구,Gyeonggi-do,Ansan-si,Sangnok-gu,Sangnok-gu Ansan-si,Sangnok-gu Ansan-si Gyeonggi-do,2020
+31092,단원구,285317,8439,145272,4745,140045,3694,,경기도,안산시 단원구,안산시,단원구,Gyeonggi-do,Ansan-si,Danwon-gu,Danwon-gu Ansan-si,Danwon-gu Ansan-si Gyeonggi-do,2020
+31100,고양시,1013790,23923,490522,12625,523268,11298,,경기도,고양시 ,고양시,,Gyeonggi-do,Goyang-si,,,,2020
+31101,덕양구,471116,11673,229830,6143,241286,5530,,경기도,고양시 덕양구,고양시,덕양구,Gyeonggi-do,Goyang-si,Deogyang-gu,Deogyang-gu Goyang-si,Deogyang-gu Goyang-si Gyeonggi-do,2020
+31103,일산동구,273127,7657,131356,4131,141771,3526,,경기도,고양시 일산동구,고양시,일산동구,Gyeonggi-do,Goyang-si,Ilsandong-gu,Ilsandong-gu Goyang-si,Ilsandong-gu Goyang-si Gyeonggi-do,2020
+31104,일산서구,269547,4593,129336,2351,140211,2242,,경기도,고양시 일산서구,고양시,일산서구,Gyeonggi-do,Goyang-si,Ilsanseo-gu,Ilsanseo-gu Goyang-si,Ilsanseo-gu Goyang-si Gyeonggi-do,2020
+31110,과천시,75748,963,37014,470,38734,493,,경기도,과천시,과천시,과천시,Gyeonggi-do,Gwacheon-si,Gwacheon-si,Gwacheon-si,Gwacheon-si Gyeonggi-do,2020
+31120,구리시,178896,3673,87757,2003,91139,1670,,경기도,구리시,구리시,구리시,Gyeonggi-do,Guri-si,Guri-si,Guri-si,Guri-si Gyeonggi-do,2020
+31130,남양주시,693990,12198,341343,6651,352647,5547,,경기도,남양주시,남양주시,남양주시,Gyeonggi-do,Namyangju-si,Namyangju-si,Namyangju-si,Namyangju-si Gyeonggi-do,2020
+31140,오산시,223548,6910,115476,4127,108072,2783,,경기도,오산시,오산시,오산시,Gyeonggi-do,Osan-si,Osan-si,Osan-si,Osan-si Gyeonggi-do,2020
+31150,시흥시,501750,14367,259373,8803,242377,5564,,경기도,시흥시,시흥시,시흥시,Gyeonggi-do,Siheung-si,Siheung-si,Siheung-si,Siheung-si Gyeonggi-do,2020
+31160,군포시,251401,5556,123825,3012,127576,2544,,경기도,군포시,군포시,군포시,Gyeonggi-do,Gunpo-si,Gunpo-si,Gunpo-si,Gunpo-si Gyeonggi-do,2020
+31170,의왕시,150836,2283,74389,1243,76447,1040,,경기도,의왕시,의왕시,의왕시,Gyeonggi-do,Uiwang-si,Uiwang-si,Uiwang-si,Uiwang-si Gyeonggi-do,2020
+31180,하남시,314122,6624,155404,3618,158718,3006,,경기도,하남시,하남시,하남시,Gyeonggi-do,Hanam-si,Hanam-si,Hanam-si,Hanam-si Gyeonggi-do,2020
+31190,용인시,1014424,20370,500237,11150,514187,9220,,경기도,용인시 ,용인시 ,,Gyeonggi-do,Yongin-si,,,,2020
+31191,처인구,248319,7290,126520,4267,121799,3023,,경기도,용인시 처인구,용인시 ,처인구,Gyeonggi-do,Yongin-si,Cheoin-gu,Cheoin-gu Yongin-si,Cheoin-gu Yongin-si Gyeonggi-do,2020
+31192,기흥구,410711,7384,201138,3975,209573,3409,,경기도,용인시 기흥구,용인시 ,기흥구,Gyeonggi-do,Yongin-si,Giheung-gu,Giheung-gu Yongin-si,Giheung-gu Yongin-si Gyeonggi-do,2020
+31193,수지구,355394,5696,172579,2908,182815,2788,,경기도,용인시 수지구,용인시 ,수지구,Gyeonggi-do,Yongin-si,Suji-gu,Suji-gu Yongin-si,Suji-gu Yongin-si Gyeonggi-do,2020
+31200,파주시,466690,10769,233344,6061,233346,4708,,경기도,파주시,파주시,파주시,Gyeonggi-do,Paju-si,Paju-si,Paju-si,Paju-si Gyeonggi-do,2020
+31210,이천시,208133,6514,107043,4071,101090,2443,,경기도,이천시,이천시,이천시,Gyeonggi-do,Icheon-si,Icheon-si,Icheon-si,Icheon-si Gyeonggi-do,2020
+31220,안성시,180842,6239,92666,3645,88176,2594,,경기도,안성시,안성시,안성시,Gyeonggi-do,Anseong-si,Anseong-si,Anseong-si,Anseong-si Gyeonggi-do,2020
+31230,김포시,461671,9249,228545,5083,233126,4166,,경기도,김포시,김포시,김포시,Gyeonggi-do,Gimpo-si,Gimpo-si,Gimpo-si,Gimpo-si Gyeonggi-do,2020
+31240,화성시,900234,24331,463118,14715,437116,9616,,경기도,화성시,화성시,화성시,Gyeonggi-do,Hwaseong-si,Hwaseong-si,Hwaseong-si,Hwaseong-si Gyeonggi-do,2020
+31250,광주시,372346,9493,188281,5479,184065,4014,,경기도,광주시,광주시,광주시,Gyeonggi-do,Gwangju-si,Gwangju-si,Gwangju-si,Gwangju-si Gyeonggi-do,2020
+31260,양주시,251220,5383,125689,3080,125531,2303,,경기도,양주시,양주시,양주시,Gyeonggi-do,Yangju-si,Yangju-si,Yangju-si,Yangju-si Gyeonggi-do,2020
+31270,포천시,133025,4544,69090,2763,63935,1781,,경기도,포천시,포천시,포천시,Gyeonggi-do,Pocheon-si,Pocheon-si,Pocheon-si,Pocheon-si Gyeonggi-do,2020
+31280,여주시,106595,3239,53846,1775,52749,1464,,경기도,여주시,여주시,여주시,Gyeonggi-do,Yeoju-si,Yeoju-si,Yeoju-si,Yeoju-si Gyeonggi-do,2020
+31550,연천군,38393,1348,19798,826,18595,522,,경기도,연천군,연천군,연천군,Gyeonggi-do,Yeoncheon-gun,Yeoncheon-gun,Yeoncheon-gun,Yeoncheon-gun Gyeonggi-do,2020
+31570,가평군,56116,1811,28498,984,27618,827,,경기도,가평군,가평군,가평군,Gyeonggi-do,Gapyeong-gun,Gapyeong-gun,Gapyeong-gun,Gapyeong-gun Gyeonggi-do,2020
+31580,양평군,112797,3309,56175,1796,56622,1513,,경기도,양평군,양평군,양평군,Gyeonggi-do,Yangpyeong-gun,Yangpyeong-gun,Yangpyeong-gun,Yangpyeong-gun Gyeonggi-do,2020
+32010,춘천시,274973,5039,134696,2680,140277,2359,,강원특별자치도,춘천시,춘천시,춘천시,Gangwon State,Chuncheon-si,Chuncheon-si,Chuncheon-si,Chuncheon-si Gangwon State,2020
+32020,원주시,346855,6974,171004,3677,175851,3297,,강원특별자치도,원주시,원주시,원주시,Gangwon State,Wonju-si,Wonju-si,Wonju-si,Wonju-si Gangwon State,2020
+32030,강릉시,201836,4394,100114,2382,101722,2012,,강원특별자치도,강릉시,강릉시,강릉시,Gangwon State,Gangneung-si,Gangneung-si,Gangneung-si,Gangneung-si Gangwon State,2020
+32040,동해시,83342,1981,41958,1129,41384,852,,강원특별자치도,동해시,동해시,동해시,Gangwon State,Donghae-si,Donghae-si,Donghae-si,Donghae-si Gangwon State,2020
+32050,태백시,37156,1212,18615,689,18541,523,,강원특별자치도,태백시,태백시,태백시,Gangwon State,Taebaek-si,Taebaek-si,Taebaek-si,Taebaek-si Gangwon State,2020
+32060,속초시,77754,2341,38285,1278,39469,1063,,강원특별자치도,속초시,속초시,속초시,Gangwon State,Sokcho-si,Sokcho-si,Sokcho-si,Sokcho-si Gangwon State,2020
+32070,삼척시,59085,1535,30208,860,28877,675,,강원특별자치도,삼척시,삼척시,삼척시,Gangwon State,Samcheok-si,Samcheok-si,Samcheok-si,Samcheok-si Gangwon State,2020
+32510,홍천군,62050,1569,31663,930,30387,639,,강원특별자치도,홍천군,홍천군,홍천군,Gangwon State,Hongcheon-gun,Hongcheon-gun,Hongcheon-gun,Hongcheon-gun Gangwon State,2020
+32520,횡성군,42517,1229,21702,681,20815,548,,강원특별자치도,횡성군,횡성군,횡성군,Gangwon State,Hoengseong-gun,Hoengseong-gun,Hoengseong-gun,Hoengseong-gun Gangwon State,2020
+32530,영월군,34209,974,17585,568,16624,406,,강원특별자치도,영월군,영월군,영월군,Gangwon State,Yeongwol-gun,Yeongwol-gun,Yeongwol-gun,Yeongwol-gun Gangwon State,2020
+32540,평창군,37062,1065,18979,579,18083,486,,강원특별자치도,평창군,평창군,평창군,Gangwon State,Pyeongchang-gun,Pyeongchang-gun,Pyeongchang-gun,Pyeongchang-gun Gangwon State,2020
+32550,정선군,31531,1082,16337,614,15194,468,,강원특별자치도,정선군,정선군,정선군,Gangwon State,Jeongseon-gun,Jeongseon-gun,Jeongseon-gun,Jeongseon-gun Gangwon State,2020
+32560,철원군,37854,857,19152,508,18702,349,,강원특별자치도,철원군,철원군,철원군,Gangwon State,Cheorwon-gun,Cheorwon-gun,Cheorwon-gun,Cheorwon-gun Gangwon State,2020
+32570,화천군,20954,755,10987,482,9967,273,,강원특별자치도,화천군,화천군,화천군,Gangwon State,Hwacheon-gun,Hwacheon-gun,Hwacheon-gun,Hwacheon-gun Gangwon State,2020
+32580,양구군,19226,649,9962,381,9264,268,,강원특별자치도,양구군,양구군,양구군,Gangwon State,Yanggu-gun,Yanggu-gun,Yanggu-gun,Yanggu-gun Gangwon State,2020
+32590,인제군,28971,905,15347,555,13624,350,,강원특별자치도,인제군,인제군,인제군,Gangwon State,Inje-gun,Inje-gun,Inje-gun,Inje-gun Gangwon State,2020
+32600,고성군,25004,819,12668,461,12336,358,,강원특별자치도,고성군,고성군,고성군,Gangwon State,Goseong-gun,Goseong-gun,Goseong-gun,Goseong-gun Gangwon State,2020
+32610,양양군,25625,759,13000,454,12625,305,,강원특별자치도,양양군,양양군,양양군,Gangwon State,Yangyang-gun,Yangyang-gun,Yangyang-gun,Yangyang-gun Gangwon State,2020
+33020,충주시,201436,4849,101986,2721,99450,2128,,충청북도,충주시,충주시,충주시,Chungcheongbuk-do,Chungju-si,Chungju-si,Chungju-si,Chungju-si Chungcheongbuk-do,2020
+33030,제천시,123340,2879,61696,1587,61644,1292,,충청북도,제천시,제천시,제천시,Chungcheongbuk-do,Jecheon-si,Jecheon-si,Jecheon-si,Jecheon-si Chungcheongbuk-do,2020
+33040,청주시,823430,18754,413217,10436,410213,8318,,충청북도,청주시 ,청주시 ,,Chungcheongbuk-do,Cheongju-si,,,,2020
+33041,상당구,191737,3454,94602,1878,97135,1576,,충청북도,청주시 상당구,청주시 ,상당구,Chungcheongbuk-do,Cheongju-si,Sangdang-gu,Sangdang-gu Cheongju-si,Sangdang-gu Cheongju-si Chungcheongbuk-do,2020
+33042,서원구,181581,3853,90168,2105,91413,1748,,충청북도,청주시 서원구,청주시 ,서원구,Chungcheongbuk-do,Cheongju-si,Seowon-gu,Seowon-gu Cheongju-si,Seowon-gu Cheongju-si Chungcheongbuk-do,2020
+33043,흥덕구,265269,6882,133766,3854,131503,3028,,충청북도,청주시 흥덕구,청주시 ,흥덕구,Chungcheongbuk-do,Cheongju-si,Heungdeok-gu,Heungdeok-gu Cheongju-si,Heungdeok-gu Cheongju-si Chungcheongbuk-do,2020
+33044,청원구,184843,4565,94681,2599,90162,1966,,충청북도,청주시 청원구,청주시 ,청원구,Chungcheongbuk-do,Cheongju-si,Cheongwon-gu,Cheongwon-gu Cheongju-si,Cheongwon-gu Cheongju-si Chungcheongbuk-do,2020
+33520,보은군,28784,720,14288,375,14496,345,,충청북도,보은군,보은군,보은군,Chungcheongbuk-do,Boeun-gun,Boeun-gun,Boeun-gun,Boeun-gun Chungcheongbuk-do,2020
+33530,옥천군,45297,1047,22723,567,22574,480,,충청북도,옥천군,옥천군,옥천군,Chungcheongbuk-do,Okcheon-gun,Okcheon-gun,Okcheon-gun,Okcheon-gun Chungcheongbuk-do,2020
+33540,영동군,41714,1099,20830,585,20884,514,,충청북도,영동군,영동군,영동군,Chungcheongbuk-do,Yeongdong-gun,Yeongdong-gun,Yeongdong-gun,Yeongdong-gun Chungcheongbuk-do,2020
+33550,진천군,82000,2910,43096,1834,38904,1076,,충청북도,진천군,진천군,진천군,Chungcheongbuk-do,Jincheon-gun,Jincheon-gun,Jincheon-gun,Jincheon-gun Chungcheongbuk-do,2020
+33560,괴산군,34094,1231,17471,698,16623,533,,충청북도,괴산군,괴산군,괴산군,Chungcheongbuk-do,Goesan-gun,Goesan-gun,Goesan-gun,Goesan-gun Chungcheongbuk-do,2020
+33570,음성군,84534,2970,44389,1808,40145,1162,,충청북도,음성군,음성군,음성군,Chungcheongbuk-do,Eumseong-gun,Eumseong-gun,Eumseong-gun,Eumseong-gun Chungcheongbuk-do,2020
+33580,단양군,25340,632,12828,363,12512,269,,충청북도,단양군,단양군,단양군,Chungcheongbuk-do,Danyang-gun,Danyang-gun,Danyang-gun,Danyang-gun Chungcheongbuk-do,2020
+33590,증평군,35798,937,18561,561,17237,376,,충청북도,증평군,증평군,증평군,Chungcheongbuk-do,Jeungpyeong-gun,Jeungpyeong-gun,Jeungpyeong-gun,Jeungpyeong-gun Chungcheongbuk-do,2020
+34010,천안시,638715,22283,324249,12916,314466,9367,,충청남도,천안시 ,천안시,,Chungcheongnam-do,Cheonan-si,,,,2020
+34011,동남구,250628,7854,125516,4424,125112,3430,,충청남도,천안시 동남구,천안시,동남구,Chungcheongnam-do,Cheonan-si,Dongnam-gu,Dongnam-gu Cheonan-si,Dongnam-gu Cheonan-si Chungcheongnam-do,2020
+34012,서북구,388087,14429,198733,8492,189354,5937,,충청남도,천안시 서북구,천안시,서북구,Chungcheongnam-do,Cheonan-si,Seobuk-gu,Seobuk-gu Cheonan-si,Seobuk-gu Cheonan-si Chungcheongnam-do,2020
+34020,공주시,95615,2483,47313,1352,48302,1131,,충청남도,공주시,공주시,공주시,Chungcheongnam-do,Gongju-si,Gongju-si,Gongju-si,Gongju-si Chungcheongnam-do,2020
+34030,보령시,90337,2558,45451,1502,44886,1056,,충청남도,보령시,보령시,보령시,Chungcheongnam-do,Boryeong-si,Boryeong-si,Boryeong-si,Boryeong-si Chungcheongnam-do,2020
+34040,아산시,329647,9936,169907,5998,159740,3938,,충청남도,아산시,아산시,아산시,Chungcheongnam-do,Asan-si,Asan-si,Asan-si,Asan-si Chungcheongnam-do,2020
+34050,서산시,168010,4369,87218,2682,80792,1687,,충청남도,서산시,서산시,서산시,Chungcheongnam-do,Seosan-si,Seosan-si,Seosan-si,Seosan-si Chungcheongnam-do,2020
+34060,논산시,103162,2647,51033,1385,52129,1262,,충청남도,논산시,논산시,논산시,Chungcheongnam-do,Nonsan-si,Nonsan-si,Nonsan-si,Nonsan-si Chungcheongnam-do,2020
+34070,계룡시,43760,652,21616,369,22144,283,,충청남도,계룡시,계룡시,계룡시,Chungcheongnam-do,Gyeryong-si,Gyeryong-si,Gyeryong-si,Gyeryong-si Chungcheongnam-do,2020
+34080,당진시,161744,4642,85785,2863,75959,1779,,충청남도,당진시,당진시,당진시,Chungcheongnam-do,Dangjin-si,Dangjin-si,Dangjin-si,Dangjin-si Chungcheongnam-do,2020
+34510,금산군,47027,1540,23361,797,23666,743,,충청남도,금산군,금산군,금산군,Chungcheongnam-do,Geumsan-gun,Geumsan-gun,Geumsan-gun,Geumsan-gun Chungcheongnam-do,2020
+34530,부여군,56630,1297,28016,683,28614,614,,충청남도,부여군,부여군,부여군,Chungcheongnam-do,Buyeo-gun,Buyeo-gun,Buyeo-gun,Buyeo-gun Chungcheongnam-do,2020
+34540,서천군,45628,1164,22400,652,23228,512,,충청남도,서천군,서천군,서천군,Chungcheongnam-do,Seocheon-gun,Seocheon-gun,Seocheon-gun,Seocheon-gun Chungcheongnam-do,2020
+34550,청양군,27560,848,13927,468,13633,380,,충청남도,청양군,청양군,청양군,Chungcheongnam-do,Cheongyang-gun,Cheongyang-gun,Cheongyang-gun,Cheongyang-gun Chungcheongnam-do,2020
+34560,홍성군,92678,1945,45945,1078,46733,867,,충청남도,홍성군,홍성군,홍성군,Chungcheongnam-do,Hongseong-gun,Hongseong-gun,Hongseong-gun,Hongseong-gun Chungcheongnam-do,2020
+34570,예산군,73573,1890,36670,1023,36903,867,,충청남도,예산군,예산군,예산군,Chungcheongnam-do,Yesan-gun,Yesan-gun,Yesan-gun,Yesan-gun Chungcheongnam-do,2020
+34580,태안군,56315,1717,28490,1000,27825,717,,충청남도,태안군,태안군,태안군,Chungcheongnam-do,Taean-gun,Taean-gun,Taean-gun,Taean-gun Chungcheongnam-do,2020
+35010,전주시,625022,10305,306416,5464,318606,4841,,전라북도,전주시 ,전주시,,Jeollabuk-do,Jeonju-si,,,,2020
+35011,완산구,317332,5385,154101,2816,163231,2569,,전라북도,전주시 완산구,전주시,완산구,Jeollabuk-do,Jeonju-si,Wansan-gu,Wansan-gu Jeonju-si,Wansan-gu Jeonju-si Jeollabuk-do,2020
+35012,덕진구,307690,4920,152315,2648,155375,2272,,전라북도,전주시 덕진구,전주시,덕진구,Jeollabuk-do,Jeonju-si,Deokjin-gu,Deokjin-gu Jeonju-si,Deokjin-gu Jeonju-si Jeollabuk-do,2020
+35020,군산시,248568,5384,124875,3106,123693,2278,,전라북도,군산시,군산시,군산시,Jeollabuk-do,Gunsan-si,Gunsan-si,Gunsan-si,Gunsan-si Jeollabuk-do,2020
+35030,익산시,256902,5302,127455,3036,129447,2266,,전라북도,익산시,익산시,익산시,Jeollabuk-do,Iksan-si,Iksan-si,Iksan-si,Iksan-si Jeollabuk-do,2020
+35040,정읍시,96156,2335,47502,1329,48654,1006,,전라북도,정읍시,정읍시,정읍시,Jeollabuk-do,Jeongeup-si,Jeongeup-si,Jeongeup-si,Jeongeup-si Jeollabuk-do,2020
+35050,남원시,71355,1614,34730,844,36625,770,,전라북도,남원시,남원시,남원시,Jeollabuk-do,Namwon-si,Namwon-si,Namwon-si,Namwon-si Jeollabuk-do,2020
+35060,김제시,74513,2196,36652,1235,37861,961,,전라북도,김제시,김제시,김제시,Jeollabuk-do,Gimje-si,Gimje-si,Gimje-si,Gimje-si Jeollabuk-do,2020
+35510,완주군,92543,2159,47296,1211,45247,948,,전라북도,완주군,완주군,완주군,Jeollabuk-do,Wanju-gun,Wanju-gun,Wanju-gun,Wanju-gun Jeollabuk-do,2020
+35520,진안군,21800,697,10938,407,10862,290,,전라북도,진안군,진안군,진안군,Jeollabuk-do,Jinan-gun,Jinan-gun,Jinan-gun,Jinan-gun Jeollabuk-do,2020
+35530,무주군,21399,649,10648,381,10751,268,,전라북도,무주군,무주군,무주군,Jeollabuk-do,Muju-gun,Muju-gun,Muju-gun,Muju-gun Jeollabuk-do,2020
+35540,장수군,19091,541,9481,314,9610,227,,전라북도,장수군,장수군,장수군,Jeollabuk-do,Jangsu-gun,Jangsu-gun,Jangsu-gun,Jangsu-gun Jeollabuk-do,2020
+35550,임실군,23532,620,11700,354,11832,266,,전라북도,임실군,임실군,임실군,Jeollabuk-do,Imsil-gun,Imsil-gun,Imsil-gun,Imsil-gun Jeollabuk-do,2020
+35560,순창군,24317,597,11858,334,12459,263,,전라북도,순창군,순창군,순창군,Jeollabuk-do,Sunchang-gun,Sunchang-gun,Sunchang-gun,Sunchang-gun Jeollabuk-do,2020
+35570,고창군,47122,1326,23214,722,23908,604,,전라북도,고창군,고창군,고창군,Jeollabuk-do,Gochang-gun,Gochang-gun,Gochang-gun,Gochang-gun Jeollabuk-do,2020
+35580,부안군,44882,1259,22128,712,22754,547,,전라북도,부안군,부안군,부안군,Jeollabuk-do,Buan-gun,Buan-gun,Buan-gun,Buan-gun Jeollabuk-do,2020
+36010,목포시,205966,4952,101680,2819,104286,2133,,전라남도,목포시,목포시,목포시,Jeollanam-do,Mokpo-si,Mokpo-si,Mokpo-si,Mokpo-si Jeollanam-do,2020
+36020,여수시,254127,5500,128856,3313,125271,2187,,전라남도,여수시,여수시,여수시,Jeollanam-do,Yeosu-si,Yeosu-si,Yeosu-si,Yeosu-si Jeollanam-do,2020
+36030,순천시,261968,4869,129634,2692,132334,2177,,전라남도,순천시,순천시,순천시,Jeollanam-do,Suncheon-si,Suncheon-si,Suncheon-si,Suncheon-si Jeollanam-do,2020
+36040,나주시,107659,3058,53511,1660,54148,1398,,전라남도,나주시,나주시,나주시,Jeollanam-do,Naju-si,Naju-si,Naju-si,Naju-si Jeollanam-do,2020
+36060,광양시,142184,3309,73791,2070,68393,1239,,전라남도,광양시,광양시,광양시,Jeollanam-do,Gwangyang-si,Gwangyang-si,Gwangyang-si,Gwangyang-si Jeollanam-do,2020
+36510,담양군,40079,1121,19913,616,20166,505,,전라남도,담양군,담양군,담양군,Jeollanam-do,Damyang-gun,Damyang-gun,Damyang-gun,Damyang-gun Jeollanam-do,2020
+36520,곡성군,24509,763,12124,436,12385,327,,전라남도,곡성군,곡성군,곡성군,Jeollanam-do,Gokseong-gun,Gokseong-gun,Gokseong-gun,Gokseong-gun Jeollanam-do,2020
+36530,구례군,21984,602,10625,324,11359,278,,전라남도,구례군,구례군,구례군,Jeollanam-do,Gurye-gun,Gurye-gun,Gurye-gun,Gurye-gun Jeollanam-do,2020
+36550,고흥군,55855,1476,27283,867,28572,609,,전라남도,고흥군,고흥군,고흥군,Jeollanam-do,Goheung-gun,Goheung-gun,Goheung-gun,Goheung-gun Jeollanam-do,2020
+36560,보성군,34082,948,16486,515,17596,433,,전라남도,보성군,보성군,보성군,Jeollanam-do,Boseong-gun,Boseong-gun,Boseong-gun,Boseong-gun Jeollanam-do,2020
+36570,화순군,55502,1132,26966,605,28536,527,,전라남도,화순군,화순군,화순군,Jeollanam-do,Hwasun-gun,Hwasun-gun,Hwasun-gun,Hwasun-gun Jeollanam-do,2020
+36580,장흥군,32129,801,15550,447,16579,354,,전라남도,장흥군,장흥군,장흥군,Jeollanam-do,Jangheung-gun,Jangheung-gun,Jangheung-gun,Jangheung-gun Jeollanam-do,2020
+36590,강진군,29717,738,14363,393,15354,345,,전라남도,강진군,강진군,강진군,Jeollanam-do,Gangjin-gun,Gangjin-gun,Gangjin-gun,Gangjin-gun Jeollanam-do,2020
+36600,해남군,58465,1570,28901,865,29564,705,,전라남도,해남군,해남군,해남군,Jeollanam-do,Haenam-gun,Haenam-gun,Haenam-gun,Haenam-gun Jeollanam-do,2020
+36610,영암군,49199,2166,25422,1427,23777,739,,전라남도,영암군,영암군,영암군,Jeollanam-do,Yeongam-gun,Yeongam-gun,Yeongam-gun,Yeongam-gun Jeollanam-do,2020
+36620,무안군,83717,1891,41772,1062,41945,829,,전라남도,무안군,무안군,무안군,Jeollanam-do,Muan-gun,Muan-gun,Muan-gun,Muan-gun Jeollanam-do,2020
+36630,함평군,26905,861,13428,486,13477,375,,전라남도,함평군,함평군,함평군,Jeollanam-do,Hampyeong-gun,Hampyeong-gun,Hampyeong-gun,Hampyeong-gun Jeollanam-do,2020
+36640,영광군,46831,1318,23205,762,23626,556,,전라남도,영광군,영광군,영광군,Jeollanam-do,Yeonggwang-gun,Yeonggwang-gun,Yeonggwang-gun,Yeonggwang-gun Jeollanam-do,2020
+36650,장성군,37154,1130,18567,625,18587,505,,전라남도,장성군,장성군,장성군,Jeollanam-do,Jangseong-gun,Jangseong-gun,Jangseong-gun,Jangseong-gun Jeollanam-do,2020
+36660,완도군,42621,1488,21573,879,21048,609,,전라남도,완도군,완도군,완도군,Jeollanam-do,Wando-gun,Wando-gun,Wando-gun,Wando-gun Jeollanam-do,2020
+36670,진도군,26382,904,13157,551,13225,353,,전라남도,진도군,진도군,진도군,Jeollanam-do,Jindo-gun,Jindo-gun,Jindo-gun,Jindo-gun Jeollanam-do,2020
+36680,신안군,32553,1626,17190,1042,15363,584,,전라남도,신안군,신안군,신안군,Jeollanam-do,Sinan-gun,Sinan-gun,Sinan-gun,Sinan-gun Jeollanam-do,2020
+37010,포항시,469466,10265,236401,5853,233065,4412,,경상북도,포항시 ,포항시,,Gyeongsangbuk-do,Pohang-si,,,,2020
+37011,남구,215048,5340,110678,3198,104370,2142,,경상북도,포항시 남구,포항시,남구,Gyeongsangbuk-do,Pohang-si,Nam-gu,Nam-gu Pohang-si,Nam-gu Pohang-si Gyeongsangbuk-do,2020
+37012,북구,254418,4925,125723,2655,128695,2270,,경상북도,포항시 북구,포항시,북구,Gyeongsangbuk-do,Pohang-si,Buk-gu,Buk-gu Pohang-si,Buk-gu Pohang-si Gyeongsangbuk-do,2020
+37020,경주시,236185,6018,117680,3261,118505,2757,,경상북도,경주시,경주시,경주시,Gyeongsangbuk-do,Gyeongju-si,Gyeongju-si,Gyeongju-si,Gyeongju-si Gyeongsangbuk-do,2020
+37030,김천시,128613,2595,63982,1433,64631,1162,,경상북도,김천시,김천시,김천시,Gyeongsangbuk-do,Gimcheon-si,Gimcheon-si,Gimcheon-si,Gimcheon-si Gyeongsangbuk-do,2020
+37040,안동시,145615,2964,71779,1636,73836,1328,,경상북도,안동시,안동시,안동시,Gyeongsangbuk-do,Andong-si,Andong-si,Andong-si,Andong-si Gyeongsangbuk-do,2020
+37050,구미시,390696,10044,200433,5788,190263,4256,,경상북도,구미시,구미시,구미시,Gyeongsangbuk-do,Gumi-si,Gumi-si,Gumi-si,Gumi-si Gyeongsangbuk-do,2020
+37060,영주시,94112,1977,46527,984,47585,993,,경상북도,영주시,영주시,영주시,Gyeongsangbuk-do,Yeongju-si,Yeongju-si,Yeongju-si,Yeongju-si Gyeongsangbuk-do,2020
+37070,영천시,92413,3036,46415,1723,45998,1313,,경상북도,영천시,영천시,영천시,Gyeongsangbuk-do,Yeongcheon-si,Yeongcheon-si,Yeongcheon-si,Yeongcheon-si Gyeongsangbuk-do,2020
+37080,상주시,87338,1969,42848,971,44490,998,,경상북도,상주시,상주시,상주시,Gyeongsangbuk-do,Sangju-si,Sangju-si,Sangju-si,Sangju-si Gyeongsangbuk-do,2020
+37090,문경시,63153,1487,30881,788,32272,699,,경상북도,문경시,문경시,문경시,Gyeongsangbuk-do,Mungyeong-si,Mungyeong-si,Mungyeong-si,Mungyeong-si Gyeongsangbuk-do,2020
+37100,경산시,263600,5948,131850,3358,131750,2590,,경상북도,경산시,경산시,경산시,Gyeongsangbuk-do,Gyeongsan-si,Gyeongsan-si,Gyeongsan-si,Gyeongsan-si Gyeongsangbuk-do,2020
+37520,의성군,45608,1267,22385,667,23223,600,,경상북도,의성군,의성군,의성군,Gyeongsangbuk-do,Uiseong-gun,Uiseong-gun,Uiseong-gun,Uiseong-gun Gyeongsangbuk-do,2020
+37530,청송군,22132,642,11069,355,11063,287,,경상북도,청송군,청송군,청송군,Gyeongsangbuk-do,Cheongsong-gun,Cheongsong-gun,Cheongsong-gun,Cheongsong-gun Gyeongsangbuk-do,2020
+37540,영양군,14536,424,7234,223,7302,201,,경상북도,영양군,영양군,영양군,Gyeongsangbuk-do,Yeongyang-gun,Yeongyang-gun,Yeongyang-gun,Yeongyang-gun Gyeongsangbuk-do,2020
+37550,영덕군,31340,1062,14841,549,16499,513,,경상북도,영덕군,영덕군,영덕군,Gyeongsangbuk-do,Yeongdeok-gun,Yeongdeok-gun,Yeongdeok-gun,Yeongdeok-gun Gyeongsangbuk-do,2020
+37560,청도군,37302,1085,18082,551,19220,534,,경상북도,청도군,청도군,청도군,Gyeongsangbuk-do,Cheongdo-gun,Cheongdo-gun,Cheongdo-gun,Cheongdo-gun Gyeongsangbuk-do,2020
+37570,고령군,27366,819,13729,447,13637,372,,경상북도,고령군,고령군,고령군,Gyeongsangbuk-do,Goryeong-gun,Goryeong-gun,Goryeong-gun,Goryeong-gun Gyeongsangbuk-do,2020
+37580,성주군,37572,1104,19287,630,18285,474,,경상북도,성주군,성주군,성주군,Gyeongsangbuk-do,Seongju-gun,Seongju-gun,Seongju-gun,Seongju-gun Gyeongsangbuk-do,2020
+37590,칠곡군,104390,2764,54060,1681,50330,1083,,경상북도,칠곡군,칠곡군,칠곡군,Gyeongsangbuk-do,Chilgok-gun,Chilgok-gun,Chilgok-gun,Chilgok-gun Gyeongsangbuk-do,2020
+37600,예천군,52002,1032,25428,518,26574,514,,경상북도,예천군,예천군,예천군,Gyeongsangbuk-do,Yecheon-gun,Yecheon-gun,Yecheon-gun,Yecheon-gun Gyeongsangbuk-do,2020
+37610,봉화군,26995,811,13588,439,13407,372,,경상북도,봉화군,봉화군,봉화군,Gyeongsangbuk-do,Bonghwa-gun,Bonghwa-gun,Bonghwa-gun,Bonghwa-gun Gyeongsangbuk-do,2020
+37620,울진군,42707,1327,21507,759,21200,568,,경상북도,울진군,울진군,울진군,Gyeongsangbuk-do,Uljin-gun,Uljin-gun,Uljin-gun,Uljin-gun Gyeongsangbuk-do,2020
+37630,울릉군,8056,601,4425,399,3631,202,,경상북도,울릉군,울릉군,울릉군,Gyeongsangbuk-do,Ulleung-gun,Ulleung-gun,Ulleung-gun,Ulleung-gun Gyeongsangbuk-do,2020
+38030,진주시,330324,5108,162616,2708,167708,2400,,경상남도,진주시,진주시,진주시,Gyeongsangnam-do,Jinju-si,Jinju-si,Jinju-si,Jinju-si Gyeongsangnam-do,2020
+38050,통영시,113847,2761,56836,1602,57011,1159,,경상남도,통영시,통영시,통영시,Gyeongsangnam-do,Tongyeong-si,Tongyeong-si,Tongyeong-si,Tongyeong-si Gyeongsangnam-do,2020
+38060,사천시,101848,2558,51152,1438,50696,1120,,경상남도,사천시,사천시,사천시,Gyeongsangnam-do,Sacheon-si,Sacheon-si,Sacheon-si,Sacheon-si Gyeongsangnam-do,2020
+38070,김해시,508835,8685,255187,4885,253648,3800,,경상남도,김해시,김해시,김해시,Gyeongsangnam-do,Gimhae-si,Gimhae-si,Gimhae-si,Gimhae-si Gyeongsangnam-do,2020
+38080,밀양시,95098,2425,46361,1206,48737,1219,,경상남도,밀양시,밀양시,밀양시,Gyeongsangnam-do,Miryang-si,Miryang-si,Miryang-si,Miryang-si Gyeongsangnam-do,2020
+38090,거제시,222916,4847,115759,3033,107157,1814,,경상남도,거제시,거제시,거제시,Gyeongsangnam-do,Geoje-si,Geoje-si,Geoje-si,Geoje-si Gyeongsangnam-do,2020
+38100,양산시,339013,5760,168150,3143,170863,2617,,경상남도,양산시,양산시,양산시,Gyeongsangnam-do,Yangsan-si,Yangsan-si,Yangsan-si,Yangsan-si Gyeongsangnam-do,2020
+38110,창원시,964219,14533,484318,8159,479901,6374,,경상남도,창원시 ,창원시 ,,Gyeongsangnam-do,Changwon-si,,,,2020
+38111,의창구,204331,2730,103195,1514,101136,1216,,경상남도,창원시 의창구,창원시 ,의창구,Gyeongsangnam-do,Changwon-si,Uichang-gu,Uichang-gu Changwon-si,Uichang-gu Changwon-si Gyeongsangnam-do,2020
+38112,성산구,234278,3541,118365,2113,115913,1428,,경상남도,창원시 성산구,창원시 ,성산구,Gyeongsangnam-do,Changwon-si,Seongsan-gu,Seongsan-gu Changwon-si,Seongsan-gu Changwon-si Gyeongsangnam-do,2020
+38113,마산합포구,170229,3049,84065,1643,86164,1406,,경상남도,창원시 마산합포구,창원시 ,마산합포구,Gyeongsangnam-do,Changwon-si,Masanhappo-gu,Masanhappo-gu Changwon-si,Masanhappo-gu Changwon-si Gyeongsangnam-do,2020
+38114,마산회원구,172602,2207,85583,1201,87019,1006,,경상남도,창원시 마산회원구,창원시 ,마산회원구,Gyeongsangnam-do,Changwon-si,Masanhoewon-gu,Masanhoewon-gu Changwon-si,Masanhoewon-gu Changwon-si Gyeongsangnam-do,2020
+38115,진해구,182779,3006,93110,1688,89669,1318,,경상남도,창원시 진해구,창원시 ,진해구,Gyeongsangnam-do,Changwon-si,Jinhae-gu,Jinhae-gu Changwon-si,Jinhae-gu Changwon-si Gyeongsangnam-do,2020
+38510,의령군,23105,768,11318,410,11787,358,,경상남도,의령군,의령군,의령군,Gyeongsangnam-do,Uiryeong-gun,Uiryeong-gun,Uiryeong-gun,Uiryeong-gun Gyeongsangnam-do,2020
+38520,함안군,55775,1539,28268,910,27507,629,,경상남도,함안군,함안군,함안군,Gyeongsangnam-do,Haman-gun,Haman-gun,Haman-gun,Haman-gun Gyeongsangnam-do,2020
+38530,창녕군,52573,1621,26108,874,26465,747,,경상남도,창녕군,창녕군,창녕군,Gyeongsangnam-do,Changnyeong-gun,Changnyeong-gun,Changnyeong-gun,Changnyeong-gun Gyeongsangnam-do,2020
+38540,고성군,44969,1265,22263,686,22706,579,,경상남도,고성군,고성군,고성군,Gyeongsangnam-do,Goseong-gun,Goseong-gun,Goseong-gun,Goseong-gun Gyeongsangnam-do,2020
+38550,남해군,37458,796,18144,422,19314,374,,경상남도,남해군,남해군,남해군,Gyeongsangnam-do,Namhae-gun,Namhae-gun,Namhae-gun,Namhae-gun Gyeongsangnam-do,2020
+38560,하동군,37573,1076,18652,576,18921,500,,경상남도,하동군,하동군,하동군,Gyeongsangnam-do,Hadong-gun,Hadong-gun,Hadong-gun,Hadong-gun Gyeongsangnam-do,2020
+38570,산청군,30666,1129,15185,567,15481,562,,경상남도,산청군,산청군,산청군,Gyeongsangnam-do,Sancheong-gun,Sancheong-gun,Sancheong-gun,Sancheong-gun Gyeongsangnam-do,2020
+38580,함양군,33901,970,16387,512,17514,458,,경상남도,함양군,함양군,함양군,Gyeongsangnam-do,Hamyang-gun,Hamyang-gun,Hamyang-gun,Hamyang-gun Gyeongsangnam-do,2020
+38590,거창군,55668,1097,27153,559,28515,538,,경상남도,거창군,거창군,거창군,Gyeongsangnam-do,Geochang-gun,Geochang-gun,Geochang-gun,Geochang-gun Gyeongsangnam-do,2020
+38600,합천군,37571,1038,18253,559,19318,479,,경상남도,합천군,합천군,합천군,Gyeongsangnam-do,Hapcheon-gun,Hapcheon-gun,Hapcheon-gun,Hapcheon-gun Gyeongsangnam-do,2020
+39010,제주시,467537,14236,231409,7678,236128,6558,,제주특별자치도,제주시,제주시,제주시,Jeju,Jeju-si,Jeju-si,Jeju-si,Jeju-si Jeju,2020
+39020,서귀포시,169555,5903,84606,3228,84949,2675,,제주특별자치도,서귀포시,서귀포시,서귀포시,Jeju,Seogwipo-si,Seogwipo-si,Seogwipo-si,Seogwipo-si Jeju,2020

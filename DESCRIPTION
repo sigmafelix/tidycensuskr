@@ -1,12 +1,12 @@
 Package: tidycensuskr 
-Title: HArmonised Boundaries and Integrated Tables for Census and Administrative Data in South Korea
-Version: 0.0.1.9000
+Title: `anyflights`-like data access for South Korea census and administrative data
+Version: 0.0.2.9000
 Authors@R: c(
     person(given = "Insang", 
           family = "Song", 
           role = c("aut", "cre"), 
           email = "geoissong@snu.ac.kr", 
-          comment = c(ORCID = "0000")),
+          comment = c(ORCID = "0000-0001-8732-3256")),
     person(given = "Sohyun", 
           family = "Park", 
           role = c("aut", "ctb"),
@@ -27,7 +27,7 @@ Description:
 License: MIT
 LazyData: true
 Depends:
-    R (>= 3.5.0)
+    R (>= 4.2.0)
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 Imports:
