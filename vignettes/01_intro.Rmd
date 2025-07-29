@@ -1,0 +1,49 @@
+---
+title: "Introduction to tidycensuskr"
+output: html_document
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  warning = FALSE,
+  message = FALSE,
+  out.width = "100%"
+)
+```
+
+
+
+## Get Started
+### Key Functions Overview
+* Data retrieval functions
+* Geographic boundary functions
+* Data transformation utilities
+* Visualisation helpers
+
+
+### Data Structure (lookup table)
+* Explanation of how census data is organised in the package
+* Available geographic levels 
+
+
+
+## Articles
+
+
+### 1. Working with Korean Geographic Hierarchies
+
+Understanding Sido → Sigungu → Eupmyeondong relationships
+Aggregating Eupmyeondong data to Sigungu level
+Handling administrative boundary changes
+Exercise: Calculate population-weighted PM2.5 exposure for each Sigungu in Seoul
+
+
+### 2. Urban Development Analysis
+Tracking population changes across census years
+Identifying rapidly growing Eupmyeondong
+New town development patterns
+Exercise: Analyse population shifts in Seoul Metropolitan Area (수도권)
+
+
