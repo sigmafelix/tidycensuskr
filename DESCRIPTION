@@ -39,7 +39,8 @@ Imports:
     purrr,
     rlang,
     kosis,
-    R6
+    R6,
+    tidyr
 Suggests: 
     knitr,
     rmarkdown,
