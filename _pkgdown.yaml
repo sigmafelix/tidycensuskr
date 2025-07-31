@@ -1,0 +1,10 @@
+url: https://sigmafelix.github.io/tidycensuskr
+template:
+  params:
+    mathjax: true
+
+navbar:
+  structure:
+    left:  [reference, articles, search]
+    right: [github]
+
