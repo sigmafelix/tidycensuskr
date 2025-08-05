@@ -4,16 +4,15 @@
 #'
 #' @format A data frame with {253} rows and {11} variables:
 #' \describe{
-#'   \item{adm1_code}{Code of the province-level (Sido) administrative unit, as defined by KOSIS (Korean Statistical Information Service)}
-#'   \item{adm1_name}{Name of the province-level (Sido) administrative unit, as defined by KOSIS}
-#'   \item{adm2_code}{Code of the municipal-level (Sigungu) administrative unit, as defined by KOSIS; nested within adm1}
-#'   \item{adm2_name}{Name of the municipal-level (Sigungu) administrative unit, as defined by KOSIS}
-#'   \item{pop2015_total}{Total population according to the 2015 Census}
-#'   \item{pop2015_men}{Male population according to the 2015 Census}
-#'   \item{pop2015_women}{Female population according to the 2015 Census}
-#'   \item{pop2020_total}{Total population according to the 2020 Census}
-#'   \item{pop2020_men}{Male population according to the 2020 Census}
-#'   \item{pop2020_women}{Female population according to the 2020 Census}
+#'   \item{year}{Census reference year (e.g., 2010, 2015, 2020)}
+#'   \item{adm1}{Name of the province-level (Sido) administrative unit, as defined by KOSIS}
+#'   \item{adm2}{Name of the municipal-level (Sigungu) administrative unit, as defined by KOSIS}
+#'   \item{adm2_code}{Code of the municipal-level (Sigungu) administrative unit, as defined by KOSIS}
+#'   \item{type}{Type of census indicator (e.g., 'population')}
+#'   \item{class1}{Population breakdown category (e.g., 'total', 'men', 'women')}
+#'   \item{class2}{Metric class; 'count' for population totals}
+#'   \item{unit}{Unit of measurement (e.g., 'persons')}
+#'   \item{value}{Observed value for the indicator}
 #' }
 #' @source \url{data_URL}
 "census"
