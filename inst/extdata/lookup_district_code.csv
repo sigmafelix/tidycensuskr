@@ -76,27 +76,27 @@ sido_kr,sigungu_kr,sigungu_1_kr,sigungu_2_kr,sido_en,sigun_en,sigungu_1_en,sigun
 울산광역시,북구,북구,북구,Ulsan,Buk-gu,Buk-gu,Buk-gu,Buk-gu Ulsan,2020,,26040,A1603,A1503
 울산광역시,울주군,울주군,울주군,Ulsan,Ulju-gun,Ulju-gun,Ulju-gun,Ulju-gun Ulsan,2020,,26510,A1604,A1504
 세종특별자치시,세종시,세종시,세종시,Sejong City,Sejong City,Sejong City,Sejong City,Sejong City Sejong City,2020,,29010,A09,A08
-경기도,수원시 ,수원시 ,,Gyeonggi-do,Suwon-si,,Suwon-si,Suwon-si Gyeonggi-do,2020,,31010,A0413,A0313
-경기도,수원시 장안구,수원시 ,장안구,Gyeonggi-do,Suwon-si,Jangan-gu,Jangan-gu Suwon-si,Jangan-gu Suwon-si Gyeonggi-do,2020,,31011,A0413,A0313
-경기도,수원시 권선구,수원시 ,권선구,Gyeonggi-do,Suwon-si,Gwonseon-gu,Gwonseon-gu Suwon-si,Gwonseon-gu Suwon-si Gyeonggi-do,2020,,31012,A0413,A0313
-경기도,수원시 팔달구,수원시 ,팔달구,Gyeonggi-do,Suwon-si,Paldal-gu,Paldal-gu Suwon-si,Paldal-gu Suwon-si Gyeonggi-do,2020,,31013,A0413,A0313
-경기도,수원시 영통구,수원시 ,영통구,Gyeonggi-do,Suwon-si,Yeongtong-gu,Yeongtong-gu Suwon-si,Yeongtong-gu Suwon-si Gyeonggi-do,2020,,31014,A0413,A0313
-경기도,성남시 ,성남시 ,,Gyeonggi-do,Seongnam-si,,Seongnam-si,Seongnam-si Gyeonggi-do,2020,,31020,A0412,A0312
-경기도,성남시 수정구,성남시 ,수정구,Gyeonggi-do,Seongnam-si,Sujeong-gu,Sujeong-gu Seongnam-si,Sujeong-gu Seongnam-si Gyeonggi-do,2020,,31021,A0412,A0312
-경기도,성남시 중원구,성남시 ,중원구,Gyeonggi-do,Seongnam-si,Jungwon-gu,Jungwon-gu Seongnam-si,Jungwon-gu Seongnam-si Gyeonggi-do,2020,,31022,A0412,A0312
-경기도,성남시 분당구,성남시 ,분당구,Gyeonggi-do,Seongnam-si,Bundang-gu,Bundang-gu Seongnam-si,Bundang-gu Seongnam-si Gyeonggi-do,2020,,31023,A0412,A0312
+경기도,수원시,수원시,,Gyeonggi-do,Suwon-si,Suwon-si,Suwon-si,Suwon-si Gyeonggi-do,2020,,31010,A0413,A0313
+경기도,수원시 장안구,수원시,장안구,Gyeonggi-do,Suwon-si,Jangan-gu,Jangan-gu Suwon-si,Jangan-gu Suwon-si Gyeonggi-do,2020,,31011,A0413,A0313
+경기도,수원시 권선구,수원시,권선구,Gyeonggi-do,Suwon-si,Gwonseon-gu,Gwonseon-gu Suwon-si,Gwonseon-gu Suwon-si Gyeonggi-do,2020,,31012,A0413,A0313
+경기도,수원시 팔달구,수원시,팔달구,Gyeonggi-do,Suwon-si,Paldal-gu,Paldal-gu Suwon-si,Paldal-gu Suwon-si Gyeonggi-do,2020,,31013,A0413,A0313
+경기도,수원시 영통구,수원시,영통구,Gyeonggi-do,Suwon-si,Yeongtong-gu,Yeongtong-gu Suwon-si,Yeongtong-gu Suwon-si Gyeonggi-do,2020,,31014,A0413,A0313
+경기도,성남시,성남시,,Gyeonggi-do,Seongnam-si,Seongnam-si,Seongnam-si,Seongnam-si Gyeonggi-do,2020,,31020,A0412,A0312
+경기도,성남시 수정구,성남시,수정구,Gyeonggi-do,Seongnam-si,Sujeong-gu,Sujeong-gu Seongnam-si,Sujeong-gu Seongnam-si Gyeonggi-do,2020,,31021,A0412,A0312
+경기도,성남시 중원구,성남시,중원구,Gyeonggi-do,Seongnam-si,Jungwon-gu,Jungwon-gu Seongnam-si,Jungwon-gu Seongnam-si Gyeonggi-do,2020,,31022,A0412,A0312
+경기도,성남시 분당구,성남시,분당구,Gyeonggi-do,Seongnam-si,Bundang-gu,Bundang-gu Seongnam-si,Bundang-gu Seongnam-si Gyeonggi-do,2020,,31023,A0412,A0312
 경기도,의정부시,의정부시,의정부시,Gyeonggi-do,Uijeongbu-si,Uijeongbu-si,Uijeongbu-si,Uijeongbu-si Gyeonggi-do,2020,,31030,A0425,A0325
-경기도,안양시 ,안양시,,Gyeonggi-do,Anyang-si,,Anyang-si,Anyang-si Gyeonggi-do,2020,,31040,A0417,A0317
+경기도,안양시,안양시,,Gyeonggi-do,Anyang-si,Anyang-si,Anyang-si,Anyang-si Gyeonggi-do,2020,,31040,A0417,A0317
 경기도,안양시 만안구,안양시,만안구,Gyeonggi-do,Anyang-si,Manan-gu,Manan-gu Anyang-si,Manan-gu Anyang-si Gyeonggi-do,2020,,31041,A0417,A0317
 경기도,안양시 동안구,안양시,동안구,Gyeonggi-do,Anyang-si,Dongan-gu,Dongan-gu Anyang-si,Dongan-gu Anyang-si Gyeonggi-do,2020,,31042,A0417,A0317
 경기도,부천시,부천시,부천시,Gyeonggi-do,Bucheon-si,Bucheon-si,Bucheon-si,Bucheon-si Gyeonggi-do,2020,,31050,A0411,A0311
 경기도,광명시,광명시,광명시,Gyeonggi-do,Gwangmyeong-si,Gwangmyeong-si,Gwangmyeong-si,Gwangmyeong-si Gyeonggi-do,2020,,31060,A0404,A0304
 경기도,평택시,평택시,평택시,Gyeonggi-do,Pyeongtaek-si,Pyeongtaek-si,Pyeongtaek-si,Pyeongtaek-si Gyeonggi-do,2020,,31070,A0428,A0328
 경기도,동두천시,동두천시,동두천시,Gyeonggi-do,Dongducheon-si,Dongducheon-si,Dongducheon-si,Dongducheon-si Gyeonggi-do,2020,,31080,A0410,A0310
-경기도,안산시 ,안산시,,Gyeonggi-do,Ansan-si,,Ansan-si,Ansan-si Gyeonggi-do,2020,,31090,A0415,A0315
+경기도,안산시,안산시,,Gyeonggi-do,Ansan-si,Ansan-si,Ansan-si,Ansan-si Gyeonggi-do,2020,,31090,A0415,A0315
 경기도,안산시 상록구,안산시,상록구,Gyeonggi-do,Ansan-si,Sangnok-gu,Sangnok-gu Ansan-si,Sangnok-gu Ansan-si Gyeonggi-do,2020,,31091,A0415,A0315
 경기도,안산시 단원구,안산시,단원구,Gyeonggi-do,Ansan-si,Danwon-gu,Danwon-gu Ansan-si,Danwon-gu Ansan-si Gyeonggi-do,2020,,31092,A0415,A0315
-경기도,고양시 ,고양시,,Gyeonggi-do,Goyang-si,,Goyang-si,Goyang-si Gyeonggi-do,2020,,31100,A0402,A0302
+경기도,고양시,고양시,,Gyeonggi-do,Goyang-si,Goyang-si,Goyang-si,Goyang-si Gyeonggi-do,2020,,31100,A0402,A0302
 경기도,고양시 덕양구,고양시,덕양구,Gyeonggi-do,Goyang-si,Deogyang-gu,Deogyang-gu Goyang-si,Deogyang-gu Goyang-si Gyeonggi-do,2020,,31101,A0402,A0302
 경기도,고양시 일산동구,고양시,일산동구,Gyeonggi-do,Goyang-si,Ilsandong-gu,Ilsandong-gu Goyang-si,Ilsandong-gu Goyang-si Gyeonggi-do,2020,,31103,A0402,A0302
 경기도,고양시 일산서구,고양시,일산서구,Gyeonggi-do,Goyang-si,Ilsanseo-gu,Ilsanseo-gu Goyang-si,Ilsanseo-gu Goyang-si Gyeonggi-do,2020,,31104,A0402,A0302
@@ -108,10 +108,10 @@ sido_kr,sigungu_kr,sigungu_1_kr,sigungu_2_kr,sido_en,sigun_en,sigungu_1_en,sigun
 경기도,군포시,군포시,군포시,Gyeonggi-do,Gunpo-si,Gunpo-si,Gunpo-si,Gunpo-si Gyeonggi-do,2020,,31160,A0407,A0307
 경기도,의왕시,의왕시,의왕시,Gyeonggi-do,Uiwang-si,Uiwang-si,Uiwang-si,Uiwang-si Gyeonggi-do,2020,,31170,A0424,A0324
 경기도,하남시,하남시,하남시,Gyeonggi-do,Hanam-si,Hanam-si,Hanam-si,Hanam-si Gyeonggi-do,2020,,31180,A0430,A0330
-경기도,용인시,용인시,,Gyeonggi-do,Yongin-si,,Yongin-si,Yongin-si Gyeonggi-do,2020,,31190,A0423,A0323
-경기도,용인시 처인구,용인시 ,처인구,Gyeonggi-do,Yongin-si,Cheoin-gu,Cheoin-gu Yongin-si,Cheoin-gu Yongin-si Gyeonggi-do,2020,,31191,A0423,A0323
-경기도,용인시 기흥구,용인시 ,기흥구,Gyeonggi-do,Yongin-si,Giheung-gu,Giheung-gu Yongin-si,Giheung-gu Yongin-si Gyeonggi-do,2020,,31192,A0423,A0323
-경기도,용인시 수지구,용인시 ,수지구,Gyeonggi-do,Yongin-si,Suji-gu,Suji-gu Yongin-si,Suji-gu Yongin-si Gyeonggi-do,2020,,31193,A0423,A0323
+경기도,용인시,용인시,,Gyeonggi-do,Yongin-si,Yongin-si,Yongin-si,Yongin-si Gyeonggi-do,2020,,31190,A0423,A0323
+경기도,용인시 처인구,용인시,처인구,Gyeonggi-do,Yongin-si,Cheoin-gu,Cheoin-gu Yongin-si,Cheoin-gu Yongin-si Gyeonggi-do,2020,,31191,A0423,A0323
+경기도,용인시 기흥구,용인시,기흥구,Gyeonggi-do,Yongin-si,Giheung-gu,Giheung-gu Yongin-si,Giheung-gu Yongin-si Gyeonggi-do,2020,,31192,A0423,A0323
+경기도,용인시 수지구,용인시,수지구,Gyeonggi-do,Yongin-si,Suji-gu,Suji-gu Yongin-si,Suji-gu Yongin-si Gyeonggi-do,2020,,31193,A0423,A0323
 경기도,파주시,파주시,파주시,Gyeonggi-do,Paju-si,Paju-si,Paju-si,Paju-si Gyeonggi-do,2020,,31200,A0427,A0327
 경기도,이천시,이천시,이천시,Gyeonggi-do,Icheon-si,Icheon-si,Icheon-si,Icheon-si Gyeonggi-do,2020,,31210,A0426,A0326
 경기도,안성시,안성시,안성시,Gyeonggi-do,Anseong-si,Anseong-si,Anseong-si,Anseong-si Gyeonggi-do,2020,,31220,A0416,A0316
@@ -144,11 +144,11 @@ sido_kr,sigungu_kr,sigungu_1_kr,sigungu_2_kr,sido_en,sigun_en,sigungu_1_en,sigun
 강원특별자치도,양양군,양양군,양양군,Gangwon State,Yangyang-gun,Yangyang-gun,Yangyang-gun,Yangyang-gun Gangwon State,2020,,32610,A0507,A0407
 충청북도,충주시,충주시,충주시,Chungcheongbuk-do,Chungju-si,Chungju-si,Chungju-si,Chungju-si Chungcheongbuk-do,2020,,33020,A0711,A0611
 충청북도,제천시,제천시,제천시,Chungcheongbuk-do,Jecheon-si,Jecheon-si,Jecheon-si,Jecheon-si Chungcheongbuk-do,2020,,33030,A0707,A0607
-충청북도,청주시 ,청주시 ,상당구,Chungcheongbuk-do,Cheongju-si,,,Cheongju-si,2020,,33040,A0710,A0610
-충청북도,청주시 상당구,청주시 ,상당구,Chungcheongbuk-do,Cheongju-si,Sangdang-gu,Sangdang-gu Cheongju-si,Sangdang-gu Cheongju-si Chungcheongbuk-do,2020,,33041,A0710,A0610
-충청북도,청주시 서원구,청주시 ,서원구,Chungcheongbuk-do,Cheongju-si,Seowon-gu,Seowon-gu Cheongju-si,Seowon-gu Cheongju-si Chungcheongbuk-do,2020,,33042,A0710,A0610
-충청북도,청주시 흥덕구,청주시 ,흥덕구,Chungcheongbuk-do,Cheongju-si,Heungdeok-gu,Heungdeok-gu Cheongju-si,Heungdeok-gu Cheongju-si Chungcheongbuk-do,2020,,33043,A0710,A0610
-충청북도,청주시 청원구,청주시 ,청원구,Chungcheongbuk-do,Cheongju-si,Cheongwon-gu,Cheongwon-gu Cheongju-si,Cheongwon-gu Cheongju-si Chungcheongbuk-do,2020,,33044,A0710,A0610
+충청북도,청주시,청주시,상당구,Chungcheongbuk-do,Cheongju-si,Cheongju-si,,Cheongju-si,2020,,33040,A0710,A0610
+충청북도,청주시 상당구,청주시,상당구,Chungcheongbuk-do,Cheongju-si,Sangdang-gu,Sangdang-gu Cheongju-si,Sangdang-gu Cheongju-si Chungcheongbuk-do,2020,,33041,A0710,A0610
+충청북도,청주시 서원구,청주시,서원구,Chungcheongbuk-do,Cheongju-si,Seowon-gu,Seowon-gu Cheongju-si,Seowon-gu Cheongju-si Chungcheongbuk-do,2020,,33042,A0710,A0610
+충청북도,청주시 흥덕구,청주시,흥덕구,Chungcheongbuk-do,Cheongju-si,Heungdeok-gu,Heungdeok-gu Cheongju-si,Heungdeok-gu Cheongju-si Chungcheongbuk-do,2020,,33043,A0710,A0610
+충청북도,청주시 청원구,청주시,청원구,Chungcheongbuk-do,Cheongju-si,Cheongwon-gu,Cheongwon-gu Cheongju-si,Cheongwon-gu Cheongju-si Chungcheongbuk-do,2020,,33044,A0710,A0610
 충청북도,보은군,보은군,보은군,Chungcheongbuk-do,Boeun-gun,Boeun-gun,Boeun-gun,Boeun-gun Chungcheongbuk-do,2020,,33520,A0703,A0603
 충청북도,옥천군,옥천군,옥천군,Chungcheongbuk-do,Okcheon-gun,Okcheon-gun,Okcheon-gun,Okcheon-gun Chungcheongbuk-do,2020,,33530,A0705,A0605
 충청북도,영동군,영동군,영동군,Chungcheongbuk-do,Yeongdong-gun,Yeongdong-gun,Yeongdong-gun,Yeongdong-gun Chungcheongbuk-do,2020,,33540,A0704,A0604
@@ -157,7 +157,7 @@ sido_kr,sigungu_kr,sigungu_1_kr,sigungu_2_kr,sido_en,sigun_en,sigungu_1_en,sigun
 충청북도,음성군,음성군,음성군,Chungcheongbuk-do,Eumseong-gun,Eumseong-gun,Eumseong-gun,Eumseong-gun Chungcheongbuk-do,2020,,33570,A0706,A0606
 충청북도,단양군,단양군,단양군,Chungcheongbuk-do,Danyang-gun,Danyang-gun,Danyang-gun,Danyang-gun Chungcheongbuk-do,2020,,33580,A0702,A0602
 충청북도,증평군,증평군,증평군,Chungcheongbuk-do,Jeungpyeong-gun,Jeungpyeong-gun,Jeungpyeong-gun,Jeungpyeong-gun Chungcheongbuk-do,2020,,33590,A0708,A0608
-충청남도,천안시 ,천안시,동남구,Chungcheongnam-do,Cheonan-si,,,Cheonan-si Chungcheongnam-do,2020,,34010,A0812,A0712
+충청남도,천안시,천안시,동남구,Chungcheongnam-do,Cheonan-si,Cheonan-si,,Cheonan-si Chungcheongnam-do,2020,,34010,A0812,A0712
 충청남도,천안시 동남구,천안시,동남구,Chungcheongnam-do,Cheonan-si,Dongnam-gu,Dongnam-gu Cheonan-si,Dongnam-gu Cheonan-si Chungcheongnam-do,2020,,34011,A0812,A0712
 충청남도,천안시 서북구,천안시,서북구,Chungcheongnam-do,Cheonan-si,Seobuk-gu,Seobuk-gu Cheonan-si,Seobuk-gu Cheonan-si Chungcheongnam-do,2020,,34012,A0812,A0712
 충청남도,공주시,공주시,공주시,Chungcheongnam-do,Gongju-si,Gongju-si,Gongju-si,Gongju-si Chungcheongnam-do,2020,,34020,A0802,A0702
@@ -174,7 +174,7 @@ sido_kr,sigungu_kr,sigungu_1_kr,sigungu_2_kr,sido_en,sigun_en,sigungu_1_en,sigun
 충청남도,홍성군,홍성군,홍성군,Chungcheongnam-do,Hongseong-gun,Hongseong-gun,Hongseong-gun,Hongseong-gun Chungcheongnam-do,2020,,34560,A0815,A0715
 충청남도,예산군,예산군,예산군,Chungcheongnam-do,Yesan-gun,Yesan-gun,Yesan-gun,Yesan-gun Chungcheongnam-do,2020,,34570,A0811,A0711
 충청남도,태안군,태안군,태안군,Chungcheongnam-do,Taean-gun,Taean-gun,Taean-gun,Taean-gun Chungcheongnam-do,2020,,34580,A0814,A0714
-전라북도,전주시 ,전주시,,Jeollabuk-do,Jeonju-si,,,Jeonju-si Jeollabuk-do,2020,,35010,A1112,A1012
+전라북도,전주시,전주시,,Jeollabuk-do,Jeonju-si,Jeonju-si,,Jeonju-si Jeollabuk-do,2020,,35010,A1112,A1012
 전라북도,전주시 완산구,전주시,완산구,Jeollabuk-do,Jeonju-si,Wansan-gu,Wansan-gu Jeonju-si,Wansan-gu Jeonju-si Jeollabuk-do,2020,,35011,A1112,A1012
 전라북도,전주시 덕진구,전주시,덕진구,Jeollabuk-do,Jeonju-si,Deokjin-gu,Deokjin-gu Jeonju-si,Deokjin-gu Jeonju-si Jeollabuk-do,2020,,35012,A1112,A1012
 전라북도,군산시,군산시,군산시,Jeollabuk-do,Gunsan-si,Gunsan-si,Gunsan-si,Gunsan-si Jeollabuk-do,2020,,35020,A1102,A1002
@@ -212,7 +212,7 @@ sido_kr,sigungu_kr,sigungu_1_kr,sigungu_2_kr,sido_en,sigun_en,sigungu_1_en,sigun
 전라남도,완도군,완도군,완도군,Jeollanam-do,Wando-gun,Wando-gun,Wando-gun,Wando-gun Jeollanam-do,2020,,36660,A1216,A1116
 전라남도,진도군,진도군,진도군,Jeollanam-do,Jindo-gun,Jindo-gun,Jindo-gun,Jindo-gun Jeollanam-do,2020,,36670,A1219,A1119
 전라남도,신안군,신안군,신안군,Jeollanam-do,Sinan-gun,Sinan-gun,Sinan-gun,Sinan-gun Jeollanam-do,2020,,36680,A1212,A1112
-경상북도,포항시,포항시,,Gyeongsangbuk-do,Pohang-si,,,Pohang-si Gyeongsangbuk-do,2020,,37010,A1423,A1323
+경상북도,포항시,포항시,,Gyeongsangbuk-do,Pohang-si,Pohang-si,,Pohang-si Gyeongsangbuk-do,2020,,37010,A1423,A1323
 경상북도,포항시 남구,포항시,남구,Gyeongsangbuk-do,Pohang-si,Nam-gu,Nam-gu Pohang-si,Nam-gu Pohang-si Gyeongsangbuk-do,2020,,37011,A1423,A1323
 경상북도,포항시 북구,포항시,북구,Gyeongsangbuk-do,Pohang-si,Buk-gu,Buk-gu Pohang-si,Buk-gu Pohang-si Gyeongsangbuk-do,2020,,37012,A1423,A1323
 경상북도,경주시,경주시,경주시,Gyeongsangbuk-do,Gyeongju-si,Gyeongju-si,Gyeongju-si,Gyeongju-si Gyeongsangbuk-do,2020,,37020,A1402,A1302
@@ -243,11 +243,11 @@ sido_kr,sigungu_kr,sigungu_1_kr,sigungu_2_kr,sido_en,sigun_en,sigungu_1_en,sigun
 경상남도,밀양시,밀양시,밀양시,Gyeongsangnam-do,Miryang-si,Miryang-si,Miryang-si,Miryang-si Gyeongsangnam-do,2020,,38080,A1706,A1606
 경상남도,거제시,거제시,거제시,Gyeongsangnam-do,Geoje-si,Geoje-si,Geoje-si,Geoje-si Gyeongsangnam-do,2020,,38090,A1701,A1601
 경상남도,양산시,양산시,양산시,Gyeongsangnam-do,Yangsan-si,Yangsan-si,Yangsan-si,Yangsan-si Gyeongsangnam-do,2020,,38100,A1709,A1609
-경상남도,창원시 ,창원시 ,,Gyeongsangnam-do,Changwon-si,,,Changwon-si Gyeongsangnam-do,2020,,38110,A1713,A1613
-경상남도,창원시 의창구,창원시 ,의창구,Gyeongsangnam-do,Changwon-si,Uichang-gu,Uichang-gu Changwon-si,Uichang-gu Changwon-si Gyeongsangnam-do,2020,,38111,A1713,A1613
-경상남도,창원시 성산구,창원시 ,성산구,Gyeongsangnam-do,Changwon-si,Seongsan-gu,Seongsan-gu Changwon-si,Seongsan-gu Changwon-si Gyeongsangnam-do,2020,,38112,A1713,A1613
-경상남도,창원시 마산합포구,창원시 ,마산합포구,Gyeongsangnam-do,Changwon-si,Masanhappo-gu,Masanhappo-gu Changwon-si,Masanhappo-gu Changwon-si Gyeongsangnam-do,2020,,38113,A1713,A1613
-경상남도,창원시 마산회원구,창원시 ,마산회원구,Gyeongsangnam-do,Changwon-si,Masanhoewon-gu,Masanhoewon-gu Changwon-si,Masanhoewon-gu Changwon-si Gyeongsangnam-do,2020,,38114,A1713,A1613
+경상남도,창원시,창원시,,Gyeongsangnam-do,Changwon-si,Changwon-si,,Changwon-si Gyeongsangnam-do,2020,,38110,A1713,A1613
+경상남도,창원시 의창구,창원시,의창구,Gyeongsangnam-do,Changwon-si,Uichang-gu,Uichang-gu Changwon-si,Uichang-gu Changwon-si Gyeongsangnam-do,2020,,38111,A1713,A1613
+경상남도,창원시 성산구,창원시,성산구,Gyeongsangnam-do,Changwon-si,Seongsan-gu,Seongsan-gu Changwon-si,Seongsan-gu Changwon-si Gyeongsangnam-do,2020,,38112,A1713,A1613
+경상남도,창원시 마산합포구,창원시,마산합포구,Gyeongsangnam-do,Changwon-si,Masanhappo-gu,Masanhappo-gu Changwon-si,Masanhappo-gu Changwon-si Gyeongsangnam-do,2020,,38113,A1713,A1613
+경상남도,창원시 마산회원구,창원시,마산회원구,Gyeongsangnam-do,Changwon-si,Masanhoewon-gu,Masanhoewon-gu Changwon-si,Masanhoewon-gu Changwon-si Gyeongsangnam-do,2020,,38114,A1713,A1613
 경상남도,창원시 진해구,창원시 ,진해구,Gyeongsangnam-do,Changwon-si,Jinhae-gu,Jinhae-gu Changwon-si,Jinhae-gu Changwon-si Gyeongsangnam-do,2020,,38115,A1713,A1613
 경상남도,의령군,의령군,의령군,Gyeongsangnam-do,Uiryeong-gun,Uiryeong-gun,Uiryeong-gun,Uiryeong-gun Gyeongsangnam-do,2020,,38510,A1710,A1610
 경상남도,함안군,함안군,함안군,Gyeongsangnam-do,Haman-gun,Haman-gun,Haman-gun,Haman-gun Gyeongsangnam-do,2020,,38520,A1716,A1616

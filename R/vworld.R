@@ -1,3 +1,0 @@
-## Vworld OpenAPI access
-
-## TODO

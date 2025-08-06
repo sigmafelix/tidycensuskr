@@ -9,4 +9,4 @@
 library(testthat)
 library(habit)
 
-test_check("habit")
+test_check("tidycensuskr")
