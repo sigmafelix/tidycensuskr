@@ -48,7 +48,8 @@ anycensus <- function(codes = NULL,
 
 
 #' Query Korean census data by admin code (province or municipality) and year
-#'
+#' @description The function queries a long format census data frame ([`censuskor`])
+#' for specific administrative codes (if provided)
 #' @param codes Integer or character vector of admin codes (e.g. 11, 26) or admin names (e.g. "Seoul").
 #' @param type character: "population", "tax", or "mortality". Defaults to "population".
 #' @param year  Integer: 2020.

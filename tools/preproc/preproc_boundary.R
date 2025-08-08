@@ -93,26 +93,44 @@ sgg_lookup <- read.csv("inst/extdata/lookup_district_code.csv", fileEncoding = "
 df_tax_compact <- df_tax %>%
   dplyr::transmute(
     sgg_tax_global = C1,
-    tax_global_total_milkrw = DT
+    tax_global_total = DT
   ) %>%
   dplyr::inner_join(
-    sgg_lookup[, c("sgg_tax_global", "sido_en", "sigun_en", "sigungu_cd")],
+    sgg_lookup[, c("sgg_tax_global", "sido_en", "sigungu_1_en", "sigungu_cd")],
     multiple = "first"
   )
 df_tax_income_compact <- df_tax_income %>%
+  dplyr::filter(
+    C2_NM == "결정세액"
+  ) %>%
   dplyr::transmute(
     sgg_tax_income = C1,
-    tax_income_total_milkrw = DT
+    val = DT,
+    unit_abbr = abbreviate(tolower(UNIT_NM_ENG))
   ) %>%
+  tidyr::pivot_wider(
+    names_from = unit_abbr,
+    values_from = val,
+    values_fn = as.integer
+  ) %>%
+  dplyr::rename(
+    tax_income_total = inmw
+  ) %>%
+  dplyr::select(-inpr) %>%
+  # dplyr::group_by(sgg_tax_income) %>%
+  # dplyr::summarise(
+  #   tax_income_percapita_milkrw = inmw / inpr
+  # ) %>%
+  # dplyr::ungroup() %>%
   dplyr::inner_join(
-    sgg_lookup[, c("sgg_tax_income", "sido_en", "sigun_en", "sigungu_cd")],
+    sgg_lookup[, c("sgg_tax_income", "sido_en", "sigungu_1_en", "sigungu_cd")],
     multiple = "first"
   )
 
 df_pop2 <- df_pop %>%
   dplyr::mutate(
     sex = plyr::mapvalues(C2, c(0, 1, 2), c("total", "male", "female")),
-    type = plyr::mapvalues(ITM_ID, c("T00", "T60"), c("population", "population_nonrelative"))
+    type = plyr::mapvalues(ITM_ID, c("T00", "T60"), c("population_relative", "population_nonrelative"))
   ) %>%
   dplyr::select(C1, C1_NM, sex, type, DT) %>%
   tidyr::pivot_wider(
@@ -135,7 +153,7 @@ df_pop2 <- df_pop %>%
 df_mort_clean <- df_mortality %>%
   dplyr::transmute(
     sigungu_cd = as.integer(C2), 
-    sex_cd = C3,
+    sex_cd = C3,# plyr::mapvalues(C3, c("0", "1", "2"), c("total", "male", "female")),
     category = "All causes",
     r_mortality_100k = DT) %>%
   tidyr::pivot_wider(
@@ -231,14 +249,14 @@ censuskor <-
   dplyr::rename(
     adm1 = sido_en,
     adm2 = sigungu_1_en,
-    adm2_other = sigun_en,
+    # adm2_other = sigun_en,
     adm2_code = sigungu_cd
   ) %>%
   dplyr::mutate(
     year = 2020
   ) %>%
   dplyr::select(
-    year, adm1, adm2, adm2_other, adm2_code,
+    year, adm1, adm2, adm2_code,#adm2_other,
     type, class1, class2, unit, value
   ) %>%
   dplyr::mutate(
