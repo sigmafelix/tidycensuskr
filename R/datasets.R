@@ -29,7 +29,6 @@
 #' \describe{
 #'   \item{adm1}{Name of the province-level (Sido) administrative unit}
 #'   \item{adm2}{Name of the district/municipal-level (Sigungu) administrative unit}
-#'   \item{adm2_other}{Name of the district/municipal-level (Sigungu) administrative unit without non-autonomous sub-districts}
 #'   \item{adm2_code}{Code of the district/municipal-level (Sigungu) administrative unit}
 #'   \item{type}{Type of variable, e.g., "tax", "population", "mortality"}
 #'   \item{class1}{First-level classification of the variable depending on the type}

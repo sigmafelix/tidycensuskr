@@ -35,7 +35,7 @@
 "A0309","10279","Incheon","Ongjin-gun",23520
 "A0310","85839","Incheon","Jung-gu",23010
 "A0401","38006","Gyeonggi-do","Gapyeong-gun",31570
-"A0402","1019249","Gyeonggi-do","",31100
+"A0402","1019249","Gyeonggi-do","Goyang-si",31100
 "A0403","249368","Gyeonggi-do","Gwacheon-si",31110
 "A0404","245157","Gyeonggi-do","Gwangmyeong-si",31060
 "A0405","279973","Gyeonggi-do","Gwangju-si",31250
@@ -45,18 +45,18 @@
 "A0409","517017","Gyeonggi-do","Namyangju-si",31130
 "A0410","26798","Gyeonggi-do","Dongducheon-si",31080
 "A0411","539062","Gyeonggi-do","Bucheon-si",31050
-"A0412","2179084","Gyeonggi-do","",31020
-"A0413","1087486","Gyeonggi-do","",31010
+"A0412","2179084","Gyeonggi-do","Seongnam-si",31020
+"A0413","1087486","Gyeonggi-do","Suwon-si",31010
 "A0414","296866","Gyeonggi-do","Siheung-si",31150
-"A0415","364163","Gyeonggi-do","",31090
+"A0415","364163","Gyeonggi-do","Ansan-si",31090
 "A0416","108898","Gyeonggi-do","Anseong-si",31220
-"A0417","499915","Gyeonggi-do","",31040
+"A0417","499915","Gyeonggi-do","Anyang-si",31040
 "A0418","125667","Gyeonggi-do","Yangju-si",31260
 "A0419","136322","Gyeonggi-do","Yangpyeong-gun",31580
 "A0420","62354","Gyeonggi-do","Yeoju-si",31280
 "A0421","12348","Gyeonggi-do","Yeoncheon-gun",31550
 "A0422","124266","Gyeonggi-do","Osan-si",31140
-"A0423","1350480","Gyeonggi-do","",31190
+"A0423","1350480","Gyeonggi-do","Yongin-si",31190
 "A0424","171611","Gyeonggi-do","Uiwang-si",31170
 "A0425","191543","Gyeonggi-do","Uijeongbu-si",31030
 "A0426","140625","Gyeonggi-do","Icheon-si",31210
@@ -97,7 +97,7 @@
 "A0707","54249","Chungcheongbuk-do","Jecheon-si",33030
 "A0708","12408","Chungcheongbuk-do","Jeungpyeong-gun",33590
 "A0709","44149","Chungcheongbuk-do","Jincheon-gun",33550
-"A0710","524478","Chungcheongbuk-do","",33040
+"A0710","524478","Chungcheongbuk-do","Cheongju-si",33040
 "A0711","103493","Chungcheongbuk-do","Chungju-si",33020
 "A0801","19396","Chungcheongnam-do","Gyeryong-si",34070
 "A0802","40976","Chungcheongnam-do","Gongju-si",34020
@@ -110,7 +110,7 @@
 "A0809","16473","Chungcheongnam-do","Seocheon-gun",34540
 "A0810","223877","Chungcheongnam-do","Asan-si",34040
 "A0811","30498","Chungcheongnam-do","Yesan-gun",34570
-"A0812","511559","Chungcheongnam-do","",34010
+"A0812","511559","Chungcheongnam-do","Cheonan-si",34010
 "A0813","6932","Chungcheongnam-do","Cheongyang-gun",34550
 "A0814","26385","Chungcheongnam-do","Taean-gun",34580
 "A0815","43116","Chungcheongnam-do","Hongseong-gun",34560
@@ -131,7 +131,7 @@
 "A1109","122391","Jeollabuk-do","Iksan-si",35030
 "A1110","5345","Jeollabuk-do","Imsil-gun",35550
 "A1111","3301","Jeollabuk-do","Jangsu-gun",35540
-"A1112","450263","Jeollabuk-do","",35010
+"A1112","450263","Jeollabuk-do","Jeonju-si",35010
 "A1113","31065","Jeollabuk-do","Jeongeup-si",35040
 "A1114","5620","Jeollabuk-do","Jinan-gun",35520
 "A1201","7606","Jeollanam-do","Gangjin-gun",36590
@@ -186,7 +186,7 @@
 "A1420","18471","Gyeongsangbuk-do","Cheongdo-gun",37560
 "A1421","4314","Gyeongsangbuk-do","Cheongsong-gun",37530
 "A1422","46601","Gyeongsangbuk-do","Chilgok-gun",37590
-"A1423","309010","Gyeongsangbuk-do","",37010
+"A1423","309010","Gyeongsangbuk-do","Pohang-si",37010
 "A1501","151983","Busan","Gangseo-gu",21120
 "A1502","205167","Busan","Geumjeong-gu",21110
 "A1503","93481","Busan","Gijang-gun",21510
@@ -220,7 +220,7 @@
 "A1710","5416","Gyeongsangnam-do","Uiryeong-gun",38510
 "A1711","234446","Gyeongsangnam-do","Jinju-si",38030
 "A1712","17680","Gyeongsangnam-do","Changnyeong-gun",38530
-"A1713","707124","Gyeongsangnam-do","",38110
+"A1713","707124","Gyeongsangnam-do","Changwon-si",38110
 "A1714","53335","Gyeongsangnam-do","Tongyeong-si",38050
 "A1715","10721","Gyeongsangnam-do","Hadong-gun",38560
 "A1716","28144","Gyeongsangnam-do","Haman-gun",38520

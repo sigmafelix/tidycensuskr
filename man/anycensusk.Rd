@@ -24,7 +24,8 @@ anycensusk(
 A data.frame object containing census data for the specified codes and year.
 }
 \description{
-Query Korean census data by admin code (province or municipality) and year
+The function queries a long format census data frame (\code{\link{censuskor}})
+for specific administrative codes (if provided)
 }
 \examples{
 anycensusk(codes = "21", type = "mortality")
