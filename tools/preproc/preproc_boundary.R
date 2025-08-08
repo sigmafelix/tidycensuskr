@@ -227,12 +227,12 @@ df_mort_long <- df_mort_clean %>%
   dplyr::rename(class1 = category) %>%
   dplyr::select(-name) %>%
   dplyr::filter(value != "-") %>%
-  dplyr::mutate(value = as.numeric(value)) %>%
-  dplyr::inner_join(
-    sgg_lookup[, c("sigungu_cd", "sido_en", "sigungu_1_en")],
-    by = "sigungu_cd",
-    multiple = "first"
-  )
+  dplyr::mutate(value = as.numeric(value))# %>%
+  # dplyr::inner_join(
+  #   sgg_lookup[, c("sigungu_cd", "sido_en", "sigungu_1_en")],
+  #   by = "sigungu_cd",
+  #   multiple = "first"
+  # )
 
 
 # Bind all long tables
