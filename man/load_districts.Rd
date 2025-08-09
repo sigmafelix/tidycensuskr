@@ -4,13 +4,10 @@
 \alias{load_districts}
 \title{Statistics types list}
 \usage{
-load_districts(crs = NULL)
+load_districts(year = 2020)
 }
 \arguments{
-\item{crs}{Coordinate Reference System (CRS) to transform the polygons to.
-If \code{NULL}, the original CRS is used.}
-
-\item{...}{Additional arguments passed to the \code{sf} function.}
+\item{year}{integer(1). census year to load. Defaults to 2020.}
 }
 \value{
 An \code{sf} object containing the district polygons.
@@ -23,6 +20,21 @@ This package provides a list of statistics types:
 \itemize{
 \item \code{population}: Population statistics fro KOSIS.
 }
+
+The function loads district polygons for the specified year from the package's
+extdata directory. The polygons are stored in an RDS file and are read using
+the \code{readRDS} function. The polygons are in the Simple Features (sf) format,
+which is suitable for spatial data analysis in R. The polygons include following
+attributes:
+\itemize{
+\item \code{year}: The census year (e.g., 2020).
+\item \code{adm2_code}: The administrative code for the district.
+}
+}
+\examples{
+library(sf)
+sf_use_s2(FALSE)
+sf_2020 <- load_districts(year = 2020)
 }
 \concept{Documentation}
 \keyword{Load}
