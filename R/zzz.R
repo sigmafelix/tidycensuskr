@@ -44,23 +44,29 @@ set_kosis_key <- function(file) {
 
 
 #' Load `sf` district polygons
-#' @param crs Coordinate Reference System (CRS) to transform the polygons to.
-#'   If `NULL`, the original CRS is used.
-#' @param ... Additional arguments passed to the `sf` function.
-#' @importFrom sf st_transform
+#' @param year integer(1). census year to load. Defaults to 2020.
 #' @return An `sf` object containing the district polygons.
+#' @details
+#' The function loads district polygons for the specified year from the package's
+#' extdata directory. The polygons are stored in an RDS file and are read using
+#' the `readRDS` function. The polygons are in the Simple Features (sf) format,
+#' which is suitable for spatial data analysis in R. The polygons include following
+#' attributes:
+#' - `year`: The census year (e.g., 2020).
+#' - `adm2_code`: The administrative code for the district.
+#' @examples
+#' library(sf)
+#' sf_use_s2(FALSE)
+#' sf_2020 <- load_districts(year = 2020)
 #' @export
-load_districts <- function(crs = NULL) {
+load_districts <- function(year = 2020) {
   # Load the district polygons using the sf package
-  sf_sgg_2020 <- NULL
-  load(system.file("extdata", "sgg2020.RData", package = "tidycensuskr"))
-  if (!is.null(crs)) {
-    # Transform the CRS if specified
-    districts <- sf::st_transform(sf_sgg_2020, crs)
-  } else {
-    districts <- sf_sgg_2020
-  }
+  file_path <- sprintf("adm2_sf_%d.rds", year)
 
+  districts <-
+    readRDS(
+      system.file("extdata", file_path, package = "tidycensuskr")
+    )
   # Return the loaded districts
   return(districts)
 }
