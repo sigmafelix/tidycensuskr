@@ -265,6 +265,110 @@ censuskor <-
                        as.integer(adm2_code))
   )
 
+
+sgg_lookup_large <- read.csv("tools/adm_sgis_lookup_2024.csv", fileEncoding = "UTF-8-BOM")
+sgg_lookup_ally <-
+  sgg_lookup_large %>%
+  dplyr::select(sgis_2010, sgis_2015, sgis_2020) %>%
+  dplyr::mutate(
+    dplyr::across(
+      dplyr::everything(),
+      ~ as.integer(substr(., 1, 5))
+    )
+  ) %>%
+  dplyr::distinct() %>%
+  dplyr::mutate(
+    dplyr::across(
+      dplyr::everything(),
+      ~ data.table::nafill(., type = "locf")
+    )
+  ) %>%
+  dplyr::distinct() %>%
+  dplyr::inner_join(
+    sgg_lookup %>%
+    dplyr::mutate(
+      sigungu_cd = ifelse(substr(sigungu_cd, 3, 3) %in% c("5", "6"),
+                        sigungu_cd - 200,
+                        sigungu_cd)
+    ) %>%
+    .[, c("sigungu_cd", "sido_en", "sigungu_1_en")],
+    by = c("sgis_2020" = "sigungu_cd"),
+    multiple = "first"
+  )
+sgg_lookup_ally
+
+mort_a <- readxl::read_excel(
+  file.path("tools", "mortality_2010_2015_total.xlsx"),
+  skip = 1
+)
+names(mort_a) <- c("year", "cause", "sigungu_cd", "total", "male", "female")
+mort_a[["year"]] <- rep(c(2010, 2015), each = nrow(mort_a) / 2)
+mort_aa <-
+  mort_a %>%
+  dplyr::mutate(
+    type = "mortality",
+    unit = "per 100k population",
+    class1 = "All causes"
+  ) %>%
+  tidyr::pivot_longer(
+    cols = c("total", "male", "female"),
+    names_to = "class2",
+    values_to = "value"
+  ) %>%
+  dplyr::mutate(
+    sigungu_cd = stringi::stri_extract_all_regex(sigungu_cd, pattern = "[0-9]{5,5}") %>%
+      unlist() %>%
+      as.integer()
+  ) %>%
+  dplyr::select(-cause)# %>%
+  # dplyr::inner_join(
+  #   sgg_lookup %>%
+  #   dplyr::mutate(
+  #     sigungu_cd = ifelse(substr(sigungu_cd, 3, 3) %in% c("5", "6"),
+  #                       sigungu_cd - 200,
+  #                       sigungu_cd)
+  #   ) %>%
+  #   .[, c("sigungu_cd", "sido_en", "sigungu_1_en")],
+  #   by = "sigungu_cd",
+  #   multiple = "first"
+  # )
+mort_aa[is.na(mort_aa[["sido_en"]]), ]
+mort_aa[mort_aa[["sigungu_1_en"]] == "Yeoju-si", ]
+mort_aa[mort_aa[["sigungu_cd"]] == 22310, ]
+
+mort_aa10 <- mort_aa %>%
+  dplyr::filter(year == 2010) %>%
+  dplyr::inner_join(
+    sgg_lookup_ally[, c("sgis_2010", "sido_en", "sigungu_1_en")],
+    by = c("sigungu_cd" = "sgis_2010"),
+    multiple = "first"
+  )
+mort_aa15 <- mort_aa %>%
+  dplyr::filter(year == 2015) %>%
+  dplyr::inner_join(
+    sgg_lookup_ally[, c("sgis_2015", "sido_en", "sigungu_1_en")],
+    by = c("sigungu_cd" = "sgis_2015"),
+    multiple = "first"
+  )
+
+mort_aa1015 <- dplyr::bind_rows(mort_aa10, mort_aa15) %>%
+  dplyr::rename(
+    adm2_code = sigungu_cd,
+    adm1 = sido_en,
+    adm2 = sigungu_1_en
+  ) %>%
+  dplyr::select(year, adm1, adm2, adm2_code, type, class1, class2, unit, value) %>%
+  dplyr::mutate(
+    value = as.numeric(value)
+  )
+
+censuskor <-
+  censuskor %>%
+  dplyr::mutate(value = as.numeric(value)) %>%
+  dplyr::bind_rows(mort_aa1015)
+
+table(censuskor$type, censuskor$year)
+
 usethis::use_data(censuskor, overwrite = TRUE)
 
 df_tax_k <- cbind(df_tax, sggnm_si)
