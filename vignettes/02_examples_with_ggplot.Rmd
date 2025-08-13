@@ -1,11 +1,137 @@
 ---
-title: "Untitled"
+title: "Examples with ggplot"
 output: html_document
 date: "`r format(Sys.Date(), '%B %d, %Y')`"
 ---
+   
+                                                                                                               
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+library(ggthemes)
+library(sf)
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+```{r load-data}
+load("~/tidycensuskr/data/censuskor.rda")
+adm2_sf_2020 <- readRDS("~/tidycensuskr/inst/extdata/adm2_sf_2020.rds")
+```
+
+```{r make-wide, include=FALSE}
+
+df_wide <- censuskor %>%
+  filter(
+    year == 2020 &
+      (
+        (type == "tax" & class1 == "income") |
+        (type == "population" & class1 == "relative" & class2 %in% c("total","male","female")) |
+        (type == "mortality" & class1 == "All causes" & class2 == "total") |
+        (type == "economy")
+      )
+  ) %>%
+  mutate(
+    variable = case_when(
+      type == "tax" ~ "income",
+      type == "population" & class2 == "total" ~ "population",
+      type == "population" & class2 == "male"  ~ "male",
+      type == "population" & class2 == "female"~ "female",
+      type == "mortality" ~ "mortality",
+      type == "economy"   ~ "economy"
+    )
+  ) %>%
+  select(adm1, adm2, adm2_code, variable, value) %>%
+  pivot_wider(names_from = variable, values_from = value) %>%
+  mutate(
+    across(c(income, population, male, female, mortality, economy), as.numeric)
+  )
 ```
 
 
+
+### Plot 1: Income vs Mortality
+```{r plot-income-vs-mortality}
+df_wide <- df_wide %>% mutate(Seoul = if_else(adm1 %in% c("Seoul", "Incheon", "Gyeonggi-do"), 1L, 0L))
+
+ggplot(df_wide, aes(x = income, y = mortality)) +
+  geom_point(aes(color = factor(Seoul)), size = 3, alpha = 0.7) +
+    scale_color_manual(
+    values = c("0" = "#9E9E9E", "1" = "#E41A1C"),
+    labels = c("Other regions", "Seoul Metropolitan Area"),
+    name   = NULL
+  ) +
+  labs(
+    title = "Mortality rate by income level in South Korea (2020)",
+    x = "Income (million KWR)",
+    y = "Mortality rate (per 100k population)"
+  ) +
+  theme_bw()
+
+```
+
+### Plot 2: Sex Ratio Distribution in SMA 
+```{r plot-sex-ratio-sma}
+df_wide_seoul <- df_wide %>% filter(Seoul == 1) %>% 
+                            mutate(sex_ratio = male / female * 100)
+
+ggplot(df_wide_seoul, aes(x = sex_ratio, fill = adm1)) +
+  geom_histogram(alpha = 0.7, position = "identity", bins = 30) +
+  scale_fill_manual(values = c("Seoul" = "darkorange", "Incheon" = "purple", "Gyeonggi-do"="cyan4")) +
+  labs(
+    x = "Sex ratio (male per 100 female)",
+    y = "Frequency",
+    title = "Sex ratio distribution in Seoul Metropolitan Area (2020)"
+  ) +
+  theme_bw()
+
+```
+
+### Plot 2-2: Sex Ratio Distribution in SMA 2
+```{r plot-sex-ratio-sma-facet, fig.width=10, fig.height=4}
+
+bg_all <- df_wide_seoul %>% select(sex_ratio)
+
+ggplot() +
+  # 1) background distribution
+  geom_histogram(
+    data = bg_all, aes(x = sex_ratio, y = after_stat(density)),
+    bins = 20, fill = "grey80", color = NA
+  ) +
+  # 2) regional distribution
+  geom_histogram(
+    data = df_wide_seoul, aes(x = sex_ratio, y = after_stat(density), fill = adm1),
+    bins = 20, alpha = 0.7, color = NA, position = "identity"
+  ) +
+  facet_wrap(~ adm1, ncol = 3) +
+  scale_fill_manual(values = c(
+    "Seoul" = "darkorange", "Incheon" = "purple", "Gyeonggi-do"= "cyan4")) +
+  labs(
+    title = "Sex ratio distribution by region (SMA, 2020)",
+    x = "Sex ratio (male per 100 female)",
+    y = "Density"
+  ) +
+  theme_bw()
+```
+
+
+### Plot 3: choropleth map
+
+```{r choroploth, fig.width=10, fig.height=4}
+
+adm2_sf_2020_seoul <- adm2_sf_2020 %>% inner_join(df_wide_seoul, by = "adm2_code")
+
+ggplot(adm2_sf_2020_seoul) +
+  geom_sf(aes(fill = sex_ratio), color = "gray80") +
+  theme_void() +
+  scale_fill_gradient2(
+    low = "red", mid = "white", high = "blue", 
+    midpoint = 100, 
+    name = "Sex ratio\n(male per 100 female)"
+  ) +
+  labs(
+    title = "Sex ratio in Seoul Metropolitan Area (2020)",
+    color = "ADM1"
+  )
+```
