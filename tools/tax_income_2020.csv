@@ -1,230 +1,230 @@
-"sgg_tax_income","tax_income_total","sido_en","sigungu_1_en","sigungu_cd"
-"A0101",4608010,"Seoul","Gangnam-gu",11230
-"A0102",419824,"Seoul","Gangdong-gu",11250
-"A0103",48292,"Seoul","Gangbuk-gu",11090
-"A0104",883552,"Seoul","Gangseo-gu",11160
-"A0105",172726,"Seoul","Gwanak-gu",11210
-"A0106",189493,"Seoul","Gwangjin-gu",11050
-"A0107",392689,"Seoul","Guro-gu",11170
-"A0108",487892,"Seoul","Geumcheon-gu",11180
-"A0109",115517,"Seoul","Nowon-gu",11110
-"A0110",60799,"Seoul","Dobong-gu",11100
-"A0111",196101,"Seoul","Dongdaemun-gu",11060
-"A0112",187735,"Seoul","Dongjak-gu",11200
-"A0113",783056,"Seoul","Mapo-gu",11140
-"A0114",304136,"Seoul","Seodaemun-gu",11130
-"A0115",2272505,"Seoul","Seocho-gu",11220
-"A0116",537686,"Seoul","Seongdong-gu",11040
-"A0117",176029,"Seoul","Seongbuk-gu",11080
-"A0118",1287042,"Seoul","Songpa-gu",11240
-"A0119",175601,"Seoul","Yangcheon-gu",11150
-"A0120",3753514,"Seoul","Yeongdeungpo-gu",11190
-"A0121",1390734,"Seoul","Yongsan-gu",11030
-"A0122",90201,"Seoul","Eunpyeong-gu",11120
-"A0123",2623529,"Seoul","Jongno-gu",11010
-"A0124",3064773,"Seoul","Jung-gu",11020
-"A0125",90336,"Seoul","Jungnang-gu",11070
-"A0201",25013,"Incheon","Ganghwa-gun",23510
-"A0202",93679,"Incheon","Gyeyang-gu",23070
-"A0203",140498,"Incheon","Michuhol-gu",23090
-"A0204",431034,"Incheon","Namdong-gu",23050
-"A0205",221681,"Incheon","Dong-gu",23020
-"A0206",277049,"Incheon","Bupyeong-gu",23060
-"A0207",380682,"Incheon","Seo-gu",23080
-"A0208",368479,"Incheon","Yeonsu-gu",23040
-"A0209",7283,"Incheon","Ongjin-gun",23520
-"A0210",166484,"Incheon","Jung-gu",23010
-"A0301",22324,"Gyeonggi-do","Gapyeong-gun",31570
-"A0302",410871,"Gyeonggi-do","Goyang-si",31100
-"A0303",151716,"Gyeonggi-do","Gwacheon-si",31110
-"A0304",240410,"Gyeonggi-do","Gwangmyeong-si",31060
-"A0305",211317,"Gyeonggi-do","Gwangju-si",31250
-"A0306",54952,"Gyeonggi-do","Guri-si",31120
-"A0307",160556,"Gyeonggi-do","Gunpo-si",31160
-"A0308",295960,"Gyeonggi-do","Gimpo-si",31230
-"A0309",219682,"Gyeonggi-do","Namyangju-si",31130
-"A0310",23480,"Gyeonggi-do","Dongducheon-si",31080
-"A0311",381813,"Gyeonggi-do","Bucheon-si",31050
-"A0312",2281902,"Gyeonggi-do","Seongnam-si",31020
-"A0313",3309303,"Gyeonggi-do","Suwon-si",31010
-"A0314",388130,"Gyeonggi-do","Siheung-si",31150
-"A0315",589153,"Gyeonggi-do","Ansan-si",31090
-"A0316",197447,"Gyeonggi-do","Anseong-si",31220
-"A0317",518998,"Gyeonggi-do","Anyang-si",31040
-"A0318",105556,"Gyeonggi-do","Yangju-si",31260
-"A0319",30470,"Gyeonggi-do","Yangpyeong-gun",31580
-"A0320",58291,"Gyeonggi-do","Yeoju-si",31280
-"A0321",16555,"Gyeonggi-do","Yeoncheon-gun",31550
-"A0322",104572,"Gyeonggi-do","Osan-si",31140
-"A0323",1438123,"Gyeonggi-do","Yongin-si",31190
-"A0324",94252,"Gyeonggi-do","Uiwang-si",31170
-"A0325",137984,"Gyeonggi-do","Uijeongbu-si",31030
-"A0326",828194,"Gyeonggi-do","Icheon-si",31210
-"A0327",242993,"Gyeonggi-do","Paju-si",31200
-"A0328",516084,"Gyeonggi-do","Pyeongtaek-si",31070
-"A0329",132444,"Gyeonggi-do","Pocheon-si",31270
-"A0330",152856,"Gyeonggi-do","Hanam-si",31180
-"A0331",1451518,"Gyeonggi-do","Hwaseong-si",31240
-"A0401",89290,"Gangwon State","Gangneung-si",32030
-"A0402",9398,"Gangwon State","Goseong-gun",32600
-"A0403",34352,"Gangwon State","Donghae-si",32040
-"A0404",38110,"Gangwon State","Samcheok-si",32070
-"A0405",21119,"Gangwon State","Sokcho-si",32060
-"A0406",5816,"Gangwon State","Yanggu-gun",32580
-"A0407",8648,"Gangwon State","Yangyang-gun",32610
-"A0408",17476,"Gangwon State","Yeongwol-gun",32530
-"A0409",184328,"Gangwon State","Wonju-si",32020
-"A0410",7949,"Gangwon State","Inje-gun",32590
-"A0411",29752,"Gangwon State","Jeongseon-gun",32550
-"A0412",10310,"Gangwon State","Cheorwon-gun",32560
-"A0413",199802,"Gangwon State","Chuncheon-si",32010
-"A0414",16899,"Gangwon State","Taebaek-si",32050
-"A0415",15900,"Gangwon State","Pyeongchang-gun",32540
-"A0416",39396,"Gangwon State","Hongcheon-gun",32510
-"A0417",6221,"Gangwon State","Hwacheon-gun",32570
-"A0418",23237,"Gangwon State","Hoengseong-gun",32520
-"A0501",260040,"Daejeon","Daedeok-gu",25050
-"A0502",190180,"Daejeon","Dong-gu",25010
-"A0503",292656,"Daejeon","Seo-gu",25030
-"A0504",474242,"Daejeon","Yuseong-gu",25040
-"A0505",111638,"Daejeon","Jung-gu",25020
-"A0601",24902,"Chungcheongbuk-do","Goesan-gun",33560
-"A0602",15145,"Chungcheongbuk-do","Danyang-gun",33580
-"A0603",16946,"Chungcheongbuk-do","Boeun-gun",33520
-"A0604",14941,"Chungcheongbuk-do","Yeongdong-gun",33540
-"A0605",20780,"Chungcheongbuk-do","Okcheon-gun",33530
-"A0606",161640,"Chungcheongbuk-do","Eumseong-gun",33570
-"A0607",50208,"Chungcheongbuk-do","Jecheon-si",33030
-"A0608",11468,"Chungcheongbuk-do","Jeungpyeong-gun",33590
-"A0609",126101,"Chungcheongbuk-do","Jincheon-gun",33550
-"A0610",598560,"Chungcheongbuk-do","Cheongju-si",33040
-"A0611",133660,"Chungcheongbuk-do","Chungju-si",33020
-"A0701",8833,"Chungcheongnam-do","Gyeryong-si",34070
-"A0702",87721,"Chungcheongnam-do","Gongju-si",34020
-"A0703",39535,"Chungcheongnam-do","Geumsan-gun",34510
-"A0704",47735,"Chungcheongnam-do","Nonsan-si",34060
-"A0705",159982,"Chungcheongnam-do","Dangjin-si",34080
-"A0706",51361,"Chungcheongnam-do","Boryeong-si",34030
-"A0707",20998,"Chungcheongnam-do","Buyeo-gun",34530
-"A0708",229670,"Chungcheongnam-do","Seosan-si",34050
-"A0709",22217,"Chungcheongnam-do","Seocheon-gun",34540
-"A0710",378464,"Chungcheongnam-do","Asan-si",34040
-"A0711",65289,"Chungcheongnam-do","Yesan-gun",34570
-"A0712",546710,"Chungcheongnam-do","Cheonan-si",34010
-"A0713",11522,"Chungcheongnam-do","Cheongyang-gun",34550
-"A0714",32828,"Chungcheongnam-do","Taean-gun",34580
-"A0715",82417,"Chungcheongnam-do","Hongseong-gun",34560
-"A08",351855,"Sejong City","Sejong City",29010
-"A0901",220951,"Gwangju","Gwangsan-gu",24050
-"A0902",53449,"Gwangju","Nam-gu",24030
-"A0903",124811,"Gwangju","Dong-gu",24010
-"A0904",194307,"Gwangju","Buk-gu",24040
-"A0905",262289,"Gwangju","Seo-gu",24020
-"A1001",17592,"Jeollabuk-do","Gochang-gun",35570
-"A1002",126785,"Jeollabuk-do","Gunsan-si",35020
-"A1003",43091,"Jeollabuk-do","Gimje-si",35060
-"A1004",26026,"Jeollabuk-do","Namwon-si",35050
-"A1005",7770,"Jeollabuk-do","Muju-gun",35530
-"A1006",13968,"Jeollabuk-do","Buan-gun",35580
-"A1007",8870,"Jeollabuk-do","Sunchang-gun",35560
-"A1008",132432,"Jeollabuk-do","Wanju-gun",35510
-"A1009",125815,"Jeollabuk-do","Iksan-si",35030
-"A1010",10624,"Jeollabuk-do","Imsil-gun",35550
-"A1011",6776,"Jeollabuk-do","Jangsu-gun",35540
-"A1012",320014,"Jeollabuk-do","Jeonju-si",35010
-"A1013",41830,"Jeollabuk-do","Jeongeup-si",35040
-"A1014",8894,"Jeollabuk-do","Jinan-gun",35520
-"A1101",11087,"Jeollanam-do","Gangjin-gun",36590
-"A1102",15869,"Jeollanam-do","Goheung-gun",36550
-"A1103",9225,"Jeollanam-do","Gokseong-gun",36520
-"A1104",111802,"Jeollanam-do","Gwangyang-si",36060
-"A1105",6634,"Jeollanam-do","Gurye-gun",36530
-"A1106",281419,"Jeollanam-do","Naju-si",36040
-"A1107",29207,"Jeollanam-do","Damyang-gun",36510
-"A1108",70243,"Jeollanam-do","Mokpo-si",36010
-"A1109",79307,"Jeollanam-do","Muan-gun",36620
-"A1110",12921,"Jeollanam-do","Boseong-gun",36560
-"A1111",101026,"Jeollanam-do","Suncheon-si",36030
-"A1112",8609,"Jeollanam-do","Sinan-gun",36680
-"A1113",272427,"Jeollanam-do","Yeosu-si",36020
-"A1114",39306,"Jeollanam-do","Yeonggwang-gun",36640
-"A1115",58773,"Jeollanam-do","Yeongam-gun",36610
-"A1116",11432,"Jeollanam-do","Wando-gun",36660
-"A1117",27433,"Jeollanam-do","Jangseong-gun",36650
-"A1118",22802,"Jeollanam-do","Jangheung-gun",36580
-"A1119",7133,"Jeollanam-do","Jindo-gun",36670
-"A1120",15727,"Jeollanam-do","Hampyeong-gun",36630
-"A1121",23615,"Jeollanam-do","Haenam-gun",36600
-"A1122",43679,"Jeollanam-do","Hwasun-gun",36570
-"A1201",53383,"Daegu","Nam-gu",22040
-"A1202",317299,"Daegu","Dalseo-gu",22070
-"A1203",169345,"Daegu","Dalseong-gun",22510
-"A1204",153585,"Daegu","Dong-gu",22020
-"A1205",172915,"Daegu","Buk-gu",22050
-"A1206",73454,"Daegu","Seo-gu",22030
-"A1207",201108,"Daegu","Suseong-gu",22060
-"A1208",126759,"Daegu","Jung-gu",22010
-"A1301",167585,"Gyeongsangbuk-do","Gyeongsan-si",37100
-"A1302",232740,"Gyeongsangbuk-do","Gyeongju-si",37020
-"A1303",28343,"Gyeongsangbuk-do","Goryeong-gun",37570
-"A1304",341348,"Gyeongsangbuk-do","Gumi-si",37050
-"A1305",10506,"Daegu","Gunwi-gun",22520
-"A1306",117466,"Gyeongsangbuk-do","Gimcheon-si",37030
-"A1307",21664,"Gyeongsangbuk-do","Mungyeong-si",37090
-"A1308",9894,"Gyeongsangbuk-do","Bonghwa-gun",37610
-"A1309",28571,"Gyeongsangbuk-do","Sangju-si",37080
-"A1310",27781,"Gyeongsangbuk-do","Seongju-gun",37580
-"A1311",114624,"Gyeongsangbuk-do","Andong-si",37040
-"A1312",9913,"Gyeongsangbuk-do","Yeongdeok-gun",37550
-"A1313",4828,"Gyeongsangbuk-do","Yeongyang-gun",37540
-"A1314",47165,"Gyeongsangbuk-do","Yeongju-si",37060
-"A1315",69427,"Gyeongsangbuk-do","Yeongcheon-si",37070
-"A1316",13244,"Gyeongsangbuk-do","Yecheon-gun",37600
-"A1317",2976,"Gyeongsangbuk-do","Ulleung-gun",37630
-"A1318",36851,"Gyeongsangbuk-do","Uljin-gun",37620
-"A1319",13769,"Gyeongsangbuk-do","Uiseong-gun",37520
-"A1320",15315,"Gyeongsangbuk-do","Cheongdo-gun",37560
-"A1321",7474,"Gyeongsangbuk-do","Cheongsong-gun",37530
-"A1322",66600,"Gyeongsangbuk-do","Chilgok-gun",37590
-"A1323",665710,"Gyeongsangbuk-do","Pohang-si",37010
-"A1401",257015,"Busan","Gangseo-gu",21120
-"A1402",105391,"Busan","Geumjeong-gu",21110
-"A1403",120754,"Busan","Gijang-gun",21510
-"A1404",211666,"Busan","Nam-gu",21070
-"A1405",89706,"Busan","Dong-gu",21030
-"A1406",120202,"Busan","Dongnae-gu",21060
-"A1407",242571,"Busan","Busanjin-gu",21050
-"A1408",61338,"Busan","Buk-gu",21080
-"A1409",148748,"Busan","Sasang-gu",21150
-"A1410",153971,"Busan","Saha-gu",21100
-"A1411",74265,"Busan","Seo-gu",21020
-"A1412",65844,"Busan","Suyeong-gu",21140
-"A1413",153777,"Busan","Yeonje-gu",21130
-"A1414",65118,"Busan","Yeongdo-gu",21040
-"A1415",129677,"Busan","Jung-gu",21010
-"A1416",219082,"Busan","Haeundae-gu",21090
-"A1501",364080,"Ulsan","Nam-gu",26020
-"A1502",183819,"Ulsan","Dong-gu",26030
-"A1503",480836,"Ulsan","Buk-gu",26040
-"A1504",239301,"Ulsan","Ulju-gun",26510
-"A1505",105264,"Ulsan","Jung-gu",26010
-"A1601",152470,"Gyeongsangnam-do","Geoje-si",38090
-"A1602",19342,"Gyeongsangnam-do","Geochang-gun",38590
-"A1603",32359,"Gyeongsangnam-do","Goseong-gun",38540
-"A1604",319880,"Gyeongsangnam-do","Gimhae-si",38070
-"A1605",9949,"Gyeongsangnam-do","Namhae-gun",38550
-"A1606",53254,"Gyeongsangnam-do","Miryang-si",38080
-"A1607",120359,"Gyeongsangnam-do","Sacheon-si",38060
-"A1608",13249,"Gyeongsangnam-do","Sancheong-gun",38570
-"A1609",228245,"Gyeongsangnam-do","Yangsan-si",38100
-"A1610",11197,"Gyeongsangnam-do","Uiryeong-gun",38510
-"A1611",188858,"Gyeongsangnam-do","Jinju-si",38030
-"A1612",28169,"Gyeongsangnam-do","Changnyeong-gun",38530
-"A1613",899025,"Gyeongsangnam-do","Changwon-si",38110
-"A1614",30637,"Gyeongsangnam-do","Tongyeong-si",38050
-"A1615",18829,"Gyeongsangnam-do","Hadong-gun",38560
-"A1616",69912,"Gyeongsangnam-do","Haman-gun",38520
-"A1617",11294,"Gyeongsangnam-do","Hamyang-gun",38580
-"A1618",15354,"Gyeongsangnam-do","Hapcheon-gun",38600
-"A1701",347515,"Jeju","Jeju-si",39010
-"A1702",65598,"Jeju","Seogwipo-si",39020
+"value","adm1","adm2","adm2_code","year","unit","type","class1","class2"
+4608010,"Seoul","Gangnam-gu",11230,2020,"million KRW","tax","income","labor"
+419824,"Seoul","Gangdong-gu",11250,2020,"million KRW","tax","income","labor"
+48292,"Seoul","Gangbuk-gu",11090,2020,"million KRW","tax","income","labor"
+883552,"Seoul","Gangseo-gu",11160,2020,"million KRW","tax","income","labor"
+172726,"Seoul","Gwanak-gu",11210,2020,"million KRW","tax","income","labor"
+189493,"Seoul","Gwangjin-gu",11050,2020,"million KRW","tax","income","labor"
+392689,"Seoul","Guro-gu",11170,2020,"million KRW","tax","income","labor"
+487892,"Seoul","Geumcheon-gu",11180,2020,"million KRW","tax","income","labor"
+115517,"Seoul","Nowon-gu",11110,2020,"million KRW","tax","income","labor"
+60799,"Seoul","Dobong-gu",11100,2020,"million KRW","tax","income","labor"
+196101,"Seoul","Dongdaemun-gu",11060,2020,"million KRW","tax","income","labor"
+187735,"Seoul","Dongjak-gu",11200,2020,"million KRW","tax","income","labor"
+783056,"Seoul","Mapo-gu",11140,2020,"million KRW","tax","income","labor"
+304136,"Seoul","Seodaemun-gu",11130,2020,"million KRW","tax","income","labor"
+2272505,"Seoul","Seocho-gu",11220,2020,"million KRW","tax","income","labor"
+537686,"Seoul","Seongdong-gu",11040,2020,"million KRW","tax","income","labor"
+176029,"Seoul","Seongbuk-gu",11080,2020,"million KRW","tax","income","labor"
+1287042,"Seoul","Songpa-gu",11240,2020,"million KRW","tax","income","labor"
+175601,"Seoul","Yangcheon-gu",11150,2020,"million KRW","tax","income","labor"
+3753514,"Seoul","Yeongdeungpo-gu",11190,2020,"million KRW","tax","income","labor"
+1390734,"Seoul","Yongsan-gu",11030,2020,"million KRW","tax","income","labor"
+90201,"Seoul","Eunpyeong-gu",11120,2020,"million KRW","tax","income","labor"
+2623529,"Seoul","Jongno-gu",11010,2020,"million KRW","tax","income","labor"
+3064773,"Seoul","Jung-gu",11020,2020,"million KRW","tax","income","labor"
+90336,"Seoul","Jungnang-gu",11070,2020,"million KRW","tax","income","labor"
+25013,"Incheon","Ganghwa-gun",23510,2020,"million KRW","tax","income","labor"
+93679,"Incheon","Gyeyang-gu",23070,2020,"million KRW","tax","income","labor"
+140498,"Incheon","Michuhol-gu",23090,2020,"million KRW","tax","income","labor"
+431034,"Incheon","Namdong-gu",23050,2020,"million KRW","tax","income","labor"
+221681,"Incheon","Dong-gu",23020,2020,"million KRW","tax","income","labor"
+277049,"Incheon","Bupyeong-gu",23060,2020,"million KRW","tax","income","labor"
+380682,"Incheon","Seo-gu",23080,2020,"million KRW","tax","income","labor"
+368479,"Incheon","Yeonsu-gu",23040,2020,"million KRW","tax","income","labor"
+7283,"Incheon","Ongjin-gun",23520,2020,"million KRW","tax","income","labor"
+166484,"Incheon","Jung-gu",23010,2020,"million KRW","tax","income","labor"
+22324,"Gyeonggi-do","Gapyeong-gun",31570,2020,"million KRW","tax","income","labor"
+410871,"Gyeonggi-do","Goyang-si",31100,2020,"million KRW","tax","income","labor"
+151716,"Gyeonggi-do","Gwacheon-si",31110,2020,"million KRW","tax","income","labor"
+240410,"Gyeonggi-do","Gwangmyeong-si",31060,2020,"million KRW","tax","income","labor"
+211317,"Gyeonggi-do","Gwangju-si",31250,2020,"million KRW","tax","income","labor"
+54952,"Gyeonggi-do","Guri-si",31120,2020,"million KRW","tax","income","labor"
+160556,"Gyeonggi-do","Gunpo-si",31160,2020,"million KRW","tax","income","labor"
+295960,"Gyeonggi-do","Gimpo-si",31230,2020,"million KRW","tax","income","labor"
+219682,"Gyeonggi-do","Namyangju-si",31130,2020,"million KRW","tax","income","labor"
+23480,"Gyeonggi-do","Dongducheon-si",31080,2020,"million KRW","tax","income","labor"
+381813,"Gyeonggi-do","Bucheon-si",31050,2020,"million KRW","tax","income","labor"
+2281902,"Gyeonggi-do","Seongnam-si",31020,2020,"million KRW","tax","income","labor"
+3309303,"Gyeonggi-do","Suwon-si",31010,2020,"million KRW","tax","income","labor"
+388130,"Gyeonggi-do","Siheung-si",31150,2020,"million KRW","tax","income","labor"
+589153,"Gyeonggi-do","Ansan-si",31090,2020,"million KRW","tax","income","labor"
+197447,"Gyeonggi-do","Anseong-si",31220,2020,"million KRW","tax","income","labor"
+518998,"Gyeonggi-do","Anyang-si",31040,2020,"million KRW","tax","income","labor"
+105556,"Gyeonggi-do","Yangju-si",31260,2020,"million KRW","tax","income","labor"
+30470,"Gyeonggi-do","Yangpyeong-gun",31580,2020,"million KRW","tax","income","labor"
+58291,"Gyeonggi-do","Yeoju-si",31280,2020,"million KRW","tax","income","labor"
+16555,"Gyeonggi-do","Yeoncheon-gun",31550,2020,"million KRW","tax","income","labor"
+104572,"Gyeonggi-do","Osan-si",31140,2020,"million KRW","tax","income","labor"
+1438123,"Gyeonggi-do","Yongin-si",31190,2020,"million KRW","tax","income","labor"
+94252,"Gyeonggi-do","Uiwang-si",31170,2020,"million KRW","tax","income","labor"
+137984,"Gyeonggi-do","Uijeongbu-si",31030,2020,"million KRW","tax","income","labor"
+828194,"Gyeonggi-do","Icheon-si",31210,2020,"million KRW","tax","income","labor"
+242993,"Gyeonggi-do","Paju-si",31200,2020,"million KRW","tax","income","labor"
+516084,"Gyeonggi-do","Pyeongtaek-si",31070,2020,"million KRW","tax","income","labor"
+132444,"Gyeonggi-do","Pocheon-si",31270,2020,"million KRW","tax","income","labor"
+152856,"Gyeonggi-do","Hanam-si",31180,2020,"million KRW","tax","income","labor"
+1451518,"Gyeonggi-do","Hwaseong-si",31240,2020,"million KRW","tax","income","labor"
+89290,"Gangwon-do","Gangneung-si",32030,2020,"million KRW","tax","income","labor"
+9398,"Gangwon-do","Goseong-gun",32600,2020,"million KRW","tax","income","labor"
+34352,"Gangwon-do","Donghae-si",32040,2020,"million KRW","tax","income","labor"
+38110,"Gangwon-do","Samcheok-si",32070,2020,"million KRW","tax","income","labor"
+21119,"Gangwon-do","Sokcho-si",32060,2020,"million KRW","tax","income","labor"
+5816,"Gangwon-do","Yanggu-gun",32580,2020,"million KRW","tax","income","labor"
+8648,"Gangwon-do","Yangyang-gun",32610,2020,"million KRW","tax","income","labor"
+17476,"Gangwon-do","Yeongwol-gun",32530,2020,"million KRW","tax","income","labor"
+184328,"Gangwon-do","Wonju-si",32020,2020,"million KRW","tax","income","labor"
+7949,"Gangwon-do","Inje-gun",32590,2020,"million KRW","tax","income","labor"
+29752,"Gangwon-do","Jeongseon-gun",32550,2020,"million KRW","tax","income","labor"
+10310,"Gangwon-do","Cheorwon-gun",32560,2020,"million KRW","tax","income","labor"
+199802,"Gangwon-do","Chuncheon-si",32010,2020,"million KRW","tax","income","labor"
+16899,"Gangwon-do","Taebaek-si",32050,2020,"million KRW","tax","income","labor"
+15900,"Gangwon-do","Pyeongchang-gun",32540,2020,"million KRW","tax","income","labor"
+39396,"Gangwon-do","Hongcheon-gun",32510,2020,"million KRW","tax","income","labor"
+6221,"Gangwon-do","Hwacheon-gun",32570,2020,"million KRW","tax","income","labor"
+23237,"Gangwon-do","Hoengseong-gun",32520,2020,"million KRW","tax","income","labor"
+260040,"Daejeon","Daedeok-gu",25050,2020,"million KRW","tax","income","labor"
+190180,"Daejeon","Dong-gu",25010,2020,"million KRW","tax","income","labor"
+292656,"Daejeon","Seo-gu",25030,2020,"million KRW","tax","income","labor"
+474242,"Daejeon","Yuseong-gu",25040,2020,"million KRW","tax","income","labor"
+111638,"Daejeon","Jung-gu",25020,2020,"million KRW","tax","income","labor"
+24902,"Chungcheongbuk-do","Goesan-gun",33560,2020,"million KRW","tax","income","labor"
+15145,"Chungcheongbuk-do","Danyang-gun",33580,2020,"million KRW","tax","income","labor"
+16946,"Chungcheongbuk-do","Boeun-gun",33520,2020,"million KRW","tax","income","labor"
+14941,"Chungcheongbuk-do","Yeongdong-gun",33540,2020,"million KRW","tax","income","labor"
+20780,"Chungcheongbuk-do","Okcheon-gun",33530,2020,"million KRW","tax","income","labor"
+161640,"Chungcheongbuk-do","Eumseong-gun",33570,2020,"million KRW","tax","income","labor"
+50208,"Chungcheongbuk-do","Jecheon-si",33030,2020,"million KRW","tax","income","labor"
+11468,"Chungcheongbuk-do","Jeungpyeong-gun",33590,2020,"million KRW","tax","income","labor"
+126101,"Chungcheongbuk-do","Jincheon-gun",33550,2020,"million KRW","tax","income","labor"
+598560,"Chungcheongbuk-do","Cheongju-si",33040,2020,"million KRW","tax","income","labor"
+133660,"Chungcheongbuk-do","Chungju-si",33020,2020,"million KRW","tax","income","labor"
+8833,"Chungcheongnam-do","Gyeryong-si",34070,2020,"million KRW","tax","income","labor"
+87721,"Chungcheongnam-do","Gongju-si",34020,2020,"million KRW","tax","income","labor"
+39535,"Chungcheongnam-do","Geumsan-gun",34510,2020,"million KRW","tax","income","labor"
+47735,"Chungcheongnam-do","Nonsan-si",34060,2020,"million KRW","tax","income","labor"
+159982,"Chungcheongnam-do","Dangjin-si",34080,2020,"million KRW","tax","income","labor"
+51361,"Chungcheongnam-do","Boryeong-si",34030,2020,"million KRW","tax","income","labor"
+20998,"Chungcheongnam-do","Buyeo-gun",34530,2020,"million KRW","tax","income","labor"
+229670,"Chungcheongnam-do","Seosan-si",34050,2020,"million KRW","tax","income","labor"
+22217,"Chungcheongnam-do","Seocheon-gun",34540,2020,"million KRW","tax","income","labor"
+378464,"Chungcheongnam-do","Asan-si",34040,2020,"million KRW","tax","income","labor"
+65289,"Chungcheongnam-do","Yesan-gun",34570,2020,"million KRW","tax","income","labor"
+546710,"Chungcheongnam-do","Cheonan-si",34010,2020,"million KRW","tax","income","labor"
+11522,"Chungcheongnam-do","Cheongyang-gun",34550,2020,"million KRW","tax","income","labor"
+32828,"Chungcheongnam-do","Taean-gun",34580,2020,"million KRW","tax","income","labor"
+82417,"Chungcheongnam-do","Hongseong-gun",34560,2020,"million KRW","tax","income","labor"
+351855,"Sejong","Sejong-si",29010,2020,"million KRW","tax","income","labor"
+220951,"Gwangju","Gwangsan-gu",24050,2020,"million KRW","tax","income","labor"
+53449,"Gwangju","Nam-gu",24030,2020,"million KRW","tax","income","labor"
+124811,"Gwangju","Dong-gu",24010,2020,"million KRW","tax","income","labor"
+194307,"Gwangju","Buk-gu",24040,2020,"million KRW","tax","income","labor"
+262289,"Gwangju","Seo-gu",24020,2020,"million KRW","tax","income","labor"
+17592,"Jeollabuk-do","Gochang-gun",35570,2020,"million KRW","tax","income","labor"
+126785,"Jeollabuk-do","Gunsan-si",35020,2020,"million KRW","tax","income","labor"
+43091,"Jeollabuk-do","Gimje-si",35060,2020,"million KRW","tax","income","labor"
+26026,"Jeollabuk-do","Namwon-si",35050,2020,"million KRW","tax","income","labor"
+7770,"Jeollabuk-do","Muju-gun",35530,2020,"million KRW","tax","income","labor"
+13968,"Jeollabuk-do","Buan-gun",35580,2020,"million KRW","tax","income","labor"
+8870,"Jeollabuk-do","Sunchang-gun",35560,2020,"million KRW","tax","income","labor"
+132432,"Jeollabuk-do","Wanju-gun",35510,2020,"million KRW","tax","income","labor"
+125815,"Jeollabuk-do","Iksan-si",35030,2020,"million KRW","tax","income","labor"
+10624,"Jeollabuk-do","Imsil-gun",35550,2020,"million KRW","tax","income","labor"
+6776,"Jeollabuk-do","Jangsu-gun",35540,2020,"million KRW","tax","income","labor"
+320014,"Jeollabuk-do","Jeonju-si",35010,2020,"million KRW","tax","income","labor"
+41830,"Jeollabuk-do","Jeongeup-si",35040,2020,"million KRW","tax","income","labor"
+8894,"Jeollabuk-do","Jinan-gun",35520,2020,"million KRW","tax","income","labor"
+11087,"Jeollanam-do","Gangjin-gun",36590,2020,"million KRW","tax","income","labor"
+15869,"Jeollanam-do","Goheung-gun",36550,2020,"million KRW","tax","income","labor"
+9225,"Jeollanam-do","Gokseong-gun",36520,2020,"million KRW","tax","income","labor"
+111802,"Jeollanam-do","Gwangyang-si",36060,2020,"million KRW","tax","income","labor"
+6634,"Jeollanam-do","Gurye-gun",36530,2020,"million KRW","tax","income","labor"
+281419,"Jeollanam-do","Naju-si",36040,2020,"million KRW","tax","income","labor"
+29207,"Jeollanam-do","Damyang-gun",36510,2020,"million KRW","tax","income","labor"
+70243,"Jeollanam-do","Mokpo-si",36010,2020,"million KRW","tax","income","labor"
+79307,"Jeollanam-do","Muan-gun",36620,2020,"million KRW","tax","income","labor"
+12921,"Jeollanam-do","Boseong-gun",36560,2020,"million KRW","tax","income","labor"
+101026,"Jeollanam-do","Suncheon-si",36030,2020,"million KRW","tax","income","labor"
+8609,"Jeollanam-do","Sinan-gun",36680,2020,"million KRW","tax","income","labor"
+272427,"Jeollanam-do","Yeosu-si",36020,2020,"million KRW","tax","income","labor"
+39306,"Jeollanam-do","Yeonggwang-gun",36640,2020,"million KRW","tax","income","labor"
+58773,"Jeollanam-do","Yeongam-gun",36610,2020,"million KRW","tax","income","labor"
+11432,"Jeollanam-do","Wando-gun",36660,2020,"million KRW","tax","income","labor"
+27433,"Jeollanam-do","Jangseong-gun",36650,2020,"million KRW","tax","income","labor"
+22802,"Jeollanam-do","Jangheung-gun",36580,2020,"million KRW","tax","income","labor"
+7133,"Jeollanam-do","Jindo-gun",36670,2020,"million KRW","tax","income","labor"
+15727,"Jeollanam-do","Hampyeong-gun",36630,2020,"million KRW","tax","income","labor"
+23615,"Jeollanam-do","Haenam-gun",36600,2020,"million KRW","tax","income","labor"
+43679,"Jeollanam-do","Hwasun-gun",36570,2020,"million KRW","tax","income","labor"
+53383,"Daegu","Nam-gu",22040,2020,"million KRW","tax","income","labor"
+317299,"Daegu","Dalseo-gu",22070,2020,"million KRW","tax","income","labor"
+169345,"Daegu","Dalseong-gun",22510,2020,"million KRW","tax","income","labor"
+153585,"Daegu","Dong-gu",22020,2020,"million KRW","tax","income","labor"
+172915,"Daegu","Buk-gu",22050,2020,"million KRW","tax","income","labor"
+73454,"Daegu","Seo-gu",22030,2020,"million KRW","tax","income","labor"
+201108,"Daegu","Suseong-gu",22060,2020,"million KRW","tax","income","labor"
+126759,"Daegu","Jung-gu",22010,2020,"million KRW","tax","income","labor"
+167585,"Gyeongsangbuk-do","Gyeongsan-si",37100,2020,"million KRW","tax","income","labor"
+232740,"Gyeongsangbuk-do","Gyeongju-si",37020,2020,"million KRW","tax","income","labor"
+28343,"Gyeongsangbuk-do","Goryeong-gun",37570,2020,"million KRW","tax","income","labor"
+341348,"Gyeongsangbuk-do","Gumi-si",37050,2020,"million KRW","tax","income","labor"
+10506,"Daegu","Gunwi-gun",22520,2020,"million KRW","tax","income","labor"
+117466,"Gyeongsangbuk-do","Gimcheon-si",37030,2020,"million KRW","tax","income","labor"
+21664,"Gyeongsangbuk-do","Mungyeong-si",37090,2020,"million KRW","tax","income","labor"
+9894,"Gyeongsangbuk-do","Bonghwa-gun",37610,2020,"million KRW","tax","income","labor"
+28571,"Gyeongsangbuk-do","Sangju-si",37080,2020,"million KRW","tax","income","labor"
+27781,"Gyeongsangbuk-do","Seongju-gun",37580,2020,"million KRW","tax","income","labor"
+114624,"Gyeongsangbuk-do","Andong-si",37040,2020,"million KRW","tax","income","labor"
+9913,"Gyeongsangbuk-do","Yeongdeok-gun",37550,2020,"million KRW","tax","income","labor"
+4828,"Gyeongsangbuk-do","Yeongyang-gun",37540,2020,"million KRW","tax","income","labor"
+47165,"Gyeongsangbuk-do","Yeongju-si",37060,2020,"million KRW","tax","income","labor"
+69427,"Gyeongsangbuk-do","Yeongcheon-si",37070,2020,"million KRW","tax","income","labor"
+13244,"Gyeongsangbuk-do","Yecheon-gun",37600,2020,"million KRW","tax","income","labor"
+2976,"Gyeongsangbuk-do","Ulleung-gun",37630,2020,"million KRW","tax","income","labor"
+36851,"Gyeongsangbuk-do","Uljin-gun",37620,2020,"million KRW","tax","income","labor"
+13769,"Gyeongsangbuk-do","Uiseong-gun",37520,2020,"million KRW","tax","income","labor"
+15315,"Gyeongsangbuk-do","Cheongdo-gun",37560,2020,"million KRW","tax","income","labor"
+7474,"Gyeongsangbuk-do","Cheongsong-gun",37530,2020,"million KRW","tax","income","labor"
+66600,"Gyeongsangbuk-do","Chilgok-gun",37590,2020,"million KRW","tax","income","labor"
+665710,"Gyeongsangbuk-do","Pohang-si",37010,2020,"million KRW","tax","income","labor"
+257015,"Busan","Gangseo-gu",21120,2020,"million KRW","tax","income","labor"
+105391,"Busan","Geumjeong-gu",21110,2020,"million KRW","tax","income","labor"
+120754,"Busan","Gijang-gun",21510,2020,"million KRW","tax","income","labor"
+211666,"Busan","Nam-gu",21070,2020,"million KRW","tax","income","labor"
+89706,"Busan","Dong-gu",21030,2020,"million KRW","tax","income","labor"
+120202,"Busan","Dongnae-gu",21060,2020,"million KRW","tax","income","labor"
+242571,"Busan","Busanjin-gu",21050,2020,"million KRW","tax","income","labor"
+61338,"Busan","Buk-gu",21080,2020,"million KRW","tax","income","labor"
+148748,"Busan","Sasang-gu",21150,2020,"million KRW","tax","income","labor"
+153971,"Busan","Saha-gu",21100,2020,"million KRW","tax","income","labor"
+74265,"Busan","Seo-gu",21020,2020,"million KRW","tax","income","labor"
+65844,"Busan","Suyeong-gu",21140,2020,"million KRW","tax","income","labor"
+153777,"Busan","Yeonje-gu",21130,2020,"million KRW","tax","income","labor"
+65118,"Busan","Yeongdo-gu",21040,2020,"million KRW","tax","income","labor"
+129677,"Busan","Jung-gu",21010,2020,"million KRW","tax","income","labor"
+219082,"Busan","Haeundae-gu",21090,2020,"million KRW","tax","income","labor"
+364080,"Ulsan","Nam-gu",26020,2020,"million KRW","tax","income","labor"
+183819,"Ulsan","Dong-gu",26030,2020,"million KRW","tax","income","labor"
+480836,"Ulsan","Buk-gu",26040,2020,"million KRW","tax","income","labor"
+239301,"Ulsan","Ulju-gun",26510,2020,"million KRW","tax","income","labor"
+105264,"Ulsan","Jung-gu",26010,2020,"million KRW","tax","income","labor"
+152470,"Gyeongsangnam-do","Geoje-si",38090,2020,"million KRW","tax","income","labor"
+19342,"Gyeongsangnam-do","Geochang-gun",38590,2020,"million KRW","tax","income","labor"
+32359,"Gyeongsangnam-do","Goseong-gun",38540,2020,"million KRW","tax","income","labor"
+319880,"Gyeongsangnam-do","Gimhae-si",38070,2020,"million KRW","tax","income","labor"
+9949,"Gyeongsangnam-do","Namhae-gun",38550,2020,"million KRW","tax","income","labor"
+53254,"Gyeongsangnam-do","Miryang-si",38080,2020,"million KRW","tax","income","labor"
+120359,"Gyeongsangnam-do","Sacheon-si",38060,2020,"million KRW","tax","income","labor"
+13249,"Gyeongsangnam-do","Sancheong-gun",38570,2020,"million KRW","tax","income","labor"
+228245,"Gyeongsangnam-do","Yangsan-si",38100,2020,"million KRW","tax","income","labor"
+11197,"Gyeongsangnam-do","Uiryeong-gun",38510,2020,"million KRW","tax","income","labor"
+188858,"Gyeongsangnam-do","Jinju-si",38030,2020,"million KRW","tax","income","labor"
+28169,"Gyeongsangnam-do","Changnyeong-gun",38530,2020,"million KRW","tax","income","labor"
+899025,"Gyeongsangnam-do","Changwon-si",38110,2020,"million KRW","tax","income","labor"
+30637,"Gyeongsangnam-do","Tongyeong-si",38050,2020,"million KRW","tax","income","labor"
+18829,"Gyeongsangnam-do","Hadong-gun",38560,2020,"million KRW","tax","income","labor"
+69912,"Gyeongsangnam-do","Haman-gun",38520,2020,"million KRW","tax","income","labor"
+11294,"Gyeongsangnam-do","Hamyang-gun",38580,2020,"million KRW","tax","income","labor"
+15354,"Gyeongsangnam-do","Hapcheon-gun",38600,2020,"million KRW","tax","income","labor"
+347515,"Jeju-do","Jeju-si",39010,2020,"million KRW","tax","income","labor"
+65598,"Jeju-do","Seogwipo-si",39020,2020,"million KRW","tax","income","labor"

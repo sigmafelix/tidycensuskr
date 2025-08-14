@@ -3,7 +3,6 @@
   packageStartupMessage(
     sprintf("tidycensuskr %s (%s)", utils::packageVersion(pkgname), Sys.Date())
   )
-  data("censuskor")
 }
 
 
@@ -32,15 +31,6 @@ set_kosis_key <- function(file) {
 
   message("KOSIS key has been set successfully.")
 }
-
-
-
-#' Statistics types list
-#'
-#' @details This package provides a list of statistics types:
-#' - `population`: Population statistics fro KOSIS.
-#' @concept Documentation
-#' @keywords docs
 
 
 #' Load `sf` district polygons

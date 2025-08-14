@@ -5,27 +5,28 @@
 \title{Query Korean census data by admin code (province or municipality) and year}
 \usage{
 anycensusk(
-  codes = NULL,
-  type = c("population", "tax", "mortality"),
   year = 2020,
+  codes = NULL,
+  type = c("population", "tax", "mortality", "economy"),
   level = c("adm1", "adm2")
 )
 }
 \arguments{
-\item{codes}{Integer or character vector of admin codes (e.g. 11, 26) or admin names (e.g. "Seoul").}
+\item{year}{integer(1). One of 2010, 2015, or 2020.}
 
-\item{type}{character: "population", "tax", or "mortality". Defaults to "population".}
+\item{codes}{integer or character vector of admin codes (e.g. 11, 26) or admin names (e.g. "Seoul").}
 
-\item{year}{Integer: 2020.}
+\item{type}{character(1). "population", "tax", "economy" or "mortality".
+Defaults to "population".}
 
-\item{level}{Character: "adm1" for province-level or "adm2" for municipal-level. Defaults to "adm2".}
+\item{level}{character(1). "adm1" for province-level or "adm2" for municipal-level. Defaults to "adm2".}
 }
 \value{
 A data.frame object containing census data for the specified codes and year.
 }
 \description{
-The function queries a long format census data frame (\code{\link{censuskor}})
-for specific administrative codes (if provided)
+The function queries a long format census data frame
+(\code{\link{censuskor}}) for specific administrative codes (if provided)
 }
 \examples{
 anycensusk(codes = "21", type = "mortality")

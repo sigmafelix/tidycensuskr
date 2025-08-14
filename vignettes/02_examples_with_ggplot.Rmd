@@ -1,11 +1,91 @@
 ---
-title: "Untitled"
+title: "Examples with ggplot2"
 output: html_document
 date: "`r format(Sys.Date(), '%B %d, %Y')`"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(sf)
+library(dplyr)
+library(tidycensuskr)
 ```
+
+## Mapping total population with `ggplot2`
+
+
+### Load Data
+
+You can use the `censuskor` dataset and spatial data for different years. Here, we will load the census data and the spatial data for 2010, 2015, and 2020. `load_districts()` is a function that retrieves the spatial data for the specified year.
+
+```{r load-data}
+# Load censuskor dataset
+data(censuskor)
+
+# Load spatial data for 2010, 2015, and 2020
+sf_2010 <- load_districts(year = 2010)
+sf_2015 <- load_districts(year = 2015)
+sf_2020 <- load_districts(year = 2020)
+```
+
+### Filter and Merge Data
+
+```{r filter-merge}
+# Filter censuskor data
+population_2010 <- censuskor %>%
+  filter(year == 2010, type == "population", class1 == "total", class2 == "total")
+population_2015 <- censuskor %>%
+  filter(year == 2015, type == "population", class1 == "total", class2 == "total")
+population_2020 <- censuskor %>%
+  filter(year == 2020, type == "population", class1 == "total", class2 == "total")
+
+# Merge with spatial data
+sf_2010_merged <- sf_2010 %>%
+  left_join(population_2010, by = "adm2_code")
+
+sf_2015_merged <- sf_2015 %>%
+  left_join(population_2015, by = "adm2_code")
+
+sf_2020_merged <- sf_2020 %>%
+  left_join(population_2020, by = "adm2_code")
+```
+
+### Create Maps
+
+`value` field is a universal field in the `censuskor` dataset that contains the data values. You can use this field to create maps for each year.
+
+```{r create-maps}
+# Palette
+fill_cols <- c("#F8B195", "#F67280", "#C06C84", "#6C5B7B", "#355C7D")
+
+
+# Map for 2010
+map_2010 <- ggplot(data = sf_2010_merged) +
+  geom_sf(aes(fill = value)) +
+  labs(title = "Total Population (2010)") +
+  scale_fill_gradientn(colors = fill_cols) +
+  theme_minimal()
+
+# Map for 2015
+map_2015 <- ggplot(data = sf_2015_merged) +
+  geom_sf(aes(fill = value)) +
+  labs(title = "Census Map 2015") +
+  scale_fill_gradientn(colors = fill_cols) +
+  theme_minimal()
+
+# Map for 2020
+map_2020 <- ggplot(data = sf_2020_merged) +
+  geom_sf(aes(fill = value)) +
+  labs(title = "Census Map 2020") +
+  scale_fill_gradientn(colors = fill_cols) +
+  theme_minimal()
+
+# Print maps
+map_2010
+map_2015
+map_2020
+```
+
 
 

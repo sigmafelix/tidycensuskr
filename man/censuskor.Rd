@@ -28,4 +28,11 @@ censuskor
 \description{
 District level data including tax, population, and mortality in South Korea.
 }
+\note{
+For temporal comparison, province names in adm1 field are
+standardized to the common names with no suffix in metropolitan cities
+and "-do" suffix in provinces.
+For example, "Seoul" instead of "Seoul Metropolitan City",
+and "Jeollabuk-do" instead of "Jeonbuk State".
+}
 \keyword{datasets}

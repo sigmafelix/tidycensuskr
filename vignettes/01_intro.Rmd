@@ -16,25 +16,40 @@ knitr::opts_chunk$set(
 
 
 ## Get Started
-### Key Functions Overview
+
 * Data retrieval functions
 * Geographic boundary functions
 * Data transformation utilities
 * Visualisation helpers
 
 
-### Data Structure (lookup table)
+## Data Structure
 * Explanation of how census data is organised in the package
+  - `censuskor` is the main dataset containing census data.
+  - `data(censuskor)` loads the dataset.
+  - For details, refer to the `censuskor` documentation by running `?censuskor` in R.
+
 * Available geographic levels 
+  - Currently the package supports district(municipal)-level (_Si-Gun-Gu_) level data
+
+* Geographic boundary
 
 
 
-## Articles
+## 1. Understanding Korean Geographic Hierarchies
+
+In Korea, there are three major levels of geographic hierarchy for administrative purposes:
+
+- **_Si-Do_**: The highest level of administrative division.
+  - Metropolitan cities are treated as provinces.
+  - States/Special Self-Governing Province: another name of hierarchy for Jeju-do, Gangwon-do, and Jeollabuk-do. Such names are used following the statute for giving special status to these provinces.
+- **_Si-Gun-Gu_**: The second level, which includes cities and counties.
+  - **_Si_**: City. In most provinces, cities are autonomous administrative units.
+  - **_Gun_**: County. Counties are rural areas with smaller populations (<50,000).
+  - **_Gu_**: District. Districts are urban areas within metropolitan cities (these districts are called autonomous districts), whereas districts in autonomous cities are called non-autonomous districts.
+- **_Eup-Myeon-Dong_**: The third level, which includes town and districts.
 
 
-### 1. Working with Korean Geographic Hierarchies
-
-Understanding Sido → Sigungu → Eupmyeondong relationships
 Aggregating Eupmyeondong data to Sigungu level
 Handling administrative boundary changes
 Exercise: Calculate population-weighted PM2.5 exposure for each Sigungu in Seoul

@@ -36,6 +36,12 @@
 #'   \item{unit}{Unit of measurement for the variable}
 #'   \item{value}{Value of the variable}
 #' }
+#' @note
+#' For temporal comparison, province names in adm1 field are
+#' standardized to the common names with no suffix in metropolitan cities
+#' and "-do" suffix in provinces.
+#' For example, "Seoul" instead of "Seoul Metropolitan City",
+#' and "Jeollabuk-do" instead of "Jeonbuk State".
 #' @source
 #' * KOSIS (Korean Statistical Information Service)
 #' @keywords datasets

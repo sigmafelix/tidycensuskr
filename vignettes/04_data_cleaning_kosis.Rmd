@@ -153,7 +153,14 @@ tidycensuskr::set_kosis_key("~/.kosiskey")
 df_tax <- kosis::getStatDataFromURL(url_tax_general)
 
 # Load administrative district lookup table
-sgg_lookup <- read.csv("inst/extdata/lookup_district_code.csv", fileEncoding = "EUC-KR")
+sgg_lookup <-
+  read.csv(
+    system.file(
+      file.path("extdata", "lookup_district_code.csv"),
+      package = "tidycensuskr"
+    ),
+    fileEncoding = "EUC-KR"
+  )
 ```
 
 ## Data Cleaning Workflow
@@ -193,11 +200,11 @@ Transform raw tax data into a standardized format:
 ```r
 df_tax_compact <- df_tax %>%
   dplyr::transmute(
-    sgg_tax_global = C1,           # Administrative code
-    tax_global_total_milkrw = DT   # Tax value in million KRW
+    adm2_code = C1,           # Administrative code
+    value = DT   # Tax value in million KRW
   ) %>%
   dplyr::inner_join(
-    sgg_lookup[, c("sgg_tax_global", "sido_en", "sigungu_1_en", "sigungu_cd")],
+    sgg_lookup[, c("sgg_tax_global", "sido_en", "sigungu_1_en", "adm2_code")],
     multiple = "first"
   )
 
@@ -223,11 +230,11 @@ df_pop2 <- df_pop %>%
     sigungu_kr = C1_NM
   ) %>%
   dplyr::mutate(
-    sigungu_cd = as.integer(sigungu_cd)
+    adm2_code = as.integer(adm2_code)
   ) %>%
   dplyr::inner_join(
-    sgg_lookup[, c("sigungu_cd", "sido_en", "sigungu_1_en")],
-    by = "sigungu_cd",
+    sgg_lookup[, c("adm2_code", "sido_en", "sigungu_1_en")],
+    by = "adm2_code",
     multiple = "first"
   )
 ```
@@ -243,7 +250,7 @@ The key feature of `tidycensuskr` is converting wide-format, multiple-dataset st
 df_tax_long <- df_tax_compact %>%
   dplyr::select(2:5) %>%
   tidyr::pivot_longer(
-    cols = "tax_global_total_milkrw"
+    cols = "value"
   ) %>%
   dplyr::mutate(
     type = "tax",
@@ -273,8 +280,7 @@ censuskor <- dplyr::bind_rows(
   ) %>%
   dplyr::rename(
     adm1 = sido_en,
-    adm2 = sigungu_1_en,
-    adm2_code = sigungu_cd
+    adm2 = sigungu_1_en
   ) %>%
   dplyr::mutate(
     year = 2020

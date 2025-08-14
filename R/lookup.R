@@ -15,6 +15,3 @@ lookup_kosis <- function(keyword, ...) {
   # Return the table codes
   return(table_codes)
 }
-
-
-
