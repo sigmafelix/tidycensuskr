@@ -20,31 +20,32 @@ data(censuskor)
 You can use the `censuskor` dataset and spatial data for different years. Here, we will load the census data and the spatial data for 2010, 2015, and 2020. `load_districts()` is a function that retrieves the spatial data for the specified year.
 
 ```{r make-wide, include=FALSE}
-
 df_wide <- censuskor %>%
   filter(
     year == 2020 &
       (
-        (type == "tax" & class1 == "income") |
-        (type == "population" & class1 == "relative" & class2 %in% c("total","male","female")) |
-        (type == "mortality" & class1 == "All causes" & class2 == "total") |
-        (type == "economy")
+        (type == "tax") |
+          (type == "population" & class2 %in% c("total", "male", "female")) |
+          (type == "mortality" & class1 == "All causes" & class2 == "total") |
+          (type == "economy")
       )
   ) %>%
   mutate(
     variable = case_when(
-      type == "tax" ~ "income",
+      type == "tax" & class2 == "labor" ~ "labor",
+      type == "tax" & class2 == "general" ~ "general",
       type == "population" & class2 == "total" ~ "population",
-      type == "population" & class2 == "male"  ~ "male",
-      type == "population" & class2 == "female"~ "female",
+      type == "population" & class2 == "male" ~ "male",
+      type == "population" & class2 == "female" ~ "female",
       type == "mortality" ~ "mortality",
-      type == "economy"   ~ "economy"
+      type == "economy" ~ "economy"
     )
   ) %>%
   select(adm1, adm2, adm2_code, variable, value) %>%
   pivot_wider(names_from = variable, values_from = value) %>%
   mutate(
-    across(c(income, population, male, female, mortality, economy), as.numeric)
+    dplyr::across(
+      dplyr::all_of(c("labor", "general", "population", "male", "female", "mortality", "economy")), ~as.numeric(.x))
   )
 ```
 
@@ -52,18 +53,20 @@ df_wide <- censuskor %>%
 
 ## Plot 1: Income vs Mortality
 ```{r plot-income-vs-mortality}
-df_wide <- df_wide %>% mutate(Seoul = if_else(adm1 %in% c("Seoul", "Incheon", "Gyeonggi-do"), 1L, 0L))
+df_wide <-
+  df_wide %>%
+  mutate(Seoul = if_else(adm1 %in% c("Seoul", "Incheon", "Gyeonggi-do"), 1L, 0L))
 
-ggplot(df_wide, aes(x = income, y = mortality)) +
+ggplot(df_wide, aes(x = labor, y = mortality)) +
   geom_point(aes(color = factor(Seoul)), size = 3, alpha = 0.7) +
-    scale_color_manual(
+  scale_color_manual(
     values = c("0" = "#9E9E9E", "1" = "#E41A1C"),
     labels = c("Other regions", "Seoul Metropolitan Area"),
     name   = NULL
   ) +
   labs(
-    title = "Mortality rate by income level in South Korea (2020)",
-    x = "Income (million KWR)",
+    title = "Mortality rate by income tax level in South Korea (2020)",
+    x = "Total Income Tax (million KWR)",
     y = "Mortality rate (per 100k population)"
   ) +
   theme_bw()
@@ -73,8 +76,10 @@ ggplot(df_wide, aes(x = income, y = mortality)) +
 ## Plot 2
 ### Plot 2-1: Sex Ratio Distribution in SMA 
 ```{r plot-sex-ratio-sma}
-df_wide_seoul <- df_wide %>% filter(Seoul == 1) %>% 
-                            mutate(sex_ratio = male / female * 100)
+df_wide_seoul <-
+  df_wide %>%
+  filter(Seoul == 1) %>% 
+  mutate(sex_ratio = male / female * 100)
 
 ggplot(df_wide_seoul, aes(x = sex_ratio, fill = adm1)) +
   geom_histogram(alpha = 0.7, position = "identity", bins = 30) +
@@ -119,7 +124,7 @@ ggplot() +
 ## Plot 3: choropleth map
 
 ```{r choroploth, fig.width=10, fig.height=4}
-
+adm2_sf_2020 <- load_districts(year = 2020)
 adm2_sf_2020_seoul <- adm2_sf_2020 %>% inner_join(df_wide_seoul, by = "adm2_code")
 
 ggplot(adm2_sf_2020_seoul) +
@@ -137,6 +142,25 @@ ggplot(adm2_sf_2020_seoul) +
 ```
 
 
+```{r choroploth, fig.width=10, fig.height=4}
+adm2_sf_2020 <- load_districts(year = 2020)
+adm2_sf_2020_kr <- adm2_sf_2020 %>%
+  inner_join(df_wide, by = "adm2_code") %>% 
+  mutate(sex_ratio = male / female * 100)
+
+ggplot(adm2_sf_2020_kr) +
+  geom_sf(aes(fill = sex_ratio), color = "gray80") +
+  theme_void() +
+  scale_fill_gradient2(
+    low = "red", mid = "white", high = "blue", 
+    midpoint = 100, 
+    name = "Sex ratio\n(male per 100 female)"
+  ) +
+  labs(
+    title = "Sex ratio (2020)",
+    color = "ADM1"
+  )
+```
 
 ## Plot 4: Mapping total population in all districts
 

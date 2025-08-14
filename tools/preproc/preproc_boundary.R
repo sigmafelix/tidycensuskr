@@ -281,7 +281,7 @@ df_pop_1020_clean <-
   dplyr::rename(
     class2 = sex
   ) %>%
-  dplyr::filter(substr(adm2_code, 4, 4) != "0") %>%
+  dplyr::filter(!substr(adm2_code, 3, 5) %in% c("003", "004", "005")) %>%
   dplyr::filter(!is.na(adm1))
 write.csv(df_pop_1020_clean, "tools/population_1020_cleaned.csv", row.names = FALSE, fileEncoding = "UTF-8")
 
@@ -322,7 +322,7 @@ df_tax_compact <- read.csv("tools/tax_global_2020.csv", fileEncoding = "UTF-8")
 df_tax_income_compact <- read.csv("tools/tax_income_2020.csv", fileEncoding = "UTF-8")
 df_mort_2020 <- read.csv("tools/mortality_cleaned_2020.csv", fileEncoding = "UTF-8")
 # df_pop2 <- read.csv("tools/population_cleaned_2020.csv", fileEncoding = "UTF-8")
-df_pop_1520_clean <- read.csv("tools/population_1520_cleaned.csv", fileEncoding = "UTF-8")
+df_pop_1020_clean <- read.csv("tools/population_1020_cleaned.csv", fileEncoding = "UTF-8")
 
 # consolidate all data into one long data.frame
 
