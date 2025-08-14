@@ -34,13 +34,13 @@ Imports:
     sf,
     rmapshaper,
     dplyr,
-    stringr,
+    stringi,
     httr2,
     purrr,
     rlang,
     kosis,
-    R6,
-    tidyr
+    tidyr,
+    ggplot2
 Suggests: 
     knitr,
     rmarkdown,
