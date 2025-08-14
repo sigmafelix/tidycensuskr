@@ -1,230 +1,230 @@
-"sgg_tax_global","tax_global_total","sido_en","sigungu_1_en","sigungu_cd"
-"A0201","5209045","Seoul","Gangnam-gu",11230
-"A0202","461088","Seoul","Gangdong-gu",11250
-"A0203","107037","Seoul","Gangbuk-gu",11090
-"A0204","436565","Seoul","Gangseo-gu",11160
-"A0205","254329","Seoul","Gwanak-gu",11210
-"A0206","474605","Seoul","Gwangjin-gu",11050
-"A0207","262659","Seoul","Guro-gu",11170
-"A0208","105591","Seoul","Geumcheon-gu",11180
-"A0209","297600","Seoul","Nowon-gu",11110
-"A0210","144951","Seoul","Dobong-gu",11100
-"A0211","250719","Seoul","Dongdaemun-gu",11060
-"A0212","420219","Seoul","Dongjak-gu",11200
-"A0213","633352","Seoul","Mapo-gu",11140
-"A0214","326928","Seoul","Seodaemun-gu",11130
-"A0215","3345819","Seoul","Seocho-gu",11220
-"A0216","714799","Seoul","Seongdong-gu",11040
-"A0217","666520","Seoul","Seongbuk-gu",11080
-"A0218","1710356","Seoul","Songpa-gu",11240
-"A0219","787126","Seoul","Yangcheon-gu",11150
-"A0220","665509","Seoul","Yeongdeungpo-gu",11190
-"A0221","2354463","Seoul","Yongsan-gu",11030
-"A0222","285843","Seoul","Eunpyeong-gu",11120
-"A0223","539700","Seoul","Jongno-gu",11010
-"A0224","299214","Seoul","Jung-gu",11020
-"A0225","169218","Seoul","Jungnang-gu",11070
-"A0301","36565","Incheon","Ganghwa-gun",23510
-"A0302","112387","Incheon","Gyeyang-gu",23070
-"A0303","270484","Incheon","Namdong-gu",23050
-"A0304","16573","Incheon","Dong-gu",23020
-"A0305","150120","Incheon","Michuhol-gu",23090
-"A0306","233011","Incheon","Bupyeong-gu",23060
-"A0307","406608","Incheon","Seo-gu",23080
-"A0308","672199","Incheon","Yeonsu-gu",23040
-"A0309","10279","Incheon","Ongjin-gun",23520
-"A0310","85839","Incheon","Jung-gu",23010
-"A0401","38006","Gyeonggi-do","Gapyeong-gun",31570
-"A0402","1019249","Gyeonggi-do","Goyang-si",31100
-"A0403","249368","Gyeonggi-do","Gwacheon-si",31110
-"A0404","245157","Gyeonggi-do","Gwangmyeong-si",31060
-"A0405","279973","Gyeonggi-do","Gwangju-si",31250
-"A0406","131290","Gyeonggi-do","Guri-si",31120
-"A0407","205721","Gyeonggi-do","Gunpo-si",31160
-"A0408","354454","Gyeonggi-do","Gimpo-si",31230
-"A0409","517017","Gyeonggi-do","Namyangju-si",31130
-"A0410","26798","Gyeonggi-do","Dongducheon-si",31080
-"A0411","539062","Gyeonggi-do","Bucheon-si",31050
-"A0412","2179084","Gyeonggi-do","Seongnam-si",31020
-"A0413","1087486","Gyeonggi-do","Suwon-si",31010
-"A0414","296866","Gyeonggi-do","Siheung-si",31150
-"A0415","364163","Gyeonggi-do","Ansan-si",31090
-"A0416","108898","Gyeonggi-do","Anseong-si",31220
-"A0417","499915","Gyeonggi-do","Anyang-si",31040
-"A0418","125667","Gyeonggi-do","Yangju-si",31260
-"A0419","136322","Gyeonggi-do","Yangpyeong-gun",31580
-"A0420","62354","Gyeonggi-do","Yeoju-si",31280
-"A0421","12348","Gyeonggi-do","Yeoncheon-gun",31550
-"A0422","124266","Gyeonggi-do","Osan-si",31140
-"A0423","1350480","Gyeonggi-do","Yongin-si",31190
-"A0424","171611","Gyeonggi-do","Uiwang-si",31170
-"A0425","191543","Gyeonggi-do","Uijeongbu-si",31030
-"A0426","140625","Gyeonggi-do","Icheon-si",31210
-"A0427","279829","Gyeonggi-do","Paju-si",31200
-"A0428","338379","Gyeonggi-do","Pyeongtaek-si",31070
-"A0429","84595","Gyeonggi-do","Pocheon-si",31270
-"A0430","327382","Gyeonggi-do","Hanam-si",31180
-"A0431","879455","Gyeonggi-do","Hwaseong-si",31240
-"A0501","124154","Gangwon State","Gangneung-si",32030
-"A0502","10844","Gangwon State","Goseong-gun",32600
-"A0503","37086","Gangwon State","Donghae-si",32040
-"A0504","21429","Gangwon State","Samcheok-si",32070
-"A0505","56820","Gangwon State","Sokcho-si",32060
-"A0506","4870","Gangwon State","Yanggu-gun",32580
-"A0507","13557","Gangwon State","Yangyang-gun",32610
-"A0508","13478","Gangwon State","Yeongwol-gun",32530
-"A0509","195227","Gangwon State","Wonju-si",32020
-"A0510","11030","Gangwon State","Inje-gun",32590
-"A0511","9615","Gangwon State","Jeongseon-gun",32550
-"A0512","11539","Gangwon State","Cheorwon-gun",32560
-"A0513","143128","Gangwon State","Chuncheon-si",32010
-"A0514","12103","Gangwon State","Taebaek-si",32050
-"A0515","20241","Gangwon State","Pyeongchang-gun",32540
-"A0516","24351","Gangwon State","Hongcheon-gun",32510
-"A0517","5579","Gangwon State","Hwacheon-gun",32570
-"A0518","17291","Gangwon State","Hoengseong-gun",32520
-"A0601","62275","Daejeon","Daedeok-gu",25050
-"A0602","72283","Daejeon","Dong-gu",25010
-"A0603","335318","Daejeon","Seo-gu",25030
-"A0604","467497","Daejeon","Yuseong-gu",25040
-"A0605","117220","Daejeon","Jung-gu",25020
-"A0701","10321","Chungcheongbuk-do","Goesan-gun",33560
-"A0702","7899","Chungcheongbuk-do","Danyang-gun",33580
-"A0703","7396","Chungcheongbuk-do","Boeun-gun",33520
-"A0704","11339","Chungcheongbuk-do","Yeongdong-gun",33540
-"A0705","15745","Chungcheongbuk-do","Okcheon-gun",33530
-"A0706","50331","Chungcheongbuk-do","Eumseong-gun",33570
-"A0707","54249","Chungcheongbuk-do","Jecheon-si",33030
-"A0708","12408","Chungcheongbuk-do","Jeungpyeong-gun",33590
-"A0709","44149","Chungcheongbuk-do","Jincheon-gun",33550
-"A0710","524478","Chungcheongbuk-do","Cheongju-si",33040
-"A0711","103493","Chungcheongbuk-do","Chungju-si",33020
-"A0801","19396","Chungcheongnam-do","Gyeryong-si",34070
-"A0802","40976","Chungcheongnam-do","Gongju-si",34020
-"A0803","16715","Chungcheongnam-do","Geumsan-gun",34510
-"A0804","31166","Chungcheongnam-do","Nonsan-si",34060
-"A0805","81137","Chungcheongnam-do","Dangjin-si",34080
-"A0806","38896","Chungcheongnam-do","Boryeong-si",34030
-"A0807","14792","Chungcheongnam-do","Buyeo-gun",34530
-"A0808","99423","Chungcheongnam-do","Seosan-si",34050
-"A0809","16473","Chungcheongnam-do","Seocheon-gun",34540
-"A0810","223877","Chungcheongnam-do","Asan-si",34040
-"A0811","30498","Chungcheongnam-do","Yesan-gun",34570
-"A0812","511559","Chungcheongnam-do","Cheonan-si",34010
-"A0813","6932","Chungcheongnam-do","Cheongyang-gun",34550
-"A0814","26385","Chungcheongnam-do","Taean-gun",34580
-"A0815","43116","Chungcheongnam-do","Hongseong-gun",34560
-"A09","281903","Sejong City","Sejong City",29010
-"A1001","211260","Gwangju","Gwangsan-gu",24050
-"A1002","249424","Gwangju","Nam-gu",24030
-"A1003","92053","Gwangju","Dong-gu",24010
-"A1004","238061","Gwangju","Buk-gu",24040
-"A1005","273018","Gwangju","Seo-gu",24020
-"A1101","15036","Jeollabuk-do","Gochang-gun",35570
-"A1102","114152","Jeollabuk-do","Gunsan-si",35020
-"A1103","24980","Jeollabuk-do","Gimje-si",35060
-"A1104","23920","Jeollabuk-do","Namwon-si",35050
-"A1105","5804","Jeollabuk-do","Muju-gun",35530
-"A1106","12968","Jeollabuk-do","Buan-gun",35580
-"A1107","5235","Jeollabuk-do","Sunchang-gun",35560
-"A1108","31023","Jeollabuk-do","Wanju-gun",35510
-"A1109","122391","Jeollabuk-do","Iksan-si",35030
-"A1110","5345","Jeollabuk-do","Imsil-gun",35550
-"A1111","3301","Jeollabuk-do","Jangsu-gun",35540
-"A1112","450263","Jeollabuk-do","Jeonju-si",35010
-"A1113","31065","Jeollabuk-do","Jeongeup-si",35040
-"A1114","5620","Jeollabuk-do","Jinan-gun",35520
-"A1201","7606","Jeollanam-do","Gangjin-gun",36590
-"A1202","12004","Jeollanam-do","Goheung-gun",36550
-"A1203","6812","Jeollanam-do","Gokseong-gun",36520
-"A1204","78639","Jeollanam-do","Gwangyang-si",36060
-"A1205","5750","Jeollanam-do","Gurye-gun",36530
-"A1206","40549","Jeollanam-do","Naju-si",36040
-"A1207","19404","Jeollanam-do","Damyang-gun",36510
-"A1208","96013","Jeollanam-do","Mokpo-si",36010
-"A1209","41960","Jeollanam-do","Muan-gun",36620
-"A1210","9866","Jeollanam-do","Boseong-gun",36560
-"A1211","173501","Jeollanam-do","Suncheon-si",36030
-"A1212","10214","Jeollanam-do","Sinan-gun",36680
-"A1213","192693","Jeollanam-do","Yeosu-si",36020
-"A1214","15354","Jeollanam-do","Yeonggwang-gun",36640
-"A1215","12105","Jeollanam-do","Yeongam-gun",36610
-"A1216","12142","Jeollanam-do","Wando-gun",36660
-"A1217","14445","Jeollanam-do","Jangseong-gun",36650
-"A1218","7270","Jeollanam-do","Jangheung-gun",36580
-"A1219","6586","Jeollanam-do","Jindo-gun",36670
-"A1220","8215","Jeollanam-do","Hampyeong-gun",36630
-"A1221","21202","Jeollanam-do","Haenam-gun",36600
-"A1222","19613","Jeollanam-do","Hwasun-gun",36570
-"A1301","63982","Daegu","Nam-gu",22040
-"A1302","383510","Daegu","Dalseo-gu",22070
-"A1303","117848","Daegu","Dalseong-gun",22510
-"A1304","155701","Daegu","Dong-gu",22020
-"A1305","202553","Daegu","Buk-gu",22050
-"A1306","45624","Daegu","Seo-gu",22030
-"A1307","1009009","Daegu","Suseong-gu",22060
-"A1308","90157","Daegu","Jung-gu",22010
-"A1309","8765","Daegu","Gunwi-gun",22520
-"A1401","98706","Gyeongsangbuk-do","Gyeongsan-si",37100
-"A1402","139299","Gyeongsangbuk-do","Gyeongju-si",37020
-"A1403","13781","Gyeongsangbuk-do","Goryeong-gun",37570
-"A1404","215262","Gyeongsangbuk-do","Gumi-si",37050
-"A1406","49504","Gyeongsangbuk-do","Gimcheon-si",37030
-"A1407","25973","Gyeongsangbuk-do","Mungyeong-si",37090
-"A1408","6984","Gyeongsangbuk-do","Bonghwa-gun",37610
-"A1409","27656","Gyeongsangbuk-do","Sangju-si",37080
-"A1410","18181","Gyeongsangbuk-do","Seongju-gun",37580
-"A1411","61575","Gyeongsangbuk-do","Andong-si",37040
-"A1412","9326","Gyeongsangbuk-do","Yeongdeok-gun",37550
-"A1413","2816","Gyeongsangbuk-do","Yeongyang-gun",37540
-"A1414","36761","Gyeongsangbuk-do","Yeongju-si",37060
-"A1415","33386","Gyeongsangbuk-do","Yeongcheon-si",37070
-"A1416","15106","Gyeongsangbuk-do","Yecheon-gun",37600
-"A1417","3474","Gyeongsangbuk-do","Ulleung-gun",37630
-"A1418","16500","Gyeongsangbuk-do","Uljin-gun",37620
-"A1419","10248","Gyeongsangbuk-do","Uiseong-gun",37520
-"A1420","18471","Gyeongsangbuk-do","Cheongdo-gun",37560
-"A1421","4314","Gyeongsangbuk-do","Cheongsong-gun",37530
-"A1422","46601","Gyeongsangbuk-do","Chilgok-gun",37590
-"A1423","309010","Gyeongsangbuk-do","Pohang-si",37010
-"A1501","151983","Busan","Gangseo-gu",21120
-"A1502","205167","Busan","Geumjeong-gu",21110
-"A1503","93481","Busan","Gijang-gun",21510
-"A1504","287608","Busan","Nam-gu",21070
-"A1505","39323","Busan","Dong-gu",21030
-"A1506","241086","Busan","Dongnae-gu",21060
-"A1507","213913","Busan","Busanjin-gu",21050
-"A1508","173117","Busan","Buk-gu",21080
-"A1509","79112","Busan","Sasang-gu",21150
-"A1510","123519","Busan","Saha-gu",21100
-"A1511","70892","Busan","Seo-gu",21020
-"A1512","161093","Busan","Suyeong-gu",21140
-"A1513","152335","Busan","Yeonje-gu",21130
-"A1514","43682","Busan","Yeongdo-gu",21040
-"A1515","13808","Busan","Jung-gu",21010
-"A1516","897633","Busan","Haeundae-gu",21090
-"A1601","344054","Ulsan","Nam-gu",26020
-"A1602","144168","Ulsan","Dong-gu",26030
-"A1603","156387","Ulsan","Buk-gu",26040
-"A1604","133645","Ulsan","Ulju-gun",26510
-"A1605","159683","Ulsan","Jung-gu",26010
-"A1701","91169","Gyeongsangnam-do","Geoje-si",38090
-"A1702","21259","Gyeongsangnam-do","Geochang-gun",38590
-"A1703","15111","Gyeongsangnam-do","Goseong-gun",38540
-"A1704","303840","Gyeongsangnam-do","Gimhae-si",38070
-"A1705","13418","Gyeongsangnam-do","Namhae-gun",38550
-"A1706","38939","Gyeongsangnam-do","Miryang-si",38080
-"A1707","47488","Gyeongsangnam-do","Sacheon-si",38060
-"A1708","10217","Gyeongsangnam-do","Sancheong-gun",38570
-"A1709","171798","Gyeongsangnam-do","Yangsan-si",38100
-"A1710","5416","Gyeongsangnam-do","Uiryeong-gun",38510
-"A1711","234446","Gyeongsangnam-do","Jinju-si",38030
-"A1712","17680","Gyeongsangnam-do","Changnyeong-gun",38530
-"A1713","707124","Gyeongsangnam-do","Changwon-si",38110
-"A1714","53335","Gyeongsangnam-do","Tongyeong-si",38050
-"A1715","10721","Gyeongsangnam-do","Hadong-gun",38560
-"A1716","28144","Gyeongsangnam-do","Haman-gun",38520
-"A1717","11631","Gyeongsangnam-do","Hamyang-gun",38580
-"A1718","9939","Gyeongsangnam-do","Hapcheon-gun",38600
-"A1801","333846","Jeju","Jeju-si",39010
-"A1802","139821","Jeju","Seogwipo-si",39020
+"value","adm1","adm2","adm2_code","year","unit","type","class1","class2"
+"5209045","Seoul","Gangnam-gu",11230,2020,"million KRW","tax","income","general"
+"461088","Seoul","Gangdong-gu",11250,2020,"million KRW","tax","income","general"
+"107037","Seoul","Gangbuk-gu",11090,2020,"million KRW","tax","income","general"
+"436565","Seoul","Gangseo-gu",11160,2020,"million KRW","tax","income","general"
+"254329","Seoul","Gwanak-gu",11210,2020,"million KRW","tax","income","general"
+"474605","Seoul","Gwangjin-gu",11050,2020,"million KRW","tax","income","general"
+"262659","Seoul","Guro-gu",11170,2020,"million KRW","tax","income","general"
+"105591","Seoul","Geumcheon-gu",11180,2020,"million KRW","tax","income","general"
+"297600","Seoul","Nowon-gu",11110,2020,"million KRW","tax","income","general"
+"144951","Seoul","Dobong-gu",11100,2020,"million KRW","tax","income","general"
+"250719","Seoul","Dongdaemun-gu",11060,2020,"million KRW","tax","income","general"
+"420219","Seoul","Dongjak-gu",11200,2020,"million KRW","tax","income","general"
+"633352","Seoul","Mapo-gu",11140,2020,"million KRW","tax","income","general"
+"326928","Seoul","Seodaemun-gu",11130,2020,"million KRW","tax","income","general"
+"3345819","Seoul","Seocho-gu",11220,2020,"million KRW","tax","income","general"
+"714799","Seoul","Seongdong-gu",11040,2020,"million KRW","tax","income","general"
+"666520","Seoul","Seongbuk-gu",11080,2020,"million KRW","tax","income","general"
+"1710356","Seoul","Songpa-gu",11240,2020,"million KRW","tax","income","general"
+"787126","Seoul","Yangcheon-gu",11150,2020,"million KRW","tax","income","general"
+"665509","Seoul","Yeongdeungpo-gu",11190,2020,"million KRW","tax","income","general"
+"2354463","Seoul","Yongsan-gu",11030,2020,"million KRW","tax","income","general"
+"285843","Seoul","Eunpyeong-gu",11120,2020,"million KRW","tax","income","general"
+"539700","Seoul","Jongno-gu",11010,2020,"million KRW","tax","income","general"
+"299214","Seoul","Jung-gu",11020,2020,"million KRW","tax","income","general"
+"169218","Seoul","Jungnang-gu",11070,2020,"million KRW","tax","income","general"
+"36565","Incheon","Ganghwa-gun",23510,2020,"million KRW","tax","income","general"
+"112387","Incheon","Gyeyang-gu",23070,2020,"million KRW","tax","income","general"
+"270484","Incheon","Namdong-gu",23050,2020,"million KRW","tax","income","general"
+"16573","Incheon","Dong-gu",23020,2020,"million KRW","tax","income","general"
+"150120","Incheon","Michuhol-gu",23090,2020,"million KRW","tax","income","general"
+"233011","Incheon","Bupyeong-gu",23060,2020,"million KRW","tax","income","general"
+"406608","Incheon","Seo-gu",23080,2020,"million KRW","tax","income","general"
+"672199","Incheon","Yeonsu-gu",23040,2020,"million KRW","tax","income","general"
+"10279","Incheon","Ongjin-gun",23520,2020,"million KRW","tax","income","general"
+"85839","Incheon","Jung-gu",23010,2020,"million KRW","tax","income","general"
+"38006","Gyeonggi-do","Gapyeong-gun",31570,2020,"million KRW","tax","income","general"
+"1019249","Gyeonggi-do","Goyang-si",31100,2020,"million KRW","tax","income","general"
+"249368","Gyeonggi-do","Gwacheon-si",31110,2020,"million KRW","tax","income","general"
+"245157","Gyeonggi-do","Gwangmyeong-si",31060,2020,"million KRW","tax","income","general"
+"279973","Gyeonggi-do","Gwangju-si",31250,2020,"million KRW","tax","income","general"
+"131290","Gyeonggi-do","Guri-si",31120,2020,"million KRW","tax","income","general"
+"205721","Gyeonggi-do","Gunpo-si",31160,2020,"million KRW","tax","income","general"
+"354454","Gyeonggi-do","Gimpo-si",31230,2020,"million KRW","tax","income","general"
+"517017","Gyeonggi-do","Namyangju-si",31130,2020,"million KRW","tax","income","general"
+"26798","Gyeonggi-do","Dongducheon-si",31080,2020,"million KRW","tax","income","general"
+"539062","Gyeonggi-do","Bucheon-si",31050,2020,"million KRW","tax","income","general"
+"2179084","Gyeonggi-do","Seongnam-si",31020,2020,"million KRW","tax","income","general"
+"1087486","Gyeonggi-do","Suwon-si",31010,2020,"million KRW","tax","income","general"
+"296866","Gyeonggi-do","Siheung-si",31150,2020,"million KRW","tax","income","general"
+"364163","Gyeonggi-do","Ansan-si",31090,2020,"million KRW","tax","income","general"
+"108898","Gyeonggi-do","Anseong-si",31220,2020,"million KRW","tax","income","general"
+"499915","Gyeonggi-do","Anyang-si",31040,2020,"million KRW","tax","income","general"
+"125667","Gyeonggi-do","Yangju-si",31260,2020,"million KRW","tax","income","general"
+"136322","Gyeonggi-do","Yangpyeong-gun",31580,2020,"million KRW","tax","income","general"
+"62354","Gyeonggi-do","Yeoju-si",31280,2020,"million KRW","tax","income","general"
+"12348","Gyeonggi-do","Yeoncheon-gun",31550,2020,"million KRW","tax","income","general"
+"124266","Gyeonggi-do","Osan-si",31140,2020,"million KRW","tax","income","general"
+"1350480","Gyeonggi-do","Yongin-si",31190,2020,"million KRW","tax","income","general"
+"171611","Gyeonggi-do","Uiwang-si",31170,2020,"million KRW","tax","income","general"
+"191543","Gyeonggi-do","Uijeongbu-si",31030,2020,"million KRW","tax","income","general"
+"140625","Gyeonggi-do","Icheon-si",31210,2020,"million KRW","tax","income","general"
+"279829","Gyeonggi-do","Paju-si",31200,2020,"million KRW","tax","income","general"
+"338379","Gyeonggi-do","Pyeongtaek-si",31070,2020,"million KRW","tax","income","general"
+"84595","Gyeonggi-do","Pocheon-si",31270,2020,"million KRW","tax","income","general"
+"327382","Gyeonggi-do","Hanam-si",31180,2020,"million KRW","tax","income","general"
+"879455","Gyeonggi-do","Hwaseong-si",31240,2020,"million KRW","tax","income","general"
+"124154","Gangwon-do","Gangneung-si",32030,2020,"million KRW","tax","income","general"
+"10844","Gangwon-do","Goseong-gun",32600,2020,"million KRW","tax","income","general"
+"37086","Gangwon-do","Donghae-si",32040,2020,"million KRW","tax","income","general"
+"21429","Gangwon-do","Samcheok-si",32070,2020,"million KRW","tax","income","general"
+"56820","Gangwon-do","Sokcho-si",32060,2020,"million KRW","tax","income","general"
+"4870","Gangwon-do","Yanggu-gun",32580,2020,"million KRW","tax","income","general"
+"13557","Gangwon-do","Yangyang-gun",32610,2020,"million KRW","tax","income","general"
+"13478","Gangwon-do","Yeongwol-gun",32530,2020,"million KRW","tax","income","general"
+"195227","Gangwon-do","Wonju-si",32020,2020,"million KRW","tax","income","general"
+"11030","Gangwon-do","Inje-gun",32590,2020,"million KRW","tax","income","general"
+"9615","Gangwon-do","Jeongseon-gun",32550,2020,"million KRW","tax","income","general"
+"11539","Gangwon-do","Cheorwon-gun",32560,2020,"million KRW","tax","income","general"
+"143128","Gangwon-do","Chuncheon-si",32010,2020,"million KRW","tax","income","general"
+"12103","Gangwon-do","Taebaek-si",32050,2020,"million KRW","tax","income","general"
+"20241","Gangwon-do","Pyeongchang-gun",32540,2020,"million KRW","tax","income","general"
+"24351","Gangwon-do","Hongcheon-gun",32510,2020,"million KRW","tax","income","general"
+"5579","Gangwon-do","Hwacheon-gun",32570,2020,"million KRW","tax","income","general"
+"17291","Gangwon-do","Hoengseong-gun",32520,2020,"million KRW","tax","income","general"
+"62275","Daejeon","Daedeok-gu",25050,2020,"million KRW","tax","income","general"
+"72283","Daejeon","Dong-gu",25010,2020,"million KRW","tax","income","general"
+"335318","Daejeon","Seo-gu",25030,2020,"million KRW","tax","income","general"
+"467497","Daejeon","Yuseong-gu",25040,2020,"million KRW","tax","income","general"
+"117220","Daejeon","Jung-gu",25020,2020,"million KRW","tax","income","general"
+"10321","Chungcheongbuk-do","Goesan-gun",33560,2020,"million KRW","tax","income","general"
+"7899","Chungcheongbuk-do","Danyang-gun",33580,2020,"million KRW","tax","income","general"
+"7396","Chungcheongbuk-do","Boeun-gun",33520,2020,"million KRW","tax","income","general"
+"11339","Chungcheongbuk-do","Yeongdong-gun",33540,2020,"million KRW","tax","income","general"
+"15745","Chungcheongbuk-do","Okcheon-gun",33530,2020,"million KRW","tax","income","general"
+"50331","Chungcheongbuk-do","Eumseong-gun",33570,2020,"million KRW","tax","income","general"
+"54249","Chungcheongbuk-do","Jecheon-si",33030,2020,"million KRW","tax","income","general"
+"12408","Chungcheongbuk-do","Jeungpyeong-gun",33590,2020,"million KRW","tax","income","general"
+"44149","Chungcheongbuk-do","Jincheon-gun",33550,2020,"million KRW","tax","income","general"
+"524478","Chungcheongbuk-do","Cheongju-si",33040,2020,"million KRW","tax","income","general"
+"103493","Chungcheongbuk-do","Chungju-si",33020,2020,"million KRW","tax","income","general"
+"19396","Chungcheongnam-do","Gyeryong-si",34070,2020,"million KRW","tax","income","general"
+"40976","Chungcheongnam-do","Gongju-si",34020,2020,"million KRW","tax","income","general"
+"16715","Chungcheongnam-do","Geumsan-gun",34510,2020,"million KRW","tax","income","general"
+"31166","Chungcheongnam-do","Nonsan-si",34060,2020,"million KRW","tax","income","general"
+"81137","Chungcheongnam-do","Dangjin-si",34080,2020,"million KRW","tax","income","general"
+"38896","Chungcheongnam-do","Boryeong-si",34030,2020,"million KRW","tax","income","general"
+"14792","Chungcheongnam-do","Buyeo-gun",34530,2020,"million KRW","tax","income","general"
+"99423","Chungcheongnam-do","Seosan-si",34050,2020,"million KRW","tax","income","general"
+"16473","Chungcheongnam-do","Seocheon-gun",34540,2020,"million KRW","tax","income","general"
+"223877","Chungcheongnam-do","Asan-si",34040,2020,"million KRW","tax","income","general"
+"30498","Chungcheongnam-do","Yesan-gun",34570,2020,"million KRW","tax","income","general"
+"511559","Chungcheongnam-do","Cheonan-si",34010,2020,"million KRW","tax","income","general"
+"6932","Chungcheongnam-do","Cheongyang-gun",34550,2020,"million KRW","tax","income","general"
+"26385","Chungcheongnam-do","Taean-gun",34580,2020,"million KRW","tax","income","general"
+"43116","Chungcheongnam-do","Hongseong-gun",34560,2020,"million KRW","tax","income","general"
+"281903","Sejong","Sejong-si",29010,2020,"million KRW","tax","income","general"
+"211260","Gwangju","Gwangsan-gu",24050,2020,"million KRW","tax","income","general"
+"249424","Gwangju","Nam-gu",24030,2020,"million KRW","tax","income","general"
+"92053","Gwangju","Dong-gu",24010,2020,"million KRW","tax","income","general"
+"238061","Gwangju","Buk-gu",24040,2020,"million KRW","tax","income","general"
+"273018","Gwangju","Seo-gu",24020,2020,"million KRW","tax","income","general"
+"15036","Jeollabuk-do","Gochang-gun",35570,2020,"million KRW","tax","income","general"
+"114152","Jeollabuk-do","Gunsan-si",35020,2020,"million KRW","tax","income","general"
+"24980","Jeollabuk-do","Gimje-si",35060,2020,"million KRW","tax","income","general"
+"23920","Jeollabuk-do","Namwon-si",35050,2020,"million KRW","tax","income","general"
+"5804","Jeollabuk-do","Muju-gun",35530,2020,"million KRW","tax","income","general"
+"12968","Jeollabuk-do","Buan-gun",35580,2020,"million KRW","tax","income","general"
+"5235","Jeollabuk-do","Sunchang-gun",35560,2020,"million KRW","tax","income","general"
+"31023","Jeollabuk-do","Wanju-gun",35510,2020,"million KRW","tax","income","general"
+"122391","Jeollabuk-do","Iksan-si",35030,2020,"million KRW","tax","income","general"
+"5345","Jeollabuk-do","Imsil-gun",35550,2020,"million KRW","tax","income","general"
+"3301","Jeollabuk-do","Jangsu-gun",35540,2020,"million KRW","tax","income","general"
+"450263","Jeollabuk-do","Jeonju-si",35010,2020,"million KRW","tax","income","general"
+"31065","Jeollabuk-do","Jeongeup-si",35040,2020,"million KRW","tax","income","general"
+"5620","Jeollabuk-do","Jinan-gun",35520,2020,"million KRW","tax","income","general"
+"7606","Jeollanam-do","Gangjin-gun",36590,2020,"million KRW","tax","income","general"
+"12004","Jeollanam-do","Goheung-gun",36550,2020,"million KRW","tax","income","general"
+"6812","Jeollanam-do","Gokseong-gun",36520,2020,"million KRW","tax","income","general"
+"78639","Jeollanam-do","Gwangyang-si",36060,2020,"million KRW","tax","income","general"
+"5750","Jeollanam-do","Gurye-gun",36530,2020,"million KRW","tax","income","general"
+"40549","Jeollanam-do","Naju-si",36040,2020,"million KRW","tax","income","general"
+"19404","Jeollanam-do","Damyang-gun",36510,2020,"million KRW","tax","income","general"
+"96013","Jeollanam-do","Mokpo-si",36010,2020,"million KRW","tax","income","general"
+"41960","Jeollanam-do","Muan-gun",36620,2020,"million KRW","tax","income","general"
+"9866","Jeollanam-do","Boseong-gun",36560,2020,"million KRW","tax","income","general"
+"173501","Jeollanam-do","Suncheon-si",36030,2020,"million KRW","tax","income","general"
+"10214","Jeollanam-do","Sinan-gun",36680,2020,"million KRW","tax","income","general"
+"192693","Jeollanam-do","Yeosu-si",36020,2020,"million KRW","tax","income","general"
+"15354","Jeollanam-do","Yeonggwang-gun",36640,2020,"million KRW","tax","income","general"
+"12105","Jeollanam-do","Yeongam-gun",36610,2020,"million KRW","tax","income","general"
+"12142","Jeollanam-do","Wando-gun",36660,2020,"million KRW","tax","income","general"
+"14445","Jeollanam-do","Jangseong-gun",36650,2020,"million KRW","tax","income","general"
+"7270","Jeollanam-do","Jangheung-gun",36580,2020,"million KRW","tax","income","general"
+"6586","Jeollanam-do","Jindo-gun",36670,2020,"million KRW","tax","income","general"
+"8215","Jeollanam-do","Hampyeong-gun",36630,2020,"million KRW","tax","income","general"
+"21202","Jeollanam-do","Haenam-gun",36600,2020,"million KRW","tax","income","general"
+"19613","Jeollanam-do","Hwasun-gun",36570,2020,"million KRW","tax","income","general"
+"63982","Daegu","Nam-gu",22040,2020,"million KRW","tax","income","general"
+"383510","Daegu","Dalseo-gu",22070,2020,"million KRW","tax","income","general"
+"117848","Daegu","Dalseong-gun",22510,2020,"million KRW","tax","income","general"
+"155701","Daegu","Dong-gu",22020,2020,"million KRW","tax","income","general"
+"202553","Daegu","Buk-gu",22050,2020,"million KRW","tax","income","general"
+"45624","Daegu","Seo-gu",22030,2020,"million KRW","tax","income","general"
+"1009009","Daegu","Suseong-gu",22060,2020,"million KRW","tax","income","general"
+"90157","Daegu","Jung-gu",22010,2020,"million KRW","tax","income","general"
+"8765","Daegu","Gunwi-gun",22520,2020,"million KRW","tax","income","general"
+"98706","Gyeongsangbuk-do","Gyeongsan-si",37100,2020,"million KRW","tax","income","general"
+"139299","Gyeongsangbuk-do","Gyeongju-si",37020,2020,"million KRW","tax","income","general"
+"13781","Gyeongsangbuk-do","Goryeong-gun",37570,2020,"million KRW","tax","income","general"
+"215262","Gyeongsangbuk-do","Gumi-si",37050,2020,"million KRW","tax","income","general"
+"49504","Gyeongsangbuk-do","Gimcheon-si",37030,2020,"million KRW","tax","income","general"
+"25973","Gyeongsangbuk-do","Mungyeong-si",37090,2020,"million KRW","tax","income","general"
+"6984","Gyeongsangbuk-do","Bonghwa-gun",37610,2020,"million KRW","tax","income","general"
+"27656","Gyeongsangbuk-do","Sangju-si",37080,2020,"million KRW","tax","income","general"
+"18181","Gyeongsangbuk-do","Seongju-gun",37580,2020,"million KRW","tax","income","general"
+"61575","Gyeongsangbuk-do","Andong-si",37040,2020,"million KRW","tax","income","general"
+"9326","Gyeongsangbuk-do","Yeongdeok-gun",37550,2020,"million KRW","tax","income","general"
+"2816","Gyeongsangbuk-do","Yeongyang-gun",37540,2020,"million KRW","tax","income","general"
+"36761","Gyeongsangbuk-do","Yeongju-si",37060,2020,"million KRW","tax","income","general"
+"33386","Gyeongsangbuk-do","Yeongcheon-si",37070,2020,"million KRW","tax","income","general"
+"15106","Gyeongsangbuk-do","Yecheon-gun",37600,2020,"million KRW","tax","income","general"
+"3474","Gyeongsangbuk-do","Ulleung-gun",37630,2020,"million KRW","tax","income","general"
+"16500","Gyeongsangbuk-do","Uljin-gun",37620,2020,"million KRW","tax","income","general"
+"10248","Gyeongsangbuk-do","Uiseong-gun",37520,2020,"million KRW","tax","income","general"
+"18471","Gyeongsangbuk-do","Cheongdo-gun",37560,2020,"million KRW","tax","income","general"
+"4314","Gyeongsangbuk-do","Cheongsong-gun",37530,2020,"million KRW","tax","income","general"
+"46601","Gyeongsangbuk-do","Chilgok-gun",37590,2020,"million KRW","tax","income","general"
+"309010","Gyeongsangbuk-do","Pohang-si",37010,2020,"million KRW","tax","income","general"
+"151983","Busan","Gangseo-gu",21120,2020,"million KRW","tax","income","general"
+"205167","Busan","Geumjeong-gu",21110,2020,"million KRW","tax","income","general"
+"93481","Busan","Gijang-gun",21510,2020,"million KRW","tax","income","general"
+"287608","Busan","Nam-gu",21070,2020,"million KRW","tax","income","general"
+"39323","Busan","Dong-gu",21030,2020,"million KRW","tax","income","general"
+"241086","Busan","Dongnae-gu",21060,2020,"million KRW","tax","income","general"
+"213913","Busan","Busanjin-gu",21050,2020,"million KRW","tax","income","general"
+"173117","Busan","Buk-gu",21080,2020,"million KRW","tax","income","general"
+"79112","Busan","Sasang-gu",21150,2020,"million KRW","tax","income","general"
+"123519","Busan","Saha-gu",21100,2020,"million KRW","tax","income","general"
+"70892","Busan","Seo-gu",21020,2020,"million KRW","tax","income","general"
+"161093","Busan","Suyeong-gu",21140,2020,"million KRW","tax","income","general"
+"152335","Busan","Yeonje-gu",21130,2020,"million KRW","tax","income","general"
+"43682","Busan","Yeongdo-gu",21040,2020,"million KRW","tax","income","general"
+"13808","Busan","Jung-gu",21010,2020,"million KRW","tax","income","general"
+"897633","Busan","Haeundae-gu",21090,2020,"million KRW","tax","income","general"
+"344054","Ulsan","Nam-gu",26020,2020,"million KRW","tax","income","general"
+"144168","Ulsan","Dong-gu",26030,2020,"million KRW","tax","income","general"
+"156387","Ulsan","Buk-gu",26040,2020,"million KRW","tax","income","general"
+"133645","Ulsan","Ulju-gun",26510,2020,"million KRW","tax","income","general"
+"159683","Ulsan","Jung-gu",26010,2020,"million KRW","tax","income","general"
+"91169","Gyeongsangnam-do","Geoje-si",38090,2020,"million KRW","tax","income","general"
+"21259","Gyeongsangnam-do","Geochang-gun",38590,2020,"million KRW","tax","income","general"
+"15111","Gyeongsangnam-do","Goseong-gun",38540,2020,"million KRW","tax","income","general"
+"303840","Gyeongsangnam-do","Gimhae-si",38070,2020,"million KRW","tax","income","general"
+"13418","Gyeongsangnam-do","Namhae-gun",38550,2020,"million KRW","tax","income","general"
+"38939","Gyeongsangnam-do","Miryang-si",38080,2020,"million KRW","tax","income","general"
+"47488","Gyeongsangnam-do","Sacheon-si",38060,2020,"million KRW","tax","income","general"
+"10217","Gyeongsangnam-do","Sancheong-gun",38570,2020,"million KRW","tax","income","general"
+"171798","Gyeongsangnam-do","Yangsan-si",38100,2020,"million KRW","tax","income","general"
+"5416","Gyeongsangnam-do","Uiryeong-gun",38510,2020,"million KRW","tax","income","general"
+"234446","Gyeongsangnam-do","Jinju-si",38030,2020,"million KRW","tax","income","general"
+"17680","Gyeongsangnam-do","Changnyeong-gun",38530,2020,"million KRW","tax","income","general"
+"707124","Gyeongsangnam-do","Changwon-si",38110,2020,"million KRW","tax","income","general"
+"53335","Gyeongsangnam-do","Tongyeong-si",38050,2020,"million KRW","tax","income","general"
+"10721","Gyeongsangnam-do","Hadong-gun",38560,2020,"million KRW","tax","income","general"
+"28144","Gyeongsangnam-do","Haman-gun",38520,2020,"million KRW","tax","income","general"
+"11631","Gyeongsangnam-do","Hamyang-gun",38580,2020,"million KRW","tax","income","general"
+"9939","Gyeongsangnam-do","Hapcheon-gun",38600,2020,"million KRW","tax","income","general"
+"333846","Jeju-do","Jeju-si",39010,2020,"million KRW","tax","income","general"
+"139821","Jeju-do","Seogwipo-si",39020,2020,"million KRW","tax","income","general"

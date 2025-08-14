@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(habit)
+library(tidycensuskr)
 
 test_check("tidycensuskr")

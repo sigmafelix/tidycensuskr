@@ -1,6 +1,6 @@
 Package: tidycensuskr 
 Title: `anyflights`-like data access for South Korea census and administrative data
-Version: 0.0.4.9000
+Version: 0.0.5.9000
 Authors@R: c(
     person(given = "Insang", 
           family = "Song", 
@@ -32,21 +32,19 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 Imports:
     sf,
-    rmapshaper,
     dplyr,
-    stringr,
-    httr2,
     purrr,
     rlang,
     kosis,
-    R6,
-    tidyr
+    tidyr,
+    ggplot2,
+    utils
 Suggests: 
     knitr,
     rmarkdown,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Encoding: UTF-8
-VignetteBuilder: quarto, knitr
+VignetteBuilder: knitr
 URL: https://github.com/sigmafelix/tidycensuskr, https://sigmafelix.github.io/tidycensuskr/
 BugReports: https://github.com/sigmafelix/tidycensuskr/issues

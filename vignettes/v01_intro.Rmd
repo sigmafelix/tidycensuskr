@@ -1,0 +1,69 @@
+---
+title: "Introduction to tidycensuskr"
+output: rmarkdown::html_vignette
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
+vignette: >
+  %\VignetteIndexEntry{Introduction to tidycensuskr} 
+  %\VignetteEngine{knitr::rmarkdown}
+  %\usepackage[utf8]{inputenc}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  warning = FALSE,
+  message = FALSE,
+  out.width = "100%"
+)
+```
+
+
+
+## Get Started
+
+* Data retrieval functions
+* Geographic boundary functions
+* Data transformation utilities
+* Visualisation helpers
+
+
+## Data Structure
+* Explanation of how census data is organised in the package
+  - `censuskor` is the main dataset containing census data.
+  - `data(censuskor)` loads the dataset.
+  - For details, refer to the `censuskor` documentation by running `?censuskor` in R.
+
+* Available geographic levels 
+  - Currently the package supports district(municipal)-level (_Si-Gun-Gu_) level data
+
+* Geographic boundary
+
+
+
+## 1. Understanding Korean Geographic Hierarchies
+
+In Korea, there are three major levels of geographic hierarchy for administrative purposes:
+
+- **_Si-Do_**: The highest level of administrative division.
+  - Metropolitan cities are treated as provinces.
+  - States/Special Self-Governing Province: another name of hierarchy for Jeju-do, Gangwon-do, and Jeollabuk-do. Such names are used following the statute for giving special status to these provinces.
+- **_Si-Gun-Gu_**: The second level, which includes cities and counties.
+  - **_Si_**: City. In most provinces, cities are autonomous administrative units.
+  - **_Gun_**: County. Counties are rural areas with smaller populations (<50,000).
+  - **_Gu_**: District. Districts are urban areas within metropolitan cities (these districts are called autonomous districts), whereas districts in autonomous cities are called non-autonomous districts.
+- **_Eup-Myeon-Dong_**: The third level, which includes town and districts.
+
+
+Aggregating Eupmyeondong data to Sigungu level
+Handling administrative boundary changes
+Exercise: Calculate population-weighted PM2.5 exposure for each Sigungu in Seoul
+
+
+### 2. Urban Development Analysis
+Tracking population changes across census years
+Identifying rapidly growing Eupmyeondong
+New town development patterns
+Exercise: Analyse population shifts in Seoul Metropolitan Area (수도권)
+
+

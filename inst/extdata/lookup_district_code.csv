@@ -1,274 +1,274 @@
-"","sido_kr","sigungu_kr","sigungu_1_kr","sigungu_2_kr","sido_en","sigun_en","sigungu_1_en","sigungu_2_en","sdsgg_en","base_year","tax_exclude","sigungu_cd","sgg_tax_global","sgg_tax_income","sgg_industry"
-"1","¼­¿ïÆ¯º°½Ã","Á¾·Î±¸","Á¾·Î±¸","Á¾·Î±¸","Seoul","Jongno-gu","Jongno-gu","Jongno-gu","Jongno-gu Seoul",2020,NA,11010,"A0223","A0123",11010
-"2","¼­¿ïÆ¯º°½Ã","Áß±¸","Áß±¸","Áß±¸","Seoul","Jung-gu","Jung-gu","Jung-gu","Jung-gu Seoul",2020,NA,11020,"A0224","A0124",11020
-"3","¼­¿ïÆ¯º°½Ã","¿ë»ê±¸","¿ë»ê±¸","¿ë»ê±¸","Seoul","Yongsan-gu","Yongsan-gu","Yongsan-gu","Yongsan-gu Seoul",2020,NA,11030,"A0221","A0121",11030
-"4","¼­¿ïÆ¯º°½Ã","¼ºµ¿±¸","¼ºµ¿±¸","¼ºµ¿±¸","Seoul","Seongdong-gu","Seongdong-gu","Seongdong-gu","Seongdong-gu Seoul",2020,NA,11040,"A0216","A0116",11040
-"5","¼­¿ïÆ¯º°½Ã","±¤Áø±¸","±¤Áø±¸","±¤Áø±¸","Seoul","Gwangjin-gu","Gwangjin-gu","Gwangjin-gu","Gwangjin-gu Seoul",2020,NA,11050,"A0206","A0106",11050
-"6","¼­¿ïÆ¯º°½Ã","µ¿´ë¹®±¸","µ¿´ë¹®±¸","µ¿´ë¹®±¸","Seoul","Dongdaemun-gu","Dongdaemun-gu","Dongdaemun-gu","Dongdaemun-gu Seoul",2020,NA,11060,"A0211","A0111",11060
-"7","¼­¿ïÆ¯º°½Ã","Áß¶û±¸","Áß¶û±¸","Áß¶û±¸","Seoul","Jungnang-gu","Jungnang-gu","Jungnang-gu","Jungnang-gu Seoul",2020,NA,11070,"A0225","A0125",11070
-"8","¼­¿ïÆ¯º°½Ã","¼ººÏ±¸","¼ººÏ±¸","¼ººÏ±¸","Seoul","Seongbuk-gu","Seongbuk-gu","Seongbuk-gu","Seongbuk-gu Seoul",2020,NA,11080,"A0217","A0117",11080
-"9","¼­¿ïÆ¯º°½Ã","°­ºÏ±¸","°­ºÏ±¸","°­ºÏ±¸","Seoul","Gangbuk-gu","Gangbuk-gu","Gangbuk-gu","Gangbuk-gu Seoul",2020,NA,11090,"A0203","A0103",11090
-"10","¼­¿ïÆ¯º°½Ã","µµºÀ±¸","µµºÀ±¸","µµºÀ±¸","Seoul","Dobong-gu","Dobong-gu","Dobong-gu","Dobong-gu Seoul",2020,NA,11100,"A0210","A0110",11100
-"11","¼­¿ïÆ¯º°½Ã","³ë¿ø±¸","³ë¿ø±¸","³ë¿ø±¸","Seoul","Nowon-gu","Nowon-gu","Nowon-gu","Nowon-gu Seoul",2020,NA,11110,"A0209","A0109",11110
-"12","¼­¿ïÆ¯º°½Ã","ÀºÆò±¸","ÀºÆò±¸","ÀºÆò±¸","Seoul","Eunpyeong-gu","Eunpyeong-gu","Eunpyeong-gu","Eunpyeong-gu Seoul",2020,NA,11120,"A0222","A0122",11120
-"13","¼­¿ïÆ¯º°½Ã","¼­´ë¹®±¸","¼­´ë¹®±¸","¼­´ë¹®±¸","Seoul","Seodaemun-gu","Seodaemun-gu","Seodaemun-gu","Seodaemun-gu Seoul",2020,NA,11130,"A0214","A0114",11130
-"14","¼­¿ïÆ¯º°½Ã","¸¶Æ÷±¸","¸¶Æ÷±¸","¸¶Æ÷±¸","Seoul","Mapo-gu","Mapo-gu","Mapo-gu","Mapo-gu Seoul",2020,NA,11140,"A0213","A0113",11140
-"15","¼­¿ïÆ¯º°½Ã","¾çÃµ±¸","¾çÃµ±¸","¾çÃµ±¸","Seoul","Yangcheon-gu","Yangcheon-gu","Yangcheon-gu","Yangcheon-gu Seoul",2020,NA,11150,"A0219","A0119",11150
-"16","¼­¿ïÆ¯º°½Ã","°­¼­±¸","°­¼­±¸","°­¼­±¸","Seoul","Gangseo-gu","Gangseo-gu","Gangseo-gu","Gangseo-gu Seoul",2020,NA,11160,"A0204","A0104",11160
-"17","¼­¿ïÆ¯º°½Ã","±¸·Î±¸","±¸·Î±¸","±¸·Î±¸","Seoul","Guro-gu","Guro-gu","Guro-gu","Guro-gu Seoul",2020,NA,11170,"A0207","A0107",11170
-"18","¼­¿ïÆ¯º°½Ã","±İÃµ±¸","±İÃµ±¸","±İÃµ±¸","Seoul","Geumcheon-gu","Geumcheon-gu","Geumcheon-gu","Geumcheon-gu Seoul",2020,NA,11180,"A0208","A0108",11180
-"19","¼­¿ïÆ¯º°½Ã","¿µµîÆ÷±¸","¿µµîÆ÷±¸","¿µµîÆ÷±¸","Seoul","Yeongdeungpo-gu","Yeongdeungpo-gu","Yeongdeungpo-gu","Yeongdeungpo-gu Seoul",2020,NA,11190,"A0220","A0120",11190
-"20","¼­¿ïÆ¯º°½Ã","µ¿ÀÛ±¸","µ¿ÀÛ±¸","µ¿ÀÛ±¸","Seoul","Dongjak-gu","Dongjak-gu","Dongjak-gu","Dongjak-gu Seoul",2020,NA,11200,"A0212","A0112",11200
-"21","¼­¿ïÆ¯º°½Ã","°ü¾Ç±¸","°ü¾Ç±¸","°ü¾Ç±¸","Seoul","Gwanak-gu","Gwanak-gu","Gwanak-gu","Gwanak-gu Seoul",2020,NA,11210,"A0205","A0105",11210
-"22","¼­¿ïÆ¯º°½Ã","¼­ÃÊ±¸","¼­ÃÊ±¸","¼­ÃÊ±¸","Seoul","Seocho-gu","Seocho-gu","Seocho-gu","Seocho-gu Seoul",2020,NA,11220,"A0215","A0115",11220
-"23","¼­¿ïÆ¯º°½Ã","°­³²±¸","°­³²±¸","°­³²±¸","Seoul","Gangnam-gu","Gangnam-gu","Gangnam-gu","Gangnam-gu Seoul",2020,NA,11230,"A0201","A0101",11230
-"24","¼­¿ïÆ¯º°½Ã","¼ÛÆÄ±¸","¼ÛÆÄ±¸","¼ÛÆÄ±¸","Seoul","Songpa-gu","Songpa-gu","Songpa-gu","Songpa-gu Seoul",2020,NA,11240,"A0218","A0118",11240
-"25","¼­¿ïÆ¯º°½Ã","°­µ¿±¸","°­µ¿±¸","°­µ¿±¸","Seoul","Gangdong-gu","Gangdong-gu","Gangdong-gu","Gangdong-gu Seoul",2020,NA,11250,"A0202","A0102",11250
-"26","ºÎ»ê±¤¿ª½Ã","Áß±¸","Áß±¸","Áß±¸","Busan","Jung-gu","Jung-gu","Jung-gu","Jung-gu Busan",2020,NA,21010,"A1515","A1415",21010
-"27","ºÎ»ê±¤¿ª½Ã","¼­±¸","¼­±¸","¼­±¸","Busan","Seo-gu","Seo-gu","Seo-gu","Seo-gu Busan",2020,NA,21020,"A1511","A1411",21020
-"28","ºÎ»ê±¤¿ª½Ã","µ¿±¸","µ¿±¸","µ¿±¸","Busan","Dong-gu","Dong-gu","Dong-gu","Dong-gu Busan",2020,NA,21030,"A1505","A1405",21030
-"29","ºÎ»ê±¤¿ª½Ã","¿µµµ±¸","¿µµµ±¸","¿µµµ±¸","Busan","Yeongdo-gu","Yeongdo-gu","Yeongdo-gu","Yeongdo-gu Busan",2020,NA,21040,"A1514","A1414",21040
-"30","ºÎ»ê±¤¿ª½Ã","ºÎ»êÁø±¸","ºÎ»êÁø±¸","ºÎ»êÁø±¸","Busan","Busanjin-gu","Busanjin-gu","Busanjin-gu","Busanjin-gu Busan",2020,NA,21050,"A1507","A1407",21050
-"31","ºÎ»ê±¤¿ª½Ã","µ¿·¡±¸","µ¿·¡±¸","µ¿·¡±¸","Busan","Dongnae-gu","Dongnae-gu","Dongnae-gu","Dongnae-gu Busan",2020,NA,21060,"A1506","A1406",21060
-"32","ºÎ»ê±¤¿ª½Ã","³²±¸","³²±¸","³²±¸","Busan","Nam-gu","Nam-gu","Nam-gu","Nam-gu Busan",2020,NA,21070,"A1504","A1404",21070
-"33","ºÎ»ê±¤¿ª½Ã","ºÏ±¸","ºÏ±¸","ºÏ±¸","Busan","Buk-gu","Buk-gu","Buk-gu","Buk-gu Busan",2020,NA,21080,"A1508","A1408",21080
-"34","ºÎ»ê±¤¿ª½Ã","ÇØ¿î´ë±¸","ÇØ¿î´ë±¸","ÇØ¿î´ë±¸","Busan","Haeundae-gu","Haeundae-gu","Haeundae-gu","Haeundae-gu Busan",2020,NA,21090,"A1516","A1416",21090
-"35","ºÎ»ê±¤¿ª½Ã","»çÇÏ±¸","»çÇÏ±¸","»çÇÏ±¸","Busan","Saha-gu","Saha-gu","Saha-gu","Saha-gu Busan",2020,NA,21100,"A1510","A1410",21100
-"36","ºÎ»ê±¤¿ª½Ã","±İÁ¤±¸","±İÁ¤±¸","±İÁ¤±¸","Busan","Geumjeong-gu","Geumjeong-gu","Geumjeong-gu","Geumjeong-gu Busan",2020,NA,21110,"A1502","A1402",21110
-"37","ºÎ»ê±¤¿ª½Ã","°­¼­±¸","°­¼­±¸","°­¼­±¸","Busan","Gangseo-gu","Gangseo-gu","Gangseo-gu","Gangseo-gu Busan",2020,NA,21120,"A1501","A1401",21120
-"38","ºÎ»ê±¤¿ª½Ã","¿¬Á¦±¸","¿¬Á¦±¸","¿¬Á¦±¸","Busan","Yeonje-gu","Yeonje-gu","Yeonje-gu","Yeonje-gu Busan",2020,NA,21130,"A1513","A1413",21130
-"39","ºÎ»ê±¤¿ª½Ã","¼ö¿µ±¸","¼ö¿µ±¸","¼ö¿µ±¸","Busan","Suyeong-gu","Suyeong-gu","Suyeong-gu","Suyeong-gu Busan",2020,NA,21140,"A1512","A1412",21140
-"40","ºÎ»ê±¤¿ª½Ã","»ç»ó±¸","»ç»ó±¸","»ç»ó±¸","Busan","Sasang-gu","Sasang-gu","Sasang-gu","Sasang-gu Busan",2020,NA,21150,"A1509","A1409",21150
-"41","ºÎ»ê±¤¿ª½Ã","±âÀå±º","±âÀå±º","±âÀå±º","Busan","Gijang-gun","Gijang-gun","Gijang-gun","Gijang-gun Busan",2020,NA,21510,"A1503","A1403",21310
-"42","´ë±¸±¤¿ª½Ã","Áß±¸","Áß±¸","Áß±¸","Daegu","Jung-gu","Jung-gu","Jung-gu","Jung-gu Daegu",2020,NA,22010,"A1308","A1208",22010
-"43","´ë±¸±¤¿ª½Ã","µ¿±¸","µ¿±¸","µ¿±¸","Daegu","Dong-gu","Dong-gu","Dong-gu","Dong-gu Daegu",2020,NA,22020,"A1304","A1204",22020
-"44","´ë±¸±¤¿ª½Ã","¼­±¸","¼­±¸","¼­±¸","Daegu","Seo-gu","Seo-gu","Seo-gu","Seo-gu Daegu",2020,NA,22030,"A1306","A1206",22030
-"45","´ë±¸±¤¿ª½Ã","³²±¸","³²±¸","³²±¸","Daegu","Nam-gu","Nam-gu","Nam-gu","Nam-gu Daegu",2020,NA,22040,"A1301","A1201",22040
-"46","´ë±¸±¤¿ª½Ã","ºÏ±¸","ºÏ±¸","ºÏ±¸","Daegu","Buk-gu","Buk-gu","Buk-gu","Buk-gu Daegu",2020,NA,22050,"A1305","A1205",22050
-"47","´ë±¸±¤¿ª½Ã","¼ö¼º±¸","¼ö¼º±¸","¼ö¼º±¸","Daegu","Suseong-gu","Suseong-gu","Suseong-gu","Suseong-gu Daegu",2020,NA,22060,"A1307","A1207",22060
-"48","´ë±¸±¤¿ª½Ã","´Ş¼­±¸","´Ş¼­±¸","´Ş¼­±¸","Daegu","Dalseo-gu","Dalseo-gu","Dalseo-gu","Dalseo-gu Daegu",2020,NA,22070,"A1302","A1202",22070
-"49","´ë±¸±¤¿ª½Ã","´Ş¼º±º","´Ş¼º±º","´Ş¼º±º","Daegu","Dalseong-gun","Dalseong-gun","Dalseong-gun","Dalseong-gun Daegu",2020,NA,22510,"A1303","A1203",22310
-"50","ÀÎÃµ±¤¿ª½Ã","Áß±¸","Áß±¸","Áß±¸","Incheon","Jung-gu","Jung-gu","Jung-gu","Jung-gu Incheon",2020,NA,23010,"A0310","A0210",23010
-"51","ÀÎÃµ±¤¿ª½Ã","µ¿±¸","µ¿±¸","µ¿±¸","Incheon","Dong-gu","Dong-gu","Dong-gu","Dong-gu Incheon",2020,NA,23020,"A0304","A0205",23020
-"52","ÀÎÃµ±¤¿ª½Ã","³²±¸","³²±¸","³²±¸","Incheon","Nam-gu","Nam-gu","Nam-gu","Nam-gu Incheon",2015,NA,NA,"","",23030
-"53","ÀÎÃµ±¤¿ª½Ã","¿¬¼ö±¸","¿¬¼ö±¸","¿¬¼ö±¸","Incheon","Yeonsu-gu","Yeonsu-gu","Yeonsu-gu","Yeonsu-gu Incheon",2020,NA,23040,"A0308","A0208",23040
-"54","ÀÎÃµ±¤¿ª½Ã","³²µ¿±¸","³²µ¿±¸","³²µ¿±¸","Incheon","Namdong-gu","Namdong-gu","Namdong-gu","Namdong-gu Incheon",2020,NA,23050,"A0303","A0204",23050
-"55","ÀÎÃµ±¤¿ª½Ã","ºÎÆò±¸","ºÎÆò±¸","ºÎÆò±¸","Incheon","Bupyeong-gu","Bupyeong-gu","Bupyeong-gu","Bupyeong-gu Incheon",2020,NA,23060,"A0306","A0206",23060
-"56","ÀÎÃµ±¤¿ª½Ã","°è¾ç±¸","°è¾ç±¸","°è¾ç±¸","Incheon","Gyeyang-gu","Gyeyang-gu","Gyeyang-gu","Gyeyang-gu Incheon",2020,NA,23070,"A0302","A0202",23070
-"57","ÀÎÃµ±¤¿ª½Ã","¼­±¸","¼­±¸","¼­±¸","Incheon","Seo-gu","Seo-gu","Seo-gu","Seo-gu Incheon",2020,NA,23080,"A0307","A0207",23080
-"58","ÀÎÃµ±¤¿ª½Ã","¹ÌÃßÈ¦±¸","¹ÌÃßÈ¦±¸","¹ÌÃßÈ¦±¸","Incheon","Michuhol-gu","Michuhol-gu","Michuhol-gu","Michuhol-gu Incheon",2020,NA,23090,"A0305","A0203",23090
-"59","ÀÎÃµ±¤¿ª½Ã","°­È­±º","°­È­±º","°­È­±º","Incheon","Ganghwa-gun","Ganghwa-gun","Ganghwa-gun","Ganghwa-gun Incheon",2020,NA,23510,"A0301","A0201",23310
-"60","ÀÎÃµ±¤¿ª½Ã","¿ËÁø±º","¿ËÁø±º","¿ËÁø±º","Incheon","Ongjin-gun","Ongjin-gun","Ongjin-gun","Ongjin-gun Incheon",2020,NA,23520,"A0309","A0209",23320
-"61","±¤ÁÖ±¤¿ª½Ã","µ¿±¸","µ¿±¸","µ¿±¸","Gwangju","Dong-gu","Dong-gu","Dong-gu","Dong-gu Gwangju",2020,NA,24010,"A1003","A0903",24010
-"62","±¤ÁÖ±¤¿ª½Ã","¼­±¸","¼­±¸","¼­±¸","Gwangju","Seo-gu","Seo-gu","Seo-gu","Seo-gu Gwangju",2020,NA,24020,"A1005","A0905",24020
-"63","±¤ÁÖ±¤¿ª½Ã","³²±¸","³²±¸","³²±¸","Gwangju","Nam-gu","Nam-gu","Nam-gu","Nam-gu Gwangju",2020,NA,24030,"A1002","A0902",24030
-"64","±¤ÁÖ±¤¿ª½Ã","ºÏ±¸","ºÏ±¸","ºÏ±¸","Gwangju","Buk-gu","Buk-gu","Buk-gu","Buk-gu Gwangju",2020,NA,24040,"A1004","A0904",24040
-"65","±¤ÁÖ±¤¿ª½Ã","±¤»ê±¸","±¤»ê±¸","±¤»ê±¸","Gwangju","Gwangsan-gu","Gwangsan-gu","Gwangsan-gu","Gwangsan-gu Gwangju",2020,NA,24050,"A1001","A0901",24050
-"66","´ëÀü±¤¿ª½Ã","µ¿±¸","µ¿±¸","µ¿±¸","Daejeon","Dong-gu","Dong-gu","Dong-gu","Dong-gu Daejeon",2020,NA,25010,"A0602","A0502",25010
-"67","´ëÀü±¤¿ª½Ã","Áß±¸","Áß±¸","Áß±¸","Daejeon","Jung-gu","Jung-gu","Jung-gu","Jung-gu Daejeon",2020,NA,25020,"A0605","A0505",25020
-"68","´ëÀü±¤¿ª½Ã","¼­±¸","¼­±¸","¼­±¸","Daejeon","Seo-gu","Seo-gu","Seo-gu","Seo-gu Daejeon",2020,NA,25030,"A0603","A0503",25030
-"69","´ëÀü±¤¿ª½Ã","À¯¼º±¸","À¯¼º±¸","À¯¼º±¸","Daejeon","Yuseong-gu","Yuseong-gu","Yuseong-gu","Yuseong-gu Daejeon",2020,NA,25040,"A0604","A0504",25040
-"70","´ëÀü±¤¿ª½Ã","´ë´ö±¸","´ë´ö±¸","´ë´ö±¸","Daejeon","Daedeok-gu","Daedeok-gu","Daedeok-gu","Daedeok-gu Daejeon",2020,NA,25050,"A0601","A0501",25050
-"71","¿ï»ê±¤¿ª½Ã","Áß±¸","Áß±¸","Áß±¸","Ulsan","Jung-gu","Jung-gu","Jung-gu","Jung-gu Ulsan",2020,NA,26010,"A1605","A1505",26010
-"72","¿ï»ê±¤¿ª½Ã","³²±¸","³²±¸","³²±¸","Ulsan","Nam-gu","Nam-gu","Nam-gu","Nam-gu Ulsan",2020,NA,26020,"A1601","A1501",26020
-"73","¿ï»ê±¤¿ª½Ã","µ¿±¸","µ¿±¸","µ¿±¸","Ulsan","Dong-gu","Dong-gu","Dong-gu","Dong-gu Ulsan",2020,NA,26030,"A1602","A1502",26030
-"74","¿ï»ê±¤¿ª½Ã","ºÏ±¸","ºÏ±¸","ºÏ±¸","Ulsan","Buk-gu","Buk-gu","Buk-gu","Buk-gu Ulsan",2020,NA,26040,"A1603","A1503",26040
-"75","¿ï»ê±¤¿ª½Ã","¿ïÁÖ±º","¿ïÁÖ±º","¿ïÁÖ±º","Ulsan","Ulju-gun","Ulju-gun","Ulju-gun","Ulju-gun Ulsan",2020,NA,26510,"A1604","A1504",26310
-"76","¼¼Á¾Æ¯º°ÀÚÄ¡½Ã","¼¼Á¾½Ã","¼¼Á¾½Ã","¼¼Á¾½Ã","Sejong City","Sejong City","Sejong City","Sejong City","Sejong City Sejong City",2020,NA,29010,"A09","A08",29010
-"77","°æ±âµµ","¼ö¿ø½Ã","¼ö¿ø½Ã","","Gyeonggi-do","Suwon-si","Suwon-si","Suwon-si","Suwon-si Gyeonggi-do",2020,NA,31010,"A0413","A0313",31010
-"78","°æ±âµµ","¼ö¿ø½Ã Àå¾È±¸","¼ö¿ø½Ã","Àå¾È±¸","Gyeonggi-do","Suwon-si","Jangan-gu","Jangan-gu Suwon-si","Jangan-gu Suwon-si Gyeonggi-do",2020,NA,31011,"A0413","A0313",31011
-"79","°æ±âµµ","¼ö¿ø½Ã ±Ç¼±±¸","¼ö¿ø½Ã","±Ç¼±±¸","Gyeonggi-do","Suwon-si","Gwonseon-gu","Gwonseon-gu Suwon-si","Gwonseon-gu Suwon-si Gyeonggi-do",2020,NA,31012,"A0413","A0313",31012
-"80","°æ±âµµ","¼ö¿ø½Ã ÆÈ´Ş±¸","¼ö¿ø½Ã","ÆÈ´Ş±¸","Gyeonggi-do","Suwon-si","Paldal-gu","Paldal-gu Suwon-si","Paldal-gu Suwon-si Gyeonggi-do",2020,NA,31013,"A0413","A0313",31013
-"81","°æ±âµµ","¼ö¿ø½Ã ¿µÅë±¸","¼ö¿ø½Ã","¿µÅë±¸","Gyeonggi-do","Suwon-si","Yeongtong-gu","Yeongtong-gu Suwon-si","Yeongtong-gu Suwon-si Gyeonggi-do",2020,NA,31014,"A0413","A0313",31014
-"82","°æ±âµµ","¼º³²½Ã","¼º³²½Ã","","Gyeonggi-do","Seongnam-si","Seongnam-si","Seongnam-si","Seongnam-si Gyeonggi-do",2020,NA,31020,"A0412","A0312",31020
-"83","°æ±âµµ","¼º³²½Ã ¼öÁ¤±¸","¼º³²½Ã","¼öÁ¤±¸","Gyeonggi-do","Seongnam-si","Sujeong-gu","Sujeong-gu Seongnam-si","Sujeong-gu Seongnam-si Gyeonggi-do",2020,NA,31021,"A0412","A0312",31021
-"84","°æ±âµµ","¼º³²½Ã Áß¿ø±¸","¼º³²½Ã","Áß¿ø±¸","Gyeonggi-do","Seongnam-si","Jungwon-gu","Jungwon-gu Seongnam-si","Jungwon-gu Seongnam-si Gyeonggi-do",2020,NA,31022,"A0412","A0312",31022
-"85","°æ±âµµ","¼º³²½Ã ºĞ´ç±¸","¼º³²½Ã","ºĞ´ç±¸","Gyeonggi-do","Seongnam-si","Bundang-gu","Bundang-gu Seongnam-si","Bundang-gu Seongnam-si Gyeonggi-do",2020,NA,31023,"A0412","A0312",31023
-"86","°æ±âµµ","ÀÇÁ¤ºÎ½Ã","ÀÇÁ¤ºÎ½Ã","ÀÇÁ¤ºÎ½Ã","Gyeonggi-do","Uijeongbu-si","Uijeongbu-si","Uijeongbu-si","Uijeongbu-si Gyeonggi-do",2020,NA,31030,"A0425","A0325",31030
-"87","°æ±âµµ","¾È¾ç½Ã","¾È¾ç½Ã","","Gyeonggi-do","Anyang-si","Anyang-si","Anyang-si","Anyang-si Gyeonggi-do",2020,NA,31040,"A0417","A0317",31040
-"88","°æ±âµµ","¾È¾ç½Ã ¸¸¾È±¸","¾È¾ç½Ã","¸¸¾È±¸","Gyeonggi-do","Anyang-si","Manan-gu","Manan-gu Anyang-si","Manan-gu Anyang-si Gyeonggi-do",2020,NA,31041,"A0417","A0317",31041
-"89","°æ±âµµ","¾È¾ç½Ã µ¿¾È±¸","¾È¾ç½Ã","µ¿¾È±¸","Gyeonggi-do","Anyang-si","Dongan-gu","Dongan-gu Anyang-si","Dongan-gu Anyang-si Gyeonggi-do",2020,NA,31042,"A0417","A0317",31042
-"90","°æ±âµµ","ºÎÃµ½Ã","ºÎÃµ½Ã","ºÎÃµ½Ã","Gyeonggi-do","Bucheon-si","Bucheon-si","Bucheon-si","Bucheon-si Gyeonggi-do",2020,NA,31050,"A0411","A0311",31050
-"91","°æ±âµµ","ºÎÃµ½Ã ¿ø¹Ì±¸","ºÎÃµ½Ã","¿ø¹Ì±¸","Gyeonggi-do","Bucheon-si","Wonmi-gu","Wonmi-gu Bucheon-si","Wonmi-gu Bucheon-si Gyeonggi-do",2015,NA,NA,"","",31051
-"92","°æ±âµµ","ºÎÃµ½Ã ¼Ò»ç±¸","ºÎÃµ½Ã","¼Ò»ç±¸","Gyeonggi-do","Bucheon-si","Sosa-gu","Sosa-gu Bucheon-si","Sosa-gu Bucheon-si Gyeonggi-do",2015,NA,NA,"","",31052
-"93","°æ±âµµ","ºÎÃµ½Ã ¿ÀÁ¤±¸","ºÎÃµ½Ã","¿ÀÁ¤±¸","Gyeonggi-do","Bucheon-si","Ojeong-gu","Ojeong-gu Bucheon-si","Ojeong-gu Bucheon-si Gyeonggi-do",2015,NA,NA,"","",31053
-"94","°æ±âµµ","±¤¸í½Ã","±¤¸í½Ã","±¤¸í½Ã","Gyeonggi-do","Gwangmyeong-si","Gwangmyeong-si","Gwangmyeong-si","Gwangmyeong-si Gyeonggi-do",2020,NA,31060,"A0404","A0304",31060
-"95","°æ±âµµ","ÆòÅÃ½Ã","ÆòÅÃ½Ã","ÆòÅÃ½Ã","Gyeonggi-do","Pyeongtaek-si","Pyeongtaek-si","Pyeongtaek-si","Pyeongtaek-si Gyeonggi-do",2020,NA,31070,"A0428","A0328",31070
-"96","°æ±âµµ","µ¿µÎÃµ½Ã","µ¿µÎÃµ½Ã","µ¿µÎÃµ½Ã","Gyeonggi-do","Dongducheon-si","Dongducheon-si","Dongducheon-si","Dongducheon-si Gyeonggi-do",2020,NA,31080,"A0410","A0310",31080
-"97","°æ±âµµ","¾È»ê½Ã","¾È»ê½Ã","","Gyeonggi-do","Ansan-si","Ansan-si","Ansan-si","Ansan-si Gyeonggi-do",2020,NA,31090,"A0415","A0315",31090
-"98","°æ±âµµ","¾È»ê½Ã »ó·Ï±¸","¾È»ê½Ã","»ó·Ï±¸","Gyeonggi-do","Ansan-si","Sangnok-gu","Sangnok-gu Ansan-si","Sangnok-gu Ansan-si Gyeonggi-do",2020,NA,31091,"A0415","A0315",31091
-"99","°æ±âµµ","¾È»ê½Ã ´Ü¿ø±¸","¾È»ê½Ã","´Ü¿ø±¸","Gyeonggi-do","Ansan-si","Danwon-gu","Danwon-gu Ansan-si","Danwon-gu Ansan-si Gyeonggi-do",2020,NA,31092,"A0415","A0315",31092
-"100","°æ±âµµ","°í¾ç½Ã","°í¾ç½Ã","","Gyeonggi-do","Goyang-si","Goyang-si","Goyang-si","Goyang-si Gyeonggi-do",2020,NA,31100,"A0402","A0302",31100
-"101","°æ±âµµ","°í¾ç½Ã ´ö¾ç±¸","°í¾ç½Ã","´ö¾ç±¸","Gyeonggi-do","Goyang-si","Deogyang-gu","Deogyang-gu Goyang-si","Deogyang-gu Goyang-si Gyeonggi-do",2020,NA,31101,"A0402","A0302",31101
-"102","°æ±âµµ","°í¾ç½Ã ÀÏ»êµ¿±¸","°í¾ç½Ã","ÀÏ»êµ¿±¸","Gyeonggi-do","Goyang-si","Ilsandong-gu","Ilsandong-gu Goyang-si","Ilsandong-gu Goyang-si Gyeonggi-do",2020,NA,31103,"A0402","A0302",31103
-"103","°æ±âµµ","°í¾ç½Ã ÀÏ»ê¼­±¸","°í¾ç½Ã","ÀÏ»ê¼­±¸","Gyeonggi-do","Goyang-si","Ilsanseo-gu","Ilsanseo-gu Goyang-si","Ilsanseo-gu Goyang-si Gyeonggi-do",2020,NA,31104,"A0402","A0302",31104
-"104","°æ±âµµ","°úÃµ½Ã","°úÃµ½Ã","°úÃµ½Ã","Gyeonggi-do","Gwacheon-si","Gwacheon-si","Gwacheon-si","Gwacheon-si Gyeonggi-do",2020,NA,31110,"A0403","A0303",31110
-"105","°æ±âµµ","±¸¸®½Ã","±¸¸®½Ã","±¸¸®½Ã","Gyeonggi-do","Guri-si","Guri-si","Guri-si","Guri-si Gyeonggi-do",2020,NA,31120,"A0406","A0306",31120
-"106","°æ±âµµ","³²¾çÁÖ½Ã","³²¾çÁÖ½Ã","³²¾çÁÖ½Ã","Gyeonggi-do","Namyangju-si","Namyangju-si","Namyangju-si","Namyangju-si Gyeonggi-do",2020,NA,31130,"A0409","A0309",31130
-"107","°æ±âµµ","¿À»ê½Ã","¿À»ê½Ã","¿À»ê½Ã","Gyeonggi-do","Osan-si","Osan-si","Osan-si","Osan-si Gyeonggi-do",2020,NA,31140,"A0422","A0322",31140
-"108","°æ±âµµ","½ÃÈï½Ã","½ÃÈï½Ã","½ÃÈï½Ã","Gyeonggi-do","Siheung-si","Siheung-si","Siheung-si","Siheung-si Gyeonggi-do",2020,NA,31150,"A0414","A0314",31150
-"109","°æ±âµµ","±ºÆ÷½Ã","±ºÆ÷½Ã","±ºÆ÷½Ã","Gyeonggi-do","Gunpo-si","Gunpo-si","Gunpo-si","Gunpo-si Gyeonggi-do",2020,NA,31160,"A0407","A0307",31160
-"110","°æ±âµµ","ÀÇ¿Õ½Ã","ÀÇ¿Õ½Ã","ÀÇ¿Õ½Ã","Gyeonggi-do","Uiwang-si","Uiwang-si","Uiwang-si","Uiwang-si Gyeonggi-do",2020,NA,31170,"A0424","A0324",31170
-"111","°æ±âµµ","ÇÏ³²½Ã","ÇÏ³²½Ã","ÇÏ³²½Ã","Gyeonggi-do","Hanam-si","Hanam-si","Hanam-si","Hanam-si Gyeonggi-do",2020,NA,31180,"A0430","A0330",31180
-"112","°æ±âµµ","¿ëÀÎ½Ã","¿ëÀÎ½Ã","","Gyeonggi-do","Yongin-si","Yongin-si","Yongin-si","Yongin-si Gyeonggi-do",2020,NA,31190,"A0423","A0323",31190
-"113","°æ±âµµ","¿ëÀÎ½Ã Ã³ÀÎ±¸","¿ëÀÎ½Ã","Ã³ÀÎ±¸","Gyeonggi-do","Yongin-si","Cheoin-gu","Cheoin-gu Yongin-si","Cheoin-gu Yongin-si Gyeonggi-do",2020,NA,31191,"A0423","A0323",31191
-"114","°æ±âµµ","¿ëÀÎ½Ã ±âÈï±¸","¿ëÀÎ½Ã","±âÈï±¸","Gyeonggi-do","Yongin-si","Giheung-gu","Giheung-gu Yongin-si","Giheung-gu Yongin-si Gyeonggi-do",2020,NA,31192,"A0423","A0323",31192
-"115","°æ±âµµ","¿ëÀÎ½Ã ¼öÁö±¸","¿ëÀÎ½Ã","¼öÁö±¸","Gyeonggi-do","Yongin-si","Suji-gu","Suji-gu Yongin-si","Suji-gu Yongin-si Gyeonggi-do",2020,NA,31193,"A0423","A0323",31193
-"116","°æ±âµµ","ÆÄÁÖ½Ã","ÆÄÁÖ½Ã","ÆÄÁÖ½Ã","Gyeonggi-do","Paju-si","Paju-si","Paju-si","Paju-si Gyeonggi-do",2020,NA,31200,"A0427","A0327",31200
-"117","°æ±âµµ","ÀÌÃµ½Ã","ÀÌÃµ½Ã","ÀÌÃµ½Ã","Gyeonggi-do","Icheon-si","Icheon-si","Icheon-si","Icheon-si Gyeonggi-do",2020,NA,31210,"A0426","A0326",31210
-"118","°æ±âµµ","¾È¼º½Ã","¾È¼º½Ã","¾È¼º½Ã","Gyeonggi-do","Anseong-si","Anseong-si","Anseong-si","Anseong-si Gyeonggi-do",2020,NA,31220,"A0416","A0316",31220
-"119","°æ±âµµ","±èÆ÷½Ã","±èÆ÷½Ã","±èÆ÷½Ã","Gyeonggi-do","Gimpo-si","Gimpo-si","Gimpo-si","Gimpo-si Gyeonggi-do",2020,NA,31230,"A0408","A0308",31230
-"120","°æ±âµµ","È­¼º½Ã","È­¼º½Ã","È­¼º½Ã","Gyeonggi-do","Hwaseong-si","Hwaseong-si","Hwaseong-si","Hwaseong-si Gyeonggi-do",2020,NA,31240,"A0431","A0331",31240
-"121","°æ±âµµ","±¤ÁÖ½Ã","±¤ÁÖ½Ã","±¤ÁÖ½Ã","Gyeonggi-do","Gwangju-si","Gwangju-si","Gwangju-si","Gwangju-si Gyeonggi-do",2020,NA,31250,"A0405","A0305",31250
-"122","°æ±âµµ","¾çÁÖ½Ã","¾çÁÖ½Ã","¾çÁÖ½Ã","Gyeonggi-do","Yangju-si","Yangju-si","Yangju-si","Yangju-si Gyeonggi-do",2020,NA,31260,"A0418","A0318",31260
-"123","°æ±âµµ","Æ÷Ãµ½Ã","Æ÷Ãµ½Ã","Æ÷Ãµ½Ã","Gyeonggi-do","Pocheon-si","Pocheon-si","Pocheon-si","Pocheon-si Gyeonggi-do",2020,NA,31270,"A0429","A0329",31270
-"124","°æ±âµµ","¿©ÁÖ½Ã","¿©ÁÖ½Ã","¿©ÁÖ½Ã","Gyeonggi-do","Yeoju-si","Yeoju-si","Yeoju-si","Yeoju-si Gyeonggi-do",2020,NA,31280,"A0420","A0320",31280
-"125","°æ±âµµ","¿©ÁÖ½Ã","¿©ÁÖ½Ã","¿©ÁÖ½Ã","Gyeonggi-do","Yeoju-si","Yeoju-si","Yeoju-si","Yeoju-si Gyeonggi-do",2010,NA,NA,"","",31320
-"126","°æ±âµµ","¿¬Ãµ±º","¿¬Ãµ±º","¿¬Ãµ±º","Gyeonggi-do","Yeoncheon-gun","Yeoncheon-gun","Yeoncheon-gun","Yeoncheon-gun Gyeonggi-do",2020,NA,31550,"A0421","A0321",31350
-"127","°æ±âµµ","°¡Æò±º","°¡Æò±º","°¡Æò±º","Gyeonggi-do","Gapyeong-gun","Gapyeong-gun","Gapyeong-gun","Gapyeong-gun Gyeonggi-do",2020,NA,31570,"A0401","A0301",31370
-"128","°æ±âµµ","¾çÆò±º","¾çÆò±º","¾çÆò±º","Gyeonggi-do","Yangpyeong-gun","Yangpyeong-gun","Yangpyeong-gun","Yangpyeong-gun Gyeonggi-do",2020,NA,31580,"A0419","A0319",31380
-"129","°­¿øÆ¯º°ÀÚÄ¡µµ","ÃáÃµ½Ã","ÃáÃµ½Ã","ÃáÃµ½Ã","Gangwon State","Chuncheon-si","Chuncheon-si","Chuncheon-si","Chuncheon-si Gangwon State",2020,NA,32010,"A0513","A0413",32010
-"130","°­¿øÆ¯º°ÀÚÄ¡µµ","¿øÁÖ½Ã","¿øÁÖ½Ã","¿øÁÖ½Ã","Gangwon State","Wonju-si","Wonju-si","Wonju-si","Wonju-si Gangwon State",2020,NA,32020,"A0509","A0409",32020
-"131","°­¿øÆ¯º°ÀÚÄ¡µµ","°­¸ª½Ã","°­¸ª½Ã","°­¸ª½Ã","Gangwon State","Gangneung-si","Gangneung-si","Gangneung-si","Gangneung-si Gangwon State",2020,NA,32030,"A0501","A0401",32030
-"132","°­¿øÆ¯º°ÀÚÄ¡µµ","µ¿ÇØ½Ã","µ¿ÇØ½Ã","µ¿ÇØ½Ã","Gangwon State","Donghae-si","Donghae-si","Donghae-si","Donghae-si Gangwon State",2020,NA,32040,"A0503","A0403",32040
-"133","°­¿øÆ¯º°ÀÚÄ¡µµ","ÅÂ¹é½Ã","ÅÂ¹é½Ã","ÅÂ¹é½Ã","Gangwon State","Taebaek-si","Taebaek-si","Taebaek-si","Taebaek-si Gangwon State",2020,NA,32050,"A0514","A0414",32050
-"134","°­¿øÆ¯º°ÀÚÄ¡µµ","¼ÓÃÊ½Ã","¼ÓÃÊ½Ã","¼ÓÃÊ½Ã","Gangwon State","Sokcho-si","Sokcho-si","Sokcho-si","Sokcho-si Gangwon State",2020,NA,32060,"A0505","A0405",32060
-"135","°­¿øÆ¯º°ÀÚÄ¡µµ","»ïÃ´½Ã","»ïÃ´½Ã","»ïÃ´½Ã","Gangwon State","Samcheok-si","Samcheok-si","Samcheok-si","Samcheok-si Gangwon State",2020,NA,32070,"A0504","A0404",32070
-"136","°­¿øÆ¯º°ÀÚÄ¡µµ","È«Ãµ±º","È«Ãµ±º","È«Ãµ±º","Gangwon State","Hongcheon-gun","Hongcheon-gun","Hongcheon-gun","Hongcheon-gun Gangwon State",2020,NA,32510,"A0516","A0416",32310
-"137","°­¿øÆ¯º°ÀÚÄ¡µµ","È¾¼º±º","È¾¼º±º","È¾¼º±º","Gangwon State","Hoengseong-gun","Hoengseong-gun","Hoengseong-gun","Hoengseong-gun Gangwon State",2020,NA,32520,"A0518","A0418",32320
-"138","°­¿øÆ¯º°ÀÚÄ¡µµ","¿µ¿ù±º","¿µ¿ù±º","¿µ¿ù±º","Gangwon State","Yeongwol-gun","Yeongwol-gun","Yeongwol-gun","Yeongwol-gun Gangwon State",2020,NA,32530,"A0508","A0408",32330
-"139","°­¿øÆ¯º°ÀÚÄ¡µµ","ÆòÃ¢±º","ÆòÃ¢±º","ÆòÃ¢±º","Gangwon State","Pyeongchang-gun","Pyeongchang-gun","Pyeongchang-gun","Pyeongchang-gun Gangwon State",2020,NA,32540,"A0515","A0415",32340
-"140","°­¿øÆ¯º°ÀÚÄ¡µµ","Á¤¼±±º","Á¤¼±±º","Á¤¼±±º","Gangwon State","Jeongseon-gun","Jeongseon-gun","Jeongseon-gun","Jeongseon-gun Gangwon State",2020,NA,32550,"A0511","A0411",32350
-"141","°­¿øÆ¯º°ÀÚÄ¡µµ","Ã¶¿ø±º","Ã¶¿ø±º","Ã¶¿ø±º","Gangwon State","Cheorwon-gun","Cheorwon-gun","Cheorwon-gun","Cheorwon-gun Gangwon State",2020,NA,32560,"A0512","A0412",32360
-"142","°­¿øÆ¯º°ÀÚÄ¡µµ","È­Ãµ±º","È­Ãµ±º","È­Ãµ±º","Gangwon State","Hwacheon-gun","Hwacheon-gun","Hwacheon-gun","Hwacheon-gun Gangwon State",2020,NA,32570,"A0517","A0417",32370
-"143","°­¿øÆ¯º°ÀÚÄ¡µµ","¾ç±¸±º","¾ç±¸±º","¾ç±¸±º","Gangwon State","Yanggu-gun","Yanggu-gun","Yanggu-gun","Yanggu-gun Gangwon State",2020,NA,32580,"A0506","A0406",32380
-"144","°­¿øÆ¯º°ÀÚÄ¡µµ","ÀÎÁ¦±º","ÀÎÁ¦±º","ÀÎÁ¦±º","Gangwon State","Inje-gun","Inje-gun","Inje-gun","Inje-gun Gangwon State",2020,NA,32590,"A0510","A0410",32390
-"145","°­¿øÆ¯º°ÀÚÄ¡µµ","°í¼º±º","°í¼º±º","°í¼º±º","Gangwon State","Goseong-gun","Goseong-gun","Goseong-gun","Goseong-gun Gangwon State",2020,NA,32600,"A0502","A0402",32400
-"146","°­¿øÆ¯º°ÀÚÄ¡µµ","¾ç¾ç±º","¾ç¾ç±º","¾ç¾ç±º","Gangwon State","Yangyang-gun","Yangyang-gun","Yangyang-gun","Yangyang-gun Gangwon State",2020,NA,32610,"A0507","A0407",32410
-"147","ÃæÃ»ºÏµµ","Ã»ÁÖ½Ã","Ã»ÁÖ½Ã","","Chungcheongbuk-do","Cheongju-si","Cheongju-si","","Cheongju-si Chungcheongbuk-do",2010,NA,NA,"","",33010
-"148","ÃæÃ»ºÏµµ","Ã»ÁÖ½Ã »ó´ç±¸","Ã»ÁÖ½Ã","»ó´ç±¸","Chungcheongbuk-do","Cheongju-si","Sangdang-gu","Sangdang-gu Cheongju-si","Sangdang-gu Cheongju-si Chungcheongbuk-do",2010,NA,NA,"","",33011
-"149","ÃæÃ»ºÏµµ","Ã»ÁÖ½Ã Èï´ö±¸","Ã»ÁÖ½Ã","Èï´ö±¸","Chungcheongbuk-do","Cheongju-si","Heungdeok-gu","Heungdeok-gu Cheongju-si","Heungdeok-gu Cheongju-si Chungcheongbuk-do",2010,NA,NA,"","",33012
-"150","ÃæÃ»ºÏµµ","ÃæÁÖ½Ã","ÃæÁÖ½Ã","ÃæÁÖ½Ã","Chungcheongbuk-do","Chungju-si","Chungju-si","Chungju-si","Chungju-si Chungcheongbuk-do",2020,NA,33020,"A0711","A0611",33020
-"151","ÃæÃ»ºÏµµ","Á¦Ãµ½Ã","Á¦Ãµ½Ã","Á¦Ãµ½Ã","Chungcheongbuk-do","Jecheon-si","Jecheon-si","Jecheon-si","Jecheon-si Chungcheongbuk-do",2020,NA,33030,"A0707","A0607",33030
-"152","ÃæÃ»ºÏµµ","Ã»ÁÖ½Ã","Ã»ÁÖ½Ã","","Chungcheongbuk-do","Cheongju-si","Cheongju-si","","Cheongju-si Chungcheongbuk-do",2020,NA,33040,"A0710","A0610",33040
-"153","ÃæÃ»ºÏµµ","Ã»ÁÖ½Ã »ó´ç±¸","Ã»ÁÖ½Ã","»ó´ç±¸","Chungcheongbuk-do","Cheongju-si","Sangdang-gu","Sangdang-gu Cheongju-si","Sangdang-gu Cheongju-si Chungcheongbuk-do",2020,NA,33041,"A0710","A0610",33041
-"154","ÃæÃ»ºÏµµ","Ã»ÁÖ½Ã ¼­¿ø±¸","Ã»ÁÖ½Ã","¼­¿ø±¸","Chungcheongbuk-do","Cheongju-si","Seowon-gu","Seowon-gu Cheongju-si","Seowon-gu Cheongju-si Chungcheongbuk-do",2020,NA,33042,"A0710","A0610",33042
-"155","ÃæÃ»ºÏµµ","Ã»ÁÖ½Ã Èï´ö±¸","Ã»ÁÖ½Ã","Èï´ö±¸","Chungcheongbuk-do","Cheongju-si","Heungdeok-gu","Heungdeok-gu Cheongju-si","Heungdeok-gu Cheongju-si Chungcheongbuk-do",2020,NA,33043,"A0710","A0610",33043
-"156","ÃæÃ»ºÏµµ","Ã»ÁÖ½Ã Ã»¿ø±¸","Ã»ÁÖ½Ã","Ã»¿ø±¸","Chungcheongbuk-do","Cheongju-si","Cheongwon-gu","Cheongwon-gu Cheongju-si","Cheongwon-gu Cheongju-si Chungcheongbuk-do",2020,NA,33044,"A0710","A0610",33044
-"157","ÃæÃ»ºÏµµ","Ã»ÁÖ½Ã Ã»¿ø±º\","Ã»ÁÖ½Ã","Ã»¿ø±º","Chungcheongbuk-do","Cheongju-si","Cheongwon-gun","Cheongwon-gun Cheongju-si","Cheongwon-gun Cheongju-si Chungcheongbuk-do",2010,NA,NA,"","",33310
-"158","ÃæÃ»ºÏµµ","º¸Àº±º","º¸Àº±º","º¸Àº±º","Chungcheongbuk-do","Boeun-gun","Boeun-gun","Boeun-gun","Boeun-gun Chungcheongbuk-do",2020,NA,33520,"A0703","A0603",33320
-"159","ÃæÃ»ºÏµµ","¿ÁÃµ±º","¿ÁÃµ±º","¿ÁÃµ±º","Chungcheongbuk-do","Okcheon-gun","Okcheon-gun","Okcheon-gun","Okcheon-gun Chungcheongbuk-do",2020,NA,33530,"A0705","A0605",33330
-"160","ÃæÃ»ºÏµµ","¿µµ¿±º","¿µµ¿±º","¿µµ¿±º","Chungcheongbuk-do","Yeongdong-gun","Yeongdong-gun","Yeongdong-gun","Yeongdong-gun Chungcheongbuk-do",2020,NA,33540,"A0704","A0604",33340
-"161","ÃæÃ»ºÏµµ","ÁøÃµ±º","ÁøÃµ±º","ÁøÃµ±º","Chungcheongbuk-do","Jincheon-gun","Jincheon-gun","Jincheon-gun","Jincheon-gun Chungcheongbuk-do",2020,NA,33550,"A0709","A0609",33350
-"162","ÃæÃ»ºÏµµ","±«»ê±º","±«»ê±º","±«»ê±º","Chungcheongbuk-do","Goesan-gun","Goesan-gun","Goesan-gun","Goesan-gun Chungcheongbuk-do",2020,NA,33560,"A0701","A0601",33360
-"163","ÃæÃ»ºÏµµ","À½¼º±º","À½¼º±º","À½¼º±º","Chungcheongbuk-do","Eumseong-gun","Eumseong-gun","Eumseong-gun","Eumseong-gun Chungcheongbuk-do",2020,NA,33570,"A0706","A0606",33370
-"164","ÃæÃ»ºÏµµ","´Ü¾ç±º","´Ü¾ç±º","´Ü¾ç±º","Chungcheongbuk-do","Danyang-gun","Danyang-gun","Danyang-gun","Danyang-gun Chungcheongbuk-do",2020,NA,33580,"A0702","A0602",33380
-"165","ÃæÃ»ºÏµµ","ÁõÆò±º","ÁõÆò±º","ÁõÆò±º","Chungcheongbuk-do","Jeungpyeong-gun","Jeungpyeong-gun","Jeungpyeong-gun","Jeungpyeong-gun Chungcheongbuk-do",2020,NA,33590,"A0708","A0608",33390
-"166","ÃæÃ»³²µµ","Ãµ¾È½Ã","Ãµ¾È½Ã","µ¿³²±¸","Chungcheongnam-do","Cheonan-si","Cheonan-si","","Cheonan-si Chungcheongnam-do",2020,NA,34010,"A0812","A0712",34010
-"167","ÃæÃ»³²µµ","Ãµ¾È½Ã µ¿³²±¸","Ãµ¾È½Ã","µ¿³²±¸","Chungcheongnam-do","Cheonan-si","Dongnam-gu","Dongnam-gu Cheonan-si","Dongnam-gu Cheonan-si Chungcheongnam-do",2020,NA,34011,"A0812","A0712",34011
-"168","ÃæÃ»³²µµ","Ãµ¾È½Ã ¼­ºÏ±¸","Ãµ¾È½Ã","¼­ºÏ±¸","Chungcheongnam-do","Cheonan-si","Seobuk-gu","Seobuk-gu Cheonan-si","Seobuk-gu Cheonan-si Chungcheongnam-do",2020,NA,34012,"A0812","A0712",34012
-"169","ÃæÃ»³²µµ","°øÁÖ½Ã","°øÁÖ½Ã","°øÁÖ½Ã","Chungcheongnam-do","Gongju-si","Gongju-si","Gongju-si","Gongju-si Chungcheongnam-do",2020,NA,34020,"A0802","A0702",34020
-"170","ÃæÃ»³²µµ","º¸·É½Ã","º¸·É½Ã","º¸·É½Ã","Chungcheongnam-do","Boryeong-si","Boryeong-si","Boryeong-si","Boryeong-si Chungcheongnam-do",2020,NA,34030,"A0806","A0706",34030
-"171","ÃæÃ»³²µµ","¾Æ»ê½Ã","¾Æ»ê½Ã","¾Æ»ê½Ã","Chungcheongnam-do","Asan-si","Asan-si","Asan-si","Asan-si Chungcheongnam-do",2020,NA,34040,"A0810","A0710",34040
-"172","ÃæÃ»³²µµ","¼­»ê½Ã","¼­»ê½Ã","¼­»ê½Ã","Chungcheongnam-do","Seosan-si","Seosan-si","Seosan-si","Seosan-si Chungcheongnam-do",2020,NA,34050,"A0808","A0708",34050
-"173","ÃæÃ»³²µµ","³í»ê½Ã","³í»ê½Ã","³í»ê½Ã","Chungcheongnam-do","Nonsan-si","Nonsan-si","Nonsan-si","Nonsan-si Chungcheongnam-do",2020,NA,34060,"A0804","A0704",34060
-"174","ÃæÃ»³²µµ","°è·æ½Ã","°è·æ½Ã","°è·æ½Ã","Chungcheongnam-do","Gyeryong-si","Gyeryong-si","Gyeryong-si","Gyeryong-si Chungcheongnam-do",2020,NA,34070,"A0801","A0701",34070
-"175","ÃæÃ»³²µµ","´çÁø½Ã","´çÁø½Ã","´çÁø½Ã","Chungcheongnam-do","Dangjin-si","Dangjin-si","Dangjin-si","Dangjin-si Chungcheongnam-do",2020,NA,34080,"A0805","A0705",34080
-"176","ÃæÃ»³²µµ","±İ»ê±º","±İ»ê±º","±İ»ê±º","Chungcheongnam-do","Geumsan-gun","Geumsan-gun","Geumsan-gun","Geumsan-gun Chungcheongnam-do",2020,NA,34510,"A0803","A0703",34310
-"177","ÃæÃ»³²µµ","¿¬±â±º","¿¬±â±º","¿¬±â±º","Chungcheongnam-do","Yeongi-gun","Yeongi-gun","Yeongi-gun","Yeongi-gun Chungcheongnam-do",2010,NA,NA,"","",34320
-"178","ÃæÃ»³²µµ","ºÎ¿©±º","ºÎ¿©±º","ºÎ¿©±º","Chungcheongnam-do","Buyeo-gun","Buyeo-gun","Buyeo-gun","Buyeo-gun Chungcheongnam-do",2020,NA,34530,"A0807","A0707",34330
-"179","ÃæÃ»³²µµ","¼­Ãµ±º","¼­Ãµ±º","¼­Ãµ±º","Chungcheongnam-do","Seocheon-gun","Seocheon-gun","Seocheon-gun","Seocheon-gun Chungcheongnam-do",2020,NA,34540,"A0809","A0709",34340
-"180","ÃæÃ»³²µµ","Ã»¾ç±º","Ã»¾ç±º","Ã»¾ç±º","Chungcheongnam-do","Cheongyang-gun","Cheongyang-gun","Cheongyang-gun","Cheongyang-gun Chungcheongnam-do",2020,NA,34550,"A0813","A0713",34350
-"181","ÃæÃ»³²µµ","È«¼º±º","È«¼º±º","È«¼º±º","Chungcheongnam-do","Hongseong-gun","Hongseong-gun","Hongseong-gun","Hongseong-gun Chungcheongnam-do",2020,NA,34560,"A0815","A0715",34360
-"182","ÃæÃ»³²µµ","¿¹»ê±º","¿¹»ê±º","¿¹»ê±º","Chungcheongnam-do","Yesan-gun","Yesan-gun","Yesan-gun","Yesan-gun Chungcheongnam-do",2020,NA,34570,"A0811","A0711",34370
-"183","ÃæÃ»³²µµ","ÅÂ¾È±º","ÅÂ¾È±º","ÅÂ¾È±º","Chungcheongnam-do","Taean-gun","Taean-gun","Taean-gun","Taean-gun Chungcheongnam-do",2020,NA,34580,"A0814","A0714",34380
-"184","ÃæÃ»³²µµ","´çÁø±º","´çÁø±º","´çÁø±º","Chungcheongnam-do","Dangjin-gun","Dangjin-gun","Dangjin-gun","Dangjin-gun Chungcheongnam-do",2010,NA,NA,"","",34390
-"185","Àü¶óºÏµµ","ÀüÁÖ½Ã","ÀüÁÖ½Ã","","Jeollabuk-do","Jeonju-si","Jeonju-si","","Jeonju-si Jeollabuk-do",2020,NA,35010,"A1112","A1012",35010
-"186","Àü¶óºÏµµ","ÀüÁÖ½Ã ¿Ï»ê±¸","ÀüÁÖ½Ã","¿Ï»ê±¸","Jeollabuk-do","Jeonju-si","Wansan-gu","Wansan-gu Jeonju-si","Wansan-gu Jeonju-si Jeollabuk-do",2020,NA,35011,"A1112","A1012",35011
-"187","Àü¶óºÏµµ","ÀüÁÖ½Ã ´öÁø±¸","ÀüÁÖ½Ã","´öÁø±¸","Jeollabuk-do","Jeonju-si","Deokjin-gu","Deokjin-gu Jeonju-si","Deokjin-gu Jeonju-si Jeollabuk-do",2020,NA,35012,"A1112","A1012",35012
-"188","Àü¶óºÏµµ","±º»ê½Ã","±º»ê½Ã","±º»ê½Ã","Jeollabuk-do","Gunsan-si","Gunsan-si","Gunsan-si","Gunsan-si Jeollabuk-do",2020,NA,35020,"A1102","A1002",35020
-"189","Àü¶óºÏµµ","ÀÍ»ê½Ã","ÀÍ»ê½Ã","ÀÍ»ê½Ã","Jeollabuk-do","Iksan-si","Iksan-si","Iksan-si","Iksan-si Jeollabuk-do",2020,NA,35030,"A1109","A1009",35030
-"190","Àü¶óºÏµµ","Á¤À¾½Ã","Á¤À¾½Ã","Á¤À¾½Ã","Jeollabuk-do","Jeongeup-si","Jeongeup-si","Jeongeup-si","Jeongeup-si Jeollabuk-do",2020,NA,35040,"A1113","A1013",35040
-"191","Àü¶óºÏµµ","³²¿ø½Ã","³²¿ø½Ã","³²¿ø½Ã","Jeollabuk-do","Namwon-si","Namwon-si","Namwon-si","Namwon-si Jeollabuk-do",2020,NA,35050,"A1104","A1004",35050
-"192","Àü¶óºÏµµ","±èÁ¦½Ã","±èÁ¦½Ã","±èÁ¦½Ã","Jeollabuk-do","Gimje-si","Gimje-si","Gimje-si","Gimje-si Jeollabuk-do",2020,NA,35060,"A1103","A1003",35060
-"193","Àü¶óºÏµµ","¿ÏÁÖ±º","¿ÏÁÖ±º","¿ÏÁÖ±º","Jeollabuk-do","Wanju-gun","Wanju-gun","Wanju-gun","Wanju-gun Jeollabuk-do",2020,NA,35510,"A1108","A1008",35310
-"194","Àü¶óºÏµµ","Áø¾È±º","Áø¾È±º","Áø¾È±º","Jeollabuk-do","Jinan-gun","Jinan-gun","Jinan-gun","Jinan-gun Jeollabuk-do",2020,NA,35520,"A1114","A1014",35320
-"195","Àü¶óºÏµµ","¹«ÁÖ±º","¹«ÁÖ±º","¹«ÁÖ±º","Jeollabuk-do","Muju-gun","Muju-gun","Muju-gun","Muju-gun Jeollabuk-do",2020,NA,35530,"A1105","A1005",35330
-"196","Àü¶óºÏµµ","Àå¼ö±º","Àå¼ö±º","Àå¼ö±º","Jeollabuk-do","Jangsu-gun","Jangsu-gun","Jangsu-gun","Jangsu-gun Jeollabuk-do",2020,NA,35540,"A1111","A1011",35340
-"197","Àü¶óºÏµµ","ÀÓ½Ç±º","ÀÓ½Ç±º","ÀÓ½Ç±º","Jeollabuk-do","Imsil-gun","Imsil-gun","Imsil-gun","Imsil-gun Jeollabuk-do",2020,NA,35550,"A1110","A1010",35350
-"198","Àü¶óºÏµµ","¼øÃ¢±º","¼øÃ¢±º","¼øÃ¢±º","Jeollabuk-do","Sunchang-gun","Sunchang-gun","Sunchang-gun","Sunchang-gun Jeollabuk-do",2020,NA,35560,"A1107","A1007",35360
-"199","Àü¶óºÏµµ","°íÃ¢±º","°íÃ¢±º","°íÃ¢±º","Jeollabuk-do","Gochang-gun","Gochang-gun","Gochang-gun","Gochang-gun Jeollabuk-do",2020,NA,35570,"A1101","A1001",35370
-"200","Àü¶óºÏµµ","ºÎ¾È±º","ºÎ¾È±º","ºÎ¾È±º","Jeollabuk-do","Buan-gun","Buan-gun","Buan-gun","Buan-gun Jeollabuk-do",2020,NA,35580,"A1106","A1006",35380
-"201","Àü¶ó³²µµ","¸ñÆ÷½Ã","¸ñÆ÷½Ã","¸ñÆ÷½Ã","Jeollanam-do","Mokpo-si","Mokpo-si","Mokpo-si","Mokpo-si Jeollanam-do",2020,NA,36010,"A1208","A1108",36010
-"202","Àü¶ó³²µµ","¿©¼ö½Ã","¿©¼ö½Ã","¿©¼ö½Ã","Jeollanam-do","Yeosu-si","Yeosu-si","Yeosu-si","Yeosu-si Jeollanam-do",2020,NA,36020,"A1213","A1113",36020
-"203","Àü¶ó³²µµ","¼øÃµ½Ã","¼øÃµ½Ã","¼øÃµ½Ã","Jeollanam-do","Suncheon-si","Suncheon-si","Suncheon-si","Suncheon-si Jeollanam-do",2020,NA,36030,"A1211","A1111",36030
-"204","Àü¶ó³²µµ","³ªÁÖ½Ã","³ªÁÖ½Ã","³ªÁÖ½Ã","Jeollanam-do","Naju-si","Naju-si","Naju-si","Naju-si Jeollanam-do",2020,NA,36040,"A1206","A1106",36040
-"205","Àü¶ó³²µµ","±¤¾ç½Ã","±¤¾ç½Ã","±¤¾ç½Ã","Jeollanam-do","Gwangyang-si","Gwangyang-si","Gwangyang-si","Gwangyang-si Jeollanam-do",2020,NA,36060,"A1204","A1104",36060
-"206","Àü¶ó³²µµ","´ã¾ç±º","´ã¾ç±º","´ã¾ç±º","Jeollanam-do","Damyang-gun","Damyang-gun","Damyang-gun","Damyang-gun Jeollanam-do",2020,NA,36510,"A1207","A1107",36310
-"207","Àü¶ó³²µµ","°î¼º±º","°î¼º±º","°î¼º±º","Jeollanam-do","Gokseong-gun","Gokseong-gun","Gokseong-gun","Gokseong-gun Jeollanam-do",2020,NA,36520,"A1203","A1103",36320
-"208","Àü¶ó³²µµ","±¸·Ê±º","±¸·Ê±º","±¸·Ê±º","Jeollanam-do","Gurye-gun","Gurye-gun","Gurye-gun","Gurye-gun Jeollanam-do",2020,NA,36530,"A1205","A1105",36330
-"209","Àü¶ó³²µµ","°íÈï±º","°íÈï±º","°íÈï±º","Jeollanam-do","Goheung-gun","Goheung-gun","Goheung-gun","Goheung-gun Jeollanam-do",2020,NA,36550,"A1202","A1102",36350
-"210","Àü¶ó³²µµ","º¸¼º±º","º¸¼º±º","º¸¼º±º","Jeollanam-do","Boseong-gun","Boseong-gun","Boseong-gun","Boseong-gun Jeollanam-do",2020,NA,36560,"A1210","A1110",36360
-"211","Àü¶ó³²µµ","È­¼ø±º","È­¼ø±º","È­¼ø±º","Jeollanam-do","Hwasun-gun","Hwasun-gun","Hwasun-gun","Hwasun-gun Jeollanam-do",2020,NA,36570,"A1222","A1122",36370
-"212","Àü¶ó³²µµ","ÀåÈï±º","ÀåÈï±º","ÀåÈï±º","Jeollanam-do","Jangheung-gun","Jangheung-gun","Jangheung-gun","Jangheung-gun Jeollanam-do",2020,NA,36580,"A1218","A1118",36380
-"213","Àü¶ó³²µµ","°­Áø±º","°­Áø±º","°­Áø±º","Jeollanam-do","Gangjin-gun","Gangjin-gun","Gangjin-gun","Gangjin-gun Jeollanam-do",2020,NA,36590,"A1201","A1101",36390
-"214","Àü¶ó³²µµ","ÇØ³²±º","ÇØ³²±º","ÇØ³²±º","Jeollanam-do","Haenam-gun","Haenam-gun","Haenam-gun","Haenam-gun Jeollanam-do",2020,NA,36600,"A1221","A1121",36400
-"215","Àü¶ó³²µµ","¿µ¾Ï±º","¿µ¾Ï±º","¿µ¾Ï±º","Jeollanam-do","Yeongam-gun","Yeongam-gun","Yeongam-gun","Yeongam-gun Jeollanam-do",2020,NA,36610,"A1215","A1115",36410
-"216","Àü¶ó³²µµ","¹«¾È±º","¹«¾È±º","¹«¾È±º","Jeollanam-do","Muan-gun","Muan-gun","Muan-gun","Muan-gun Jeollanam-do",2020,NA,36620,"A1209","A1109",36420
-"217","Àü¶ó³²µµ","ÇÔÆò±º","ÇÔÆò±º","ÇÔÆò±º","Jeollanam-do","Hampyeong-gun","Hampyeong-gun","Hampyeong-gun","Hampyeong-gun Jeollanam-do",2020,NA,36630,"A1220","A1120",36430
-"218","Àü¶ó³²µµ","¿µ±¤±º","¿µ±¤±º","¿µ±¤±º","Jeollanam-do","Yeonggwang-gun","Yeonggwang-gun","Yeonggwang-gun","Yeonggwang-gun Jeollanam-do",2020,NA,36640,"A1214","A1114",36440
-"219","Àü¶ó³²µµ","Àå¼º±º","Àå¼º±º","Àå¼º±º","Jeollanam-do","Jangseong-gun","Jangseong-gun","Jangseong-gun","Jangseong-gun Jeollanam-do",2020,NA,36650,"A1217","A1117",36450
-"220","Àü¶ó³²µµ","¿Ïµµ±º","¿Ïµµ±º","¿Ïµµ±º","Jeollanam-do","Wando-gun","Wando-gun","Wando-gun","Wando-gun Jeollanam-do",2020,NA,36660,"A1216","A1116",36460
-"221","Àü¶ó³²µµ","Áøµµ±º","Áøµµ±º","Áøµµ±º","Jeollanam-do","Jindo-gun","Jindo-gun","Jindo-gun","Jindo-gun Jeollanam-do",2020,NA,36670,"A1219","A1119",36470
-"222","Àü¶ó³²µµ","½Å¾È±º","½Å¾È±º","½Å¾È±º","Jeollanam-do","Sinan-gun","Sinan-gun","Sinan-gun","Sinan-gun Jeollanam-do",2020,NA,36680,"A1212","A1112",36480
-"223","°æ»óºÏµµ","Æ÷Ç×½Ã","Æ÷Ç×½Ã","","Gyeongsangbuk-do","Pohang-si","Pohang-si","","Pohang-si Gyeongsangbuk-do",2020,NA,37010,"A1423","A1323",37010
-"224","°æ»óºÏµµ","Æ÷Ç×½Ã ³²±¸","Æ÷Ç×½Ã","³²±¸","Gyeongsangbuk-do","Pohang-si","Nam-gu","Nam-gu Pohang-si","Nam-gu Pohang-si Gyeongsangbuk-do",2020,NA,37011,"A1423","A1323",37011
-"225","°æ»óºÏµµ","Æ÷Ç×½Ã ºÏ±¸","Æ÷Ç×½Ã","ºÏ±¸","Gyeongsangbuk-do","Pohang-si","Buk-gu","Buk-gu Pohang-si","Buk-gu Pohang-si Gyeongsangbuk-do",2020,NA,37012,"A1423","A1323",37012
-"226","°æ»óºÏµµ","°æÁÖ½Ã","°æÁÖ½Ã","°æÁÖ½Ã","Gyeongsangbuk-do","Gyeongju-si","Gyeongju-si","Gyeongju-si","Gyeongju-si Gyeongsangbuk-do",2020,NA,37020,"A1402","A1302",37020
-"227","°æ»óºÏµµ","±èÃµ½Ã","±èÃµ½Ã","±èÃµ½Ã","Gyeongsangbuk-do","Gimcheon-si","Gimcheon-si","Gimcheon-si","Gimcheon-si Gyeongsangbuk-do",2020,NA,37030,"A1406","A1306",37030
-"228","°æ»óºÏµµ","¾Èµ¿½Ã","¾Èµ¿½Ã","¾Èµ¿½Ã","Gyeongsangbuk-do","Andong-si","Andong-si","Andong-si","Andong-si Gyeongsangbuk-do",2020,NA,37040,"A1411","A1311",37040
-"229","°æ»óºÏµµ","±¸¹Ì½Ã","±¸¹Ì½Ã","±¸¹Ì½Ã","Gyeongsangbuk-do","Gumi-si","Gumi-si","Gumi-si","Gumi-si Gyeongsangbuk-do",2020,NA,37050,"A1404","A1304",37050
-"230","°æ»óºÏµµ","¿µÁÖ½Ã","¿µÁÖ½Ã","¿µÁÖ½Ã","Gyeongsangbuk-do","Yeongju-si","Yeongju-si","Yeongju-si","Yeongju-si Gyeongsangbuk-do",2020,NA,37060,"A1414","A1314",37060
-"231","°æ»óºÏµµ","¿µÃµ½Ã","¿µÃµ½Ã","¿µÃµ½Ã","Gyeongsangbuk-do","Yeongcheon-si","Yeongcheon-si","Yeongcheon-si","Yeongcheon-si Gyeongsangbuk-do",2020,NA,37070,"A1415","A1315",37070
-"232","°æ»óºÏµµ","»óÁÖ½Ã","»óÁÖ½Ã","»óÁÖ½Ã","Gyeongsangbuk-do","Sangju-si","Sangju-si","Sangju-si","Sangju-si Gyeongsangbuk-do",2020,NA,37080,"A1409","A1309",37080
-"233","°æ»óºÏµµ","¹®°æ½Ã","¹®°æ½Ã","¹®°æ½Ã","Gyeongsangbuk-do","Mungyeong-si","Mungyeong-si","Mungyeong-si","Mungyeong-si Gyeongsangbuk-do",2020,NA,37090,"A1407","A1307",37090
-"234","°æ»óºÏµµ","°æ»ê½Ã","°æ»ê½Ã","°æ»ê½Ã","Gyeongsangbuk-do","Gyeongsan-si","Gyeongsan-si","Gyeongsan-si","Gyeongsan-si Gyeongsangbuk-do",2020,NA,37100,"A1401","A1301",37100
-"235","´ë±¸±¤¿ª½Ã","±ºÀ§±º","±ºÀ§±º","±ºÀ§±º","Daegu","Gunwi-gun","Gunwi-gun","Gunwi-gun","Gunwi-gun Daegu",2020,NA,22520,"A1309","A1305",37310
-"236","°æ»óºÏµµ","±ºÀ§±º","±ºÀ§±º","±ºÀ§±º","Gyeongsangbuk-do","Gunwi-gun","Gunwi-gun","Gunwi-gun","Gunwi-gun Gyeongsangbuk-do",2020,1,37510,"","",37310
-"237","°æ»óºÏµµ","ÀÇ¼º±º","ÀÇ¼º±º","ÀÇ¼º±º","Gyeongsangbuk-do","Uiseong-gun","Uiseong-gun","Uiseong-gun","Uiseong-gun Gyeongsangbuk-do",2020,NA,37520,"A1419","A1319",37320
-"238","°æ»óºÏµµ","Ã»¼Û±º","Ã»¼Û±º","Ã»¼Û±º","Gyeongsangbuk-do","Cheongsong-gun","Cheongsong-gun","Cheongsong-gun","Cheongsong-gun Gyeongsangbuk-do",2020,NA,37530,"A1421","A1321",37330
-"239","°æ»óºÏµµ","¿µ¾ç±º","¿µ¾ç±º","¿µ¾ç±º","Gyeongsangbuk-do","Yeongyang-gun","Yeongyang-gun","Yeongyang-gun","Yeongyang-gun Gyeongsangbuk-do",2020,NA,37540,"A1413","A1313",37340
-"240","°æ»óºÏµµ","¿µ´ö±º","¿µ´ö±º","¿µ´ö±º","Gyeongsangbuk-do","Yeongdeok-gun","Yeongdeok-gun","Yeongdeok-gun","Yeongdeok-gun Gyeongsangbuk-do",2020,NA,37550,"A1412","A1312",37350
-"241","°æ»óºÏµµ","Ã»µµ±º","Ã»µµ±º","Ã»µµ±º","Gyeongsangbuk-do","Cheongdo-gun","Cheongdo-gun","Cheongdo-gun","Cheongdo-gun Gyeongsangbuk-do",2020,NA,37560,"A1420","A1320",37360
-"242","°æ»óºÏµµ","°í·É±º","°í·É±º","°í·É±º","Gyeongsangbuk-do","Goryeong-gun","Goryeong-gun","Goryeong-gun","Goryeong-gun Gyeongsangbuk-do",2020,NA,37570,"A1403","A1303",37370
-"243","°æ»óºÏµµ","¼ºÁÖ±º","¼ºÁÖ±º","¼ºÁÖ±º","Gyeongsangbuk-do","Seongju-gun","Seongju-gun","Seongju-gun","Seongju-gun Gyeongsangbuk-do",2020,NA,37580,"A1410","A1310",37380
-"244","°æ»óºÏµµ","Ä¥°î±º","Ä¥°î±º","Ä¥°î±º","Gyeongsangbuk-do","Chilgok-gun","Chilgok-gun","Chilgok-gun","Chilgok-gun Gyeongsangbuk-do",2020,NA,37590,"A1422","A1322",37390
-"245","°æ»óºÏµµ","¿¹Ãµ±º","¿¹Ãµ±º","¿¹Ãµ±º","Gyeongsangbuk-do","Yecheon-gun","Yecheon-gun","Yecheon-gun","Yecheon-gun Gyeongsangbuk-do",2020,NA,37600,"A1416","A1316",37400
-"246","°æ»óºÏµµ","ºÀÈ­±º","ºÀÈ­±º","ºÀÈ­±º","Gyeongsangbuk-do","Bonghwa-gun","Bonghwa-gun","Bonghwa-gun","Bonghwa-gun Gyeongsangbuk-do",2020,NA,37610,"A1408","A1308",37410
-"247","°æ»óºÏµµ","¿ïÁø±º","¿ïÁø±º","¿ïÁø±º","Gyeongsangbuk-do","Uljin-gun","Uljin-gun","Uljin-gun","Uljin-gun Gyeongsangbuk-do",2020,NA,37620,"A1418","A1318",37420
-"248","°æ»óºÏµµ","¿ï¸ª±º","¿ï¸ª±º","¿ï¸ª±º","Gyeongsangbuk-do","Ulleung-gun","Ulleung-gun","Ulleung-gun","Ulleung-gun Gyeongsangbuk-do",2020,NA,37630,"A1417","A1317",37430
-"249","°æ»ó³²µµ","ÁøÁÖ½Ã","ÁøÁÖ½Ã","ÁøÁÖ½Ã","Gyeongsangnam-do","Jinju-si","Jinju-si","Jinju-si","Jinju-si Gyeongsangnam-do",2020,NA,38030,"A1711","A1611",38030
-"250","°æ»ó³²µµ","Åë¿µ½Ã","Åë¿µ½Ã","Åë¿µ½Ã","Gyeongsangnam-do","Tongyeong-si","Tongyeong-si","Tongyeong-si","Tongyeong-si Gyeongsangnam-do",2020,NA,38050,"A1714","A1614",38050
-"251","°æ»ó³²µµ","»çÃµ½Ã","»çÃµ½Ã","»çÃµ½Ã","Gyeongsangnam-do","Sacheon-si","Sacheon-si","Sacheon-si","Sacheon-si Gyeongsangnam-do",2020,NA,38060,"A1707","A1607",38060
-"252","°æ»ó³²µµ","±èÇØ½Ã","±èÇØ½Ã","±èÇØ½Ã","Gyeongsangnam-do","Gimhae-si","Gimhae-si","Gimhae-si","Gimhae-si Gyeongsangnam-do",2020,NA,38070,"A1704","A1604",38070
-"253","°æ»ó³²µµ","¹Ğ¾ç½Ã","¹Ğ¾ç½Ã","¹Ğ¾ç½Ã","Gyeongsangnam-do","Miryang-si","Miryang-si","Miryang-si","Miryang-si Gyeongsangnam-do",2020,NA,38080,"A1706","A1606",38080
-"254","°æ»ó³²µµ","°ÅÁ¦½Ã","°ÅÁ¦½Ã","°ÅÁ¦½Ã","Gyeongsangnam-do","Geoje-si","Geoje-si","Geoje-si","Geoje-si Gyeongsangnam-do",2020,NA,38090,"A1701","A1601",38090
-"255","°æ»ó³²µµ","¾ç»ê½Ã","¾ç»ê½Ã","¾ç»ê½Ã","Gyeongsangnam-do","Yangsan-si","Yangsan-si","Yangsan-si","Yangsan-si Gyeongsangnam-do",2020,NA,38100,"A1709","A1609",38100
-"256","°æ»ó³²µµ","Ã¢¿ø½Ã","Ã¢¿ø½Ã","","Gyeongsangnam-do","Changwon-si","Changwon-si","","Changwon-si Gyeongsangnam-do",2020,NA,38110,"A1713","A1613",38110
-"257","°æ»ó³²µµ","Ã¢¿ø½Ã ÀÇÃ¢±¸","Ã¢¿ø½Ã","ÀÇÃ¢±¸","Gyeongsangnam-do","Changwon-si","Uichang-gu","Uichang-gu Changwon-si","Uichang-gu Changwon-si Gyeongsangnam-do",2020,NA,38111,"A1713","A1613",38111
-"258","°æ»ó³²µµ","Ã¢¿ø½Ã ¼º»ê±¸","Ã¢¿ø½Ã","¼º»ê±¸","Gyeongsangnam-do","Changwon-si","Seongsan-gu","Seongsan-gu Changwon-si","Seongsan-gu Changwon-si Gyeongsangnam-do",2020,NA,38112,"A1713","A1613",38112
-"259","°æ»ó³²µµ","Ã¢¿ø½Ã ¸¶»êÇÕÆ÷±¸","Ã¢¿ø½Ã","¸¶»êÇÕÆ÷±¸","Gyeongsangnam-do","Changwon-si","Masanhappo-gu","Masanhappo-gu Changwon-si","Masanhappo-gu Changwon-si Gyeongsangnam-do",2020,NA,38113,"A1713","A1613",38113
-"260","°æ»ó³²µµ","Ã¢¿ø½Ã ¸¶»êÈ¸¿ø±¸","Ã¢¿ø½Ã","¸¶»êÈ¸¿ø±¸","Gyeongsangnam-do","Changwon-si","Masanhoewon-gu","Masanhoewon-gu Changwon-si","Masanhoewon-gu Changwon-si Gyeongsangnam-do",2020,NA,38114,"A1713","A1613",38114
-"261","°æ»ó³²µµ","Ã¢¿ø½Ã ÁøÇØ±¸","Ã¢¿ø½Ã ","ÁøÇØ±¸","Gyeongsangnam-do","Changwon-si","Jinhae-gu","Jinhae-gu Changwon-si","Jinhae-gu Changwon-si Gyeongsangnam-do",2020,NA,38115,"A1713","A1613",38115
-"262","°æ»ó³²µµ","ÀÇ·É±º","ÀÇ·É±º","ÀÇ·É±º","Gyeongsangnam-do","Uiryeong-gun","Uiryeong-gun","Uiryeong-gun","Uiryeong-gun Gyeongsangnam-do",2020,NA,38510,"A1710","A1610",38310
-"263","°æ»ó³²µµ","ÇÔ¾È±º","ÇÔ¾È±º","ÇÔ¾È±º","Gyeongsangnam-do","Haman-gun","Haman-gun","Haman-gun","Haman-gun Gyeongsangnam-do",2020,NA,38520,"A1716","A1616",38320
-"264","°æ»ó³²µµ","Ã¢³ç±º","Ã¢³ç±º","Ã¢³ç±º","Gyeongsangnam-do","Changnyeong-gun","Changnyeong-gun","Changnyeong-gun","Changnyeong-gun Gyeongsangnam-do",2020,NA,38530,"A1712","A1612",38330
-"265","°æ»ó³²µµ","°í¼º±º","°í¼º±º","°í¼º±º","Gyeongsangnam-do","Goseong-gun","Goseong-gun","Goseong-gun","Goseong-gun Gyeongsangnam-do",2020,NA,38540,"A1703","A1603",38340
-"266","°æ»ó³²µµ","³²ÇØ±º","³²ÇØ±º","³²ÇØ±º","Gyeongsangnam-do","Namhae-gun","Namhae-gun","Namhae-gun","Namhae-gun Gyeongsangnam-do",2020,NA,38550,"A1705","A1605",38350
-"267","°æ»ó³²µµ","ÇÏµ¿±º","ÇÏµ¿±º","ÇÏµ¿±º","Gyeongsangnam-do","Hadong-gun","Hadong-gun","Hadong-gun","Hadong-gun Gyeongsangnam-do",2020,NA,38560,"A1715","A1615",38360
-"268","°æ»ó³²µµ","»êÃ»±º","»êÃ»±º","»êÃ»±º","Gyeongsangnam-do","Sancheong-gun","Sancheong-gun","Sancheong-gun","Sancheong-gun Gyeongsangnam-do",2020,NA,38570,"A1708","A1608",38370
-"269","°æ»ó³²µµ","ÇÔ¾ç±º","ÇÔ¾ç±º","ÇÔ¾ç±º","Gyeongsangnam-do","Hamyang-gun","Hamyang-gun","Hamyang-gun","Hamyang-gun Gyeongsangnam-do",2020,NA,38580,"A1717","A1617",38380
-"270","°æ»ó³²µµ","°ÅÃ¢±º","°ÅÃ¢±º","°ÅÃ¢±º","Gyeongsangnam-do","Geochang-gun","Geochang-gun","Geochang-gun","Geochang-gun Gyeongsangnam-do",2020,NA,38590,"A1702","A1602",38390
-"271","°æ»ó³²µµ","ÇÕÃµ±º","ÇÕÃµ±º","ÇÕÃµ±º","Gyeongsangnam-do","Hapcheon-gun","Hapcheon-gun","Hapcheon-gun","Hapcheon-gun Gyeongsangnam-do",2020,NA,38600,"A1718","A1618",38400
-"272","Á¦ÁÖÆ¯º°ÀÚÄ¡µµ","Á¦ÁÖ½Ã","Á¦ÁÖ½Ã","Á¦ÁÖ½Ã","Jeju","Jeju-si","Jeju-si","Jeju-si","Jeju-si Jeju",2020,NA,39010,"A1801","A1701",39010
-"273","Á¦ÁÖÆ¯º°ÀÚÄ¡µµ","¼­±ÍÆ÷½Ã","¼­±ÍÆ÷½Ã","¼­±ÍÆ÷½Ã","Jeju","Seogwipo-si","Seogwipo-si","Seogwipo-si","Seogwipo-si Jeju",2020,NA,39020,"A1802","A1702",39020
+sido_kr,sigungu_kr,sigungu_1_kr,sigungu_2_kr,sido_en,sigun_en,sigungu_1_en,sigungu_2_en,sdsgg_en,base_year,tax_exclude,adm2_code,sgg_tax_global,sgg_tax_income,sgg_industry
+ì„œìš¸íŠ¹ë³„ì‹œ,ì¢…ë¡œêµ¬,ì¢…ë¡œêµ¬,ì¢…ë¡œêµ¬,Seoul,Jongno-gu,Jongno-gu,Jongno-gu,Jongno-gu Seoul,2020,NA,11010,A0223,A0123,11010
+ì„œìš¸íŠ¹ë³„ì‹œ,ì¤‘êµ¬,ì¤‘êµ¬,ì¤‘êµ¬,Seoul,Jung-gu,Jung-gu,Jung-gu,Jung-gu Seoul,2020,NA,11020,A0224,A0124,11020
+ì„œìš¸íŠ¹ë³„ì‹œ,ìš©ì‚°êµ¬,ìš©ì‚°êµ¬,ìš©ì‚°êµ¬,Seoul,Yongsan-gu,Yongsan-gu,Yongsan-gu,Yongsan-gu Seoul,2020,NA,11030,A0221,A0121,11030
+ì„œìš¸íŠ¹ë³„ì‹œ,ì„±ë™êµ¬,ì„±ë™êµ¬,ì„±ë™êµ¬,Seoul,Seongdong-gu,Seongdong-gu,Seongdong-gu,Seongdong-gu Seoul,2020,NA,11040,A0216,A0116,11040
+ì„œìš¸íŠ¹ë³„ì‹œ,ê´‘ì§„êµ¬,ê´‘ì§„êµ¬,ê´‘ì§„êµ¬,Seoul,Gwangjin-gu,Gwangjin-gu,Gwangjin-gu,Gwangjin-gu Seoul,2020,NA,11050,A0206,A0106,11050
+ì„œìš¸íŠ¹ë³„ì‹œ,ë™ëŒ€ë¬¸êµ¬,ë™ëŒ€ë¬¸êµ¬,ë™ëŒ€ë¬¸êµ¬,Seoul,Dongdaemun-gu,Dongdaemun-gu,Dongdaemun-gu,Dongdaemun-gu Seoul,2020,NA,11060,A0211,A0111,11060
+ì„œìš¸íŠ¹ë³„ì‹œ,ì¤‘ë‘êµ¬,ì¤‘ë‘êµ¬,ì¤‘ë‘êµ¬,Seoul,Jungnang-gu,Jungnang-gu,Jungnang-gu,Jungnang-gu Seoul,2020,NA,11070,A0225,A0125,11070
+ì„œìš¸íŠ¹ë³„ì‹œ,ì„±ë¶êµ¬,ì„±ë¶êµ¬,ì„±ë¶êµ¬,Seoul,Seongbuk-gu,Seongbuk-gu,Seongbuk-gu,Seongbuk-gu Seoul,2020,NA,11080,A0217,A0117,11080
+ì„œìš¸íŠ¹ë³„ì‹œ,ê°•ë¶êµ¬,ê°•ë¶êµ¬,ê°•ë¶êµ¬,Seoul,Gangbuk-gu,Gangbuk-gu,Gangbuk-gu,Gangbuk-gu Seoul,2020,NA,11090,A0203,A0103,11090
+ì„œìš¸íŠ¹ë³„ì‹œ,ë„ë´‰êµ¬,ë„ë´‰êµ¬,ë„ë´‰êµ¬,Seoul,Dobong-gu,Dobong-gu,Dobong-gu,Dobong-gu Seoul,2020,NA,11100,A0210,A0110,11100
+ì„œìš¸íŠ¹ë³„ì‹œ,ë…¸ì›êµ¬,ë…¸ì›êµ¬,ë…¸ì›êµ¬,Seoul,Nowon-gu,Nowon-gu,Nowon-gu,Nowon-gu Seoul,2020,NA,11110,A0209,A0109,11110
+ì„œìš¸íŠ¹ë³„ì‹œ,ì€í‰êµ¬,ì€í‰êµ¬,ì€í‰êµ¬,Seoul,Eunpyeong-gu,Eunpyeong-gu,Eunpyeong-gu,Eunpyeong-gu Seoul,2020,NA,11120,A0222,A0122,11120
+ì„œìš¸íŠ¹ë³„ì‹œ,ì„œëŒ€ë¬¸êµ¬,ì„œëŒ€ë¬¸êµ¬,ì„œëŒ€ë¬¸êµ¬,Seoul,Seodaemun-gu,Seodaemun-gu,Seodaemun-gu,Seodaemun-gu Seoul,2020,NA,11130,A0214,A0114,11130
+ì„œìš¸íŠ¹ë³„ì‹œ,ë§ˆí¬êµ¬,ë§ˆí¬êµ¬,ë§ˆí¬êµ¬,Seoul,Mapo-gu,Mapo-gu,Mapo-gu,Mapo-gu Seoul,2020,NA,11140,A0213,A0113,11140
+ì„œìš¸íŠ¹ë³„ì‹œ,ì–‘ì²œêµ¬,ì–‘ì²œêµ¬,ì–‘ì²œêµ¬,Seoul,Yangcheon-gu,Yangcheon-gu,Yangcheon-gu,Yangcheon-gu Seoul,2020,NA,11150,A0219,A0119,11150
+ì„œìš¸íŠ¹ë³„ì‹œ,ê°•ì„œêµ¬,ê°•ì„œêµ¬,ê°•ì„œêµ¬,Seoul,Gangseo-gu,Gangseo-gu,Gangseo-gu,Gangseo-gu Seoul,2020,NA,11160,A0204,A0104,11160
+ì„œìš¸íŠ¹ë³„ì‹œ,êµ¬ë¡œêµ¬,êµ¬ë¡œêµ¬,êµ¬ë¡œêµ¬,Seoul,Guro-gu,Guro-gu,Guro-gu,Guro-gu Seoul,2020,NA,11170,A0207,A0107,11170
+ì„œìš¸íŠ¹ë³„ì‹œ,ê¸ˆì²œêµ¬,ê¸ˆì²œêµ¬,ê¸ˆì²œêµ¬,Seoul,Geumcheon-gu,Geumcheon-gu,Geumcheon-gu,Geumcheon-gu Seoul,2020,NA,11180,A0208,A0108,11180
+ì„œìš¸íŠ¹ë³„ì‹œ,ì˜ë“±í¬êµ¬,ì˜ë“±í¬êµ¬,ì˜ë“±í¬êµ¬,Seoul,Yeongdeungpo-gu,Yeongdeungpo-gu,Yeongdeungpo-gu,Yeongdeungpo-gu Seoul,2020,NA,11190,A0220,A0120,11190
+ì„œìš¸íŠ¹ë³„ì‹œ,ë™ì‘êµ¬,ë™ì‘êµ¬,ë™ì‘êµ¬,Seoul,Dongjak-gu,Dongjak-gu,Dongjak-gu,Dongjak-gu Seoul,2020,NA,11200,A0212,A0112,11200
+ì„œìš¸íŠ¹ë³„ì‹œ,ê´€ì•…êµ¬,ê´€ì•…êµ¬,ê´€ì•…êµ¬,Seoul,Gwanak-gu,Gwanak-gu,Gwanak-gu,Gwanak-gu Seoul,2020,NA,11210,A0205,A0105,11210
+ì„œìš¸íŠ¹ë³„ì‹œ,ì„œì´ˆêµ¬,ì„œì´ˆêµ¬,ì„œì´ˆêµ¬,Seoul,Seocho-gu,Seocho-gu,Seocho-gu,Seocho-gu Seoul,2020,NA,11220,A0215,A0115,11220
+ì„œìš¸íŠ¹ë³„ì‹œ,ê°•ë‚¨êµ¬,ê°•ë‚¨êµ¬,ê°•ë‚¨êµ¬,Seoul,Gangnam-gu,Gangnam-gu,Gangnam-gu,Gangnam-gu Seoul,2020,NA,11230,A0201,A0101,11230
+ì„œìš¸íŠ¹ë³„ì‹œ,ì†¡íŒŒêµ¬,ì†¡íŒŒêµ¬,ì†¡íŒŒêµ¬,Seoul,Songpa-gu,Songpa-gu,Songpa-gu,Songpa-gu Seoul,2020,NA,11240,A0218,A0118,11240
+ì„œìš¸íŠ¹ë³„ì‹œ,ê°•ë™êµ¬,ê°•ë™êµ¬,ê°•ë™êµ¬,Seoul,Gangdong-gu,Gangdong-gu,Gangdong-gu,Gangdong-gu Seoul,2020,NA,11250,A0202,A0102,11250
+ë¶€ì‚°ê´‘ì—­ì‹œ,ì¤‘êµ¬,ì¤‘êµ¬,ì¤‘êµ¬,Busan,Jung-gu,Jung-gu,Jung-gu,Jung-gu Busan,2020,NA,21010,A1515,A1415,21010
+ë¶€ì‚°ê´‘ì—­ì‹œ,ì„œêµ¬,ì„œêµ¬,ì„œêµ¬,Busan,Seo-gu,Seo-gu,Seo-gu,Seo-gu Busan,2020,NA,21020,A1511,A1411,21020
+ë¶€ì‚°ê´‘ì—­ì‹œ,ë™êµ¬,ë™êµ¬,ë™êµ¬,Busan,Dong-gu,Dong-gu,Dong-gu,Dong-gu Busan,2020,NA,21030,A1505,A1405,21030
+ë¶€ì‚°ê´‘ì—­ì‹œ,ì˜ë„êµ¬,ì˜ë„êµ¬,ì˜ë„êµ¬,Busan,Yeongdo-gu,Yeongdo-gu,Yeongdo-gu,Yeongdo-gu Busan,2020,NA,21040,A1514,A1414,21040
+ë¶€ì‚°ê´‘ì—­ì‹œ,ë¶€ì‚°ì§„êµ¬,ë¶€ì‚°ì§„êµ¬,ë¶€ì‚°ì§„êµ¬,Busan,Busanjin-gu,Busanjin-gu,Busanjin-gu,Busanjin-gu Busan,2020,NA,21050,A1507,A1407,21050
+ë¶€ì‚°ê´‘ì—­ì‹œ,ë™ë˜êµ¬,ë™ë˜êµ¬,ë™ë˜êµ¬,Busan,Dongnae-gu,Dongnae-gu,Dongnae-gu,Dongnae-gu Busan,2020,NA,21060,A1506,A1406,21060
+ë¶€ì‚°ê´‘ì—­ì‹œ,ë‚¨êµ¬,ë‚¨êµ¬,ë‚¨êµ¬,Busan,Nam-gu,Nam-gu,Nam-gu,Nam-gu Busan,2020,NA,21070,A1504,A1404,21070
+ë¶€ì‚°ê´‘ì—­ì‹œ,ë¶êµ¬,ë¶êµ¬,ë¶êµ¬,Busan,Buk-gu,Buk-gu,Buk-gu,Buk-gu Busan,2020,NA,21080,A1508,A1408,21080
+ë¶€ì‚°ê´‘ì—­ì‹œ,í•´ìš´ëŒ€êµ¬,í•´ìš´ëŒ€êµ¬,í•´ìš´ëŒ€êµ¬,Busan,Haeundae-gu,Haeundae-gu,Haeundae-gu,Haeundae-gu Busan,2020,NA,21090,A1516,A1416,21090
+ë¶€ì‚°ê´‘ì—­ì‹œ,ì‚¬í•˜êµ¬,ì‚¬í•˜êµ¬,ì‚¬í•˜êµ¬,Busan,Saha-gu,Saha-gu,Saha-gu,Saha-gu Busan,2020,NA,21100,A1510,A1410,21100
+ë¶€ì‚°ê´‘ì—­ì‹œ,ê¸ˆì •êµ¬,ê¸ˆì •êµ¬,ê¸ˆì •êµ¬,Busan,Geumjeong-gu,Geumjeong-gu,Geumjeong-gu,Geumjeong-gu Busan,2020,NA,21110,A1502,A1402,21110
+ë¶€ì‚°ê´‘ì—­ì‹œ,ê°•ì„œêµ¬,ê°•ì„œêµ¬,ê°•ì„œêµ¬,Busan,Gangseo-gu,Gangseo-gu,Gangseo-gu,Gangseo-gu Busan,2020,NA,21120,A1501,A1401,21120
+ë¶€ì‚°ê´‘ì—­ì‹œ,ì—°ì œêµ¬,ì—°ì œêµ¬,ì—°ì œêµ¬,Busan,Yeonje-gu,Yeonje-gu,Yeonje-gu,Yeonje-gu Busan,2020,NA,21130,A1513,A1413,21130
+ë¶€ì‚°ê´‘ì—­ì‹œ,ìˆ˜ì˜êµ¬,ìˆ˜ì˜êµ¬,ìˆ˜ì˜êµ¬,Busan,Suyeong-gu,Suyeong-gu,Suyeong-gu,Suyeong-gu Busan,2020,NA,21140,A1512,A1412,21140
+ë¶€ì‚°ê´‘ì—­ì‹œ,ì‚¬ìƒêµ¬,ì‚¬ìƒêµ¬,ì‚¬ìƒêµ¬,Busan,Sasang-gu,Sasang-gu,Sasang-gu,Sasang-gu Busan,2020,NA,21150,A1509,A1409,21150
+ë¶€ì‚°ê´‘ì—­ì‹œ,ê¸°ì¥êµ°,ê¸°ì¥êµ°,ê¸°ì¥êµ°,Busan,Gijang-gun,Gijang-gun,Gijang-gun,Gijang-gun Busan,2020,NA,21510,A1503,A1403,21310
+ëŒ€êµ¬ê´‘ì—­ì‹œ,ì¤‘êµ¬,ì¤‘êµ¬,ì¤‘êµ¬,Daegu,Jung-gu,Jung-gu,Jung-gu,Jung-gu Daegu,2020,NA,22010,A1308,A1208,22010
+ëŒ€êµ¬ê´‘ì—­ì‹œ,ë™êµ¬,ë™êµ¬,ë™êµ¬,Daegu,Dong-gu,Dong-gu,Dong-gu,Dong-gu Daegu,2020,NA,22020,A1304,A1204,22020
+ëŒ€êµ¬ê´‘ì—­ì‹œ,ì„œêµ¬,ì„œêµ¬,ì„œêµ¬,Daegu,Seo-gu,Seo-gu,Seo-gu,Seo-gu Daegu,2020,NA,22030,A1306,A1206,22030
+ëŒ€êµ¬ê´‘ì—­ì‹œ,ë‚¨êµ¬,ë‚¨êµ¬,ë‚¨êµ¬,Daegu,Nam-gu,Nam-gu,Nam-gu,Nam-gu Daegu,2020,NA,22040,A1301,A1201,22040
+ëŒ€êµ¬ê´‘ì—­ì‹œ,ë¶êµ¬,ë¶êµ¬,ë¶êµ¬,Daegu,Buk-gu,Buk-gu,Buk-gu,Buk-gu Daegu,2020,NA,22050,A1305,A1205,22050
+ëŒ€êµ¬ê´‘ì—­ì‹œ,ìˆ˜ì„±êµ¬,ìˆ˜ì„±êµ¬,ìˆ˜ì„±êµ¬,Daegu,Suseong-gu,Suseong-gu,Suseong-gu,Suseong-gu Daegu,2020,NA,22060,A1307,A1207,22060
+ëŒ€êµ¬ê´‘ì—­ì‹œ,ë‹¬ì„œêµ¬,ë‹¬ì„œêµ¬,ë‹¬ì„œêµ¬,Daegu,Dalseo-gu,Dalseo-gu,Dalseo-gu,Dalseo-gu Daegu,2020,NA,22070,A1302,A1202,22070
+ëŒ€êµ¬ê´‘ì—­ì‹œ,ë‹¬ì„±êµ°,ë‹¬ì„±êµ°,ë‹¬ì„±êµ°,Daegu,Dalseong-gun,Dalseong-gun,Dalseong-gun,Dalseong-gun Daegu,2020,NA,22510,A1303,A1203,22310
+ì¸ì²œê´‘ì—­ì‹œ,ì¤‘êµ¬,ì¤‘êµ¬,ì¤‘êµ¬,Incheon,Jung-gu,Jung-gu,Jung-gu,Jung-gu Incheon,2020,NA,23010,A0310,A0210,23010
+ì¸ì²œê´‘ì—­ì‹œ,ë™êµ¬,ë™êµ¬,ë™êµ¬,Incheon,Dong-gu,Dong-gu,Dong-gu,Dong-gu Incheon,2020,NA,23020,A0304,A0205,23020
+ì¸ì²œê´‘ì—­ì‹œ,ë‚¨êµ¬,ë‚¨êµ¬,ë‚¨êµ¬,Incheon,Nam-gu,Nam-gu,Nam-gu,Nam-gu Incheon,2015,NA,NA,,,23030
+ì¸ì²œê´‘ì—­ì‹œ,ì—°ìˆ˜êµ¬,ì—°ìˆ˜êµ¬,ì—°ìˆ˜êµ¬,Incheon,Yeonsu-gu,Yeonsu-gu,Yeonsu-gu,Yeonsu-gu Incheon,2020,NA,23040,A0308,A0208,23040
+ì¸ì²œê´‘ì—­ì‹œ,ë‚¨ë™êµ¬,ë‚¨ë™êµ¬,ë‚¨ë™êµ¬,Incheon,Namdong-gu,Namdong-gu,Namdong-gu,Namdong-gu Incheon,2020,NA,23050,A0303,A0204,23050
+ì¸ì²œê´‘ì—­ì‹œ,ë¶€í‰êµ¬,ë¶€í‰êµ¬,ë¶€í‰êµ¬,Incheon,Bupyeong-gu,Bupyeong-gu,Bupyeong-gu,Bupyeong-gu Incheon,2020,NA,23060,A0306,A0206,23060
+ì¸ì²œê´‘ì—­ì‹œ,ê³„ì–‘êµ¬,ê³„ì–‘êµ¬,ê³„ì–‘êµ¬,Incheon,Gyeyang-gu,Gyeyang-gu,Gyeyang-gu,Gyeyang-gu Incheon,2020,NA,23070,A0302,A0202,23070
+ì¸ì²œê´‘ì—­ì‹œ,ì„œêµ¬,ì„œêµ¬,ì„œêµ¬,Incheon,Seo-gu,Seo-gu,Seo-gu,Seo-gu Incheon,2020,NA,23080,A0307,A0207,23080
+ì¸ì²œê´‘ì—­ì‹œ,ë¯¸ì¶”í™€êµ¬,ë¯¸ì¶”í™€êµ¬,ë¯¸ì¶”í™€êµ¬,Incheon,Michuhol-gu,Michuhol-gu,Michuhol-gu,Michuhol-gu Incheon,2020,NA,23090,A0305,A0203,23090
+ì¸ì²œê´‘ì—­ì‹œ,ê°•í™”êµ°,ê°•í™”êµ°,ê°•í™”êµ°,Incheon,Ganghwa-gun,Ganghwa-gun,Ganghwa-gun,Ganghwa-gun Incheon,2020,NA,23510,A0301,A0201,23310
+ì¸ì²œê´‘ì—­ì‹œ,ì˜¹ì§„êµ°,ì˜¹ì§„êµ°,ì˜¹ì§„êµ°,Incheon,Ongjin-gun,Ongjin-gun,Ongjin-gun,Ongjin-gun Incheon,2020,NA,23520,A0309,A0209,23320
+ê´‘ì£¼ê´‘ì—­ì‹œ,ë™êµ¬,ë™êµ¬,ë™êµ¬,Gwangju,Dong-gu,Dong-gu,Dong-gu,Dong-gu Gwangju,2020,NA,24010,A1003,A0903,24010
+ê´‘ì£¼ê´‘ì—­ì‹œ,ì„œêµ¬,ì„œêµ¬,ì„œêµ¬,Gwangju,Seo-gu,Seo-gu,Seo-gu,Seo-gu Gwangju,2020,NA,24020,A1005,A0905,24020
+ê´‘ì£¼ê´‘ì—­ì‹œ,ë‚¨êµ¬,ë‚¨êµ¬,ë‚¨êµ¬,Gwangju,Nam-gu,Nam-gu,Nam-gu,Nam-gu Gwangju,2020,NA,24030,A1002,A0902,24030
+ê´‘ì£¼ê´‘ì—­ì‹œ,ë¶êµ¬,ë¶êµ¬,ë¶êµ¬,Gwangju,Buk-gu,Buk-gu,Buk-gu,Buk-gu Gwangju,2020,NA,24040,A1004,A0904,24040
+ê´‘ì£¼ê´‘ì—­ì‹œ,ê´‘ì‚°êµ¬,ê´‘ì‚°êµ¬,ê´‘ì‚°êµ¬,Gwangju,Gwangsan-gu,Gwangsan-gu,Gwangsan-gu,Gwangsan-gu Gwangju,2020,NA,24050,A1001,A0901,24050
+ëŒ€ì „ê´‘ì—­ì‹œ,ë™êµ¬,ë™êµ¬,ë™êµ¬,Daejeon,Dong-gu,Dong-gu,Dong-gu,Dong-gu Daejeon,2020,NA,25010,A0602,A0502,25010
+ëŒ€ì „ê´‘ì—­ì‹œ,ì¤‘êµ¬,ì¤‘êµ¬,ì¤‘êµ¬,Daejeon,Jung-gu,Jung-gu,Jung-gu,Jung-gu Daejeon,2020,NA,25020,A0605,A0505,25020
+ëŒ€ì „ê´‘ì—­ì‹œ,ì„œêµ¬,ì„œêµ¬,ì„œêµ¬,Daejeon,Seo-gu,Seo-gu,Seo-gu,Seo-gu Daejeon,2020,NA,25030,A0603,A0503,25030
+ëŒ€ì „ê´‘ì—­ì‹œ,ìœ ì„±êµ¬,ìœ ì„±êµ¬,ìœ ì„±êµ¬,Daejeon,Yuseong-gu,Yuseong-gu,Yuseong-gu,Yuseong-gu Daejeon,2020,NA,25040,A0604,A0504,25040
+ëŒ€ì „ê´‘ì—­ì‹œ,ëŒ€ë•êµ¬,ëŒ€ë•êµ¬,ëŒ€ë•êµ¬,Daejeon,Daedeok-gu,Daedeok-gu,Daedeok-gu,Daedeok-gu Daejeon,2020,NA,25050,A0601,A0501,25050
+ìš¸ì‚°ê´‘ì—­ì‹œ,ì¤‘êµ¬,ì¤‘êµ¬,ì¤‘êµ¬,Ulsan,Jung-gu,Jung-gu,Jung-gu,Jung-gu Ulsan,2020,NA,26010,A1605,A1505,26010
+ìš¸ì‚°ê´‘ì—­ì‹œ,ë‚¨êµ¬,ë‚¨êµ¬,ë‚¨êµ¬,Ulsan,Nam-gu,Nam-gu,Nam-gu,Nam-gu Ulsan,2020,NA,26020,A1601,A1501,26020
+ìš¸ì‚°ê´‘ì—­ì‹œ,ë™êµ¬,ë™êµ¬,ë™êµ¬,Ulsan,Dong-gu,Dong-gu,Dong-gu,Dong-gu Ulsan,2020,NA,26030,A1602,A1502,26030
+ìš¸ì‚°ê´‘ì—­ì‹œ,ë¶êµ¬,ë¶êµ¬,ë¶êµ¬,Ulsan,Buk-gu,Buk-gu,Buk-gu,Buk-gu Ulsan,2020,NA,26040,A1603,A1503,26040
+ìš¸ì‚°ê´‘ì—­ì‹œ,ìš¸ì£¼êµ°,ìš¸ì£¼êµ°,ìš¸ì£¼êµ°,Ulsan,Ulju-gun,Ulju-gun,Ulju-gun,Ulju-gun Ulsan,2020,NA,26510,A1604,A1504,26310
+ì„¸ì¢…íŠ¹ë³„ìì¹˜ì‹œ,ì„¸ì¢…ì‹œ,ì„¸ì¢…ì‹œ,ì„¸ì¢…ì‹œ,Sejong,Sejong-si,Sejong-si,Sejong-si,Sejong-si Sejong,2020,NA,29010,A09,A08,29010
+ê²½ê¸°ë„,ìˆ˜ì›ì‹œ,ìˆ˜ì›ì‹œ,,Gyeonggi-do,Suwon-si,Suwon-si,Suwon-si,Suwon-si Gyeonggi-do,2020,NA,31010,A0413,A0313,31010
+ê²½ê¸°ë„,ìˆ˜ì›ì‹œ ì¥ì•ˆêµ¬,ìˆ˜ì›ì‹œ,ì¥ì•ˆêµ¬,Gyeonggi-do,Suwon-si,Jangan-gu,Jangan-gu Suwon-si,Jangan-gu Suwon-si Gyeonggi-do,2020,NA,31011,A0413,A0313,31011
+ê²½ê¸°ë„,ìˆ˜ì›ì‹œ ê¶Œì„ êµ¬,ìˆ˜ì›ì‹œ,ê¶Œì„ êµ¬,Gyeonggi-do,Suwon-si,Gwonseon-gu,Gwonseon-gu Suwon-si,Gwonseon-gu Suwon-si Gyeonggi-do,2020,NA,31012,A0413,A0313,31012
+ê²½ê¸°ë„,ìˆ˜ì›ì‹œ íŒ”ë‹¬êµ¬,ìˆ˜ì›ì‹œ,íŒ”ë‹¬êµ¬,Gyeonggi-do,Suwon-si,Paldal-gu,Paldal-gu Suwon-si,Paldal-gu Suwon-si Gyeonggi-do,2020,NA,31013,A0413,A0313,31013
+ê²½ê¸°ë„,ìˆ˜ì›ì‹œ ì˜í†µêµ¬,ìˆ˜ì›ì‹œ,ì˜í†µêµ¬,Gyeonggi-do,Suwon-si,Yeongtong-gu,Yeongtong-gu Suwon-si,Yeongtong-gu Suwon-si Gyeonggi-do,2020,NA,31014,A0413,A0313,31014
+ê²½ê¸°ë„,ì„±ë‚¨ì‹œ,ì„±ë‚¨ì‹œ,,Gyeonggi-do,Seongnam-si,Seongnam-si,Seongnam-si,Seongnam-si Gyeonggi-do,2020,NA,31020,A0412,A0312,31020
+ê²½ê¸°ë„,ì„±ë‚¨ì‹œ ìˆ˜ì •êµ¬,ì„±ë‚¨ì‹œ,ìˆ˜ì •êµ¬,Gyeonggi-do,Seongnam-si,Sujeong-gu,Sujeong-gu Seongnam-si,Sujeong-gu Seongnam-si Gyeonggi-do,2020,NA,31021,A0412,A0312,31021
+ê²½ê¸°ë„,ì„±ë‚¨ì‹œ ì¤‘ì›êµ¬,ì„±ë‚¨ì‹œ,ì¤‘ì›êµ¬,Gyeonggi-do,Seongnam-si,Jungwon-gu,Jungwon-gu Seongnam-si,Jungwon-gu Seongnam-si Gyeonggi-do,2020,NA,31022,A0412,A0312,31022
+ê²½ê¸°ë„,ì„±ë‚¨ì‹œ ë¶„ë‹¹êµ¬,ì„±ë‚¨ì‹œ,ë¶„ë‹¹êµ¬,Gyeonggi-do,Seongnam-si,Bundang-gu,Bundang-gu Seongnam-si,Bundang-gu Seongnam-si Gyeonggi-do,2020,NA,31023,A0412,A0312,31023
+ê²½ê¸°ë„,ì˜ì •ë¶€ì‹œ,ì˜ì •ë¶€ì‹œ,ì˜ì •ë¶€ì‹œ,Gyeonggi-do,Uijeongbu-si,Uijeongbu-si,Uijeongbu-si,Uijeongbu-si Gyeonggi-do,2020,NA,31030,A0425,A0325,31030
+ê²½ê¸°ë„,ì•ˆì–‘ì‹œ,ì•ˆì–‘ì‹œ,,Gyeonggi-do,Anyang-si,Anyang-si,Anyang-si,Anyang-si Gyeonggi-do,2020,NA,31040,A0417,A0317,31040
+ê²½ê¸°ë„,ì•ˆì–‘ì‹œ ë§Œì•ˆêµ¬,ì•ˆì–‘ì‹œ,ë§Œì•ˆêµ¬,Gyeonggi-do,Anyang-si,Manan-gu,Manan-gu Anyang-si,Manan-gu Anyang-si Gyeonggi-do,2020,NA,31041,A0417,A0317,31041
+ê²½ê¸°ë„,ì•ˆì–‘ì‹œ ë™ì•ˆêµ¬,ì•ˆì–‘ì‹œ,ë™ì•ˆêµ¬,Gyeonggi-do,Anyang-si,Dongan-gu,Dongan-gu Anyang-si,Dongan-gu Anyang-si Gyeonggi-do,2020,NA,31042,A0417,A0317,31042
+ê²½ê¸°ë„,ë¶€ì²œì‹œ,ë¶€ì²œì‹œ,ë¶€ì²œì‹œ,Gyeonggi-do,Bucheon-si,Bucheon-si,Bucheon-si,Bucheon-si Gyeonggi-do,2020,NA,31050,A0411,A0311,31050
+ê²½ê¸°ë„,ë¶€ì²œì‹œ ì›ë¯¸êµ¬,ë¶€ì²œì‹œ,ì›ë¯¸êµ¬,Gyeonggi-do,Bucheon-si,Wonmi-gu,Wonmi-gu Bucheon-si,Wonmi-gu Bucheon-si Gyeonggi-do,2015,NA,NA,,,31051
+ê²½ê¸°ë„,ë¶€ì²œì‹œ ì†Œì‚¬êµ¬,ë¶€ì²œì‹œ,ì†Œì‚¬êµ¬,Gyeonggi-do,Bucheon-si,Sosa-gu,Sosa-gu Bucheon-si,Sosa-gu Bucheon-si Gyeonggi-do,2015,NA,NA,,,31052
+ê²½ê¸°ë„,ë¶€ì²œì‹œ ì˜¤ì •êµ¬,ë¶€ì²œì‹œ,ì˜¤ì •êµ¬,Gyeonggi-do,Bucheon-si,Ojeong-gu,Ojeong-gu Bucheon-si,Ojeong-gu Bucheon-si Gyeonggi-do,2015,NA,NA,,,31053
+ê²½ê¸°ë„,ê´‘ëª…ì‹œ,ê´‘ëª…ì‹œ,ê´‘ëª…ì‹œ,Gyeonggi-do,Gwangmyeong-si,Gwangmyeong-si,Gwangmyeong-si,Gwangmyeong-si Gyeonggi-do,2020,NA,31060,A0404,A0304,31060
+ê²½ê¸°ë„,í‰íƒì‹œ,í‰íƒì‹œ,í‰íƒì‹œ,Gyeonggi-do,Pyeongtaek-si,Pyeongtaek-si,Pyeongtaek-si,Pyeongtaek-si Gyeonggi-do,2020,NA,31070,A0428,A0328,31070
+ê²½ê¸°ë„,ë™ë‘ì²œì‹œ,ë™ë‘ì²œì‹œ,ë™ë‘ì²œì‹œ,Gyeonggi-do,Dongducheon-si,Dongducheon-si,Dongducheon-si,Dongducheon-si Gyeonggi-do,2020,NA,31080,A0410,A0310,31080
+ê²½ê¸°ë„,ì•ˆì‚°ì‹œ,ì•ˆì‚°ì‹œ,,Gyeonggi-do,Ansan-si,Ansan-si,Ansan-si,Ansan-si Gyeonggi-do,2020,NA,31090,A0415,A0315,31090
+ê²½ê¸°ë„,ì•ˆì‚°ì‹œ ìƒë¡êµ¬,ì•ˆì‚°ì‹œ,ìƒë¡êµ¬,Gyeonggi-do,Ansan-si,Sangnok-gu,Sangnok-gu Ansan-si,Sangnok-gu Ansan-si Gyeonggi-do,2020,NA,31091,A0415,A0315,31091
+ê²½ê¸°ë„,ì•ˆì‚°ì‹œ ë‹¨ì›êµ¬,ì•ˆì‚°ì‹œ,ë‹¨ì›êµ¬,Gyeonggi-do,Ansan-si,Danwon-gu,Danwon-gu Ansan-si,Danwon-gu Ansan-si Gyeonggi-do,2020,NA,31092,A0415,A0315,31092
+ê²½ê¸°ë„,ê³ ì–‘ì‹œ,ê³ ì–‘ì‹œ,,Gyeonggi-do,Goyang-si,Goyang-si,Goyang-si,Goyang-si Gyeonggi-do,2020,NA,31100,A0402,A0302,31100
+ê²½ê¸°ë„,ê³ ì–‘ì‹œ ë•ì–‘êµ¬,ê³ ì–‘ì‹œ,ë•ì–‘êµ¬,Gyeonggi-do,Goyang-si,Deogyang-gu,Deogyang-gu Goyang-si,Deogyang-gu Goyang-si Gyeonggi-do,2020,NA,31101,A0402,A0302,31101
+ê²½ê¸°ë„,ê³ ì–‘ì‹œ ì¼ì‚°ë™êµ¬,ê³ ì–‘ì‹œ,ì¼ì‚°ë™êµ¬,Gyeonggi-do,Goyang-si,Ilsandong-gu,Ilsandong-gu Goyang-si,Ilsandong-gu Goyang-si Gyeonggi-do,2020,NA,31103,A0402,A0302,31103
+ê²½ê¸°ë„,ê³ ì–‘ì‹œ ì¼ì‚°ì„œêµ¬,ê³ ì–‘ì‹œ,ì¼ì‚°ì„œêµ¬,Gyeonggi-do,Goyang-si,Ilsanseo-gu,Ilsanseo-gu Goyang-si,Ilsanseo-gu Goyang-si Gyeonggi-do,2020,NA,31104,A0402,A0302,31104
+ê²½ê¸°ë„,ê³¼ì²œì‹œ,ê³¼ì²œì‹œ,ê³¼ì²œì‹œ,Gyeonggi-do,Gwacheon-si,Gwacheon-si,Gwacheon-si,Gwacheon-si Gyeonggi-do,2020,NA,31110,A0403,A0303,31110
+ê²½ê¸°ë„,êµ¬ë¦¬ì‹œ,êµ¬ë¦¬ì‹œ,êµ¬ë¦¬ì‹œ,Gyeonggi-do,Guri-si,Guri-si,Guri-si,Guri-si Gyeonggi-do,2020,NA,31120,A0406,A0306,31120
+ê²½ê¸°ë„,ë‚¨ì–‘ì£¼ì‹œ,ë‚¨ì–‘ì£¼ì‹œ,ë‚¨ì–‘ì£¼ì‹œ,Gyeonggi-do,Namyangju-si,Namyangju-si,Namyangju-si,Namyangju-si Gyeonggi-do,2020,NA,31130,A0409,A0309,31130
+ê²½ê¸°ë„,ì˜¤ì‚°ì‹œ,ì˜¤ì‚°ì‹œ,ì˜¤ì‚°ì‹œ,Gyeonggi-do,Osan-si,Osan-si,Osan-si,Osan-si Gyeonggi-do,2020,NA,31140,A0422,A0322,31140
+ê²½ê¸°ë„,ì‹œí¥ì‹œ,ì‹œí¥ì‹œ,ì‹œí¥ì‹œ,Gyeonggi-do,Siheung-si,Siheung-si,Siheung-si,Siheung-si Gyeonggi-do,2020,NA,31150,A0414,A0314,31150
+ê²½ê¸°ë„,êµ°í¬ì‹œ,êµ°í¬ì‹œ,êµ°í¬ì‹œ,Gyeonggi-do,Gunpo-si,Gunpo-si,Gunpo-si,Gunpo-si Gyeonggi-do,2020,NA,31160,A0407,A0307,31160
+ê²½ê¸°ë„,ì˜ì™•ì‹œ,ì˜ì™•ì‹œ,ì˜ì™•ì‹œ,Gyeonggi-do,Uiwang-si,Uiwang-si,Uiwang-si,Uiwang-si Gyeonggi-do,2020,NA,31170,A0424,A0324,31170
+ê²½ê¸°ë„,í•˜ë‚¨ì‹œ,í•˜ë‚¨ì‹œ,í•˜ë‚¨ì‹œ,Gyeonggi-do,Hanam-si,Hanam-si,Hanam-si,Hanam-si Gyeonggi-do,2020,NA,31180,A0430,A0330,31180
+ê²½ê¸°ë„,ìš©ì¸ì‹œ,ìš©ì¸ì‹œ,,Gyeonggi-do,Yongin-si,Yongin-si,Yongin-si,Yongin-si Gyeonggi-do,2020,NA,31190,A0423,A0323,31190
+ê²½ê¸°ë„,ìš©ì¸ì‹œ ì²˜ì¸êµ¬,ìš©ì¸ì‹œ,ì²˜ì¸êµ¬,Gyeonggi-do,Yongin-si,Cheoin-gu,Cheoin-gu Yongin-si,Cheoin-gu Yongin-si Gyeonggi-do,2020,NA,31191,A0423,A0323,31191
+ê²½ê¸°ë„,ìš©ì¸ì‹œ ê¸°í¥êµ¬,ìš©ì¸ì‹œ,ê¸°í¥êµ¬,Gyeonggi-do,Yongin-si,Giheung-gu,Giheung-gu Yongin-si,Giheung-gu Yongin-si Gyeonggi-do,2020,NA,31192,A0423,A0323,31192
+ê²½ê¸°ë„,ìš©ì¸ì‹œ ìˆ˜ì§€êµ¬,ìš©ì¸ì‹œ,ìˆ˜ì§€êµ¬,Gyeonggi-do,Yongin-si,Suji-gu,Suji-gu Yongin-si,Suji-gu Yongin-si Gyeonggi-do,2020,NA,31193,A0423,A0323,31193
+ê²½ê¸°ë„,íŒŒì£¼ì‹œ,íŒŒì£¼ì‹œ,íŒŒì£¼ì‹œ,Gyeonggi-do,Paju-si,Paju-si,Paju-si,Paju-si Gyeonggi-do,2020,NA,31200,A0427,A0327,31200
+ê²½ê¸°ë„,ì´ì²œì‹œ,ì´ì²œì‹œ,ì´ì²œì‹œ,Gyeonggi-do,Icheon-si,Icheon-si,Icheon-si,Icheon-si Gyeonggi-do,2020,NA,31210,A0426,A0326,31210
+ê²½ê¸°ë„,ì•ˆì„±ì‹œ,ì•ˆì„±ì‹œ,ì•ˆì„±ì‹œ,Gyeonggi-do,Anseong-si,Anseong-si,Anseong-si,Anseong-si Gyeonggi-do,2020,NA,31220,A0416,A0316,31220
+ê²½ê¸°ë„,ê¹€í¬ì‹œ,ê¹€í¬ì‹œ,ê¹€í¬ì‹œ,Gyeonggi-do,Gimpo-si,Gimpo-si,Gimpo-si,Gimpo-si Gyeonggi-do,2020,NA,31230,A0408,A0308,31230
+ê²½ê¸°ë„,í™”ì„±ì‹œ,í™”ì„±ì‹œ,í™”ì„±ì‹œ,Gyeonggi-do,Hwaseong-si,Hwaseong-si,Hwaseong-si,Hwaseong-si Gyeonggi-do,2020,NA,31240,A0431,A0331,31240
+ê²½ê¸°ë„,ê´‘ì£¼ì‹œ,ê´‘ì£¼ì‹œ,ê´‘ì£¼ì‹œ,Gyeonggi-do,Gwangju-si,Gwangju-si,Gwangju-si,Gwangju-si Gyeonggi-do,2020,NA,31250,A0405,A0305,31250
+ê²½ê¸°ë„,ì–‘ì£¼ì‹œ,ì–‘ì£¼ì‹œ,ì–‘ì£¼ì‹œ,Gyeonggi-do,Yangju-si,Yangju-si,Yangju-si,Yangju-si Gyeonggi-do,2020,NA,31260,A0418,A0318,31260
+ê²½ê¸°ë„,í¬ì²œì‹œ,í¬ì²œì‹œ,í¬ì²œì‹œ,Gyeonggi-do,Pocheon-si,Pocheon-si,Pocheon-si,Pocheon-si Gyeonggi-do,2020,NA,31270,A0429,A0329,31270
+ê²½ê¸°ë„,ì—¬ì£¼ì‹œ,ì—¬ì£¼ì‹œ,ì—¬ì£¼ì‹œ,Gyeonggi-do,Yeoju-si,Yeoju-si,Yeoju-si,Yeoju-si Gyeonggi-do,2020,NA,31280,A0420,A0320,31280
+ê²½ê¸°ë„,ì—¬ì£¼êµ°,ì—¬ì£¼êµ°,ì—¬ì£¼êµ°,Gyeonggi-do,Yeoju-gun,Yeoju-gun,Yeoju-gun,Yeoju-gun Gyeonggi-do,2010,NA,NA,,,31320
+ê²½ê¸°ë„,ì—°ì²œêµ°,ì—°ì²œêµ°,ì—°ì²œêµ°,Gyeonggi-do,Yeoncheon-gun,Yeoncheon-gun,Yeoncheon-gun,Yeoncheon-gun Gyeonggi-do,2020,NA,31550,A0421,A0321,31350
+ê²½ê¸°ë„,ê°€í‰êµ°,ê°€í‰êµ°,ê°€í‰êµ°,Gyeonggi-do,Gapyeong-gun,Gapyeong-gun,Gapyeong-gun,Gapyeong-gun Gyeonggi-do,2020,NA,31570,A0401,A0301,31370
+ê²½ê¸°ë„,ì–‘í‰êµ°,ì–‘í‰êµ°,ì–‘í‰êµ°,Gyeonggi-do,Yangpyeong-gun,Yangpyeong-gun,Yangpyeong-gun,Yangpyeong-gun Gyeonggi-do,2020,NA,31580,A0419,A0319,31380
+ê°•ì›íŠ¹ë³„ìì¹˜ë„,ì¶˜ì²œì‹œ,ì¶˜ì²œì‹œ,ì¶˜ì²œì‹œ,Gangwon-do,Chuncheon-si,Chuncheon-si,Chuncheon-si,Chuncheon-si Gangwon-do,2020,NA,32010,A0513,A0413,32010
+ê°•ì›íŠ¹ë³„ìì¹˜ë„,ì›ì£¼ì‹œ,ì›ì£¼ì‹œ,ì›ì£¼ì‹œ,Gangwon-do,Wonju-si,Wonju-si,Wonju-si,Wonju-si Gangwon-do,2020,NA,32020,A0509,A0409,32020
+ê°•ì›íŠ¹ë³„ìì¹˜ë„,ê°•ë¦‰ì‹œ,ê°•ë¦‰ì‹œ,ê°•ë¦‰ì‹œ,Gangwon-do,Gangneung-si,Gangneung-si,Gangneung-si,Gangneung-si Gangwon-do,2020,NA,32030,A0501,A0401,32030
+ê°•ì›íŠ¹ë³„ìì¹˜ë„,ë™í•´ì‹œ,ë™í•´ì‹œ,ë™í•´ì‹œ,Gangwon-do,Donghae-si,Donghae-si,Donghae-si,Donghae-si Gangwon-do,2020,NA,32040,A0503,A0403,32040
+ê°•ì›íŠ¹ë³„ìì¹˜ë„,íƒœë°±ì‹œ,íƒœë°±ì‹œ,íƒœë°±ì‹œ,Gangwon-do,Taebaek-si,Taebaek-si,Taebaek-si,Taebaek-si Gangwon-do,2020,NA,32050,A0514,A0414,32050
+ê°•ì›íŠ¹ë³„ìì¹˜ë„,ì†ì´ˆì‹œ,ì†ì´ˆì‹œ,ì†ì´ˆì‹œ,Gangwon-do,Sokcho-si,Sokcho-si,Sokcho-si,Sokcho-si Gangwon-do,2020,NA,32060,A0505,A0405,32060
+ê°•ì›íŠ¹ë³„ìì¹˜ë„,ì‚¼ì²™ì‹œ,ì‚¼ì²™ì‹œ,ì‚¼ì²™ì‹œ,Gangwon-do,Samcheok-si,Samcheok-si,Samcheok-si,Samcheok-si Gangwon-do,2020,NA,32070,A0504,A0404,32070
+ê°•ì›íŠ¹ë³„ìì¹˜ë„,í™ì²œêµ°,í™ì²œêµ°,í™ì²œêµ°,Gangwon-do,Hongcheon-gun,Hongcheon-gun,Hongcheon-gun,Hongcheon-gun Gangwon-do,2020,NA,32510,A0516,A0416,32310
+ê°•ì›íŠ¹ë³„ìì¹˜ë„,íš¡ì„±êµ°,íš¡ì„±êµ°,íš¡ì„±êµ°,Gangwon-do,Hoengseong-gun,Hoengseong-gun,Hoengseong-gun,Hoengseong-gun Gangwon-do,2020,NA,32520,A0518,A0418,32320
+ê°•ì›íŠ¹ë³„ìì¹˜ë„,ì˜ì›”êµ°,ì˜ì›”êµ°,ì˜ì›”êµ°,Gangwon-do,Yeongwol-gun,Yeongwol-gun,Yeongwol-gun,Yeongwol-gun Gangwon-do,2020,NA,32530,A0508,A0408,32330
+ê°•ì›íŠ¹ë³„ìì¹˜ë„,í‰ì°½êµ°,í‰ì°½êµ°,í‰ì°½êµ°,Gangwon-do,Pyeongchang-gun,Pyeongchang-gun,Pyeongchang-gun,Pyeongchang-gun Gangwon-do,2020,NA,32540,A0515,A0415,32340
+ê°•ì›íŠ¹ë³„ìì¹˜ë„,ì •ì„ êµ°,ì •ì„ êµ°,ì •ì„ êµ°,Gangwon-do,Jeongseon-gun,Jeongseon-gun,Jeongseon-gun,Jeongseon-gun Gangwon-do,2020,NA,32550,A0511,A0411,32350
+ê°•ì›íŠ¹ë³„ìì¹˜ë„,ì² ì›êµ°,ì² ì›êµ°,ì² ì›êµ°,Gangwon-do,Cheorwon-gun,Cheorwon-gun,Cheorwon-gun,Cheorwon-gun Gangwon-do,2020,NA,32560,A0512,A0412,32360
+ê°•ì›íŠ¹ë³„ìì¹˜ë„,í™”ì²œêµ°,í™”ì²œêµ°,í™”ì²œêµ°,Gangwon-do,Hwacheon-gun,Hwacheon-gun,Hwacheon-gun,Hwacheon-gun Gangwon-do,2020,NA,32570,A0517,A0417,32370
+ê°•ì›íŠ¹ë³„ìì¹˜ë„,ì–‘êµ¬êµ°,ì–‘êµ¬êµ°,ì–‘êµ¬êµ°,Gangwon-do,Yanggu-gun,Yanggu-gun,Yanggu-gun,Yanggu-gun Gangwon-do,2020,NA,32580,A0506,A0406,32380
+ê°•ì›íŠ¹ë³„ìì¹˜ë„,ì¸ì œêµ°,ì¸ì œêµ°,ì¸ì œêµ°,Gangwon-do,Inje-gun,Inje-gun,Inje-gun,Inje-gun Gangwon-do,2020,NA,32590,A0510,A0410,32390
+ê°•ì›íŠ¹ë³„ìì¹˜ë„,ê³ ì„±êµ°,ê³ ì„±êµ°,ê³ ì„±êµ°,Gangwon-do,Goseong-gun,Goseong-gun,Goseong-gun,Goseong-gun Gangwon-do,2020,NA,32600,A0502,A0402,32400
+ê°•ì›íŠ¹ë³„ìì¹˜ë„,ì–‘ì–‘êµ°,ì–‘ì–‘êµ°,ì–‘ì–‘êµ°,Gangwon-do,Yangyang-gun,Yangyang-gun,Yangyang-gun,Yangyang-gun Gangwon-do,2020,NA,32610,A0507,A0407,32410
+ì¶©ì²­ë¶ë„,ì²­ì£¼ì‹œ,ì²­ì£¼ì‹œ,,Chungcheongbuk-do,Cheongju-si,Cheongju-si,,Cheongju-si Chungcheongbuk-do,2010,NA,NA,,,33010
+ì¶©ì²­ë¶ë„,ì²­ì£¼ì‹œ ìƒë‹¹êµ¬,ì²­ì£¼ì‹œ,ìƒë‹¹êµ¬,Chungcheongbuk-do,Cheongju-si,Sangdang-gu,Sangdang-gu Cheongju-si,Sangdang-gu Cheongju-si Chungcheongbuk-do,2010,NA,NA,,,33011
+ì¶©ì²­ë¶ë„,ì²­ì£¼ì‹œ í¥ë•êµ¬,ì²­ì£¼ì‹œ,í¥ë•êµ¬,Chungcheongbuk-do,Cheongju-si,Heungdeok-gu,Heungdeok-gu Cheongju-si,Heungdeok-gu Cheongju-si Chungcheongbuk-do,2010,NA,NA,,,33012
+ì¶©ì²­ë¶ë„,ì¶©ì£¼ì‹œ,ì¶©ì£¼ì‹œ,ì¶©ì£¼ì‹œ,Chungcheongbuk-do,Chungju-si,Chungju-si,Chungju-si,Chungju-si Chungcheongbuk-do,2020,NA,33020,A0711,A0611,33020
+ì¶©ì²­ë¶ë„,ì œì²œì‹œ,ì œì²œì‹œ,ì œì²œì‹œ,Chungcheongbuk-do,Jecheon-si,Jecheon-si,Jecheon-si,Jecheon-si Chungcheongbuk-do,2020,NA,33030,A0707,A0607,33030
+ì¶©ì²­ë¶ë„,ì²­ì£¼ì‹œ,ì²­ì£¼ì‹œ,,Chungcheongbuk-do,Cheongju-si,Cheongju-si,,Cheongju-si Chungcheongbuk-do,2020,NA,33040,A0710,A0610,33040
+ì¶©ì²­ë¶ë„,ì²­ì£¼ì‹œ ìƒë‹¹êµ¬,ì²­ì£¼ì‹œ,ìƒë‹¹êµ¬,Chungcheongbuk-do,Cheongju-si,Sangdang-gu,Sangdang-gu Cheongju-si,Sangdang-gu Cheongju-si Chungcheongbuk-do,2020,NA,33041,A0710,A0610,33041
+ì¶©ì²­ë¶ë„,ì²­ì£¼ì‹œ ì„œì›êµ¬,ì²­ì£¼ì‹œ,ì„œì›êµ¬,Chungcheongbuk-do,Cheongju-si,Seowon-gu,Seowon-gu Cheongju-si,Seowon-gu Cheongju-si Chungcheongbuk-do,2020,NA,33042,A0710,A0610,33042
+ì¶©ì²­ë¶ë„,ì²­ì£¼ì‹œ í¥ë•êµ¬,ì²­ì£¼ì‹œ,í¥ë•êµ¬,Chungcheongbuk-do,Cheongju-si,Heungdeok-gu,Heungdeok-gu Cheongju-si,Heungdeok-gu Cheongju-si Chungcheongbuk-do,2020,NA,33043,A0710,A0610,33043
+ì¶©ì²­ë¶ë„,ì²­ì£¼ì‹œ ì²­ì›êµ¬,ì²­ì£¼ì‹œ,ì²­ì›êµ¬,Chungcheongbuk-do,Cheongju-si,Cheongwon-gu,Cheongwon-gu Cheongju-si,Cheongwon-gu Cheongju-si Chungcheongbuk-do,2020,NA,33044,A0710,A0610,33044
+ì¶©ì²­ë¶ë„,ì²­ì£¼ì‹œ ì²­ì›êµ°\,ì²­ì£¼ì‹œ,ì²­ì›êµ°,Chungcheongbuk-do,Cheongju-si,Cheongwon-gun,Cheongwon-gun Cheongju-si,Cheongwon-gun Cheongju-si Chungcheongbuk-do,2010,NA,NA,,,33310
+ì¶©ì²­ë¶ë„,ë³´ì€êµ°,ë³´ì€êµ°,ë³´ì€êµ°,Chungcheongbuk-do,Boeun-gun,Boeun-gun,Boeun-gun,Boeun-gun Chungcheongbuk-do,2020,NA,33520,A0703,A0603,33320
+ì¶©ì²­ë¶ë„,ì˜¥ì²œêµ°,ì˜¥ì²œêµ°,ì˜¥ì²œêµ°,Chungcheongbuk-do,Okcheon-gun,Okcheon-gun,Okcheon-gun,Okcheon-gun Chungcheongbuk-do,2020,NA,33530,A0705,A0605,33330
+ì¶©ì²­ë¶ë„,ì˜ë™êµ°,ì˜ë™êµ°,ì˜ë™êµ°,Chungcheongbuk-do,Yeongdong-gun,Yeongdong-gun,Yeongdong-gun,Yeongdong-gun Chungcheongbuk-do,2020,NA,33540,A0704,A0604,33340
+ì¶©ì²­ë¶ë„,ì§„ì²œêµ°,ì§„ì²œêµ°,ì§„ì²œêµ°,Chungcheongbuk-do,Jincheon-gun,Jincheon-gun,Jincheon-gun,Jincheon-gun Chungcheongbuk-do,2020,NA,33550,A0709,A0609,33350
+ì¶©ì²­ë¶ë„,ê´´ì‚°êµ°,ê´´ì‚°êµ°,ê´´ì‚°êµ°,Chungcheongbuk-do,Goesan-gun,Goesan-gun,Goesan-gun,Goesan-gun Chungcheongbuk-do,2020,NA,33560,A0701,A0601,33360
+ì¶©ì²­ë¶ë„,ìŒì„±êµ°,ìŒì„±êµ°,ìŒì„±êµ°,Chungcheongbuk-do,Eumseong-gun,Eumseong-gun,Eumseong-gun,Eumseong-gun Chungcheongbuk-do,2020,NA,33570,A0706,A0606,33370
+ì¶©ì²­ë¶ë„,ë‹¨ì–‘êµ°,ë‹¨ì–‘êµ°,ë‹¨ì–‘êµ°,Chungcheongbuk-do,Danyang-gun,Danyang-gun,Danyang-gun,Danyang-gun Chungcheongbuk-do,2020,NA,33580,A0702,A0602,33380
+ì¶©ì²­ë¶ë„,ì¦í‰êµ°,ì¦í‰êµ°,ì¦í‰êµ°,Chungcheongbuk-do,Jeungpyeong-gun,Jeungpyeong-gun,Jeungpyeong-gun,Jeungpyeong-gun Chungcheongbuk-do,2020,NA,33590,A0708,A0608,33390
+ì¶©ì²­ë‚¨ë„,ì²œì•ˆì‹œ,ì²œì•ˆì‹œ,ë™ë‚¨êµ¬,Chungcheongnam-do,Cheonan-si,Cheonan-si,,Cheonan-si Chungcheongnam-do,2020,NA,34010,A0812,A0712,34010
+ì¶©ì²­ë‚¨ë„,ì²œì•ˆì‹œ ë™ë‚¨êµ¬,ì²œì•ˆì‹œ,ë™ë‚¨êµ¬,Chungcheongnam-do,Cheonan-si,Dongnam-gu,Dongnam-gu Cheonan-si,Dongnam-gu Cheonan-si Chungcheongnam-do,2020,NA,34011,A0812,A0712,34011
+ì¶©ì²­ë‚¨ë„,ì²œì•ˆì‹œ ì„œë¶êµ¬,ì²œì•ˆì‹œ,ì„œë¶êµ¬,Chungcheongnam-do,Cheonan-si,Seobuk-gu,Seobuk-gu Cheonan-si,Seobuk-gu Cheonan-si Chungcheongnam-do,2020,NA,34012,A0812,A0712,34012
+ì¶©ì²­ë‚¨ë„,ê³µì£¼ì‹œ,ê³µì£¼ì‹œ,ê³µì£¼ì‹œ,Chungcheongnam-do,Gongju-si,Gongju-si,Gongju-si,Gongju-si Chungcheongnam-do,2020,NA,34020,A0802,A0702,34020
+ì¶©ì²­ë‚¨ë„,ë³´ë ¹ì‹œ,ë³´ë ¹ì‹œ,ë³´ë ¹ì‹œ,Chungcheongnam-do,Boryeong-si,Boryeong-si,Boryeong-si,Boryeong-si Chungcheongnam-do,2020,NA,34030,A0806,A0706,34030
+ì¶©ì²­ë‚¨ë„,ì•„ì‚°ì‹œ,ì•„ì‚°ì‹œ,ì•„ì‚°ì‹œ,Chungcheongnam-do,Asan-si,Asan-si,Asan-si,Asan-si Chungcheongnam-do,2020,NA,34040,A0810,A0710,34040
+ì¶©ì²­ë‚¨ë„,ì„œì‚°ì‹œ,ì„œì‚°ì‹œ,ì„œì‚°ì‹œ,Chungcheongnam-do,Seosan-si,Seosan-si,Seosan-si,Seosan-si Chungcheongnam-do,2020,NA,34050,A0808,A0708,34050
+ì¶©ì²­ë‚¨ë„,ë…¼ì‚°ì‹œ,ë…¼ì‚°ì‹œ,ë…¼ì‚°ì‹œ,Chungcheongnam-do,Nonsan-si,Nonsan-si,Nonsan-si,Nonsan-si Chungcheongnam-do,2020,NA,34060,A0804,A0704,34060
+ì¶©ì²­ë‚¨ë„,ê³„ë£¡ì‹œ,ê³„ë£¡ì‹œ,ê³„ë£¡ì‹œ,Chungcheongnam-do,Gyeryong-si,Gyeryong-si,Gyeryong-si,Gyeryong-si Chungcheongnam-do,2020,NA,34070,A0801,A0701,34070
+ì¶©ì²­ë‚¨ë„,ë‹¹ì§„ì‹œ,ë‹¹ì§„ì‹œ,ë‹¹ì§„ì‹œ,Chungcheongnam-do,Dangjin-si,Dangjin-si,Dangjin-si,Dangjin-si Chungcheongnam-do,2020,NA,34080,A0805,A0705,34080
+ì¶©ì²­ë‚¨ë„,ê¸ˆì‚°êµ°,ê¸ˆì‚°êµ°,ê¸ˆì‚°êµ°,Chungcheongnam-do,Geumsan-gun,Geumsan-gun,Geumsan-gun,Geumsan-gun Chungcheongnam-do,2020,NA,34510,A0803,A0703,34310
+ì¶©ì²­ë‚¨ë„,ì—°ê¸°êµ°,ì—°ê¸°êµ°,ì—°ê¸°êµ°,Chungcheongnam-do,Yeongi-gun,Yeongi-gun,Yeongi-gun,Yeongi-gun Chungcheongnam-do,2010,NA,NA,,,34320
+ì¶©ì²­ë‚¨ë„,ë¶€ì—¬êµ°,ë¶€ì—¬êµ°,ë¶€ì—¬êµ°,Chungcheongnam-do,Buyeo-gun,Buyeo-gun,Buyeo-gun,Buyeo-gun Chungcheongnam-do,2020,NA,34530,A0807,A0707,34330
+ì¶©ì²­ë‚¨ë„,ì„œì²œêµ°,ì„œì²œêµ°,ì„œì²œêµ°,Chungcheongnam-do,Seocheon-gun,Seocheon-gun,Seocheon-gun,Seocheon-gun Chungcheongnam-do,2020,NA,34540,A0809,A0709,34340
+ì¶©ì²­ë‚¨ë„,ì²­ì–‘êµ°,ì²­ì–‘êµ°,ì²­ì–‘êµ°,Chungcheongnam-do,Cheongyang-gun,Cheongyang-gun,Cheongyang-gun,Cheongyang-gun Chungcheongnam-do,2020,NA,34550,A0813,A0713,34350
+ì¶©ì²­ë‚¨ë„,í™ì„±êµ°,í™ì„±êµ°,í™ì„±êµ°,Chungcheongnam-do,Hongseong-gun,Hongseong-gun,Hongseong-gun,Hongseong-gun Chungcheongnam-do,2020,NA,34560,A0815,A0715,34360
+ì¶©ì²­ë‚¨ë„,ì˜ˆì‚°êµ°,ì˜ˆì‚°êµ°,ì˜ˆì‚°êµ°,Chungcheongnam-do,Yesan-gun,Yesan-gun,Yesan-gun,Yesan-gun Chungcheongnam-do,2020,NA,34570,A0811,A0711,34370
+ì¶©ì²­ë‚¨ë„,íƒœì•ˆêµ°,íƒœì•ˆêµ°,íƒœì•ˆêµ°,Chungcheongnam-do,Taean-gun,Taean-gun,Taean-gun,Taean-gun Chungcheongnam-do,2020,NA,34580,A0814,A0714,34380
+ì¶©ì²­ë‚¨ë„,ë‹¹ì§„êµ°,ë‹¹ì§„êµ°,ë‹¹ì§„êµ°,Chungcheongnam-do,Dangjin-gun,Dangjin-gun,Dangjin-gun,Dangjin-gun Chungcheongnam-do,2010,NA,NA,,,34390
+ì „ë¼ë¶ë„,ì „ì£¼ì‹œ,ì „ì£¼ì‹œ,,Jeollabuk-do,Jeonju-si,Jeonju-si,,Jeonju-si Jeollabuk-do,2020,NA,35010,A1112,A1012,35010
+ì „ë¼ë¶ë„,ì „ì£¼ì‹œ ì™„ì‚°êµ¬,ì „ì£¼ì‹œ,ì™„ì‚°êµ¬,Jeollabuk-do,Jeonju-si,Wansan-gu,Wansan-gu Jeonju-si,Wansan-gu Jeonju-si Jeollabuk-do,2020,NA,35011,A1112,A1012,35011
+ì „ë¼ë¶ë„,ì „ì£¼ì‹œ ë•ì§„êµ¬,ì „ì£¼ì‹œ,ë•ì§„êµ¬,Jeollabuk-do,Jeonju-si,Deokjin-gu,Deokjin-gu Jeonju-si,Deokjin-gu Jeonju-si Jeollabuk-do,2020,NA,35012,A1112,A1012,35012
+ì „ë¼ë¶ë„,êµ°ì‚°ì‹œ,êµ°ì‚°ì‹œ,êµ°ì‚°ì‹œ,Jeollabuk-do,Gunsan-si,Gunsan-si,Gunsan-si,Gunsan-si Jeollabuk-do,2020,NA,35020,A1102,A1002,35020
+ì „ë¼ë¶ë„,ìµì‚°ì‹œ,ìµì‚°ì‹œ,ìµì‚°ì‹œ,Jeollabuk-do,Iksan-si,Iksan-si,Iksan-si,Iksan-si Jeollabuk-do,2020,NA,35030,A1109,A1009,35030
+ì „ë¼ë¶ë„,ì •ìì‹œ,ì •ìì‹œ,ì •ìì‹œ,Jeollabuk-do,Jeongeup-si,Jeongeup-si,Jeongeup-si,Jeongeup-si Jeollabuk-do,2020,NA,35040,A1113,A1013,35040
+ì „ë¼ë¶ë„,ë‚¨ì›ì‹œ,ë‚¨ì›ì‹œ,ë‚¨ì›ì‹œ,Jeollabuk-do,Namwon-si,Namwon-si,Namwon-si,Namwon-si Jeollabuk-do,2020,NA,35050,A1104,A1004,35050
+ì „ë¼ë¶ë„,ê¹€ì œì‹œ,ê¹€ì œì‹œ,ê¹€ì œì‹œ,Jeollabuk-do,Gimje-si,Gimje-si,Gimje-si,Gimje-si Jeollabuk-do,2020,NA,35060,A1103,A1003,35060
+ì „ë¼ë¶ë„,ì™„ì£¼êµ°,ì™„ì£¼êµ°,ì™„ì£¼êµ°,Jeollabuk-do,Wanju-gun,Wanju-gun,Wanju-gun,Wanju-gun Jeollabuk-do,2020,NA,35510,A1108,A1008,35310
+ì „ë¼ë¶ë„,ì§„ì•ˆêµ°,ì§„ì•ˆêµ°,ì§„ì•ˆêµ°,Jeollabuk-do,Jinan-gun,Jinan-gun,Jinan-gun,Jinan-gun Jeollabuk-do,2020,NA,35520,A1114,A1014,35320
+ì „ë¼ë¶ë„,ë¬´ì£¼êµ°,ë¬´ì£¼êµ°,ë¬´ì£¼êµ°,Jeollabuk-do,Muju-gun,Muju-gun,Muju-gun,Muju-gun Jeollabuk-do,2020,NA,35530,A1105,A1005,35330
+ì „ë¼ë¶ë„,ì¥ìˆ˜êµ°,ì¥ìˆ˜êµ°,ì¥ìˆ˜êµ°,Jeollabuk-do,Jangsu-gun,Jangsu-gun,Jangsu-gun,Jangsu-gun Jeollabuk-do,2020,NA,35540,A1111,A1011,35340
+ì „ë¼ë¶ë„,ì„ì‹¤êµ°,ì„ì‹¤êµ°,ì„ì‹¤êµ°,Jeollabuk-do,Imsil-gun,Imsil-gun,Imsil-gun,Imsil-gun Jeollabuk-do,2020,NA,35550,A1110,A1010,35350
+ì „ë¼ë¶ë„,ìˆœì°½êµ°,ìˆœì°½êµ°,ìˆœì°½êµ°,Jeollabuk-do,Sunchang-gun,Sunchang-gun,Sunchang-gun,Sunchang-gun Jeollabuk-do,2020,NA,35560,A1107,A1007,35360
+ì „ë¼ë¶ë„,ê³ ì°½êµ°,ê³ ì°½êµ°,ê³ ì°½êµ°,Jeollabuk-do,Gochang-gun,Gochang-gun,Gochang-gun,Gochang-gun Jeollabuk-do,2020,NA,35570,A1101,A1001,35370
+ì „ë¼ë¶ë„,ë¶€ì•ˆêµ°,ë¶€ì•ˆêµ°,ë¶€ì•ˆêµ°,Jeollabuk-do,Buan-gun,Buan-gun,Buan-gun,Buan-gun Jeollabuk-do,2020,NA,35580,A1106,A1006,35380
+ì „ë¼ë‚¨ë„,ëª©í¬ì‹œ,ëª©í¬ì‹œ,ëª©í¬ì‹œ,Jeollanam-do,Mokpo-si,Mokpo-si,Mokpo-si,Mokpo-si Jeollanam-do,2020,NA,36010,A1208,A1108,36010
+ì „ë¼ë‚¨ë„,ì—¬ìˆ˜ì‹œ,ì—¬ìˆ˜ì‹œ,ì—¬ìˆ˜ì‹œ,Jeollanam-do,Yeosu-si,Yeosu-si,Yeosu-si,Yeosu-si Jeollanam-do,2020,NA,36020,A1213,A1113,36020
+ì „ë¼ë‚¨ë„,ìˆœì²œì‹œ,ìˆœì²œì‹œ,ìˆœì²œì‹œ,Jeollanam-do,Suncheon-si,Suncheon-si,Suncheon-si,Suncheon-si Jeollanam-do,2020,NA,36030,A1211,A1111,36030
+ì „ë¼ë‚¨ë„,ë‚˜ì£¼ì‹œ,ë‚˜ì£¼ì‹œ,ë‚˜ì£¼ì‹œ,Jeollanam-do,Naju-si,Naju-si,Naju-si,Naju-si Jeollanam-do,2020,NA,36040,A1206,A1106,36040
+ì „ë¼ë‚¨ë„,ê´‘ì–‘ì‹œ,ê´‘ì–‘ì‹œ,ê´‘ì–‘ì‹œ,Jeollanam-do,Gwangyang-si,Gwangyang-si,Gwangyang-si,Gwangyang-si Jeollanam-do,2020,NA,36060,A1204,A1104,36060
+ì „ë¼ë‚¨ë„,ë‹´ì–‘êµ°,ë‹´ì–‘êµ°,ë‹´ì–‘êµ°,Jeollanam-do,Damyang-gun,Damyang-gun,Damyang-gun,Damyang-gun Jeollanam-do,2020,NA,36510,A1207,A1107,36310
+ì „ë¼ë‚¨ë„,ê³¡ì„±êµ°,ê³¡ì„±êµ°,ê³¡ì„±êµ°,Jeollanam-do,Gokseong-gun,Gokseong-gun,Gokseong-gun,Gokseong-gun Jeollanam-do,2020,NA,36520,A1203,A1103,36320
+ì „ë¼ë‚¨ë„,êµ¬ë¡€êµ°,êµ¬ë¡€êµ°,êµ¬ë¡€êµ°,Jeollanam-do,Gurye-gun,Gurye-gun,Gurye-gun,Gurye-gun Jeollanam-do,2020,NA,36530,A1205,A1105,36330
+ì „ë¼ë‚¨ë„,ê³ í¥êµ°,ê³ í¥êµ°,ê³ í¥êµ°,Jeollanam-do,Goheung-gun,Goheung-gun,Goheung-gun,Goheung-gun Jeollanam-do,2020,NA,36550,A1202,A1102,36350
+ì „ë¼ë‚¨ë„,ë³´ì„±êµ°,ë³´ì„±êµ°,ë³´ì„±êµ°,Jeollanam-do,Boseong-gun,Boseong-gun,Boseong-gun,Boseong-gun Jeollanam-do,2020,NA,36560,A1210,A1110,36360
+ì „ë¼ë‚¨ë„,í™”ìˆœêµ°,í™”ìˆœêµ°,í™”ìˆœêµ°,Jeollanam-do,Hwasun-gun,Hwasun-gun,Hwasun-gun,Hwasun-gun Jeollanam-do,2020,NA,36570,A1222,A1122,36370
+ì „ë¼ë‚¨ë„,ì¥í¥êµ°,ì¥í¥êµ°,ì¥í¥êµ°,Jeollanam-do,Jangheung-gun,Jangheung-gun,Jangheung-gun,Jangheung-gun Jeollanam-do,2020,NA,36580,A1218,A1118,36380
+ì „ë¼ë‚¨ë„,ê°•ì§„êµ°,ê°•ì§„êµ°,ê°•ì§„êµ°,Jeollanam-do,Gangjin-gun,Gangjin-gun,Gangjin-gun,Gangjin-gun Jeollanam-do,2020,NA,36590,A1201,A1101,36390
+ì „ë¼ë‚¨ë„,í•´ë‚¨êµ°,í•´ë‚¨êµ°,í•´ë‚¨êµ°,Jeollanam-do,Haenam-gun,Haenam-gun,Haenam-gun,Haenam-gun Jeollanam-do,2020,NA,36600,A1221,A1121,36400
+ì „ë¼ë‚¨ë„,ì˜ì•”êµ°,ì˜ì•”êµ°,ì˜ì•”êµ°,Jeollanam-do,Yeongam-gun,Yeongam-gun,Yeongam-gun,Yeongam-gun Jeollanam-do,2020,NA,36610,A1215,A1115,36410
+ì „ë¼ë‚¨ë„,ë¬´ì•ˆêµ°,ë¬´ì•ˆêµ°,ë¬´ì•ˆêµ°,Jeollanam-do,Muan-gun,Muan-gun,Muan-gun,Muan-gun Jeollanam-do,2020,NA,36620,A1209,A1109,36420
+ì „ë¼ë‚¨ë„,í•¨í‰êµ°,í•¨í‰êµ°,í•¨í‰êµ°,Jeollanam-do,Hampyeong-gun,Hampyeong-gun,Hampyeong-gun,Hampyeong-gun Jeollanam-do,2020,NA,36630,A1220,A1120,36430
+ì „ë¼ë‚¨ë„,ì˜ê´‘êµ°,ì˜ê´‘êµ°,ì˜ê´‘êµ°,Jeollanam-do,Yeonggwang-gun,Yeonggwang-gun,Yeonggwang-gun,Yeonggwang-gun Jeollanam-do,2020,NA,36640,A1214,A1114,36440
+ì „ë¼ë‚¨ë„,ì¥ì„±êµ°,ì¥ì„±êµ°,ì¥ì„±êµ°,Jeollanam-do,Jangseong-gun,Jangseong-gun,Jangseong-gun,Jangseong-gun Jeollanam-do,2020,NA,36650,A1217,A1117,36450
+ì „ë¼ë‚¨ë„,ì™„ë„êµ°,ì™„ë„êµ°,ì™„ë„êµ°,Jeollanam-do,Wando-gun,Wando-gun,Wando-gun,Wando-gun Jeollanam-do,2020,NA,36660,A1216,A1116,36460
+ì „ë¼ë‚¨ë„,ì§„ë„êµ°,ì§„ë„êµ°,ì§„ë„êµ°,Jeollanam-do,Jindo-gun,Jindo-gun,Jindo-gun,Jindo-gun Jeollanam-do,2020,NA,36670,A1219,A1119,36470
+ì „ë¼ë‚¨ë„,ì‹ ì•ˆêµ°,ì‹ ì•ˆêµ°,ì‹ ì•ˆêµ°,Jeollanam-do,Sinan-gun,Sinan-gun,Sinan-gun,Sinan-gun Jeollanam-do,2020,NA,36680,A1212,A1112,36480
+ê²½ìƒë¶ë„,í¬í•­ì‹œ,í¬í•­ì‹œ,,Gyeongsangbuk-do,Pohang-si,Pohang-si,,Pohang-si Gyeongsangbuk-do,2020,NA,37010,A1423,A1323,37010
+ê²½ìƒë¶ë„,í¬í•­ì‹œ ë‚¨êµ¬,í¬í•­ì‹œ,ë‚¨êµ¬,Gyeongsangbuk-do,Pohang-si,Nam-gu,Nam-gu Pohang-si,Nam-gu Pohang-si Gyeongsangbuk-do,2020,NA,37011,A1423,A1323,37011
+ê²½ìƒë¶ë„,í¬í•­ì‹œ ë¶êµ¬,í¬í•­ì‹œ,ë¶êµ¬,Gyeongsangbuk-do,Pohang-si,Buk-gu,Buk-gu Pohang-si,Buk-gu Pohang-si Gyeongsangbuk-do,2020,NA,37012,A1423,A1323,37012
+ê²½ìƒë¶ë„,ê²½ì£¼ì‹œ,ê²½ì£¼ì‹œ,ê²½ì£¼ì‹œ,Gyeongsangbuk-do,Gyeongju-si,Gyeongju-si,Gyeongju-si,Gyeongju-si Gyeongsangbuk-do,2020,NA,37020,A1402,A1302,37020
+ê²½ìƒë¶ë„,ê¹€ì²œì‹œ,ê¹€ì²œì‹œ,ê¹€ì²œì‹œ,Gyeongsangbuk-do,Gimcheon-si,Gimcheon-si,Gimcheon-si,Gimcheon-si Gyeongsangbuk-do,2020,NA,37030,A1406,A1306,37030
+ê²½ìƒë¶ë„,ì•ˆë™ì‹œ,ì•ˆë™ì‹œ,ì•ˆë™ì‹œ,Gyeongsangbuk-do,Andong-si,Andong-si,Andong-si,Andong-si Gyeongsangbuk-do,2020,NA,37040,A1411,A1311,37040
+ê²½ìƒë¶ë„,êµ¬ë¯¸ì‹œ,êµ¬ë¯¸ì‹œ,êµ¬ë¯¸ì‹œ,Gyeongsangbuk-do,Gumi-si,Gumi-si,Gumi-si,Gumi-si Gyeongsangbuk-do,2020,NA,37050,A1404,A1304,37050
+ê²½ìƒë¶ë„,ì˜ì£¼ì‹œ,ì˜ì£¼ì‹œ,ì˜ì£¼ì‹œ,Gyeongsangbuk-do,Yeongju-si,Yeongju-si,Yeongju-si,Yeongju-si Gyeongsangbuk-do,2020,NA,37060,A1414,A1314,37060
+ê²½ìƒë¶ë„,ì˜ì²œì‹œ,ì˜ì²œì‹œ,ì˜ì²œì‹œ,Gyeongsangbuk-do,Yeongcheon-si,Yeongcheon-si,Yeongcheon-si,Yeongcheon-si Gyeongsangbuk-do,2020,NA,37070,A1415,A1315,37070
+ê²½ìƒë¶ë„,ìƒì£¼ì‹œ,ìƒì£¼ì‹œ,ìƒì£¼ì‹œ,Gyeongsangbuk-do,Sangju-si,Sangju-si,Sangju-si,Sangju-si Gyeongsangbuk-do,2020,NA,37080,A1409,A1309,37080
+ê²½ìƒë¶ë„,ë¬¸ê²½ì‹œ,ë¬¸ê²½ì‹œ,ë¬¸ê²½ì‹œ,Gyeongsangbuk-do,Mungyeong-si,Mungyeong-si,Mungyeong-si,Mungyeong-si Gyeongsangbuk-do,2020,NA,37090,A1407,A1307,37090
+ê²½ìƒë¶ë„,ê²½ì‚°ì‹œ,ê²½ì‚°ì‹œ,ê²½ì‚°ì‹œ,Gyeongsangbuk-do,Gyeongsan-si,Gyeongsan-si,Gyeongsan-si,Gyeongsan-si Gyeongsangbuk-do,2020,NA,37100,A1401,A1301,37100
+ëŒ€êµ¬ê´‘ì—­ì‹œ,êµ°ìœ„êµ°,êµ°ìœ„êµ°,êµ°ìœ„êµ°,Daegu,Gunwi-gun,Gunwi-gun,Gunwi-gun,Gunwi-gun Daegu,2020,NA,22520,A1309,A1305,37310
+ê²½ìƒë¶ë„,êµ°ìœ„êµ°,êµ°ìœ„êµ°,êµ°ìœ„êµ°,Gyeongsangbuk-do,Gunwi-gun,Gunwi-gun,Gunwi-gun,Gunwi-gun Gyeongsangbuk-do,2020,1,37510,,,37310
+ê²½ìƒë¶ë„,ì˜ì„±êµ°,ì˜ì„±êµ°,ì˜ì„±êµ°,Gyeongsangbuk-do,Uiseong-gun,Uiseong-gun,Uiseong-gun,Uiseong-gun Gyeongsangbuk-do,2020,NA,37520,A1419,A1319,37320
+ê²½ìƒë¶ë„,ì²­ì†¡êµ°,ì²­ì†¡êµ°,ì²­ì†¡êµ°,Gyeongsangbuk-do,Cheongsong-gun,Cheongsong-gun,Cheongsong-gun,Cheongsong-gun Gyeongsangbuk-do,2020,NA,37530,A1421,A1321,37330
+ê²½ìƒë¶ë„,ì˜ì–‘êµ°,ì˜ì–‘êµ°,ì˜ì–‘êµ°,Gyeongsangbuk-do,Yeongyang-gun,Yeongyang-gun,Yeongyang-gun,Yeongyang-gun Gyeongsangbuk-do,2020,NA,37540,A1413,A1313,37340
+ê²½ìƒë¶ë„,ì˜ë•êµ°,ì˜ë•êµ°,ì˜ë•êµ°,Gyeongsangbuk-do,Yeongdeok-gun,Yeongdeok-gun,Yeongdeok-gun,Yeongdeok-gun Gyeongsangbuk-do,2020,NA,37550,A1412,A1312,37350
+ê²½ìƒë¶ë„,ì²­ë„êµ°,ì²­ë„êµ°,ì²­ë„êµ°,Gyeongsangbuk-do,Cheongdo-gun,Cheongdo-gun,Cheongdo-gun,Cheongdo-gun Gyeongsangbuk-do,2020,NA,37560,A1420,A1320,37360
+ê²½ìƒë¶ë„,ê³ ë ¹êµ°,ê³ ë ¹êµ°,ê³ ë ¹êµ°,Gyeongsangbuk-do,Goryeong-gun,Goryeong-gun,Goryeong-gun,Goryeong-gun Gyeongsangbuk-do,2020,NA,37570,A1403,A1303,37370
+ê²½ìƒë¶ë„,ì„±ì£¼êµ°,ì„±ì£¼êµ°,ì„±ì£¼êµ°,Gyeongsangbuk-do,Seongju-gun,Seongju-gun,Seongju-gun,Seongju-gun Gyeongsangbuk-do,2020,NA,37580,A1410,A1310,37380
+ê²½ìƒë¶ë„,ì¹ ê³¡êµ°,ì¹ ê³¡êµ°,ì¹ ê³¡êµ°,Gyeongsangbuk-do,Chilgok-gun,Chilgok-gun,Chilgok-gun,Chilgok-gun Gyeongsangbuk-do,2020,NA,37590,A1422,A1322,37390
+ê²½ìƒë¶ë„,ì˜ˆì²œêµ°,ì˜ˆì²œêµ°,ì˜ˆì²œêµ°,Gyeongsangbuk-do,Yecheon-gun,Yecheon-gun,Yecheon-gun,Yecheon-gun Gyeongsangbuk-do,2020,NA,37600,A1416,A1316,37400
+ê²½ìƒë¶ë„,ë´‰í™”êµ°,ë´‰í™”êµ°,ë´‰í™”êµ°,Gyeongsangbuk-do,Bonghwa-gun,Bonghwa-gun,Bonghwa-gun,Bonghwa-gun Gyeongsangbuk-do,2020,NA,37610,A1408,A1308,37410
+ê²½ìƒë¶ë„,ìš¸ì§„êµ°,ìš¸ì§„êµ°,ìš¸ì§„êµ°,Gyeongsangbuk-do,Uljin-gun,Uljin-gun,Uljin-gun,Uljin-gun Gyeongsangbuk-do,2020,NA,37620,A1418,A1318,37420
+ê²½ìƒë¶ë„,ìš¸ë¦‰êµ°,ìš¸ë¦‰êµ°,ìš¸ë¦‰êµ°,Gyeongsangbuk-do,Ulleung-gun,Ulleung-gun,Ulleung-gun,Ulleung-gun Gyeongsangbuk-do,2020,NA,37630,A1417,A1317,37430
+ê²½ìƒë‚¨ë„,ì§„ì£¼ì‹œ,ì§„ì£¼ì‹œ,ì§„ì£¼ì‹œ,Gyeongsangnam-do,Jinju-si,Jinju-si,Jinju-si,Jinju-si Gyeongsangnam-do,2020,NA,38030,A1711,A1611,38030
+ê²½ìƒë‚¨ë„,í†µì˜ì‹œ,í†µì˜ì‹œ,í†µì˜ì‹œ,Gyeongsangnam-do,Tongyeong-si,Tongyeong-si,Tongyeong-si,Tongyeong-si Gyeongsangnam-do,2020,NA,38050,A1714,A1614,38050
+ê²½ìƒë‚¨ë„,ì‚¬ì²œì‹œ,ì‚¬ì²œì‹œ,ì‚¬ì²œì‹œ,Gyeongsangnam-do,Sacheon-si,Sacheon-si,Sacheon-si,Sacheon-si Gyeongsangnam-do,2020,NA,38060,A1707,A1607,38060
+ê²½ìƒë‚¨ë„,ê¹€í•´ì‹œ,ê¹€í•´ì‹œ,ê¹€í•´ì‹œ,Gyeongsangnam-do,Gimhae-si,Gimhae-si,Gimhae-si,Gimhae-si Gyeongsangnam-do,2020,NA,38070,A1704,A1604,38070
+ê²½ìƒë‚¨ë„,ë°€ì–‘ì‹œ,ë°€ì–‘ì‹œ,ë°€ì–‘ì‹œ,Gyeongsangnam-do,Miryang-si,Miryang-si,Miryang-si,Miryang-si Gyeongsangnam-do,2020,NA,38080,A1706,A1606,38080
+ê²½ìƒë‚¨ë„,ê±°ì œì‹œ,ê±°ì œì‹œ,ê±°ì œì‹œ,Gyeongsangnam-do,Geoje-si,Geoje-si,Geoje-si,Geoje-si Gyeongsangnam-do,2020,NA,38090,A1701,A1601,38090
+ê²½ìƒë‚¨ë„,ì–‘ì‚°ì‹œ,ì–‘ì‚°ì‹œ,ì–‘ì‚°ì‹œ,Gyeongsangnam-do,Yangsan-si,Yangsan-si,Yangsan-si,Yangsan-si Gyeongsangnam-do,2020,NA,38100,A1709,A1609,38100
+ê²½ìƒë‚¨ë„,ì°½ì›ì‹œ,ì°½ì›ì‹œ,,Gyeongsangnam-do,Changwon-si,Changwon-si,,Changwon-si Gyeongsangnam-do,2020,NA,38110,A1713,A1613,38110
+ê²½ìƒë‚¨ë„,ì°½ì›ì‹œ ì˜ì°½êµ¬,ì°½ì›ì‹œ,ì˜ì°½êµ¬,Gyeongsangnam-do,Changwon-si,Uichang-gu,Uichang-gu Changwon-si,Uichang-gu Changwon-si Gyeongsangnam-do,2020,NA,38111,A1713,A1613,38111
+ê²½ìƒë‚¨ë„,ì°½ì›ì‹œ ì„±ì‚°êµ¬,ì°½ì›ì‹œ,ì„±ì‚°êµ¬,Gyeongsangnam-do,Changwon-si,Seongsan-gu,Seongsan-gu Changwon-si,Seongsan-gu Changwon-si Gyeongsangnam-do,2020,NA,38112,A1713,A1613,38112
+ê²½ìƒë‚¨ë„,ì°½ì›ì‹œ ë§ˆì‚°í•©í¬êµ¬,ì°½ì›ì‹œ,ë§ˆì‚°í•©í¬êµ¬,Gyeongsangnam-do,Changwon-si,Masanhappo-gu,Masanhappo-gu Changwon-si,Masanhappo-gu Changwon-si Gyeongsangnam-do,2020,NA,38113,A1713,A1613,38113
+ê²½ìƒë‚¨ë„,ì°½ì›ì‹œ ë§ˆì‚°íšŒì›êµ¬,ì°½ì›ì‹œ,ë§ˆì‚°íšŒì›êµ¬,Gyeongsangnam-do,Changwon-si,Masanhoewon-gu,Masanhoewon-gu Changwon-si,Masanhoewon-gu Changwon-si Gyeongsangnam-do,2020,NA,38114,A1713,A1613,38114
+ê²½ìƒë‚¨ë„,ì°½ì›ì‹œ ì§„í•´êµ¬,ì°½ì›ì‹œ ,ì§„í•´êµ¬,Gyeongsangnam-do,Changwon-si,Jinhae-gu,Jinhae-gu Changwon-si,Jinhae-gu Changwon-si Gyeongsangnam-do,2020,NA,38115,A1713,A1613,38115
+ê²½ìƒë‚¨ë„,ì˜ë ¹êµ°,ì˜ë ¹êµ°,ì˜ë ¹êµ°,Gyeongsangnam-do,Uiryeong-gun,Uiryeong-gun,Uiryeong-gun,Uiryeong-gun Gyeongsangnam-do,2020,NA,38510,A1710,A1610,38310
+ê²½ìƒë‚¨ë„,í•¨ì•ˆêµ°,í•¨ì•ˆêµ°,í•¨ì•ˆêµ°,Gyeongsangnam-do,Haman-gun,Haman-gun,Haman-gun,Haman-gun Gyeongsangnam-do,2020,NA,38520,A1716,A1616,38320
+ê²½ìƒë‚¨ë„,ì°½ë…•êµ°,ì°½ë…•êµ°,ì°½ë…•êµ°,Gyeongsangnam-do,Changnyeong-gun,Changnyeong-gun,Changnyeong-gun,Changnyeong-gun Gyeongsangnam-do,2020,NA,38530,A1712,A1612,38330
+ê²½ìƒë‚¨ë„,ê³ ì„±êµ°,ê³ ì„±êµ°,ê³ ì„±êµ°,Gyeongsangnam-do,Goseong-gun,Goseong-gun,Goseong-gun,Goseong-gun Gyeongsangnam-do,2020,NA,38540,A1703,A1603,38340
+ê²½ìƒë‚¨ë„,ë‚¨í•´êµ°,ë‚¨í•´êµ°,ë‚¨í•´êµ°,Gyeongsangnam-do,Namhae-gun,Namhae-gun,Namhae-gun,Namhae-gun Gyeongsangnam-do,2020,NA,38550,A1705,A1605,38350
+ê²½ìƒë‚¨ë„,í•˜ë™êµ°,í•˜ë™êµ°,í•˜ë™êµ°,Gyeongsangnam-do,Hadong-gun,Hadong-gun,Hadong-gun,Hadong-gun Gyeongsangnam-do,2020,NA,38560,A1715,A1615,38360
+ê²½ìƒë‚¨ë„,ì‚°ì²­êµ°,ì‚°ì²­êµ°,ì‚°ì²­êµ°,Gyeongsangnam-do,Sancheong-gun,Sancheong-gun,Sancheong-gun,Sancheong-gun Gyeongsangnam-do,2020,NA,38570,A1708,A1608,38370
+ê²½ìƒë‚¨ë„,í•¨ì–‘êµ°,í•¨ì–‘êµ°,í•¨ì–‘êµ°,Gyeongsangnam-do,Hamyang-gun,Hamyang-gun,Hamyang-gun,Hamyang-gun Gyeongsangnam-do,2020,NA,38580,A1717,A1617,38380
+ê²½ìƒë‚¨ë„,ê±°ì°½êµ°,ê±°ì°½êµ°,ê±°ì°½êµ°,Gyeongsangnam-do,Geochang-gun,Geochang-gun,Geochang-gun,Geochang-gun Gyeongsangnam-do,2020,NA,38590,A1702,A1602,38390
+ê²½ìƒë‚¨ë„,í•©ì²œêµ°,í•©ì²œêµ°,í•©ì²œêµ°,Gyeongsangnam-do,Hapcheon-gun,Hapcheon-gun,Hapcheon-gun,Hapcheon-gun Gyeongsangnam-do,2020,NA,38600,A1718,A1618,38400
+ì œì£¼íŠ¹ë³„ìì¹˜ë„,ì œì£¼ì‹œ,ì œì£¼ì‹œ,ì œì£¼ì‹œ,Jeju-do,Jeju-si,Jeju-si,Jeju-si,Jeju-si Jeju-do,2020,NA,39010,A1801,A1701,39010
+ì œì£¼íŠ¹ë³„ìì¹˜ë„,ì„œê·€í¬ì‹œ,ì„œê·€í¬ì‹œ,ì„œê·€í¬ì‹œ,Jeju-do,Seogwipo-si,Seogwipo-si,Seogwipo-si,Seogwipo-si Jeju-do,2020,NA,39020,A1802,A1702,39020

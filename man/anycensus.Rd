@@ -17,6 +17,8 @@ anycensus(
 \item{year}{Integer: one of 2015 or 2020.}
 
 \item{level}{Character: "adm1" for province-level or "adm2" for municipal-level. Defaults to "adm2".}
+
+\item{simplify}{Character: "auto", "list", or "df". Determines the output format.}
 }
 \value{
 A named list of tibbles, one element per requested code.

@@ -3,12 +3,17 @@
 #' @param codes Integer or character vector of admin codes (e.g. 11, 26) or admin names (e.g. "Seoul").
 #' @param year  Integer: one of 2015 or 2020.
 #' @param level Character: "adm1" for province-level or "adm2" for municipal-level. Defaults to "adm2".
+#' @param simplify Character: "auto", "list", or "df". Determines the output format.
 #' @return A named list of tibbles, one element per requested code.
 #' @export
 anycensus <- function(codes = NULL,
                       year  = 2020,
                       level = c("adm1", "adm2"),
                       simplify = c("auto", "list", "df")) {
+  census <- NULL
+  .data <- NULL
+  code <- NULL
+  name <- NULL
   simplify <- match.arg(simplify)
   level    <- match.arg(level)
   df       <- census
@@ -48,29 +53,33 @@ anycensus <- function(codes = NULL,
 
 
 #' Query Korean census data by admin code (province or municipality) and year
-#' @description The function queries a long format census data frame ([`censuskor`])
-#' for specific administrative codes (if provided)
-#' @param codes Integer or character vector of admin codes (e.g. 11, 26) or admin names (e.g. "Seoul").
-#' @param type character: "population", "tax", or "mortality". Defaults to "population".
-#' @param year  Integer: 2020.
-#' @param level Character: "adm1" for province-level or "adm2" for municipal-level. Defaults to "adm2".
+#' @description The function queries a long format census data frame
+#' ([`censuskor`]) for specific administrative codes (if provided)
+#' @param codes integer or character vector of admin codes (e.g. 11, 26) or admin names (e.g. "Seoul").
+#' @param type character(1). "population", "tax", "economy" or "mortality".
+#'   Defaults to "population".
+#' @param year  integer(1). One of 2010, 2015, or 2020.
+#' @param level character(1). "adm1" for province-level or "adm2" for municipal-level. Defaults to "adm2".
 #' @return A data.frame object containing census data for the specified codes and year.
 #' @examples
 #' anycensusk(codes = "21", type = "mortality")
 #' @importFrom dplyr filter mutate
 #' @importFrom tidyr pivot_wider
+#' @importFrom utils data
 #' @export
-anycensusk <- function(codes = NULL,
-                      type  = c("population", "tax", "mortality"),
-                      year  = 2020,
-                      level = c("adm1", "adm2")) {
+anycensusk <- function(year  = 2020,
+                       codes = NULL,
+                       type  = c("population", "tax", "mortality", "economy"),
+                       level = c("adm1", "adm2")) {
+  censuskor <- NULL
+  .data <- NULL
+  data("censuskor", package = "tidycensuskr", envir = environment())
   type     <- match.arg(type)
   level    <- match.arg(level)
   df       <- censuskor
 
   unit <- NULL
 
-  stopifnot(year %in% c(2020))
   suppressWarnings(
     cond_chr <- all(is.na(as.integer(codes)))
   )
@@ -118,4 +127,3 @@ anycensusk <- function(codes = NULL,
   )
   dfe
 }
-
