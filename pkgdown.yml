@@ -2,11 +2,11 @@ pandoc: 3.1.11
 pkgdown: 2.1.3
 pkgdown_sha: ~
 articles:
-  01_intro: 01_intro.html
-  02_examples_with_ggplot: 02_examples_with_ggplot.html
-  03_anycensus: 03_anycensus.html
-  04_data_cleaning_kosis: 04_data_cleaning_kosis.html
-last_built: 2025-08-10T09:42Z
+  v01_intro: v01_intro.html
+  v02_examples_with_ggplot: v02_examples_with_ggplot.html
+  v03_anycensus: v03_anycensus.html
+  v04_data_cleaning_kosis: v04_data_cleaning_kosis.html
+last_built: 2025-08-14T15:19Z
 urls:
   reference: https://sigmafelix.github.io/tidycensuskr/reference
   article: https://sigmafelix.github.io/tidycensuskr/articles
