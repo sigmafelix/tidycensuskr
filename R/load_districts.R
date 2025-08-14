@@ -13,6 +13,7 @@
 #' library(sf)
 #' sf_use_s2(FALSE)
 #' sf_2020 <- load_districts(year = 2020)
+#' @import sf
 #' @export
 load_districts <- function(year = 2020) {
   # Load the district polygons using the sf package

@@ -8,7 +8,6 @@
 #'   \item{adm1_name}{Name of the province-level (Sido) administrative unit, as defined by KOSIS}
 #'   \item{adm2_code}{Code of the municipal-level (Sigungu) administrative unit, as defined by KOSIS; nested within adm1}
 #'   \item{adm2_name}{Name of the municipal-level (Sigungu) administrative unit, as defined by KOSIS}
-#'   \item{adm2_plus}{Sub-municipal districts (e.g., Bundang-gu, Ojeong-gu) within special-status cities (Teukrye-si) that have additional administrative autonomy}
 #'   \item{pop2015_total}{Total population according to the 2015 Census}
 #'   \item{pop2015_men}{Male population according to the 2015 Census}
 #'   \item{pop2015_women}{Female population according to the 2015 Census}
