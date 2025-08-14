@@ -32,15 +32,13 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 Imports:
     sf,
-    rmapshaper,
     dplyr,
-    stringi,
-    httr2,
     purrr,
     rlang,
     kosis,
     tidyr,
-    ggplot2
+    ggplot2,
+    utils
 Suggests: 
     knitr,
     rmarkdown,

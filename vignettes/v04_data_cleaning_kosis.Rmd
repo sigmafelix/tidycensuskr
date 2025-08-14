@@ -1,7 +1,11 @@
 ---
 title: "Data Cleaning: From KOSIS Raw Data to Tidy Format"
-output: html_document
-date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
+vignette: >
+  %\VignetteIndexEntry{Data Cleaning: From KOSIS Raw Data to Tidy Format} 
+  %\VignetteEngine{knitr::rmarkdown}
+  %\usepackage[utf8]{inputenc}
 ---
 
 ```{r setup, include=FALSE}

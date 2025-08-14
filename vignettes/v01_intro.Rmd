@@ -1,6 +1,11 @@
 ---
 title: "Introduction to tidycensuskr"
-output: html_document
+output: rmarkdown::html_vignette
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
+vignette: >
+  %\VignetteIndexEntry{Introduction to tidycensuskr} 
+  %\VignetteEngine{knitr::rmarkdown}
+  %\usepackage[utf8]{inputenc}
 ---
 
 ```{r, include = FALSE}

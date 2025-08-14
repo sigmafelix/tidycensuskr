@@ -1,7 +1,11 @@
 ---
 title: "Examples with ggplot2"
-output: html_document
+output: rmarkdown::html_vignette
 date: "`r format(Sys.Date(), '%B %d, %Y')`"
+vignette: >
+  %\VignetteIndexEntry{Examples with ggplot2} 
+  %\VignetteEngine{knitr::rmarkdown}
+  %\usepackage[utf8]{inputenc}
 ---
 
 ```{r setup, include=FALSE}
@@ -123,7 +127,7 @@ ggplot() +
 
 ## Plot 3: choropleth map
 
-```{r choroploth, fig.width=10, fig.height=4}
+```{r choropleth-1, fig.width=10, fig.height=4}
 adm2_sf_2020 <- load_districts(year = 2020)
 adm2_sf_2020_seoul <- adm2_sf_2020 %>% inner_join(df_wide_seoul, by = "adm2_code")
 
@@ -142,7 +146,7 @@ ggplot(adm2_sf_2020_seoul) +
 ```
 
 
-```{r choroploth, fig.width=10, fig.height=4}
+```{r choropleth-2, fig.width=10, fig.height=4}
 adm2_sf_2020 <- load_districts(year = 2020)
 adm2_sf_2020_kr <- adm2_sf_2020 %>%
   inner_join(df_wide, by = "adm2_code") %>% 

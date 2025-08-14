@@ -3,9 +3,9 @@
 \docType{data}
 \name{censuskor}
 \alias{censuskor}
-\title{South Korea 2020 census/tax}
+\title{South Korea Census Data}
 \format{
-A data frame with {4410} rows and {9} variables:
+A data frame with 4410 rows and 9 variables:
 \describe{
 \item{adm1}{Name of the province-level (Sido) administrative unit}
 \item{adm2}{Name of the district/municipal-level (Sigungu) administrative unit}
@@ -15,6 +15,7 @@ A data frame with {4410} rows and {9} variables:
 \item{class2}{Second-level classification of the variable depending on the type}
 \item{unit}{Unit of measurement for the variable}
 \item{value}{Value of the variable}
+\item{year}{Year of the census data, e.g., 2010, 2015, or 2020}
 }
 }
 \source{
@@ -26,7 +27,7 @@ A data frame with {4410} rows and {9} variables:
 censuskor
 }
 \description{
-District level data including tax, population, and mortality in South Korea.
+District level data including tax, population, business entities, and mortality in South Korea.
 }
 \note{
 For temporal comparison, province names in adm1 field are
