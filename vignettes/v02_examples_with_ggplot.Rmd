@@ -182,11 +182,11 @@ sf_2020 <- load_districts(year = 2020)
 ```{r filter-merge}
 # Filter censuskor data
 population_2010 <- censuskor %>%
-  filter(year == 2010, type == "population", class1 == "total", class2 == "total")
+  filter(year == 2010, type == "population", class2 == "total", class2 == "total")
 population_2015 <- censuskor %>%
-  filter(year == 2015, type == "population", class1 == "total", class2 == "total")
+  filter(year == 2015, type == "population", class2 == "total", class2 == "total")
 population_2020 <- censuskor %>%
-  filter(year == 2020, type == "population", class1 == "total", class2 == "total")
+  filter(year == 2020, type == "population", class2 == "total", class2 == "total")
 
 # Merge with spatial data
 sf_2010_merged <- sf_2010 %>%
