@@ -55,15 +55,232 @@ In Korea, there are three major levels of geographic hierarchy for administrativ
 - **_Eup-Myeon-Dong_**: The third level, which includes town and districts.
 
 
-Aggregating Eupmyeondong data to Sigungu level
-Handling administrative boundary changes
-Exercise: Calculate population-weighted PM2.5 exposure for each Sigungu in Seoul
+
+## Get Started
+### tl;dr
+
+**Tax**  
+- Global: 종합소득세 (Comprehensive Income Tax)  
+- Income: 근로소득세 (Labour/Employment Income Tax)  
+
+**Population**  
+- Total  
+- Male  
+- Female  
+
+**Mortality**
+
+Let's have a look in detail shall we?
 
 
-### 2. Urban Development Analysis
-Tracking population changes across census years
-Identifying rapidly growing Eupmyeondong
-New town development patterns
-Exercise: Analyse population shifts in Seoul Metropolitan Area (수도권)
+### Data
+
+The dataset is provided in **long form**.  
+
+If you open the `censuskor` dataset, you will see **4,410 rows and 10 columns**. This is a fairly substantial size.  
+
+```r
+ data(censuskor)
+ colnames(censuskor)
+```
+
+```
+[1] "year" "adm1" "adm2" "adm2_code"  "type"  "class1"  "class2"  "unit"   "value" 
+```
+
+We have 9 columns in total. The key column is `type`, which determines the main index and splits the dataset into three components: **population, tax, and mortality**.
+
+```r
+censuskor |> 
+  distinct(type)
+```
+
+Let's dive into each category.
+
+
+### Population
+
+In Korea, population data are collected in two ways:  
+
+- **Complete census** (전수조사):  
+  - Population Census (5-year interval)  
+  - Resident Registration Statistics (annual)  
+
+- **Sample surveys** (표본조사):  
+  - For example, the Economically Active Population Survey, which conducts monthly household interviews for those aged 15 or older.  
+
+In this package, the dataset records information from the **three most recent Population Censuses**: **2010, 2015, and 2020**.
+
+
+
+```r
+censuskor |> 
+  filter(type == "population")
+```
+
+Example output:  
+
+```
+# A tibble: 2,361 × 9
+    year adm1  adm2         adm2_code type       class1         class2 unit     value
+   <dbl> <chr> <chr>            <dbl> <chr>      <chr>          <chr>  <chr>    <dbl>
+ 1  2010 Seoul Jongno-gu        11010 population all households total  persons 147843
+ 2  2010 Seoul Jongno-gu        11010 population all households male   persons  71313
+ 3  2010 Seoul Jongno-gu        11010 population all households female persons  76530
+ 4  2010 Seoul Jung-gu          11020 population all households total  persons 115387
+ 5  2010 Seoul Jung-gu          11020 population all households male   persons  56104
+ 6  2010 Seoul Jung-gu          11020 population all households female persons  59283
+ 7  2010 Seoul Yongsan-gu       11030 population all households total  persons 218308
+ 8  2010 Seoul Yongsan-gu       11030 population all households male   persons 103711
+ 9  2010 Seoul Yongsan-gu       11030 population all households female persons 114597
+10  2010 Seoul Seongdong-gu     11040 population all households total  persons 287460
+# ℹ 2,351 more rows
+# ℹ Use `print(n = ...)` to see more rows
+```
+
+- **class1**: all households  
+- **class2**: total, male, female  
+- **unit**: persons  
+- **value**: head counts  
+
+For example, *Jongno-gu* (Jongno district) in 2010 had a total population of **147,843**, consisting of **71,313 males** and **76,530 females**.
+
+
+### Example: Seoul’s Population Distribution (2020)
+
+```r
+# draw a distribution graph by rank
+library(dplyr)
+library(ggplot2)
+library(scales)
+
+seoul_total <- censuskor |>
+  filter(type == "population",
+         year == 2020,
+         class2 == "total",
+         adm1 == "Seoul") |>
+  mutate(adm2 = str_replace(adm2, "-gu$", ""))  # remove '-gu' suffix
+
+ggplot(seoul_total, aes(x = reorder(adm2, value), y = value)) +
+  geom_col(fill = "skyblue", colour = "black") +
+  scale_y_continuous(labels = comma) +
+  labs(
+    title = "Seoul 2020 Census Total Population by District",
+    x = "District",
+    y = "Population"
+  ) +
+  coord_flip() +
+  theme_minimal(base_size = 14)
+```
+
+![barchart](man/figures/barchart.png)
+
+
+### Dot Plot: Population Across Census Years
+
+To compare population change by district across **2010, 2015, and 2020**, we can create a dot plot:
+
+```r
+# Dot plot across census years
+seoul_years <- censuskor |>
+  filter(type == "population",
+         class2 == "total",
+         adm1 == "Seoul") |>
+  mutate(adm2 = str_replace(adm2, "-gu$", ""))
+
+ggplot(seoul_years, aes(x = factor(year), y = value, group = adm2, colour = adm2)) +
+  geom_line(alpha = 0.5) +
+  geom_point(size = 3) +
+  labs(
+    title = "Seoul Census Population Trends (2010, 2015, 2020)",
+    x = "Year",
+    y = "Population",
+    colour = "District"
+  ) +
+  theme_minimal(base_size = 14)
+```
+
+This shows how population shifted in each Seoul district across the three census years.
+
+---
+
+### Tax
+
+In the dataset, tax records are divided into two categories:  
+
+- **Global (종합소득세)** → Comprehensive Income Tax  
+- **Income (근로소득세)** → Employment Income Tax  
+
+```r
+censuskor |> 
+  filter(type == "tax" & year == 2020) |> 
+  as_tibble()
+```
+
+Example output:  
+
+```
+# A tibble: 458 × 9
+    year adm1  adm2         adm2_code type  class1 class2  unit          value
+   <dbl> <chr> <chr>            <dbl> <chr> <chr>  <chr>   <chr>         <dbl>
+ 1  2020 Seoul Gangnam-gu       11230 tax   income general million KRW 5209045
+ 2  2020 Seoul Gangdong-gu      11250 tax   income general million KRW  461088
+ 3  2020 Seoul Gangbuk-gu       11090 tax   income general million KRW  107037
+```
+
+Distinct classes:  
+
+```r
+censuskor |> 
+  filter(type == "tax" & year == 2020) |> 
+  distinct(class2)
+```
+
+```
+# A tibble: 2 × 1
+  class2 
+  <chr>  
+1 general
+2 labor  
+```
+
+So `class2` distinguishes between **general (comprehensive income)** and **labour (employment income)**.
+
+---
+
+## Mortality
+
+Mortality data records age-standardised death rates by district. Units are given as **per 100,000 population**.
+
+```r
+censuskor |> 
+   filter(type == "mortality")
+```
+
+Example output:  
+
+```
+# A tibble: 783 × 10
+    year adm1  adm2         adm2_other adm2_code type      class1     class2 unit                value
+   <dbl> <chr> <chr>        <chr>          <int> <chr>     <chr>      <chr>  <chr>               <chr>
+ 1  2020 Seoul Jongno-gu    NA             11010 mortality All causes total  per 100k population 261.7
+ 2  2020 Seoul Jongno-gu    NA             11010 mortality All causes male   per 100k population 370.2
+ 3  2020 Seoul Jongno-gu    NA             11010 mortality All causes female per 100k population 169.4
+```
+
+- **class1**: cause of death (e.g., all causes)  
+- **class2**: total, male, female  
+- **unit**: per 100,000 population  
+- **value**: mortality rate  
+
+For example, in 2020, *Jongno-gu* recorded an overall mortality rate of **261.7 per 100,000**, with **370.2 for males** and **169.4 for females**.  
+
+
+
+<!-- ## Working with Korean Geographic Hierarchies -->
+
+<!-- Understanding Sido → Sigungu → Eupmyeondong relationships -->
+<!-- Aggregating Eupmyeondong data to Sigungu level -->
+<!-- Handling administrative boundary changes -->
 
 
