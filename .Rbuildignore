@@ -4,3 +4,4 @@
 ^pkgdown$
 ^data-raw$
 ^\.github$
+^.*\.Rproj$
