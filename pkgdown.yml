@@ -6,7 +6,7 @@ articles:
   v02_examples_with_ggplot: v02_examples_with_ggplot.html
   v03_anycensus: v03_anycensus.html
   v04_data_cleaning_kosis: v04_data_cleaning_kosis.html
-last_built: 2025-08-14T15:19Z
+last_built: 2025-08-23T01:21Z
 urls:
   reference: https://sigmafelix.github.io/tidycensuskr/reference
   article: https://sigmafelix.github.io/tidycensuskr/articles
