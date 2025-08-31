@@ -1,7 +1,7 @@
-# What is the package for?
+# Who is the package for?
 The aim of creating the `tidycensuskr` package is to make the best use case of South Korean boundaries, population and socioeconomic information for R users.
 
-<a href='https://sigmafelix.github.io/tidycensuskr/'><img src='man/figures/population.png' align="right" height="138.5" /></a>
+<a href='https://sigmafelix.github.io/tidycensuskr/'><img src='man/figures/seoul_ai.jpeg' align="center"  /></a>
 
 
 
