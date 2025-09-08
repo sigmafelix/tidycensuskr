@@ -332,9 +332,20 @@ head(seoul_pop)
 
 These data can be joined with `sf` objects bundled in the package to make maps and perform spatial analysis
 
-## Summary
+## Notes on `adm2_code` changes
+Districts (_si-gun-gu_) are the second-level administrative units in South Korea. Each district is assigned a unique code called `adm2_code`. However, these codes can change over time due to administrative boundary changes, mergers, or reclassifications.
 
-`tidycensuskr` fills the specific need for cleaned, tidy, analysis-ready Korean census and administrative data. The extensive data cleaning workflow demonstrated in this vignette transforms complex, multilingual, multi-format raw data into a consistent, research-friendly format that follows tidy data principles.
+Notable changes were made in all rural districts (_gun_) in 2022; the third digit of `adm2_code` got addition of 2. For example, _Ulleung-gun_ changed from `37430` to `37630`. This change may affect longitudinal analyses that span multiple years and pose challenges in updating `censuskor` dataset by developers. Some datasets in KOSIS are **retrospectively** updated to reflect the new codes, while most KOSIS datasets retain the old codes. Therefore, developers should be advised to check the `adm2_code` for each dataset and year with this code:
+
+```r
+# imported data
+some_census_table
+
+# check adm2_code
+any(substr(some_census_table$adm2_code, 3, 3) %in% c("5", "6"))
+```
+
+If `TRUE`, it indicates that the dataset uses the **new** `adm2_code` system (post-2022) regardless of the raw data year. If `FALSE`, it uses the **old** system (pre-2022).
 
 
 **Note**: This vignette shows the data cleaning process for developers. The actual `censuskor` dataset in the package is the result of this workflow and is ready for immediate use.

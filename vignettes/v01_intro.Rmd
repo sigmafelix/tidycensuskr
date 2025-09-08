@@ -51,33 +51,35 @@ In Korea, there are three major levels of geographic hierarchy for administrativ
 - **_Si-Gun-Gu_**: The second level, which includes cities and counties.
   - **_Si_**: City. In most provinces, cities are autonomous administrative units.
   - **_Gun_**: County. Counties are rural areas with smaller populations (<50,000).
-  - **_Gu_**: District. Districts are urban areas within metropolitan cities (these districts are called autonomous districts), whereas districts in autonomous cities are called non-autonomous districts.
+  - **_Gu_**: District/Ward. Districts are urban areas within metropolitan cities (these districts are called autonomous districts), whereas districts in autonomous cities are called non-autonomous districts.
 - **_Eup-Myeon-Dong_**: The third level, which includes town and districts.
-
+  - **_Eup_**: Town. Towns are urban areas within counties (Gun) with populations over 20,000.
+  - **_Myeon_**: Township. Townships are rural areas within counties (Gun) with populations under 20,000.
+  - **_Dong_**: Neighborhood. Neighborhoods are the smallest administrative units within cities (Si) and districts (Gu).
 
 
 ## Get Started
 ### tl;dr
 
-**Tax**  
-- Global: 종합소득세 (Comprehensive Income Tax)  
-- Income: 근로소득세 (Labour/Employment Income Tax)  
-
-**Population**  
-- Total  
-- Male  
-- Female  
-
-**Mortality**
-
-Let's have a look in detail shall we?
+| type | class1 | class2 | unit | description | available years |
+|------|--------|--------|------|-------------|------|
+| population | all households | total | persons | Total population | 2010, 2015, 2020 |
+| population | all households | male | persons | Male population | 2010, 2015, 2020 |
+| population | all households | female | persons | Female population | 2010, 2015, 2020 |
+| tax | income | general | million KRW | Comprehensive Income Tax | 2020 |
+| tax | income | labor | million KRW | Employment Income Tax | 2020 |
+| mortality | All causes | total | per 100k population | Age-standardized mortality rate | 2020 |
+| mortality | All causes | male | per 100k population | Age-standardized mortality rate (male) | 2020 |
+| mortality | All causes | female | per 100k population | Age-standardized mortality rate (female) | 2020 |
+| economy | company | total | count | Number of business entities | 2010, 2015, 2020 |
+| housing | housing types | total | count | Total number of housing units | 2010, 2015, 2020 |
 
 
 ### Data
 
 The dataset is provided in **long form**.  
 
-If you open the `censuskor` dataset, you will see **4,410 rows and 10 columns**. This is a fairly substantial size.  
+If you open the `censuskor` dataset, you will see **5,178 rows and 10 columns**. This is a fairly substantial size.  
 
 ```r
  data(censuskor)
