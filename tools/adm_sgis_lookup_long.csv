@@ -1,0 +1,371 @@
+"","name","name_sido","name_eng","code"
+"1","남구","Incheon","Nam-gu",23030
+"2","부천시 원미구","Gyeonggi-do","Wonmi-gu",31051
+"3","부천시 소사구","Gyeonggi-do","Sosa-gu",31052
+"4","부천시 오정구","Gyeonggi-do","Ojeong-gu",31053
+"5","고양시 일산구","Gyeonggi-do","Ilsan-gu",31102
+"6","양주군","Gyeonggi-do","Yangju-gun",31310
+"7","여주군","Gyeonggi-do","Yeoju-gun",31320
+"8","화성군","Gyeonggi-do","Hwaseong-gun",31330
+"9","광주군","Gyeonggi-do","Gwangju-gun",31340
+"10","포천군","Gyeonggi-do","Pocheon-gun",31360
+"11","청원군","Chungcheongbuk-do","Cheongwon-gun",33310
+"12","연기군","Chungcheongnam-do","Yeongi-gun",34320
+"13","당진군","Chungcheongnam-do","Dangjin-gun",34390
+"14","창원시","Gyeongsangnam-do","Changwon-si",38010
+"15","마산시","Gyeongsangnam-do","Masan-si",38020
+"16","진해시","Gyeongsangnam-do","Jinhae-si",38040
+"17","제주시","Jeju-do","Jeju-si",39010
+"18","서귀포시","Jeju-do","Seogwipo-si",39020
+"19","북제주군","Jeju-do","Bukjeju-gun",39310
+"20","남제주군","Jeju-do","Namjeju-gun",39320
+"21","기장군","Busan","Gijang-gun",21310
+"22","기장군","Busan","Gijang-gun",21510
+"23","달성군","Daegu","Dalseong-gun",22310
+"24","달성군","Daegu","Dalseong-gun",22510
+"25","강화군","Incheon","Ganghwa-gun",23310
+"26","강화군","Incheon","Ganghwa-gun",23510
+"27","옹진군","Incheon","Ongjin-gun",23320
+"28","옹진군","Incheon","Ongjin-gun",23520
+"29","울주군","Ulsan","Ulju-gun",26310
+"30","울주군","Ulsan","Ulju-gun",26510
+"31","성남시","Gyeonggi-do","Seongnam-si",31020
+"32","성남시","Gyeonggi-do","Seongnam-si",31021
+"33","연천군","Gyeonggi-do","Yeoncheon-gun",31350
+"34","연천군","Gyeonggi-do","Yeoncheon-gun",31550
+"35","가평군","Gyeonggi-do","Gapyeong-gun",31370
+"36","가평군","Gyeonggi-do","Gapyeong-gun",31570
+"37","양평군","Gyeonggi-do","Yangpyeong-gun",31380
+"38","양평군","Gyeonggi-do","Yangpyeong-gun",31580
+"39","홍천군","Gangwon-do","Hongcheon-gun",32310
+"40","홍천군","Gangwon-do","Hongcheon-gun",32510
+"41","횡성군","Gangwon-do","Hoengseong-gun",32320
+"42","횡성군","Gangwon-do","Hoengseong-gun",32520
+"43","영월군","Gangwon-do","Yeongwol-gun",32330
+"44","영월군","Gangwon-do","Yeongwol-gun",32530
+"45","평창군","Gangwon-do","Pyeongchang-gun",32340
+"46","평창군","Gangwon-do","Pyeongchang-gun",32540
+"47","정선군","Gangwon-do","Jeongseon-gun",32350
+"48","정선군","Gangwon-do","Jeongseon-gun",32550
+"49","철원군","Gangwon-do","Cheolwon-gun",32360
+"50","철원군","Gangwon-do","Cheolwon-gun",32560
+"51","화천군","Gangwon-do","Hwacheon-gun",32370
+"52","화천군","Gangwon-do","Hwacheon-gun",32570
+"53","양구군","Gangwon-do","Yanggu-gun",32380
+"54","양구군","Gangwon-do","Yanggu-gun",32580
+"55","인제군","Gangwon-do","Inje-gun",32390
+"56","인제군","Gangwon-do","Inje-gun",32590
+"57","고성군","Gangwon-do","Goseong-gun",32400
+"58","고성군","Gangwon-do","Goseong-gun",32600
+"59","양양군","Gangwon-do","Yangyang-gun",32410
+"60","양양군","Gangwon-do","Yangyang-gun",32610
+"61","청주시","Chungcheongbuk-do","Cheongju-si",33010
+"62","청주시","Chungcheongbuk-do","Cheongju-si",33040
+"63","청주시 상당구","Chungcheongbuk-do","Sangdang-gu",33011
+"64","청주시 상당구","Chungcheongbuk-do","Sangdang-gu",33041
+"65","청주시 흥덕구","Chungcheongbuk-do","Heungdeok-gu",33012
+"66","청주시 흥덕구","Chungcheongbuk-do","Heungdeok-gu",33043
+"67","보은군","Chungcheongbuk-do","Boeun-gun",33320
+"68","보은군","Chungcheongbuk-do","Boeun-gun",33520
+"69","옥천군","Chungcheongbuk-do","Okcheon-gun",33330
+"70","옥천군","Chungcheongbuk-do","Okcheon-gun",33530
+"71","영동군","Chungcheongbuk-do","Yeongdong-gun",33340
+"72","영동군","Chungcheongbuk-do","Yeongdong-gun",33540
+"73","진천군","Chungcheongbuk-do","Jincheon-gun",33350
+"74","진천군","Chungcheongbuk-do","Jincheon-gun",33550
+"75","괴산군","Chungcheongbuk-do","Goesan-gun",33360
+"76","괴산군","Chungcheongbuk-do","Goesan-gun",33560
+"77","음성군","Chungcheongbuk-do","Eumseong-gun",33370
+"78","음성군","Chungcheongbuk-do","Eumseong-gun",33570
+"79","단양군","Chungcheongbuk-do","Danyang-gun",33380
+"80","단양군","Chungcheongbuk-do","Danyang-gun",33580
+"81","증평군","Chungcheongbuk-do","Jeungpyeong-gun",33390
+"82","증평군","Chungcheongbuk-do","Jeungpyeong-gun",33590
+"83","금산군","Chungcheongnam-do","Geumsan-gun",34310
+"84","금산군","Chungcheongnam-do","Geumsan-gun",34510
+"85","부여군","Chungcheongnam-do","Buyeo-gun",34330
+"86","부여군","Chungcheongnam-do","Buyeo-gun",34530
+"87","서천군","Chungcheongnam-do","Seocheon-gun",34340
+"88","서천군","Chungcheongnam-do","Seocheon-gun",34540
+"89","청양군","Chungcheongnam-do","Cheongyang-gun",34350
+"90","청양군","Chungcheongnam-do","Cheongyang-gun",34550
+"91","홍성군","Chungcheongnam-do","Hongseong-gun",34360
+"92","홍성군","Chungcheongnam-do","Hongseong-gun",34560
+"93","예산군","Chungcheongnam-do","Yesan-gun",34370
+"94","예산군","Chungcheongnam-do","Yesan-gun",34570
+"95","태안군","Chungcheongnam-do","Taean-gun",34380
+"96","태안군","Chungcheongnam-do","Taean-gun",34580
+"97","완주군","Jeollabuk-do","Wanju-gun",35310
+"98","완주군","Jeollabuk-do","Wanju-gun",35510
+"99","진안군","Jeollabuk-do","Jinan-gun",35320
+"100","진안군","Jeollabuk-do","Jinan-gun",35520
+"101","무주군","Jeollabuk-do","Muju-gun",35330
+"102","무주군","Jeollabuk-do","Muju-gun",35530
+"103","장수군","Jeollabuk-do","Jangsu-gun",35340
+"104","장수군","Jeollabuk-do","Jangsu-gun",35540
+"105","임실군","Jeollabuk-do","Imsil-gun",35350
+"106","임실군","Jeollabuk-do","Imsil-gun",35550
+"107","순창군","Jeollabuk-do","Sunchang-gun",35360
+"108","순창군","Jeollabuk-do","Sunchang-gun",35560
+"109","고창군","Jeollabuk-do","Gochang-gun",35370
+"110","고창군","Jeollabuk-do","Gochang-gun",35570
+"111","부안군","Jeollabuk-do","Buan-gun",35380
+"112","부안군","Jeollabuk-do","Buan-gun",35580
+"113","담양군","Jeollanam-do","Damyang-gun",36310
+"114","담양군","Jeollanam-do","Damyang-gun",36510
+"115","곡성군","Jeollanam-do","Gokseong-gun",36320
+"116","곡성군","Jeollanam-do","Gokseong-gun",36520
+"117","구례군","Jeollanam-do","Gurye-gun",36330
+"118","구례군","Jeollanam-do","Gurye-gun",36530
+"119","고흥군","Jeollanam-do","Goheung-gun",36350
+"120","고흥군","Jeollanam-do","Goheung-gun",36550
+"121","보성군","Jeollanam-do","Boseong-gun",36360
+"122","보성군","Jeollanam-do","Boseong-gun",36560
+"123","화순군","Jeollanam-do","Hwasun-gun",36370
+"124","화순군","Jeollanam-do","Hwasun-gun",36570
+"125","장흥군","Jeollanam-do","Jangheung-gun",36380
+"126","장흥군","Jeollanam-do","Jangheung-gun",36580
+"127","강진군","Jeollanam-do","Gangjin-gun",36390
+"128","강진군","Jeollanam-do","Gangjin-gun",36590
+"129","해남군","Jeollanam-do","Haenam-gun",36400
+"130","해남군","Jeollanam-do","Haenam-gun",36600
+"131","영암군","Jeollanam-do","Yeongam-gun",36410
+"132","영암군","Jeollanam-do","Yeongam-gun",36610
+"133","무안군","Jeollanam-do","Muan-gun",36420
+"134","무안군","Jeollanam-do","Muan-gun",36620
+"135","함평군","Jeollanam-do","Hampyeong-gun",36430
+"136","함평군","Jeollanam-do","Hampyeong-gun",36630
+"137","영광군","Jeollanam-do","Yeonggwang-gun",36440
+"138","영광군","Jeollanam-do","Yeonggwang-gun",36640
+"139","장성군","Jeollanam-do","Jangseong-gun",36450
+"140","장성군","Jeollanam-do","Jangseong-gun",36650
+"141","완도군","Jeollanam-do","Wando-gun",36460
+"142","완도군","Jeollanam-do","Wando-gun",36660
+"143","진도군","Jeollanam-do","Jindo-gun",36470
+"144","진도군","Jeollanam-do","Jindo-gun",36670
+"145","신안군","Jeollanam-do","Sinan-gun",36480
+"146","신안군","Jeollanam-do","Sinan-gun",36680
+"147","의성군","Gyeongsangbuk-do","Uiseong-gun",37320
+"148","의성군","Gyeongsangbuk-do","Uiseong-gun",37520
+"149","청송군","Gyeongsangbuk-do","Cheongseong-gun",37330
+"150","청송군","Gyeongsangbuk-do","Cheongseong-gun",37530
+"151","영양군","Gyeongsangbuk-do","Yeongyang-gun",37340
+"152","영양군","Gyeongsangbuk-do","Yeongyang-gun",37540
+"153","영덕군","Gyeongsangbuk-do","Yeongdeok-gun",37350
+"154","영덕군","Gyeongsangbuk-do","Yeongdeok-gun",37550
+"155","청도군","Gyeongsangbuk-do","Cheongdo-gun",37360
+"156","청도군","Gyeongsangbuk-do","Cheongdo-gun",37560
+"157","고령군","Gyeongsangbuk-do","Goryeong-gun",37370
+"158","고령군","Gyeongsangbuk-do","Goryeong-gun",37570
+"159","성주군","Gyeongsangbuk-do","Seongju-gun",37380
+"160","성주군","Gyeongsangbuk-do","Seongju-gun",37580
+"161","칠곡군","Gyeongsangbuk-do","Chilgok-gun",37390
+"162","칠곡군","Gyeongsangbuk-do","Chilgok-gun",37590
+"163","예천군","Gyeongsangbuk-do","Yecheon-gun",37400
+"164","예천군","Gyeongsangbuk-do","Yecheon-gun",37600
+"165","봉화군","Gyeongsangbuk-do","Bonghwa-gun",37410
+"166","봉화군","Gyeongsangbuk-do","Bonghwa-gun",37610
+"167","울진군","Gyeongsangbuk-do","Uljin-gun",37420
+"168","울진군","Gyeongsangbuk-do","Uljin-gun",37620
+"169","울릉군","Gyeongsangbuk-do","Ulleung-gun",37430
+"170","울릉군","Gyeongsangbuk-do","Ulleung-gun",37630
+"171","의령군","Gyeongsangnam-do","Uiryeong-gun",38310
+"172","의령군","Gyeongsangnam-do","Uiryeong-gun",38510
+"173","함안군","Gyeongsangnam-do","Haman-gun",38320
+"174","함안군","Gyeongsangnam-do","Haman-gun",38520
+"175","창녕군","Gyeongsangnam-do","Changnyeong-gun",38330
+"176","창녕군","Gyeongsangnam-do","Changnyeong-gun",38530
+"177","고성군","Gyeongsangnam-do","Goseong-gun",38340
+"178","고성군","Gyeongsangnam-do","Goseong-gun",38540
+"179","남해군","Gyeongsangnam-do","Namhae-gun",38350
+"180","남해군","Gyeongsangnam-do","Namhae-gun",38550
+"181","하동군","Gyeongsangnam-do","Hadong-gun",38360
+"182","하동군","Gyeongsangnam-do","Hadong-gun",38560
+"183","산청군","Gyeongsangnam-do","Sancheong-gun",38370
+"184","산청군","Gyeongsangnam-do","Sancheong-gun",38570
+"185","함양군","Gyeongsangnam-do","Hamyang-gun",38380
+"186","함양군","Gyeongsangnam-do","Hamyang-gun",38580
+"187","거창군","Gyeongsangnam-do","Geochang-gun",38390
+"188","거창군","Gyeongsangnam-do","Geochang-gun",38590
+"189","합천군","Gyeongsangnam-do","Hapcheon-gun",38400
+"190","합천군","Gyeongsangnam-do","Hapcheon-gun",38600
+"191","군위군","Daegu","Gunwi-gun",37310
+"192","군위군","Daegu","Gunwi-gun",37510
+"193","군위군","Daegu","Gunwi-gun",22520
+"194","군위군","Gyeongsangbuk-do","Gunwi-gun",37310
+"195","군위군","Gyeongsangbuk-do","Gunwi-gun",37510
+"196","미추홀구","Incheon","Michuhol-gu",23090
+"197","세종특별자치시","Sejong","Sejong-si",29010
+"198","화성시","Gyeonggi-do","Hwaseong-si",31240
+"199","광주시","Gyeonggi-do","Gwangju-si",31250
+"200","양주시","Gyeonggi-do","Yangju-si",31260
+"201","포천시","Gyeonggi-do","Pocheon-si",31270
+"202","여주시","Gyeonggi-do","Yeoju-si",31280
+"203","계룡시","Chungcheongnam-do","Gyeryong-si",34070
+"204","당진시","Chungcheongnam-do","Dangjin-si",34080
+"205","창원시","Gyeongsangnam-do","Changwon-si",38110
+"206","수원시 영통구","Gyeonggi-do","Yeongtong-gu",31014
+"207","안산시 상록구","Gyeonggi-do","Sangnok-gu",31091
+"208","안산시 단원구","Gyeonggi-do","Danwon-gu",31092
+"209","고양시 일산동구","Gyeonggi-do","Ilsandong-gu",31103
+"210","고양시 일산서구","Gyeonggi-do","Ilsanseo-gu",31104
+"211","용인시 처인구","Gyeonggi-do","Cheoin-gu",31191
+"212","용인시 기흥구","Gyeonggi-do","Giheung-gu",31192
+"213","용인시 수지구","Gyeonggi-do","Suji-gu",31193
+"214","청주시 서원구","Chungcheongbuk-do","Seowon-gu",33042
+"215","청주시 청원구","Chungcheongbuk-do","Cheongwon-gu",33044
+"216","천안시 동남구","Chungcheongnam-do","Dongnam-gu",34011
+"217","천안시 서북구","Chungcheongnam-do","Seobuk-gu",34012
+"218","창원시 의창구","Gyeongsangnam-do","Uichang-gu",38111
+"219","창원시 성산구","Gyeongsangnam-do","Seongsan-gu",38112
+"220","창원시 마산합포구","Gyeongsangnam-do","Masanhappo-gu",38113
+"221","창원시 마산회원구","Gyeongsangnam-do","Masanhoewon-gu",38114
+"222","창원시 진해구","Gyeongsangnam-do","Jinhae-gu",38115
+"223","종로구","Seoul","Jongno-gu",11010
+"224","중구","Seoul","Jung-gu",11020
+"225","용산구","Seoul","Yongsan-gu",11030
+"226","성동구","Seoul","Seongdong-gu",11040
+"227","광진구","Seoul","Gwangjin-gu",11050
+"228","동대문구","Seoul","Dongdaemun-gu",11060
+"229","중랑구","Seoul","Jungnang-gu",11070
+"230","성북구","Seoul","Seongbuk-gu",11080
+"231","강북구","Seoul","Gangbuk-gu",11090
+"232","도봉구","Seoul","Dobong-gu",11100
+"233","노원구","Seoul","Nowon-gu",11110
+"234","은평구","Seoul","Eunpyeong-gu",11120
+"235","서대문구","Seoul","Seodaemun-gu",11130
+"236","마포구","Seoul","Mapo-gu",11140
+"237","양천구","Seoul","Yangcheon-gu",11150
+"238","강서구","Seoul","Gangseo-gu",11160
+"239","구로구","Seoul","Guro-gu",11170
+"240","금천구","Seoul","Geumcheon-gu",11180
+"241","영등포구","Seoul","Yeongdeungpo-gu",11190
+"242","동작구","Seoul","Dongjak-gu",11200
+"243","관악구","Seoul","Gwanak-gu",11210
+"244","서초구","Seoul","Seocho-gu",11220
+"245","강남구","Seoul","Gangnam-gu",11230
+"246","송파구","Seoul","Songpa-gu",11240
+"247","강동구","Seoul","Gangdong-gu",11250
+"248","중구","Busan","Jung-gu",21010
+"249","서구","Busan","Seo-gu",21020
+"250","동구","Busan","Dong-gu",21030
+"251","영도구","Busan","Yeongdo-gu",21040
+"252","부산진구","Busan","Busanjin-gu",21050
+"253","동래구","Busan","Dongnae-gu",21060
+"254","남구","Busan","Nam-gu",21070
+"255","북구","Busan","Buk-gu",21080
+"256","해운대구","Busan","Haeundae-gu",21090
+"257","사하구","Busan","Saha-gu",21100
+"258","금정구","Busan","Geumjeong-gu",21110
+"259","강서구","Busan","Gangseo-gu",21120
+"260","연제구","Busan","Yeonjae-gu",21130
+"261","수영구","Busan","Suyeong-gu",21140
+"262","사상구","Busan","Sasang-gu",21150
+"263","중구","Daegu","Jung-gu",22010
+"264","동구","Daegu","Dong-gu",22020
+"265","서구","Daegu","Seo-gu",22030
+"266","남구","Daegu","Nam-gu",22040
+"267","북구","Daegu","Buk-gu",22050
+"268","수성구","Daegu","Suseong-gu",22060
+"269","달서구","Daegu","Dalseo-gu",22070
+"270","중구","Incheon","Jung-gu",23010
+"271","동구","Incheon","Dong-gu",23020
+"272","연수구","Incheon","Yeonsu-gu",23040
+"273","남동구","Incheon","Namdong-gu",23050
+"274","부평구","Incheon","Bupyeong-gu",23060
+"275","계양구","Incheon","Gyeyang-gu",23070
+"276","서구","Incheon","Seo-gu",23080
+"277","동구","Gwangju","Dong-gu",24010
+"278","서구","Gwangju","Seo-gu",24020
+"279","남구","Gwangju","Nam-gu",24030
+"280","북구","Gwangju","Buk-gu",24040
+"281","광산구","Gwangju","Gwangsan-gu",24050
+"282","동구","Daejeon","Dong-gu",25010
+"283","중구","Daejeon","Jung-gu",25020
+"284","서구","Daejeon","Seo-gu",25030
+"285","유성구","Daejeon","Yuseong-gu",25040
+"286","대덕구","Daejeon","Daedeok-gu",25050
+"287","중구","Ulsan","Jung-gu",26010
+"288","남구","Ulsan","Nam-gu",26020
+"289","동구","Ulsan","Dong-gu",26030
+"290","북구","Ulsan","Buk-gu",26040
+"291","수원시","Gyeonggi-do","Suwon-si",31010
+"292","수원시 장안구","Gyeonggi-do","Jangan-gu",31011
+"293","수원시 권선구","Gyeonggi-do","Gwonseon-gu",31012
+"294","수원시 팔달구","Gyeonggi-do","Paldal-gu",31013
+"295","성남시 수정구","Gyeonggi-do","Sujeong-gu",31021
+"296","성남시 중원구","Gyeonggi-do","Jungwon-gu",31022
+"297","성남시 분당구","Gyeonggi-do","Bundang-gu",31023
+"298","의정부시","Gyeonggi-do","Uijeongbu-si",31030
+"299","안양시","Gyeonggi-do","Anyang-si",31040
+"300","안양시 만안구","Gyeonggi-do","Manan-gu",31041
+"301","안양시 동안구","Gyeonggi-do","Dongan-gu",31042
+"302","부천시","Gyeonggi-do","Bucheon-si",31050
+"303","광명시","Gyeonggi-do","Gwangmyeong-si",31060
+"304","평택시","Gyeonggi-do","Pyeongtaek-si",31070
+"305","동두천시","Gyeonggi-do","Dongducheon-si",31080
+"306","안산시","Gyeonggi-do","Ansan-si",31090
+"307","고양시","Gyeonggi-do","Goyang-si",31100
+"308","고양시 덕양구","Gyeonggi-do","Deogyang-gu",31101
+"309","과천시","Gyeonggi-do","Gwacheon-si",31110
+"310","구리시","Gyeonggi-do","Guri-si",31120
+"311","남양주시","Gyeonggi-do","Namyangju-si",31130
+"312","오산시","Gyeonggi-do","Osan-si",31140
+"313","시흥시","Gyeonggi-do","Siheung-si",31150
+"314","군포시","Gyeonggi-do","Gunpo-si",31160
+"315","의왕시","Gyeonggi-do","Uiwang-si",31170
+"316","하남시","Gyeonggi-do","Hanam-si",31180
+"317","용인시","Gyeonggi-do","Yongin-si",31190
+"318","파주시","Gyeonggi-do","Paju-si",31200
+"319","이천시","Gyeonggi-do","Icheon-si",31210
+"320","안성시","Gyeonggi-do","Anseong-si",31220
+"321","김포시","Gyeonggi-do","Gimpo-si",31230
+"322","춘천시","Gangwon-do","Chuncheon-si",32010
+"323","원주시","Gangwon-do","Wonju-si",32020
+"324","강릉시","Gangwon-do","Gangneung-si",32030
+"325","동해시","Gangwon-do","Donghae-si",32040
+"326","태백시","Gangwon-do","Taebaek-si",32050
+"327","속초시","Gangwon-do","Sokcho-si",32060
+"328","삼척시","Gangwon-do","Samcheok-si",32070
+"329","충주시","Chungcheongbuk-do","Chungju-si",33020
+"330","제천시","Chungcheongbuk-do","Jecheon-si",33030
+"331","천안시","Chungcheongnam-do","Cheonan-si",34010
+"332","공주시","Chungcheongnam-do","Gongju-si",34020
+"333","보령시","Chungcheongnam-do","Boryeong-si",34030
+"334","아산시","Chungcheongnam-do","Asan-si",34040
+"335","서산시","Chungcheongnam-do","Seosan-si",34050
+"336","논산시","Chungcheongnam-do","Nonsan-si",34060
+"337","전주시","Jeollabuk-do","Jeonju-si",35010
+"338","전주시 완산구","Jeollabuk-do","Wansan-gu",35011
+"339","전주시 덕진구","Jeollabuk-do","Deokjin-gu",35012
+"340","군산시","Jeollabuk-do","Gunsan-si",35020
+"341","익산시","Jeollabuk-do","Iksan-si",35030
+"342","정읍시","Jeollabuk-do","Jeongeup-si",35040
+"343","남원시","Jeollabuk-do","Namwon-si",35050
+"344","김제시","Jeollabuk-do","Gimje-si",35060
+"345","목포시","Jeollanam-do","Mokpo-si",36010
+"346","여수시","Jeollanam-do","Yeosu-si",36020
+"347","순천시","Jeollanam-do","Suncheon-si",36030
+"348","나주시","Jeollanam-do","Naju-si",36040
+"349","광양시","Jeollanam-do","Gwangyang-si",36060
+"350","포항시","Gyeongsangbuk-do","Pohang-si",37010
+"351","포항시 남구","Gyeongsangbuk-do","Nam-gu",37011
+"352","포항시 북구","Gyeongsangbuk-do","Buk-gu",37012
+"353","경주시","Gyeongsangbuk-do","Gyeongju-si",37020
+"354","김천시","Gyeongsangbuk-do","Gimcheon-si",37030
+"355","안동시","Gyeongsangbuk-do","Andong-si",37040
+"356","구미시","Gyeongsangbuk-do","Gumi-si",37050
+"357","영주시","Gyeongsangbuk-do","Yeongju-si",37060
+"358","영천시","Gyeongsangbuk-do","Yeongcheon-si",37070
+"359","상주시","Gyeongsangbuk-do","Sangju-si",37080
+"360","문경시","Gyeongsangbuk-do","Mungyeong-si",37090
+"361","경산시","Gyeongsangbuk-do","Gyeongsan-si",37100
+"362","마산시 합포구","Gyeongsangnam-do","Happo-gu",38021
+"363","마산시 회원구","Gyeongsangnam-do","Hoewon-gu",38022
+"364","진주시","Gyeongsangnam-do","Jinju-si",38030
+"365","통영시","Gyeongsangnam-do","Tongyeong-si",38050
+"366","사천시","Gyeongsangnam-do","Sacheon-si",38060
+"367","김해시","Gyeongsangnam-do","Gimhae-si",38070
+"368","밀양시","Gyeongsangnam-do","Miryang-si",38080
+"369","거제시","Gyeongsangnam-do","Geojae-si",38090
+"370","양산시","Gyeongsangnam-do","Yangsan-si",38100
