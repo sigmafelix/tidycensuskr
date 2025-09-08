@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">tidycensuskr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.5.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,7 +60,7 @@
 
       <h1>Examples with ggplot2</h1>
             
-            <h4 data-toc-skip class="date">August 31, 2025</h4>
+            <h4 data-toc-skip class="date">September 08, 2025</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/sigmafelix/tidycensuskr/blob/main/vignettes/v02_examples_with_ggplot.Rmd" class="external-link"><code>vignettes/v02_examples_with_ggplot.Rmd</code></a></small>
       <div class="d-none name"><code>v02_examples_with_ggplot.Rmd</code></div>
@@ -207,11 +207,11 @@ that retrieves the spatial data for the specified year.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Filter censuskor data</span></span>
 <span><span class="va">population_2010</span> <span class="op">&lt;-</span> <span class="va">censuskor</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2010</span>, <span class="va">type</span> <span class="op">==</span> <span class="st">"population"</span>, <span class="va">class1</span> <span class="op">==</span> <span class="st">"total"</span>, <span class="va">class2</span> <span class="op">==</span> <span class="st">"total"</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2010</span>, <span class="va">type</span> <span class="op">==</span> <span class="st">"population"</span>, <span class="va">class2</span> <span class="op">==</span> <span class="st">"total"</span>, <span class="va">class2</span> <span class="op">==</span> <span class="st">"total"</span><span class="op">)</span></span>
 <span><span class="va">population_2015</span> <span class="op">&lt;-</span> <span class="va">censuskor</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2015</span>, <span class="va">type</span> <span class="op">==</span> <span class="st">"population"</span>, <span class="va">class1</span> <span class="op">==</span> <span class="st">"total"</span>, <span class="va">class2</span> <span class="op">==</span> <span class="st">"total"</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2015</span>, <span class="va">type</span> <span class="op">==</span> <span class="st">"population"</span>, <span class="va">class2</span> <span class="op">==</span> <span class="st">"total"</span>, <span class="va">class2</span> <span class="op">==</span> <span class="st">"total"</span><span class="op">)</span></span>
 <span><span class="va">population_2020</span> <span class="op">&lt;-</span> <span class="va">censuskor</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2020</span>, <span class="va">type</span> <span class="op">==</span> <span class="st">"population"</span>, <span class="va">class1</span> <span class="op">==</span> <span class="st">"total"</span>, <span class="va">class2</span> <span class="op">==</span> <span class="st">"total"</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2020</span>, <span class="va">type</span> <span class="op">==</span> <span class="st">"population"</span>, <span class="va">class2</span> <span class="op">==</span> <span class="st">"total"</span>, <span class="va">class2</span> <span class="op">==</span> <span class="st">"total"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Merge with spatial data</span></span>
 <span><span class="va">sf_2010_merged</span> <span class="op">&lt;-</span> <span class="va">sf_2010</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>

@@ -5,12 +5,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>`anyflights`-like data access for South Korea census and administrative data • tidycensuskr</title>
+<title>Easy Access for South Korea Census Data and Boundaries • tidycensuskr</title>
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="`anyflights`-like data access for South Korea census and administrative data">
+<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Easy Access for South Korea Census Data and Boundaries">
 <meta name="description" content="Census and administrative data in South Korea are a basic source of quantitative and mixed-methods research for social and urban scientists. This package provides a `sf`-based standardized workflow based on direct open API access to the major census and administrative data sources and pre-generated files in South Korea.">
 <meta property="og:description" content="Census and administrative data in South Korea are a basic source of quantitative and mixed-methods research for social and urban scientists. This package provides a `sf`-based standardized workflow based on direct open API access to the major census and administrative data sources and pre-generated files in South Korea.">
 </head>
@@ -22,7 +22,7 @@
 
     <a class="navbar-brand me-2" href="index.html">tidycensuskr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.5.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -86,76 +86,61 @@
 <ul>
 <li>Sigungu dataset of three census years (2010, 2015, 2020)
 <ul>
-<li>The curated dataset contain 250 rows long and 8 variables.</li>
+<li>The curated dataset is a <strong>long</strong> table (i.e., one row per district-year-variable)</li>
 </ul>
 </li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">census</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 253 x 6</span></span>
-<span><span class="co">#&gt;   adm1_code adm1_name adm2_code adm2_name   pop2015_total pop2015_men pop2015_women pop2020_total pop2020_men pop2020_women</span></span>
-<span><span class="co">#&gt;       &lt;int&gt; &lt;chr&gt;     &lt;int&gt;     &lt;chr&gt;               &lt;int&gt;       &lt;int&gt;         &lt;int&gt;         &lt;int&gt;       &lt;int&gt;         &lt;int&gt;</span></span>
-<span><span class="co">#&gt; 1        11 Seoul     11010     Jongno-gu          161521       79510         82011        151291       73062         78229</span></span>
-<span><span class="co">#&gt; 2        11 Seoul     11020     Jung-gu            128478       63218         65260        128744       62147         66597</span></span>
-<span><span class="co">#&gt; 3        11 Seoul     11030     Yongsan-gu         227282      109980        117302        225882      109162        116720</span></span>
-<span><span class="co">#&gt; 4        11 Seoul     11040     Seongdong-gu       295006      146332        148674        291918      142128        149790</span></span>
-<span><span class="co">#&gt; 5        11 Seoul     11050     Gwangjin-gu        368199      180647        187552        353967      169925        184042</span></span>
-<span><span class="co">#&gt; 6        11 Seoul     11060     Dongdaemun-gu      364787      181189        183598        351057      171484        179573</span></span></code></pre></div>
-<p>if you use the function <code><a href="reference/anycensus.html">anycensus()</a></code>, you will get the information by census years and regions.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Say if you want to query Seoul's 2020 population</span></span>
-<span><span class="co"># You can type in Seoul's district code, then the census year</span></span>
-<span><span class="co"># You can retrieve the data using the simplify() function by changing the options to either a data frame or a list.</span></span>
-<span><span class="va">seoul</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/anycensus.html">anycensus</a></span><span class="op">(</span><span class="fl">11</span>, <span class="fl">2020</span>, simplify <span class="op">=</span> <span class="st">"df"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Quick visualisation</span></span>
-<span><span class="fu">plot_census_map</span><span class="op">(</span><span class="va">seoul</span>, variable <span class="op">=</span> <span class="st">"population_density"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="anycensusk">
-<code>anycensusk()</code><a class="anchor" aria-label="anchor" href="#anycensusk"></a>
+<h2 id="anycensus">
+<code>anycensus()</code><a class="anchor" aria-label="anchor" href="#anycensus"></a>
 </h2>
 <ul>
 <li>The package loads an attached dataset <code>censuskor</code> that contains the census data for 2020. This dataset is automatically loaded upon loading the package</li>
-<li>The function <code><a href="reference/anycensusk.html">anycensusk()</a></code> allows you to query census data for specific district or province codes and types of data (population, tax, mortality) for the year 2020.</li>
+<li>The function <code><a href="reference/anycensus.html">anycensus()</a></code> allows you to query census data for specific district or province codes and types of data (population, tax, mortality) for the year 2020.</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/sigmafelix/tidycensuskr" class="external-link">tidycensuskr</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># loading Seoul population data</span></span>
-<span><span class="fu">tidycensuskr</span><span class="fu">::</span><span class="fu"><a href="reference/anycensusk.html">anycensusk</a></span><span class="op">(</span>codes <span class="op">=</span> <span class="st">"Seoul"</span>, type <span class="op">=</span> <span class="st">"population"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">tidycensuskr</span><span class="fu">::</span><span class="fu"><a href="reference/anycensus.html">anycensus</a></span><span class="op">(</span>codes <span class="op">=</span> <span class="st">"Seoul"</span>, type <span class="op">=</span> <span class="st">"population"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="id_2-boundaries">2. Boundaries<a class="anchor" aria-label="anchor" href="#id_2-boundaries"></a>
 </h2>
 <ul>
-<li>Boundaries for the three census years (2010, 2015, 2020)see ?<code>boundary_raw</code> for more info.</li>
+<li>Boundaries for the three census years (2010, 2015, 2020)see <code><a href="reference/load_districts.html">?load_districts</a></code> for more info.</li>
 </ul>
 </div>
 </div>
 <div class="section level1">
 <h1 id="examples">Examples<a class="anchor" aria-label="anchor" href="#examples"></a>
 </h1>
-<p>You can find these and more code examples for exploring census in <code>vignette("examples")</code></p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span>
+<p>Package vignettes are the first place to look for detailed examples. Below are some quick examples to get you started.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/sigmafelix/tidycensuskr" class="external-link">tidycensuskr</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r-spatial.github.io/sf/" class="external-link">sf</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/s2.html" class="external-link">sf_use_s2</a></span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">sgg</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Simple feature collection with 251 features and 6 fields</span></span>
-<span><span class="co">#&gt; Geometry type: MULTIPOLYGON</span></span>
-<span><span class="co">#&gt; Dimension:     XY</span></span>
-<span><span class="co">#&gt; Bounding box:  xmin: 746111 ymin: 1458603 xmax: 1387949 ymax: 2068444</span></span>
-<span><span class="co">#&gt; Projected CRS: Korea 2000 / Unified CS</span></span>
-<span><span class="co">#&gt; # A tibble: 251 × 7</span></span>
-<span><span class="co">#&gt;   BASE_DATE SIGUNGU_CD SIGUNGU_NM                  geom             adm1_code adm1_name adm2_name</span></span>
-<span><span class="co">#&gt;       &lt;int&gt;      &lt;int&gt; &lt;chr&gt;          &lt;MULTIPOLYGON [m]&gt;               &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;    </span></span>
-<span><span class="co">#&gt; 1  20201231      11010 종로구  (((953683.8 1959210, 953…                  11 Seoul     Jongno-gu</span></span>
-<span><span class="co">#&gt; 2  20201231      11020 중구    (((957890.4 1952617, 957…                  11 Seoul     Jung-gu  </span></span>
-<span><span class="co">#&gt; 3  20201231      11030 용산구  (((953114.2 1950747, 953…                  11 Seoul     Yongsan-gu</span></span>
-<span><span class="co">#&gt; 4  20201231      11040 성동구  (((959381.8 1952724, 959…                  11 Seoul     Seongdong-gu</span></span>
-<span><span class="co">#&gt; 5  20201231      11050 광진구  (((964825.1 1952633, 964…                  11 Seoul     Gwangjin-gu</span></span>
-<span><span class="co">#&gt; 6  20201231      11060 동대문구 (((961991.8 1956626, 961…                  11 Seoul     Dongdaemun-gu</span></span></code></pre></div>
+<span><span class="co"># load boundaries</span></span>
+<span><span class="va">adm2_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/load_districts.html">load_districts</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>, level <span class="op">=</span> <span class="st">"adm2"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># load census data</span></span>
+<span><span class="va">census_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>, codes <span class="op">=</span> <span class="cn">NULL</span>, type <span class="op">=</span> <span class="st">"population"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># merge boundaries and census data</span></span>
+<span><span class="va">census_2020_sf</span> <span class="op">&lt;-</span> <span class="va">adm2_2020</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">left_join</a></span><span class="op">(</span><span class="va">census_2020</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"adm2_code"</span> <span class="op">=</span> <span class="st">"adm2_code"</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># plot population data</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">census_2020_sf</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">value</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html" class="external-link">scale_fill_viridis_c</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Population by District in South Korea (2020)"</span>,</span>
+<span>         fill <span class="op">=</span> <span class="st">"Population"</span><span class="op">)</span></span></code></pre></div>
 </div>
 
   </main><aside class="col-md-3"><div class="links">

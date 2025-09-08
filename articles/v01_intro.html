@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">tidycensuskr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.5.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,7 +60,7 @@
 
       <h1>Introduction to tidycensuskr</h1>
             
-            <h4 data-toc-skip class="date">August 31, 2025</h4>
+            <h4 data-toc-skip class="date">September 08, 2025</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/sigmafelix/tidycensuskr/blob/main/vignettes/v01_intro.Rmd" class="external-link"><code>vignettes/v01_intro.Rmd</code></a></small>
       <div class="d-none name"><code>v01_intro.Rmd</code></div>
@@ -129,15 +129,28 @@ autonomous administrative units.</li>
 <strong><em>Gun</em></strong>: County. Counties are rural areas with
 smaller populations (&lt;50,000).</li>
 <li>
-<strong><em>Gu</em></strong>: District. Districts are urban areas
-within metropolitan cities (these districts are called autonomous
+<strong><em>Gu</em></strong>: District/Ward. Districts are urban
+areas within metropolitan cities (these districts are called autonomous
 districts), whereas districts in autonomous cities are called
 non-autonomous districts.</li>
 </ul>
 </li>
 <li>
 <strong><em>Eup-Myeon-Dong</em></strong>: The third level, which
-includes town and districts.</li>
+includes town and districts.
+<ul>
+<li>
+<strong><em>Eup</em></strong>: Town. Towns are urban areas within
+counties (Gun) with populations over 20,000.</li>
+<li>
+<strong><em>Myeon</em></strong>: Township. Townships are rural areas
+within counties (Gun) with populations under 20,000.</li>
+<li>
+<strong><em>Dong</em></strong>: Neighborhood. Neighborhoods are the
+smallest administrative units within cities (Si) and districts
+(Gu).</li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="section level2">
@@ -146,22 +159,113 @@ includes town and districts.</li>
 <div class="section level3">
 <h3 id="tldr">tl;dr<a class="anchor" aria-label="anchor" href="#tldr"></a>
 </h3>
-<p><strong>Tax</strong><br>
-- Global: 종합소득세 (Comprehensive Income Tax)<br>
-- Income: 근로소득세 (Labour/Employment Income Tax)</p>
-<p><strong>Population</strong><br>
-- Total<br>
-- Male<br>
-- Female</p>
-<p><strong>Mortality</strong></p>
-<p>Let’s have a look in detail shall we?</p>
+<table class="table">
+<colgroup>
+<col width="12%">
+<col width="17%">
+<col width="17%">
+<col width="12%">
+<col width="27%">
+<col width="12%">
+</colgroup>
+<thead><tr class="header">
+<th>type</th>
+<th>class1</th>
+<th>class2</th>
+<th>unit</th>
+<th>description</th>
+<th>available years</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>population</td>
+<td>all households</td>
+<td>total</td>
+<td>persons</td>
+<td>Total population</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>population</td>
+<td>all households</td>
+<td>male</td>
+<td>persons</td>
+<td>Male population</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>population</td>
+<td>all households</td>
+<td>female</td>
+<td>persons</td>
+<td>Female population</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>tax</td>
+<td>income</td>
+<td>general</td>
+<td>million KRW</td>
+<td>Comprehensive Income Tax</td>
+<td>2020</td>
+</tr>
+<tr class="odd">
+<td>tax</td>
+<td>income</td>
+<td>labor</td>
+<td>million KRW</td>
+<td>Employment Income Tax</td>
+<td>2020</td>
+</tr>
+<tr class="even">
+<td>mortality</td>
+<td>All causes</td>
+<td>total</td>
+<td>per 100k population</td>
+<td>Age-standardized mortality rate</td>
+<td>2020</td>
+</tr>
+<tr class="odd">
+<td>mortality</td>
+<td>All causes</td>
+<td>male</td>
+<td>per 100k population</td>
+<td>Age-standardized mortality rate (male)</td>
+<td>2020</td>
+</tr>
+<tr class="even">
+<td>mortality</td>
+<td>All causes</td>
+<td>female</td>
+<td>per 100k population</td>
+<td>Age-standardized mortality rate (female)</td>
+<td>2020</td>
+</tr>
+<tr class="odd">
+<td>economy</td>
+<td>company</td>
+<td>total</td>
+<td>count</td>
+<td>Number of business entities</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>housing</td>
+<td>housing types</td>
+<td>total</td>
+<td>count</td>
+<td>Total number of housing units</td>
+<td>2010, 2015, 2020</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section level3">
 <h3 id="data">Data<a class="anchor" aria-label="anchor" href="#data"></a>
 </h3>
 <p>The dataset is provided in <strong>long form</strong>.</p>
 <p>If you open the <code>censuskor</code> dataset, you will see
-<strong>4,410 rows and 10 columns</strong>. This is a fairly substantial
+<strong>5,178 rows and 10 columns</strong>. This is a fairly substantial
 size.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span> <span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">censuskor</span><span class="op">)</span></span>
@@ -172,7 +276,7 @@ which determines the main index and splits the dataset into three
 components: <strong>population, tax, and mortality</strong>.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">censuskor</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu">distinct</span><span class="op">(</span><span class="va">type</span><span class="op">)</span></span></code></pre></div>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html" class="external-link">distinct</a></span><span class="op">(</span><span class="va">type</span><span class="op">)</span></span></code></pre></div>
 <p>Let’s dive into each category.</p>
 </div>
 <div class="section level3">
@@ -201,7 +305,7 @@ conducts monthly household interviews for those aged 15 or older.</li>
 2015, and 2020</strong>.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">censuskor</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/stats/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">type</span> <span class="op">==</span> <span class="st">"population"</span><span class="op">)</span></span></code></pre></div>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">type</span> <span class="op">==</span> <span class="st">"population"</span><span class="op">)</span></span></code></pre></div>
 <p>Example output:</p>
 <pre><code># A tibble: 2,361 × 9
     year adm1  adm2         adm2_code type       class1         class2 unit     value

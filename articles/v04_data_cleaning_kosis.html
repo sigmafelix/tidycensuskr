@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">tidycensuskr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.0.5.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,7 +60,7 @@
 
       <h1>Data Cleaning: From KOSIS Raw Data to Tidy Format</h1>
             
-            <h4 data-toc-skip class="date">August 31, 2025</h4>
+            <h4 data-toc-skip class="date">September 08, 2025</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/sigmafelix/tidycensuskr/blob/main/vignettes/v04_data_cleaning_kosis.Rmd" class="external-link"><code>vignettes/v04_data_cleaning_kosis.Rmd</code></a></small>
       <div class="d-none name"><code>v04_data_cleaning_kosis.Rmd</code></div>
@@ -627,18 +627,35 @@ package to make maps and perform spatial analysis</p>
 </div>
 </div>
 <div class="section level2">
-<h2 id="summary">Summary<a class="anchor" aria-label="anchor" href="#summary"></a>
+<h2 id="notes-on-adm2_code-changes">Notes on <code>adm2_code</code> changes<a class="anchor" aria-label="anchor" href="#notes-on-adm2_code-changes"></a>
 </h2>
-<p><code>tidycensuskr</code> fills the specific need for cleaned, tidy,
-analysis-ready Korean census and administrative data. The extensive data
-cleaning workflow demonstrated in this vignette transforms complex,
-multilingual, multi-format raw data into a consistent, research-friendly
-format that follows tidy data principles.</p>
-<hr>
+<p>Districts (<em>si-gun-gu</em>) are the second-level administrative
+units in South Korea. Each district is assigned a unique code called
+<code>adm2_code</code>. However, these codes can change over time due to
+administrative boundary changes, mergers, or reclassifications.</p>
+<p>Notable changes were made in all rural districts (<em>gun</em>) in
+2022; the third digit of <code>adm2_code</code> got addition of 2. For
+example, <em>Ulleung-gun</em> changed from <code>37430</code> to
+<code>37630</code>. This change may affect longitudinal analyses that
+span multiple years and pose challenges in updating
+<code>censuskor</code> dataset by developers. Some datasets in KOSIS are
+<strong>retrospectively</strong> updated to reflect the new codes, while
+most KOSIS datasets retain the old codes. Therefore, developers should
+be advised to check the <code>adm2_code</code> for each dataset and year
+with this code:</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># imported data</span></span>
+<span><span class="va">some_census_table</span></span>
+<span></span>
+<span><span class="co"># check adm2_code</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/any.html" class="external-link">any</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/substr.html" class="external-link">substr</a></span><span class="op">(</span><span class="va">some_census_table</span><span class="op">$</span><span class="va">adm2_code</span>, <span class="fl">3</span>, <span class="fl">3</span><span class="op">)</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"5"</span>, <span class="st">"6"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p>If <code>TRUE</code>, it indicates that the dataset uses the
+<strong>new</strong> <code>adm2_code</code> system (post-2022)
+regardless of the raw data year. If <code>FALSE</code>, it uses the
+<strong>old</strong> system (pre-2022).</p>
 <p><strong>Note</strong>: This vignette shows the data cleaning process
-for educational purposes. The actual <code>censuskor</code> dataset in
-the package is the result of this workflow and is ready for immediate
-use.</p>
+for developers. The actual <code>censuskor</code> dataset in the package
+is the result of this workflow and is ready for immediate use.</p>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
