@@ -27,7 +27,9 @@ A data frame with 4410 rows and 9 variables:
 censuskor
 }
 \description{
-District level data including tax, population, business entities, and mortality in South Korea.
+District level data including tax, population, business entities,
+and mortality in South Korea in 2010, 2015, and/or 2020. The availble
+years and variables depend on the type of data.
 }
 \note{
 For temporal comparison, province names in adm1 field are

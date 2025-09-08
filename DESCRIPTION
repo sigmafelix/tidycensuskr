@@ -1,6 +1,6 @@
 Package: tidycensuskr 
 Title: `anyflights`-like data access for South Korea census and administrative data
-Version: 0.0.5.9000
+Version: 0.1.0
 Authors@R: c(
     person(given = "Insang", 
           family = "Song", 
@@ -33,14 +33,14 @@ RoxygenNote: 7.3.2
 Imports:
     sf,
     dplyr,
-    purrr,
     rlang,
-    kosis,
     tidyr,
     ggplot2,
     utils
 Suggests: 
     knitr,
+    kosis,
+    purrr,
     rmarkdown,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
