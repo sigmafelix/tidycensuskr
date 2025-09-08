@@ -1,5 +1,5 @@
 Package: tidycensuskr 
-Title: `anyflights`-like data access for South Korea census and administrative data
+Title: Easy Access for South Korea Census Data and Boundaries
 Version: 0.1.0
 Authors@R: c(
     person(given = "Insang", 
@@ -36,10 +36,10 @@ Imports:
     rlang,
     tidyr,
     ggplot2,
+    kosis,
     utils
 Suggests: 
     knitr,
-    kosis,
     purrr,
     rmarkdown,
     testthat (>= 3.0.0)
