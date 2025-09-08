@@ -12,34 +12,34 @@
 # )
 
 testthat::test_that(
-  "anycensusk returns correct data for adm2_code (numeric code)", {
-  res <- anycensusk(codes = "11", type = "population")
+  "anycensus returns correct data for adm2_code (numeric code)", {
+  res <- anycensus(codes = "11", type = "population")
   testthat::expect_true(is.data.frame(res))
   testthat::expect_true(all(grepl("^11", res$adm2_code)))
 })
 
 testthat::test_that(
-  "anycensusk returns correct data for adm1 (character name)", {
-  res <- anycensusk(codes = "Seoul", type = "tax")
+  "anycensus returns correct data for adm1 (character name)", {
+  res <- anycensus(codes = "Seoul", type = "tax")
   testthat::expect_true(is.data.frame(res))
   testthat::expect_true(all(res$adm1 == "Seoul"))
 })
 
 testthat::test_that(
-  "anycensusk returns all data when codes is NULL", {
-  res <- anycensusk(codes = NULL, type = "mortality")
+  "anycensus returns all data when codes is NULL", {
+  res <- anycensus(codes = NULL, type = "mortality")
   testthat::expect_true(is.data.frame(res))
   testthat::expect_true(nrow(res) >= 2)
 })
 
 
 testthat::test_that(
-  "anycensusk handles invalid code length for adm2_code", {
-  testthat::expect_error(anycensusk(codes = "111", type = "population"))
+  "anycensus handles invalid code length for adm2_code", {
+  testthat::expect_error(anycensus(codes = "111", type = "population"))
 })
 
 testthat::test_that(
-  "anycensusk cleans up column names", {
-  res <- anycensusk(codes = "11", type = "population")
+  "anycensus cleans up column names", {
+  res <- anycensus(codes = "11", type = "population")
   testthat::expect_false(any(grepl("_NA", names(res))))
 })

@@ -5,24 +5,32 @@
 \title{Query Korean census data by admin code (province or municipality) and year}
 \usage{
 anycensus(
-  codes = NULL,
   year = 2020,
-  level = c("adm1", "adm2"),
-  simplify = c("auto", "list", "df")
+  codes = NULL,
+  type = c("population", "tax", "mortality", "economy"),
+  level = c("adm1", "adm2")
 )
 }
 \arguments{
-\item{codes}{Integer or character vector of admin codes (e.g. 11, 26) or admin names (e.g. "Seoul").}
+\item{year}{integer(1). One of 2010, 2015, or 2020.}
 
-\item{year}{Integer: one of 2015 or 2020.}
+\item{codes}{integer or character vector of admin codes (e.g. 11, 26)
+or admin names (e.g. "Seoul").}
 
-\item{level}{Character: "adm1" for province-level or "adm2" for municipal-level. Defaults to "adm2".}
+\item{type}{character(1). "population", "tax", "economy" or "mortality".
+Defaults to "population".}
 
-\item{simplify}{Character: "auto", "list", or "df". Determines the output format.}
+\item{level}{character(1). "adm1" for province-level or
+"adm2" for municipal-level. Defaults to "adm2".}
 }
 \value{
-A named list of tibbles, one element per requested code.
+A data.frame object containing census data
+for the specified codes and year.
 }
 \description{
-Query Korean census data by admin code (province or municipality) and year
+The function queries a long format census data frame
+(\code{\link{censuskor}}) for specific administrative codes (if provided)
+}
+\examples{
+anycensus(codes = "21", type = "mortality")
 }
