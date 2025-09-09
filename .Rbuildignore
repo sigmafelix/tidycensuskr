@@ -1,5 +1,5 @@
 ^\.Rproj\.user$
-^_pkgdown\.yml$
+^_pkgdown\.yaml$
 ^docs$
 ^pkgdown$
 ^data-raw$
