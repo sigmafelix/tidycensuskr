@@ -58,6 +58,15 @@ In Korea, there are three major levels of geographic hierarchy for administrativ
   - **_Dong_**: Neighborhood. Neighborhoods are the smallest administrative units within cities (Si) and districts (Gu).
 
 
+| South Korea | US | EU | UK(England) |
+|---|---|---|---|
+| _Si/Do_ | State  | NUTS[^1]1  | Regions/Combined Authorities |
+| _Si/Gun/Gu_ | County | NUTS2 | County |
+| _Eup/Myeon/Dong_ | Townships/Towns/Census County Division | NUTS3 | Districts/Wards/Boroughs |
+
+[^1] NUTS: Nomenclature of Territorial Units for Statistics, a geocode standard for referencing the subdivisions of countries for statistical purposes.
+
+
 ## Get Started
 ### tl;dr
 
