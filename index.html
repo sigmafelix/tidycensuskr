@@ -22,7 +22,7 @@
 
     <a class="navbar-brand me-2" href="index.html">tidycensuskr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -99,7 +99,24 @@
 </ul>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># loading Seoul population data</span></span>
-<span><span class="fu">tidycensuskr</span><span class="fu">::</span><span class="fu"><a href="reference/anycensus.html">anycensus</a></span><span class="op">(</span>codes <span class="op">=</span> <span class="st">"Seoul"</span>, type <span class="op">=</span> <span class="st">"population"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">tidycensuskr</span><span class="fu">::</span><span class="fu"><a href="reference/anycensus.html">anycensus</a></span><span class="op">(</span>codes <span class="op">=</span> <span class="st">"Seoul"</span>, type <span class="op">=</span> <span class="st">"population"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 25 × 9</span></span>
+<span><span class="co">#&gt;     year adm1  adm1_code adm2          adm2_code type     all households_total…¹</span></span>
+<span><span class="co">#&gt;    &lt;int&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;             &lt;dbl&gt; &lt;chr&gt;                     &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;  1  2020 Seoul        11 Dobong-gu         11100 populat…                 312878</span></span>
+<span><span class="co">#&gt;  2  2020 Seoul        11 Dongdaemun-gu     11060 populat…                 332796</span></span>
+<span><span class="co">#&gt;  3  2020 Seoul        11 Dongjak-gu        11200 populat…                 378749</span></span>
+<span><span class="co">#&gt;  4  2020 Seoul        11 Eunpyeong-gu      11120 populat…                 458777</span></span>
+<span><span class="co">#&gt;  5  2020 Seoul        11 Gangbuk-gu        11090 populat…                 295304</span></span>
+<span><span class="co">#&gt;  6  2020 Seoul        11 Gangdong-gu       11250 populat…                 440022</span></span>
+<span><span class="co">#&gt;  7  2020 Seoul        11 Gangnam-gu        11230 populat…                 509899</span></span>
+<span><span class="co">#&gt;  8  2020 Seoul        11 Gangseo-gu        11160 populat…                 564114</span></span>
+<span><span class="co">#&gt;  9  2020 Seoul        11 Geumcheon-gu      11180 populat…                 225594</span></span>
+<span><span class="co">#&gt; 10  2020 Seoul        11 Guro-gu           11170 populat…                 394733</span></span>
+<span><span class="co">#&gt; # ℹ 15 more rows</span></span>
+<span><span class="co">#&gt; # ℹ abbreviated name: ¹​`all households_total_prs`</span></span>
+<span><span class="co">#&gt; # ℹ 2 more variables: `all households_male_prs` &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   `all households_female_prs` &lt;dbl&gt;</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="censuskor">
@@ -122,7 +139,24 @@
 </ul>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># loading boundary sf file</span></span>
-<span><span class="fu">tidycensuskr</span><span class="fu">::</span><span class="fu"><a href="reference/load_districts.html">load_districts</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">tidycensuskr</span><span class="fu">::</span><span class="fu"><a href="reference/load_districts.html">load_districts</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Simple feature collection with 250 features and 2 fields</span></span>
+<span><span class="co">#&gt; Geometry type: GEOMETRY</span></span>
+<span><span class="co">#&gt; Dimension:     XY</span></span>
+<span><span class="co">#&gt; Bounding box:  xmin: 746111 ymin: 1463977 xmax: 1302469 ymax: 2068441</span></span>
+<span><span class="co">#&gt; Projected CRS: KGD2002 / Unified CS</span></span>
+<span><span class="co">#&gt; First 10 features:</span></span>
+<span><span class="co">#&gt;    year adm2_code                       geometry</span></span>
+<span><span class="co">#&gt; 1  2020     21140 POLYGON ((1147104 1689056, ...</span></span>
+<span><span class="co">#&gt; 2  2020     21020 POLYGON ((1137763 1683521, ...</span></span>
+<span><span class="co">#&gt; 3  2020     21010 POLYGON ((1139121 1678921, ...</span></span>
+<span><span class="co">#&gt; 4  2020     21040 POLYGON ((1144618 1676795, ...</span></span>
+<span><span class="co">#&gt; 5  2020     21070 POLYGON ((1142639 1682655, ...</span></span>
+<span><span class="co">#&gt; 6  2020     21130 POLYGON ((1147030 1688822, ...</span></span>
+<span><span class="co">#&gt; 7  2020     21050 POLYGON ((1138992 1683338, ...</span></span>
+<span><span class="co">#&gt; 8  2020     21030 POLYGON ((1142527 1684031, ...</span></span>
+<span><span class="co">#&gt; 9  2020     21150 POLYGON ((1135430 1690583, ...</span></span>
+<span><span class="co">#&gt; 10 2020     21100 MULTIPOLYGON (((1132627 167...</span></span></code></pre></div>
 </div>
 </div>
 </div>
@@ -132,29 +166,88 @@
 <p>Package vignettes are the first place to look for detailed examples. Below are some quick examples to get you started.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/sigmafelix/tidycensuskr" class="external-link">tidycensuskr</a></span><span class="op">)</span></span>
+<span><span class="co">#&gt; tidycensuskr 0.1.0 (2025-09-11)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; Attaching package: 'dplyr'</span></span>
+<span><span class="co">#&gt; The following objects are masked from 'package:stats':</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;     filter, lag</span></span>
+<span><span class="co">#&gt; The following objects are masked from 'package:base':</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;     intersect, setdiff, setequal, union</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org" class="external-link">tidyr</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r-spatial.github.io/sf/" class="external-link">sf</a></span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/s2.html" class="external-link">sf_use_s2</a></span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> </span>
+<span><span class="co">#&gt; Linking to GEOS 3.12.2, GDAL 3.11.3, PROJ 9.4.1; sf_use_s2() is TRUE</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://chris-prener.github.io/biscale/" class="external-link">biscale</a></span><span class="op">)</span></span>
+<span><span class="fu">rlang</span><span class="fu">::</span><span class="fu"><a href="https://rlang.r-lib.org/reference/is_installed.html" class="external-link">check_installed</a></span><span class="op">(</span><span class="st">"cowplot"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/s2.html" class="external-link">sf_use_s2</a></span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Spherical geometry (s2) switched off</span></span>
 <span></span>
 <span></span>
 <span><span class="co"># load census data</span></span>
-<span><span class="va">census_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>, codes <span class="op">=</span> <span class="cn">NULL</span>, type <span class="op">=</span> <span class="st">"population"</span><span class="op">)</span></span>
+<span><span class="va">census_pop_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>, codes <span class="op">=</span> <span class="cn">NULL</span>, type <span class="op">=</span> <span class="st">"population"</span><span class="op">)</span></span>
+<span><span class="va">census_pop_2020</span> <span class="op">&lt;-</span> <span class="va">census_pop_2020</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html" class="external-link">rename</a></span><span class="op">(</span>population_total <span class="op">=</span> <span class="va">`all households_total_prs`</span><span class="op">)</span></span>
+<span><span class="va">census_housing_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>, codes <span class="op">=</span> <span class="cn">NULL</span>, type <span class="op">=</span> <span class="st">"housing"</span><span class="op">)</span></span>
+<span><span class="va">census_housing_2020</span> <span class="op">&lt;-</span> <span class="va">census_housing_2020</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html" class="external-link">rename</a></span><span class="op">(</span>housing_total_units <span class="op">=</span> <span class="va">`housing types_total_cnt`</span><span class="op">)</span></span>
+<span><span class="va">census_pop_housing_2020</span> <span class="op">&lt;-</span> <span class="va">census_pop_2020</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">left_join</a></span><span class="op">(</span><span class="va">census_housing_2020</span> <span class="op">|&gt;</span></span>
+<span>              <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">adm2_code</span>, <span class="va">housing_total_units</span><span class="op">)</span>,</span>
+<span>            by <span class="op">=</span> <span class="st">"adm2_code"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/transmute.html" class="external-link">transmute</a></span><span class="op">(</span></span>
+<span>    adm2_code <span class="op">=</span> <span class="va">adm2_code</span>,</span>
+<span>    persons_per_housing <span class="op">=</span> <span class="va">population_total</span> <span class="op">/</span> <span class="va">housing_total_units</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="va">census_mort_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>, codes <span class="op">=</span> <span class="cn">NULL</span>, type <span class="op">=</span> <span class="st">"mortality"</span><span class="op">)</span></span>
+<span><span class="va">census_mort_2020</span> <span class="op">&lt;-</span> <span class="va">census_mort_2020</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html" class="external-link">rename</a></span><span class="op">(</span>mortality_total <span class="op">=</span> <span class="va">`All causes_total_p1p`</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">census_pph_mort_2020</span> <span class="op">&lt;-</span> <span class="va">census_pop_housing_2020</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">left_join</a></span><span class="op">(</span><span class="va">census_mort_2020</span> <span class="op">|&gt;</span></span>
+<span>              <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">adm2_code</span>, <span class="va">mortality_total</span><span class="op">)</span>,</span>
+<span>            by <span class="op">=</span> <span class="st">"adm2_code"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># load boundaries</span></span>
 <span><span class="va">adm2_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/load_districts.html">load_districts</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># merge boundaries and census data</span></span>
-<span><span class="va">census_2020_sf</span> <span class="op">&lt;-</span> <span class="va">adm2_2020</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">left_join</a></span><span class="op">(</span><span class="va">census_2020</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"adm2_code"</span> <span class="op">=</span> <span class="st">"adm2_code"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">census_2020_sf</span> <span class="op">&lt;-</span> <span class="va">adm2_2020</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">left_join</a></span><span class="op">(</span><span class="va">census_pph_mort_2020</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"adm2_code"</span> <span class="op">=</span> <span class="st">"adm2_code"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">census_2020_mapbase</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">biscale</span><span class="fu">::</span><span class="fu"><a href="https://chris-prener.github.io/biscale/reference/bi_class.html" class="external-link">bi_class</a></span><span class="op">(</span></span>
+<span>    <span class="va">census_2020_sf</span>,</span>
+<span>    x <span class="op">=</span> <span class="va">persons_per_housing</span>,</span>
+<span>    y <span class="op">=</span> <span class="va">mortality_total</span>,</span>
+<span>    style <span class="op">=</span> <span class="st">"quantile"</span>,</span>
+<span>    dim <span class="op">=</span> <span class="fl">3</span></span>
+<span>  <span class="op">)</span></span>
+<span></span>
+<span><span class="co"># draw a bivariate legend</span></span>
+<span><span class="va">legend</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://chris-prener.github.io/biscale/reference/bi_legend.html" class="external-link">bi_legend</a></span><span class="op">(</span>pal <span class="op">=</span> <span class="st">"DkCyan"</span>,</span>
+<span>                    dim <span class="op">=</span> <span class="fl">3</span>,</span>
+<span>                    xlab <span class="op">=</span> <span class="st">"More Persons per Housing "</span>,</span>
+<span>                    ylab <span class="op">=</span> <span class="st">"All-Cause Mortality "</span>,</span>
+<span>                    size <span class="op">=</span> <span class="fl">8</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># plot population data</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">census_2020_sf</span><span class="op">)</span> <span class="op">+</span></span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">`all households_total_prs`</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html" class="external-link">scale_fill_viridis_c</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Population by District in South Korea (2020)"</span>,</span>
-<span>         fill <span class="op">=</span> <span class="st">"Population"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">census_2020_bmap</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">census_2020_mapbase</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">bi_class</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"white"</span>, size <span class="op">=</span> <span class="fl">0.1</span>, show.legend <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://chris-prener.github.io/biscale/reference/bi_scale_fill.html" class="external-link">bi_scale_fill</a></span><span class="op">(</span>pal <span class="op">=</span> <span class="st">"DkCyan"</span>, dim <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Persons per housing unit and all-cause mortality rate (2020)"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://chris-prener.github.io/biscale/reference/bi_theme.html" class="external-link">bi_theme</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># combine map with legend</span></span>
+<span><span class="va">census_2020_bimap</span> <span class="op">&lt;-</span> <span class="fu">cowplot</span><span class="fu">::</span><span class="fu">ggdraw</span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">cowplot</span><span class="fu">::</span><span class="fu">draw_plot</span><span class="op">(</span><span class="va">census_2020_bmap</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">cowplot</span><span class="fu">::</span><span class="fu">draw_plot</span><span class="op">(</span><span class="va">legend</span>, <span class="fl">0.2</span>, <span class="fl">.65</span>, <span class="fl">0.2</span>, <span class="fl">0.2</span><span class="op">)</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">census_2020_bimap</span></span></code></pre></div>
+<p><img src="reference/figures/README-final_map-1.png" width="100%"></p>
 </div>
 
   </main><aside class="col-md-3"><div class="links">
