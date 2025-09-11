@@ -12,7 +12,7 @@ census |>
          gender_ratio = pop2020_men / pop2020_women) |>
   drop_na() -> census_tidy
 
-census_tidy2 <- census_tidy %>%
+census_tidy2 <- census_tidy |>
   mutate(
     adm1_name = case_when(
       adm1_name == "Gyeonggi-do" & adm2_name %in% c(
@@ -35,10 +35,10 @@ census_tidy2 <- census_tidy %>%
   )
 
 
-census_tidy2 %>%
-  group_by(adm1_name) %>%
-  mutate(adm2_name = reorder(adm2_name, pop2020_total)) %>%  # Ascending within group
-  ungroup() %>%
+census_tidy2 |>
+  group_by(adm1_name) |>
+  mutate(adm2_name = reorder(adm2_name, pop2020_total)) |>  # Ascending within group
+  ungroup() |>
   ggplot(aes(x = adm2_name)) +
   geom_col(aes(y = pop2020_total, fill = adm1_name), alpha = 0.8, width = 0.7, show.legend = FALSE) +
   geom_point(aes(y = pop2020_total, colour = gender_ratio), size = 2) +
@@ -69,14 +69,14 @@ census_tidy |>
 
 
 # Reshape data and reorder by total population
-df_long <- df %>%
+df_long <- df |>
   pivot_longer(cols = c(pop2020_men, pop2020_women),
                names_to = "gender",
-               values_to = "population") %>%
+               values_to = "population") |>
   mutate(gender = case_when(
     gender == "pop2020_men" ~ "Men",
     gender == "pop2020_women" ~ "Women"
-  )) %>%
+  )) |>
   mutate(adm2_name = fct_reorder(adm2_name, pop2020_total, .desc = TRUE))
 
 ggplot(df_long, aes(x = adm2_name, y = population, fill = gender)) +

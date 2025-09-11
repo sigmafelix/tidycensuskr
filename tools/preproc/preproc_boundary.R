@@ -6,8 +6,8 @@ library(dplyr)
 sf_use_s2(F)
 
 sf_sgg_2020 <-
-  read_sf("/mnt/s/Korea/basemap/data/census/bnd_all_00_2020_4Q/bnd_sigungu_00_2020_4Q/bnd_sigungu_00_2020_4Q.shp") %>%
-  st_transform(5179) %>%
+  read_sf("/mnt/s/Korea/basemap/data/census/bnd_all_00_2020_4Q/bnd_sigungu_00_2020_4Q/bnd_sigungu_00_2020_4Q.shp") |>
+  st_transform(5179) |>
   st_make_valid()
 
 save(sf_sgg_2020, file = "inst/sgg2020.RData", compress = "xz")
@@ -81,15 +81,15 @@ sidocd_range <-
   )
 
 
-sggnm_si <- sggnm %>%
-  dplyr::filter(is.na(tax_exclude)) %>%
-  dplyr::select(1, 3, 5, 6) %>%
-  dplyr::distinct() %>%
-  dplyr::left_join(sidocd_range, by = c("sido_kr")) %>%
-  dplyr::group_by(sido_txcd) %>%
-  dplyr::arrange(sigungu_1_kr, .by_group = TRUE) %>%
-  dplyr::ungroup() %>%
-  .[c(1:157, 159:166, 158, 167:227, 229, 228), ]
+sggnm_si <- sggnm |>
+  dplyr::filter(is.na(tax_exclude)) |>
+  dplyr::select(1, 3, 5, 6) |>
+  dplyr::distinct() |>
+  dplyr::left_join(sidocd_range, by = c("sido_kr")) |>
+  dplyr::group_by(sido_txcd) |>
+  dplyr::arrange(sigungu_1_kr, .by_group = TRUE) |>
+  dplyr::ungroup() |>
+  _[c(1:157, 159:166, 158, 167:227, 229, 228), ]
 
 
 
@@ -99,28 +99,28 @@ sgg_lookup_large <- read.csv("tools/adm_sgis_lookup_2024.csv", fileEncoding = "U
 
 lookup_adm2 <-
   function(x, year = 2020) {
-    x %>%
+    x |>
       dplyr::rename(
         adm1 = name_sido,
         adm2 = name_eng
-      ) %>%
-      dplyr::filter(grepl("District", level)) %>%
-      dplyr::select(adm1, adm2, sgis_2010, sgis_2015, sgis_2020) %>%
+      ) |>
+      dplyr::filter(grepl("District", level)) |>
+      dplyr::select(adm1, adm2, sgis_2010, sgis_2015, sgis_2020) |>
       dplyr::mutate(
         dplyr::across(
           dplyr::starts_with("sgis_"),
           ~ as.integer(substr(., 1, 5))
         )
-      ) %>%
+      ) |>
       tidyr::pivot_longer(
         cols = dplyr::starts_with("sgis_")
-      ) %>%
+      ) |>
       dplyr::mutate(
         year = as.integer(stringi::stri_extract_first_regex(name, pattern = "\\d{4,4}"))
-      ) %>%
-      dplyr::select(-name) %>%
-      dplyr::filter(year == !!year) %>%
-      dplyr::filter(!is.na(value)) %>%
+      ) |>
+      dplyr::select(-name) |>
+      dplyr::filter(year == !!year) |>
+      dplyr::filter(!is.na(value)) |>
       dplyr::rename(adm2_code = value)
   }
 ## Base lookup table by year
@@ -132,29 +132,29 @@ df_lookup_adm2 <-
   )
 
 sgg_lookup_ally <-
-  sgg_lookup_large %>%
-  dplyr::select(sgis_2010, sgis_2015, sgis_2020) %>%
+  sgg_lookup_large |>
+  dplyr::select(sgis_2010, sgis_2015, sgis_2020) |>
   dplyr::mutate(
     dplyr::across(
       dplyr::everything(),
       ~ as.integer(substr(., 1, 5))
     )
-  ) %>%
-  dplyr::distinct() %>%
+  ) |>
+  dplyr::distinct() |>
   dplyr::mutate(
     dplyr::across(
       dplyr::everything(),
       ~ data.table::nafill(., type = "locf")
     )
-  ) %>%
-  dplyr::distinct() %>%
+  ) |>
+  dplyr::distinct() |>
   dplyr::inner_join(
-    sgg_lookup %>%
+    sgg_lookup |>
     dplyr::mutate(
       adm2_code = ifelse(substr(adm2_code, 3, 3) %in% c("5", "6"),
                         adm2_code - 200,
                         adm2_code)
-    ) %>%
+    ) |>
     .[, c("adm2_code", "sido_en", "sigungu_1_en")],
     by = c("sgis_2020" = "adm2_code"),
     multiple = "first"
@@ -165,77 +165,77 @@ sgg_lookup_ally
 sgg_lookup <- read.csv("inst/extdata/lookup_district_code.csv", fileEncoding = "UTF-8")
 
 # general income tax
-df_tax_compact <- df_tax %>%
+df_tax_compact <- df_tax |>
   dplyr::transmute(
     sgg_tax_global = C1,
     tax_global_total = DT
-  ) %>%
+  ) |>
   dplyr::inner_join(
     sgg_lookup[, c("sgg_tax_global", "sido_en", "sigungu_1_en", "adm2_code")],
     multiple = "first"
-  ) %>%
+  ) |>
   dplyr::rename(
     adm1 = sido_en,
     adm2 = sigungu_1_en,
     adm2_code = adm2_code,
     value = tax_global_total
-  ) %>%
+  ) |>
   dplyr::mutate(
     year = 2020,
     unit = "million KRW",
     type = "tax",
     class1 = "income",
     class2 = "general"
-  ) %>%
+  ) |>
   dplyr::select(-sgg_tax_global)
 
 # labor income tax
-df_tax_income_compact <- df_tax_income %>%
+df_tax_income_compact <- df_tax_income |>
   dplyr::filter(
     C2_NM == "결정세액"
-  ) %>%
+  ) |>
   dplyr::transmute(
     sgg_tax_income = C1,
     val = DT,
     unit_abbr = abbreviate(tolower(UNIT_NM_ENG))
-  ) %>%
+  ) |>
   tidyr::pivot_wider(
     names_from = unit_abbr,
     values_from = val,
     values_fn = as.integer
-  ) %>%
+  ) |>
   dplyr::rename(
     tax_income_total = inmw
-  ) %>%
-  dplyr::select(-inpr) %>%
-  # dplyr::group_by(sgg_tax_income) %>%
+  ) |>
+  dplyr::select(-inpr) |>
+  # dplyr::group_by(sgg_tax_income) |>
   # dplyr::summarise(
   #   tax_income_percapita_milkrw = inmw / inpr
-  # ) %>%
-  # dplyr::ungroup() %>%
+  # ) |>
+  # dplyr::ungroup() |>
   dplyr::inner_join(
     sgg_lookup[, c("sgg_tax_income", "sido_en", "sigungu_1_en", "adm2_code")],
     multiple = "first"
-  ) %>%
+  ) |>
   dplyr::rename(
     adm1 = sido_en,
     adm2 = sigungu_1_en,
     adm2_code = adm2_code,
     value = tax_income_total
-  ) %>%
+  ) |>
   dplyr::mutate(
     year = 2020,
     unit = "million KRW",
     type = "tax",
     class1 = "income",
     class2 = "labor"
-  ) %>%
+  ) |>
   dplyr::select(-sgg_tax_income)
 
 df_pop_10 <-
   readxl::read_excel("tools/pop_2010.xlsx")
 names(df_pop_10) <- c("year", "adm2_code", "sex", "marital", "age", "n_rel", "n_nonrel")
-df_pop_10 <- df_pop_10 %>%
+df_pop_10 <- df_pop_10 |>
   dplyr::select(-marital)
 
 df_pop_1520 <-
@@ -244,7 +244,7 @@ names(df_pop_1520) <- c("year", "adm2_code", "sex", "age", "n_rel", "n_nonrel")
 
 # combine 2010 and 2015-2020 and clean
 df_pop_1020_clean <-
-  dplyr::bind_rows(df_pop_10, df_pop_1520) %>%
+  dplyr::bind_rows(df_pop_10, df_pop_1520) |>
   dplyr::mutate(
     year = as.integer(
       stringi::stri_extract_first_regex(year, pattern = "\\d{4,4}")
@@ -258,36 +258,36 @@ df_pop_1020_clean <-
       c("total", "male", "female")
     ),
     value = ifelse(is.na(n_rel), 0, n_rel) + ifelse(is.na(n_nonrel), 0, n_nonrel)
-  ) %>%
+  ) |>
   dplyr::select(
     -n_rel, -n_nonrel, -age
-  ) %>%
+  ) |>
   dplyr::mutate(
     type = "population",
     class1 = "all households",
     unit = "persons"
-  ) %>%
+  ) |>
   dplyr::mutate(
     adm2_code = ifelse(substr(adm2_code, 3, 3) %in% c("5", "6"),
                        as.integer(adm2_code) - 200,
                        as.integer(adm2_code))
-  ) %>%
+  ) |>
   dplyr::left_join(
     df_lookup_adm2,
     # sgg_lookup[, c("adm2_code", "sido_en", "sigungu_1_en")],
     by = c("adm2_code", "year"),
     multiple = "first"
-  ) %>%
+  ) |>
   dplyr::rename(
     class2 = sex
-  ) %>%
-  dplyr::filter(!substr(adm2_code, 3, 5) %in% c("003", "004", "005")) %>%
+  ) |>
+  dplyr::filter(!substr(adm2_code, 3, 5) %in% c("003", "004", "005")) |>
   dplyr::filter(!is.na(adm1))
 write.csv(df_pop_1020_clean, "tools/population_1020_cleaned.csv", row.names = FALSE, fileEncoding = "UTF-8")
 
 
 # Mortality 2020
-df_mort_2020 <- df_mortality %>%
+df_mort_2020 <- df_mortality |>
   dplyr::transmute(
     adm2_code = as.integer(C2), 
     class2 = plyr::mapvalues(C3, c("0", "1", "2"), c("total", "male", "female")),
@@ -295,17 +295,17 @@ df_mort_2020 <- df_mortality %>%
     type = "mortality",
     year = 2020,
     unit = "per 100k population",
-    value = DT) %>%
+    value = DT) |>
   dplyr::left_join(
     sgg_lookup[, c("adm2_code", "sido_en", "sigungu_1_en")],
     by = "adm2_code",
     multiple = "first"
-  ) %>%
+  ) |>
   dplyr::rename(
     adm1 = sido_en,
     adm2 = sigungu_1_en
-  ) %>%
-  dplyr::mutate(value = as.numeric(value)) %>%
+  ) |>
+  dplyr::mutate(value = as.numeric(value)) |>
   dplyr::filter(!is.na(adm1))
 
 
@@ -327,19 +327,19 @@ df_pop_1020_clean <- read.csv("tools/population_1020_cleaned.csv", fileEncoding 
 # consolidate all data into one long data.frame
 
 
-# df_pop_long <- df_pop2 %>%
-#   dplyr::select(-2) %>%
+# df_pop_long <- df_pop2 |>
+#   dplyr::select(-2) |>
 #   tidyr::pivot_longer(
 #     cols = 2:7
-#   ) %>%
-#   tidyr::separate(col = "name", into = c("type", "class1", "class2"), sep = "_") %>%
+#   ) |>
+#   tidyr::separate(col = "name", into = c("type", "class1", "class2"), sep = "_") |>
 #   dplyr::mutate(unit = "persons")
 
 # old df_mort_long
-# df_mort_long <- df_mort_clean %>%
+# df_mort_long <- df_mort_clean |>
 #   tidyr::pivot_longer(
 #     cols = 3:5
-#   ) %>%
+#   ) |>
 #   dplyr::mutate(
 #     class2 = dplyr::case_when(
 #       name == "0" ~ "total",
@@ -349,10 +349,10 @@ df_pop_1020_clean <- read.csv("tools/population_1020_cleaned.csv", fileEncoding 
 #     ),
 #     unit = "per 100k population",
 #     type = "mortality"
-#   ) %>%
-#   dplyr::rename(class1 = category) %>%
-#   dplyr::select(-name) %>%
-#   dplyr::filter(value != "-") %>%
+#   ) |>
+#   dplyr::rename(class1 = category) |>
+#   dplyr::select(-name) |>
+#   dplyr::filter(value != "-") |>
 #   dplyr::mutate(value = as.numeric(value))
 
 
@@ -364,22 +364,22 @@ mort_a <- readxl::read_excel(
 names(mort_a) <- c("year", "cause", "adm2_code", "total", "male", "female")
 mort_a[["year"]] <- rep(c(2010, 2015), each = nrow(mort_a) / 2)
 mort_aa <-
-  mort_a %>%
+  mort_a |>
   dplyr::mutate(
     type = "mortality",
     unit = "per 100k population",
     class1 = "All causes"
-  ) %>%
+  ) |>
   tidyr::pivot_longer(
     cols = c("total", "male", "female"),
     names_to = "class2",
     values_to = "value"
-  ) %>%
+  ) |>
   dplyr::mutate(
-    adm2_code = stringi::stri_extract_all_regex(adm2_code, pattern = "[0-9]{5,5}") %>%
-      unlist() %>%
+    adm2_code = stringi::stri_extract_all_regex(adm2_code, pattern = "[0-9]{5,5}") |>
+      unlist() |>
       as.integer()
-  ) %>%
+  ) |>
   dplyr::select(-cause)
 
 # mort_aa[is.na(mort_aa[["sido_en"]]), ]
@@ -388,15 +388,15 @@ mort_aa <-
 df_lookup_adm2 <- lookup_adm2(sgg_lookup_large)
 
 df_mort_1015 <-
-  mort_aa %>%
+  mort_aa |>
   dplyr::left_join(
     df_lookup_adm2,
     by = c("adm2_code", "year"),
     multiple = "first"
-  ) %>%
+  ) |>
   dplyr::mutate(
     value = as.numeric(value)
-  ) %>%
+  ) |>
   dplyr::filter(!is.na(adm1))
 
 # economy
@@ -416,11 +416,11 @@ censuskor <-
       df_econ_1020
     ),
     fill = TRUE
-  ) %>%
+  ) |>
   dplyr::select(
     year, adm1, adm2, adm2_code,#adm2_other,
     type, class1, class2, unit, value
-  ) %>%
+  ) |>
   dplyr::mutate(
     adm2_code = ifelse(substr(adm2_code, 3, 3) %in% c("5", "6"),
                        as.integer(adm2_code) - 200,
@@ -436,15 +436,15 @@ usethis::use_data(censuskor, overwrite = TRUE)
 df_tax_k <- cbind(df_tax, sggnm_si)
 df_tax_k[, c("C1_NM", "sigungu_1_kr")]
 
-df_tax_income2 <- df_tax_income %>%
-  dplyr::filter(C2_NM == "결정세액") %>%
+df_tax_income2 <- df_tax_income |>
+  dplyr::filter(C2_NM == "결정세액") |>
   dplyr::mutate(
     name = "general_tax"
-  ) %>%
+  ) |>
   dplyr::mutate(
     UNIT_NM_ENG = tolower(sub(" ", "", sub(" ", "", UNIT_NM_ENG)))
-  ) %>%
-  dplyr::select(C1_NM, C1, name, UNIT_NM_ENG, DT) %>%
+  ) |>
+  dplyr::select(C1_NM, C1, name, UNIT_NM_ENG, DT) |>
   tidyr::pivot_wider(
     names_from = c(name, UNIT_NM_ENG),
     values_from = DT
@@ -454,7 +454,7 @@ df_tax_income2 <- df_tax_income %>%
 
 dim(df_tax)
 lookup_sgg_tax <- df_tax[, c("C1", "C1_NM")]
-lookup_sgg_tax_income <- df_tax_income[, c("C1", "C1_NM")] %>% dplyr::distinct()
+lookup_sgg_tax_income <- df_tax_income[, c("C1", "C1_NM")] |> dplyr::distinct()
 names(lookup_sgg_tax_income) <- c("C1_income", "C1_NM_income")
 lookup_sgg_tax_bind <- dplyr::bind_cols(lookup_sgg_tax, lookup_sgg_tax_income)
 
@@ -483,3 +483,17 @@ sf_use_s2(FALSE)
 sf_sgg_2020 <-
   sf::st_read("/mnt/s/Korea/basemap/tidycensuskr_sgg2020.fgb") |>
   sf::st_transform(4326)
+
+
+
+## censuskor fix (250911)
+## All adm1 == "Daegu", adm1_code == 22, adm2_code == 22520, adm2 == "Gunwi-gun"
+## to adm1 == "Gyeongsangbuk-do", adm1_code == 37, adm2_code == 37310, adm2 == "Gunwi-gun"
+censuskor <- censuskor |>
+  dplyr::mutate(
+    adm1 = ifelse(year == 2020 & adm2_code == 22520, "Gyeongsangbuk-do", adm1),
+    adm1_code = ifelse(year == 2020 & adm2_code == 22520, 37, adm1_code),
+    adm2_code = ifelse(year == 2020 & adm2_code == 22520, 37310, adm2_code)
+  )
+
+usethis::use_data(censuskor, overwrite = TRUE)

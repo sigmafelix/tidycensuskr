@@ -24,7 +24,7 @@ data(censuskor)
 You can use the `censuskor` dataset and spatial data for different years. Here, we will load the census data and the spatial data for 2010, 2015, and 2020. `load_districts()` is a function that retrieves the spatial data for the specified year.
 
 ```{r make-wide, include=FALSE}
-df_wide <- censuskor %>%
+df_wide <- censuskor |>
   filter(
     year == 2020 &
       (
@@ -33,7 +33,7 @@ df_wide <- censuskor %>%
           (type == "mortality" & class1 == "All causes" & class2 == "total") |
           (type == "economy")
       )
-  ) %>%
+  ) |>
   mutate(
     variable = case_when(
       type == "tax" & class2 == "labor" ~ "labor",
@@ -44,9 +44,9 @@ df_wide <- censuskor %>%
       type == "mortality" ~ "mortality",
       type == "economy" ~ "economy"
     )
-  ) %>%
-  select(adm1, adm2, adm2_code, variable, value) %>%
-  pivot_wider(names_from = variable, values_from = value) %>%
+  ) |>
+  select(adm1, adm2, adm2_code, variable, value) |>
+  pivot_wider(names_from = variable, values_from = value) |>
   mutate(
     dplyr::across(
       dplyr::all_of(c("labor", "general", "population", "male", "female", "mortality", "economy")), ~as.numeric(.x))
@@ -58,7 +58,7 @@ df_wide <- censuskor %>%
 ## Plot 1: Income vs Mortality
 ```{r plot-income-vs-mortality}
 df_wide <-
-  df_wide %>%
+  df_wide |>
   mutate(Seoul = if_else(adm1 %in% c("Seoul", "Incheon", "Gyeonggi-do"), 1L, 0L))
 
 ggplot(df_wide, aes(x = labor, y = mortality)) +
@@ -81,8 +81,8 @@ ggplot(df_wide, aes(x = labor, y = mortality)) +
 ### Plot 2-1: Sex Ratio Distribution in SMA 
 ```{r plot-sex-ratio-sma}
 df_wide_seoul <-
-  df_wide %>%
-  filter(Seoul == 1) %>% 
+  df_wide |>
+  filter(Seoul == 1) |> 
   mutate(sex_ratio = male / female * 100)
 
 ggplot(df_wide_seoul, aes(x = sex_ratio, fill = adm1)) +
@@ -100,7 +100,7 @@ ggplot(df_wide_seoul, aes(x = sex_ratio, fill = adm1)) +
 ### Plot 2-2: Sex Ratio Distribution in SMA 2
 ```{r plot-sex-ratio-sma-facet, fig.width=10, fig.height=4}
 
-bg_all <- df_wide_seoul %>% select(sex_ratio)
+bg_all <- df_wide_seoul |> select(sex_ratio)
 
 ggplot() +
   # 1) background distribution
@@ -129,7 +129,7 @@ ggplot() +
 
 ```{r choropleth-1, fig.width=10, fig.height=4}
 adm2_sf_2020 <- load_districts(year = 2020)
-adm2_sf_2020_seoul <- adm2_sf_2020 %>% inner_join(df_wide_seoul, by = "adm2_code")
+adm2_sf_2020_seoul <- adm2_sf_2020 |> inner_join(df_wide_seoul, by = "adm2_code")
 
 ggplot(adm2_sf_2020_seoul) +
   geom_sf(aes(fill = sex_ratio), color = "gray80") +
@@ -148,8 +148,8 @@ ggplot(adm2_sf_2020_seoul) +
 
 ```{r choropleth-2, fig.width=10, fig.height=4}
 adm2_sf_2020 <- load_districts(year = 2020)
-adm2_sf_2020_kr <- adm2_sf_2020 %>%
-  inner_join(df_wide, by = "adm2_code") %>% 
+adm2_sf_2020_kr <- adm2_sf_2020 |>
+  inner_join(df_wide, by = "adm2_code") |> 
   mutate(sex_ratio = male / female * 100)
 
 ggplot(adm2_sf_2020_kr) +
@@ -181,21 +181,21 @@ sf_2020 <- load_districts(year = 2020)
 
 ```{r filter-merge}
 # Filter censuskor data
-population_2010 <- censuskor %>%
+population_2010 <- censuskor |>
   filter(year == 2010, type == "population", class2 == "total")
-population_2015 <- censuskor %>%
+population_2015 <- censuskor |>
   filter(year == 2015, type == "population", class2 == "total")
-population_2020 <- censuskor %>%
+population_2020 <- censuskor |>
   filter(year == 2020, type == "population", class2 == "total")
 
 # Merge with spatial data
-sf_2010_merged <- sf_2010 %>%
+sf_2010_merged <- sf_2010 |>
   left_join(population_2010, by = "adm2_code")
 
-sf_2015_merged <- sf_2015 %>%
+sf_2015_merged <- sf_2015 |>
   left_join(population_2015, by = "adm2_code")
 
-sf_2020_merged <- sf_2020 %>%
+sf_2020_merged <- sf_2020 |>
   left_join(population_2020, by = "adm2_code")
 ```
 
