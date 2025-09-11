@@ -37,10 +37,10 @@ library(tidyr)
 library(dplyr)
 
 # Reshape data from wide to long format
-df_long <- df %>%
+df_long <- df |>
   pivot_longer(cols = c(pop2020_men, pop2020_women),
                names_to = "gender",
-               values_to = "population") %>%
+               values_to = "population") |>
   mutate(gender = case_when(
     gender == "pop2020_men" ~ "Men",
     gender == "pop2020_women" ~ "Women"

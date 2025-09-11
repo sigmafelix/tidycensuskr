@@ -1,0 +1,165 @@
+---
+output:
+  github_document:
+    html_preview: false
+always_allow_html: true
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+
+# Who is the package for?
+The `tidycensuskr` package is designed for R users who want to work with South Korean census and administrative boundary data. It aims to provide an easy-to-use interface for population, housing, and socioeconomic statistics linked with geospatial boundaries.
+
+<a href='https://sigmafelix.github.io/tidycensuskr/'><img src='man/figures/seoul_ai.jpeg' align="center"  /></a>
+
+
+
+# Installation
+You can install the released version of `tidycensuskr` from CRAN with:
+
+```r
+# CRAN 
+install.packages("tidycensuskr")
+```
+
+To install the development version, you will need a GitHub account and generate a personal access token with `repo` permissions.
+
+
+```r
+# Development version from GitHub
+rlang::check_installed("remotes")
+remotes::install_github("sigmafelix/tidycensuskr", auth_token = "__YOUR_GITHUB_TOKEN__")
+```
+
+After cloning the repository, you can also install the package using:
+
+```r
+devtools::install(quick = TRUE)
+```  
+
+
+
+# About the data
+
+As of September 2025, this package contains two datasets: Census data (`censuskor`) and the corresponding geospatial data.
+
+
+## 1. Census data
+* Sigungu dataset of three census years (2010, 2015, 2020)
+    - The curated dataset is a **long** table (i.e., one row per district-year-variable)
+
+### `anycensus()`
+
+- The function `anycensus()` allows you to query census data for specific district or province codes and types of data (population, tax, mortality, economy, housing) for three census years (2010, 2015, 2020).
+
+
+```{r demo_call_pop}
+# loading Seoul population data
+tidycensuskr::anycensus(codes = "Seoul", type = "population")
+```
+
+### `censuskor`
+- The function `data(censuskor)` loads an attached dataset that contains the census data in long form. This dataset is automatically loaded upon loading the package.
+
+
+## 2. Administrative boundaries
+
+### `load_district()`
+
+* The function `load_district()` allows you to get the _Si-Gun-Gu_ level `sf` files for the three census years (2010, 2015, 2020).
+
+```{r demo_load_districts}
+# loading boundary sf file
+tidycensuskr::load_districts(year = 2020)
+```    
+
+
+# Examples
+
+Package vignettes are the first place to look for detailed examples. Below are some quick examples to get you started.
+
+```{r mapmaking}
+library(tidycensuskr)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(sf)
+library(biscale)
+rlang::check_installed("cowplot")
+sf_use_s2(FALSE)
+
+
+# load census data
+census_pop_2020 <- anycensus(year = 2020, codes = NULL, type = "population")
+census_pop_2020 <- census_pop_2020 |>
+  rename(population_total = `all households_total_prs`)
+census_housing_2020 <- anycensus(year = 2020, codes = NULL, type = "housing")
+census_housing_2020 <- census_housing_2020 |>
+  rename(housing_total_units = `housing types_total_cnt`)
+census_pop_housing_2020 <- census_pop_2020 |>
+  left_join(census_housing_2020 |>
+              select(adm2_code, housing_total_units),
+            by = "adm2_code") |>
+  transmute(
+    adm2_code = adm2_code,
+    persons_per_housing = population_total / housing_total_units
+  )
+census_mort_2020 <- anycensus(year = 2020, codes = NULL, type = "mortality")
+census_mort_2020 <- census_mort_2020 |>
+  rename(mortality_total = `All causes_total_p1p`)
+
+census_pph_mort_2020 <- census_pop_housing_2020 |>
+  left_join(census_mort_2020 |>
+              select(adm2_code, mortality_total),
+            by = "adm2_code")
+
+# load boundaries
+adm2_2020 <- load_districts(year = 2020)
+
+# merge boundaries and census data
+census_2020_sf <- adm2_2020 |>
+  left_join(census_pph_mort_2020, by = c("adm2_code" = "adm2_code"))
+census_2020_mapbase <-
+  biscale::bi_class(
+    census_2020_sf,
+    x = persons_per_housing,
+    y = mortality_total,
+    style = "quantile",
+    dim = 3
+  )
+
+# draw a bivariate legend
+legend <- bi_legend(pal = "DkCyan",
+                    dim = 3,
+                    xlab = "More Persons per Housing ",
+                    ylab = "All-Cause Mortality ",
+                    size = 8)
+
+# plot population data
+census_2020_bmap <-
+  ggplot(census_2020_mapbase) +
+  geom_sf(aes(fill = bi_class), color = "white", size = 0.1, show.legend = FALSE) +
+  bi_scale_fill(pal = "DkCyan", dim = 3) +
+  theme_minimal() +
+  labs(title = "Persons per housing unit and all-cause mortality rate (2020)") +
+  bi_theme()
+
+# combine map with legend
+census_2020_bimap <- cowplot::ggdraw() +
+  cowplot::draw_plot(census_2020_bmap, 0, 0, 1, 1) +
+  cowplot::draw_plot(legend, 0.2, .65, 0.2, 0.2)
+
+```
+
+
+```{r final_map}
+census_2020_bimap
+```

@@ -3,7 +3,8 @@
 #' ([`censuskor`]) for specific administrative codes (if provided)
 #' @param codes integer or character vector of admin codes (e.g. 11, 26)
 #'   or admin names (e.g. "Seoul").
-#' @param type character(1). "population", "tax", "economy" or "mortality".
+#' @param type character(1). "population", "tax", "economy", "mortality",
+#'   or "housing".
 #'   Defaults to "population".
 #' @param year  integer(1). One of 2010, 2015, or 2020.
 #' @param level character(1). "adm1" for province-level or
@@ -18,7 +19,7 @@
 #' @export
 anycensus <- function(year  = 2020,
                        codes = NULL,
-                       type  = c("population", "tax", "mortality", "economy"),
+                       type  = c("population", "tax", "mortality", "economy", "housing"),
                        level = c("adm1", "adm2")) {
   censuskor <- NULL
   .data <- NULL

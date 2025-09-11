@@ -202,11 +202,11 @@ sidocd_range <- tibble::tribble(
 Transform raw tax data into a standardized format:
 
 ```r
-df_tax_compact <- df_tax %>%
+df_tax_compact <- df_tax |>
   dplyr::transmute(
     adm2_code = C1,           # Administrative code
     value = DT   # Tax value in million KRW
-  ) %>%
+  ) |>
   dplyr::inner_join(
     sgg_lookup[, c("sgg_tax_global", "sido_en", "sigungu_1_en", "adm2_code")],
     multiple = "first"
@@ -219,23 +219,23 @@ df_tax_compact <- df_tax %>%
 Clean and reshape population data with gender disaggregation:
 
 ```r
-df_pop2 <- df_pop %>%
+df_pop2 <- df_pop |>
   dplyr::mutate(
     sex = plyr::mapvalues(C2, c(0, 1, 2), c("total", "male", "female")),
     type = plyr::mapvalues(ITM_ID, c("T00", "T60"), c("population_total", "population_nonrelative"))
-  ) %>%
-  dplyr::select(C1, C1_NM, sex, type, DT) %>%
+  ) |>
+  dplyr::select(C1, C1_NM, sex, type, DT) |>
   tidyr::pivot_wider(
     names_from = c(type, sex),
     values_from = DT
-  ) %>%
+  ) |>
   dplyr::rename(
     sigungu_cd = C1,
     sigungu_kr = C1_NM
-  ) %>%
+  ) |>
   dplyr::mutate(
     adm2_code = as.integer(adm2_code)
-  ) %>%
+  ) |>
   dplyr::inner_join(
     sgg_lookup[, c("adm2_code", "sido_en", "sigungu_1_en")],
     by = "adm2_code",
@@ -251,25 +251,25 @@ The key feature of `tidycensuskr` is converting wide-format, multiple-dataset st
 
 ```r
 # Tax data to long format
-df_tax_long <- df_tax_compact %>%
-  dplyr::select(2:5) %>%
+df_tax_long <- df_tax_compact |>
+  dplyr::select(2:5) |>
   tidyr::pivot_longer(
     cols = "value"
-  ) %>%
+  ) |>
   dplyr::mutate(
     type = "tax",
     class1 = "global",
     class2 = "total",
     unit = "million KRW"
-  ) %>%
+  ) |>
   dplyr::select(-name)
 
 # Population data to long format
-df_pop_long <- df_pop2 %>%
-  dplyr::select(-2) %>%
+df_pop_long <- df_pop2 |>
+  dplyr::select(-2) |>
   tidyr::pivot_longer(
     cols = 2:7
-  ) %>%
+  ) |>
   tidyr::separate(col = "name", into = c("type", "class1", "class2"), sep = "_")
 
 ```
@@ -281,14 +281,14 @@ df_pop_long <- df_pop2 %>%
 censuskor <- dplyr::bind_rows(
     df_tax_long,
     df_pop_long
-  ) %>%
+  ) |>
   dplyr::rename(
     adm1 = sido_en,
     adm2 = sigungu_1_en
-  ) %>%
+  ) |>
   dplyr::mutate(
     year = 2020
-  ) %>%
+  ) |>
   dplyr::select(
     year, adm1, adm2, adm2_other, adm2_code,
     type, class1, class2, unit, value
@@ -322,9 +322,9 @@ data(censuskor)
 head(censuskor)
 
 # Filter for Seoul population data
-seoul_pop <- censuskor %>%
-  filter(adm1 == "Seoul", type == "population", class1 == "population") %>%
-  select(adm2, class2, value) %>%
+seoul_pop <- censuskor |>
+  filter(adm1 == "Seoul", type == "population", class1 == "population") |>
+  select(adm2, class2, value) |>
   pivot_wider(names_from = class2, values_from = value)
 
 head(seoul_pop)
