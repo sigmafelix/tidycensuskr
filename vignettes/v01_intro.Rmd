@@ -1,5 +1,5 @@
 ---
-title: "Introduction to tidycensuskr"
+title: "Working with tidycensuskr"
 output: rmarkdown::html_vignette
 date: "`r format(Sys.Date(), '%B %d, %Y')`"
 vignette: >
@@ -16,282 +16,126 @@ knitr::opts_chunk$set(
   message = FALSE,
   out.width = "100%"
 )
+
+library(ggplot2)
+library(sf)
+library(dplyr)
+library(tidyr)
 ```
 
 
 
-## Get Started
+## Getting Started with tidycensuskr
 
-* Data retrieval functions
-* Geographic boundary functions
-* Data transformation utilities
-* Visualisation helpers
+The `tidycensuskr` package provides easy access to South Korean census and socioeconomic statistics, along with corresponding geospatial boundary data. With this package, R users can query and visualize population, housing, economy, tax, and mortality data linked to administrative districts.
 
+Load the package:
+```{r, include = TRUE}
+library(tidycensuskr)
 
-## Data Structure
-* Explanation of how census data is organised in the package
-  - `censuskor` is the main dataset containing census data.
-  - `data(censuskor)` loads the dataset.
-  - For details, refer to the `censuskor` documentation by running `?censuskor` in R.
+```
 
-* Available geographic levels 
-  - Currently the package supports district(municipal)-level (_Si-Gun-Gu_) level data
-
-* Geographic boundary
 
 
 
 ## 1. Understanding Korean Geographic Hierarchies
 
-In Korea, there are three major levels of geographic hierarchy for administrative purposes:
+South Korean census data is organized by three levels of administrative divisions:
 
 - **_Si-Do_**: The highest level of administrative division.
   - Metropolitan cities are treated as provinces.
-  - States/Special Self-Governing Province: another name of hierarchy for Jeju-do, Gangwon-do, and Jeollabuk-do. Such names are used following the statute for giving special status to these provinces.
+  - Jeju-do, Gangwon-do, and Jeollabuk-do have special self-governing status under Korean law.
 - **_Si-Gun-Gu_**: The second level, which includes cities and counties.
-  - **_Si_**: City. In most provinces, cities are autonomous administrative units.
-  - **_Gun_**: County. Counties are rural areas with smaller populations (<50,000).
-  - **_Gu_**: District/Ward. Districts are urban areas within metropolitan cities (these districts are called autonomous districts), whereas districts in autonomous cities are called non-autonomous districts.
-- **_Eup-Myeon-Dong_**: The third level, which includes town and districts.
-  - **_Eup_**: Town. Towns are urban areas within counties (Gun) with populations over 20,000.
-  - **_Myeon_**: Township. Townships are rural areas within counties (Gun) with populations under 20,000.
-  - **_Dong_**: Neighborhood. Neighborhoods are the smallest administrative units within cities (Si) and districts (Gu).
+  - **_Si_**: Cities (urban administrative units)
+  - **_Gun_**: Counties (rural areas, typically <50,000 population)
+  - **_Gu_**: Districts (urban subdivisions of metropolitan cities or large cities).
+    - _Gu_ under metropolitan cities are autonomous districts
+    - _Gu_ under 11 large cities, as of 2025 (i.e., Suwon-si, Seongnam-si, Anyang-si, Goyang-si, Ansan-si, Yongin-si, Cheongju-si, Cheonan-si, Pohang-si, Changwon-si, Jeonju-si), are administraitve districts 
+- **_Eup-Myeon-Dong_**: The third level, which includes town and districts. (_planned for future releases_)
+  - **_Eup_**: Towns (urban, >20,000 population, within a county)
+  - **_Myeon_**: Townships (rural, <20,000 population, within a county)
+  - **_Dong_**: Neighborhoods (smallest units within cities and districts)
 
+Because administrative boundaries and coding systems can vary across years and data sources, `tidycensuskr` harmonizes codes to allow consistent integration of statistics. 
 
-| South Korea | US | EU | UK(England) |
-|---|---|---|---|
-| _Si/Do_ | State  | NUTS[^1]1  | Regions/Combined Authorities |
-| _Si/Gun/Gu_ | County | NUTS2 | County |
-| _Eup/Myeon/Dong_ | Townships/Towns/Census County Division | NUTS3 | Districts/Wards/Boroughs |
-
-[^1] NUTS: Nomenclature of Territorial Units for Statistics, a geocode standard for referencing the subdivisions of countries for statistical purposes.
-
-
-## Get Started
-### tl;dr
-
-| type | class1 | class2 | unit | description | available years |
-|------|--------|--------|------|-------------|------|
-| population | all households | total | persons | Total population | 2010, 2015, 2020 |
-| population | all households | male | persons | Male population | 2010, 2015, 2020 |
-| population | all households | female | persons | Female population | 2010, 2015, 2020 |
-| tax | income | general | million KRW | Comprehensive Income Tax | 2020 |
-| tax | income | labor | million KRW | Employment Income Tax | 2020 |
-| mortality | All causes | total | per 100k population | Age-standardized mortality rate | 2020 |
-| mortality | All causes | male | per 100k population | Age-standardized mortality rate (male) | 2020 |
-| mortality | All causes | female | per 100k population | Age-standardized mortality rate (female) | 2020 |
-| economy | company | total | count | Number of business entities | 2010, 2015, 2020 |
-| housing | housing types | total | count | Total number of housing units | 2010, 2015, 2020 |
-
-
-### Data
-
-The dataset is provided in **long form**.  
-
-If you open the `censuskor` dataset, you will see **5,178 rows and 10 columns**. This is a fairly substantial size.  
-
-```r
- data(censuskor)
- colnames(censuskor)
-```
+Currently, for 2020 data there are 250 _Si-Gun-Gu_ and 17 _Si-Do_.
+```{r, include = TRUE}
+adm2_2020 <- load_districts(year = 2020)
+print(length(unique(adm2_2020$adm2_code)))
+print(length(unique(substr(adm2_2020$adm2_code, 1, 2))))
 
 ```
-[1] "year" "adm1" "adm2" "adm2_code"  "type"  "class1"  "class2"  "unit"   "value" 
+
+
+## 2. Available census data
+The package provides census and survey data through:  
+  - The function `anycensus()` for querying subsets  
+  - The built-in dataset `censuskor` in long format  
+
+
+### Data types
+<div style="font-size:80%;">
+| type       | class1        | class2  | unit               | description                              | available_years | data_provider                |
+|------------|---------------|---------|--------------------|------------------------------------------|-----------------|------------------------------|
+| population | all households| total   | persons            | Total population                         | 2010, 2015, 2020| Statistics Korea             |
+| population | all households| male    | persons            | Male population                          | 2010, 2015, 2020| Statistics Korea             |
+| population | all households| female  | persons            | Female population                        | 2010, 2015, 2020| Statistics Korea             |
+| economy    | company       | total   | count              | Number of business entities              | 2010, 2015, 2020| Statistics Korea             |
+| housing    | housing types | total   | count              | Total number of housing units            | 2010, 2015, 2020| Statistics Korea             |
+| tax        | income        | general | million KRW        | Comprehensive Income Tax                 | 2020            | National Tax Service         |
+| tax        | income        | labor   | million KRW        | Employment Income Tax                    | 2020            | National Tax Service         |
+| mortality  | All causes    | total   | per 100k population| Age-standardized mortality rate          | 2020            | Statistics Korea (Survey)    |
+| mortality  | All causes    | male    | per 100k population| Age-standardized mortality rate (male)   | 2020            | Statistics Korea (Survey)    |
+| mortality  | All causes    | female  | per 100k population| Age-standardized mortality rate (female) | 2020            | Statistics Korea (Survey)    |
+</div>
+
+
+### Query data using `anycensus()`
+
+The function `anycensus()` returns a tidy tibble with columns such as:
+
+- `year`: year of the dataset
+- `adm1`, `adm1_code`: Si-Do (province) level administrative unit name and its corresponding code 
+- `adm2`, `adm2_code`: Si-Gun-Gu (district) level administrative unit name and its corresponding code 
+
+Columns containing the values are added as a wide form. The column `adm2_code` links census data to boundary files retrieved with `load_districts()`.
+
+```{r, include = TRUE}
+df_2020 <- anycensus(year = 2020, type = "mortality")
+head(df_2020)
+
 ```
 
-We have 9 columns in total. The key column is `type`, which determines the main index and splits the dataset into three components: **population, tax, and mortality**.
+### Built-in dataset `censuskor`
 
-```r
-censuskor |> 
-  distinct(type)
-```
+You can access the whole dataset directly using the function `data(censuskor)` which returns the built-in dataset in a long form. 
 
-Let's dive into each category.
+- `year`: year of the dataset
+- `adm1`, `adm1_code`: Si-Do (province) level administrative unit name and its corresponding code  
+- `adm2`, `adm2_code`: Si-Gun-Gu (district) level administrative unit name and its corresponding code 
+- `type`: Types of census or survey
+- `class1`, `class2`: Classification variables providing further breakdowns
+- `unit`: Measurement unit for the value
+- `value`: The observed census value for the given combination of year, region, and category  
 
-
-### Population
-
-In Korea, population data are collected in two ways:  
-
-- **Complete census** (전수조사):  
-  - Population Census (5-year interval)  
-  - Resident Registration Statistics (annual)  
-
-- **Sample surveys** (표본조사):  
-  - For example, the Economically Active Population Survey, which conducts monthly household interviews for those aged 15 or older.  
-
-In this package, the dataset records information from the **three most recent Population Censuses**: **2010, 2015, and 2020**.
-
-
-
-```r
-censuskor |> 
-  filter(type == "population")
-```
-
-Example output:  
+```{r, include = TRUE}
+data(censuskor)
+head(censuskor)
 
 ```
-# A tibble: 2,361 × 9
-    year adm1  adm2         adm2_code type       class1         class2 unit     value
-   <dbl> <chr> <chr>            <dbl> <chr>      <chr>          <chr>  <chr>    <dbl>
- 1  2010 Seoul Jongno-gu        11010 population all households total  persons 147843
- 2  2010 Seoul Jongno-gu        11010 population all households male   persons  71313
- 3  2010 Seoul Jongno-gu        11010 population all households female persons  76530
- 4  2010 Seoul Jung-gu          11020 population all households total  persons 115387
- 5  2010 Seoul Jung-gu          11020 population all households male   persons  56104
- 6  2010 Seoul Jung-gu          11020 population all households female persons  59283
- 7  2010 Seoul Yongsan-gu       11030 population all households total  persons 218308
- 8  2010 Seoul Yongsan-gu       11030 population all households male   persons 103711
- 9  2010 Seoul Yongsan-gu       11030 population all households female persons 114597
-10  2010 Seoul Seongdong-gu     11040 population all households total  persons 287460
-# ℹ 2,351 more rows
-# ℹ Use `print(n = ...)` to see more rows
-```
 
-- **class1**: all households  
-- **class2**: total, male, female  
-- **unit**: persons  
-- **value**: head counts  
+### Quick Visualization
 
-For example, *Jongno-gu* (Jongno district) in 2010 had a total population of **147,843**, consisting of **71,313 males** and **76,530 females**.
+Since `anycensus()` returns tidy data, visualization with `ggplot2` is straightforward.
 
-
-### Example: Seoul’s Population Distribution (2020)
-
-```r
-# draw a distribution graph by rank
-library(dplyr)
-library(ggplot2)
-library(scales)
-
-seoul_total <- censuskor |>
-  filter(type == "population",
-         year == 2020,
-         class2 == "total",
-         adm1 == "Seoul") |>
-  mutate(adm2 = str_replace(adm2, "-gu$", ""))  # remove '-gu' suffix
-
-ggplot(seoul_total, aes(x = reorder(adm2, value), y = value)) +
-  geom_col(fill = "skyblue", colour = "black") +
-  scale_y_continuous(labels = comma) +
+```{r, include = TRUE, fig.width=7, fig.height=4}
+ggplot(df_2020, aes(x = `All causes_male_p1p`, y = `All causes_female_p1p`)) +
+  geom_point() +
   labs(
-    title = "Seoul 2020 Census Total Population by District",
-    x = "District",
-    y = "Population"
+    x = "Male mortality (per 100,000 population)",
+    y = "Female mortality (per 100,000 population)",
+    title = "Male vs. Female Age-standardized Mortality Rates in South Korea (2020)"
   ) +
-  coord_flip() +
-  theme_minimal(base_size = 14)
-```
-
-![barchart](man/figures/barchart.png)
-
-
-### Dot Plot: Population Across Census Years
-
-To compare population change by district across **2010, 2015, and 2020**, we can create a dot plot:
-
-```r
-# Dot plot across census years
-seoul_years <- censuskor |>
-  filter(type == "population",
-         class2 == "total",
-         adm1 == "Seoul") |>
-  mutate(adm2 = str_replace(adm2, "-gu$", ""))
-
-ggplot(seoul_years, aes(x = factor(year), y = value, group = adm2, colour = adm2)) +
-  geom_line(alpha = 0.5) +
-  geom_point(size = 3) +
-  labs(
-    title = "Seoul Census Population Trends (2010, 2015, 2020)",
-    x = "Year",
-    y = "Population",
-    colour = "District"
-  ) +
-  theme_minimal(base_size = 14)
-```
-
-This shows how population shifted in each Seoul district across the three census years.
-
----
-
-### Tax
-
-In the dataset, tax records are divided into two categories:  
-
-- **Global (종합소득세)** → Comprehensive Income Tax  
-- **Income (근로소득세)** → Employment Income Tax  
-
-```r
-censuskor |> 
-  filter(type == "tax" & year == 2020) |> 
-  as_tibble()
-```
-
-Example output:  
+  theme_minimal(base_size = 10)
 
 ```
-# A tibble: 458 × 9
-    year adm1  adm2         adm2_code type  class1 class2  unit          value
-   <dbl> <chr> <chr>            <dbl> <chr> <chr>  <chr>   <chr>         <dbl>
- 1  2020 Seoul Gangnam-gu       11230 tax   income general million KRW 5209045
- 2  2020 Seoul Gangdong-gu      11250 tax   income general million KRW  461088
- 3  2020 Seoul Gangbuk-gu       11090 tax   income general million KRW  107037
-```
-
-Distinct classes:  
-
-```r
-censuskor |> 
-  filter(type == "tax" & year == 2020) |> 
-  distinct(class2)
-```
-
-```
-# A tibble: 2 × 1
-  class2 
-  <chr>  
-1 general
-2 labor  
-```
-
-So `class2` distinguishes between **general (comprehensive income)** and **labour (employment income)**.
-
----
-
-## Mortality
-
-Mortality data records age-standardised death rates by district. Units are given as **per 100,000 population**.
-
-```r
-censuskor |> 
-   filter(type == "mortality")
-```
-
-Example output:  
-
-```
-# A tibble: 783 × 10
-    year adm1  adm2         adm2_other adm2_code type      class1     class2 unit                value
-   <dbl> <chr> <chr>        <chr>          <int> <chr>     <chr>      <chr>  <chr>               <chr>
- 1  2020 Seoul Jongno-gu    NA             11010 mortality All causes total  per 100k population 261.7
- 2  2020 Seoul Jongno-gu    NA             11010 mortality All causes male   per 100k population 370.2
- 3  2020 Seoul Jongno-gu    NA             11010 mortality All causes female per 100k population 169.4
-```
-
-- **class1**: cause of death (e.g., all causes)  
-- **class2**: total, male, female  
-- **unit**: per 100,000 population  
-- **value**: mortality rate  
-
-For example, in 2020, *Jongno-gu* recorded an overall mortality rate of **261.7 per 100,000**, with **370.2 for males** and **169.4 for females**.  
-
-
-
-<!-- ## Working with Korean Geographic Hierarchies -->
-
-<!-- Understanding Sido → Sigungu → Eupmyeondong relationships -->
-<!-- Aggregating Eupmyeondong data to Sigungu level -->
-<!-- Handling administrative boundary changes -->
-
-
