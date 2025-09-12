@@ -112,9 +112,16 @@ tidycensuskr::load_districts(year = 2020)
 Package vignettes are the first place to look for detailed examples.
 Below are some quick examples to get you started.
 
+## Simple map making
+
+`anycensus()` will return an analysis-ready data.frame that can be
+easily merged with the corresponding boundary `sf` object from
+`load_districts()`. Here is a simple example of making maps with
+population data.
+
 ``` r
 library(tidycensuskr)
-#> tidycensuskr 0.1.0 (2025-09-11)
+#> tidycensuskr 0.1.1 (2025-09-13)
 library(ggplot2)
 library(dplyr)
 #> 
@@ -127,9 +134,9 @@ library(dplyr)
 #>     intersect, setdiff, setequal, union
 library(tidyr)
 library(sf)
-#> Linking to GEOS 3.12.2, GDAL 3.11.3, PROJ 9.4.1; sf_use_s2() is TRUE
+#> Linking to GEOS 3.12.1, GDAL 3.8.4, PROJ 9.4.0; sf_use_s2() is TRUE
 library(biscale)
-rlang::check_installed("cowplot")
+library(cowplot)
 sf_use_s2(FALSE)
 #> Spherical geometry (s2) switched off
 
@@ -138,6 +145,34 @@ sf_use_s2(FALSE)
 census_pop_2020 <- anycensus(year = 2020, codes = NULL, type = "population")
 census_pop_2020 <- census_pop_2020 |>
   rename(population_total = `all households_total_prs`)
+
+# load boundaries
+adm2_2020 <- load_districts(year = 2020)
+
+# merge boundaries and census data
+census_2020_sf <- adm2_2020 |>
+  left_join(census_pop_2020, by = c("adm2_code" = "adm2_code"))
+
+# plot population data
+census_2020_pop <-
+  ggplot(census_2020_sf) +
+  geom_sf(aes(fill = population_total), color = "white", size = 0.1) +
+  theme_minimal() +
+  labs(title = "Population (2020)") +
+  theme(plot.title = element_text(size = 12))
+
+census_2020_pop
+```
+
+<img src="man/figures/README-mapmaking-1.png" width="100%" />
+
+## Bivariate map
+
+Moving on to a complex example, the code below demonstrates to generate
+a bivariate map with persons per housing unit and all-cause mortality
+rate.
+
+``` r
 census_housing_2020 <- anycensus(year = 2020, codes = NULL, type = "housing")
 census_housing_2020 <- census_housing_2020 |>
   rename(housing_total_units = `housing types_total_cnt`)
@@ -157,9 +192,6 @@ census_pph_mort_2020 <- census_pop_housing_2020 |>
   left_join(census_mort_2020 |>
               select(adm2_code, mortality_total),
             by = "adm2_code")
-
-# load boundaries
-adm2_2020 <- load_districts(year = 2020)
 
 # merge boundaries and census data
 census_2020_sf <- adm2_2020 |>
@@ -187,15 +219,15 @@ census_2020_bmap <-
   bi_scale_fill(pal = "DkCyan", dim = 3) +
   theme_minimal() +
   labs(title = "Persons per housing unit and all-cause mortality rate (2020)") +
-  bi_theme()
+  bi_theme(base_size = 14) +
+  theme(plot.title = element_text(size = 12))
 
 # combine map with legend
 census_2020_bimap <- cowplot::ggdraw() +
   cowplot::draw_plot(census_2020_bmap, 0, 0, 1, 1) +
-  cowplot::draw_plot(legend, 0.2, .65, 0.2, 0.2)
-```
+  cowplot::draw_plot(legend, 0.7, 0.02, 0.3, 0.3)
 
-``` r
+
 census_2020_bimap
 ```
 
