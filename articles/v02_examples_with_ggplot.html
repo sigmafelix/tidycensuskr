@@ -33,9 +33,8 @@
 <li class="active nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
-<li><a class="dropdown-item" href="../articles/v01_intro.html">Working with tidycensuskr</a></li>
+<li><a class="dropdown-item" href="../articles/v01_intro.html">Introduction to tidycensuskr</a></li>
     <li><a class="dropdown-item" href="../articles/v02_examples_with_ggplot.html">Examples with ggplot2</a></li>
-    <li><a class="dropdown-item" href="../articles/v02_regional_analysis.html">Regional analysis with tidycensuskr</a></li>
     <li><a class="dropdown-item" href="../articles/v03_anycensus.html">Regional Analysis</a></li>
     <li><a class="dropdown-item" href="../articles/v04_data_cleaning_kosis.html">Data Cleaning: From KOSIS Raw Data to Tidy Format</a></li>
   </ul>
@@ -173,8 +172,10 @@ that retrieves the spatial data for the specified year.</p>
 <span>    title <span class="op">=</span> <span class="st">"Sex ratio in Seoul Metropolitan Area (2020)"</span>,</span>
 <span>    color <span class="op">=</span> <span class="st">"ADM1"</span></span>
 <span>  <span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## Ignoring unknown labels:</span></span>
+<span><span class="co">## <span style="color: #00BBBB;">•</span> <span style="color: #00BB00;">colour</span> : <span style="color: #0000BB;">"ADM1"</span></span></span></code></pre>
 <p><img src="v02_examples_with_ggplot_files/figure-html/choropleth-1-1.png" width="960"></p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">adm2_sf_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/load_districts.html">load_districts</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
 <span><span class="va">adm2_sf_2020_kr</span> <span class="op">&lt;-</span> <span class="va">adm2_sf_2020</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">inner_join</a></span><span class="op">(</span><span class="va">df_wide</span>, by <span class="op">=</span> <span class="st">"adm2_code"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
@@ -192,6 +193,8 @@ that retrieves the spatial data for the specified year.</p>
 <span>    title <span class="op">=</span> <span class="st">"Sex ratio (2020)"</span>,</span>
 <span>    color <span class="op">=</span> <span class="st">"ADM1"</span></span>
 <span>  <span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## Ignoring unknown labels:</span></span>
+<span><span class="co">## <span style="color: #00BBBB;">•</span> <span style="color: #00BB00;">colour</span> : <span style="color: #0000BB;">"ADM1"</span></span></span></code></pre>
 <p><img src="v02_examples_with_ggplot_files/figure-html/choropleth-2-1.png" width="960"></p>
 </div>
 <div class="section level2">
@@ -200,12 +203,12 @@ that retrieves the spatial data for the specified year.</p>
 <div class="section level3">
 <h3 id="filter-and-merge-data">Filter and Merge Data<a class="anchor" aria-label="anchor" href="#filter-and-merge-data"></a>
 </h3>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load spatial data for 2010, 2015, and 2020</span></span>
 <span><span class="va">sf_2010</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/load_districts.html">load_districts</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2010</span><span class="op">)</span></span>
 <span><span class="va">sf_2015</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/load_districts.html">load_districts</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2015</span><span class="op">)</span></span>
 <span><span class="va">sf_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/load_districts.html">load_districts</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Filter censuskor data</span></span>
 <span><span class="va">population_2010</span> <span class="op">&lt;-</span> <span class="va">censuskor</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">year</span> <span class="op">==</span> <span class="fl">2010</span>, <span class="va">type</span> <span class="op">==</span> <span class="st">"population"</span>, <span class="va">class2</span> <span class="op">==</span> <span class="st">"total"</span><span class="op">)</span></span>
@@ -230,7 +233,7 @@ that retrieves the spatial data for the specified year.</p>
 <p><code>value</code> field is a universal field in the
 <code>censuskor</code> dataset that contains the data values. You can
 use this field to create maps for each year.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Palette</span></span>
 <span><span class="va">fill_cols</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"#F8B195"</span>, <span class="st">"#F67280"</span>, <span class="st">"#C06C84"</span>, <span class="st">"#6C5B7B"</span>, <span class="st">"#355C7D"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">options</a></span><span class="op">(</span>scipen <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span>
@@ -259,10 +262,10 @@ use this field to create maps for each year.</p>
 <span><span class="co"># Print maps</span></span>
 <span><span class="va">map_2010</span></span></code></pre></div>
 <p><img src="v02_examples_with_ggplot_files/figure-html/create-maps-1.png" width="700"></p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">map_2015</span></span></code></pre></div>
 <p><img src="v02_examples_with_ggplot_files/figure-html/create-maps-2.png" width="700"></p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">map_2020</span></span></code></pre></div>
 <p><img src="v02_examples_with_ggplot_files/figure-html/create-maps-3.png" width="700"></p>
 </div>
@@ -270,7 +273,7 @@ use this field to create maps for each year.</p>
 <div class="section level2">
 <h2 id="basemap">Basemap<a class="anchor" aria-label="anchor" href="#basemap"></a>
 </h2>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/r-tmap/tmap" class="external-link">tmap</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">geodata</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## Loading required package: terra</span></span></code></pre>
@@ -280,7 +283,7 @@ use this field to create maps for each year.</p>
 <pre><code><span><span class="co">## The following object is masked from 'package:tidyr':</span></span>
 <span><span class="co">## </span></span>
 <span><span class="co">##     extract</span></span></code></pre>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/r-tmap/tmaptools" class="external-link">tmaptools</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># load korea polygon data</span></span>
