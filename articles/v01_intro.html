@@ -5,12 +5,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Introduction to tidycensuskr • tidycensuskr</title>
+<title>Working with tidycensuskr • tidycensuskr</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Introduction to tidycensuskr">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Working with tidycensuskr">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -33,8 +33,9 @@
 <li class="active nav-item dropdown">
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
-<li><a class="dropdown-item" href="../articles/v01_intro.html">Introduction to tidycensuskr</a></li>
+<li><a class="dropdown-item" href="../articles/v01_intro.html">Working with tidycensuskr</a></li>
     <li><a class="dropdown-item" href="../articles/v02_examples_with_ggplot.html">Examples with ggplot2</a></li>
+    <li><a class="dropdown-item" href="../articles/v02_regional_analysis.html">Regional analysis with tidycensuskr</a></li>
     <li><a class="dropdown-item" href="../articles/v03_anycensus.html">Regional Analysis</a></li>
     <li><a class="dropdown-item" href="../articles/v04_data_cleaning_kosis.html">Data Cleaning: From KOSIS Raw Data to Tidy Format</a></li>
   </ul>
@@ -58,9 +59,9 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
 
-      <h1>Introduction to tidycensuskr</h1>
+      <h1>Working with tidycensuskr</h1>
             
-            <h4 data-toc-skip class="date">September 11, 2025</h4>
+            <h4 data-toc-skip class="date">September 12, 2025</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/sigmafelix/tidycensuskr/blob/main/vignettes/v01_intro.Rmd" class="external-link"><code>vignettes/v01_intro.Rmd</code></a></small>
       <div class="d-none name"><code>v01_intro.Rmd</code></div>
@@ -69,53 +70,30 @@
     
     
 <div class="section level2">
-<h2 id="get-started">Get Started<a class="anchor" aria-label="anchor" href="#get-started"></a>
+<h2 id="getting-started-with-tidycensuskr">Getting Started with tidycensuskr<a class="anchor" aria-label="anchor" href="#getting-started-with-tidycensuskr"></a>
 </h2>
-<ul>
-<li>Data retrieval functions</li>
-<li>Geographic boundary functions</li>
-<li>Data transformation utilities</li>
-<li>Visualisation helpers</li>
-</ul>
-</div>
-<div class="section level2">
-<h2 id="data-structure">Data Structure<a class="anchor" aria-label="anchor" href="#data-structure"></a>
-</h2>
-<ul>
-<li>Explanation of how census data is organised in the package
-<ul>
-<li>
-<code>censuskor</code> is the main dataset containing census
-data.</li>
-<li>
-<code>data(censuskor)</code> loads the dataset.</li>
-<li>For details, refer to the <code>censuskor</code> documentation by
-running <code><a href="../reference/censuskor.html">?censuskor</a></code> in R.</li>
-</ul>
-</li>
-<li>Available geographic levels
-<ul>
-<li>Currently the package supports district(municipal)-level
-(<em>Si-Gun-Gu</em>) level data</li>
-</ul>
-</li>
-<li>Geographic boundary</li>
-</ul>
+<p>The <code>tidycensuskr</code> package provides easy access to South
+Korean census and socioeconomic statistics, along with corresponding
+geospatial boundary data. With this package, R users can query and
+visualize population, housing, economy, tax, and mortality data linked
+to administrative districts.</p>
+<p>Load the package:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/sigmafelix/tidycensuskr" class="external-link">tidycensuskr</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="understanding-korean-geographic-hierarchies">1. Understanding Korean Geographic Hierarchies<a class="anchor" aria-label="anchor" href="#understanding-korean-geographic-hierarchies"></a>
 </h2>
-<p>In Korea, there are three major levels of geographic hierarchy for
-administrative purposes:</p>
+<p>South Korean census data is organized by three levels of
+administrative divisions:</p>
 <ul>
 <li>
 <strong><em>Si-Do</em></strong>: The highest level of administrative
 division.
 <ul>
 <li>Metropolitan cities are treated as provinces.</li>
-<li>States/Special Self-Governing Province: another name of hierarchy
-for Jeju-do, Gangwon-do, and Jeollabuk-do. Such names are used following
-the statute for giving special status to these provinces.</li>
+<li>Jeju-do, Gangwon-do, and Jeollabuk-do have special self-governing
+status under Korean law.</li>
 </ul>
 </li>
 <li>
@@ -123,87 +101,73 @@ the statute for giving special status to these provinces.</li>
 includes cities and counties.
 <ul>
 <li>
-<strong><em>Si</em></strong>: City. In most provinces, cities are
-autonomous administrative units.</li>
+<strong><em>Si</em></strong>: Cities (urban administrative
+units)</li>
 <li>
-<strong><em>Gun</em></strong>: County. Counties are rural areas with
-smaller populations (&lt;50,000).</li>
+<strong><em>Gun</em></strong>: Counties (rural areas, typically
+&lt;50,000 population)</li>
 <li>
-<strong><em>Gu</em></strong>: District/Ward. Districts are urban
-areas within metropolitan cities (these districts are called autonomous
-districts), whereas districts in autonomous cities are called
-non-autonomous districts.</li>
+<strong><em>Gu</em></strong>: Districts (urban subdivisions of
+metropolitan cities or large cities).
+<ul>
+<li>
+<em>Gu</em> under metropolitan cities are autonomous districts</li>
+<li>
+<em>Gu</em> under 11 large cities, as of 2025 (i.e., Suwon-si,
+Seongnam-si, Anyang-si, Goyang-si, Ansan-si, Yongin-si, Cheongju-si,
+Cheonan-si, Pohang-si, Changwon-si, Jeonju-si), are administraitve
+districts</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>
 <strong><em>Eup-Myeon-Dong</em></strong>: The third level, which
-includes town and districts.
+includes town and districts. (<em>planned for future releases</em>)
 <ul>
 <li>
-<strong><em>Eup</em></strong>: Town. Towns are urban areas within
-counties (Gun) with populations over 20,000.</li>
+<strong><em>Eup</em></strong>: Towns (urban, &gt;20,000 population,
+within a county)</li>
 <li>
-<strong><em>Myeon</em></strong>: Township. Townships are rural areas
-within counties (Gun) with populations under 20,000.</li>
+<strong><em>Myeon</em></strong>: Townships (rural, &lt;20,000
+population, within a county)</li>
 <li>
-<strong><em>Dong</em></strong>: Neighborhood. Neighborhoods are the
-smallest administrative units within cities (Si) and districts
-(Gu).</li>
+<strong><em>Dong</em></strong>: Neighborhoods (smallest units within
+cities and districts)</li>
 </ul>
 </li>
 </ul>
-<table class="table">
-<colgroup>
-<col width="25%">
-<col width="25%">
-<col width="25%">
-<col width="25%">
-</colgroup>
-<thead><tr class="header">
-<th>South Korea</th>
-<th>US</th>
-<th>EU</th>
-<th>UK(England)</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td><em>Si/Do</em></td>
-<td>State</td>
-<td>NUTS[^1]1</td>
-<td>Regions/Combined Authorities</td>
-</tr>
-<tr class="even">
-<td><em>Si/Gun/Gu</em></td>
-<td>County</td>
-<td>NUTS2</td>
-<td>County</td>
-</tr>
-<tr class="odd">
-<td><em>Eup/Myeon/Dong</em></td>
-<td>Townships/Towns/Census County Division</td>
-<td>NUTS3</td>
-<td>Districts/Wards/Boroughs</td>
-</tr>
-</tbody>
-</table>
-<p>[^1] NUTS: Nomenclature of Territorial Units for Statistics, a
-geocode standard for referencing the subdivisions of countries for
-statistical purposes.</p>
+<p>Because administrative boundaries and coding systems can vary across
+years and data sources, <code>tidycensuskr</code> harmonizes codes to
+allow consistent integration of statistics.</p>
+<p>Currently, for 2020 data there are 250 <em>Si-Gun-Gu</em> and 17
+<em>Si-Do</em>.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">adm2_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/load_districts.html">load_districts</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">adm2_2020</span><span class="op">$</span><span class="va">adm2_code</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 250</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/substr.html" class="external-link">substr</a></span><span class="op">(</span><span class="va">adm2_2020</span><span class="op">$</span><span class="va">adm2_code</span>, <span class="fl">1</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] 17</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="get-started-1">Get Started<a class="anchor" aria-label="anchor" href="#get-started-1"></a>
+<h2 id="available-census-data">2. Available census data<a class="anchor" aria-label="anchor" href="#available-census-data"></a>
 </h2>
+<p>The package provides census and survey data through:<br>
+- The function <code><a href="../reference/anycensus.html">anycensus()</a></code> for querying subsets<br>
+- The built-in dataset <code>censuskor</code> in long format</p>
 <div class="section level3">
-<h3 id="tldr">tl;dr<a class="anchor" aria-label="anchor" href="#tldr"></a>
+<h3 id="data-types">Data types<a class="anchor" aria-label="anchor" href="#data-types"></a>
 </h3>
+<div style="font-size:80%;">
 <table class="table">
 <colgroup>
-<col width="12%">
-<col width="17%">
-<col width="17%">
-<col width="12%">
-<col width="27%">
-<col width="12%">
+<col width="8%">
+<col width="10%">
+<col width="6%">
+<col width="13%">
+<col width="28%">
+<col width="11%">
+<col width="20%">
 </colgroup>
 <thead><tr class="header">
 <th>type</th>
@@ -211,7 +175,8 @@ statistical purposes.</p>
 <th>class2</th>
 <th>unit</th>
 <th>description</th>
-<th>available years</th>
+<th>available_years</th>
+<th>data_provider</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
@@ -221,6 +186,7 @@ statistical purposes.</p>
 <td>persons</td>
 <td>Total population</td>
 <td>2010, 2015, 2020</td>
+<td>Statistics Korea</td>
 </tr>
 <tr class="even">
 <td>population</td>
@@ -229,6 +195,7 @@ statistical purposes.</p>
 <td>persons</td>
 <td>Male population</td>
 <td>2010, 2015, 2020</td>
+<td>Statistics Korea</td>
 </tr>
 <tr class="odd">
 <td>population</td>
@@ -237,6 +204,25 @@ statistical purposes.</p>
 <td>persons</td>
 <td>Female population</td>
 <td>2010, 2015, 2020</td>
+<td>Statistics Korea</td>
+</tr>
+<tr class="even">
+<td>economy</td>
+<td>company</td>
+<td>total</td>
+<td>count</td>
+<td>Number of business entities</td>
+<td>2010, 2015, 2020</td>
+<td>Statistics Korea</td>
+</tr>
+<tr class="odd">
+<td>housing</td>
+<td>housing types</td>
+<td>total</td>
+<td>count</td>
+<td>Total number of housing units</td>
+<td>2010, 2015, 2020</td>
+<td>Statistics Korea</td>
 </tr>
 <tr class="even">
 <td>tax</td>
@@ -245,6 +231,7 @@ statistical purposes.</p>
 <td>million KRW</td>
 <td>Comprehensive Income Tax</td>
 <td>2020</td>
+<td>National Tax Service</td>
 </tr>
 <tr class="odd">
 <td>tax</td>
@@ -253,6 +240,7 @@ statistical purposes.</p>
 <td>million KRW</td>
 <td>Employment Income Tax</td>
 <td>2020</td>
+<td>National Tax Service</td>
 </tr>
 <tr class="even">
 <td>mortality</td>
@@ -261,6 +249,7 @@ statistical purposes.</p>
 <td>per 100k population</td>
 <td>Age-standardized mortality rate</td>
 <td>2020</td>
+<td>Statistics Korea (Survey)</td>
 </tr>
 <tr class="odd">
 <td>mortality</td>
@@ -269,6 +258,7 @@ statistical purposes.</p>
 <td>per 100k population</td>
 <td>Age-standardized mortality rate (male)</td>
 <td>2020</td>
+<td>Statistics Korea (Survey)</td>
 </tr>
 <tr class="even">
 <td>mortality</td>
@@ -277,236 +267,106 @@ statistical purposes.</p>
 <td>per 100k population</td>
 <td>Age-standardized mortality rate (female)</td>
 <td>2020</td>
-</tr>
-<tr class="odd">
-<td>economy</td>
-<td>company</td>
-<td>total</td>
-<td>count</td>
-<td>Number of business entities</td>
-<td>2010, 2015, 2020</td>
-</tr>
-<tr class="even">
-<td>housing</td>
-<td>housing types</td>
-<td>total</td>
-<td>count</td>
-<td>Total number of housing units</td>
-<td>2010, 2015, 2020</td>
+<td>Statistics Korea (Survey)</td>
 </tr>
 </tbody>
 </table>
 </div>
+</div>
 <div class="section level3">
-<h3 id="data">Data<a class="anchor" aria-label="anchor" href="#data"></a>
+<h3 id="query-data-using-anycensus">Query data using <code>anycensus()</code><a class="anchor" aria-label="anchor" href="#query-data-using-anycensus"></a>
 </h3>
-<p>The dataset is provided in <strong>long form</strong>.</p>
-<p>If you open the <code>censuskor</code> dataset, you will see
-<strong>5,178 rows and 10 columns</strong>. This is a fairly substantial
-size.</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span> <span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">censuskor</span><span class="op">)</span></span>
-<span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="va">censuskor</span><span class="op">)</span></span></code></pre></div>
-<pre><code>[1] "year" "adm1" "adm2" "adm2_code"  "type"  "class1"  "class2"  "unit"   "value" </code></pre>
-<p>We have 9 columns in total. The key column is <code>type</code>,
-which determines the main index and splits the dataset into three
-components: <strong>population, tax, and mortality</strong>.</p>
+<p>The function <code><a href="../reference/anycensus.html">anycensus()</a></code> returns a tidy tibble with
+columns such as:</p>
+<ul>
+<li>
+<code>year</code>: year of the dataset</li>
+<li>
+<code>adm1</code>, <code>adm1_code</code>: Si-Do (province) level
+administrative unit name and its corresponding code</li>
+<li>
+<code>adm2</code>, <code>adm2_code</code>: Si-Gun-Gu (district)
+level administrative unit name and its corresponding code</li>
+</ul>
+<p>Columns containing the values are added as a wide form. The column
+<code>adm2_code</code> links census data to boundary files retrieved
+with <code><a href="../reference/load_districts.html">load_districts()</a></code>.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">censuskor</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html" class="external-link">distinct</a></span><span class="op">(</span><span class="va">type</span><span class="op">)</span></span></code></pre></div>
-<p>Let’s dive into each category.</p>
+<code class="sourceCode R"><span><span class="va">df_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>, type <span class="op">=</span> <span class="st">"mortality"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">df_2020</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 9</span></span></span>
+<span><span class="co">#&gt;    year adm1              adm1_code adm2  adm2_code type  `All causes_total_p1p`</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>  <span style="text-decoration: underline;">2</span>020 Chungcheongbuk-do        33 Cheo…     <span style="text-decoration: underline;">33</span>040 mort…                   312.</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>  <span style="text-decoration: underline;">2</span>020 Chungcheongnam-do        34 Cheo…     <span style="text-decoration: underline;">34</span>010 mort…                   321.</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>  <span style="text-decoration: underline;">2</span>020 Gyeongsangbuk-do         37 Poha…     <span style="text-decoration: underline;">37</span>010 mort…                   318.</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>  <span style="text-decoration: underline;">2</span>020 Gyeongsangnam-do         38 Chan…     <span style="text-decoration: underline;">38</span>110 mort…                   323.</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>  <span style="text-decoration: underline;">2</span>020 Jeollabuk-do             35 Jeon…     <span style="text-decoration: underline;">35</span>010 mort…                   283.</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span>  <span style="text-decoration: underline;">2</span>020 Gyeongsangbuk-do         37 Ando…     <span style="text-decoration: underline;">37</span>040 mort…                   353 </span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 2 more variables: `All causes_male_p1p` &lt;dbl&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   `All causes_female_p1p` &lt;dbl&gt;</span></span></span></code></pre></div>
 </div>
 <div class="section level3">
-<h3 id="population">Population<a class="anchor" aria-label="anchor" href="#population"></a>
+<h3 id="built-in-dataset-censuskor">Built-in dataset <code>censuskor</code><a class="anchor" aria-label="anchor" href="#built-in-dataset-censuskor"></a>
 </h3>
-<p>In Korea, population data are collected in two ways:</p>
+<p>You can access the whole dataset directly using the function
+<code>data(censuskor)</code> which returns the built-in dataset in a
+long form.</p>
 <ul>
 <li>
-<strong>Complete census</strong> (전수조사):
-<ul>
-<li>Population Census (5-year interval)<br>
-</li>
-<li>Resident Registration Statistics (annual)</li>
-</ul>
+<code>year</code>: year of the dataset</li>
+<li>
+<code>adm1</code>, <code>adm1_code</code>: Si-Do (province) level
+administrative unit name and its corresponding code<br>
 </li>
 <li>
-<strong>Sample surveys</strong> (표본조사):
-<ul>
-<li>For example, the Economically Active Population Survey, which
-conducts monthly household interviews for those aged 15 or older.</li>
+<code>adm2</code>, <code>adm2_code</code>: Si-Gun-Gu (district)
+level administrative unit name and its corresponding code</li>
+<li>
+<code>type</code>: Types of census or survey</li>
+<li>
+<code>class1</code>, <code>class2</code>: Classification variables
+providing further breakdowns</li>
+<li>
+<code>unit</code>: Measurement unit for the value</li>
+<li>
+<code>value</code>: The observed census value for the given
+combination of year, region, and category</li>
 </ul>
-</li>
-</ul>
-<p>In this package, the dataset records information from the
-<strong>three most recent Population Censuses</strong>: <strong>2010,
-2015, and 2020</strong>.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">censuskor</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">type</span> <span class="op">==</span> <span class="st">"population"</span><span class="op">)</span></span></code></pre></div>
-<p>Example output:</p>
-<pre><code># A tibble: 2,361 × 9
-    year adm1  adm2         adm2_code type       class1         class2 unit     value
-   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;            &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;          &lt;chr&gt;  &lt;chr&gt;    &lt;dbl&gt;
- 1  2010 Seoul Jongno-gu        11010 population all households total  persons 147843
- 2  2010 Seoul Jongno-gu        11010 population all households male   persons  71313
- 3  2010 Seoul Jongno-gu        11010 population all households female persons  76530
- 4  2010 Seoul Jung-gu          11020 population all households total  persons 115387
- 5  2010 Seoul Jung-gu          11020 population all households male   persons  56104
- 6  2010 Seoul Jung-gu          11020 population all households female persons  59283
- 7  2010 Seoul Yongsan-gu       11030 population all households total  persons 218308
- 8  2010 Seoul Yongsan-gu       11030 population all households male   persons 103711
- 9  2010 Seoul Yongsan-gu       11030 population all households female persons 114597
-10  2010 Seoul Seongdong-gu     11040 population all households total  persons 287460
-# ℹ 2,351 more rows
-# ℹ Use `print(n = ...)` to see more rows</code></pre>
-<ul>
-<li>
-<strong>class1</strong>: all households<br>
-</li>
-<li>
-<strong>class2</strong>: total, male, female<br>
-</li>
-<li>
-<strong>unit</strong>: persons<br>
-</li>
-<li>
-<strong>value</strong>: head counts</li>
-</ul>
-<p>For example, <em>Jongno-gu</em> (Jongno district) in 2010 had a total
-population of <strong>147,843</strong>, consisting of <strong>71,313
-males</strong> and <strong>76,530 females</strong>.</p>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">censuskor</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">censuskor</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   year              adm1 adm1_code        adm2 adm2_code       type</span></span>
+<span><span class="co">#&gt; 1 2010 Chungcheongbuk-do        33 Cheongju-si     33010 population</span></span>
+<span><span class="co">#&gt; 2 2010 Chungcheongbuk-do        33 Cheongju-si     33010 population</span></span>
+<span><span class="co">#&gt; 3 2010 Chungcheongbuk-do        33 Cheongju-si     33010 population</span></span>
+<span><span class="co">#&gt; 4 2020 Chungcheongbuk-do        33 Cheongju-si     33040        tax</span></span>
+<span><span class="co">#&gt; 5 2020 Chungcheongbuk-do        33 Cheongju-si     33040        tax</span></span>
+<span><span class="co">#&gt; 6 2015 Chungcheongbuk-do        33 Cheongju-si     33040 population</span></span>
+<span><span class="co">#&gt;           class1  class2        unit  value</span></span>
+<span><span class="co">#&gt; 1 all households   total     persons 646939</span></span>
+<span><span class="co">#&gt; 2 all households    male     persons 318355</span></span>
+<span><span class="co">#&gt; 3 all households  female     persons 328584</span></span>
+<span><span class="co">#&gt; 4         income general million KRW 524478</span></span>
+<span><span class="co">#&gt; 5         income   labor million KRW 598560</span></span>
+<span><span class="co">#&gt; 6 all households   total     persons 797099</span></span></code></pre></div>
 </div>
 <div class="section level3">
-<h3 id="example-seouls-population-distribution-2020">Example: Seoul’s Population Distribution (2020)<a class="anchor" aria-label="anchor" href="#example-seouls-population-distribution-2020"></a>
+<h3 id="quick-visualization">Quick Visualization<a class="anchor" aria-label="anchor" href="#quick-visualization"></a>
 </h3>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># draw a distribution graph by rank</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://scales.r-lib.org" class="external-link">scales</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">seoul_total</span> <span class="op">&lt;-</span> <span class="va">censuskor</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">type</span> <span class="op">==</span> <span class="st">"population"</span>,</span>
-<span>         <span class="va">year</span> <span class="op">==</span> <span class="fl">2020</span>,</span>
-<span>         <span class="va">class2</span> <span class="op">==</span> <span class="st">"total"</span>,</span>
-<span>         <span class="va">adm1</span> <span class="op">==</span> <span class="st">"Seoul"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>adm2 <span class="op">=</span> <span class="fu">str_replace</span><span class="op">(</span><span class="va">adm2</span>, <span class="st">"-gu$"</span>, <span class="st">""</span><span class="op">)</span><span class="op">)</span>  <span class="co"># remove '-gu' suffix</span></span>
-<span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">seoul_total</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/reorder.factor.html" class="external-link">reorder</a></span><span class="op">(</span><span class="va">adm2</span>, <span class="va">value</span><span class="op">)</span>, y <span class="op">=</span> <span class="va">value</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html" class="external-link">geom_col</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"skyblue"</span>, colour <span class="op">=</span> <span class="st">"black"</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="external-link">scale_y_continuous</a></span><span class="op">(</span>labels <span class="op">=</span> <span class="va">comma</span><span class="op">)</span> <span class="op">+</span></span>
+<p>Since <code><a href="../reference/anycensus.html">anycensus()</a></code> returns tidy data, visualization with
+<code>ggplot2</code> is straightforward.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">df_2020</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">`All causes_male_p1p`</span>, y <span class="op">=</span> <span class="va">`All causes_female_p1p`</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span></span>
-<span>    title <span class="op">=</span> <span class="st">"Seoul 2020 Census Total Population by District"</span>,</span>
-<span>    x <span class="op">=</span> <span class="st">"District"</span>,</span>
-<span>    y <span class="op">=</span> <span class="st">"Population"</span></span>
+<span>    x <span class="op">=</span> <span class="st">"Male mortality (per 100,000 population)"</span>,</span>
+<span>    y <span class="op">=</span> <span class="st">"Female mortality (per 100,000 population)"</span>,</span>
+<span>    title <span class="op">=</span> <span class="st">"Male vs. Female Age-standardized Mortality Rates in South Korea (2020)"</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/coord_flip.html" class="external-link">coord_flip</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">14</span><span class="op">)</span></span></code></pre></div>
-<div class="float">
-<img src="reference/figures/barchart.png" alt="barchart"><div class="figcaption">barchart</div>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
+<p><img src="v01_intro_files/figure-html/unnamed-chunk-6-1.png" width="100%"></p>
 </div>
-</div>
-<div class="section level3">
-<h3 id="dot-plot-population-across-census-years">Dot Plot: Population Across Census Years<a class="anchor" aria-label="anchor" href="#dot-plot-population-across-census-years"></a>
-</h3>
-<p>To compare population change by district across <strong>2010, 2015,
-and 2020</strong>, we can create a dot plot:</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Dot plot across census years</span></span>
-<span><span class="va">seoul_years</span> <span class="op">&lt;-</span> <span class="va">censuskor</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">type</span> <span class="op">==</span> <span class="st">"population"</span>,</span>
-<span>         <span class="va">class2</span> <span class="op">==</span> <span class="st">"total"</span>,</span>
-<span>         <span class="va">adm1</span> <span class="op">==</span> <span class="st">"Seoul"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>adm2 <span class="op">=</span> <span class="fu">str_replace</span><span class="op">(</span><span class="va">adm2</span>, <span class="st">"-gu$"</span>, <span class="st">""</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">seoul_years</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html" class="external-link">factor</a></span><span class="op">(</span><span class="va">year</span><span class="op">)</span>, y <span class="op">=</span> <span class="va">value</span>, group <span class="op">=</span> <span class="va">adm2</span>, colour <span class="op">=</span> <span class="va">adm2</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">0.5</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span></span>
-<span>    title <span class="op">=</span> <span class="st">"Seoul Census Population Trends (2010, 2015, 2020)"</span>,</span>
-<span>    x <span class="op">=</span> <span class="st">"Year"</span>,</span>
-<span>    y <span class="op">=</span> <span class="st">"Population"</span>,</span>
-<span>    colour <span class="op">=</span> <span class="st">"District"</span></span>
-<span>  <span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">14</span><span class="op">)</span></span></code></pre></div>
-<p>This shows how population shifted in each Seoul district across the
-three census years.</p>
-<hr>
-</div>
-<div class="section level3">
-<h3 id="tax">Tax<a class="anchor" aria-label="anchor" href="#tax"></a>
-</h3>
-<p>In the dataset, tax records are divided into two categories:</p>
-<ul>
-<li>
-<strong>Global (종합소득세)</strong> → Comprehensive Income
-Tax<br>
-</li>
-<li>
-<strong>Income (근로소득세)</strong> → Employment Income Tax</li>
-</ul>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">censuskor</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">type</span> <span class="op">==</span> <span class="st">"tax"</span> <span class="op">&amp;</span> <span class="va">year</span> <span class="op">==</span> <span class="fl">2020</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://tibble.tidyverse.org/reference/as_tibble.html" class="external-link">as_tibble</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<p>Example output:</p>
-<pre><code># A tibble: 458 × 9
-    year adm1  adm2         adm2_code type  class1 class2  unit          value
-   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;            &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;         &lt;dbl&gt;
- 1  2020 Seoul Gangnam-gu       11230 tax   income general million KRW 5209045
- 2  2020 Seoul Gangdong-gu      11250 tax   income general million KRW  461088
- 3  2020 Seoul Gangbuk-gu       11090 tax   income general million KRW  107037</code></pre>
-<p>Distinct classes:</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">censuskor</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">type</span> <span class="op">==</span> <span class="st">"tax"</span> <span class="op">&amp;</span> <span class="va">year</span> <span class="op">==</span> <span class="fl">2020</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html" class="external-link">distinct</a></span><span class="op">(</span><span class="va">class2</span><span class="op">)</span></span></code></pre></div>
-<pre><code># A tibble: 2 × 1
-  class2 
-  &lt;chr&gt;  
-1 general
-2 labor  </code></pre>
-<p>So <code>class2</code> distinguishes between <strong>general
-(comprehensive income)</strong> and <strong>labour (employment
-income)</strong>.</p>
-<hr>
-</div>
-</div>
-<div class="section level2">
-<h2 id="mortality">Mortality<a class="anchor" aria-label="anchor" href="#mortality"></a>
-</h2>
-<p>Mortality data records age-standardised death rates by district.
-Units are given as <strong>per 100,000 population</strong>.</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">censuskor</span> <span class="op">|&gt;</span> </span>
-<span>   <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">type</span> <span class="op">==</span> <span class="st">"mortality"</span><span class="op">)</span></span></code></pre></div>
-<p>Example output:</p>
-<pre><code># A tibble: 783 × 10
-    year adm1  adm2         adm2_other adm2_code type      class1     class2 unit                value
-   &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;        &lt;chr&gt;          &lt;int&gt; &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;  &lt;chr&gt;               &lt;chr&gt;
- 1  2020 Seoul Jongno-gu    NA             11010 mortality All causes total  per 100k population 261.7
- 2  2020 Seoul Jongno-gu    NA             11010 mortality All causes male   per 100k population 370.2
- 3  2020 Seoul Jongno-gu    NA             11010 mortality All causes female per 100k population 169.4</code></pre>
-<ul>
-<li>
-<strong>class1</strong>: cause of death (e.g., all causes)<br>
-</li>
-<li>
-<strong>class2</strong>: total, male, female<br>
-</li>
-<li>
-<strong>unit</strong>: per 100,000 population<br>
-</li>
-<li>
-<strong>value</strong>: mortality rate</li>
-</ul>
-<p>For example, in 2020, <em>Jongno-gu</em> recorded an overall
-mortality rate of <strong>261.7 per 100,000</strong>, with <strong>370.2
-for males</strong> and <strong>169.4 for females</strong>.</p>
-<!-- ## Working with Korean Geographic Hierarchies -->
-<!-- Understanding Sido → Sigungu → Eupmyeondong relationships -->
-<!-- Aggregating Eupmyeondong data to Sigungu level -->
-<!-- Handling administrative boundary changes -->
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
