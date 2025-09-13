@@ -143,6 +143,7 @@ options(scipen = 100)
 
 # load census data
 census_pop_2020 <- anycensus(year = 2020, codes = NULL, type = "population")
+#> Using character codes that are convertible to integers. Automatically converting to integers...
 census_pop_2020 <- census_pop_2020 |>
   rename(population_total = `all households_total_prs`)
 
@@ -210,6 +211,7 @@ rate.
 
 ``` r
 census_housing_2020 <- anycensus(year = 2020, codes = NULL, type = "housing")
+#> Using character codes that are convertible to integers. Automatically converting to integers...
 census_housing_2020 <- census_housing_2020 |>
   rename(housing_total_units = `housing types_total_cnt`)
 census_pop_housing_2020 <- census_pop_2020 |>
@@ -221,6 +223,7 @@ census_pop_housing_2020 <- census_pop_2020 |>
     persons_per_housing = population_total / housing_total_units
   )
 census_mort_2020 <- anycensus(year = 2020, codes = NULL, type = "mortality")
+#> Using character codes that are convertible to integers. Automatically converting to integers...
 census_mort_2020 <- census_mort_2020 |>
   rename(mortality_total = `all causes_total_p1p`)
 
