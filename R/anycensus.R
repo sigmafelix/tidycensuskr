@@ -49,8 +49,9 @@ anycensus <- function(
   unit <- NULL
   is_int_code <- all(is.numeric(codes))
   suppressWarnings(try_code_integer <- as.integer(codes))
+  try_code_all_alpha <- all(grepl("[A-Za-z]+", codes))
   if (!is_int_code) {
-    if (any(is.na(try_code_integer))) {
+    if (sum(is.na(try_code_integer)) > 0 && !try_code_all_alpha) {
       stop("Mixed types in 'codes' are not allowed.")
     }
     if (all(!is.na(try_code_integer))) {

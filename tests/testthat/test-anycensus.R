@@ -8,7 +8,7 @@ testthat::test_that(
 
 testthat::test_that(
   "anycensus returns correct data for adm1 (character name)", {
-  res <- anycensus(codes = "Seoul", type = "tax")
+  res <- anycensus(codes = c("Seoul"), type = "tax")
   testthat::expect_true(is.data.frame(res))
   testthat::expect_true(all(res$adm1 == "Seoul"))
 })
