@@ -42,6 +42,7 @@ Imports:
     utils
 Suggests: 
     knitr,
+    withr,
     purrr,
     rmarkdown,
     cowplot,

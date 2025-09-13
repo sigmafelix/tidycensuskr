@@ -17,8 +17,14 @@
 #' @return A data.frame object containing census data
 #'   for the specified codes and year.
 #' @examples
+#' # Query mortality data for adm2_code 21 (Busan)
 #' anycensus(codes = 21, type = "mortality")
+#'
+#' # Query population data for adm1 "Seoul" or "Daejeon"
 #' anycensus(codes = c("Seoul", "Daejeon"), type = "housing", year = 2015)
+#'
+#' # Aggregate to adm1 level tax (province-level) using sum
+#' anycensus(codes = c(11, 23, 31), type = "tax", year = 2020, level = "adm1", aggregator = sum, na.rm = TRUE)
 #' @importFrom dplyr filter mutate
 #' @importFrom tidyr pivot_wider
 #' @importFrom utils data
@@ -42,6 +48,21 @@ anycensus <- function(
 
   unit <- NULL
   is_int_code <- all(is.numeric(codes))
+  suppressWarnings(try_code_integer <- as.integer(codes))
+  if (!is_int_code) {
+    if (any(is.na(try_code_integer))) {
+      stop("Mixed types in 'codes' are not allowed.")
+    }
+    if (all(!is.na(try_code_integer))) {
+      message(
+        "Using character codes that are convertible to integers. ",
+        "Automatically converting to integers..."
+      )
+      codes <- try_code_integer
+      is_int_code <- TRUE
+    }
+  }
+
   query_col <- if (is_int_code) paste0(level, "_code") else level
 
   # Default NULL codes: all admx codes are used
