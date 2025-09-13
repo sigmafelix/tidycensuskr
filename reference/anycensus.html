@@ -9,7 +9,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">tidycensuskr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,8 +51,10 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">anycensus</span><span class="op">(</span></span>
 <span>  year <span class="op">=</span> <span class="fl">2020</span>,</span>
 <span>  codes <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"population"</span>, <span class="st">"tax"</span>, <span class="st">"mortality"</span>, <span class="st">"economy"</span>, <span class="st">"housing"</span><span class="op">)</span>,</span>
-<span>  level <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"adm1"</span>, <span class="st">"adm2"</span><span class="op">)</span></span>
+<span>  type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"population"</span>, <span class="st">"housing"</span>, <span class="st">"tax"</span>, <span class="st">"mortality"</span>, <span class="st">"economy"</span><span class="op">)</span>,</span>
+<span>  level <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"adm2"</span>, <span class="st">"adm1"</span><span class="op">)</span>,</span>
+<span>  aggregator <span class="op">=</span> <span class="va">sum</span>,</span>
+<span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -65,13 +67,13 @@
 
 
 <dt id="arg-codes">codes<a class="anchor" aria-label="anchor" href="#arg-codes"></a></dt>
-<dd><p>integer or character vector of admin codes (e.g. 11, 26)
-or admin names (e.g. "Seoul").</p></dd>
+<dd><p>integer vector of admin codes (e.g. <code>c(11, 26)</code>)
+or character administrative area names (e.g. <code>c("Seoul", "Daejeon")</code>).</p></dd>
 
 
 <dt id="arg-type">type<a class="anchor" aria-label="anchor" href="#arg-type"></a></dt>
-<dd><p>character(1). "population", "tax", "economy", "mortality",
-or "housing".
+<dd><p>character(1). "population", "housing", "tax", "economy",
+or "mortality"
 Defaults to "population".</p></dd>
 
 
@@ -79,18 +81,33 @@ Defaults to "population".</p></dd>
 <dd><p>character(1). "adm1" for province-level or
 "adm2" for municipal-level. Defaults to "adm2".</p></dd>
 
+
+<dt id="arg-aggregator">aggregator<a class="anchor" aria-label="anchor" href="#arg-aggregator"></a></dt>
+<dd><p>function to aggregate values when <code>level = "adm1"</code>.</p></dd>
+
+
+<dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
+<dd><p>additional arguments passed to the <code>aggregator</code> function.
+(e.g., <code>na.rm = TRUE</code>).</p></dd>
+
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     <p>A data.frame object containing census data
 for the specified codes and year.</p>
     </div>
+    <div class="section level2">
+    <h2 id="note">Note<a class="anchor" aria-label="anchor" href="#note"></a></h2>
+    <p>Using characters in <code>codes</code> has a side effect of returning
+all rows in the dataset that match year and type.</p>
+    </div>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">anycensus</span><span class="op">(</span>codes <span class="op">=</span> <span class="st">"21"</span>, type <span class="op">=</span> <span class="st">"mortality"</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># Query mortality data for adm2_code 21 (Busan)</span></span></span>
+<span class="r-in"><span><span class="fu">anycensus</span><span class="op">(</span>codes <span class="op">=</span> <span class="fl">21</span>, type <span class="op">=</span> <span class="st">"mortality"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 16 × 9</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     year adm1  adm1_code adm2         adm2_code type      `All causes_total_p1p`</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     year adm1  adm1_code adm2         adm2_code type      `all causes_total_p1p`</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                      <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>  <span style="text-decoration: underline;">2</span>020 Busan        21 Buk-gu           <span style="text-decoration: underline;">21</span>080 mortality                   319.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>  <span style="text-decoration: underline;">2</span>020 Busan        21 Busanjin-gu      <span style="text-decoration: underline;">21</span>050 mortality                   332.</span>
@@ -108,8 +125,43 @@ for the specified codes and year.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">14</span>  <span style="text-decoration: underline;">2</span>020 Busan        21 Suyeong-gu       <span style="text-decoration: underline;">21</span>140 mortality                   294.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">15</span>  <span style="text-decoration: underline;">2</span>020 Busan        21 Yeongdo-gu       <span style="text-decoration: underline;">21</span>040 mortality                   404.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">16</span>  <span style="text-decoration: underline;">2</span>020 Busan        21 Yeonje-gu        <span style="text-decoration: underline;">21</span>130 mortality                   297.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 2 more variables: `All causes_male_p1p` &lt;dbl&gt;,</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   `All causes_female_p1p` &lt;dbl&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 2 more variables: `all causes_male_p1p` &lt;dbl&gt;,</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;">#   `all causes_female_p1p` &lt;dbl&gt;</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Query population data for adm1 "Seoul" or "Daejeon"</span></span></span>
+<span class="r-in"><span><span class="fu">anycensus</span><span class="op">(</span>codes <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Seoul"</span>, <span class="st">"Daejeon"</span><span class="op">)</span>, type <span class="op">=</span> <span class="st">"housing"</span>, year <span class="op">=</span> <span class="fl">2015</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 30 × 7</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>     year adm1    adm1_code adm2          adm2_code type   housing types_total_…¹</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 1</span>  <span style="text-decoration: underline;">2</span>015 Daejeon        25 Daedeok-gu        <span style="text-decoration: underline;">25</span>050 housi…                  <span style="text-decoration: underline;">58</span>548</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 2</span>  <span style="text-decoration: underline;">2</span>015 Seoul          11 Dobong-gu         <span style="text-decoration: underline;">11</span>100 housi…                 <span style="text-decoration: underline;">100</span>589</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 3</span>  <span style="text-decoration: underline;">2</span>015 Daejeon        25 Dong-gu           <span style="text-decoration: underline;">25</span>010 housi…                  <span style="text-decoration: underline;">73</span>731</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 4</span>  <span style="text-decoration: underline;">2</span>015 Seoul          11 Dongdaemun-gu     <span style="text-decoration: underline;">11</span>060 housi…                  <span style="text-decoration: underline;">94</span>464</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 5</span>  <span style="text-decoration: underline;">2</span>015 Seoul          11 Dongjak-gu        <span style="text-decoration: underline;">11</span>200 housi…                 <span style="text-decoration: underline;">107</span>968</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 6</span>  <span style="text-decoration: underline;">2</span>015 Seoul          11 Eunpyeong-gu      <span style="text-decoration: underline;">11</span>120 housi…                 <span style="text-decoration: underline;">136</span>848</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 7</span>  <span style="text-decoration: underline;">2</span>015 Seoul          11 Gangbuk-gu        <span style="text-decoration: underline;">11</span>090 housi…                  <span style="text-decoration: underline;">89</span>911</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 8</span>  <span style="text-decoration: underline;">2</span>015 Seoul          11 Gangdong-gu       <span style="text-decoration: underline;">11</span>250 housi…                 <span style="text-decoration: underline;">114</span>424</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;"> 9</span>  <span style="text-decoration: underline;">2</span>015 Seoul          11 Gangnam-gu        <span style="text-decoration: underline;">11</span>230 housi…                 <span style="text-decoration: underline;">164</span>864</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">10</span>  <span style="text-decoration: underline;">2</span>015 Seoul          11 Gangseo-gu        <span style="text-decoration: underline;">11</span>160 housi…                 <span style="text-decoration: underline;">173</span>366</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ 20 more rows</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># ℹ abbreviated name: ¹​`housing types_total_cnt`</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># Aggregate to adm1 level tax (province-level) using sum</span></span></span>
+<span class="r-in"><span><span class="fu">anycensus</span><span class="op">(</span></span></span>
+<span class="r-in"><span>  codes <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">11</span>, <span class="fl">23</span>, <span class="fl">31</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  type <span class="op">=</span> <span class="st">"tax"</span>,</span></span>
+<span class="r-in"><span>  year <span class="op">=</span> <span class="fl">2020</span>,</span></span>
+<span class="r-in"><span>  level <span class="op">=</span> <span class="st">"adm1"</span>,</span></span>
+<span class="r-in"><span>  aggregator <span class="op">=</span> <span class="va">sum</span>,</span></span>
+<span class="r-in"><span>  na.rm <span class="op">=</span> <span class="cn">TRUE</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 3 × 6</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># Groups:   year, type, adm1, adm1_code [3]</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    year type  adm1        adm1_code income_general_mkr income_labor_mkr</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;int&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>  <span style="text-decoration: underline;">2</span>020 tax   Gyeonggi-do        31           12<span style="text-decoration: underline;">367</span>363         14<span style="text-decoration: underline;">767</span>906</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">2</span>  <span style="text-decoration: underline;">2</span>020 tax   Incheon            23            1<span style="text-decoration: underline;">994</span>065          2<span style="text-decoration: underline;">111</span>882</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">3</span>  <span style="text-decoration: underline;">2</span>020 tax   Seoul              11           20<span style="text-decoration: underline;">923</span>255         24<span style="text-decoration: underline;">311</span>772</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
