@@ -238,10 +238,9 @@ map_2020
 
 
 ## Basemap
-```{r}
+```{r basemap, fig.width = 6, fig.height = 6, dpi = 254}
 library(tmap)
 library(geodata)
-library(tmaptools)
 
 # load korea polygon data
 korea <- geodata::gadm(country = "KOR", level = 1, path = "~/geodata")

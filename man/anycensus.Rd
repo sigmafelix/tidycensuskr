@@ -7,22 +7,29 @@
 anycensus(
   year = 2020,
   codes = NULL,
-  type = c("population", "tax", "mortality", "economy", "housing"),
-  level = c("adm1", "adm2")
+  type = c("population", "housing", "tax", "mortality", "economy"),
+  level = c("adm2", "adm1"),
+  aggregator = sum,
+  ...
 )
 }
 \arguments{
 \item{year}{integer(1). One of 2010, 2015, or 2020.}
 
-\item{codes}{integer or character vector of admin codes (e.g. 11, 26)
-or admin names (e.g. "Seoul").}
+\item{codes}{integer vector of admin codes (e.g. \code{c(11, 26)})
+or character administrative area names (e.g. \code{c("Seoul", "Daejeon")}).}
 
-\item{type}{character(1). "population", "tax", "economy", "mortality",
-or "housing".
+\item{type}{character(1). "population", "housing", "tax", "economy",
+or "mortality"
 Defaults to "population".}
 
 \item{level}{character(1). "adm1" for province-level or
 "adm2" for municipal-level. Defaults to "adm2".}
+
+\item{aggregator}{function to aggregate values when \code{level = "adm1"}.}
+
+\item{...}{additional arguments passed to the \code{aggregator} function.
+(e.g., \code{na.rm = TRUE}).}
 }
 \value{
 A data.frame object containing census data
@@ -32,6 +39,24 @@ for the specified codes and year.
 The function queries a long format census data frame
 (\code{\link{censuskor}}) for specific administrative codes (if provided)
 }
+\note{
+Using characters in \code{codes} has a side effect of returning
+all rows in the dataset that match year and type.
+}
 \examples{
-anycensus(codes = "21", type = "mortality")
+# Query mortality data for adm2_code 21 (Busan)
+anycensus(codes = 21, type = "mortality")
+
+# Query population data for adm1 "Seoul" or "Daejeon"
+anycensus(codes = c("Seoul", "Daejeon"), type = "housing", year = 2015)
+
+# Aggregate to adm1 level tax (province-level) using sum
+anycensus(
+  codes = c(11, 23, 31),
+  type = "tax",
+  year = 2020,
+  level = "adm1",
+  aggregator = sum,
+  na.rm = TRUE
+)
 }
