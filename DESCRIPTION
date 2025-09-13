@@ -1,6 +1,6 @@
 Package: tidycensuskr 
 Title: Easy Access for South Korea Census Data and Boundaries
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: c(
     person(given = "Insang", 
           family = "Song", 
@@ -44,6 +44,7 @@ Suggests:
     knitr,
     purrr,
     rmarkdown,
+    cowplot,
     tmap,
     geodata,
     testthat (>= 3.0.0)

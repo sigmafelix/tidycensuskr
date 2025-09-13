@@ -121,7 +121,7 @@ population data.
 
 ``` r
 library(tidycensuskr)
-#> tidycensuskr 0.1.1 (2025-09-13)
+#> tidycensuskr 0.1.2 (2025-09-13)
 library(ggplot2)
 library(dplyr)
 #> 
@@ -134,12 +134,12 @@ library(dplyr)
 #>     intersect, setdiff, setequal, union
 library(tidyr)
 library(sf)
-#> Linking to GEOS 3.12.1, GDAL 3.8.4, PROJ 9.4.0; sf_use_s2() is TRUE
+#> Linking to GEOS 3.12.2, GDAL 3.11.3, PROJ 9.4.1; sf_use_s2() is TRUE
 library(biscale)
 library(cowplot)
 sf_use_s2(FALSE)
 #> Spherical geometry (s2) switched off
-
+options(scipen = 100)
 
 # load census data
 census_pop_2020 <- anycensus(year = 2020, codes = NULL, type = "population")
@@ -158,13 +158,49 @@ census_2020_pop <-
   ggplot(census_2020_sf) +
   geom_sf(aes(fill = population_total), color = "white", size = 0.1) +
   theme_minimal() +
-  labs(title = "Population (2020)") +
+  labs(
+    title = "Population (2020)",
+    fill = "Population"
+  ) +
   theme(plot.title = element_text(size = 12))
 
 census_2020_pop
 ```
 
 <img src="man/figures/README-mapmaking-1.png" width="100%" />
+
+For Seoul Metropolitan Area (including Seoul, Incheon, and Gyeonggi-do),
+you can use a character vector in `codes` argument and merge the
+retrieved `data.frame` and `sf` object with `inner_join()`:
+
+``` r
+census_pop_2020_sma <-
+  anycensus(
+    year = 2020,
+    codes = c("Seoul", "Incheon", "Gyeonggi"),
+    type = "population"
+  ) |>
+  rename(population_total = `all households_total_prs`)
+
+census_2020_sf_sma <- adm2_2020 |>
+  inner_join(census_pop_2020_sma, by = c("year", "adm2_code"))
+
+
+# plot population data
+census_2020_pop_sma <-
+  ggplot(census_2020_sf_sma) +
+  geom_sf(aes(fill = population_total), color = "white", size = 0.1) +
+  theme_minimal() +
+  labs(
+    title = "Population in Seoul Metropolitan Area (2020)",
+    fill = "Population"
+  ) +
+  theme(plot.title = element_text(size = 12))
+
+census_2020_pop_sma
+```
+
+<img src="man/figures/README-seoul_map-1.png" width="100%" />
 
 ## Bivariate map
 
@@ -215,7 +251,12 @@ legend <- bi_legend(pal = "DkCyan",
 # plot population data
 census_2020_bmap <-
   ggplot(census_2020_mapbase) +
-  geom_sf(aes(fill = bi_class), color = "white", size = 0.1, show.legend = FALSE) +
+  geom_sf(
+    aes(fill = bi_class),
+    color = "white",
+    size = 0.1,
+    show.legend = FALSE
+  ) +
   bi_scale_fill(pal = "DkCyan", dim = 3) +
   theme_minimal() +
   labs(title = "Persons per housing unit and all-cause mortality rate (2020)") +

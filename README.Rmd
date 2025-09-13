@@ -99,7 +99,7 @@ library(sf)
 library(biscale)
 library(cowplot)
 sf_use_s2(FALSE)
-
+options(scipen = 100)
 
 # load census data
 census_pop_2020 <- anycensus(year = 2020, codes = NULL, type = "population")
@@ -118,12 +118,46 @@ census_2020_pop <-
   ggplot(census_2020_sf) +
   geom_sf(aes(fill = population_total), color = "white", size = 0.1) +
   theme_minimal() +
-  labs(title = "Population (2020)") +
+  labs(
+    title = "Population (2020)",
+    fill = "Population"
+  ) +
   theme(plot.title = element_text(size = 12))
 
 census_2020_pop
 
 ```
+
+
+For Seoul Metropolitan Area (including Seoul, Incheon, and Gyeonggi-do), you can use a character vector in `codes` argument and merge the retrieved `data.frame` and `sf` object with `inner_join()`:
+
+```{r seoul_map, dpi=254, fig.width=6, fig.height=6}
+census_pop_2020_sma <-
+  anycensus(
+    year = 2020,
+    codes = c("Seoul", "Incheon", "Gyeonggi"),
+    type = "population"
+  ) |>
+  rename(population_total = `all households_total_prs`)
+
+census_2020_sf_sma <- adm2_2020 |>
+  inner_join(census_pop_2020_sma, by = c("year", "adm2_code"))
+
+
+# plot population data
+census_2020_pop_sma <-
+  ggplot(census_2020_sf_sma) +
+  geom_sf(aes(fill = population_total), color = "white", size = 0.1) +
+  theme_minimal() +
+  labs(
+    title = "Population in Seoul Metropolitan Area (2020)",
+    fill = "Population"
+  ) +
+  theme(plot.title = element_text(size = 12))
+
+census_2020_pop_sma
+```
+
 
 ## Bivariate map
 Moving on to a complex example, the code below demonstrates to generate a bivariate map with persons per housing unit and all-cause mortality rate.
@@ -171,7 +205,12 @@ legend <- bi_legend(pal = "DkCyan",
 # plot population data
 census_2020_bmap <-
   ggplot(census_2020_mapbase) +
-  geom_sf(aes(fill = bi_class), color = "white", size = 0.1, show.legend = FALSE) +
+  geom_sf(
+    aes(fill = bi_class),
+    color = "white",
+    size = 0.1,
+    show.legend = FALSE
+  ) +
   bi_scale_fill(pal = "DkCyan", dim = 3) +
   theme_minimal() +
   labs(title = "Persons per housing unit and all-cause mortality rate (2020)") +
