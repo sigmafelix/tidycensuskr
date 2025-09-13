@@ -33,11 +33,7 @@ RoxygenNote: 7.3.2
 Imports:
     sf,
     dplyr,
-    rlang,
     tidyr,
-    ggplot2,
-    tmap,
-    biscale,
     kosis,
     utils
 Suggests: 
@@ -45,6 +41,9 @@ Suggests:
     withr,
     purrr,
     rmarkdown,
+    rlang,
+    ggplot2,
+    biscale,
     cowplot,
     tmap,
     geodata,

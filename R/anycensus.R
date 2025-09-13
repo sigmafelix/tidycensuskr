@@ -24,7 +24,14 @@
 #' anycensus(codes = c("Seoul", "Daejeon"), type = "housing", year = 2015)
 #'
 #' # Aggregate to adm1 level tax (province-level) using sum
-#' anycensus(codes = c(11, 23, 31), type = "tax", year = 2020, level = "adm1", aggregator = sum, na.rm = TRUE)
+#' anycensus(
+#'   codes = c(11, 23, 31),
+#'   type = "tax",
+#'   year = 2020,
+#'   level = "adm1",
+#'   aggregator = sum,
+#'   na.rm = TRUE
+#' )
 #' @importFrom dplyr filter mutate
 #' @importFrom tidyr pivot_wider
 #' @importFrom utils data

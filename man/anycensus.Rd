@@ -44,6 +44,19 @@ Using characters in \code{codes} has a side effect of returning
 all rows in the dataset that match year and type.
 }
 \examples{
+# Query mortality data for adm2_code 21 (Busan)
 anycensus(codes = 21, type = "mortality")
+
+# Query population data for adm1 "Seoul" or "Daejeon"
 anycensus(codes = c("Seoul", "Daejeon"), type = "housing", year = 2015)
+
+# Aggregate to adm1 level tax (province-level) using sum
+anycensus(
+  codes = c(11, 23, 31),
+  type = "tax",
+  year = 2020,
+  level = "adm1",
+  aggregator = sum,
+  na.rm = TRUE
+)
 }
