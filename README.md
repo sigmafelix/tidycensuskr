@@ -186,7 +186,7 @@ census_pop_housing_2020 <- census_pop_2020 |>
   )
 census_mort_2020 <- anycensus(year = 2020, codes = NULL, type = "mortality")
 census_mort_2020 <- census_mort_2020 |>
-  rename(mortality_total = `All causes_total_p1p`)
+  rename(mortality_total = `all causes_total_p1p`)
 
 census_pph_mort_2020 <- census_pop_housing_2020 |>
   left_join(census_mort_2020 |>
