@@ -56,8 +56,22 @@ South Korean census data is organized by three levels of administrative division
   - **_Myeon_**: Townships (rural, <20,000 population, within a county)
   - **_Dong_**: Neighborhoods (smallest units within cities and districts)
 
-Because administrative boundaries and coding systems can vary across years and data sources, `tidycensuskr` harmonizes codes to allow consistent integration of statistics. 
+### Comparison of Administrative Divisions  
 
+The table below provides a rough comparison of administrative divisions across South Korea, the United States, the European Union, and the United Kingdom (England). While the correspondence is not exact, it can be helpful to understand the approximate levels when working with census or regional data.  
+
+| South Korea       | US                                         | EU (NUTS[^1]) | UK (England)                     |
+|-------------------|-------------------------------------------|---------------|----------------------------------|
+| **Si/Do**         | State                                     | NUTS1         | Regions / Combined Authorities   |
+| **Si/Gun/Gu**     | County                                    | NUTS2         | County                           |
+| **Eup/Myeon/Dong**| Townships / Towns / Census County Division | NUTS3         | Districts / Wards / Boroughs     |
+
+[^1]: NUTS: *Nomenclature of Territorial Units for Statistics*, a geocode standard for referencing the subdivisions of countries for statistical purposes.  
+
+
+
+
+Because administrative boundaries and coding systems can vary across years and data sources, `tidycensuskr` harmonizes codes to allow consistent integration of statistics. 
 Currently, for 2020 data there are 250 _Si-Gun-Gu_ and 17 _Si-Do_.
 ```{r, include = TRUE}
 adm2_2020 <- load_districts(year = 2020)
