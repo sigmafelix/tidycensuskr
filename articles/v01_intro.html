@@ -62,7 +62,7 @@
 
       <h1>Working with tidycensuskr</h1>
             
-            <h4 data-toc-skip class="date">September 13, 2025</h4>
+            <h4 data-toc-skip class="date">September 14, 2025</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/sigmafelix/tidycensuskr/blob/main/vignettes/v01_intro.Rmd" class="external-link"><code>vignettes/v01_intro.Rmd</code></a></small>
       <div class="d-none name"><code>v01_intro.Rmd</code></div>
@@ -138,15 +138,59 @@ cities and districts)</li>
 </ul>
 </li>
 </ul>
+<div class="section level3">
+<h3 id="comparison-of-administrative-divisions">Comparison of Administrative Divisions<a class="anchor" aria-label="anchor" href="#comparison-of-administrative-divisions"></a>
+</h3>
+<p>The table below provides a rough comparison of administrative
+divisions across South Korea, the United States, the European Union, and
+the United Kingdom (England). While the correspondence is not exact, it
+can be helpful to understand the approximate levels when working with
+census or regional data.</p>
+<table class="table">
+<colgroup>
+<col width="17%">
+<col width="38%">
+<col width="13%">
+<col width="30%">
+</colgroup>
+<thead><tr class="header">
+<th>South Korea</th>
+<th>US</th>
+<th>EU (NUTS<a class="footnote-ref" tabindex="0" data-bs-toggle="popover" data-bs-content="&lt;p&gt;NUTS: &lt;em&gt;Nomenclature of Territorial Units for
+Statistics&lt;/em&gt;, a geocode standard for referencing the subdivisions of
+countries for statistical purposes.&lt;/p&gt;"><sup>1</sup></a>)</th>
+<th>UK (England)</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td><strong>Si/Do</strong></td>
+<td>State</td>
+<td>NUTS1</td>
+<td>Regions / Combined Authorities</td>
+</tr>
+<tr class="even">
+<td><strong>Si/Gun/Gu</strong></td>
+<td>County</td>
+<td>NUTS2</td>
+<td>County</td>
+</tr>
+<tr class="odd">
+<td><strong>Eup/Myeon/Dong</strong></td>
+<td>Townships / Towns / Census County Division</td>
+<td>NUTS3</td>
+<td>Districts / Wards / Boroughs</td>
+</tr>
+</tbody>
+</table>
 <p>Because administrative boundaries and coding systems can vary across
 years and data sources, <code>tidycensuskr</code> harmonizes codes to
-allow consistent integration of statistics.</p>
-<p>Currently, for 2020 data there are 250 <em>Si-Gun-Gu</em> and 17
-<em>Si-Do</em>.</p>
+allow consistent integration of statistics. Currently, for 2020 data
+there are 250 <em>Si-Gun-Gu</em> and 17 <em>Si-Do</em>.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">adm2_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/load_districts.html">load_districts</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">adm2_2020</span><span class="op">$</span><span class="va">adm2_code</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 250</span></span></code></pre></div>
+</div>
 </div>
 <div class="section level2">
 <h2 id="available-census-data">2. Available census data<a class="anchor" aria-label="anchor" href="#available-census-data"></a>
@@ -391,6 +435,7 @@ combination of year, region, and category</li>
 <p><img src="v01_intro_files/figure-html/unnamed-chunk-7-1.png" width="100%"></p>
 </div>
 </div>
+
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>
 </div>
