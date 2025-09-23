@@ -3,7 +3,7 @@ title: "Regional analysis with tidycensuskr"
 output: rmarkdown::html_vignette
 date: "`r format(Sys.Date(), '%B %d, %Y')`"
 vignette: >
-  %\VignetteIndexEntry{Analyzing South Korean Census Data with tidycensuskr} 
+  %\VignetteIndexEntry{Regional analysis with tidycensuskr} 
   %\VignetteEngine{knitr::rmarkdown}
   %\usepackage[utf8]{inputenc}
 ---
