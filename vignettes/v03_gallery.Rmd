@@ -3,7 +3,7 @@ title: "Analytics Gallery with tidycensuskr"
 output: rmarkdown::html_vignette
 date: "`r format(Sys.Date(), '%B %d, %Y')`"
 vignette: >
-  %\VignetteIndexEntry{Exploring Advanced Methods with tidycensuskr} 
+  %\VignetteIndexEntry{Analytics Gallery with tidycensuskr} 
   %\VignetteEngine{knitr::rmarkdown}
   %\usepackage[utf8]{inputenc}
 ---
