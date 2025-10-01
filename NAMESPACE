@@ -3,7 +3,6 @@
 export(anycensus)
 export(load_districts)
 export(set_kosis_key)
-import(sf)
 importFrom(dplyr,filter)
 importFrom(dplyr,mutate)
 importFrom(kosis,kosis.setKey)
