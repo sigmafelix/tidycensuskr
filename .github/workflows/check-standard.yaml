@@ -48,6 +48,10 @@ jobs:
             any::rmarkdown
           needs: check
 
+      - name: Install tidycensussfkr
+        run: |
+          Rscript -e 'pak::pak("sigmafelix/tidycensussfkr")'
+
       - uses: r-lib/actions/check-r-package@v2
         with:
           upload-snapshots: true

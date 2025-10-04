@@ -34,7 +34,6 @@ Imports:
     sf,
     dplyr,
     tidyr,
-    tidycensussfkr,
     kosis,
     utils
 Suggests: 
@@ -51,8 +50,6 @@ Suggests:
     testthat (>= 3.0.0),
     ggspatial,
     spdep
-Remotes:
-    sigmafelix/tidycensussfkr
 Config/testthat/edition: 3
 Encoding: UTF-8
 VignetteBuilder: knitr
