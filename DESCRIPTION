@@ -35,13 +35,13 @@ Imports:
     dplyr,
     tidyr,
     kosis,
-    utils
+    utils,
+    rlang
 Suggests: 
     knitr,
     withr,
     purrr,
     rmarkdown,
-    rlang,
     ggplot2,
     biscale,
     cowplot,
