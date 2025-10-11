@@ -54,4 +54,6 @@ jobs:
 
       - uses: r-lib/actions/check-r-package@v2
         with:
+          extra-packages: |
+            sigmafelix/tidycensussfkr
           upload-snapshots: true
