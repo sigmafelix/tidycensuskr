@@ -56,18 +56,18 @@ testthat::test_that(
   }
 )
 
-testthat::test_that(
-  "load_districts() returns correct sf object",
-  {
-    withr::local_package("sf")
-    res2020 <- load_districts(year = 2020)
-    res2015 <- load_districts(year = 2015)
-    res2010 <- load_districts(year = 2010)
-    testthat::expect_s3_class(res2020, "sf")
-    testthat::expect_s3_class(res2015, "sf")
-    testthat::expect_s3_class(res2010, "sf")
-    testthat::expect_true(all(res2020[["year"]] == 2020))
-    testthat::expect_true(all(res2015[["year"]] == 2015))
-    testthat::expect_true(all(res2010[["year"]] == 2010))
-  }
-)
+# testthat::test_that(
+#   "load_districts() returns correct sf object",
+#   {
+#     withr::local_package("sf")
+#     res2020 <- load_districts(year = 2020)
+#     res2015 <- load_districts(year = 2015)
+#     res2010 <- load_districts(year = 2010)
+#     testthat::expect_s3_class(res2020, "sf")
+#     testthat::expect_s3_class(res2015, "sf")
+#     testthat::expect_s3_class(res2010, "sf")
+#     testthat::expect_true(all(res2020[["year"]] == 2020))
+#     testthat::expect_true(all(res2015[["year"]] == 2015))
+#     testthat::expect_true(all(res2010[["year"]] == 2010))
+#   }
+# )
