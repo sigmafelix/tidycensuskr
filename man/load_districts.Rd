@@ -2,32 +2,22 @@
 % Please edit documentation in R/load_districts.R
 \name{load_districts}
 \alias{load_districts}
-\title{Load \code{sf} district polygons}
+\title{Load district boundaries for a specific year}
 \usage{
 load_districts(year = 2020)
 }
 \arguments{
-\item{year}{integer(1). census year to load. Defaults to 2020.}
+\item{year}{The year for which to load district boundaries (2010, 2015, or 2020)}
 }
 \value{
-An \code{sf} object containing the district polygons.
+An \code{sf} object containing district boundaries for the specified year
 }
 \description{
-Load \code{sf} district polygons
+Load district boundaries for a specific year
 }
-\details{
-The function loads district polygons for the specified year from the package's
-extdata directory. The polygons are stored in an RDS file and are read using
-the \code{readRDS} function. The polygons are in the Simple Features (sf) format,
-which is suitable for spatial data analysis in R. The polygons include following
-attributes:
-\itemize{
-\item \code{year}: The census year (e.g., 2020).
-\item \code{adm2_code}: The administrative code for the district.
-}
-}
-\examples{
-library(sf)
-sf_use_s2(FALSE)
-sf_2020 <- load_districts(year = 2020)
+\note{
+This function requires the \code{tidycensussfkr} package to be installed.
+No explicit dependency is defind; but users should install the package following
+the instructions at vignette('v01_intro') or more succinctly:
+\code{install.packages('tidycensussfkr', repos = 'https://sigmafelix.r-universe.dev')}
 }

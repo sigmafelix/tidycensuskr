@@ -48,6 +48,12 @@ jobs:
             any::rmarkdown
           needs: check
 
+      - name: Install GitHub-only deps (pak)
+        shell: Rscript {0}
+        run: |
+          if (!requireNamespace("pak", quietly = TRUE)) install.packages("pak")
+          pak::pak("sigmafelix/tidycensussfkr")
+
       - uses: r-lib/actions/check-r-package@v2
         with:
           upload-snapshots: true

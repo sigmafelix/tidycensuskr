@@ -1,28 +1,26 @@
-#' Load `sf` district polygons
-#' @param year integer(1). census year to load. Defaults to 2020.
-#' @return An `sf` object containing the district polygons.
-#' @details
-#' The function loads district polygons for the specified year from the package's
-#' extdata directory. The polygons are stored in an RDS file and are read using
-#' the `readRDS` function. The polygons are in the Simple Features (sf) format,
-#' which is suitable for spatial data analysis in R. The polygons include following
-#' attributes:
-#' - `year`: The census year (e.g., 2020).
-#' - `adm2_code`: The administrative code for the district.
-#' @examples
-#' library(sf)
-#' sf_use_s2(FALSE)
-#' sf_2020 <- load_districts(year = 2020)
+#' Load district boundaries for a specific year
+#' @param year The year for which to load district boundaries (2010, 2015, or 2020)
+#' @return An `sf` object containing district boundaries for the specified year
+#' @importFrom sf st_read
+#' @note This function requires the `tidycensussfkr` package to be installed.
+#' No explicit dependency is defind; but users should install the package following
+#' the instructions at vignette('v01_intro') or more succinctly:
+#' `install.packages('tidycensussfkr', repos = 'https://sigmafelix.r-universe.dev')`
 #' @import sf
+#' @importFrom rlang is_installed
 #' @export
 load_districts <- function(year = 2020) {
-  # Load the district polygons using the sf package
-  file_path <- sprintf("adm2_sf_%d.rds", year)
+  if (!year %in% c(2010, 2015, 2020)) {
+    stop("Year must be one of 2010, 2015, or 2020")
+  }
 
-  districts <-
-    readRDS(
-      system.file("extdata", file_path, package = "tidycensuskr")
-    )
-  # Return the loaded districts
-  return(districts)
+  if (!rlang::is_installed("tidycensussfkr")) {
+    stop("Package 'tidycensussfkr' is required for this function. Please install it.")
+  }
+  file_path <- system.file(sprintf("extdata/adm2_sf_%d.rds", year),
+    package = "tidycensussfkr"
+  )
+
+  boundary <- readRDS(file_path)
+  boundary
 }
