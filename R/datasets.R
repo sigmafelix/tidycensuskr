@@ -31,3 +31,19 @@
 #' * KOSIS (Korean Statistical Information Service)
 #' @keywords datasets
 "censuskor"
+
+#' South Korea Census Boundary in 2020
+#'
+#' District level boundary data in South Korea in 2020. `adm2_code` column
+#' can be used to join with an [anycensus()] output.
+#'
+#' @format A sf object with 250 rows and 3 variables:
+#' @details
+#' * year Year of the census data, e.g., 2010, 2015, or 2020
+#' * adm2_code  Code of the district/municipal-level (Sigungu) administrative unit
+#' * geometry Geometry list-column
+#'
+#' @source
+#' * Statistical Geographic Information Service (SGIS)
+#' @keywords datasets
+"adm2_sf_2020"

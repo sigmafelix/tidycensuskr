@@ -75,8 +75,9 @@ tidycensuskr::anycensus(codes = "Seoul", type = "population")
 * The function requires the `tidycensussfkr` package to be installed. Please install it from [R-universe](https://sigmafelix.r-universe.dev) using `install.packages("tidycensussfkr", repos = "https://sigmafelix.r-universe.dev")`.
 
 ```r
-# loading boundary sf file
-tidycensuskr::load_districts(year = 2020)
+# loading boundary sf file: 2020 boundaries are included in this package
+data(adm2_sf_2020)
+# tidycensussfkr::load_districts(year = 2020)
 ```    
 
 
@@ -90,7 +91,6 @@ Package vignettes are the first place to look for detailed examples. Below are s
 
 ```{r mapmaking, dpi=200, fig.width=4.5, fig.height=4.5}
 library(tidycensuskr)
-library(tidycensussfkr)
 library(ggplot2)
 library(dplyr)
 library(tidyr)
@@ -106,7 +106,8 @@ census_pop_2020 <- census_pop_2020 |>
   rename(population_total = `all households_total_prs`)
 
 # load boundaries
-adm2_2020 <- load_districts(year = 2020)
+data(adm2_sf_2020)
+adm2_2020 <- adm2_sf_2020
 
 # merge boundaries and census data
 census_2020_sf <- adm2_2020 |>

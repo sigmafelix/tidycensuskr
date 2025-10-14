@@ -36,7 +36,7 @@ library(ggspatial)
 ```{r load-data_1}
 
 # Load 2020 boundaries
-sf_2020 <- load_districts(year = 2020)
+data(adm2_sf_2020)
 
 ```
 
@@ -51,7 +51,7 @@ df_2020_pop <- anycensus(year = 2020,
                          type = "population")
 
 # Merge with spatial data and compute population change
-sf_target <- sf_2020 |>
+sf_target <- adm2_sf_2020 |>
   inner_join(df_2010_pop, by = "adm2_code") |>
   inner_join(df_2020_pop, by = "adm2_code") |>
   mutate(change = `all households_total_prs.y` - `all households_total_prs.x`)
@@ -74,7 +74,7 @@ map <- ggplot(sf_target) +
   annotation_scale(location = "tr", width_hint = 0.25, text_cex = 0.7, line_width = 0.7)
 
 # National boundary (union of all districts)
-sf_korea_boundary <- sf_2020 |>
+sf_korea_boundary <- adm2_sf_2020 |>
   summarise(geometry = st_union(geometry))
 
 # Target region boundary (union of selected provinces/cities)
@@ -107,11 +107,6 @@ In the Gyeongsangnam-do region, large metropolitan cities such as Busan and Ulsa
 
 
 ### Data prep
-```{r load-data_2}
-# Load 2020 boundaries
-sf_2020 <- load_districts(year = 2020)
-
-```
 
 ```{r filter-merge_2}
 # Load census data
@@ -121,7 +116,7 @@ df_2020_tax <- anycensus(year = 2020,
                          type = "tax")
 
 # Merge population with boundaries
-sf_2020_pop <- sf_2020 |>
+adm2_sf_2020_pop <- adm2_sf_2020 |>
   left_join(df_2020_pop, by = "adm2_code") |>
   mutate(
     adm2_code_chr = as.character(adm2_code),
@@ -130,7 +125,7 @@ sf_2020_pop <- sf_2020 |>
   )
 
 # Aggregate smaller units (adm2_code ending not with 0) into 4-digit groups
-sf_union_needed <- sf_2020_pop |>
+sf_union_needed <- adm2_sf_2020_pop |>
   filter(last_digit != "0") |>
   group_by(adm2_prefix4) |>
   summarise(
@@ -141,12 +136,12 @@ sf_union_needed <- sf_2020_pop |>
   mutate(adm2_code = as.numeric(paste0(adm2_prefix4, "0")))
 
 # Combine aggregated units with existing "0"-ending districts
-sf_2020_unioned <- sf_2020_pop |>
+adm2_sf_2020_unioned <- adm2_sf_2020_pop |>
   filter(last_digit == "0") |>
   bind_rows(sf_union_needed)
 
 # Join with tax data
-sf_final <- sf_2020_unioned |>
+sf_final <- adm2_sf_2020_unioned |>
   left_join(df_2020_tax, by = "adm2_code")
 
 ```
@@ -252,15 +247,13 @@ ggplot() +
 ### A choropleth map
 
 ```{r choropleth_3, fig.width=7, fig.height=3.5}
-# Load boundaries
-sf_2020 <- load_districts(year = 2020)
 
 # Merge SMA population data with boundaries
-sf_2020_sma <- sf_2020 |>
+adm2_sf_2020_sma <- adm2_sf_2020 |>
   inner_join(df_sma, by = "adm2_code")
 
 # Choropleth map for sex ratio
-ggplot(sf_2020_sma) +
+ggplot(adm2_sf_2020_sma) +
   geom_sf(aes(fill = sex_ratio), color = "gray", size = 0.01) +
   scale_fill_gradient2(
     low = "#2C7BB6", mid = "white", high = "#D7191C",

@@ -88,8 +88,8 @@ df_wide_re <-
   )
 
 prc_df <-
-  prcomp(df_wide_re[,-1], scale = TRUE)
-prc_df$rotation
+  prcomp(df_wide_re[,c(-1, -5, -6)], scale = TRUE)
+prc_df$rotation |> as.data.frame() |> round(3) |> write.csv("tools/loading.csv")
 prc_df$scale
 prc_df$x
 biplot(prc_df)

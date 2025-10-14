@@ -22,14 +22,14 @@ library(spdep)
 ## Example 1: Spatial autocorrelation of economic activity in South Korea 
 
 ### Design idea
-In this example, we use Moran’s I statistics to analyze the spatial distribution of economic activity (measured by the number of registered companies) across South Korea in 2020.
+In this example, we use Moran's _I_ statistics to analyze the spatial distribution of economic activity (measured by the number of registered companies) across South Korea in 2020.
 
-  - Global Moran’s I evaluates whether there is overall spatial autocorrelation, i.e., whether areas with similar company counts tend to cluster together nationwide.
-  - Local Moran’s I (LISA) identifies local clusters and outliers by classifying each district into four types:
-    - High–High (H–H): districts with high values surrounded by other high-value districts.
-    - Low–Low (L–L): districts with low values surrounded by other low-value districts.
-    - High–Low (H–L): potential spatial outliers with high values surrounded by low-value neighbors.
-    - Low–High (L–H): potential spatial outliers with low values surrounded by high-value neighbors.
+  - Global Moran's I evaluates whether there is overall spatial autocorrelation, i.e., whether areas with similar company counts tend to cluster together nationwide.
+  - Local Moran's I (LISA) identifies local clusters and outliers by classifying each district into four types:
+    - High-High (H-H): districts with high values surrounded by other high-value districts.
+    - Low-Low (L-L): districts with low values surrounded by other low-value districts.
+    - High-Low (H-L): potential spatial outliers with high values surrounded by low-value neighbors.
+    - Low-High (L-H): potential spatial outliers with low values surrounded by high-value neighbors.
 
 The resulting LISA cluster map highlights where economic activities are concentrated and where they are sparse relative to neighboring areas.
 
@@ -37,24 +37,24 @@ The resulting LISA cluster map highlights where economic activities are concentr
 ```{r load-data_1}
 
 # Load 2020 boundaries
-sf_2020 <- load_districts(year = 2020)
+data(adm2_sf_2020)
 
 # Load 2020 economy data
 df_2020_economy <- anycensus(year = 2020, 
                              type = "economy")
 
 # Merge with spatial data
-sf_2020_economy <- sf_2020 |>
+adm2_sf_2020_economy <- adm2_sf_2020 |>
   inner_join(df_2020_economy, by = "adm2_code") 
 
 # Variable of interest: number of companies
-var <- sf_2020_economy$company_total_cnt
+var <- adm2_sf_2020_economy$company_total_cnt
 ```
 
 ### Global Moran’s I
 ```{r global_moran_1}
 # Build neighbors (queen contiguity) and spatial weights
-nb <- poly2nb(sf_2020_economy, queen = TRUE)
+nb <- poly2nb(adm2_sf_2020_economy, queen = TRUE)
 lw <- nb2listw(nb, style = "W", zero.policy = TRUE)
 
 # Global Moran's I test
@@ -68,7 +68,7 @@ global_moran
 local_moran <- localmoran(var, lw, zero.policy = TRUE)
 
 # Bind results back to sf object
-sf_2020_economy <- sf_2020_economy |>
+adm2_sf_2020_economy <- adm2_sf_2020_economy |>
   mutate(
     Ii   = local_moran[, "Ii"],
     pval = local_moran[, "Pr(z != E(Ii))"]
@@ -76,7 +76,7 @@ sf_2020_economy <- sf_2020_economy |>
 
 mean_var <- mean(var, na.rm = TRUE)
 
-sf_2020_economy <- sf_2020_economy |>
+adm2_sf_2020_economy <- adm2_sf_2020_economy |>
   mutate(
     cluster = case_when(
       var > mean_var & Ii > 0 & pval <= 0.05 ~ "High-High",
@@ -87,7 +87,7 @@ sf_2020_economy <- sf_2020_economy |>
     )
   )
 
-ggplot(sf_2020_economy) +
+ggplot(adm2_sf_2020_economy) +
   geom_sf(aes(fill = cluster), color = "grey70", size = 0.05) +
   scale_fill_manual(
     values = c(
