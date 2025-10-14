@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">tidycensuskr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,7 +60,7 @@
 
       <h1>Analytics Gallery with tidycensuskr</h1>
             
-            <h4 data-toc-skip class="date">October 12, 2025</h4>
+            <h4 data-toc-skip class="date">October 14, 2025</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/sigmafelix/tidycensuskr/blob/main/vignettes/v03_gallery.Rmd" class="external-link"><code>vignettes/v03_gallery.Rmd</code></a></small>
       <div class="d-none name"><code>v03_gallery.Rmd</code></div>
@@ -75,9 +75,9 @@ Korea<a class="anchor" aria-label="anchor" href="#example-1-spatial-autocorrelat
 <div class="section level3">
 <h3 id="design-idea">Design idea<a class="anchor" aria-label="anchor" href="#design-idea"></a>
 </h3>
-<p>In this example, we use Moran’s I statistics to analyze the spatial
-distribution of economic activity (measured by the number of registered
-companies) across South Korea in 2020.</p>
+<p>In this example, we use Moran’s <em>I</em> statistics to analyze the
+spatial distribution of economic activity (measured by the number of
+registered companies) across South Korea in 2020.</p>
 <ul>
 <li>Global Moran’s I evaluates whether there is overall spatial
 autocorrelation, i.e., whether areas with similar company counts tend to
@@ -85,13 +85,13 @@ cluster together nationwide.</li>
 <li>Local Moran’s I (LISA) identifies local clusters and outliers by
 classifying each district into four types:
 <ul>
-<li>High–High (H–H): districts with high values surrounded by other
+<li>High-High (H-H): districts with high values surrounded by other
 high-value districts.</li>
-<li>Low–Low (L–L): districts with low values surrounded by other
+<li>Low-Low (L-L): districts with low values surrounded by other
 low-value districts.</li>
-<li>High–Low (H–L): potential spatial outliers with high values
+<li>High-Low (H-L): potential spatial outliers with high values
 surrounded by low-value neighbors.</li>
-<li>Low–High (L–H): potential spatial outliers with low values
+<li>Low-High (L-H): potential spatial outliers with low values
 surrounded by high-value neighbors.</li>
 </ul>
 </li>
@@ -105,25 +105,25 @@ areas.</p>
 </h3>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load 2020 boundaries</span></span>
-<span><span class="va">sf_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/load_districts.html">load_districts</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">adm2_sf_2020</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Load 2020 economy data</span></span>
 <span><span class="va">df_2020_economy</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>, </span>
 <span>                             type <span class="op">=</span> <span class="st">"economy"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Merge with spatial data</span></span>
-<span><span class="va">sf_2020_economy</span> <span class="op">&lt;-</span> <span class="va">sf_2020</span> <span class="op">|&gt;</span></span>
+<span><span class="va">adm2_sf_2020_economy</span> <span class="op">&lt;-</span> <span class="va">adm2_sf_2020</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">inner_join</a></span><span class="op">(</span><span class="va">df_2020_economy</span>, by <span class="op">=</span> <span class="st">"adm2_code"</span><span class="op">)</span> </span>
 <span></span>
 <span><span class="co"># Variable of interest: number of companies</span></span>
-<span><span class="va">var</span> <span class="op">&lt;-</span> <span class="va">sf_2020_economy</span><span class="op">$</span><span class="va">company_total_cnt</span></span></code></pre></div>
+<span><span class="va">var</span> <span class="op">&lt;-</span> <span class="va">adm2_sf_2020_economy</span><span class="op">$</span><span class="va">company_total_cnt</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="global-morans-i">Global Moran’s I<a class="anchor" aria-label="anchor" href="#global-morans-i"></a>
 </h3>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Build neighbors (queen contiguity) and spatial weights</span></span>
-<span><span class="va">nb</span> <span class="op">&lt;-</span> <span class="fu">poly2nb</span><span class="op">(</span><span class="va">sf_2020_economy</span>, queen <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="va">nb</span> <span class="op">&lt;-</span> <span class="fu">poly2nb</span><span class="op">(</span><span class="va">adm2_sf_2020_economy</span>, queen <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="va">lw</span> <span class="op">&lt;-</span> <span class="fu">nb2listw</span><span class="op">(</span><span class="va">nb</span>, style <span class="op">=</span> <span class="st">"W"</span>, zero.policy <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Global Moran's I test</span></span>
@@ -150,7 +150,7 @@ areas.</p>
 <span><span class="va">local_moran</span> <span class="op">&lt;-</span> <span class="fu">localmoran</span><span class="op">(</span><span class="va">var</span>, <span class="va">lw</span>, zero.policy <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Bind results back to sf object</span></span>
-<span><span class="va">sf_2020_economy</span> <span class="op">&lt;-</span> <span class="va">sf_2020_economy</span> <span class="op">|&gt;</span></span>
+<span><span class="va">adm2_sf_2020_economy</span> <span class="op">&lt;-</span> <span class="va">adm2_sf_2020_economy</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span></span>
 <span>    Ii   <span class="op">=</span> <span class="va">local_moran</span><span class="op">[</span>, <span class="st">"Ii"</span><span class="op">]</span>,</span>
 <span>    pval <span class="op">=</span> <span class="va">local_moran</span><span class="op">[</span>, <span class="st">"Pr(z != E(Ii))"</span><span class="op">]</span></span>
@@ -158,7 +158,7 @@ areas.</p>
 <span></span>
 <span><span class="va">mean_var</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">var</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">sf_2020_economy</span> <span class="op">&lt;-</span> <span class="va">sf_2020_economy</span> <span class="op">|&gt;</span></span>
+<span><span class="va">adm2_sf_2020_economy</span> <span class="op">&lt;-</span> <span class="va">adm2_sf_2020_economy</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span></span>
 <span>    cluster <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html" class="external-link">case_when</a></span><span class="op">(</span></span>
 <span>      <span class="va">var</span> <span class="op">&gt;</span> <span class="va">mean_var</span> <span class="op">&amp;</span> <span class="va">Ii</span> <span class="op">&gt;</span> <span class="fl">0</span> <span class="op">&amp;</span> <span class="va">pval</span> <span class="op">&lt;=</span> <span class="fl">0.05</span> <span class="op">~</span> <span class="st">"High-High"</span>,</span>
@@ -169,7 +169,7 @@ areas.</p>
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">sf_2020_economy</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">adm2_sf_2020_economy</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">cluster</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"grey70"</span>, size <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_fill_manual</a></span><span class="op">(</span></span>
 <span>    values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>

@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">tidycensuskr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,7 +60,7 @@
 
       <h1>Regional analysis with tidycensuskr</h1>
             
-            <h4 data-toc-skip class="date">October 12, 2025</h4>
+            <h4 data-toc-skip class="date">October 14, 2025</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/sigmafelix/tidycensuskr/blob/main/vignettes/v02_regional_analysis.Rmd" class="external-link"><code>vignettes/v02_regional_analysis.Rmd</code></a></small>
       <div class="d-none name"><code>v02_regional_analysis.Rmd</code></div>
@@ -90,7 +90,7 @@ region.</li>
 </h3>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load 2020 boundaries</span></span>
-<span><span class="va">sf_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/load_districts.html">load_districts</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">adm2_sf_2020</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load census population data for 2010 and 2020</span></span>
 <span><span class="va">df_2010_pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2010</span>, </span>
@@ -101,7 +101,7 @@ region.</li>
 <span>                         type <span class="op">=</span> <span class="st">"population"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Merge with spatial data and compute population change</span></span>
-<span><span class="va">sf_target</span> <span class="op">&lt;-</span> <span class="va">sf_2020</span> <span class="op">|&gt;</span></span>
+<span><span class="va">sf_target</span> <span class="op">&lt;-</span> <span class="va">adm2_sf_2020</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">inner_join</a></span><span class="op">(</span><span class="va">df_2010_pop</span>, by <span class="op">=</span> <span class="st">"adm2_code"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">inner_join</a></span><span class="op">(</span><span class="va">df_2020_pop</span>, by <span class="op">=</span> <span class="st">"adm2_code"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>change <span class="op">=</span> <span class="va">`all households_total_prs.y`</span> <span class="op">-</span> <span class="va">`all households_total_prs.x`</span><span class="op">)</span></span></code></pre></div>
@@ -123,7 +123,7 @@ region.</li>
 <span>  <span class="fu">annotation_scale</span><span class="op">(</span>location <span class="op">=</span> <span class="st">"tr"</span>, width_hint <span class="op">=</span> <span class="fl">0.25</span>, text_cex <span class="op">=</span> <span class="fl">0.7</span>, line_width <span class="op">=</span> <span class="fl">0.7</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># National boundary (union of all districts)</span></span>
-<span><span class="va">sf_korea_boundary</span> <span class="op">&lt;-</span> <span class="va">sf_2020</span> <span class="op">|&gt;</span></span>
+<span><span class="va">sf_korea_boundary</span> <span class="op">&lt;-</span> <span class="va">adm2_sf_2020</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarise</a></span><span class="op">(</span>geometry <span class="op">=</span> <span class="fu"><a href="https://r-spatial.github.io/sf/reference/geos_combine.html" class="external-link">st_union</a></span><span class="op">(</span><span class="va">geometry</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Target region boundary (union of selected provinces/cities)</span></span>
@@ -170,9 +170,6 @@ classification of population (x) vs. tax (y).</li>
 <h3 id="data-prep-1">Data prep<a class="anchor" aria-label="anchor" href="#data-prep-1"></a>
 </h3>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Load 2020 boundaries</span></span>
-<span><span class="va">sf_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/load_districts.html">load_districts</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span></code></pre></div>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load census data</span></span>
 <span><span class="va">df_2020_pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>, </span>
 <span>                         type <span class="op">=</span> <span class="st">"population"</span><span class="op">)</span></span>
@@ -180,7 +177,7 @@ classification of population (x) vs. tax (y).</li>
 <span>                         type <span class="op">=</span> <span class="st">"tax"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Merge population with boundaries</span></span>
-<span><span class="va">sf_2020_pop</span> <span class="op">&lt;-</span> <span class="va">sf_2020</span> <span class="op">|&gt;</span></span>
+<span><span class="va">adm2_sf_2020_pop</span> <span class="op">&lt;-</span> <span class="va">adm2_sf_2020</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">left_join</a></span><span class="op">(</span><span class="va">df_2020_pop</span>, by <span class="op">=</span> <span class="st">"adm2_code"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span></span>
 <span>    adm2_code_chr <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html" class="external-link">as.character</a></span><span class="op">(</span><span class="va">adm2_code</span><span class="op">)</span>,</span>
@@ -189,7 +186,7 @@ classification of population (x) vs. tax (y).</li>
 <span>  <span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Aggregate smaller units (adm2_code ending not with 0) into 4-digit groups</span></span>
-<span><span class="va">sf_union_needed</span> <span class="op">&lt;-</span> <span class="va">sf_2020_pop</span> <span class="op">|&gt;</span></span>
+<span><span class="va">sf_union_needed</span> <span class="op">&lt;-</span> <span class="va">adm2_sf_2020_pop</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">last_digit</span> <span class="op">!=</span> <span class="st">"0"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html" class="external-link">group_by</a></span><span class="op">(</span><span class="va">adm2_prefix4</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html" class="external-link">summarise</a></span><span class="op">(</span></span>
@@ -200,18 +197,18 @@ classification of population (x) vs. tax (y).</li>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>adm2_code <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/numeric.html" class="external-link">as.numeric</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">adm2_prefix4</span>, <span class="st">"0"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Combine aggregated units with existing "0"-ending districts</span></span>
-<span><span class="va">sf_2020_unioned</span> <span class="op">&lt;-</span> <span class="va">sf_2020_pop</span> <span class="op">|&gt;</span></span>
+<span><span class="va">adm2_sf_2020_unioned</span> <span class="op">&lt;-</span> <span class="va">adm2_sf_2020_pop</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">last_digit</span> <span class="op">==</span> <span class="st">"0"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind_rows.html" class="external-link">bind_rows</a></span><span class="op">(</span><span class="va">sf_union_needed</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Join with tax data</span></span>
-<span><span class="va">sf_final</span> <span class="op">&lt;-</span> <span class="va">sf_2020_unioned</span> <span class="op">|&gt;</span></span>
+<span><span class="va">sf_final</span> <span class="op">&lt;-</span> <span class="va">adm2_sf_2020_unioned</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">left_join</a></span><span class="op">(</span><span class="va">df_2020_tax</span>, by <span class="op">=</span> <span class="st">"adm2_code"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="a-bivariate-choropleth-map">A bivariate choropleth map<a class="anchor" aria-label="anchor" href="#a-bivariate-choropleth-map"></a>
 </h3>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Create 3x3 bivariate classes (population vs tax)</span></span>
 <span><span class="va">bi_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://chris-prener.github.io/biscale/reference/bi_class.html" class="external-link">bi_class</a></span><span class="op">(</span></span>
 <span>  <span class="va">sf_final</span>,</span>
@@ -272,7 +269,7 @@ centered on 100 (balanced sex ratio).</li>
 <div class="section level3">
 <h3 id="data-prep-2">Data prep<a class="anchor" aria-label="anchor" href="#data-prep-2"></a>
 </h3>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load population data for the Seoul Metropolitan Area (SMA)</span></span>
 <span><span class="va">df_sma</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/anycensus.html">anycensus</a></span><span class="op">(</span></span>
 <span>  year  <span class="op">=</span> <span class="fl">2020</span>,</span>
@@ -291,7 +288,7 @@ centered on 100 (balanced sex ratio).</li>
 <div class="section level3">
 <h3 id="histograms">Histograms<a class="anchor" aria-label="anchor" href="#histograms"></a>
 </h3>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="co"># Background: overall distribution across all SMA</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html" class="external-link">geom_histogram</a></span><span class="op">(</span></span>
@@ -322,16 +319,13 @@ centered on 100 (balanced sex ratio).</li>
 <div class="section level3">
 <h3 id="a-choropleth-map">A choropleth map<a class="anchor" aria-label="anchor" href="#a-choropleth-map"></a>
 </h3>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Load boundaries</span></span>
-<span><span class="va">sf_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/load_districts.html">load_districts</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Merge SMA population data with boundaries</span></span>
-<span><span class="va">sf_2020_sma</span> <span class="op">&lt;-</span> <span class="va">sf_2020</span> <span class="op">|&gt;</span></span>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Merge SMA population data with boundaries</span></span>
+<span><span class="va">adm2_sf_2020_sma</span> <span class="op">&lt;-</span> <span class="va">adm2_sf_2020</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">inner_join</a></span><span class="op">(</span><span class="va">df_sma</span>, by <span class="op">=</span> <span class="st">"adm2_code"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Choropleth map for sex ratio</span></span>
-<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">sf_2020_sma</span><span class="op">)</span> <span class="op">+</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">adm2_sf_2020_sma</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">sex_ratio</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"gray"</span>, size <span class="op">=</span> <span class="fl">0.01</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html" class="external-link">scale_fill_gradient2</a></span><span class="op">(</span></span>
 <span>    low <span class="op">=</span> <span class="st">"#2C7BB6"</span>, mid <span class="op">=</span> <span class="st">"white"</span>, high <span class="op">=</span> <span class="st">"#D7191C"</span>,</span>

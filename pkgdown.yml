@@ -6,7 +6,7 @@ articles:
   v02_regional_analysis: v02_regional_analysis.html
   v03_gallery: v03_gallery.html
   v04_data_cleaning_kosis: v04_data_cleaning_kosis.html
-last_built: 2025-10-12T08:53Z
+last_built: 2025-10-14T01:45Z
 urls:
   reference: https://sigmafelix.github.io/tidycensuskr/reference
   article: https://sigmafelix.github.io/tidycensuskr/articles

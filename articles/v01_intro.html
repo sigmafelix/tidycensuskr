@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">tidycensuskr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,7 +60,7 @@
 
       <h1>Working with tidycensuskr</h1>
             
-            <h4 data-toc-skip class="date">October 12, 2025</h4>
+            <h4 data-toc-skip class="date">October 14, 2025</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/sigmafelix/tidycensuskr/blob/main/vignettes/v01_intro.Rmd" class="external-link"><code>vignettes/v01_intro.Rmd</code></a></small>
       <div class="d-none name"><code>v01_intro.Rmd</code></div>
@@ -193,14 +193,14 @@ countries for statistical purposes.&lt;/p&gt;"><sup>1</sup></a>)</th>
 </tr>
 </tbody>
 </table>
-<p><img src="v01_intro_files/figure-html/basemap-1.png" width="100%"></p>
+<p><img src="reference/figures/korea_map.png"></p>
 <p>Because administrative boundaries and coding systems can vary across
 years and data sources, <code>tidycensuskr</code> harmonizes codes to
 allow consistent integration of statistics. Currently, for 2020 data
 there are 250 <em>Si-Gun-Gu</em> and 17 <em>Si-Do</em>.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">adm2_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/load_districts.html">load_districts</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">adm2_2020</span><span class="op">$</span><span class="va">adm2_code</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">adm2_sf_2020</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">adm2_sf_2020</span><span class="op">$</span><span class="va">adm2_code</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] 250</span></span></code></pre></div>
 </div>
 </div>
