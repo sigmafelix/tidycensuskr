@@ -497,3 +497,8 @@ censuskor <- censuskor |>
   )
 
 usethis::use_data(censuskor, overwrite = TRUE)
+
+
+
+## 
+mm <- read_excel("tools/mortality_2010_2015_total.xlsx", skip = 1)
