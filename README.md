@@ -6,7 +6,7 @@ South Korean census and administrative boundary data. It aims to provide
 an easy-to-use interface for population, housing, and socioeconomic
 statistics linked with geospatial boundaries.
 
-<a href='https://sigmafelix.github.io/tidycensuskr/'><img src='man/figures/got.jpg' align="center" width="160" /></a>
+<a href='https://sigmafelix.github.io/tidycensuskr/'><img src='man/figures/gat.jpg' align="center" width="200" /></a>
 
 # Installation
 
