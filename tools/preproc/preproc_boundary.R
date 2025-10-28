@@ -155,7 +155,7 @@ sgg_lookup_ally <-
                         adm2_code - 200,
                         adm2_code)
     ) |>
-    .[, c("adm2_code", "sido_en", "sigungu_1_en")],
+    _[, c("adm2_code", "sido_en", "sigungu_1_en")],
     by = c("sgis_2020" = "adm2_code"),
     multiple = "first"
   )
