@@ -225,6 +225,8 @@ krcg2020 <- krcg |>
   dplyr::select(-name) |>
   dplyr::rename(oldcode = code) |>
   dplyr::mutate(oldcode = as.character(oldcode)) |>
-  dplyr::left_join(lookup20, by = "oldcode")
+  dplyr::left_join(lookup20, by = "oldcode") |>
+  dplyr::select(code, name, row, col)
 message("NA SGIS codes (2020): ", sum(is.na(krcg2020$code)))
-
+kr_grid_adm2_sgis_2020 <- krcg2020
+# usethis::use_data(kr_grid_adm2_sgis_2020, overwrite = TRUE)

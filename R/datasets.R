@@ -47,3 +47,25 @@
 #' * Statistical Geographic Information Service (SGIS)
 #' @keywords datasets
 "adm2_sf_2020"
+
+
+#' geofacet Grid for South Korea Administrative Districts (SGIS Standard, 2020)
+#'
+#' A geofacet grid for South Korea administrative districts (_Si-Gun-Gu_) based on
+#' the Statistical Geographic Information Service (SGIS) standard in 2020.
+#' Non-autonomous districts in cities are retained as separate entities.
+#' This grid can be used with the [geofacet](https://CRAN.R-project.org/package=geofacet)
+#' package to create faceted visualizations based on geographic layout.
+#'
+#' @format A data.frame with 250 rows and 6 variables
+#' @details
+#' * name Name of the district/municipal-level (Sigungu) administrative unit
+#' * code SGIS code of the district/municipal-level (Sigungu) administrative unit
+#' * row Row position in the geofacet grid
+#' * col Column position in the geofacet grid
+#'
+#' @source
+#' * Statistical Geographic Information Service (SGIS)
+#' * GitHub username chichead in [GitHub geofacet issue page](https://github.com/hafen/geofacet/issues/358)
+#' @keywords datasets
+"kr_grid_adm2_sgis_2020"
