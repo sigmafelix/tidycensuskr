@@ -7,7 +7,8 @@
 anycensus(
   year = 2020,
   codes = NULL,
-  type = c("population", "housing", "tax", "mortality", "economy"),
+  type = c("population", "housing", "tax", "mortality", "economy", "medicine",
+    "migration", "environment"),
   level = c("adm2", "adm1"),
   aggregator = sum,
   ...
@@ -20,7 +21,7 @@ anycensus(
 or character administrative area names (e.g. \code{c("Seoul", "Daejeon")}).}
 
 \item{type}{character(1). "population", "housing", "tax", "economy",
-or "mortality"
+"medicine", "migration", "environment" or "mortality"
 Defaults to "population".}
 
 \item{level}{character(1). "adm1" for province-level or
