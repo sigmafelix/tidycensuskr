@@ -51,7 +51,8 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">anycensus</span><span class="op">(</span></span>
 <span>  year <span class="op">=</span> <span class="fl">2020</span>,</span>
 <span>  codes <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"population"</span>, <span class="st">"housing"</span>, <span class="st">"tax"</span>, <span class="st">"mortality"</span>, <span class="st">"economy"</span><span class="op">)</span>,</span>
+<span>  type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"population"</span>, <span class="st">"housing"</span>, <span class="st">"tax"</span>, <span class="st">"mortality"</span>, <span class="st">"economy"</span>, <span class="st">"medicine"</span>,</span>
+<span>    <span class="st">"migration"</span>, <span class="st">"environment"</span><span class="op">)</span>,</span>
 <span>  level <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"adm2"</span>, <span class="st">"adm1"</span><span class="op">)</span>,</span>
 <span>  aggregator <span class="op">=</span> <span class="va">sum</span>,</span>
 <span>  <span class="va">...</span></span>
@@ -73,7 +74,7 @@ or character administrative area names (e.g. <code>c("Seoul", "Daejeon")</code>)
 
 <dt id="arg-type">type<a class="anchor" aria-label="anchor" href="#arg-type"></a></dt>
 <dd><p>character(1). "population", "housing", "tax", "economy",
-or "mortality"
+"medicine", "migration", "environment" or "mortality"
 Defaults to "population".</p></dd>
 
 
