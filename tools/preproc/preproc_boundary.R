@@ -502,3 +502,16 @@ usethis::use_data(censuskor, overwrite = TRUE)
 
 ## 
 mm <- read_excel("tools/mortality_2010_2015_total.xlsx", skip = 1)
+
+
+## Addition (20251103)
+library(tidycensuskr)
+data(censuskor)
+var_dfe <- qs2::qs_read("tools/variables_add_20251103.qs")
+
+censuskor <-
+  list(censuskor, var_dfe) |>
+  collapse::rowbind(fill = TRUE)
+dim(censuskor)
+usethis::use_data(censuskor, overwrite = TRUE)
+unique(censuskor$type)
