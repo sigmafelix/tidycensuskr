@@ -14,6 +14,8 @@
 #'   (e.g., `na.rm = TRUE`).
 #' @note Using characters in `codes` has a side effect of returning
 #'   all rows in the dataset that match year and type.
+#'   The 'wide' table is returned with separate columns for each
+#'   `class1` and `class2` and `unit` (abbreviated whereof) combination.
 #' @return A data.frame object containing census data
 #'   for the specified codes and year.
 #' @examples

@@ -5,7 +5,7 @@
 \alias{censuskor}
 \title{South Korea Census Data}
 \format{
-A data.frame with 41930 rows and 10 variables:
+A data.frame with 54218 rows and 10 variables:
 }
 \source{
 \itemize{
@@ -17,6 +17,7 @@ censuskor
 }
 \description{
 District level data including tax, population, business entities,
+housing, economy, medicine
 and mortality in South Korea in 2010, 2015, and/or 2020. The availble
 years and variables depend on the type of data.
 }
@@ -36,6 +37,9 @@ e.g., "population", "tax", "mortality", "housing", "medicine", "migration", "env
 }
 }
 \note{
+NA values in the value field indicate that the data was omitted
+or suppressed. We kept these NA values as-is to reflect the
+original data from the source.
 For temporal comparison, province names in adm1 field are
 standardized to the common names with no suffix in metropolitan cities
 and "-do" suffix in provinces.

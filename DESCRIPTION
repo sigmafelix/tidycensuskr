@@ -1,6 +1,6 @@
 Package: tidycensuskr 
 Title: Easy Access for South Korea Census Data and Boundaries
-Version: 0.2.2
+Version: 0.2.3
 Authors@R: c(
     person(given = "Insang", 
           family = "Song", 
@@ -21,9 +21,9 @@ Authors@R: c(
 Description:
     Census and administrative data in South Korea are a basic source of
     quantitative and mixed-methods research for social and urban scientists.
-    This package provides a sf-based standardized workflow based on
-    direct open API access to the major census and administrative data sources
-    and pre-generated files in South Korea.
+    This package provides a 'sf' (Pebesma et al., 2024 <doi:10.32614/CRAN.package.sf>) 
+    based standardized workflow based on direct open API access to the major census and
+    administrative data sources and pre-generated files in South Korea.
 License: MIT + file LICENSE
 LazyData: true
 Depends:

@@ -9,3 +9,4 @@
 ^.*\.Rproj$
 ^README*\.Rmd$
 ^.vscode
+^tools

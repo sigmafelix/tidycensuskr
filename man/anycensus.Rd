@@ -43,6 +43,8 @@ The function queries a long format census data frame
 \note{
 Using characters in \code{codes} has a side effect of returning
 all rows in the dataset that match year and type.
+The 'wide' table is returned with separate columns for each
+\code{class1} and \code{class2} and \code{unit} (abbreviated whereof) combination.
 }
 \examples{
 # Query mortality data for adm2_code 21 (Busan)
