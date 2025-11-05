@@ -9,7 +9,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">tidycensuskr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.3</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -100,7 +100,9 @@ for the specified codes and year.</p>
     <div class="section level2">
     <h2 id="note">Note<a class="anchor" aria-label="anchor" href="#note"></a></h2>
     <p>Using characters in <code>codes</code> has a side effect of returning
-all rows in the dataset that match year and type.</p>
+all rows in the dataset that match year and type.
+The 'wide' table is returned with separate columns for each
+<code>class1</code> and <code>class2</code> and <code>unit</code> (abbreviated whereof) combination.</p>
     </div>
 
     <div class="section level2">

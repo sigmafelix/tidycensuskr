@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">tidycensuskr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.3</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,7 +60,7 @@
 
       <h1>Working with tidycensuskr</h1>
             
-            <h4 data-toc-skip class="date">November 02, 2025</h4>
+            <h4 data-toc-skip class="date">November 05, 2025</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/sigmafelix/tidycensuskr/blob/main/vignettes/v01_intro.Rmd" class="external-link"><code>vignettes/v01_intro.Rmd</code></a></small>
       <div class="d-none name"><code>v01_intro.Rmd</code></div>
@@ -415,20 +415,15 @@ combination of year, region, and category</li>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">censuskor</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">censuskor</span><span class="op">)</span></span>
-<span><span class="co">#&gt;   year              adm1 adm1_code        adm2 adm2_code       type</span></span>
-<span><span class="co">#&gt; 1 2010 Chungcheongbuk-do        33 Cheongju-si     33010 population</span></span>
-<span><span class="co">#&gt; 2 2010 Chungcheongbuk-do        33 Cheongju-si     33010 population</span></span>
-<span><span class="co">#&gt; 3 2010 Chungcheongbuk-do        33 Cheongju-si     33010 population</span></span>
-<span><span class="co">#&gt; 4 2020 Chungcheongbuk-do        33 Cheongju-si     33040        tax</span></span>
-<span><span class="co">#&gt; 5 2020 Chungcheongbuk-do        33 Cheongju-si     33040        tax</span></span>
-<span><span class="co">#&gt; 6 2015 Chungcheongbuk-do        33 Cheongju-si     33040 population</span></span>
-<span><span class="co">#&gt;           class1  class2        unit  value</span></span>
-<span><span class="co">#&gt; 1 all households   total     persons 646939</span></span>
-<span><span class="co">#&gt; 2 all households    male     persons 318355</span></span>
-<span><span class="co">#&gt; 3 all households  female     persons 328584</span></span>
-<span><span class="co">#&gt; 4         income general million KRW 524478</span></span>
-<span><span class="co">#&gt; 5         income   labor million KRW 598560</span></span>
-<span><span class="co">#&gt; 6 all households   total     persons 797099</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># A data frame: 6 × 10</span></span></span>
+<span><span class="co">#&gt;    year adm1          adm1_code adm2  adm2_code type  class1 class2 unit   value</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">*</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>  <span style="text-decoration: underline;">2</span>010 Chungcheongb…        33 Cheo…     <span style="text-decoration: underline;">33</span>010 popu… all h… total  pers… <span style="text-decoration: underline;">646</span>939</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>  <span style="text-decoration: underline;">2</span>010 Chungcheongb…        33 Cheo…     <span style="text-decoration: underline;">33</span>010 popu… all h… male   pers… <span style="text-decoration: underline;">318</span>355</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>  <span style="text-decoration: underline;">2</span>010 Chungcheongb…        33 Cheo…     <span style="text-decoration: underline;">33</span>010 popu… all h… female pers… <span style="text-decoration: underline;">328</span>584</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>  <span style="text-decoration: underline;">2</span>020 Chungcheongb…        33 Cheo…     <span style="text-decoration: underline;">33</span>040 tax   income gener… mill… <span style="text-decoration: underline;">524</span>478</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>  <span style="text-decoration: underline;">2</span>020 Chungcheongb…        33 Cheo…     <span style="text-decoration: underline;">33</span>040 tax   income labor  mill… <span style="text-decoration: underline;">598</span>560</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span>  <span style="text-decoration: underline;">2</span>015 Chungcheongb…        33 Cheo…     <span style="text-decoration: underline;">33</span>040 popu… all h… total  pers… <span style="text-decoration: underline;">797</span>099</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="quick-visualization">Quick Visualization<a class="anchor" aria-label="anchor" href="#quick-visualization"></a>
