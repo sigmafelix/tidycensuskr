@@ -40,18 +40,18 @@ The resulting LISA cluster map highlights where economic activities are concentr
 data(adm2_sf_2020)
 
 # Load 2020 economy data
-df_2020_economy <- anycensus(year = 2020, 
+df_2020_economy <- anycensus(year = 2020,
                              type = "economy")
 
 # Merge with spatial data
 adm2_sf_2020_economy <- adm2_sf_2020 |>
-  inner_join(df_2020_economy, by = "adm2_code") 
+  dplyr::inner_join(df_2020_economy, by = "adm2_code")
 
 # Variable of interest: number of companies
 var <- adm2_sf_2020_economy$company_total_cnt
 ```
 
-### Global Moran’s I
+### Global Moran's I
 ```{r global_moran_1}
 # Build neighbors (queen contiguity) and spatial weights
 nb <- poly2nb(adm2_sf_2020_economy, queen = TRUE)
@@ -62,9 +62,9 @@ global_moran <- moran.test(var, lw, zero.policy = TRUE)
 global_moran
 ```
 
-### Local Moran’s I and LISA map
+### Local Moran's I and LISA map
 ```{r local_moran_1, , fig.width=7, fig.height=5}
-# Local Moran’s I
+# Local Moran's I
 local_moran <- localmoran(var, lw, zero.policy = TRUE)
 
 # Bind results back to sf object
@@ -102,7 +102,7 @@ ggplot(adm2_sf_2020_economy) +
   theme_minimal()
 ```
 
-The results reveal a strong metropolitan concentration of economic activity. High–High (H–H) clusters are predominantly located in the Seoul Metropolitan Area, reflecting its central role in South Korea’s economy. Low–Low (L–L) clusters appear in Gangwon Province and along the borders of Jeollabuk-do, Jeollanam-do, Gyeongsangbuk-do, and Chungcheongnam-do, indicating regions with consistently low levels of company presence. This spatial pattern highlights the dominance of the capital region in economic activity and the relative sparsity of industrial and business units in peripheral provinces.
+The results reveal a strong metropolitan concentration of economic activity. High-High (H-H) clusters are predominantly located in the Seoul Metropolitan Area, reflecting its central role in South Korea's economy. Low-Low (L-L) clusters appear in Gangwon Province and along the borders of Jeollabuk-do, Jeollanam-do, Gyeongsangbuk-do, and Chungcheongnam-do, indicating regions with consistently low levels of company presence. This spatial pattern highlights the dominance of the capital region in economic activity and the relative sparsity of industrial and business units in peripheral provinces.
 
 
 
