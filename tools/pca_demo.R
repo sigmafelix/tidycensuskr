@@ -2,7 +2,7 @@
 library(tidycensuskr)
 library(dplyr)
 library(ggplot2)
-
+library(janitor)
 
 # Load data
 sf_2020 <- load_districts(year = 2020)
@@ -13,6 +13,12 @@ df_pop <- anycensus(year = 2020, type = "population", level = "adm2")
 df_mort <- anycensus(year = 2020, type = "mortality", level = "adm2")
 df_eco <- anycensus(year = 2020, type = "economy", level = "adm2")
 df_tax <- anycensus(year = 2020, type = "tax", level = "adm2")
+
+df_eco_x <- df_eco |>
+  janitor::clean_names() |>
+  dplyr::select(-8:-10) |>
+  # fill NA values with 0
+  mutate(across(where(is.numeric), ~ ifelse(is.na(.), 0, .)))
 
 census_pop_2020 <- df_pop |>
   rename(population_total = `all households_total_prs`)
@@ -33,32 +39,32 @@ census_pop_housing_2020 <- census_pop_2020 |>
 data(censuskor)
 
 df_wide <- Reduce(
-    function(x, y) left_join(
-        x, y,
-        by = c("adm1", "adm1_code", "adm2", "adm2_code", "year")
-    ),
-    list(
-        df_hou,
-        df_pop,
-        df_mort,
-        df_eco
-    )
+  function(x, y) left_join(
+    x, y,
+    by = c("adm1", "adm1_code", "adm2", "adm2_code", "year")
+  ),
+  list(
+    df_hou,
+    df_pop,
+    df_mort,
+    df_eco_x
+  )
 )
-df_wide <- df_wide |>
-  dplyr::select(-dplyr::starts_with("type")) |>
-  dplyr::mutate(
-    adm2_code = paste0(substr(adm2_code, 1, 4), "0")
-  ) |>
-  dplyr::select(-adm2) |>
-  dplyr::group_by(year, adm1, adm1_code, adm2_code) |>
-  dplyr::summarize(
-    dplyr::across(
-      .cols = where(is.numeric),
-      .fns = sum,
-      .names = "{.col}"
-    )
-  ) |>
-  dplyr::ungroup()
+# df_wide <- df_wide |>
+#   dplyr::select(-dplyr::starts_with("type")) |>
+#   dplyr::mutate(
+#     adm2_code = paste0(substr(adm2_code, 1, 4), "0")
+#   ) |>
+#   dplyr::select(-adm2) |>
+  # dplyr::group_by(year, adm1, adm1_code, adm2_code) |>
+  # dplyr::summarize(
+  #   dplyr::across(
+  #     .cols = where(is.numeric),
+  #     .fns = sum,
+  #     .names = "{.col}"
+  #   )
+  # ) |>
+  # dplyr::ungroup()
 df_wide <- df_wide |>
   dplyr::mutate(adm2_code = as.integer(adm2_code)) |>
   dplyr::left_join(df_tax)
@@ -68,11 +74,11 @@ df_wide_re <-
   dplyr::group_by(adm2_code_) |>
   dplyr::summarize(
     dplyr::across(
-      dplyr::matches("households|income|housing"),
+      dplyr::matches("households|income|housing|grdp"),
       sum
     ),
     dplyr::across(
-      dplyr::matches("causes"),
+      dplyr::matches("fertility|causes"),
       mean
     )
   ) |>
@@ -84,18 +90,31 @@ df_wide_re <-
     tax_income = `income_general_mkr`,
     tax_labor = `income_labor_mkr`,
     sex_ratio = 100 * `all households_male_prs` / `all households_female_prs`,
-    mortality_rate = `all causes_total_p1p`
+    mortality_rate = `all causes_total_p1p`,
+    fertility_rate = fertility_total_brt,
+    dplyr::across(
+      dplyr::matches("grdp"),
+      ~ .x / `all households_total_prs`
+    )
   )
 
 prc_df <-
-  prcomp(df_wide_re[,c(-1, -5, -6)], scale = TRUE)
+  prcomp(df_wide_re[,c(-1, -3, -4, -5, -6)], scale = TRUE)
 prc_df$rotation |> as.data.frame() |> round(3) |> write.csv("tools/loading.csv")
+prc_df$rotation |> as.data.frame() |> round(3) |> _[, 1:10]
 prc_df$scale
+prc_df$sdev / sum(prc_df$sdev)
 prc_df$x
 biplot(prc_df)
 
-pca_rot <- as.data.frame(prc_df$x) |>
-  dplyr::rename(pc1_rurality = PC1, pc2_health = PC2, pc5_asset = PC5, pc7_tax = PC7)
+# PC1 sparse; low wholesale and retail
+# PC2 high mortality and fertility, agriculture, mining, pubadm
+# PC3 lower sex ratio, low manufacturing, all high activity
+# PC4 electricity
+# PC5 high transportation and storage, high mortality, mining and quarrying
+
+pca_rot <- as.data.frame(prc_df$x)
+  # dplyr::rename(pc1_rurality = PC1, pc2_health = PC2, pc5_asset = PC5)
 df_wide_pca <- df_wide_re |>
   dplyr::bind_cols(pca_rot)
 
@@ -105,14 +124,49 @@ adm2_2020 <- load_districts(2020) |>
   dplyr::group_by(adm2_code_) |>
   dplyr::summarize(adm2_code = first(adm2_code)) |>
   dplyr::ungroup()
+
+
+gen_gg <- function(sf, pca, pc_num = 1) {
+  colname <- paste0("PC", pc_num)
+  gg_pc1_2020 <- adm2_2020 |>
+    dplyr::left_join(
+      df_wide_pca |>
+        dplyr::select(dplyr::all_of(c("adm2_code_", colname))),
+      by = "adm2_code_"
+    ) |>
+    ggplot() +
+    geom_sf(aes(fill = !!sym(colname)), color = NA) +
+    scale_fill_viridis_c() +
+    theme_minimal() +
+    theme(
+      axis.text = element_blank(),
+      axis.ticks = element_blank(),
+      panel.grid = element_blank()
+    ) +
+    labs(
+      title = "PCA-based index",
+      subtitle = paste0("Principal Component ", pc_num, " from multiple census variables"),
+      fill = paste0(colname, " (rurality)")
+    )
+  gg_pc1_2020
+}
+
+gen_gg(sf_2020, df_wide_pca, pc_num = 1)
+gen_gg(sf_2020, df_wide_pca, pc_num = 2)
+gen_gg(sf_2020, df_wide_pca, pc_num = 3)
+gen_gg(sf_2020, df_wide_pca, pc_num = 4)
+gen_gg(sf_2020, df_wide_pca, pc_num = 5)
+gen_gg(sf_2020, df_wide_pca, pc_num = 6)
+gen_gg(sf_2020, df_wide_pca, pc_num = 9)
+
 gg_pc1_2020 <- adm2_2020 |>
   dplyr::left_join(
     df_wide_pca |>
-      dplyr::select(adm2_code_, pc1_rurality, pc2_health, pc5_asset),
+      dplyr::select(adm2_code_, PC1),
     by = "adm2_code_"
   ) |>
   ggplot() +
-  geom_sf(aes(fill = pc1_rurality), color = NA) +
+  geom_sf(aes(fill = PC1), color = NA) +
   scale_fill_viridis_c() +
   theme_minimal() +
   theme(
@@ -128,11 +182,11 @@ gg_pc1_2020 <- adm2_2020 |>
 gg_pc5_2020 <- adm2_2020 |>
   dplyr::left_join(
     df_wide_pca |>
-      dplyr::select(adm2_code_, pc1_rurality, pc2_health, pc5_asset),
+      dplyr::select(adm2_code_, PC5),
     by = "adm2_code_"
   ) |>
   ggplot() +
-  geom_sf(aes(fill = pc5_asset), color = NA) +
+  geom_sf(aes(fill = PC5), color = NA) +
   scale_fill_viridis_c() +
   theme_minimal() +
   theme(
@@ -165,10 +219,50 @@ gg_pc7_2020 <- adm2_2020 |>
     subtitle = "Principal Component 7 from multiple census variables",
     fill = "PC7 (tax)"
   )
+gg_pc2_2020 <- adm2_2020 |>
+  dplyr::left_join(
+    df_wide_pca |>
+      dplyr::select(adm2_code_, PC2),
+    by = "adm2_code_"
+  ) |>
+  ggplot() +
+  geom_sf(aes(fill = PC2), color = NA) +
+  scale_fill_viridis_c() +
+  theme_minimal() +
+  theme(
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    panel.grid = element_blank()
+  ) +
+  labs(
+    title = "PCA-based asset index",
+    subtitle = "Principal Component 2 from multiple census variables",
+    fill = "PC2 (?)"
+  )
+gg_pc3_2020 <- adm2_2020 |>
+  dplyr::left_join(
+    df_wide_pca |>
+      dplyr::select(adm2_code_, PC3),
+    by = "adm2_code_"
+  ) |>
+  ggplot() +
+  geom_sf(aes(fill = PC3), color = NA) +
+  scale_fill_viridis_c() +
+  theme_minimal() +
+  theme(
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    panel.grid = element_blank()
+  ) +
+  labs(
+    title = "PCA-based construction index",
+    subtitle = "Principal Component 3 from multiple census variables",
+    fill = "PC3 (?)"
+  )
 gg_pc4_2020 <- adm2_2020 |>
   dplyr::left_join(
     df_wide_pca |>
-      dplyr::select(adm2_code_, pc1_rurality, pc2_health, PC4),
+      dplyr::select(adm2_code_, PC4),
     by = "adm2_code_"
   ) |>
   ggplot() +
@@ -181,9 +275,9 @@ gg_pc4_2020 <- adm2_2020 |>
     panel.grid = element_blank()
   ) +
   labs(
-    title = "PCA-based asset index",
+    title = "PCA-based financial index",
     subtitle = "Principal Component 4 from multiple census variables",
-    fill = "PC4 (?)"
+    fill = "PC5 (financial)"
   )
 
 library(factoextra)
