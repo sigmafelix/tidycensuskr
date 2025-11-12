@@ -283,3 +283,59 @@ gg_pc4_2020 <- adm2_2020 |>
 library(factoextra)
 factoextra::fviz_pca(prc_df)
 factoextra::fviz_pca_var(prc_df)
+
+
+
+## dirichlet clustering
+library(DIRECT)
+
+# subset grdp
+df_eco_frac <-
+  df_eco_x |>
+  dplyr::select(adm2_code, dplyr::matches("^grdp_")) |>
+  dplyr::filter(grdp_human_health_and_social_work_activities_mkr != 0)
+df_eco_frac_rs <- rowSums(df_eco_frac[,-1])
+df_eco_frac <-
+  df_eco_frac |>
+  dplyr::mutate(rowsum = df_eco_frac_rs) |>
+  dplyr::rowwise() |>
+  dplyr::mutate(
+    dplyr::across(
+      dplyr::matches("^grdp_"),
+      ~ ifelse(is.na(.x), 0, .x)
+    ),
+    dplyr::across(
+      dplyr::matches("^grdp_"),
+      ~ .x / rowsum
+    )
+  ) |>
+  dplyr::ungroup() |>
+  dplyr::select(-rowsum)
+
+init_assign <- sample(1:nrow(df_eco_frac), nrow(df_eco_frac), replace = FALSE)
+df_eco_clust_in <- as.data.frame(df_eco_frac[, -1])
+
+df_eco_clust <-
+  DIRECT::DIRECT(
+    df_eco_clust_in,
+    nTime = 1L,
+    nIter = 5000,
+    seed.value = 202511,
+    c.curr = init_assign,
+    burn.in = 2000,
+    nResample = 100L,
+    step.size = 4L,
+    PRINT = TRUE
+  )
+
+
+library(dirichletprocess)
+dpCluster <-  DirichletProcessMvnormal(as.matrix(df_eco_clust_in), numInitialClusters = 10, alphaPriors = c(1, 0.8))
+# dpCluster <- DirichletProcessGaussian(as.matrix(df_eco_clust_in))
+# dpCluster <-  DirichletProcessBeta(as.matrix(df_eco_clust_in), maxY = 229)
+dpCluster <- Fit(dpCluster, 1000, updatePrior = FALSE, progressBar = TRUE)
+plot(dpCluster)
+AlphaPriorPosteriorPlot(dpCluster)
+AlphaTraceplot(dpCluster)
+
+example(DirichletProcessMvnormal)
