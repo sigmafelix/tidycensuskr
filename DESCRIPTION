@@ -1,6 +1,6 @@
 Package: tidycensuskr 
 Title: Easy Access for South Korea Census Data and Boundaries
-Version: 0.2.3
+Version: 0.2.4
 Authors@R: c(
     person(given = "Insang", 
           family = "Song", 

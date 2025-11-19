@@ -43,7 +43,7 @@ anycensus <- function(
   codes = NULL,
   type  = c(
     "population", "housing", "tax", "mortality", "economy",
-    "medicine", "migration", "environment"
+    "medicine", "migration", "environment", "welfare"
   ),
   level = c("adm2", "adm1"),
   aggregator = sum,
