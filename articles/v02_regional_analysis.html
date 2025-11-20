@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">tidycensuskr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.3</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.4</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,6 +37,7 @@
     <li><a class="dropdown-item" href="../articles/v02_regional_analysis.html">Regional analysis with tidycensuskr</a></li>
     <li><a class="dropdown-item" href="../articles/v03_gallery.html">Analytics Gallery with tidycensuskr</a></li>
     <li><a class="dropdown-item" href="../articles/v04_data_cleaning_kosis.html">Data Cleaning: From KOSIS Raw Data to Tidy Format</a></li>
+    <li><a class="dropdown-item" href="../articles/v05_contributors_guide.html">Using KOSIS Interface for Contributors</a></li>
   </ul>
 </li>
       </ul>
@@ -60,7 +61,7 @@
 
       <h1>Regional analysis with tidycensuskr</h1>
             
-            <h4 data-toc-skip class="date">November 05, 2025</h4>
+            <h4 data-toc-skip class="date">November 20, 2025</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/sigmafelix/tidycensuskr/blob/main/vignettes/v02_regional_analysis.Rmd" class="external-link"><code>vignettes/v02_regional_analysis.Rmd</code></a></small>
       <div class="d-none name"><code>v02_regional_analysis.Rmd</code></div>
@@ -142,7 +143,7 @@ region.</li>
 <span>  <span class="fu">cowplot</span><span class="fu">::</span><span class="fu"><a href="https://wilkelab.org/cowplot/reference/draw_plot.html" class="external-link">draw_plot</a></span><span class="op">(</span><span class="va">korea_inset</span>, x <span class="op">=</span> <span class="fl">0.7</span>, y <span class="op">=</span> <span class="fl">0.05</span>, width <span class="op">=</span> <span class="fl">0.25</span>, height <span class="op">=</span> <span class="fl">0.25</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://wilkelab.org/cowplot/reference/draw_grob.html" class="external-link">draw_grob</a></span><span class="op">(</span><span class="fu">grid</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/grid/grid.rect.html" class="external-link">rectGrob</a></span><span class="op">(</span>gp <span class="op">=</span> <span class="fu">gpar</span><span class="op">(</span>col <span class="op">=</span> <span class="st">"black"</span>, fill <span class="op">=</span> <span class="cn">NA</span>, lwd <span class="op">=</span> <span class="fl">0.6</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>            x <span class="op">=</span> <span class="fl">0.7</span>, y <span class="op">=</span> <span class="fl">0.05</span>, width <span class="op">=</span> <span class="fl">0.25</span>, height <span class="op">=</span> <span class="fl">0.25</span><span class="op">)</span></span></code></pre></div>
-<p><img src="v02_regional_analysis_files/figure-html/choropleth_1-1.png" width="672">
+<p><img src="v02_regional_analysis_files/figure-html/choropleth_1-1.png" class="r-plt" width="672">
 In the Gyeongsangnam-do region, large metropolitan cities such as Busan
 and Ulsan show population decline, while surrounding suburban areas
 demonstrate notable population gains. Rural areas in the western part of
@@ -237,7 +238,7 @@ classification of population (x) vs. tax (y).</li>
 <span>      <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>plot.title <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span><span class="op">)</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">cowplot</span><span class="fu">::</span><span class="fu"><a href="https://wilkelab.org/cowplot/reference/draw_plot.html" class="external-link">draw_plot</a></span><span class="op">(</span><span class="va">legend</span>, x <span class="op">=</span> <span class="fl">0.7</span>, y <span class="op">=</span> <span class="fl">0.1</span>, width <span class="op">=</span> <span class="fl">0.3</span>, height <span class="op">=</span> <span class="fl">0.3</span><span class="op">)</span></span></code></pre></div>
-<p><img src="v02_regional_analysis_files/figure-html/bivariate_2-1.png" width="672"></p>
+<p><img src="v02_regional_analysis_files/figure-html/bivariate_2-1.png" class="r-plt" width="672"></p>
 <p>The bivariate map highlights the strong centrality of the Seoul
 Metropolitan Area. Both the capital region and the southeastern
 manufacturing hubs exhibit high population and high tax revenues. In
@@ -314,7 +315,7 @@ centered on 100 (balanced sex ratio).</li>
 <span>    y <span class="op">=</span> <span class="st">"Density"</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<p><img src="v02_regional_analysis_files/figure-html/histogram_3-1.png" width="672"></p>
+<p><img src="v02_regional_analysis_files/figure-html/histogram_3-1.png" class="r-plt" width="672"></p>
 </div>
 <div class="section level3">
 <h3 id="a-choropleth-map">A choropleth map<a class="anchor" aria-label="anchor" href="#a-choropleth-map"></a>
@@ -334,7 +335,7 @@ centered on 100 (balanced sex ratio).</li>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Sex ratio in the Seoul Metropolitan Area (2020)"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_void</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<p><img src="v02_regional_analysis_files/figure-html/choropleth_3-1.png" width="672"></p>
+<p><img src="v02_regional_analysis_files/figure-html/choropleth_3-1.png" class="r-plt" width="672"></p>
 <p>Within the Seoul Metropolitan Area, the central city districts
 (Seoul) show a higher proportion of females, whereas the outer suburban
 areas tend to show male-dominated populations. This highlights spatial
@@ -352,7 +353,7 @@ differences in gender distribution across the metropolitan region.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
     </footer>

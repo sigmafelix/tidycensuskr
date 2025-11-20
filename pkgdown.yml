@@ -1,12 +1,13 @@
 pandoc: 3.1.11
-pkgdown: 2.1.3
+pkgdown: 2.2.0
 pkgdown_sha: ~
 articles:
   v01_intro: v01_intro.html
   v02_regional_analysis: v02_regional_analysis.html
   v03_gallery: v03_gallery.html
   v04_data_cleaning_kosis: v04_data_cleaning_kosis.html
-last_built: 2025-11-05T06:20Z
+  v05_contributors_guide: v05_contributors_guide.html
+last_built: 2025-11-20T10:02Z
 urls:
   reference: https://sigmafelix.github.io/tidycensuskr/reference
   article: https://sigmafelix.github.io/tidycensuskr/articles
