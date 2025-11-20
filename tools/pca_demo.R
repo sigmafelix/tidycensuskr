@@ -330,12 +330,20 @@ df_eco_clust <-
 
 
 library(dirichletprocess)
-dpCluster <-  DirichletProcessMvnormal(as.matrix(df_eco_clust_in), numInitialClusters = 10, alphaPriors = c(1, 0.8))
+mat_eco_clust <- as.matrix(df_eco_clust_in)
+dpCluster <-  DirichletProcessMvnormal(y = mat_eco_clust)
 # dpCluster <- DirichletProcessGaussian(as.matrix(df_eco_clust_in))
 # dpCluster <-  DirichletProcessBeta(as.matrix(df_eco_clust_in), maxY = 229)
-dpCluster <- Fit(dpCluster, 1000, updatePrior = FALSE, progressBar = TRUE)
+dpCluster <- Fit(dpCluster, 2500, updatePrior = FALSE, progressBar = FALSE)
 plot(dpCluster)
 AlphaPriorPosteriorPlot(dpCluster)
 AlphaTraceplot(dpCluster)
 
-example(DirichletProcessMvnormal)
+kmc2 <- lares::clusterKmeans(df_eco_clust_in)
+kmc <- kmeans(mat_eco_clust, centers = 9, nstart = 20, iter.max = 5000L)
+
+adm2_2020_cl <- adm2_2020 |>
+  dplyr::mutate(
+    clust6 = factor(kmc$cluster)
+  )
+plot(adm2_2020_cl["clust6"])
