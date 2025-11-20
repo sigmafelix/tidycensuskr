@@ -8,7 +8,7 @@ anycensus(
   year = 2020,
   codes = NULL,
   type = c("population", "housing", "tax", "mortality", "economy", "medicine",
-    "migration", "environment"),
+    "migration", "environment", "welfare"),
   level = c("adm2", "adm1"),
   aggregator = sum,
   ...

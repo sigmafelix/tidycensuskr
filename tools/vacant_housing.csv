@@ -1,0 +1,1375 @@
+"adm1","adm1_code","adm2","adm2_code","year","type","class1","class2","unit","value"
+"Seoul",11,"Jongno-gu",11010,2015,"housing","vacant housing","fraction","percent",2.8
+"Seoul",11,"Jongno-gu",11010,2015,"housing","vacant housing","number of vacant housing","count",1216
+"Seoul",11,"Jongno-gu",11010,2015,"housing","vacant housing","total number of housing","count",43550
+"Seoul",11,"Jung-gu",11020,2015,"housing","vacant housing","fraction","percent",1.9
+"Seoul",11,"Jung-gu",11020,2015,"housing","vacant housing","number of vacant housing","count",727
+"Seoul",11,"Jung-gu",11020,2015,"housing","vacant housing","total number of housing","count",37478
+"Seoul",11,"Yongsan-gu",11030,2015,"housing","vacant housing","fraction","percent",7.3
+"Seoul",11,"Yongsan-gu",11030,2015,"housing","vacant housing","number of vacant housing","count",5136
+"Seoul",11,"Yongsan-gu",11030,2015,"housing","vacant housing","total number of housing","count",70723
+"Seoul",11,"Seongdong-gu",11040,2015,"housing","vacant housing","fraction","percent",4.5
+"Seoul",11,"Seongdong-gu",11040,2015,"housing","vacant housing","number of vacant housing","count",3680
+"Seoul",11,"Seongdong-gu",11040,2015,"housing","vacant housing","total number of housing","count",82331
+"Seoul",11,"Gwangjin-gu",11050,2015,"housing","vacant housing","fraction","percent",0.8
+"Seoul",11,"Gwangjin-gu",11050,2015,"housing","vacant housing","number of vacant housing","count",669
+"Seoul",11,"Gwangjin-gu",11050,2015,"housing","vacant housing","total number of housing","count",79393
+"Seoul",11,"Dongdaemun-gu",11060,2015,"housing","vacant housing","fraction","percent",3.9
+"Seoul",11,"Dongdaemun-gu",11060,2015,"housing","vacant housing","number of vacant housing","count",3839
+"Seoul",11,"Dongdaemun-gu",11060,2015,"housing","vacant housing","total number of housing","count",98203
+"Seoul",11,"Jungnang-gu",11070,2015,"housing","vacant housing","fraction","percent",1.5
+"Seoul",11,"Jungnang-gu",11070,2015,"housing","vacant housing","number of vacant housing","count",1454
+"Seoul",11,"Jungnang-gu",11070,2015,"housing","vacant housing","total number of housing","count",99265
+"Seoul",11,"Seongbuk-gu",11080,2015,"housing","vacant housing","fraction","percent",1.7
+"Seoul",11,"Seongbuk-gu",11080,2015,"housing","vacant housing","number of vacant housing","count",2168
+"Seoul",11,"Seongbuk-gu",11080,2015,"housing","vacant housing","total number of housing","count",128046
+"Seoul",11,"Gangbuk-gu",11090,2015,"housing","vacant housing","fraction","percent",2.1
+"Seoul",11,"Gangbuk-gu",11090,2015,"housing","vacant housing","number of vacant housing","count",1887
+"Seoul",11,"Gangbuk-gu",11090,2015,"housing","vacant housing","total number of housing","count",91806
+"Seoul",11,"Dobong-gu",11100,2015,"housing","vacant housing","fraction","percent",1.8
+"Seoul",11,"Dobong-gu",11100,2015,"housing","vacant housing","number of vacant housing","count",1889
+"Seoul",11,"Dobong-gu",11100,2015,"housing","vacant housing","total number of housing","count",102443
+"Seoul",11,"Nowon-gu",11110,2015,"housing","vacant housing","fraction","percent",2
+"Seoul",11,"Nowon-gu",11110,2015,"housing","vacant housing","number of vacant housing","count",3790
+"Seoul",11,"Nowon-gu",11110,2015,"housing","vacant housing","total number of housing","count",186626
+"Seoul",11,"Eunpyeong-gu",11120,2015,"housing","vacant housing","fraction","percent",2.4
+"Seoul",11,"Eunpyeong-gu",11120,2015,"housing","vacant housing","number of vacant housing","count",3307
+"Seoul",11,"Eunpyeong-gu",11120,2015,"housing","vacant housing","total number of housing","count",140330
+"Seoul",11,"Seodaemun-gu",11130,2015,"housing","vacant housing","fraction","percent",7.5
+"Seoul",11,"Seodaemun-gu",11130,2015,"housing","vacant housing","number of vacant housing","count",7007
+"Seoul",11,"Seodaemun-gu",11130,2015,"housing","vacant housing","total number of housing","count",92885
+"Seoul",11,"Mapo-gu",11140,2015,"housing","vacant housing","fraction","percent",3.2
+"Seoul",11,"Mapo-gu",11140,2015,"housing","vacant housing","number of vacant housing","count",3767
+"Seoul",11,"Mapo-gu",11140,2015,"housing","vacant housing","total number of housing","count",116135
+"Seoul",11,"Yangcheon-gu",11150,2015,"housing","vacant housing","fraction","percent",1.6
+"Seoul",11,"Yangcheon-gu",11150,2015,"housing","vacant housing","number of vacant housing","count",2199
+"Seoul",11,"Yangcheon-gu",11150,2015,"housing","vacant housing","total number of housing","count",134097
+"Seoul",11,"Gangseo-gu",11160,2015,"housing","vacant housing","fraction","percent",3.1
+"Seoul",11,"Gangseo-gu",11160,2015,"housing","vacant housing","number of vacant housing","count",5510
+"Seoul",11,"Gangseo-gu",11160,2015,"housing","vacant housing","total number of housing","count",179045
+"Seoul",11,"Guro-gu",11170,2015,"housing","vacant housing","fraction","percent",1.8
+"Seoul",11,"Guro-gu",11170,2015,"housing","vacant housing","number of vacant housing","count",2138
+"Seoul",11,"Guro-gu",11170,2015,"housing","vacant housing","total number of housing","count",118047
+"Seoul",11,"Geumcheon-gu",11180,2015,"housing","vacant housing","fraction","percent",0.7
+"Seoul",11,"Geumcheon-gu",11180,2015,"housing","vacant housing","number of vacant housing","count",397
+"Seoul",11,"Geumcheon-gu",11180,2015,"housing","vacant housing","total number of housing","count",57096
+"Seoul",11,"Yeongdeungpo-gu",11190,2015,"housing","vacant housing","fraction","percent",2.1
+"Seoul",11,"Yeongdeungpo-gu",11190,2015,"housing","vacant housing","number of vacant housing","count",2046
+"Seoul",11,"Yeongdeungpo-gu",11190,2015,"housing","vacant housing","total number of housing","count",96195
+"Seoul",11,"Dongjak-gu",11200,2015,"housing","vacant housing","fraction","percent",1.3
+"Seoul",11,"Dongjak-gu",11200,2015,"housing","vacant housing","number of vacant housing","count",1441
+"Seoul",11,"Dongjak-gu",11200,2015,"housing","vacant housing","total number of housing","count",109362
+"Seoul",11,"Gwanak-gu",11210,2015,"housing","vacant housing","fraction","percent",0.8
+"Seoul",11,"Gwanak-gu",11210,2015,"housing","vacant housing","number of vacant housing","count",946
+"Seoul",11,"Gwanak-gu",11210,2015,"housing","vacant housing","total number of housing","count",121277
+"Seoul",11,"Seocho-gu",11220,2015,"housing","vacant housing","fraction","percent",2.7
+"Seoul",11,"Seocho-gu",11220,2015,"housing","vacant housing","number of vacant housing","count",3362
+"Seoul",11,"Seocho-gu",11220,2015,"housing","vacant housing","total number of housing","count",125403
+"Seoul",11,"Gangnam-gu",11230,2015,"housing","vacant housing","fraction","percent",6.7
+"Seoul",11,"Gangnam-gu",11230,2015,"housing","vacant housing","number of vacant housing","count",11764
+"Seoul",11,"Gangnam-gu",11230,2015,"housing","vacant housing","total number of housing","count",176654
+"Seoul",11,"Songpa-gu",11240,2015,"housing","vacant housing","fraction","percent",1.7
+"Seoul",11,"Songpa-gu",11240,2015,"housing","vacant housing","number of vacant housing","count",3255
+"Seoul",11,"Songpa-gu",11240,2015,"housing","vacant housing","total number of housing","count",187030
+"Seoul",11,"Gangdong-gu",11250,2015,"housing","vacant housing","fraction","percent",4.6
+"Seoul",11,"Gangdong-gu",11250,2015,"housing","vacant housing","number of vacant housing","count",5455
+"Seoul",11,"Gangdong-gu",11250,2015,"housing","vacant housing","total number of housing","count",119824
+"Busan",21,"Jung-gu",21010,2015,"housing","vacant housing","fraction","percent",11.5
+"Busan",21,"Jung-gu",21010,2015,"housing","vacant housing","number of vacant housing","count",1894
+"Busan",21,"Jung-gu",21010,2015,"housing","vacant housing","total number of housing","count",16464
+"Busan",21,"Seo-gu",21020,2015,"housing","vacant housing","fraction","percent",9.3
+"Busan",21,"Seo-gu",21020,2015,"housing","vacant housing","number of vacant housing","count",3694
+"Busan",21,"Seo-gu",21020,2015,"housing","vacant housing","total number of housing","count",39725
+"Busan",21,"Dong-gu",21030,2015,"housing","vacant housing","fraction","percent",8.5
+"Busan",21,"Dong-gu",21030,2015,"housing","vacant housing","number of vacant housing","count",2564
+"Busan",21,"Dong-gu",21030,2015,"housing","vacant housing","total number of housing","count",30235
+"Busan",21,"Yeongdo-gu",21040,2015,"housing","vacant housing","fraction","percent",7.5
+"Busan",21,"Yeongdo-gu",21040,2015,"housing","vacant housing","number of vacant housing","count",3446
+"Busan",21,"Yeongdo-gu",21040,2015,"housing","vacant housing","total number of housing","count",45992
+"Busan",21,"Busanjin-gu",21050,2015,"housing","vacant housing","fraction","percent",8.4
+"Busan",21,"Busanjin-gu",21050,2015,"housing","vacant housing","number of vacant housing","count",11077
+"Busan",21,"Busanjin-gu",21050,2015,"housing","vacant housing","total number of housing","count",131457
+"Busan",21,"Dongnae-gu",21060,2015,"housing","vacant housing","fraction","percent",5.3
+"Busan",21,"Dongnae-gu",21060,2015,"housing","vacant housing","number of vacant housing","count",4397
+"Busan",21,"Dongnae-gu",21060,2015,"housing","vacant housing","total number of housing","count",82667
+"Busan",21,"Nam-gu",21070,2015,"housing","vacant housing","fraction","percent",10
+"Busan",21,"Nam-gu",21070,2015,"housing","vacant housing","number of vacant housing","count",9992
+"Busan",21,"Nam-gu",21070,2015,"housing","vacant housing","total number of housing","count",100079
+"Busan",21,"Buk-gu",21080,2015,"housing","vacant housing","fraction","percent",8.1
+"Busan",21,"Buk-gu",21080,2015,"housing","vacant housing","number of vacant housing","count",8458
+"Busan",21,"Buk-gu",21080,2015,"housing","vacant housing","total number of housing","count",104993
+"Busan",21,"Haeundae-gu",21090,2015,"housing","vacant housing","fraction","percent",7.2
+"Busan",21,"Haeundae-gu",21090,2015,"housing","vacant housing","number of vacant housing","count",10075
+"Busan",21,"Haeundae-gu",21090,2015,"housing","vacant housing","total number of housing","count",139199
+"Busan",21,"Saha-gu",21100,2015,"housing","vacant housing","fraction","percent",5.1
+"Busan",21,"Saha-gu",21100,2015,"housing","vacant housing","number of vacant housing","count",5611
+"Busan",21,"Saha-gu",21100,2015,"housing","vacant housing","total number of housing","count",110491
+"Busan",21,"Geumjeong-gu",21110,2015,"housing","vacant housing","fraction","percent",8.1
+"Busan",21,"Geumjeong-gu",21110,2015,"housing","vacant housing","number of vacant housing","count",6468
+"Busan",21,"Geumjeong-gu",21110,2015,"housing","vacant housing","total number of housing","count",79553
+"Busan",21,"Gangseo-gu",21120,2015,"housing","vacant housing","fraction","percent",12.2
+"Busan",21,"Gangseo-gu",21120,2015,"housing","vacant housing","number of vacant housing","count",3667
+"Busan",21,"Gangseo-gu",21120,2015,"housing","vacant housing","total number of housing","count",30060
+"Busan",21,"Yeonje-gu",21130,2015,"housing","vacant housing","fraction","percent",6.9
+"Busan",21,"Yeonje-gu",21130,2015,"housing","vacant housing","number of vacant housing","count",4572
+"Busan",21,"Yeonje-gu",21130,2015,"housing","vacant housing","total number of housing","count",66327
+"Busan",21,"Suyeong-gu",21140,2015,"housing","vacant housing","fraction","percent",8.8
+"Busan",21,"Suyeong-gu",21140,2015,"housing","vacant housing","number of vacant housing","count",5357
+"Busan",21,"Suyeong-gu",21140,2015,"housing","vacant housing","total number of housing","count",61123
+"Busan",21,"Sasang-gu",21150,2015,"housing","vacant housing","fraction","percent",2.4
+"Busan",21,"Sasang-gu",21150,2015,"housing","vacant housing","number of vacant housing","count",1794
+"Busan",21,"Sasang-gu",21150,2015,"housing","vacant housing","total number of housing","count",73863
+NA,21,NA,21310,2015,"housing","vacant housing","fraction","percent",6.8
+NA,21,NA,21310,2015,"housing","vacant housing","number of vacant housing","count",3560
+NA,21,NA,21310,2015,"housing","vacant housing","total number of housing","count",52124
+"Daegu",22,"Jung-gu",22010,2015,"housing","vacant housing","fraction","percent",7.2
+"Daegu",22,"Jung-gu",22010,2015,"housing","vacant housing","number of vacant housing","count",1881
+"Daegu",22,"Jung-gu",22010,2015,"housing","vacant housing","total number of housing","count",25954
+"Daegu",22,"Dong-gu",22020,2015,"housing","vacant housing","fraction","percent",5.7
+"Daegu",22,"Dong-gu",22020,2015,"housing","vacant housing","number of vacant housing","count",6392
+"Daegu",22,"Dong-gu",22020,2015,"housing","vacant housing","total number of housing","count",112298
+"Daegu",22,"Seo-gu",22030,2015,"housing","vacant housing","fraction","percent",2.7
+"Daegu",22,"Seo-gu",22030,2015,"housing","vacant housing","number of vacant housing","count",1474
+"Daegu",22,"Seo-gu",22030,2015,"housing","vacant housing","total number of housing","count",54382
+"Daegu",22,"Nam-gu",22040,2015,"housing","vacant housing","fraction","percent",4.4
+"Daegu",22,"Nam-gu",22040,2015,"housing","vacant housing","number of vacant housing","count",1862
+"Daegu",22,"Nam-gu",22040,2015,"housing","vacant housing","total number of housing","count",41950
+"Daegu",22,"Buk-gu",22050,2015,"housing","vacant housing","fraction","percent",2.9
+"Daegu",22,"Buk-gu",22050,2015,"housing","vacant housing","number of vacant housing","count",3858
+"Daegu",22,"Buk-gu",22050,2015,"housing","vacant housing","total number of housing","count",131259
+"Daegu",22,"Suseong-gu",22060,2015,"housing","vacant housing","fraction","percent",4.1
+"Daegu",22,"Suseong-gu",22060,2015,"housing","vacant housing","number of vacant housing","count",5446
+"Daegu",22,"Suseong-gu",22060,2015,"housing","vacant housing","total number of housing","count",132563
+"Daegu",22,"Dalseo-gu",22070,2015,"housing","vacant housing","fraction","percent",1.8
+"Daegu",22,"Dalseo-gu",22070,2015,"housing","vacant housing","number of vacant housing","count",3092
+"Daegu",22,"Dalseo-gu",22070,2015,"housing","vacant housing","total number of housing","count",176191
+NA,22,NA,22310,2015,"housing","vacant housing","fraction","percent",8.8
+NA,22,NA,22310,2015,"housing","vacant housing","number of vacant housing","count",5605
+NA,22,NA,22310,2015,"housing","vacant housing","total number of housing","count",63503
+"Incheon",23,"Jung-gu",23010,2015,"housing","vacant housing","fraction","percent",10.9
+"Incheon",23,"Jung-gu",23010,2015,"housing","vacant housing","number of vacant housing","count",4499
+"Incheon",23,"Jung-gu",23010,2015,"housing","vacant housing","total number of housing","count",41170
+"Incheon",23,"Dong-gu",23020,2015,"housing","vacant housing","fraction","percent",6.4
+"Incheon",23,"Dong-gu",23020,2015,"housing","vacant housing","number of vacant housing","count",1618
+"Incheon",23,"Dong-gu",23020,2015,"housing","vacant housing","total number of housing","count",25474
+"Incheon",23,"Nam-gu",23030,2015,"housing","vacant housing","fraction","percent",5.7
+"Incheon",23,"Nam-gu",23030,2015,"housing","vacant housing","number of vacant housing","count",7623
+"Incheon",23,"Nam-gu",23030,2015,"housing","vacant housing","total number of housing","count",133023
+"Incheon",23,"Yeonsu-gu",23040,2015,"housing","vacant housing","fraction","percent",5.9
+"Incheon",23,"Yeonsu-gu",23040,2015,"housing","vacant housing","number of vacant housing","count",5725
+"Incheon",23,"Yeonsu-gu",23040,2015,"housing","vacant housing","total number of housing","count",96889
+"Incheon",23,"Namdong-gu",23050,2015,"housing","vacant housing","fraction","percent",4
+"Incheon",23,"Namdong-gu",23050,2015,"housing","vacant housing","number of vacant housing","count",6856
+"Incheon",23,"Namdong-gu",23050,2015,"housing","vacant housing","total number of housing","count",171768
+"Incheon",23,"Bupyeong-gu",23060,2015,"housing","vacant housing","fraction","percent",3.6
+"Incheon",23,"Bupyeong-gu",23060,2015,"housing","vacant housing","number of vacant housing","count",6214
+"Incheon",23,"Bupyeong-gu",23060,2015,"housing","vacant housing","total number of housing","count",173141
+"Incheon",23,"Gyeyang-gu",23070,2015,"housing","vacant housing","fraction","percent",3.3
+"Incheon",23,"Gyeyang-gu",23070,2015,"housing","vacant housing","number of vacant housing","count",3578
+"Incheon",23,"Gyeyang-gu",23070,2015,"housing","vacant housing","total number of housing","count",107880
+"Incheon",23,"Seo-gu",23080,2015,"housing","vacant housing","fraction","percent",4.1
+"Incheon",23,"Seo-gu",23080,2015,"housing","vacant housing","number of vacant housing","count",6587
+"Incheon",23,"Seo-gu",23080,2015,"housing","vacant housing","total number of housing","count",159559
+NA,23,NA,23310,2015,"housing","vacant housing","fraction","percent",14.5
+NA,23,NA,23310,2015,"housing","vacant housing","number of vacant housing","count",3861
+NA,23,NA,23310,2015,"housing","vacant housing","total number of housing","count",26609
+NA,23,NA,23320,2015,"housing","vacant housing","fraction","percent",12.5
+NA,23,NA,23320,2015,"housing","vacant housing","number of vacant housing","count",841
+NA,23,NA,23320,2015,"housing","vacant housing","total number of housing","count",6731
+"Gwangju",24,"Dong-gu",24010,2015,"housing","vacant housing","fraction","percent",5.1
+"Gwangju",24,"Dong-gu",24010,2015,"housing","vacant housing","number of vacant housing","count",1622
+"Gwangju",24,"Dong-gu",24010,2015,"housing","vacant housing","total number of housing","count",32068
+"Gwangju",24,"Seo-gu",24020,2015,"housing","vacant housing","fraction","percent",4.9
+"Gwangju",24,"Seo-gu",24020,2015,"housing","vacant housing","number of vacant housing","count",4847
+"Gwangju",24,"Seo-gu",24020,2015,"housing","vacant housing","total number of housing","count",97973
+"Gwangju",24,"Nam-gu",24030,2015,"housing","vacant housing","fraction","percent",6
+"Gwangju",24,"Nam-gu",24030,2015,"housing","vacant housing","number of vacant housing","count",4379
+"Gwangju",24,"Nam-gu",24030,2015,"housing","vacant housing","total number of housing","count",73586
+"Gwangju",24,"Buk-gu",24040,2015,"housing","vacant housing","fraction","percent",5.1
+"Gwangju",24,"Buk-gu",24040,2015,"housing","vacant housing","number of vacant housing","count",7704
+"Gwangju",24,"Buk-gu",24040,2015,"housing","vacant housing","total number of housing","count",149640
+"Gwangju",24,"Gwangsan-gu",24050,2015,"housing","vacant housing","fraction","percent",6.1
+"Gwangju",24,"Gwangsan-gu",24050,2015,"housing","vacant housing","number of vacant housing","count",8153
+"Gwangju",24,"Gwangsan-gu",24050,2015,"housing","vacant housing","total number of housing","count",133260
+"Daejeon",25,"Dong-gu",25010,2015,"housing","vacant housing","fraction","percent",4.5
+"Daejeon",25,"Dong-gu",25010,2015,"housing","vacant housing","number of vacant housing","count",3496
+"Daejeon",25,"Dong-gu",25010,2015,"housing","vacant housing","total number of housing","count",77218
+"Daejeon",25,"Jung-gu",25020,2015,"housing","vacant housing","fraction","percent",4.8
+"Daejeon",25,"Jung-gu",25020,2015,"housing","vacant housing","number of vacant housing","count",3881
+"Daejeon",25,"Jung-gu",25020,2015,"housing","vacant housing","total number of housing","count",80402
+"Daejeon",25,"Seo-gu",25030,2015,"housing","vacant housing","fraction","percent",5
+"Daejeon",25,"Seo-gu",25030,2015,"housing","vacant housing","number of vacant housing","count",7241
+"Daejeon",25,"Seo-gu",25030,2015,"housing","vacant housing","total number of housing","count",143769
+"Daejeon",25,"Yuseong-gu",25040,2015,"housing","vacant housing","fraction","percent",8.3
+"Daejeon",25,"Yuseong-gu",25040,2015,"housing","vacant housing","number of vacant housing","count",8780
+"Daejeon",25,"Yuseong-gu",25040,2015,"housing","vacant housing","total number of housing","count",105937
+"Daejeon",25,"Daedeok-gu",25050,2015,"housing","vacant housing","fraction","percent",4.9
+"Daejeon",25,"Daedeok-gu",25050,2015,"housing","vacant housing","number of vacant housing","count",3021
+"Daejeon",25,"Daedeok-gu",25050,2015,"housing","vacant housing","total number of housing","count",61559
+"Ulsan",26,"Jung-gu",26010,2015,"housing","vacant housing","fraction","percent",4.6
+"Ulsan",26,"Jung-gu",26010,2015,"housing","vacant housing","number of vacant housing","count",3182
+"Ulsan",26,"Jung-gu",26010,2015,"housing","vacant housing","total number of housing","count",69071
+"Ulsan",26,"Nam-gu",26020,2015,"housing","vacant housing","fraction","percent",5.8
+"Ulsan",26,"Nam-gu",26020,2015,"housing","vacant housing","number of vacant housing","count",6046
+"Ulsan",26,"Nam-gu",26020,2015,"housing","vacant housing","total number of housing","count",104365
+"Ulsan",26,"Dong-gu",26030,2015,"housing","vacant housing","fraction","percent",8.5
+"Ulsan",26,"Dong-gu",26030,2015,"housing","vacant housing","number of vacant housing","count",4549
+"Ulsan",26,"Dong-gu",26030,2015,"housing","vacant housing","total number of housing","count",53323
+"Ulsan",26,"Buk-gu",26040,2015,"housing","vacant housing","fraction","percent",3.3
+"Ulsan",26,"Buk-gu",26040,2015,"housing","vacant housing","number of vacant housing","count",1928
+"Ulsan",26,"Buk-gu",26040,2015,"housing","vacant housing","total number of housing","count",57734
+NA,26,NA,26310,2015,"housing","vacant housing","fraction","percent",7.8
+NA,26,NA,26310,2015,"housing","vacant housing","number of vacant housing","count",5718
+NA,26,NA,26310,2015,"housing","vacant housing","total number of housing","count",73181
+NA,NA,NA,NA,2015,"housing","vacant housing","fraction","percent",20.3
+NA,NA,NA,NA,2015,"housing","vacant housing","number of vacant housing","count",16458
+NA,NA,NA,NA,2015,"housing","vacant housing","total number of housing","count",81130
+"Gyeonggi-do",31,"Suwon-si",31010,2015,"housing","vacant housing","fraction","percent",2.6
+"Gyeonggi-do",31,"Suwon-si",31010,2015,"housing","vacant housing","number of vacant housing","count",8549
+"Gyeonggi-do",31,"Suwon-si",31010,2015,"housing","vacant housing","total number of housing","count",329765
+"Gyeonggi-do",31,"Seongnam-si",31020,2015,"housing","vacant housing","fraction","percent",2.6
+"Gyeonggi-do",31,"Seongnam-si",31020,2015,"housing","vacant housing","number of vacant housing","count",6302
+"Gyeonggi-do",31,"Seongnam-si",31020,2015,"housing","vacant housing","total number of housing","count",246604
+"Gyeonggi-do",31,"Uijeongbu-si",31030,2015,"housing","vacant housing","fraction","percent",2.9
+"Gyeonggi-do",31,"Uijeongbu-si",31030,2015,"housing","vacant housing","number of vacant housing","count",3812
+"Gyeonggi-do",31,"Uijeongbu-si",31030,2015,"housing","vacant housing","total number of housing","count",129368
+"Gyeonggi-do",31,"Anyang-si",31040,2015,"housing","vacant housing","fraction","percent",1.9
+"Gyeonggi-do",31,"Anyang-si",31040,2015,"housing","vacant housing","number of vacant housing","count",3225
+"Gyeonggi-do",31,"Anyang-si",31040,2015,"housing","vacant housing","total number of housing","count",172042
+"Gyeonggi-do",31,"Bucheon-si",31050,2015,"housing","vacant housing","fraction","percent",3.2
+"Gyeonggi-do",31,"Bucheon-si",31050,2015,"housing","vacant housing","number of vacant housing","count",8003
+"Gyeonggi-do",31,"Bucheon-si",31050,2015,"housing","vacant housing","total number of housing","count",247576
+"Gyeonggi-do",31,"Gwangmyeong-si",31060,2015,"housing","vacant housing","fraction","percent",1.5
+"Gyeonggi-do",31,"Gwangmyeong-si",31060,2015,"housing","vacant housing","number of vacant housing","count",1595
+"Gyeonggi-do",31,"Gwangmyeong-si",31060,2015,"housing","vacant housing","total number of housing","count",103663
+"Gyeonggi-do",31,"Pyeongtaek-si",31070,2015,"housing","vacant housing","fraction","percent",11
+"Gyeonggi-do",31,"Pyeongtaek-si",31070,2015,"housing","vacant housing","number of vacant housing","count",17086
+"Gyeonggi-do",31,"Pyeongtaek-si",31070,2015,"housing","vacant housing","total number of housing","count",154747
+"Gyeonggi-do",31,"Dongducheon-si",31080,2015,"housing","vacant housing","fraction","percent",8.1
+"Gyeonggi-do",31,"Dongducheon-si",31080,2015,"housing","vacant housing","number of vacant housing","count",2850
+"Gyeonggi-do",31,"Dongducheon-si",31080,2015,"housing","vacant housing","total number of housing","count",35335
+"Gyeonggi-do",31,"Ansan-si",31090,2015,"housing","vacant housing","fraction","percent",5
+"Gyeonggi-do",31,"Ansan-si",31090,2015,"housing","vacant housing","number of vacant housing","count",9691
+"Gyeonggi-do",31,"Ansan-si",31090,2015,"housing","vacant housing","total number of housing","count",193386
+"Gyeonggi-do",31,"Goyang-si",31100,2015,"housing","vacant housing","fraction","percent",2.3
+"Gyeonggi-do",31,"Goyang-si",31100,2015,"housing","vacant housing","number of vacant housing","count",6639
+"Gyeonggi-do",31,"Goyang-si",31100,2015,"housing","vacant housing","total number of housing","count",290999
+"Gyeonggi-do",31,"Gwacheon-si",31110,2015,"housing","vacant housing","fraction","percent",1.1
+"Gyeonggi-do",31,"Gwacheon-si",31110,2015,"housing","vacant housing","number of vacant housing","count",184
+"Gyeonggi-do",31,"Gwacheon-si",31110,2015,"housing","vacant housing","total number of housing","count",16511
+"Gyeonggi-do",31,"Guri-si",31120,2015,"housing","vacant housing","fraction","percent",0.5
+"Gyeonggi-do",31,"Guri-si",31120,2015,"housing","vacant housing","number of vacant housing","count",253
+"Gyeonggi-do",31,"Guri-si",31120,2015,"housing","vacant housing","total number of housing","count",48858
+"Gyeonggi-do",31,"Namyangju-si",31130,2015,"housing","vacant housing","fraction","percent",3.9
+"Gyeonggi-do",31,"Namyangju-si",31130,2015,"housing","vacant housing","number of vacant housing","count",7892
+"Gyeonggi-do",31,"Namyangju-si",31130,2015,"housing","vacant housing","total number of housing","count",202097
+"Gyeonggi-do",31,"Osan-si",31140,2015,"housing","vacant housing","fraction","percent",4
+"Gyeonggi-do",31,"Osan-si",31140,2015,"housing","vacant housing","number of vacant housing","count",2536
+"Gyeonggi-do",31,"Osan-si",31140,2015,"housing","vacant housing","total number of housing","count",64118
+"Gyeonggi-do",31,"Siheung-si",31150,2015,"housing","vacant housing","fraction","percent",2.8
+"Gyeonggi-do",31,"Siheung-si",31150,2015,"housing","vacant housing","number of vacant housing","count",3272
+"Gyeonggi-do",31,"Siheung-si",31150,2015,"housing","vacant housing","total number of housing","count",118219
+"Gyeonggi-do",31,"Gunpo-si",31160,2015,"housing","vacant housing","fraction","percent",1.8
+"Gyeonggi-do",31,"Gunpo-si",31160,2015,"housing","vacant housing","number of vacant housing","count",1540
+"Gyeonggi-do",31,"Gunpo-si",31160,2015,"housing","vacant housing","total number of housing","count",85654
+"Gyeonggi-do",31,"Uiwang-si",31170,2015,"housing","vacant housing","fraction","percent",2.5
+"Gyeonggi-do",31,"Uiwang-si",31170,2015,"housing","vacant housing","number of vacant housing","count",1164
+"Gyeonggi-do",31,"Uiwang-si",31170,2015,"housing","vacant housing","total number of housing","count",47019
+"Gyeonggi-do",31,"Hanam-si",31180,2015,"housing","vacant housing","fraction","percent",11.6
+"Gyeonggi-do",31,"Hanam-si",31180,2015,"housing","vacant housing","number of vacant housing","count",5122
+"Gyeonggi-do",31,"Hanam-si",31180,2015,"housing","vacant housing","total number of housing","count",44082
+"Gyeonggi-do",31,"Yongin-si",31190,2015,"housing","vacant housing","fraction","percent",3.1
+"Gyeonggi-do",31,"Yongin-si",31190,2015,"housing","vacant housing","number of vacant housing","count",9109
+"Gyeonggi-do",31,"Yongin-si",31190,2015,"housing","vacant housing","total number of housing","count",292726
+"Gyeonggi-do",31,"Paju-si",31200,2015,"housing","vacant housing","fraction","percent",3.5
+"Gyeonggi-do",31,"Paju-si",31200,2015,"housing","vacant housing","number of vacant housing","count",4559
+"Gyeonggi-do",31,"Paju-si",31200,2015,"housing","vacant housing","total number of housing","count",131982
+"Gyeonggi-do",31,"Icheon-si",31210,2015,"housing","vacant housing","fraction","percent",5.9
+"Gyeonggi-do",31,"Icheon-si",31210,2015,"housing","vacant housing","number of vacant housing","count",3856
+"Gyeonggi-do",31,"Icheon-si",31210,2015,"housing","vacant housing","total number of housing","count",65323
+"Gyeonggi-do",31,"Anseong-si",31220,2015,"housing","vacant housing","fraction","percent",5.4
+"Gyeonggi-do",31,"Anseong-si",31220,2015,"housing","vacant housing","number of vacant housing","count",3297
+"Gyeonggi-do",31,"Anseong-si",31220,2015,"housing","vacant housing","total number of housing","count",60865
+"Gyeonggi-do",31,"Gimpo-si",31230,2015,"housing","vacant housing","fraction","percent",2
+"Gyeonggi-do",31,"Gimpo-si",31230,2015,"housing","vacant housing","number of vacant housing","count",2204
+"Gyeonggi-do",31,"Gimpo-si",31230,2015,"housing","vacant housing","total number of housing","count",109595
+"Gyeonggi-do",31,"Hwaseong-si",31240,2015,"housing","vacant housing","fraction","percent",7.8
+"Gyeonggi-do",31,"Hwaseong-si",31240,2015,"housing","vacant housing","number of vacant housing","count",14535
+"Gyeonggi-do",31,"Hwaseong-si",31240,2015,"housing","vacant housing","total number of housing","count",186773
+"Gyeonggi-do",31,"Gwangju-si",31250,2015,"housing","vacant housing","fraction","percent",4.5
+"Gyeonggi-do",31,"Gwangju-si",31250,2015,"housing","vacant housing","number of vacant housing","count",4125
+"Gyeonggi-do",31,"Gwangju-si",31250,2015,"housing","vacant housing","total number of housing","count",90789
+"Gyeonggi-do",31,"Yangju-si",31260,2015,"housing","vacant housing","fraction","percent",2.7
+"Gyeonggi-do",31,"Yangju-si",31260,2015,"housing","vacant housing","number of vacant housing","count",1761
+"Gyeonggi-do",31,"Yangju-si",31260,2015,"housing","vacant housing","total number of housing","count",64710
+"Gyeonggi-do",31,"Pocheon-si",31270,2015,"housing","vacant housing","fraction","percent",4.4
+"Gyeonggi-do",31,"Pocheon-si",31270,2015,"housing","vacant housing","number of vacant housing","count",2143
+"Gyeonggi-do",31,"Pocheon-si",31270,2015,"housing","vacant housing","total number of housing","count",49162
+"Gyeonggi-do",31,"Yeoju-si",31280,2015,"housing","vacant housing","fraction","percent",7.3
+"Gyeonggi-do",31,"Yeoju-si",31280,2015,"housing","vacant housing","number of vacant housing","count",2687
+"Gyeonggi-do",31,"Yeoju-si",31280,2015,"housing","vacant housing","total number of housing","count",36965
+NA,31,NA,31350,2015,"housing","vacant housing","fraction","percent",4
+NA,31,NA,31350,2015,"housing","vacant housing","number of vacant housing","count",613
+NA,31,NA,31350,2015,"housing","vacant housing","total number of housing","count",15179
+NA,31,NA,31370,2015,"housing","vacant housing","fraction","percent",13
+NA,31,NA,31370,2015,"housing","vacant housing","number of vacant housing","count",2934
+NA,31,NA,31370,2015,"housing","vacant housing","total number of housing","count",22546
+NA,31,NA,31380,2015,"housing","vacant housing","fraction","percent",9.1
+NA,31,NA,31380,2015,"housing","vacant housing","number of vacant housing","count",3355
+NA,31,NA,31380,2015,"housing","vacant housing","total number of housing","count",36899
+"Gangwon-do",32,"Chuncheon-si",32010,2015,"housing","vacant housing","fraction","percent",8.3
+"Gangwon-do",32,"Chuncheon-si",32010,2015,"housing","vacant housing","number of vacant housing","count",7847
+"Gangwon-do",32,"Chuncheon-si",32010,2015,"housing","vacant housing","total number of housing","count",94142
+"Gangwon-do",32,"Wonju-si",32020,2015,"housing","vacant housing","fraction","percent",9.6
+"Gangwon-do",32,"Wonju-si",32020,2015,"housing","vacant housing","number of vacant housing","count",11117
+"Gangwon-do",32,"Wonju-si",32020,2015,"housing","vacant housing","total number of housing","count",116183
+"Gangwon-do",32,"Gangneung-si",32030,2015,"housing","vacant housing","fraction","percent",8.4
+"Gangwon-do",32,"Gangneung-si",32030,2015,"housing","vacant housing","number of vacant housing","count",6421
+"Gangwon-do",32,"Gangneung-si",32030,2015,"housing","vacant housing","total number of housing","count",76837
+"Gangwon-do",32,"Donghae-si",32040,2015,"housing","vacant housing","fraction","percent",11.4
+"Gangwon-do",32,"Donghae-si",32040,2015,"housing","vacant housing","number of vacant housing","count",4181
+"Gangwon-do",32,"Donghae-si",32040,2015,"housing","vacant housing","total number of housing","count",36526
+"Gangwon-do",32,"Taebaek-si",32050,2015,"housing","vacant housing","fraction","percent",15.1
+"Gangwon-do",32,"Taebaek-si",32050,2015,"housing","vacant housing","number of vacant housing","count",3165
+"Gangwon-do",32,"Taebaek-si",32050,2015,"housing","vacant housing","total number of housing","count",20913
+"Gangwon-do",32,"Sokcho-si",32060,2015,"housing","vacant housing","fraction","percent",11
+"Gangwon-do",32,"Sokcho-si",32060,2015,"housing","vacant housing","number of vacant housing","count",3521
+"Gangwon-do",32,"Sokcho-si",32060,2015,"housing","vacant housing","total number of housing","count",32089
+"Gangwon-do",32,"Samcheok-si",32070,2015,"housing","vacant housing","fraction","percent",14.2
+"Gangwon-do",32,"Samcheok-si",32070,2015,"housing","vacant housing","number of vacant housing","count",4192
+"Gangwon-do",32,"Samcheok-si",32070,2015,"housing","vacant housing","total number of housing","count",29471
+NA,32,NA,32310,2015,"housing","vacant housing","fraction","percent",12.3
+NA,32,NA,32310,2015,"housing","vacant housing","number of vacant housing","count",3336
+NA,32,NA,32310,2015,"housing","vacant housing","total number of housing","count",27228
+NA,32,NA,32320,2015,"housing","vacant housing","fraction","percent",12.9
+NA,32,NA,32320,2015,"housing","vacant housing","number of vacant housing","count",2284
+NA,32,NA,32320,2015,"housing","vacant housing","total number of housing","count",17754
+NA,32,NA,32330,2015,"housing","vacant housing","fraction","percent",12.7
+NA,32,NA,32330,2015,"housing","vacant housing","number of vacant housing","count",2104
+NA,32,NA,32330,2015,"housing","vacant housing","total number of housing","count",16509
+NA,32,NA,32340,2015,"housing","vacant housing","fraction","percent",21.5
+NA,32,NA,32340,2015,"housing","vacant housing","number of vacant housing","count",4186
+NA,32,NA,32340,2015,"housing","vacant housing","total number of housing","count",19459
+NA,32,NA,32350,2015,"housing","vacant housing","fraction","percent",13.7
+NA,32,NA,32350,2015,"housing","vacant housing","number of vacant housing","count",2241
+NA,32,NA,32350,2015,"housing","vacant housing","total number of housing","count",16326
+NA,32,NA,32360,2015,"housing","vacant housing","fraction","percent",2.2
+NA,32,NA,32360,2015,"housing","vacant housing","number of vacant housing","count",350
+NA,32,NA,32360,2015,"housing","vacant housing","total number of housing","count",15588
+NA,32,NA,32370,2015,"housing","vacant housing","fraction","percent",2.8
+NA,32,NA,32370,2015,"housing","vacant housing","number of vacant housing","count",242
+NA,32,NA,32370,2015,"housing","vacant housing","total number of housing","count",8615
+NA,32,NA,32380,2015,"housing","vacant housing","fraction","percent",2.1
+NA,32,NA,32380,2015,"housing","vacant housing","number of vacant housing","count",156
+NA,32,NA,32380,2015,"housing","vacant housing","total number of housing","count",7445
+NA,32,NA,32390,2015,"housing","vacant housing","fraction","percent",5.5
+NA,32,NA,32390,2015,"housing","vacant housing","number of vacant housing","count",621
+NA,32,NA,32390,2015,"housing","vacant housing","total number of housing","count",11289
+NA,32,NA,32400,2015,"housing","vacant housing","fraction","percent",6.7
+NA,32,NA,32400,2015,"housing","vacant housing","number of vacant housing","count",757
+NA,32,NA,32400,2015,"housing","vacant housing","total number of housing","count",11258
+NA,32,NA,32410,2015,"housing","vacant housing","fraction","percent",20.7
+NA,32,NA,32410,2015,"housing","vacant housing","number of vacant housing","count",2539
+NA,32,NA,32410,2015,"housing","vacant housing","total number of housing","count",12267
+"Chungcheongbuk-do",33,"Chungju-si",33020,2015,"housing","vacant housing","fraction","percent",10.5
+"Chungcheongbuk-do",33,"Chungju-si",33020,2015,"housing","vacant housing","number of vacant housing","count",8214
+"Chungcheongbuk-do",33,"Chungju-si",33020,2015,"housing","vacant housing","total number of housing","count",78002
+"Chungcheongbuk-do",33,"Jecheon-si",33030,2015,"housing","vacant housing","fraction","percent",8.3
+"Chungcheongbuk-do",33,"Jecheon-si",33030,2015,"housing","vacant housing","number of vacant housing","count",4249
+"Chungcheongbuk-do",33,"Jecheon-si",33030,2015,"housing","vacant housing","total number of housing","count",51148
+"Chungcheongbuk-do",33,"Cheongju-si",33040,2015,"housing","vacant housing","fraction","percent",7.7
+"Chungcheongbuk-do",33,"Cheongju-si",33040,2015,"housing","vacant housing","number of vacant housing","count",20257
+"Chungcheongbuk-do",33,"Cheongju-si",33040,2015,"housing","vacant housing","total number of housing","count",263092
+NA,33,NA,33320,2015,"housing","vacant housing","fraction","percent",13.7
+NA,33,NA,33320,2015,"housing","vacant housing","number of vacant housing","count",1984
+NA,33,NA,33320,2015,"housing","vacant housing","total number of housing","count",14506
+NA,33,NA,33330,2015,"housing","vacant housing","fraction","percent",11.6
+NA,33,NA,33330,2015,"housing","vacant housing","number of vacant housing","count",2387
+NA,33,NA,33330,2015,"housing","vacant housing","total number of housing","count",20496
+NA,33,NA,33340,2015,"housing","vacant housing","fraction","percent",12.2
+NA,33,NA,33340,2015,"housing","vacant housing","number of vacant housing","count",2499
+NA,33,NA,33340,2015,"housing","vacant housing","total number of housing","count",20561
+NA,33,NA,33350,2015,"housing","vacant housing","fraction","percent",15.2
+NA,33,NA,33350,2015,"housing","vacant housing","number of vacant housing","count",4232
+NA,33,NA,33350,2015,"housing","vacant housing","total number of housing","count",27896
+NA,33,NA,33360,2015,"housing","vacant housing","fraction","percent",7.9
+NA,33,NA,33360,2015,"housing","vacant housing","number of vacant housing","count",1198
+NA,33,NA,33360,2015,"housing","vacant housing","total number of housing","count",15212
+NA,33,NA,33370,2015,"housing","vacant housing","fraction","percent",15.9
+NA,33,NA,33370,2015,"housing","vacant housing","number of vacant housing","count",6205
+NA,33,NA,33370,2015,"housing","vacant housing","total number of housing","count",39142
+NA,33,NA,33380,2015,"housing","vacant housing","fraction","percent",13.6
+NA,33,NA,33380,2015,"housing","vacant housing","number of vacant housing","count",1765
+NA,33,NA,33380,2015,"housing","vacant housing","total number of housing","count",12939
+NA,33,NA,33390,2015,"housing","vacant housing","fraction","percent",13.6
+NA,33,NA,33390,2015,"housing","vacant housing","number of vacant housing","count",1894
+NA,33,NA,33390,2015,"housing","vacant housing","total number of housing","count",13957
+"Chungcheongnam-do",34,"Cheonan-si",34010,2015,"housing","vacant housing","fraction","percent",5.8
+"Chungcheongnam-do",34,"Cheonan-si",34010,2015,"housing","vacant housing","number of vacant housing","count",11425
+"Chungcheongnam-do",34,"Cheonan-si",34010,2015,"housing","vacant housing","total number of housing","count",198554
+"Chungcheongnam-do",34,"Gongju-si",34020,2015,"housing","vacant housing","fraction","percent",10.2
+"Chungcheongnam-do",34,"Gongju-si",34020,2015,"housing","vacant housing","number of vacant housing","count",4230
+"Chungcheongnam-do",34,"Gongju-si",34020,2015,"housing","vacant housing","total number of housing","count",41325
+"Chungcheongnam-do",34,"Boryeong-si",34030,2015,"housing","vacant housing","fraction","percent",10.1
+"Chungcheongnam-do",34,"Boryeong-si",34030,2015,"housing","vacant housing","number of vacant housing","count",4084
+"Chungcheongnam-do",34,"Boryeong-si",34030,2015,"housing","vacant housing","total number of housing","count",40475
+"Chungcheongnam-do",34,"Asan-si",34040,2015,"housing","vacant housing","fraction","percent",9.4
+"Chungcheongnam-do",34,"Asan-si",34040,2015,"housing","vacant housing","number of vacant housing","count",10032
+"Chungcheongnam-do",34,"Asan-si",34040,2015,"housing","vacant housing","total number of housing","count",107098
+"Chungcheongnam-do",34,"Seosan-si",34050,2015,"housing","vacant housing","fraction","percent",10.2
+"Chungcheongnam-do",34,"Seosan-si",34050,2015,"housing","vacant housing","number of vacant housing","count",6335
+"Chungcheongnam-do",34,"Seosan-si",34050,2015,"housing","vacant housing","total number of housing","count",61894
+"Chungcheongnam-do",34,"Nonsan-si",34060,2015,"housing","vacant housing","fraction","percent",11.3
+"Chungcheongnam-do",34,"Nonsan-si",34060,2015,"housing","vacant housing","number of vacant housing","count",5283
+"Chungcheongnam-do",34,"Nonsan-si",34060,2015,"housing","vacant housing","total number of housing","count",46731
+"Chungcheongnam-do",34,"Gyeryong-si",34070,2015,"housing","vacant housing","fraction","percent",18
+"Chungcheongnam-do",34,"Gyeryong-si",34070,2015,"housing","vacant housing","number of vacant housing","count",2737
+"Chungcheongnam-do",34,"Gyeryong-si",34070,2015,"housing","vacant housing","total number of housing","count",15202
+"Chungcheongnam-do",34,"Dangjin-si",34080,2015,"housing","vacant housing","fraction","percent",6.6
+"Chungcheongnam-do",34,"Dangjin-si",34080,2015,"housing","vacant housing","number of vacant housing","count",3671
+"Chungcheongnam-do",34,"Dangjin-si",34080,2015,"housing","vacant housing","total number of housing","count",55487
+NA,34,NA,34310,2015,"housing","vacant housing","fraction","percent",15.9
+NA,34,NA,34310,2015,"housing","vacant housing","number of vacant housing","count",3609
+NA,34,NA,34310,2015,"housing","vacant housing","total number of housing","count",22672
+NA,34,NA,34330,2015,"housing","vacant housing","fraction","percent",11.3
+NA,34,NA,34330,2015,"housing","vacant housing","number of vacant housing","count",3268
+NA,34,NA,34330,2015,"housing","vacant housing","total number of housing","count",28824
+NA,34,NA,34340,2015,"housing","vacant housing","fraction","percent",13.9
+NA,34,NA,34340,2015,"housing","vacant housing","number of vacant housing","count",3430
+NA,34,NA,34340,2015,"housing","vacant housing","total number of housing","count",24718
+NA,34,NA,34350,2015,"housing","vacant housing","fraction","percent",13.2
+NA,34,NA,34350,2015,"housing","vacant housing","number of vacant housing","count",1824
+NA,34,NA,34350,2015,"housing","vacant housing","total number of housing","count",13815
+NA,34,NA,34360,2015,"housing","vacant housing","fraction","percent",15.9
+NA,34,NA,34360,2015,"housing","vacant housing","number of vacant housing","count",6025
+NA,34,NA,34360,2015,"housing","vacant housing","total number of housing","count",37931
+NA,34,NA,34370,2015,"housing","vacant housing","fraction","percent",12.7
+NA,34,NA,34370,2015,"housing","vacant housing","number of vacant housing","count",4286
+NA,34,NA,34370,2015,"housing","vacant housing","total number of housing","count",33809
+NA,34,NA,34380,2015,"housing","vacant housing","fraction","percent",13.5
+NA,34,NA,34380,2015,"housing","vacant housing","number of vacant housing","count",3480
+NA,34,NA,34380,2015,"housing","vacant housing","total number of housing","count",25837
+"Jeollabuk-do",35,"Jeonju-si",35010,2015,"housing","vacant housing","fraction","percent",7.2
+"Jeollabuk-do",35,"Jeonju-si",35010,2015,"housing","vacant housing","number of vacant housing","count",15139
+"Jeollabuk-do",35,"Jeonju-si",35010,2015,"housing","vacant housing","total number of housing","count",211216
+"Jeollabuk-do",35,"Gunsan-si",35020,2015,"housing","vacant housing","fraction","percent",13
+"Jeollabuk-do",35,"Gunsan-si",35020,2015,"housing","vacant housing","number of vacant housing","count",13971
+"Jeollabuk-do",35,"Gunsan-si",35020,2015,"housing","vacant housing","total number of housing","count",107580
+"Jeollabuk-do",35,"Iksan-si",35030,2015,"housing","vacant housing","fraction","percent",11
+"Jeollabuk-do",35,"Iksan-si",35030,2015,"housing","vacant housing","number of vacant housing","count",12578
+"Jeollabuk-do",35,"Iksan-si",35030,2015,"housing","vacant housing","total number of housing","count",114219
+"Jeollabuk-do",35,"Jeongeup-si",35040,2015,"housing","vacant housing","fraction","percent",11.3
+"Jeollabuk-do",35,"Jeongeup-si",35040,2015,"housing","vacant housing","number of vacant housing","count",5195
+"Jeollabuk-do",35,"Jeongeup-si",35040,2015,"housing","vacant housing","total number of housing","count",45821
+"Jeollabuk-do",35,"Namwon-si",35050,2015,"housing","vacant housing","fraction","percent",11
+"Jeollabuk-do",35,"Namwon-si",35050,2015,"housing","vacant housing","number of vacant housing","count",3620
+"Jeollabuk-do",35,"Namwon-si",35050,2015,"housing","vacant housing","total number of housing","count",33017
+"Jeollabuk-do",35,"Gimje-si",35060,2015,"housing","vacant housing","fraction","percent",13
+"Jeollabuk-do",35,"Gimje-si",35060,2015,"housing","vacant housing","number of vacant housing","count",4792
+"Jeollabuk-do",35,"Gimje-si",35060,2015,"housing","vacant housing","total number of housing","count",36943
+NA,35,NA,35310,2015,"housing","vacant housing","fraction","percent",11.6
+NA,35,NA,35310,2015,"housing","vacant housing","number of vacant housing","count",4061
+NA,35,NA,35310,2015,"housing","vacant housing","total number of housing","count",35124
+NA,35,NA,35320,2015,"housing","vacant housing","fraction","percent",12.1
+NA,35,NA,35320,2015,"housing","vacant housing","number of vacant housing","count",1218
+NA,35,NA,35320,2015,"housing","vacant housing","total number of housing","count",10096
+NA,35,NA,35330,2015,"housing","vacant housing","fraction","percent",15.4
+NA,35,NA,35330,2015,"housing","vacant housing","number of vacant housing","count",1627
+NA,35,NA,35330,2015,"housing","vacant housing","total number of housing","count",10592
+NA,35,NA,35340,2015,"housing","vacant housing","fraction","percent",11.6
+NA,35,NA,35340,2015,"housing","vacant housing","number of vacant housing","count",1083
+NA,35,NA,35340,2015,"housing","vacant housing","total number of housing","count",9322
+NA,35,NA,35350,2015,"housing","vacant housing","fraction","percent",18.7
+NA,35,NA,35350,2015,"housing","vacant housing","number of vacant housing","count",2359
+NA,35,NA,35350,2015,"housing","vacant housing","total number of housing","count",12617
+NA,35,NA,35360,2015,"housing","vacant housing","fraction","percent",16.1
+NA,35,NA,35360,2015,"housing","vacant housing","number of vacant housing","count",2014
+NA,35,NA,35360,2015,"housing","vacant housing","total number of housing","count",12540
+NA,35,NA,35370,2015,"housing","vacant housing","fraction","percent",12
+NA,35,NA,35370,2015,"housing","vacant housing","number of vacant housing","count",2921
+NA,35,NA,35370,2015,"housing","vacant housing","total number of housing","count",24355
+NA,35,NA,35380,2015,"housing","vacant housing","fraction","percent",13.9
+NA,35,NA,35380,2015,"housing","vacant housing","number of vacant housing","count",3291
+NA,35,NA,35380,2015,"housing","vacant housing","total number of housing","count",23661
+"Jeollanam-do",36,"Mokpo-si",36010,2015,"housing","vacant housing","fraction","percent",10.2
+"Jeollanam-do",36,"Mokpo-si",36010,2015,"housing","vacant housing","number of vacant housing","count",8910
+"Jeollanam-do",36,"Mokpo-si",36010,2015,"housing","vacant housing","total number of housing","count",87463
+"Jeollanam-do",36,"Yeosu-si",36020,2015,"housing","vacant housing","fraction","percent",12.7
+"Jeollanam-do",36,"Yeosu-si",36020,2015,"housing","vacant housing","number of vacant housing","count",13835
+"Jeollanam-do",36,"Yeosu-si",36020,2015,"housing","vacant housing","total number of housing","count",108842
+"Jeollanam-do",36,"Suncheon-si",36030,2015,"housing","vacant housing","fraction","percent",12.5
+"Jeollanam-do",36,"Suncheon-si",36030,2015,"housing","vacant housing","number of vacant housing","count",12842
+"Jeollanam-do",36,"Suncheon-si",36030,2015,"housing","vacant housing","total number of housing","count",102667
+"Jeollanam-do",36,"Naju-si",36040,2015,"housing","vacant housing","fraction","percent",21.3
+"Jeollanam-do",36,"Naju-si",36040,2015,"housing","vacant housing","number of vacant housing","count",8973
+"Jeollanam-do",36,"Naju-si",36040,2015,"housing","vacant housing","total number of housing","count",42150
+"Jeollanam-do",36,"Gwangyang-si",36060,2015,"housing","vacant housing","fraction","percent",14.6
+"Jeollanam-do",36,"Gwangyang-si",36060,2015,"housing","vacant housing","number of vacant housing","count",8438
+"Jeollanam-do",36,"Gwangyang-si",36060,2015,"housing","vacant housing","total number of housing","count",57939
+NA,36,NA,36310,2015,"housing","vacant housing","fraction","percent",13
+NA,36,NA,36310,2015,"housing","vacant housing","number of vacant housing","count",2219
+NA,36,NA,36310,2015,"housing","vacant housing","total number of housing","count",17050
+NA,36,NA,36320,2015,"housing","vacant housing","fraction","percent",15.5
+NA,36,NA,36320,2015,"housing","vacant housing","number of vacant housing","count",2022
+NA,36,NA,36320,2015,"housing","vacant housing","total number of housing","count",13087
+NA,36,NA,36330,2015,"housing","vacant housing","fraction","percent",16.5
+NA,36,NA,36330,2015,"housing","vacant housing","number of vacant housing","count",1864
+NA,36,NA,36330,2015,"housing","vacant housing","total number of housing","count",11287
+NA,36,NA,36350,2015,"housing","vacant housing","fraction","percent",15.8
+NA,36,NA,36350,2015,"housing","vacant housing","number of vacant housing","count",5164
+NA,36,NA,36350,2015,"housing","vacant housing","total number of housing","count",32786
+NA,36,NA,36360,2015,"housing","vacant housing","fraction","percent",15.3
+NA,36,NA,36360,2015,"housing","vacant housing","number of vacant housing","count",3036
+NA,36,NA,36360,2015,"housing","vacant housing","total number of housing","count",19830
+NA,36,NA,36370,2015,"housing","vacant housing","fraction","percent",16.7
+NA,36,NA,36370,2015,"housing","vacant housing","number of vacant housing","count",4584
+NA,36,NA,36370,2015,"housing","vacant housing","total number of housing","count",27448
+NA,36,NA,36380,2015,"housing","vacant housing","fraction","percent",13
+NA,36,NA,36380,2015,"housing","vacant housing","number of vacant housing","count",2231
+NA,36,NA,36380,2015,"housing","vacant housing","total number of housing","count",17192
+NA,36,NA,36390,2015,"housing","vacant housing","fraction","percent",16.1
+NA,36,NA,36390,2015,"housing","vacant housing","number of vacant housing","count",2661
+NA,36,NA,36390,2015,"housing","vacant housing","total number of housing","count",16553
+NA,36,NA,36400,2015,"housing","vacant housing","fraction","percent",11.1
+NA,36,NA,36400,2015,"housing","vacant housing","number of vacant housing","count",3320
+NA,36,NA,36400,2015,"housing","vacant housing","total number of housing","count",29935
+NA,36,NA,36410,2015,"housing","vacant housing","fraction","percent",15.4
+NA,36,NA,36410,2015,"housing","vacant housing","number of vacant housing","count",3857
+NA,36,NA,36410,2015,"housing","vacant housing","total number of housing","count",25088
+NA,36,NA,36420,2015,"housing","vacant housing","fraction","percent",17.1
+NA,36,NA,36420,2015,"housing","vacant housing","number of vacant housing","count",5486
+NA,36,NA,36420,2015,"housing","vacant housing","total number of housing","count",32005
+NA,36,NA,36430,2015,"housing","vacant housing","fraction","percent",14.3
+NA,36,NA,36430,2015,"housing","vacant housing","number of vacant housing","count",2069
+NA,36,NA,36430,2015,"housing","vacant housing","total number of housing","count",14461
+NA,36,NA,36440,2015,"housing","vacant housing","fraction","percent",12.7
+NA,36,NA,36440,2015,"housing","vacant housing","number of vacant housing","count",2831
+NA,36,NA,36440,2015,"housing","vacant housing","total number of housing","count",22308
+NA,36,NA,36450,2015,"housing","vacant housing","fraction","percent",13.8
+NA,36,NA,36450,2015,"housing","vacant housing","number of vacant housing","count",2433
+NA,36,NA,36450,2015,"housing","vacant housing","total number of housing","count",17648
+NA,36,NA,36460,2015,"housing","vacant housing","fraction","percent",14.3
+NA,36,NA,36460,2015,"housing","vacant housing","number of vacant housing","count",3043
+NA,36,NA,36460,2015,"housing","vacant housing","total number of housing","count",21315
+NA,36,NA,36470,2015,"housing","vacant housing","fraction","percent",11.1
+NA,36,NA,36470,2015,"housing","vacant housing","number of vacant housing","count",1509
+NA,36,NA,36470,2015,"housing","vacant housing","total number of housing","count",13608
+NA,36,NA,36480,2015,"housing","vacant housing","fraction","percent",11.8
+NA,36,NA,36480,2015,"housing","vacant housing","number of vacant housing","count",2006
+NA,36,NA,36480,2015,"housing","vacant housing","total number of housing","count",16959
+"Gyeongsangbuk-do",37,"Pohang-si",37010,2015,"housing","vacant housing","fraction","percent",9.1
+"Gyeongsangbuk-do",37,"Pohang-si",37010,2015,"housing","vacant housing","number of vacant housing","count",16696
+"Gyeongsangbuk-do",37,"Pohang-si",37010,2015,"housing","vacant housing","total number of housing","count",184062
+"Gyeongsangbuk-do",37,"Gyeongju-si",37020,2015,"housing","vacant housing","fraction","percent",10.8
+"Gyeongsangbuk-do",37,"Gyeongju-si",37020,2015,"housing","vacant housing","number of vacant housing","count",10394
+"Gyeongsangbuk-do",37,"Gyeongju-si",37020,2015,"housing","vacant housing","total number of housing","count",96064
+"Gyeongsangbuk-do",37,"Gimcheon-si",37030,2015,"housing","vacant housing","fraction","percent",11.4
+"Gyeongsangbuk-do",37,"Gimcheon-si",37030,2015,"housing","vacant housing","number of vacant housing","count",6038
+"Gyeongsangbuk-do",37,"Gimcheon-si",37030,2015,"housing","vacant housing","total number of housing","count",52946
+"Gyeongsangbuk-do",37,"Andong-si",37040,2015,"housing","vacant housing","fraction","percent",12.1
+"Gyeongsangbuk-do",37,"Andong-si",37040,2015,"housing","vacant housing","number of vacant housing","count",7955
+"Gyeongsangbuk-do",37,"Andong-si",37040,2015,"housing","vacant housing","total number of housing","count",65729
+"Gyeongsangbuk-do",37,"Gumi-si",37050,2015,"housing","vacant housing","fraction","percent",7.6
+"Gyeongsangbuk-do",37,"Gumi-si",37050,2015,"housing","vacant housing","number of vacant housing","count",9950
+"Gyeongsangbuk-do",37,"Gumi-si",37050,2015,"housing","vacant housing","total number of housing","count",130833
+"Gyeongsangbuk-do",37,"Yeongju-si",37060,2015,"housing","vacant housing","fraction","percent",9
+"Gyeongsangbuk-do",37,"Yeongju-si",37060,2015,"housing","vacant housing","number of vacant housing","count",3675
+"Gyeongsangbuk-do",37,"Yeongju-si",37060,2015,"housing","vacant housing","total number of housing","count",41043
+"Gyeongsangbuk-do",37,"Yeongcheon-si",37070,2015,"housing","vacant housing","fraction","percent",14.1
+"Gyeongsangbuk-do",37,"Yeongcheon-si",37070,2015,"housing","vacant housing","number of vacant housing","count",5881
+"Gyeongsangbuk-do",37,"Yeongcheon-si",37070,2015,"housing","vacant housing","total number of housing","count",41748
+"Gyeongsangbuk-do",37,"Sangju-si",37080,2015,"housing","vacant housing","fraction","percent",12.6
+"Gyeongsangbuk-do",37,"Sangju-si",37080,2015,"housing","vacant housing","number of vacant housing","count",5331
+"Gyeongsangbuk-do",37,"Sangju-si",37080,2015,"housing","vacant housing","total number of housing","count",42219
+"Gyeongsangbuk-do",37,"Mungyeong-si",37090,2015,"housing","vacant housing","fraction","percent",10.9
+"Gyeongsangbuk-do",37,"Mungyeong-si",37090,2015,"housing","vacant housing","number of vacant housing","count",3171
+"Gyeongsangbuk-do",37,"Mungyeong-si",37090,2015,"housing","vacant housing","total number of housing","count",29161
+"Gyeongsangbuk-do",37,"Gyeongsan-si",37100,2015,"housing","vacant housing","fraction","percent",7.6
+"Gyeongsangbuk-do",37,"Gyeongsan-si",37100,2015,"housing","vacant housing","number of vacant housing","count",6518
+"Gyeongsangbuk-do",37,"Gyeongsan-si",37100,2015,"housing","vacant housing","total number of housing","count",85241
+NA,37,NA,37310,2015,"housing","vacant housing","fraction","percent",14.5
+NA,37,NA,37310,2015,"housing","vacant housing","number of vacant housing","count",1524
+NA,37,NA,37310,2015,"housing","vacant housing","total number of housing","count",10534
+NA,37,NA,37320,2015,"housing","vacant housing","fraction","percent",15.7
+NA,37,NA,37320,2015,"housing","vacant housing","number of vacant housing","count",4092
+NA,37,NA,37320,2015,"housing","vacant housing","total number of housing","count",26039
+NA,37,NA,37330,2015,"housing","vacant housing","fraction","percent",15.2
+NA,37,NA,37330,2015,"housing","vacant housing","number of vacant housing","count",1858
+NA,37,NA,37330,2015,"housing","vacant housing","total number of housing","count",12184
+NA,37,NA,37340,2015,"housing","vacant housing","fraction","percent",14.5
+NA,37,NA,37340,2015,"housing","vacant housing","number of vacant housing","count",1183
+NA,37,NA,37340,2015,"housing","vacant housing","total number of housing","count",8145
+NA,37,NA,37350,2015,"housing","vacant housing","fraction","percent",15.6
+NA,37,NA,37350,2015,"housing","vacant housing","number of vacant housing","count",2798
+NA,37,NA,37350,2015,"housing","vacant housing","total number of housing","count",17887
+NA,37,NA,37360,2015,"housing","vacant housing","fraction","percent",19.2
+NA,37,NA,37360,2015,"housing","vacant housing","number of vacant housing","count",3889
+NA,37,NA,37360,2015,"housing","vacant housing","total number of housing","count",20265
+NA,37,NA,37370,2015,"housing","vacant housing","fraction","percent",13
+NA,37,NA,37370,2015,"housing","vacant housing","number of vacant housing","count",1794
+NA,37,NA,37370,2015,"housing","vacant housing","total number of housing","count",13748
+NA,37,NA,37380,2015,"housing","vacant housing","fraction","percent",11.8
+NA,37,NA,37380,2015,"housing","vacant housing","number of vacant housing","count",1929
+NA,37,NA,37380,2015,"housing","vacant housing","total number of housing","count",16406
+NA,37,NA,37390,2015,"housing","vacant housing","fraction","percent",10
+NA,37,NA,37390,2015,"housing","vacant housing","number of vacant housing","count",3977
+NA,37,NA,37390,2015,"housing","vacant housing","total number of housing","count",39724
+NA,37,NA,37400,2015,"housing","vacant housing","fraction","percent",15.7
+NA,37,NA,37400,2015,"housing","vacant housing","number of vacant housing","count",3159
+NA,37,NA,37400,2015,"housing","vacant housing","total number of housing","count",20146
+NA,37,NA,37410,2015,"housing","vacant housing","fraction","percent",15.9
+NA,37,NA,37410,2015,"housing","vacant housing","number of vacant housing","count",2430
+NA,37,NA,37410,2015,"housing","vacant housing","total number of housing","count",15321
+NA,37,NA,37420,2015,"housing","vacant housing","fraction","percent",15.9
+NA,37,NA,37420,2015,"housing","vacant housing","number of vacant housing","count",3641
+NA,37,NA,37420,2015,"housing","vacant housing","total number of housing","count",22867
+NA,37,NA,37430,2015,"housing","vacant housing","fraction","percent",7.5
+NA,37,NA,37430,2015,"housing","vacant housing","number of vacant housing","count",231
+NA,37,NA,37430,2015,"housing","vacant housing","total number of housing","count",3073
+"Gyeongsangnam-do",38,"Jinju-si",38030,2015,"housing","vacant housing","fraction","percent",8.1
+"Gyeongsangnam-do",38,"Jinju-si",38030,2015,"housing","vacant housing","number of vacant housing","count",9158
+"Gyeongsangnam-do",38,"Jinju-si",38030,2015,"housing","vacant housing","total number of housing","count",113136
+"Gyeongsangnam-do",38,"Tongyeong-si",38050,2015,"housing","vacant housing","fraction","percent",7.9
+"Gyeongsangnam-do",38,"Tongyeong-si",38050,2015,"housing","vacant housing","number of vacant housing","count",3773
+"Gyeongsangnam-do",38,"Tongyeong-si",38050,2015,"housing","vacant housing","total number of housing","count",47926
+"Gyeongsangnam-do",38,"Sacheon-si",38060,2015,"housing","vacant housing","fraction","percent",11
+"Gyeongsangnam-do",38,"Sacheon-si",38060,2015,"housing","vacant housing","number of vacant housing","count",4898
+"Gyeongsangnam-do",38,"Sacheon-si",38060,2015,"housing","vacant housing","total number of housing","count",44647
+"Gyeongsangnam-do",38,"Gimhae-si",38070,2015,"housing","vacant housing","fraction","percent",4.4
+"Gyeongsangnam-do",38,"Gimhae-si",38070,2015,"housing","vacant housing","number of vacant housing","count",7068
+"Gyeongsangnam-do",38,"Gimhae-si",38070,2015,"housing","vacant housing","total number of housing","count",160562
+"Gyeongsangnam-do",38,"Miryang-si",38080,2015,"housing","vacant housing","fraction","percent",11.3
+"Gyeongsangnam-do",38,"Miryang-si",38080,2015,"housing","vacant housing","number of vacant housing","count",5007
+"Gyeongsangnam-do",38,"Miryang-si",38080,2015,"housing","vacant housing","total number of housing","count",44452
+"Gyeongsangnam-do",38,"Geoje-si",38090,2015,"housing","vacant housing","fraction","percent",9.5
+"Gyeongsangnam-do",38,"Geoje-si",38090,2015,"housing","vacant housing","number of vacant housing","count",8212
+"Gyeongsangnam-do",38,"Geoje-si",38090,2015,"housing","vacant housing","total number of housing","count",86322
+"Gyeongsangnam-do",38,"Yangsan-si",38100,2015,"housing","vacant housing","fraction","percent",8.3
+"Gyeongsangnam-do",38,"Yangsan-si",38100,2015,"housing","vacant housing","number of vacant housing","count",8638
+"Gyeongsangnam-do",38,"Yangsan-si",38100,2015,"housing","vacant housing","total number of housing","count",103907
+"Gyeongsangnam-do",38,"Changwon-si",38110,2015,"housing","vacant housing","fraction","percent",6.9
+"Gyeongsangnam-do",38,"Changwon-si",38110,2015,"housing","vacant housing","number of vacant housing","count",22215
+"Gyeongsangnam-do",38,"Changwon-si",38110,2015,"housing","vacant housing","total number of housing","count",320094
+NA,38,NA,38310,2015,"housing","vacant housing","fraction","percent",17.2
+NA,38,NA,38310,2015,"housing","vacant housing","number of vacant housing","count",2270
+NA,38,NA,38310,2015,"housing","vacant housing","total number of housing","count",13217
+NA,38,NA,38320,2015,"housing","vacant housing","fraction","percent",10.1
+NA,38,NA,38320,2015,"housing","vacant housing","number of vacant housing","count",2747
+NA,38,NA,38320,2015,"housing","vacant housing","total number of housing","count",27308
+NA,38,NA,38330,2015,"housing","vacant housing","fraction","percent",12.3
+NA,38,NA,38330,2015,"housing","vacant housing","number of vacant housing","count",3259
+NA,38,NA,38330,2015,"housing","vacant housing","total number of housing","count",26410
+NA,38,NA,38340,2015,"housing","vacant housing","fraction","percent",12.8
+NA,38,NA,38340,2015,"housing","vacant housing","number of vacant housing","count",2923
+NA,38,NA,38340,2015,"housing","vacant housing","total number of housing","count",22761
+NA,38,NA,38350,2015,"housing","vacant housing","fraction","percent",16.4
+NA,38,NA,38350,2015,"housing","vacant housing","number of vacant housing","count",3567
+NA,38,NA,38350,2015,"housing","vacant housing","total number of housing","count",21787
+NA,38,NA,38360,2015,"housing","vacant housing","fraction","percent",12
+NA,38,NA,38360,2015,"housing","vacant housing","number of vacant housing","count",2383
+NA,38,NA,38360,2015,"housing","vacant housing","total number of housing","count",19797
+NA,38,NA,38370,2015,"housing","vacant housing","fraction","percent",17.4
+NA,38,NA,38370,2015,"housing","vacant housing","number of vacant housing","count",2839
+NA,38,NA,38370,2015,"housing","vacant housing","total number of housing","count",16314
+NA,38,NA,38380,2015,"housing","vacant housing","fraction","percent",14.3
+NA,38,NA,38380,2015,"housing","vacant housing","number of vacant housing","count",2542
+NA,38,NA,38380,2015,"housing","vacant housing","total number of housing","count",17829
+NA,38,NA,38390,2015,"housing","vacant housing","fraction","percent",12.7
+NA,38,NA,38390,2015,"housing","vacant housing","number of vacant housing","count",3266
+NA,38,NA,38390,2015,"housing","vacant housing","total number of housing","count",25653
+NA,38,NA,38400,2015,"housing","vacant housing","fraction","percent",17.3
+NA,38,NA,38400,2015,"housing","vacant housing","number of vacant housing","count",3915
+NA,38,NA,38400,2015,"housing","vacant housing","total number of housing","count",22616
+"Jeju-do",39,"Jeju-si",39010,2015,"housing","vacant housing","fraction","percent",8.3
+"Jeju-do",39,"Jeju-si",39010,2015,"housing","vacant housing","number of vacant housing","count",11746
+"Jeju-do",39,"Jeju-si",39010,2015,"housing","vacant housing","total number of housing","count",141469
+"Jeju-do",39,"Seogwipo-si",39020,2015,"housing","vacant housing","fraction","percent",12.5
+"Jeju-do",39,"Seogwipo-si",39020,2015,"housing","vacant housing","number of vacant housing","count",6729
+"Jeju-do",39,"Seogwipo-si",39020,2015,"housing","vacant housing","total number of housing","count",53755
+"Seoul",11,"Jongno-gu",11010,2020,"housing","vacant housing","fraction","percent",4.7
+"Seoul",11,"Jongno-gu",11010,2020,"housing","vacant housing","number of vacant housing","count",2194
+"Seoul",11,"Jongno-gu",11010,2020,"housing","vacant housing","total number of housing","count",46859
+"Seoul",11,"Jung-gu",11020,2020,"housing","vacant housing","fraction","percent",4.4
+"Seoul",11,"Jung-gu",11020,2020,"housing","vacant housing","number of vacant housing","count",1850
+"Seoul",11,"Jung-gu",11020,2020,"housing","vacant housing","total number of housing","count",42234
+"Seoul",11,"Yongsan-gu",11030,2020,"housing","vacant housing","fraction","percent",6.1
+"Seoul",11,"Yongsan-gu",11030,2020,"housing","vacant housing","number of vacant housing","count",4513
+"Seoul",11,"Yongsan-gu",11030,2020,"housing","vacant housing","total number of housing","count",74542
+"Seoul",11,"Seongdong-gu",11040,2020,"housing","vacant housing","fraction","percent",2.8
+"Seoul",11,"Seongdong-gu",11040,2020,"housing","vacant housing","number of vacant housing","count",2538
+"Seoul",11,"Seongdong-gu",11040,2020,"housing","vacant housing","total number of housing","count",91329
+"Seoul",11,"Gwangjin-gu",11050,2020,"housing","vacant housing","fraction","percent",0.8
+"Seoul",11,"Gwangjin-gu",11050,2020,"housing","vacant housing","number of vacant housing","count",735
+"Seoul",11,"Gwangjin-gu",11050,2020,"housing","vacant housing","total number of housing","count",89832
+"Seoul",11,"Dongdaemun-gu",11060,2020,"housing","vacant housing","fraction","percent",2
+"Seoul",11,"Dongdaemun-gu",11060,2020,"housing","vacant housing","number of vacant housing","count",2022
+"Seoul",11,"Dongdaemun-gu",11060,2020,"housing","vacant housing","total number of housing","count",103520
+"Seoul",11,"Jungnang-gu",11070,2020,"housing","vacant housing","fraction","percent",1.8
+"Seoul",11,"Jungnang-gu",11070,2020,"housing","vacant housing","number of vacant housing","count",2010
+"Seoul",11,"Jungnang-gu",11070,2020,"housing","vacant housing","total number of housing","count",112364
+"Seoul",11,"Seongbuk-gu",11080,2020,"housing","vacant housing","fraction","percent",2.7
+"Seoul",11,"Seongbuk-gu",11080,2020,"housing","vacant housing","number of vacant housing","count",3728
+"Seoul",11,"Seongbuk-gu",11080,2020,"housing","vacant housing","total number of housing","count",138621
+"Seoul",11,"Gangbuk-gu",11090,2020,"housing","vacant housing","fraction","percent",2.5
+"Seoul",11,"Gangbuk-gu",11090,2020,"housing","vacant housing","number of vacant housing","count",2482
+"Seoul",11,"Gangbuk-gu",11090,2020,"housing","vacant housing","total number of housing","count",97452
+"Seoul",11,"Dobong-gu",11100,2020,"housing","vacant housing","fraction","percent",3
+"Seoul",11,"Dobong-gu",11100,2020,"housing","vacant housing","number of vacant housing","count",3257
+"Seoul",11,"Dobong-gu",11100,2020,"housing","vacant housing","total number of housing","count",107156
+"Seoul",11,"Nowon-gu",11110,2020,"housing","vacant housing","fraction","percent",3
+"Seoul",11,"Nowon-gu",11110,2020,"housing","vacant housing","number of vacant housing","count",5626
+"Seoul",11,"Nowon-gu",11110,2020,"housing","vacant housing","total number of housing","count",189213
+"Seoul",11,"Eunpyeong-gu",11120,2020,"housing","vacant housing","fraction","percent",2.4
+"Seoul",11,"Eunpyeong-gu",11120,2020,"housing","vacant housing","number of vacant housing","count",3556
+"Seoul",11,"Eunpyeong-gu",11120,2020,"housing","vacant housing","total number of housing","count",150658
+"Seoul",11,"Seodaemun-gu",11130,2020,"housing","vacant housing","fraction","percent",2.7
+"Seoul",11,"Seodaemun-gu",11130,2020,"housing","vacant housing","number of vacant housing","count",2767
+"Seoul",11,"Seodaemun-gu",11130,2020,"housing","vacant housing","total number of housing","count",101036
+"Seoul",11,"Mapo-gu",11140,2020,"housing","vacant housing","fraction","percent",4.5
+"Seoul",11,"Mapo-gu",11140,2020,"housing","vacant housing","number of vacant housing","count",5481
+"Seoul",11,"Mapo-gu",11140,2020,"housing","vacant housing","total number of housing","count",122311
+"Seoul",11,"Yangcheon-gu",11150,2020,"housing","vacant housing","fraction","percent",3.2
+"Seoul",11,"Yangcheon-gu",11150,2020,"housing","vacant housing","number of vacant housing","count",4541
+"Seoul",11,"Yangcheon-gu",11150,2020,"housing","vacant housing","total number of housing","count",143769
+"Seoul",11,"Gangseo-gu",11160,2020,"housing","vacant housing","fraction","percent",3.8
+"Seoul",11,"Gangseo-gu",11160,2020,"housing","vacant housing","number of vacant housing","count",7461
+"Seoul",11,"Gangseo-gu",11160,2020,"housing","vacant housing","total number of housing","count",195383
+"Seoul",11,"Guro-gu",11170,2020,"housing","vacant housing","fraction","percent",3.7
+"Seoul",11,"Guro-gu",11170,2020,"housing","vacant housing","number of vacant housing","count",4964
+"Seoul",11,"Guro-gu",11170,2020,"housing","vacant housing","total number of housing","count",133012
+"Seoul",11,"Geumcheon-gu",11180,2020,"housing","vacant housing","fraction","percent",2.2
+"Seoul",11,"Geumcheon-gu",11180,2020,"housing","vacant housing","number of vacant housing","count",1523
+"Seoul",11,"Geumcheon-gu",11180,2020,"housing","vacant housing","total number of housing","count",68804
+"Seoul",11,"Yeongdeungpo-gu",11190,2020,"housing","vacant housing","fraction","percent",2.6
+"Seoul",11,"Yeongdeungpo-gu",11190,2020,"housing","vacant housing","number of vacant housing","count",2812
+"Seoul",11,"Yeongdeungpo-gu",11190,2020,"housing","vacant housing","total number of housing","count",107366
+"Seoul",11,"Dongjak-gu",11200,2020,"housing","vacant housing","fraction","percent",0.7
+"Seoul",11,"Dongjak-gu",11200,2020,"housing","vacant housing","number of vacant housing","count",768
+"Seoul",11,"Dongjak-gu",11200,2020,"housing","vacant housing","total number of housing","count",115615
+"Seoul",11,"Gwanak-gu",11210,2020,"housing","vacant housing","fraction","percent",0.6
+"Seoul",11,"Gwanak-gu",11210,2020,"housing","vacant housing","number of vacant housing","count",764
+"Seoul",11,"Gwanak-gu",11210,2020,"housing","vacant housing","total number of housing","count",127568
+"Seoul",11,"Seocho-gu",11220,2020,"housing","vacant housing","fraction","percent",5.8
+"Seoul",11,"Seocho-gu",11220,2020,"housing","vacant housing","number of vacant housing","count",7747
+"Seoul",11,"Seocho-gu",11220,2020,"housing","vacant housing","total number of housing","count",133528
+"Seoul",11,"Gangnam-gu",11230,2020,"housing","vacant housing","fraction","percent",7.1
+"Seoul",11,"Gangnam-gu",11230,2020,"housing","vacant housing","number of vacant housing","count",12417
+"Seoul",11,"Gangnam-gu",11230,2020,"housing","vacant housing","total number of housing","count",173745
+"Seoul",11,"Songpa-gu",11240,2020,"housing","vacant housing","fraction","percent",2.9
+"Seoul",11,"Songpa-gu",11240,2020,"housing","vacant housing","number of vacant housing","count",6161
+"Seoul",11,"Songpa-gu",11240,2020,"housing","vacant housing","total number of housing","count",211578
+"Seoul",11,"Gangdong-gu",11250,2020,"housing","vacant housing","fraction","percent",3.4
+"Seoul",11,"Gangdong-gu",11250,2020,"housing","vacant housing","number of vacant housing","count",4712
+"Seoul",11,"Gangdong-gu",11250,2020,"housing","vacant housing","total number of housing","count",137876
+"Busan",21,"Jung-gu",21010,2020,"housing","vacant housing","fraction","percent",16.2
+"Busan",21,"Jung-gu",21010,2020,"housing","vacant housing","number of vacant housing","count",2781
+"Busan",21,"Jung-gu",21010,2020,"housing","vacant housing","total number of housing","count",17170
+"Busan",21,"Seo-gu",21020,2020,"housing","vacant housing","fraction","percent",10.2
+"Busan",21,"Seo-gu",21020,2020,"housing","vacant housing","number of vacant housing","count",4241
+"Busan",21,"Seo-gu",21020,2020,"housing","vacant housing","total number of housing","count",41592
+"Busan",21,"Dong-gu",21030,2020,"housing","vacant housing","fraction","percent",11.6
+"Busan",21,"Dong-gu",21030,2020,"housing","vacant housing","number of vacant housing","count",3902
+"Busan",21,"Dong-gu",21030,2020,"housing","vacant housing","total number of housing","count",33775
+"Busan",21,"Yeongdo-gu",21040,2020,"housing","vacant housing","fraction","percent",10.9
+"Busan",21,"Yeongdo-gu",21040,2020,"housing","vacant housing","number of vacant housing","count",5087
+"Busan",21,"Yeongdo-gu",21040,2020,"housing","vacant housing","total number of housing","count",46617
+"Busan",21,"Busanjin-gu",21050,2020,"housing","vacant housing","fraction","percent",10.9
+"Busan",21,"Busanjin-gu",21050,2020,"housing","vacant housing","number of vacant housing","count",15483
+"Busan",21,"Busanjin-gu",21050,2020,"housing","vacant housing","total number of housing","count",141650
+"Busan",21,"Dongnae-gu",21060,2020,"housing","vacant housing","fraction","percent",6.5
+"Busan",21,"Dongnae-gu",21060,2020,"housing","vacant housing","number of vacant housing","count",6145
+"Busan",21,"Dongnae-gu",21060,2020,"housing","vacant housing","total number of housing","count",94561
+"Busan",21,"Nam-gu",21070,2020,"housing","vacant housing","fraction","percent",12.7
+"Busan",21,"Nam-gu",21070,2020,"housing","vacant housing","number of vacant housing","count",13789
+"Busan",21,"Nam-gu",21070,2020,"housing","vacant housing","total number of housing","count",108223
+"Busan",21,"Buk-gu",21080,2020,"housing","vacant housing","fraction","percent",5.8
+"Busan",21,"Buk-gu",21080,2020,"housing","vacant housing","number of vacant housing","count",6176
+"Busan",21,"Buk-gu",21080,2020,"housing","vacant housing","total number of housing","count",106250
+"Busan",21,"Haeundae-gu",21090,2020,"housing","vacant housing","fraction","percent",8.3
+"Busan",21,"Haeundae-gu",21090,2020,"housing","vacant housing","number of vacant housing","count",12221
+"Busan",21,"Haeundae-gu",21090,2020,"housing","vacant housing","total number of housing","count",146373
+"Busan",21,"Saha-gu",21100,2020,"housing","vacant housing","fraction","percent",7.6
+"Busan",21,"Saha-gu",21100,2020,"housing","vacant housing","number of vacant housing","count",8922
+"Busan",21,"Saha-gu",21100,2020,"housing","vacant housing","total number of housing","count",117701
+"Busan",21,"Geumjeong-gu",21110,2020,"housing","vacant housing","fraction","percent",8.8
+"Busan",21,"Geumjeong-gu",21110,2020,"housing","vacant housing","number of vacant housing","count",7670
+"Busan",21,"Geumjeong-gu",21110,2020,"housing","vacant housing","total number of housing","count",86739
+"Busan",21,"Gangseo-gu",21120,2020,"housing","vacant housing","fraction","percent",9.5
+"Busan",21,"Gangseo-gu",21120,2020,"housing","vacant housing","number of vacant housing","count",4554
+"Busan",21,"Gangseo-gu",21120,2020,"housing","vacant housing","total number of housing","count",48150
+"Busan",21,"Yeonje-gu",21130,2020,"housing","vacant housing","fraction","percent",6.6
+"Busan",21,"Yeonje-gu",21130,2020,"housing","vacant housing","number of vacant housing","count",4955
+"Busan",21,"Yeonje-gu",21130,2020,"housing","vacant housing","total number of housing","count",75081
+"Busan",21,"Suyeong-gu",21140,2020,"housing","vacant housing","fraction","percent",10
+"Busan",21,"Suyeong-gu",21140,2020,"housing","vacant housing","number of vacant housing","count",6963
+"Busan",21,"Suyeong-gu",21140,2020,"housing","vacant housing","total number of housing","count",69748
+"Busan",21,"Sasang-gu",21150,2020,"housing","vacant housing","fraction","percent",5.4
+"Busan",21,"Sasang-gu",21150,2020,"housing","vacant housing","number of vacant housing","count",4136
+"Busan",21,"Sasang-gu",21150,2020,"housing","vacant housing","total number of housing","count",76688
+NA,21,NA,21310,2020,"housing","vacant housing","fraction","percent",9.7
+NA,21,NA,21310,2020,"housing","vacant housing","number of vacant housing","count",6385
+NA,21,NA,21310,2020,"housing","vacant housing","total number of housing","count",65541
+"Daegu",22,"Jung-gu",22010,2020,"housing","vacant housing","fraction","percent",6.8
+"Daegu",22,"Jung-gu",22010,2020,"housing","vacant housing","number of vacant housing","count",1744
+"Daegu",22,"Jung-gu",22010,2020,"housing","vacant housing","total number of housing","count",25584
+"Daegu",22,"Dong-gu",22020,2020,"housing","vacant housing","fraction","percent",5.5
+"Daegu",22,"Dong-gu",22020,2020,"housing","vacant housing","number of vacant housing","count",6747
+"Daegu",22,"Dong-gu",22020,2020,"housing","vacant housing","total number of housing","count",123199
+"Daegu",22,"Seo-gu",22030,2020,"housing","vacant housing","fraction","percent",2.9
+"Daegu",22,"Seo-gu",22030,2020,"housing","vacant housing","number of vacant housing","count",1505
+"Daegu",22,"Seo-gu",22030,2020,"housing","vacant housing","total number of housing","count",51379
+"Daegu",22,"Nam-gu",22040,2020,"housing","vacant housing","fraction","percent",6.5
+"Daegu",22,"Nam-gu",22040,2020,"housing","vacant housing","number of vacant housing","count",2782
+"Daegu",22,"Nam-gu",22040,2020,"housing","vacant housing","total number of housing","count",42607
+"Daegu",22,"Buk-gu",22050,2020,"housing","vacant housing","fraction","percent",4.6
+"Daegu",22,"Buk-gu",22050,2020,"housing","vacant housing","number of vacant housing","count",6767
+"Daegu",22,"Buk-gu",22050,2020,"housing","vacant housing","total number of housing","count",147686
+"Daegu",22,"Suseong-gu",22060,2020,"housing","vacant housing","fraction","percent",4.2
+"Daegu",22,"Suseong-gu",22060,2020,"housing","vacant housing","number of vacant housing","count",5719
+"Daegu",22,"Suseong-gu",22060,2020,"housing","vacant housing","total number of housing","count",136996
+"Daegu",22,"Dalseo-gu",22070,2020,"housing","vacant housing","fraction","percent",3.1
+"Daegu",22,"Dalseo-gu",22070,2020,"housing","vacant housing","number of vacant housing","count",5764
+"Daegu",22,"Dalseo-gu",22070,2020,"housing","vacant housing","total number of housing","count",184756
+NA,22,NA,22310,2020,"housing","vacant housing","fraction","percent",8.2
+NA,22,NA,22310,2020,"housing","vacant housing","number of vacant housing","count",8041
+NA,22,NA,22310,2020,"housing","vacant housing","total number of housing","count",97595
+"Incheon",23,"Jung-gu",23010,2020,"housing","vacant housing","fraction","percent",9.2
+"Incheon",23,"Jung-gu",23010,2020,"housing","vacant housing","number of vacant housing","count",4690
+"Incheon",23,"Jung-gu",23010,2020,"housing","vacant housing","total number of housing","count",50974
+"Incheon",23,"Dong-gu",23020,2020,"housing","vacant housing","fraction","percent",7.9
+"Incheon",23,"Dong-gu",23020,2020,"housing","vacant housing","number of vacant housing","count",1946
+"Incheon",23,"Dong-gu",23020,2020,"housing","vacant housing","total number of housing","count",24518
+"Incheon",23,"Yeonsu-gu",23040,2020,"housing","vacant housing","fraction","percent",5.3
+"Incheon",23,"Yeonsu-gu",23040,2020,"housing","vacant housing","number of vacant housing","count",6790
+"Incheon",23,"Yeonsu-gu",23040,2020,"housing","vacant housing","total number of housing","count",127407
+"Incheon",23,"Namdong-gu",23050,2020,"housing","vacant housing","fraction","percent",6
+"Incheon",23,"Namdong-gu",23050,2020,"housing","vacant housing","number of vacant housing","count",11179
+"Incheon",23,"Namdong-gu",23050,2020,"housing","vacant housing","total number of housing","count",187149
+"Incheon",23,"Bupyeong-gu",23060,2020,"housing","vacant housing","fraction","percent",5.1
+"Incheon",23,"Bupyeong-gu",23060,2020,"housing","vacant housing","number of vacant housing","count",8677
+"Incheon",23,"Bupyeong-gu",23060,2020,"housing","vacant housing","total number of housing","count",168544
+"Incheon",23,"Gyeyang-gu",23070,2020,"housing","vacant housing","fraction","percent",5.1
+"Incheon",23,"Gyeyang-gu",23070,2020,"housing","vacant housing","number of vacant housing","count",5420
+"Incheon",23,"Gyeyang-gu",23070,2020,"housing","vacant housing","total number of housing","count",107004
+"Incheon",23,"Seo-gu",23080,2020,"housing","vacant housing","fraction","percent",4.9
+"Incheon",23,"Seo-gu",23080,2020,"housing","vacant housing","number of vacant housing","count",9033
+"Incheon",23,"Seo-gu",23080,2020,"housing","vacant housing","total number of housing","count",182797
+"Incheon",23,"Michuhol-gu",23090,2020,"housing","vacant housing","fraction","percent",8.5
+"Incheon",23,"Michuhol-gu",23090,2020,"housing","vacant housing","number of vacant housing","count",12448
+"Incheon",23,"Michuhol-gu",23090,2020,"housing","vacant housing","total number of housing","count",146766
+NA,23,NA,23310,2020,"housing","vacant housing","fraction","percent",14.5
+NA,23,NA,23310,2020,"housing","vacant housing","number of vacant housing","count",4260
+NA,23,NA,23310,2020,"housing","vacant housing","total number of housing","count",29323
+NA,23,NA,23320,2020,"housing","vacant housing","fraction","percent",17.1
+NA,23,NA,23320,2020,"housing","vacant housing","number of vacant housing","count",1418
+NA,23,NA,23320,2020,"housing","vacant housing","total number of housing","count",8292
+"Gwangju",24,"Dong-gu",24010,2020,"housing","vacant housing","fraction","percent",11.5
+"Gwangju",24,"Dong-gu",24010,2020,"housing","vacant housing","number of vacant housing","count",4600
+"Gwangju",24,"Dong-gu",24010,2020,"housing","vacant housing","total number of housing","count",40108
+"Gwangju",24,"Seo-gu",24020,2020,"housing","vacant housing","fraction","percent",6.4
+"Gwangju",24,"Seo-gu",24020,2020,"housing","vacant housing","number of vacant housing","count",6773
+"Gwangju",24,"Seo-gu",24020,2020,"housing","vacant housing","total number of housing","count",106173
+"Gwangju",24,"Nam-gu",24030,2020,"housing","vacant housing","fraction","percent",8.1
+"Gwangju",24,"Nam-gu",24030,2020,"housing","vacant housing","number of vacant housing","count",6524
+"Gwangju",24,"Nam-gu",24030,2020,"housing","vacant housing","total number of housing","count",80737
+"Gwangju",24,"Buk-gu",24040,2020,"housing","vacant housing","fraction","percent",7.8
+"Gwangju",24,"Buk-gu",24040,2020,"housing","vacant housing","number of vacant housing","count",12735
+"Gwangju",24,"Buk-gu",24040,2020,"housing","vacant housing","total number of housing","count",162768
+"Gwangju",24,"Gwangsan-gu",24050,2020,"housing","vacant housing","fraction","percent",7.4
+"Gwangju",24,"Gwangsan-gu",24050,2020,"housing","vacant housing","number of vacant housing","count",10953
+"Gwangju",24,"Gwangsan-gu",24050,2020,"housing","vacant housing","total number of housing","count",148489
+"Daejeon",25,"Dong-gu",25010,2020,"housing","vacant housing","fraction","percent",5.6
+"Daejeon",25,"Dong-gu",25010,2020,"housing","vacant housing","number of vacant housing","count",4456
+"Daejeon",25,"Dong-gu",25010,2020,"housing","vacant housing","total number of housing","count",79262
+"Daejeon",25,"Jung-gu",25020,2020,"housing","vacant housing","fraction","percent",5
+"Daejeon",25,"Jung-gu",25020,2020,"housing","vacant housing","number of vacant housing","count",4080
+"Daejeon",25,"Jung-gu",25020,2020,"housing","vacant housing","total number of housing","count",82051
+"Daejeon",25,"Seo-gu",25030,2020,"housing","vacant housing","fraction","percent",4.2
+"Daejeon",25,"Seo-gu",25030,2020,"housing","vacant housing","number of vacant housing","count",6387
+"Daejeon",25,"Seo-gu",25030,2020,"housing","vacant housing","total number of housing","count",153397
+"Daejeon",25,"Yuseong-gu",25040,2020,"housing","vacant housing","fraction","percent",6.2
+"Daejeon",25,"Yuseong-gu",25040,2020,"housing","vacant housing","number of vacant housing","count",7363
+"Daejeon",25,"Yuseong-gu",25040,2020,"housing","vacant housing","total number of housing","count",119063
+"Daejeon",25,"Daedeok-gu",25050,2020,"housing","vacant housing","fraction","percent",7.4
+"Daejeon",25,"Daedeok-gu",25050,2020,"housing","vacant housing","number of vacant housing","count",4697
+"Daejeon",25,"Daedeok-gu",25050,2020,"housing","vacant housing","total number of housing","count",63102
+"Ulsan",26,"Jung-gu",26010,2020,"housing","vacant housing","fraction","percent",6
+"Ulsan",26,"Jung-gu",26010,2020,"housing","vacant housing","number of vacant housing","count",4264
+"Ulsan",26,"Jung-gu",26010,2020,"housing","vacant housing","total number of housing","count",70794
+"Ulsan",26,"Nam-gu",26020,2020,"housing","vacant housing","fraction","percent",7.9
+"Ulsan",26,"Nam-gu",26020,2020,"housing","vacant housing","number of vacant housing","count",8722
+"Ulsan",26,"Nam-gu",26020,2020,"housing","vacant housing","total number of housing","count",110405
+"Ulsan",26,"Dong-gu",26030,2020,"housing","vacant housing","fraction","percent",6.9
+"Ulsan",26,"Dong-gu",26030,2020,"housing","vacant housing","number of vacant housing","count",3721
+"Ulsan",26,"Dong-gu",26030,2020,"housing","vacant housing","total number of housing","count",53662
+"Ulsan",26,"Buk-gu",26040,2020,"housing","vacant housing","fraction","percent",6.7
+"Ulsan",26,"Buk-gu",26040,2020,"housing","vacant housing","number of vacant housing","count",5128
+"Ulsan",26,"Buk-gu",26040,2020,"housing","vacant housing","total number of housing","count",76593
+NA,26,NA,26310,2020,"housing","vacant housing","fraction","percent",10.1
+NA,26,NA,26310,2020,"housing","vacant housing","number of vacant housing","count",8406
+NA,26,NA,26310,2020,"housing","vacant housing","total number of housing","count",83180
+NA,NA,NA,NA,2020,"housing","vacant housing","fraction","percent",10.5
+NA,NA,NA,NA,2020,"housing","vacant housing","number of vacant housing","count",14385
+NA,NA,NA,NA,2020,"housing","vacant housing","total number of housing","count",136887
+"Gyeonggi-do",31,"Suwon-si",31010,2020,"housing","vacant housing","fraction","percent",3.6
+"Gyeonggi-do",31,"Suwon-si",31010,2020,"housing","vacant housing","number of vacant housing","count",13387
+"Gyeonggi-do",31,"Suwon-si",31010,2020,"housing","vacant housing","total number of housing","count",372228
+"Gyeonggi-do",31,"Seongnam-si",31020,2020,"housing","vacant housing","fraction","percent",2
+"Gyeonggi-do",31,"Seongnam-si",31020,2020,"housing","vacant housing","number of vacant housing","count",5252
+"Gyeonggi-do",31,"Seongnam-si",31020,2020,"housing","vacant housing","total number of housing","count",262573
+"Gyeonggi-do",31,"Uijeongbu-si",31030,2020,"housing","vacant housing","fraction","percent",5
+"Gyeonggi-do",31,"Uijeongbu-si",31030,2020,"housing","vacant housing","number of vacant housing","count",7875
+"Gyeonggi-do",31,"Uijeongbu-si",31030,2020,"housing","vacant housing","total number of housing","count",157778
+"Gyeonggi-do",31,"Anyang-si",31040,2020,"housing","vacant housing","fraction","percent",5.6
+"Gyeonggi-do",31,"Anyang-si",31040,2020,"housing","vacant housing","number of vacant housing","count",9955
+"Gyeonggi-do",31,"Anyang-si",31040,2020,"housing","vacant housing","total number of housing","count",178613
+"Gyeonggi-do",31,"Bucheon-si",31050,2020,"housing","vacant housing","fraction","percent",4.8
+"Gyeonggi-do",31,"Bucheon-si",31050,2020,"housing","vacant housing","number of vacant housing","count",12930
+"Gyeonggi-do",31,"Bucheon-si",31050,2020,"housing","vacant housing","total number of housing","count",271570
+"Gyeonggi-do",31,"Gwangmyeong-si",31060,2020,"housing","vacant housing","fraction","percent",7.3
+"Gyeonggi-do",31,"Gwangmyeong-si",31060,2020,"housing","vacant housing","number of vacant housing","count",7580
+"Gyeonggi-do",31,"Gwangmyeong-si",31060,2020,"housing","vacant housing","total number of housing","count",103493
+"Gyeonggi-do",31,"Pyeongtaek-si",31070,2020,"housing","vacant housing","fraction","percent",16.1
+"Gyeonggi-do",31,"Pyeongtaek-si",31070,2020,"housing","vacant housing","number of vacant housing","count",35395
+"Gyeonggi-do",31,"Pyeongtaek-si",31070,2020,"housing","vacant housing","total number of housing","count",219871
+"Gyeonggi-do",31,"Dongducheon-si",31080,2020,"housing","vacant housing","fraction","percent",10.1
+"Gyeonggi-do",31,"Dongducheon-si",31080,2020,"housing","vacant housing","number of vacant housing","count",3811
+"Gyeonggi-do",31,"Dongducheon-si",31080,2020,"housing","vacant housing","total number of housing","count",37755
+"Gyeonggi-do",31,"Ansan-si",31090,2020,"housing","vacant housing","fraction","percent",7.8
+"Gyeonggi-do",31,"Ansan-si",31090,2020,"housing","vacant housing","number of vacant housing","count",17216
+"Gyeonggi-do",31,"Ansan-si",31090,2020,"housing","vacant housing","total number of housing","count",220241
+"Gyeonggi-do",31,"Goyang-si",31100,2020,"housing","vacant housing","fraction","percent",3.5
+"Gyeonggi-do",31,"Goyang-si",31100,2020,"housing","vacant housing","number of vacant housing","count",11809
+"Gyeonggi-do",31,"Goyang-si",31100,2020,"housing","vacant housing","total number of housing","count",334425
+"Gyeonggi-do",31,"Gwacheon-si",31110,2020,"housing","vacant housing","fraction","percent",1.5
+"Gyeonggi-do",31,"Gwacheon-si",31110,2020,"housing","vacant housing","number of vacant housing","count",224
+"Gyeonggi-do",31,"Gwacheon-si",31110,2020,"housing","vacant housing","total number of housing","count",14819
+"Gyeonggi-do",31,"Guri-si",31120,2020,"housing","vacant housing","fraction","percent",3.3
+"Gyeonggi-do",31,"Guri-si",31120,2020,"housing","vacant housing","number of vacant housing","count",2004
+"Gyeonggi-do",31,"Guri-si",31120,2020,"housing","vacant housing","total number of housing","count",60554
+"Gyeonggi-do",31,"Namyangju-si",31130,2020,"housing","vacant housing","fraction","percent",5.1
+"Gyeonggi-do",31,"Namyangju-si",31130,2020,"housing","vacant housing","number of vacant housing","count",12272
+"Gyeonggi-do",31,"Namyangju-si",31130,2020,"housing","vacant housing","total number of housing","count",240547
+"Gyeonggi-do",31,"Osan-si",31140,2020,"housing","vacant housing","fraction","percent",5.9
+"Gyeonggi-do",31,"Osan-si",31140,2020,"housing","vacant housing","number of vacant housing","count",4886
+"Gyeonggi-do",31,"Osan-si",31140,2020,"housing","vacant housing","total number of housing","count",82323
+"Gyeonggi-do",31,"Siheung-si",31150,2020,"housing","vacant housing","fraction","percent",7.7
+"Gyeonggi-do",31,"Siheung-si",31150,2020,"housing","vacant housing","number of vacant housing","count",13811
+"Gyeonggi-do",31,"Siheung-si",31150,2020,"housing","vacant housing","total number of housing","count",179205
+"Gyeonggi-do",31,"Gunpo-si",31160,2020,"housing","vacant housing","fraction","percent",3.1
+"Gyeonggi-do",31,"Gunpo-si",31160,2020,"housing","vacant housing","number of vacant housing","count",2866
+"Gyeonggi-do",31,"Gunpo-si",31160,2020,"housing","vacant housing","total number of housing","count",91152
+"Gyeonggi-do",31,"Uiwang-si",31170,2020,"housing","vacant housing","fraction","percent",7.4
+"Gyeonggi-do",31,"Uiwang-si",31170,2020,"housing","vacant housing","number of vacant housing","count",4277
+"Gyeonggi-do",31,"Uiwang-si",31170,2020,"housing","vacant housing","total number of housing","count",57799
+"Gyeonggi-do",31,"Hanam-si",31180,2020,"housing","vacant housing","fraction","percent",3.7
+"Gyeonggi-do",31,"Hanam-si",31180,2020,"housing","vacant housing","number of vacant housing","count",3106
+"Gyeonggi-do",31,"Hanam-si",31180,2020,"housing","vacant housing","total number of housing","count",84875
+"Gyeonggi-do",31,"Yongin-si",31190,2020,"housing","vacant housing","fraction","percent",3.8
+"Gyeonggi-do",31,"Yongin-si",31190,2020,"housing","vacant housing","number of vacant housing","count",13346
+"Gyeonggi-do",31,"Yongin-si",31190,2020,"housing","vacant housing","total number of housing","count",349222
+"Gyeonggi-do",31,"Paju-si",31200,2020,"housing","vacant housing","fraction","percent",6.8
+"Gyeonggi-do",31,"Paju-si",31200,2020,"housing","vacant housing","number of vacant housing","count",10965
+"Gyeonggi-do",31,"Paju-si",31200,2020,"housing","vacant housing","total number of housing","count",160504
+"Gyeonggi-do",31,"Icheon-si",31210,2020,"housing","vacant housing","fraction","percent",9
+"Gyeonggi-do",31,"Icheon-si",31210,2020,"housing","vacant housing","number of vacant housing","count",7052
+"Gyeonggi-do",31,"Icheon-si",31210,2020,"housing","vacant housing","total number of housing","count",78117
+"Gyeonggi-do",31,"Anseong-si",31220,2020,"housing","vacant housing","fraction","percent",11.4
+"Gyeonggi-do",31,"Anseong-si",31220,2020,"housing","vacant housing","number of vacant housing","count",8747
+"Gyeonggi-do",31,"Anseong-si",31220,2020,"housing","vacant housing","total number of housing","count",76636
+"Gyeonggi-do",31,"Gimpo-si",31230,2020,"housing","vacant housing","fraction","percent",4.7
+"Gyeonggi-do",31,"Gimpo-si",31230,2020,"housing","vacant housing","number of vacant housing","count",7458
+"Gyeonggi-do",31,"Gimpo-si",31230,2020,"housing","vacant housing","total number of housing","count",159766
+"Gyeonggi-do",31,"Hwaseong-si",31240,2020,"housing","vacant housing","fraction","percent",7.9
+"Gyeonggi-do",31,"Hwaseong-si",31240,2020,"housing","vacant housing","number of vacant housing","count",23817
+"Gyeonggi-do",31,"Hwaseong-si",31240,2020,"housing","vacant housing","total number of housing","count",300372
+"Gyeonggi-do",31,"Gwangju-si",31250,2020,"housing","vacant housing","fraction","percent",5.5
+"Gyeonggi-do",31,"Gwangju-si",31250,2020,"housing","vacant housing","number of vacant housing","count",6995
+"Gyeonggi-do",31,"Gwangju-si",31250,2020,"housing","vacant housing","total number of housing","count",128175
+"Gyeonggi-do",31,"Yangju-si",31260,2020,"housing","vacant housing","fraction","percent",7.4
+"Gyeonggi-do",31,"Yangju-si",31260,2020,"housing","vacant housing","number of vacant housing","count",6329
+"Gyeonggi-do",31,"Yangju-si",31260,2020,"housing","vacant housing","total number of housing","count",85563
+"Gyeonggi-do",31,"Pocheon-si",31270,2020,"housing","vacant housing","fraction","percent",8.3
+"Gyeonggi-do",31,"Pocheon-si",31270,2020,"housing","vacant housing","number of vacant housing","count",4547
+"Gyeonggi-do",31,"Pocheon-si",31270,2020,"housing","vacant housing","total number of housing","count",55033
+"Gyeonggi-do",31,"Yeoju-si",31280,2020,"housing","vacant housing","fraction","percent",9.2
+"Gyeonggi-do",31,"Yeoju-si",31280,2020,"housing","vacant housing","number of vacant housing","count",3824
+"Gyeonggi-do",31,"Yeoju-si",31280,2020,"housing","vacant housing","total number of housing","count",41610
+NA,31,NA,31350,2020,"housing","vacant housing","fraction","percent",6.9
+NA,31,NA,31350,2020,"housing","vacant housing","number of vacant housing","count",1182
+NA,31,NA,31350,2020,"housing","vacant housing","total number of housing","count",17241
+NA,31,NA,31370,2020,"housing","vacant housing","fraction","percent",15.6
+NA,31,NA,31370,2020,"housing","vacant housing","number of vacant housing","count",4143
+NA,31,NA,31370,2020,"housing","vacant housing","total number of housing","count",26538
+NA,31,NA,31380,2020,"housing","vacant housing","fraction","percent",11.4
+NA,31,NA,31380,2020,"housing","vacant housing","number of vacant housing","count",5297
+NA,31,NA,31380,2020,"housing","vacant housing","total number of housing","count",46517
+"Gangwon-do",32,"Chuncheon-si",32010,2020,"housing","vacant housing","fraction","percent",8.4
+"Gangwon-do",32,"Chuncheon-si",32010,2020,"housing","vacant housing","number of vacant housing","count",8682
+"Gangwon-do",32,"Chuncheon-si",32010,2020,"housing","vacant housing","total number of housing","count",103078
+"Gangwon-do",32,"Wonju-si",32020,2020,"housing","vacant housing","fraction","percent",12.2
+"Gangwon-do",32,"Wonju-si",32020,2020,"housing","vacant housing","number of vacant housing","count",17457
+"Gangwon-do",32,"Wonju-si",32020,2020,"housing","vacant housing","total number of housing","count",142591
+"Gangwon-do",32,"Gangneung-si",32030,2020,"housing","vacant housing","fraction","percent",11.8
+"Gangwon-do",32,"Gangneung-si",32030,2020,"housing","vacant housing","number of vacant housing","count",10300
+"Gangwon-do",32,"Gangneung-si",32030,2020,"housing","vacant housing","total number of housing","count",87579
+"Gangwon-do",32,"Donghae-si",32040,2020,"housing","vacant housing","fraction","percent",16.8
+"Gangwon-do",32,"Donghae-si",32040,2020,"housing","vacant housing","number of vacant housing","count",6923
+"Gangwon-do",32,"Donghae-si",32040,2020,"housing","vacant housing","total number of housing","count",41116
+"Gangwon-do",32,"Taebaek-si",32050,2020,"housing","vacant housing","fraction","percent",15.2
+"Gangwon-do",32,"Taebaek-si",32050,2020,"housing","vacant housing","number of vacant housing","count",3124
+"Gangwon-do",32,"Taebaek-si",32050,2020,"housing","vacant housing","total number of housing","count",20504
+"Gangwon-do",32,"Sokcho-si",32060,2020,"housing","vacant housing","fraction","percent",15.5
+"Gangwon-do",32,"Sokcho-si",32060,2020,"housing","vacant housing","number of vacant housing","count",5833
+"Gangwon-do",32,"Sokcho-si",32060,2020,"housing","vacant housing","total number of housing","count",37736
+"Gangwon-do",32,"Samcheok-si",32070,2020,"housing","vacant housing","fraction","percent",17.2
+"Gangwon-do",32,"Samcheok-si",32070,2020,"housing","vacant housing","number of vacant housing","count",5293
+"Gangwon-do",32,"Samcheok-si",32070,2020,"housing","vacant housing","total number of housing","count",30818
+NA,32,NA,32310,2020,"housing","vacant housing","fraction","percent",13.1
+NA,32,NA,32310,2020,"housing","vacant housing","number of vacant housing","count",3930
+NA,32,NA,32310,2020,"housing","vacant housing","total number of housing","count",30099
+NA,32,NA,32320,2020,"housing","vacant housing","fraction","percent",13.2
+NA,32,NA,32320,2020,"housing","vacant housing","number of vacant housing","count",2643
+NA,32,NA,32320,2020,"housing","vacant housing","total number of housing","count",20098
+NA,32,NA,32330,2020,"housing","vacant housing","fraction","percent",11.3
+NA,32,NA,32330,2020,"housing","vacant housing","number of vacant housing","count",1967
+NA,32,NA,32330,2020,"housing","vacant housing","total number of housing","count",17343
+NA,32,NA,32340,2020,"housing","vacant housing","fraction","percent",25.2
+NA,32,NA,32340,2020,"housing","vacant housing","number of vacant housing","count",5504
+NA,32,NA,32340,2020,"housing","vacant housing","total number of housing","count",21801
+NA,32,NA,32350,2020,"housing","vacant housing","fraction","percent",14.3
+NA,32,NA,32350,2020,"housing","vacant housing","number of vacant housing","count",2456
+NA,32,NA,32350,2020,"housing","vacant housing","total number of housing","count",17137
+NA,32,NA,32360,2020,"housing","vacant housing","fraction","percent",7.7
+NA,32,NA,32360,2020,"housing","vacant housing","number of vacant housing","count",1285
+NA,32,NA,32360,2020,"housing","vacant housing","total number of housing","count",16673
+NA,32,NA,32370,2020,"housing","vacant housing","fraction","percent",9.9
+NA,32,NA,32370,2020,"housing","vacant housing","number of vacant housing","count",972
+NA,32,NA,32370,2020,"housing","vacant housing","total number of housing","count",9850
+NA,32,NA,32380,2020,"housing","vacant housing","fraction","percent",7.8
+NA,32,NA,32380,2020,"housing","vacant housing","number of vacant housing","count",643
+NA,32,NA,32380,2020,"housing","vacant housing","total number of housing","count",8275
+NA,32,NA,32390,2020,"housing","vacant housing","fraction","percent",14
+NA,32,NA,32390,2020,"housing","vacant housing","number of vacant housing","count",1825
+NA,32,NA,32390,2020,"housing","vacant housing","total number of housing","count",13014
+NA,32,NA,32400,2020,"housing","vacant housing","fraction","percent",15.6
+NA,32,NA,32400,2020,"housing","vacant housing","number of vacant housing","count",1855
+NA,32,NA,32400,2020,"housing","vacant housing","total number of housing","count",11910
+NA,32,NA,32410,2020,"housing","vacant housing","fraction","percent",23.7
+NA,32,NA,32410,2020,"housing","vacant housing","number of vacant housing","count",3414
+NA,32,NA,32410,2020,"housing","vacant housing","total number of housing","count",14401
+"Chungcheongbuk-do",33,"Chungju-si",33020,2020,"housing","vacant housing","fraction","percent",15.6
+"Chungcheongbuk-do",33,"Chungju-si",33020,2020,"housing","vacant housing","number of vacant housing","count",14524
+"Chungcheongbuk-do",33,"Chungju-si",33020,2020,"housing","vacant housing","total number of housing","count",93399
+"Chungcheongbuk-do",33,"Jecheon-si",33030,2020,"housing","vacant housing","fraction","percent",11.6
+"Chungcheongbuk-do",33,"Jecheon-si",33030,2020,"housing","vacant housing","number of vacant housing","count",6722
+"Chungcheongbuk-do",33,"Jecheon-si",33030,2020,"housing","vacant housing","total number of housing","count",57840
+"Chungcheongbuk-do",33,"Cheongju-si",33040,2020,"housing","vacant housing","fraction","percent",9.4
+"Chungcheongbuk-do",33,"Cheongju-si",33040,2020,"housing","vacant housing","number of vacant housing","count",28333
+"Chungcheongbuk-do",33,"Cheongju-si",33040,2020,"housing","vacant housing","total number of housing","count",302927
+NA,33,NA,33320,2020,"housing","vacant housing","fraction","percent",15.6
+NA,33,NA,33320,2020,"housing","vacant housing","number of vacant housing","count",2447
+NA,33,NA,33320,2020,"housing","vacant housing","total number of housing","count",15702
+NA,33,NA,33330,2020,"housing","vacant housing","fraction","percent",11.7
+NA,33,NA,33330,2020,"housing","vacant housing","number of vacant housing","count",2541
+NA,33,NA,33330,2020,"housing","vacant housing","total number of housing","count",21677
+NA,33,NA,33340,2020,"housing","vacant housing","fraction","percent",13.1
+NA,33,NA,33340,2020,"housing","vacant housing","number of vacant housing","count",2776
+NA,33,NA,33340,2020,"housing","vacant housing","total number of housing","count",21218
+NA,33,NA,33350,2020,"housing","vacant housing","fraction","percent",17.1
+NA,33,NA,33350,2020,"housing","vacant housing","number of vacant housing","count",6567
+NA,33,NA,33350,2020,"housing","vacant housing","total number of housing","count",38332
+NA,33,NA,33360,2020,"housing","vacant housing","fraction","percent",8.4
+NA,33,NA,33360,2020,"housing","vacant housing","number of vacant housing","count",1437
+NA,33,NA,33360,2020,"housing","vacant housing","total number of housing","count",17021
+NA,33,NA,33370,2020,"housing","vacant housing","fraction","percent",17.3
+NA,33,NA,33370,2020,"housing","vacant housing","number of vacant housing","count",7436
+NA,33,NA,33370,2020,"housing","vacant housing","total number of housing","count",42939
+NA,33,NA,33380,2020,"housing","vacant housing","fraction","percent",15.2
+NA,33,NA,33380,2020,"housing","vacant housing","number of vacant housing","count",2107
+NA,33,NA,33380,2020,"housing","vacant housing","total number of housing","count",13898
+NA,33,NA,33390,2020,"housing","vacant housing","fraction","percent",13
+NA,33,NA,33390,2020,"housing","vacant housing","number of vacant housing","count",1987
+NA,33,NA,33390,2020,"housing","vacant housing","total number of housing","count",15303
+"Chungcheongnam-do",34,"Cheonan-si",34010,2020,"housing","vacant housing","fraction","percent",10.1
+"Chungcheongnam-do",34,"Cheonan-si",34010,2020,"housing","vacant housing","number of vacant housing","count",24730
+"Chungcheongnam-do",34,"Cheonan-si",34010,2020,"housing","vacant housing","total number of housing","count",244364
+"Chungcheongnam-do",34,"Gongju-si",34020,2020,"housing","vacant housing","fraction","percent",13
+"Chungcheongnam-do",34,"Gongju-si",34020,2020,"housing","vacant housing","number of vacant housing","count",5896
+"Chungcheongnam-do",34,"Gongju-si",34020,2020,"housing","vacant housing","total number of housing","count",45266
+"Chungcheongnam-do",34,"Boryeong-si",34030,2020,"housing","vacant housing","fraction","percent",12.7
+"Chungcheongnam-do",34,"Boryeong-si",34030,2020,"housing","vacant housing","number of vacant housing","count",5582
+"Chungcheongnam-do",34,"Boryeong-si",34030,2020,"housing","vacant housing","total number of housing","count",44089
+"Chungcheongnam-do",34,"Asan-si",34040,2020,"housing","vacant housing","fraction","percent",12.5
+"Chungcheongnam-do",34,"Asan-si",34040,2020,"housing","vacant housing","number of vacant housing","count",15826
+"Chungcheongnam-do",34,"Asan-si",34040,2020,"housing","vacant housing","total number of housing","count",126319
+"Chungcheongnam-do",34,"Seosan-si",34050,2020,"housing","vacant housing","fraction","percent",12.9
+"Chungcheongnam-do",34,"Seosan-si",34050,2020,"housing","vacant housing","number of vacant housing","count",9457
+"Chungcheongnam-do",34,"Seosan-si",34050,2020,"housing","vacant housing","total number of housing","count",73069
+"Chungcheongnam-do",34,"Nonsan-si",34060,2020,"housing","vacant housing","fraction","percent",11.9
+"Chungcheongnam-do",34,"Nonsan-si",34060,2020,"housing","vacant housing","number of vacant housing","count",5825
+"Chungcheongnam-do",34,"Nonsan-si",34060,2020,"housing","vacant housing","total number of housing","count",48936
+"Chungcheongnam-do",34,"Gyeryong-si",34070,2020,"housing","vacant housing","fraction","percent",17.3
+"Chungcheongnam-do",34,"Gyeryong-si",34070,2020,"housing","vacant housing","number of vacant housing","count",2960
+"Chungcheongnam-do",34,"Gyeryong-si",34070,2020,"housing","vacant housing","total number of housing","count",17152
+"Chungcheongnam-do",34,"Dangjin-si",34080,2020,"housing","vacant housing","fraction","percent",11.7
+"Chungcheongnam-do",34,"Dangjin-si",34080,2020,"housing","vacant housing","number of vacant housing","count",7524
+"Chungcheongnam-do",34,"Dangjin-si",34080,2020,"housing","vacant housing","total number of housing","count",64504
+NA,34,NA,34310,2020,"housing","vacant housing","fraction","percent",13.3
+NA,34,NA,34310,2020,"housing","vacant housing","number of vacant housing","count",3105
+NA,34,NA,34310,2020,"housing","vacant housing","total number of housing","count",23266
+NA,34,NA,34330,2020,"housing","vacant housing","fraction","percent",12.2
+NA,34,NA,34330,2020,"housing","vacant housing","number of vacant housing","count",3620
+NA,34,NA,34330,2020,"housing","vacant housing","total number of housing","count",29661
+NA,34,NA,34340,2020,"housing","vacant housing","fraction","percent",17.5
+NA,34,NA,34340,2020,"housing","vacant housing","number of vacant housing","count",4479
+NA,34,NA,34340,2020,"housing","vacant housing","total number of housing","count",25647
+NA,34,NA,34350,2020,"housing","vacant housing","fraction","percent",11.5
+NA,34,NA,34350,2020,"housing","vacant housing","number of vacant housing","count",1613
+NA,34,NA,34350,2020,"housing","vacant housing","total number of housing","count",14062
+NA,34,NA,34360,2020,"housing","vacant housing","fraction","percent",13.9
+NA,34,NA,34360,2020,"housing","vacant housing","number of vacant housing","count",6042
+NA,34,NA,34360,2020,"housing","vacant housing","total number of housing","count",43472
+NA,34,NA,34370,2020,"housing","vacant housing","fraction","percent",15.1
+NA,34,NA,34370,2020,"housing","vacant housing","number of vacant housing","count",5492
+NA,34,NA,34370,2020,"housing","vacant housing","total number of housing","count",36369
+NA,34,NA,34380,2020,"housing","vacant housing","fraction","percent",14.8
+NA,34,NA,34380,2020,"housing","vacant housing","number of vacant housing","count",4279
+NA,34,NA,34380,2020,"housing","vacant housing","total number of housing","count",28832
+"Jeollabuk-do",35,"Jeonju-si",35010,2020,"housing","vacant housing","fraction","percent",9.4
+"Jeollabuk-do",35,"Jeonju-si",35010,2020,"housing","vacant housing","number of vacant housing","count",22532
+"Jeollabuk-do",35,"Jeonju-si",35010,2020,"housing","vacant housing","total number of housing","count",240012
+"Jeollabuk-do",35,"Gunsan-si",35020,2020,"housing","vacant housing","fraction","percent",16.3
+"Jeollabuk-do",35,"Gunsan-si",35020,2020,"housing","vacant housing","number of vacant housing","count",19033
+"Jeollabuk-do",35,"Gunsan-si",35020,2020,"housing","vacant housing","total number of housing","count",116663
+"Jeollabuk-do",35,"Iksan-si",35030,2020,"housing","vacant housing","fraction","percent",12
+"Jeollabuk-do",35,"Iksan-si",35030,2020,"housing","vacant housing","number of vacant housing","count",14032
+"Jeollabuk-do",35,"Iksan-si",35030,2020,"housing","vacant housing","total number of housing","count",117355
+"Jeollabuk-do",35,"Jeongeup-si",35040,2020,"housing","vacant housing","fraction","percent",14.7
+"Jeollabuk-do",35,"Jeongeup-si",35040,2020,"housing","vacant housing","number of vacant housing","count",7072
+"Jeollabuk-do",35,"Jeongeup-si",35040,2020,"housing","vacant housing","total number of housing","count",48152
+"Jeollabuk-do",35,"Namwon-si",35050,2020,"housing","vacant housing","fraction","percent",12.9
+"Jeollabuk-do",35,"Namwon-si",35050,2020,"housing","vacant housing","number of vacant housing","count",4524
+"Jeollabuk-do",35,"Namwon-si",35050,2020,"housing","vacant housing","total number of housing","count",34965
+"Jeollabuk-do",35,"Gimje-si",35060,2020,"housing","vacant housing","fraction","percent",15.8
+"Jeollabuk-do",35,"Gimje-si",35060,2020,"housing","vacant housing","number of vacant housing","count",5944
+"Jeollabuk-do",35,"Gimje-si",35060,2020,"housing","vacant housing","total number of housing","count",37736
+NA,35,NA,35310,2020,"housing","vacant housing","fraction","percent",15.4
+NA,35,NA,35310,2020,"housing","vacant housing","number of vacant housing","count",5991
+NA,35,NA,35310,2020,"housing","vacant housing","total number of housing","count",38905
+NA,35,NA,35320,2020,"housing","vacant housing","fraction","percent",11.3
+NA,35,NA,35320,2020,"housing","vacant housing","number of vacant housing","count",1235
+NA,35,NA,35320,2020,"housing","vacant housing","total number of housing","count",10908
+NA,35,NA,35330,2020,"housing","vacant housing","fraction","percent",15.6
+NA,35,NA,35330,2020,"housing","vacant housing","number of vacant housing","count",1745
+NA,35,NA,35330,2020,"housing","vacant housing","total number of housing","count",11195
+NA,35,NA,35340,2020,"housing","vacant housing","fraction","percent",10.7
+NA,35,NA,35340,2020,"housing","vacant housing","number of vacant housing","count",1021
+NA,35,NA,35340,2020,"housing","vacant housing","total number of housing","count",9555
+NA,35,NA,35350,2020,"housing","vacant housing","fraction","percent",14.8
+NA,35,NA,35350,2020,"housing","vacant housing","number of vacant housing","count",1896
+NA,35,NA,35350,2020,"housing","vacant housing","total number of housing","count",12830
+NA,35,NA,35360,2020,"housing","vacant housing","fraction","percent",18.1
+NA,35,NA,35360,2020,"housing","vacant housing","number of vacant housing","count",2375
+NA,35,NA,35360,2020,"housing","vacant housing","total number of housing","count",13135
+NA,35,NA,35370,2020,"housing","vacant housing","fraction","percent",15
+NA,35,NA,35370,2020,"housing","vacant housing","number of vacant housing","count",3790
+NA,35,NA,35370,2020,"housing","vacant housing","total number of housing","count",25269
+NA,35,NA,35380,2020,"housing","vacant housing","fraction","percent",17.2
+NA,35,NA,35380,2020,"housing","vacant housing","number of vacant housing","count",4222
+NA,35,NA,35380,2020,"housing","vacant housing","total number of housing","count",24541
+"Jeollanam-do",36,"Mokpo-si",36010,2020,"housing","vacant housing","fraction","percent",14.1
+"Jeollanam-do",36,"Mokpo-si",36010,2020,"housing","vacant housing","number of vacant housing","count",13345
+"Jeollanam-do",36,"Mokpo-si",36010,2020,"housing","vacant housing","total number of housing","count",94332
+"Jeollanam-do",36,"Yeosu-si",36020,2020,"housing","vacant housing","fraction","percent",12.7
+"Jeollanam-do",36,"Yeosu-si",36020,2020,"housing","vacant housing","number of vacant housing","count",14464
+"Jeollanam-do",36,"Yeosu-si",36020,2020,"housing","vacant housing","total number of housing","count",113941
+"Jeollanam-do",36,"Suncheon-si",36030,2020,"housing","vacant housing","fraction","percent",12.9
+"Jeollanam-do",36,"Suncheon-si",36030,2020,"housing","vacant housing","number of vacant housing","count",14663
+"Jeollanam-do",36,"Suncheon-si",36030,2020,"housing","vacant housing","total number of housing","count",113964
+"Jeollanam-do",36,"Naju-si",36040,2020,"housing","vacant housing","fraction","percent",21.2
+"Jeollanam-do",36,"Naju-si",36040,2020,"housing","vacant housing","number of vacant housing","count",11549
+"Jeollanam-do",36,"Naju-si",36040,2020,"housing","vacant housing","total number of housing","count",54524
+"Jeollanam-do",36,"Gwangyang-si",36060,2020,"housing","vacant housing","fraction","percent",13.7
+"Jeollanam-do",36,"Gwangyang-si",36060,2020,"housing","vacant housing","number of vacant housing","count",8274
+"Jeollanam-do",36,"Gwangyang-si",36060,2020,"housing","vacant housing","total number of housing","count",60548
+NA,36,NA,36310,2020,"housing","vacant housing","fraction","percent",14
+NA,36,NA,36310,2020,"housing","vacant housing","number of vacant housing","count",2585
+NA,36,NA,36310,2020,"housing","vacant housing","total number of housing","count",18485
+NA,36,NA,36320,2020,"housing","vacant housing","fraction","percent",15.8
+NA,36,NA,36320,2020,"housing","vacant housing","number of vacant housing","count",2135
+NA,36,NA,36320,2020,"housing","vacant housing","total number of housing","count",13488
+NA,36,NA,36330,2020,"housing","vacant housing","fraction","percent",15.5
+NA,36,NA,36330,2020,"housing","vacant housing","number of vacant housing","count",1811
+NA,36,NA,36330,2020,"housing","vacant housing","total number of housing","count",11687
+NA,36,NA,36350,2020,"housing","vacant housing","fraction","percent",18.7
+NA,36,NA,36350,2020,"housing","vacant housing","number of vacant housing","count",6370
+NA,36,NA,36350,2020,"housing","vacant housing","total number of housing","count",34150
+NA,36,NA,36360,2020,"housing","vacant housing","fraction","percent",14.4
+NA,36,NA,36360,2020,"housing","vacant housing","number of vacant housing","count",2808
+NA,36,NA,36360,2020,"housing","vacant housing","total number of housing","count",19464
+NA,36,NA,36370,2020,"housing","vacant housing","fraction","percent",18.4
+NA,36,NA,36370,2020,"housing","vacant housing","number of vacant housing","count",5257
+NA,36,NA,36370,2020,"housing","vacant housing","total number of housing","count",28628
+NA,36,NA,36380,2020,"housing","vacant housing","fraction","percent",13.9
+NA,36,NA,36380,2020,"housing","vacant housing","number of vacant housing","count",2465
+NA,36,NA,36380,2020,"housing","vacant housing","total number of housing","count",17679
+NA,36,NA,36390,2020,"housing","vacant housing","fraction","percent",18.8
+NA,36,NA,36390,2020,"housing","vacant housing","number of vacant housing","count",3238
+NA,36,NA,36390,2020,"housing","vacant housing","total number of housing","count",17241
+NA,36,NA,36400,2020,"housing","vacant housing","fraction","percent",14.3
+NA,36,NA,36400,2020,"housing","vacant housing","number of vacant housing","count",4492
+NA,36,NA,36400,2020,"housing","vacant housing","total number of housing","count",31350
+NA,36,NA,36410,2020,"housing","vacant housing","fraction","percent",21.8
+NA,36,NA,36410,2020,"housing","vacant housing","number of vacant housing","count",5981
+NA,36,NA,36410,2020,"housing","vacant housing","total number of housing","count",27410
+NA,36,NA,36420,2020,"housing","vacant housing","fraction","percent",19.4
+NA,36,NA,36420,2020,"housing","vacant housing","number of vacant housing","count",6856
+NA,36,NA,36420,2020,"housing","vacant housing","total number of housing","count",35403
+NA,36,NA,36430,2020,"housing","vacant housing","fraction","percent",16
+NA,36,NA,36430,2020,"housing","vacant housing","number of vacant housing","count",2366
+NA,36,NA,36430,2020,"housing","vacant housing","total number of housing","count",14777
+NA,36,NA,36440,2020,"housing","vacant housing","fraction","percent",15.3
+NA,36,NA,36440,2020,"housing","vacant housing","number of vacant housing","count",3534
+NA,36,NA,36440,2020,"housing","vacant housing","total number of housing","count",23083
+NA,36,NA,36450,2020,"housing","vacant housing","fraction","percent",16.7
+NA,36,NA,36450,2020,"housing","vacant housing","number of vacant housing","count",3138
+NA,36,NA,36450,2020,"housing","vacant housing","total number of housing","count",18761
+NA,36,NA,36460,2020,"housing","vacant housing","fraction","percent",14.5
+NA,36,NA,36460,2020,"housing","vacant housing","number of vacant housing","count",3193
+NA,36,NA,36460,2020,"housing","vacant housing","total number of housing","count",22096
+NA,36,NA,36470,2020,"housing","vacant housing","fraction","percent",13.3
+NA,36,NA,36470,2020,"housing","vacant housing","number of vacant housing","count",1904
+NA,36,NA,36470,2020,"housing","vacant housing","total number of housing","count",14327
+NA,36,NA,36480,2020,"housing","vacant housing","fraction","percent",10
+NA,36,NA,36480,2020,"housing","vacant housing","number of vacant housing","count",1675
+NA,36,NA,36480,2020,"housing","vacant housing","total number of housing","count",16705
+"Gyeongsangbuk-do",37,"Pohang-si",37010,2020,"housing","vacant housing","fraction","percent",11.6
+"Gyeongsangbuk-do",37,"Pohang-si",37010,2020,"housing","vacant housing","number of vacant housing","count",23356
+"Gyeongsangbuk-do",37,"Pohang-si",37010,2020,"housing","vacant housing","total number of housing","count",201611
+"Gyeongsangbuk-do",37,"Gyeongju-si",37020,2020,"housing","vacant housing","fraction","percent",14.5
+"Gyeongsangbuk-do",37,"Gyeongju-si",37020,2020,"housing","vacant housing","number of vacant housing","count",15928
+"Gyeongsangbuk-do",37,"Gyeongju-si",37020,2020,"housing","vacant housing","total number of housing","count",109481
+"Gyeongsangbuk-do",37,"Gimcheon-si",37030,2020,"housing","vacant housing","fraction","percent",14.8
+"Gyeongsangbuk-do",37,"Gimcheon-si",37030,2020,"housing","vacant housing","number of vacant housing","count",8921
+"Gyeongsangbuk-do",37,"Gimcheon-si",37030,2020,"housing","vacant housing","total number of housing","count",60378
+"Gyeongsangbuk-do",37,"Andong-si",37040,2020,"housing","vacant housing","fraction","percent",14.8
+"Gyeongsangbuk-do",37,"Andong-si",37040,2020,"housing","vacant housing","number of vacant housing","count",10371
+"Gyeongsangbuk-do",37,"Andong-si",37040,2020,"housing","vacant housing","total number of housing","count",69997
+"Gyeongsangbuk-do",37,"Gumi-si",37050,2020,"housing","vacant housing","fraction","percent",10.3
+"Gyeongsangbuk-do",37,"Gumi-si",37050,2020,"housing","vacant housing","number of vacant housing","count",15604
+"Gyeongsangbuk-do",37,"Gumi-si",37050,2020,"housing","vacant housing","total number of housing","count",152076
+"Gyeongsangbuk-do",37,"Yeongju-si",37060,2020,"housing","vacant housing","fraction","percent",9.3
+"Gyeongsangbuk-do",37,"Yeongju-si",37060,2020,"housing","vacant housing","number of vacant housing","count",3927
+"Gyeongsangbuk-do",37,"Yeongju-si",37060,2020,"housing","vacant housing","total number of housing","count",42345
+"Gyeongsangbuk-do",37,"Yeongcheon-si",37070,2020,"housing","vacant housing","fraction","percent",14
+"Gyeongsangbuk-do",37,"Yeongcheon-si",37070,2020,"housing","vacant housing","number of vacant housing","count",6306
+"Gyeongsangbuk-do",37,"Yeongcheon-si",37070,2020,"housing","vacant housing","total number of housing","count",45092
+"Gyeongsangbuk-do",37,"Sangju-si",37080,2020,"housing","vacant housing","fraction","percent",13.4
+"Gyeongsangbuk-do",37,"Sangju-si",37080,2020,"housing","vacant housing","number of vacant housing","count",5866
+"Gyeongsangbuk-do",37,"Sangju-si",37080,2020,"housing","vacant housing","total number of housing","count",43713
+"Gyeongsangbuk-do",37,"Mungyeong-si",37090,2020,"housing","vacant housing","fraction","percent",12.1
+"Gyeongsangbuk-do",37,"Mungyeong-si",37090,2020,"housing","vacant housing","number of vacant housing","count",3675
+"Gyeongsangbuk-do",37,"Mungyeong-si",37090,2020,"housing","vacant housing","total number of housing","count",30337
+"Gyeongsangbuk-do",37,"Gyeongsan-si",37100,2020,"housing","vacant housing","fraction","percent",9.1
+"Gyeongsangbuk-do",37,"Gyeongsan-si",37100,2020,"housing","vacant housing","number of vacant housing","count",8837
+"Gyeongsangbuk-do",37,"Gyeongsan-si",37100,2020,"housing","vacant housing","total number of housing","count",96711
+NA,37,NA,37310,2020,"housing","vacant housing","fraction","percent",11.9
+NA,37,NA,37310,2020,"housing","vacant housing","number of vacant housing","count",1315
+NA,37,NA,37310,2020,"housing","vacant housing","total number of housing","count",11043
+NA,37,NA,37320,2020,"housing","vacant housing","fraction","percent",14.7
+NA,37,NA,37320,2020,"housing","vacant housing","number of vacant housing","count",3832
+NA,37,NA,37320,2020,"housing","vacant housing","total number of housing","count",26136
+NA,37,NA,37330,2020,"housing","vacant housing","fraction","percent",14.9
+NA,37,NA,37330,2020,"housing","vacant housing","number of vacant housing","count",1857
+NA,37,NA,37330,2020,"housing","vacant housing","total number of housing","count",12493
+NA,37,NA,37340,2020,"housing","vacant housing","fraction","percent",13.8
+NA,37,NA,37340,2020,"housing","vacant housing","number of vacant housing","count",1131
+NA,37,NA,37340,2020,"housing","vacant housing","total number of housing","count",8197
+NA,37,NA,37350,2020,"housing","vacant housing","fraction","percent",15.8
+NA,37,NA,37350,2020,"housing","vacant housing","number of vacant housing","count",2885
+NA,37,NA,37350,2020,"housing","vacant housing","total number of housing","count",18220
+NA,37,NA,37360,2020,"housing","vacant housing","fraction","percent",20.4
+NA,37,NA,37360,2020,"housing","vacant housing","number of vacant housing","count",4435
+NA,37,NA,37360,2020,"housing","vacant housing","total number of housing","count",21748
+NA,37,NA,37370,2020,"housing","vacant housing","fraction","percent",13.2
+NA,37,NA,37370,2020,"housing","vacant housing","number of vacant housing","count",1826
+NA,37,NA,37370,2020,"housing","vacant housing","total number of housing","count",13785
+NA,37,NA,37380,2020,"housing","vacant housing","fraction","percent",9.4
+NA,37,NA,37380,2020,"housing","vacant housing","number of vacant housing","count",1595
+NA,37,NA,37380,2020,"housing","vacant housing","total number of housing","count",17038
+NA,37,NA,37390,2020,"housing","vacant housing","fraction","percent",14.4
+NA,37,NA,37390,2020,"housing","vacant housing","number of vacant housing","count",6317
+NA,37,NA,37390,2020,"housing","vacant housing","total number of housing","count",44000
+NA,37,NA,37400,2020,"housing","vacant housing","fraction","percent",18.4
+NA,37,NA,37400,2020,"housing","vacant housing","number of vacant housing","count",5072
+NA,37,NA,37400,2020,"housing","vacant housing","total number of housing","count",27501
+NA,37,NA,37410,2020,"housing","vacant housing","fraction","percent",13.6
+NA,37,NA,37410,2020,"housing","vacant housing","number of vacant housing","count",2084
+NA,37,NA,37410,2020,"housing","vacant housing","total number of housing","count",15270
+NA,37,NA,37420,2020,"housing","vacant housing","fraction","percent",18.5
+NA,37,NA,37420,2020,"housing","vacant housing","number of vacant housing","count",4449
+NA,37,NA,37420,2020,"housing","vacant housing","total number of housing","count",24069
+NA,37,NA,37430,2020,"housing","vacant housing","fraction","percent",5.9
+NA,37,NA,37430,2020,"housing","vacant housing","number of vacant housing","count",181
+NA,37,NA,37430,2020,"housing","vacant housing","total number of housing","count",3065
+"Gyeongsangnam-do",38,"Jinju-si",38030,2020,"housing","vacant housing","fraction","percent",10.1
+"Gyeongsangnam-do",38,"Jinju-si",38030,2020,"housing","vacant housing","number of vacant housing","count",13162
+"Gyeongsangnam-do",38,"Jinju-si",38030,2020,"housing","vacant housing","total number of housing","count",130282
+"Gyeongsangnam-do",38,"Tongyeong-si",38050,2020,"housing","vacant housing","fraction","percent",13.4
+"Gyeongsangnam-do",38,"Tongyeong-si",38050,2020,"housing","vacant housing","number of vacant housing","count",7034
+"Gyeongsangnam-do",38,"Tongyeong-si",38050,2020,"housing","vacant housing","total number of housing","count",52552
+"Gyeongsangnam-do",38,"Sacheon-si",38060,2020,"housing","vacant housing","fraction","percent",16.1
+"Gyeongsangnam-do",38,"Sacheon-si",38060,2020,"housing","vacant housing","number of vacant housing","count",7933
+"Gyeongsangnam-do",38,"Sacheon-si",38060,2020,"housing","vacant housing","total number of housing","count",49245
+"Gyeongsangnam-do",38,"Gimhae-si",38070,2020,"housing","vacant housing","fraction","percent",8.6
+"Gyeongsangnam-do",38,"Gimhae-si",38070,2020,"housing","vacant housing","number of vacant housing","count",16623
+"Gyeongsangnam-do",38,"Gimhae-si",38070,2020,"housing","vacant housing","total number of housing","count",193783
+"Gyeongsangnam-do",38,"Miryang-si",38080,2020,"housing","vacant housing","fraction","percent",15
+"Gyeongsangnam-do",38,"Miryang-si",38080,2020,"housing","vacant housing","number of vacant housing","count",7382
+"Gyeongsangnam-do",38,"Miryang-si",38080,2020,"housing","vacant housing","total number of housing","count",49162
+"Gyeongsangnam-do",38,"Geoje-si",38090,2020,"housing","vacant housing","fraction","percent",16.6
+"Gyeongsangnam-do",38,"Geoje-si",38090,2020,"housing","vacant housing","number of vacant housing","count",16594
+"Gyeongsangnam-do",38,"Geoje-si",38090,2020,"housing","vacant housing","total number of housing","count",99797
+"Gyeongsangnam-do",38,"Yangsan-si",38100,2020,"housing","vacant housing","fraction","percent",8.8
+"Gyeongsangnam-do",38,"Yangsan-si",38100,2020,"housing","vacant housing","number of vacant housing","count",11657
+"Gyeongsangnam-do",38,"Yangsan-si",38100,2020,"housing","vacant housing","total number of housing","count",132927
+"Gyeongsangnam-do",38,"Changwon-si",38110,2020,"housing","vacant housing","fraction","percent",9.3
+"Gyeongsangnam-do",38,"Changwon-si",38110,2020,"housing","vacant housing","number of vacant housing","count",34030
+"Gyeongsangnam-do",38,"Changwon-si",38110,2020,"housing","vacant housing","total number of housing","count",366057
+NA,38,NA,38310,2020,"housing","vacant housing","fraction","percent",17.5
+NA,38,NA,38310,2020,"housing","vacant housing","number of vacant housing","count",2366
+NA,38,NA,38310,2020,"housing","vacant housing","total number of housing","count",13482
+NA,38,NA,38320,2020,"housing","vacant housing","fraction","percent",12.3
+NA,38,NA,38320,2020,"housing","vacant housing","number of vacant housing","count",3432
+NA,38,NA,38320,2020,"housing","vacant housing","total number of housing","count",28005
+NA,38,NA,38330,2020,"housing","vacant housing","fraction","percent",14.5
+NA,38,NA,38330,2020,"housing","vacant housing","number of vacant housing","count",4054
+NA,38,NA,38330,2020,"housing","vacant housing","total number of housing","count",28031
+NA,38,NA,38340,2020,"housing","vacant housing","fraction","percent",17.1
+NA,38,NA,38340,2020,"housing","vacant housing","number of vacant housing","count",4090
+NA,38,NA,38340,2020,"housing","vacant housing","total number of housing","count",23984
+NA,38,NA,38350,2020,"housing","vacant housing","fraction","percent",21.5
+NA,38,NA,38350,2020,"housing","vacant housing","number of vacant housing","count",4929
+NA,38,NA,38350,2020,"housing","vacant housing","total number of housing","count",22950
+NA,38,NA,38360,2020,"housing","vacant housing","fraction","percent",13.5
+NA,38,NA,38360,2020,"housing","vacant housing","number of vacant housing","count",2748
+NA,38,NA,38360,2020,"housing","vacant housing","total number of housing","count",20413
+NA,38,NA,38370,2020,"housing","vacant housing","fraction","percent",17.3
+NA,38,NA,38370,2020,"housing","vacant housing","number of vacant housing","count",2938
+NA,38,NA,38370,2020,"housing","vacant housing","total number of housing","count",16934
+NA,38,NA,38380,2020,"housing","vacant housing","fraction","percent",17
+NA,38,NA,38380,2020,"housing","vacant housing","number of vacant housing","count",3217
+NA,38,NA,38380,2020,"housing","vacant housing","total number of housing","count",18891
+NA,38,NA,38390,2020,"housing","vacant housing","fraction","percent",14.8
+NA,38,NA,38390,2020,"housing","vacant housing","number of vacant housing","count",3999
+NA,38,NA,38390,2020,"housing","vacant housing","total number of housing","count",27014
+NA,38,NA,38400,2020,"housing","vacant housing","fraction","percent",20.5
+NA,38,NA,38400,2020,"housing","vacant housing","number of vacant housing","count",4794
+NA,38,NA,38400,2020,"housing","vacant housing","total number of housing","count",23435
+"Jeju-do",39,"Jeju-si",39010,2020,"housing","vacant housing","fraction","percent",12.9
+"Jeju-do",39,"Jeju-si",39010,2020,"housing","vacant housing","number of vacant housing","count",22362
+"Jeju-do",39,"Jeju-si",39010,2020,"housing","vacant housing","total number of housing","count",173767
+"Jeju-do",39,"Seogwipo-si",39020,2020,"housing","vacant housing","fraction","percent",17.5
+"Jeju-do",39,"Seogwipo-si",39020,2020,"housing","vacant housing","number of vacant housing","count",12743
+"Jeju-do",39,"Seogwipo-si",39020,2020,"housing","vacant housing","total number of housing","count",72684

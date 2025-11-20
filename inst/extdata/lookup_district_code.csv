@@ -156,7 +156,7 @@
 "충청북도","청주시 서원구","청주시","서원구","Chungcheongbuk-do","Cheongju-si","Seowon-gu","Seowon-gu Cheongju-si","Seowon-gu Cheongju-si Chungcheongbuk-do",2020,NA,33042,33042,33042,33042,"A0710","A0610","BVXX160A",4200178
 "충청북도","청주시 흥덕구","청주시","흥덕구","Chungcheongbuk-do","Cheongju-si","Heungdeok-gu","Heungdeok-gu Cheongju-si","Heungdeok-gu Cheongju-si Chungcheongbuk-do",2020,NA,33043,33043,33043,33043,"A0710","A0610","BVXX161",4200177
 "충청북도","청주시 청원구","청주시","청원구","Chungcheongbuk-do","Cheongju-si","Cheongwon-gu","Cheongwon-gu Cheongju-si","Cheongwon-gu Cheongju-si Chungcheongbuk-do",2020,NA,33044,33044,33044,33044,"A0710","A0610","BVXX160B",4200179
-"충청북도","청주시 청원군","청주시","청원군","Chungcheongbuk-do","Cheongju-si","Cheongwon-gun","Cheongwon-gun Cheongju-si","Cheongwon-gun Cheongju-si Chungcheongbuk-do",2010,NA,33310,33310,33310,33310,"","",NA,NA
+"충청북도","청원군","청원군","청원군","Chungcheongbuk-do","Cheongju-si","Cheongwon-gun","Cheongwon-gun Cheongju-si","Cheongwon-gun Cheongju-si Chungcheongbuk-do",2010,NA,33310,33310,33310,33310,"","",NA,NA
 "충청북도","보은군","보은군","보은군","Chungcheongbuk-do","Boeun-gun","Boeun-gun","Boeun-gun","Boeun-gun Chungcheongbuk-do",2020,NA,33520,33320,33520,33520,"A0703","A0603","BVXX152",4200183
 "충청북도","옥천군","옥천군","옥천군","Chungcheongbuk-do","Okcheon-gun","Okcheon-gun","Okcheon-gun","Okcheon-gun Chungcheongbuk-do",2020,NA,33530,33330,33530,33530,"A0705","A0605","BVXX154",4200184
 "충청북도","영동군","영동군","영동군","Chungcheongbuk-do","Yeongdong-gun","Yeongdong-gun","Yeongdong-gun","Yeongdong-gun Chungcheongbuk-do",2020,NA,33540,33340,33540,33540,"A0704","A0604","BVXX153",4200185
@@ -234,7 +234,7 @@
 "경상북도","상주시","상주시","상주시","Gyeongsangbuk-do","Sangju-si","Sangju-si","Sangju-si","Sangju-si Gyeongsangbuk-do",2020,NA,37080,37080,37080,37080,"A1409","A1309","BVXX230",4200271
 "경상북도","문경시","문경시","문경시","Gyeongsangbuk-do","Mungyeong-si","Mungyeong-si","Mungyeong-si","Mungyeong-si Gyeongsangbuk-do",2020,NA,37090,37090,37090,37090,"A1407","A1307","BVXX228",4200272
 "경상북도","경산시","경산시","경산시","Gyeongsangbuk-do","Gyeongsan-si","Gyeongsan-si","Gyeongsan-si","Gyeongsan-si Gyeongsangbuk-do",2020,NA,37100,37100,37100,37100,"A1401","A1301","BVXX222",4200273
-"경상북도","군위군","군위군","군위군","Gyeongsangbuk-do","Gunwi-gun","Gunwi-gun","Gunwi-gun","Gunwi-gun Gyeongsangbuk-do",2015,1,37510,37310,37310,37310,"","","BVXX226",4200274
+"경상북도","군위군","군위군","군위군","Gyeongsangbuk-do","Gunwi-gun","Gunwi-gun","Gunwi-gun","Gunwi-gun Gyeongsangbuk-do",2020,1,37510,37310,37310,37310,"","","BVXX226",4200274
 "경상북도","의성군","의성군","의성군","Gyeongsangbuk-do","Uiseong-gun","Uiseong-gun","Uiseong-gun","Uiseong-gun Gyeongsangbuk-do",2020,NA,37520,37320,37520,37520,"A1419","A1319","BVXX240",4200275
 "경상북도","청송군","청송군","청송군","Gyeongsangbuk-do","Cheongsong-gun","Cheongsong-gun","Cheongsong-gun","Cheongsong-gun Gyeongsangbuk-do",2020,NA,37530,37330,37530,37530,"A1421","A1321","BVXX242",4200276
 "경상북도","영양군","영양군","영양군","Gyeongsangbuk-do","Yeongyang-gun","Yeongyang-gun","Yeongyang-gun","Yeongyang-gun Gyeongsangbuk-do",2020,NA,37540,37340,37540,37540,"A1413","A1313","BVXX234",4200277
@@ -266,7 +266,7 @@
 "경상남도","의령군","의령군","의령군","Gyeongsangnam-do","Uiryeong-gun","Uiryeong-gun","Uiryeong-gun","Uiryeong-gun Gyeongsangnam-do",2020,NA,38510,38310,38510,38510,"A1710","A1610","BVXX256",4200305
 "경상남도","함안군","함안군","함안군","Gyeongsangnam-do","Haman-gun","Haman-gun","Haman-gun","Haman-gun Gyeongsangnam-do",2020,NA,38520,38320,38520,38520,"A1716","A1616","BVXX266",4200306
 "경상남도","창녕군","창녕군","창녕군","Gyeongsangnam-do","Changnyeong-gun","Changnyeong-gun","Changnyeong-gun","Changnyeong-gun Gyeongsangnam-do",2020,NA,38530,38330,38530,38530,"A1712","A1612","BVXX258",4200307
-"강원특별자치도","고성군","고성군","고성군","Gyeongsangnam-do","Goseong-gun","Goseong-gun","Goseong-gun","Goseong-gun Gyeongsangnam-do",2020,NA,38540,38340,38540,38540,"A1703","A1603","BVXX249",4200308
+"경상남도","고성군","고성군","고성군","Gyeongsangnam-do","Goseong-gun","Goseong-gun","Goseong-gun","Goseong-gun Gyeongsangnam-do",2020,NA,38540,38340,38540,38540,"A1703","A1603","BVXX249",4200308
 "경상남도","남해군","남해군","남해군","Gyeongsangnam-do","Namhae-gun","Namhae-gun","Namhae-gun","Namhae-gun Gyeongsangnam-do",2020,NA,38550,38350,38550,38550,"A1705","A1605","BVXX251",4200309
 "경상남도","하동군","하동군","하동군","Gyeongsangnam-do","Hadong-gun","Hadong-gun","Hadong-gun","Hadong-gun Gyeongsangnam-do",2020,NA,38560,38360,38560,38560,"A1715","A1615","BVXX265",4200310
 "경상남도","산청군","산청군","산청군","Gyeongsangnam-do","Sancheong-gun","Sancheong-gun","Sancheong-gun","Sancheong-gun Gyeongsangnam-do",2020,NA,38570,38370,38570,38570,"A1708","A1608","BVXX254",4200311
