@@ -6,8 +6,8 @@
     packageStartupMessage(
       sprintf(
         "tidycensuskr %s (%s)
-Please install the companion data package tidycensussfkr to use the district boundaries.
-install.packages('tidycensussfkr', repos = 'https://sigmafelix.r-universe.dev')\n",
+Please install the companion data package tidycensuskr.sf to use the district boundaries.
+install.packages('tidycensuskr.sf', repos = 'https://sigmafelix.r-universe.dev')\n",
         utils::packageVersion(pkgname),
         format(build_date, "%Y-%m-%d")
       )
