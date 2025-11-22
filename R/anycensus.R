@@ -10,6 +10,8 @@
 #' @param level character(1). "adm1" for province-level or
 #'   "adm2" for municipal-level. Defaults to "adm2".
 #' @param aggregator function to aggregate values when `level = "adm1"`.
+#' @param geometry logical(1). If `TRUE`, returns an `sf` object
+#'   with geometries attached. Defaults to `FALSE`.
 #' @param ... additional arguments passed to the `aggregator` function.
 #'   (e.g., `na.rm = TRUE`).
 #' @note Using characters in `codes` has a side effect of returning
@@ -47,6 +49,7 @@ anycensus <- function(
   ),
   level = c("adm2", "adm1"),
   aggregator = sum,
+  geometry = FALSE,
   ...
 ) {
   censuskor <- NULL
@@ -149,6 +152,19 @@ anycensus <- function(
         ),
         .groups = "keep"
       )
+  }
+
+  if (geometry) {
+    stopifnot(level == "adm2")
+    boundaries <- load_districts(year = year)
+    boundaries <-
+      dplyr::left_join(
+        dfe,
+        boundaries,
+        by = c("adm2_code" = "adm2_code")
+      )
+    dfe <-
+      sf::st_as_sf(boundaries, sf_column_name = "geometry")
   }
   dfe
 }

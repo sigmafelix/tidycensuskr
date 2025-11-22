@@ -5,7 +5,7 @@
   - Added new variable types: `welfare`
   - Added vacant housing statistics
 - Database update (0.2.3): 42K+ rows in `censuskor`
-- Separate `tidycensussfkr` package for boundary data
+- Separate `tidycensuskr.sf` package for boundary data
 - Default data in 2020 are provided in the package: `censuskor` and `adm2_sf_2020`
 
 ## 0.1

@@ -16,8 +16,8 @@ An \code{sf} object containing district boundaries for the specified year
 Load district boundaries for a specific year
 }
 \note{
-This function requires the \code{tidycensussfkr} package to be installed.
+This function requires the \code{tidycensuskr.sf} package to be installed.
 No explicit dependency is defind; but users should install the package following
 the instructions at vignette('v01_intro') or more succinctly:
-\code{install.packages('tidycensussfkr', repos = 'https://sigmafelix.r-universe.dev')}
+\code{install.packages('tidycensuskr.sf', repos = 'https://sigmafelix.r-universe.dev')}
 }

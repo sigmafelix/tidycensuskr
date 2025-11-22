@@ -72,12 +72,12 @@ tidycensuskr::anycensus(codes = "Seoul", type = "population")
 ### `load_district()`
 
 * The function `load_district()` allows you to get the _Si-Gun-Gu_ level `sf` files for the three census years (2010, 2015, 2020).
-* The function requires the `tidycensussfkr` package to be installed. Please install it from [R-universe](https://sigmafelix.r-universe.dev) using `install.packages("tidycensussfkr", repos = "https://sigmafelix.r-universe.dev")`.
+* The function requires the `tidycensuskr.sf` package to be installed. Please install it from [R-universe](https://sigmafelix.r-universe.dev) using `install.packages("tidycensuskr.sf", repos = "https://sigmafelix.r-universe.dev")`.
 
 ```r
 # loading boundary sf file: 2020 boundaries are included in this package
 data(adm2_sf_2020)
-# tidycensussfkr::load_districts(year = 2020)
+# tidycensuskr.sf::load_districts(year = 2020)
 ```    
 
 
