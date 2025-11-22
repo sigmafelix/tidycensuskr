@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">tidycensuskr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.4</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.5</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -81,17 +81,17 @@ to administrative districts.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/sigmafelix/tidycensuskr" class="external-link">tidycensuskr</a></span><span class="op">)</span></span></code></pre></div>
 <p>tidycensuskr will work at its full potential with the companion data
-package <code>tidycensussfkr</code>, which contains the district
+package <code>tidycensuskr.sf</code>, which contains the district
 boundaries of South Korea. The package can be installed from
 R-universe:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"tidycensussfkr"</span>, repos <span class="op">=</span> <span class="st">"https://sigmafelix.r-universe.dev"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"tidycensuskr.sf"</span>, repos <span class="op">=</span> <span class="st">"https://sigmafelix.r-universe.dev"</span><span class="op">)</span></span></code></pre></div>
 <p>After installing the companion package, three RDS files for 2010,
 2015, and 2020 will be accessible through the function
 <code><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file()</a></code>. For example, the RDS file path of the 2010
 district boundaries can be loaded as follows:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">fs10</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"adm2_sf_2010.rds"</span>, package <span class="op">=</span> <span class="st">"tidycensussfkr"</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="va">fs10</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"adm2_sf_2010.rds"</span>, package <span class="op">=</span> <span class="st">"tidycensuskr.sf"</span><span class="op">)</span></span>
 <span><span class="va">adm2_sf_2010</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html" class="external-link">readRDS</a></span><span class="op">(</span><span class="va">fs10</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">

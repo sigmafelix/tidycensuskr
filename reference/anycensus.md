@@ -14,6 +14,7 @@ anycensus(
     "migration", "environment", "welfare"),
   level = c("adm2", "adm1"),
   aggregator = sum,
+  geometry = FALSE,
   ...
 )
 ```
@@ -42,6 +43,11 @@ anycensus(
 - aggregator:
 
   function to aggregate values when `level = "adm1"`.
+
+- geometry:
+
+  logical(1). If `TRUE`, returns an `sf` object with geometries
+  attached. Defaults to `FALSE`.
 
 - ...:
 
