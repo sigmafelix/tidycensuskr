@@ -11,6 +11,7 @@ anycensus(
     "migration", "environment", "welfare"),
   level = c("adm2", "adm1"),
   aggregator = sum,
+  geometry = FALSE,
   ...
 )
 }
@@ -28,6 +29,9 @@ Defaults to "population".}
 "adm2" for municipal-level. Defaults to "adm2".}
 
 \item{aggregator}{function to aggregate values when \code{level = "adm1"}.}
+
+\item{geometry}{logical(1). If \code{TRUE}, returns an \code{sf} object
+with geometries attached. Defaults to \code{FALSE}.}
 
 \item{...}{additional arguments passed to the \code{aggregator} function.
 (e.g., \code{na.rm = TRUE}).}
