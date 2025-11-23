@@ -17,7 +17,7 @@ df_ss <- anycensus(year = 2020, type = "social security", level = "adm2")
 
 df_eco_x <- df_eco |>
   janitor::clean_names() |>
-  dplyr::select(-8:-10) |>
+  # dplyr::select(-8:-10) |>
   # fill NA values with 0
   mutate(across(where(is.numeric), ~ ifelse(is.na(.), 0, .)))
 
@@ -77,7 +77,7 @@ df_wide_re <-
   dplyr::group_by(adm2_code_) |>
   dplyr::summarize(
     dplyr::across(
-      dplyr::matches("households|income|housing|grdp"),
+      dplyr::matches("households|income|housing|grdp|security"),
       sum
     ),
     dplyr::across(
@@ -95,7 +95,10 @@ df_wide_re <-
     sex_ratio = 100 * `all households_male_prs` / `all households_female_prs`,
     mortality_rate = `all causes_total_p1p`,
     fertility_rate = fertility_total_brt,
-    security_rate = 
+    security_rate = 100 * (`basic living security_female_prs` + `basic living security_male_prs`) /
+      `all households_total_prs`,
+    grdp_per_capita = grdp_gross_regional_domestic_product_at_market_prices_mkr / 
+      `all households_total_prs`,
     dplyr::across(
       dplyr::matches("grdp"),
       ~ .x / `all households_total_prs`
@@ -103,7 +106,10 @@ df_wide_re <-
   )
 
 prc_df <-
-  prcomp(df_wide_re[,c(-1, -3, -4, -5, -6)], scale = TRUE)
+  df_wide_re |>
+  dplyr::select(2, 3, 4, 7, 8, 9, 10, 11) |>
+  as.data.frame() |>
+  prcomp(scale = TRUE)
 prc_df$rotation |> as.data.frame() |> round(3) |> write.csv("tools/loading.csv")
 prc_df$rotation |> as.data.frame() |> round(3) |> _[, 1:10]
 prc_df$scale
