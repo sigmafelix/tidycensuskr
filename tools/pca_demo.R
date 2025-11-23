@@ -13,6 +13,7 @@ df_pop <- anycensus(year = 2020, type = "population", level = "adm2")
 df_mort <- anycensus(year = 2020, type = "mortality", level = "adm2")
 df_eco <- anycensus(year = 2020, type = "economy", level = "adm2")
 df_tax <- anycensus(year = 2020, type = "tax", level = "adm2")
+df_ss <- anycensus(year = 2020, type = "social security", level = "adm2")
 
 df_eco_x <- df_eco |>
   janitor::clean_names() |>
@@ -47,9 +48,11 @@ df_wide <- Reduce(
     df_hou,
     df_pop,
     df_mort,
-    df_eco_x
+    df_eco_x,
+    df_ss
   )
-)
+) |>
+  dplyr::select(-type)
 # df_wide <- df_wide |>
 #   dplyr::select(-dplyr::starts_with("type")) |>
 #   dplyr::mutate(
@@ -92,6 +95,7 @@ df_wide_re <-
     sex_ratio = 100 * `all households_male_prs` / `all households_female_prs`,
     mortality_rate = `all causes_total_p1p`,
     fertility_rate = fertility_total_brt,
+    security_rate = 
     dplyr::across(
       dplyr::matches("grdp"),
       ~ .x / `all households_total_prs`

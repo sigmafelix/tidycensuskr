@@ -4,7 +4,7 @@
 #' @param codes integer vector of admin codes (e.g. `c(11, 26)`)
 #'   or character administrative area names (e.g. `c("Seoul", "Daejeon")`).
 #' @param type character(1). "population", "housing", "tax", "economy",
-#'   "medicine", "migration", "environment" or "mortality"
+#'   "medicine", "migration", "environment", "mortality", or "social security".
 #'   Defaults to "population".
 #' @param year  integer(1). One of 2010, 2015, or 2020.
 #' @param level character(1). "adm1" for province-level or
@@ -45,7 +45,8 @@ anycensus <- function(
   codes = NULL,
   type  = c(
     "population", "housing", "tax", "mortality", "economy",
-    "medicine", "migration", "environment", "welfare"
+    "medicine", "migration", "environment", "welfare",
+    "social security"
   ),
   level = c("adm2", "adm1"),
   aggregator = sum,
