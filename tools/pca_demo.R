@@ -103,10 +103,13 @@ df_wide_re <-
     dplyr::across(
       dplyr::matches("fertility|causes"),
       ~ mean(.x, na.rm = TRUE)
-    )
+    ),
+    adm2 = dplyr::first(adm2)
   ) |>
-  transmute(
+  dplyr::ungroup() |>
+  dplyr::transmute(
     adm2_code_ = adm2_code_,
+    adm2 = adm2,
     persons_per_housing = `all households_total_prs` / `housing types_total_cnt`,
     tax_income_per_capita = `income_general_mkr` / `all households_total_prs`,
     tax_labor_per_capita = `income_labor_mkr` / `all households_total_prs`,
@@ -121,27 +124,65 @@ df_wide_re <-
     #   `all households_total_prs`,
     dplyr::across(
       dplyr::matches("grdp"),
-      ~ .x / `all households_total_prs`
+      ~ .x
+    ),
+    dplyr::across(
+      dplyr::matches("grdp"),
+      list(percapita = ~ .x / `all households_total_prs`)
     )
   )
 
+df_wide_re |>
+  dplyr::arrange(-grdp_gross_regional_domestic_product_at_market_prices_mkr_percapita) |>
+  dplyr::select(
+    adm2_code_,
+    grdp_gross_regional_domestic_product_at_market_prices_mkr,
+    grdp_gross_regional_domestic_product_at_market_prices_mkr_percapita
+  )
+
+
 prc_df <-
   df_wide_re |>
-  dplyr::select(2, 7, 8, 9, 10, 11) |>
+  dplyr::select(3, 8, 9, 10, 11) |>
   as.data.frame() |>
   prcomp(scale = TRUE)
+
 prc_df$rotation |> as.data.frame() |> round(3) |> write.csv("tools/loading.csv")
 prc_df$rotation |> as.data.frame() |> round(3) |> _[, 1:10]
 prc_df$scale
 prc_df$sdev / sum(prc_df$sdev)
 prc_df$x
-biplot(prc_df, choices = c(1, 3))
 
-# PC1 sparse; low wholesale and retail
-# PC2 high mortality and fertility, agriculture, mining, pubadm
-# PC3 lower sex ratio, low manufacturing, all high activity
-# PC4 electricity
-# PC5 high transportation and storage, high mortality, mining and quarrying
+adm2labels <- paste0(df_wide_re$adm2, " (", df_wide_re$adm2_code_, ")")
+rownames(prc_df$x) <- adm2labels
+
+png(
+  "tools/pca_biplot.png",
+  width = 2000, height = 1800,
+  units = "px",
+  pointsize = 6,
+  res = 300
+)
+# factoextra::fviz_pca_biplot(
+#   prc_df,
+#   axes = c(1, 3),
+#   repel = TRUE,
+#   label = adm2labels
+# )
+biplot(prc_df, choices = c(1, 3))
+dev.off()
+
+
+png(
+  "tools/pca_screeplot.png",
+  width = 1600, height = 1500,
+  units = "px",
+  pointsize = 10,
+  res = 300
+)
+screeplot(prc_df)
+dev.off()
+
 
 pca_rot <- as.data.frame(prc_df$x)
   # dplyr::rename(pc1_rurality = PC1, pc2_health = PC2, pc5_asset = PC5)
