@@ -9,11 +9,33 @@ sf_2020 <- load_districts(year = 2020)
 
 #
 df_hou <- anycensus(year = 2020, type = "housing", level = "adm2")
+df_hou <- df_hou |>
+  dplyr::group_by(adm1_code, adm2_code, year, type) |>
+  dplyr::mutate(dplyr::across(
+    dplyr::everything(),
+    ~ ifelse(is.na(.), .[which(!is.na(.))], .)
+  )) |>
+  dplyr::ungroup() |>
+  dplyr::distinct()
 df_pop <- anycensus(year = 2020, type = "population", level = "adm2")
 df_mort <- anycensus(year = 2020, type = "mortality", level = "adm2")
 df_eco <- anycensus(year = 2020, type = "economy", level = "adm2")
 df_tax <- anycensus(year = 2020, type = "tax", level = "adm2")
-df_ss <- anycensus(year = 2020, type = "social security", level = "adm2")
+df_ss <- anycensus(year = 2020, type = "social security", level = "adm2") #|>
+  dplyr::mutate(
+    adm2_code = ifelse(substr(adm2_code, 3, 3) %in% c("5", "6", "7"),
+                       adm2_code - 200L,
+                       adm2_code),
+    adm2_code = ifelse(substr(adm2_code, 5, 5) == "0",
+                        adm2_code,
+                        paste0(substr(adm2_code, 1, 4), "0") |> as.integer())
+  ) |>
+  dplyr::group_by(adm1_code, adm2_code, year, type) |>
+  dplyr::mutate(dplyr::across(
+    where(is.numeric),
+    ~ sum(.x, na.rm = TRUE)
+  )) |>
+  dplyr::ungroup()
 
 df_eco_x <- df_eco |>
   janitor::clean_names() |>
@@ -21,23 +43,21 @@ df_eco_x <- df_eco |>
   # fill NA values with 0
   mutate(across(where(is.numeric), ~ ifelse(is.na(.), 0, .)))
 
-census_pop_2020 <- df_pop |>
-  rename(population_total = `all households_total_prs`)
-census_housing_2020 <- anycensus(year = 2020, codes = NULL, type = "housing")
-census_housing_2020 <- df_hou |>
-  rename(housing_total_units = `housing types_total_cnt`)
-census_pop_housing_2020 <- census_pop_2020 |>
-  left_join(census_housing_2020 |>
-              select(adm2_code, housing_total_units),
-            by = "adm2_code") |>
-  transmute(
-    adm2_code = adm2_code,
-    persons_per_housing = population_total / housing_total_units
-  )
+# census_pop_2020 <- df_pop |>
+#   rename(population_total = `all households_total_prs`)
+# census_housing_2020 <- anycensus(year = 2020, codes = NULL, type = "housing")
+# census_housing_2020 <- df_hou |>
+#   rename(housing_total_units = `housing types_total_cnt`)
+# census_pop_housing_2020 <- census_pop_2020 |>
+#   left_join(census_housing_2020 |>
+#               select(adm2_code, housing_total_units),
+#             by = "adm2_code") |>
+#   transmute(
+#     adm2_code = adm2_code,
+#     persons_per_housing = population_total / housing_total_units
+#   )
 
-
-
-data(censuskor)
+# data(censuskor)
 
 df_wide <- Reduce(
   function(x, y) left_join(
@@ -78,11 +98,11 @@ df_wide_re <-
   dplyr::summarize(
     dplyr::across(
       dplyr::matches("households|income|housing|grdp|security"),
-      sum
+      ~ sum(.x, na.rm = TRUE)
     ),
     dplyr::across(
       dplyr::matches("fertility|causes"),
-      mean
+      ~ mean(.x, na.rm = TRUE)
     )
   ) |>
   transmute(
@@ -97,8 +117,8 @@ df_wide_re <-
     fertility_rate = fertility_total_brt,
     security_rate = 100 * (`basic living security_female_prs` + `basic living security_male_prs`) /
       `all households_total_prs`,
-    grdp_per_capita = grdp_gross_regional_domestic_product_at_market_prices_mkr / 
-      `all households_total_prs`,
+    # grdp_per_capita = grdp_gross_regional_domestic_product_at_market_prices_mkr / 
+    #   `all households_total_prs`,
     dplyr::across(
       dplyr::matches("grdp"),
       ~ .x / `all households_total_prs`
@@ -107,7 +127,7 @@ df_wide_re <-
 
 prc_df <-
   df_wide_re |>
-  dplyr::select(2, 3, 4, 7, 8, 9, 10, 11) |>
+  dplyr::select(2, 7, 8, 9, 10, 11) |>
   as.data.frame() |>
   prcomp(scale = TRUE)
 prc_df$rotation |> as.data.frame() |> round(3) |> write.csv("tools/loading.csv")
@@ -115,7 +135,7 @@ prc_df$rotation |> as.data.frame() |> round(3) |> _[, 1:10]
 prc_df$scale
 prc_df$sdev / sum(prc_df$sdev)
 prc_df$x
-biplot(prc_df)
+biplot(prc_df, choices = c(1, 3))
 
 # PC1 sparse; low wholesale and retail
 # PC2 high mortality and fertility, agriculture, mining, pubadm
