@@ -42,6 +42,8 @@ Suggests:
     withr,
     purrr,
     rmarkdown,
+    janitor,
+    geofacet,
     ggplot2,
     biscale,
     cowplot,
