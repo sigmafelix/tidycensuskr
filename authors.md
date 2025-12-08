@@ -17,13 +17,13 @@ Source:
 [`DESCRIPTION`](https://github.com/sigmafelix/tidycensuskr/blob/main/DESCRIPTION)
 
 Song I, Park S, Shin H (2025). *tidycensuskr : Easy Access for South
-Korea Census Data and Boundaries*. R package version 0.2.5,
+Korea Census Data and Boundaries*. R package version 0.2.6,
 <https://github.com/sigmafelix/tidycensuskr>.
 
     @Manual{,
       title = {tidycensuskr : Easy Access for South Korea Census Data and Boundaries},
       author = {Insang Song and Sohyun Park and Hyesop Shin},
       year = {2025},
-      note = {R package version 0.2.5},
+      note = {R package version 0.2.6},
       url = {https://github.com/sigmafelix/tidycensuskr},
     }
