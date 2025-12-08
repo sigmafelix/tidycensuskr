@@ -171,3 +171,5 @@ welfare_data <-
     wf_challenged_severity
   ) |>
   collapse::rowbind(fill = TRUE)
+
+saveRDS(welfare_data, file = "tools/welfare_data.rds", compress = "xz")
