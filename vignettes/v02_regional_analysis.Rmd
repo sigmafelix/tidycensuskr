@@ -280,7 +280,7 @@ library(ggplot2)
 library(janitor)
 
 # Load data
-sf_2020 <- load_districts(year = 2020)
+sf_2020 <- adm2_sf_2020
 
 # housing
 df_hou <- anycensus(year = 2020, type = "housing", level = "adm2")

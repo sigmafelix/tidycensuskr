@@ -6,30 +6,27 @@ South Korean census and administrative boundary data. It aims to provide
 an easy-to-use interface for population, housing, and socioeconomic
 statistics linked with geospatial boundaries.
 
-<a href='https://sigmafelix.github.io/tidycensuskr/'><img src='man/figures/gat.jpg' align="center" width="200" /></a>
+<a href='https://sigmafelix.github.io/tidycensuskr/'><img src='man/figures/seoul_ai.jpeg' align="center"  /></a>
 
 # Installation
 
 You can install the released version of `tidycensuskr` from CRAN with:
 
 ``` r
-# CRAN 
+# CRAN
 install.packages("tidycensuskr")
+
+# R-universe
+install.packages("tidycensuskr", repos = "https://sigmafelix.r-universe.dev")
 ```
 
-To install the development version, you will need a GitHub account and
-generate a personal access token with `repo` permissions.
+To install the development version, `remotes::install_github()` will
+suffice.
 
 ``` r
 # Development version from GitHub
 rlang::check_installed("remotes")
-remotes::install_github("sigmafelix/tidycensuskr", auth_token = "__YOUR_GITHUB_TOKEN__")
-```
-
-After cloning the repository, you can also install the package using:
-
-``` r
-devtools::install(quick = TRUE)
+remotes::install_github("sigmafelix/tidycensuskr")
 ```
 
 # About the data
@@ -53,9 +50,9 @@ As of September 2025, this package contains two datasets: Census data
 ``` r
 # loading Seoul population data
 tidycensuskr::anycensus(codes = "Seoul", type = "population")
-#> # A tibble: 25 × 9
+#> # A tibble: 25 × 17
 #>     year adm1  adm1_code adm2          adm2_code type     all households_total…¹
-#>    <int> <chr>     <dbl> <chr>             <dbl> <chr>                     <dbl>
+#>    <dbl> <chr>     <dbl> <chr>             <dbl> <chr>                     <dbl>
 #>  1  2020 Seoul        11 Dobong-gu         11100 populat…                 312878
 #>  2  2020 Seoul        11 Dongdaemun-gu     11060 populat…                 332796
 #>  3  2020 Seoul        11 Dongjak-gu        11200 populat…                 378749
@@ -68,8 +65,11 @@ tidycensuskr::anycensus(codes = "Seoul", type = "population")
 #> 10  2020 Seoul        11 Guro-gu           11170 populat…                 394733
 #> # ℹ 15 more rows
 #> # ℹ abbreviated name: ¹​`all households_total_prs`
-#> # ℹ 2 more variables: `all households_male_prs` <dbl>,
-#> #   `all households_female_prs` <dbl>
+#> # ℹ 10 more variables: `all households_male_prs` <dbl>,
+#> #   `all households_female_prs` <dbl>, fertility_total_brt <dbl>,
+#> #   `fertility_15-19 (simulated)_bp1` <dbl>, `fertility_20-24_bp1` <dbl>,
+#> #   `fertility_25-29_bp1` <dbl>, `fertility_30-34_bp1` <dbl>,
+#> #   `fertility_35-39_bp1` <dbl>, `fertility_40-44_bp1` <dbl>, …
 ```
 
 ### `censuskor`
@@ -84,27 +84,15 @@ tidycensuskr::anycensus(codes = "Seoul", type = "population")
 
 - The function `load_district()` allows you to get the *Si-Gun-Gu* level
   `sf` files for the three census years (2010, 2015, 2020).
+- The function requires the `tidycensuskr.sf` package to be installed.
+  Please install it from [R-universe](https://sigmafelix.r-universe.dev)
+  using
+  `install.packages("tidycensuskr.sf", repos = "https://sigmafelix.r-universe.dev")`.
 
 ``` r
-# loading boundary sf file
-tidycensuskr::load_districts(year = 2020)
-#> Simple feature collection with 250 features and 2 fields
-#> Geometry type: GEOMETRY
-#> Dimension:     XY
-#> Bounding box:  xmin: 746111 ymin: 1463977 xmax: 1302469 ymax: 2068441
-#> Projected CRS: KGD2002 / Unified CS
-#> First 10 features:
-#>    year adm2_code                       geometry
-#> 1  2020     21140 POLYGON ((1147104 1689056, ...
-#> 2  2020     21020 POLYGON ((1137763 1683521, ...
-#> 3  2020     21010 POLYGON ((1139121 1678921, ...
-#> 4  2020     21040 POLYGON ((1144618 1676795, ...
-#> 5  2020     21070 POLYGON ((1142639 1682655, ...
-#> 6  2020     21130 POLYGON ((1147030 1688822, ...
-#> 7  2020     21050 POLYGON ((1138992 1683338, ...
-#> 8  2020     21030 POLYGON ((1142527 1684031, ...
-#> 9  2020     21150 POLYGON ((1135430 1690583, ...
-#> 10 2020     21100 MULTIPOLYGON (((1132627 167...
+# loading boundary sf file: 2020 boundaries are included in this package
+data(adm2_sf_2020)
+# tidycensuskr.sf::load_districts(year = 2020)
 ```
 
 # Examples
@@ -121,7 +109,9 @@ population data.
 
 ``` r
 library(tidycensuskr)
-#> tidycensuskr 0.1.2 (2025-09-23)
+#> tidycensuskr 0.2.6 (2025-12-09)
+#> Please install the companion data package tidycensuskr.sf to use the district boundaries.
+#> install.packages('tidycensuskr.sf', repos = 'https://sigmafelix.r-universe.dev')
 library(ggplot2)
 library(dplyr)
 #> 
@@ -134,7 +124,7 @@ library(dplyr)
 #>     intersect, setdiff, setequal, union
 library(tidyr)
 library(sf)
-#> Linking to GEOS 3.12.2, GDAL 3.11.3, PROJ 9.4.1; sf_use_s2() is TRUE
+#> Linking to GEOS 3.12.2, GDAL 3.11.4, PROJ 9.4.1; sf_use_s2() is TRUE
 library(biscale)
 library(cowplot)
 sf_use_s2(FALSE)
@@ -148,7 +138,8 @@ census_pop_2020 <- census_pop_2020 |>
   rename(population_total = `all households_total_prs`)
 
 # load boundaries
-adm2_2020 <- load_districts(year = 2020)
+data(adm2_sf_2020)
+adm2_2020 <- adm2_sf_2020
 
 # merge boundaries and census data
 census_2020_sf <- adm2_2020 |>
@@ -163,7 +154,12 @@ census_2020_pop <-
     title = "Population (2020)",
     fill = "Population"
   ) +
-  theme(plot.title = element_text(size = 12))
+  theme(
+    plot.title = element_text(size = 12),
+    axis.text = element_text(size = 7),
+    legend.text = element_text(size = 7),
+    legend.title = element_text(size = 8)
+  )
 
 census_2020_pop
 ```
@@ -196,9 +192,88 @@ census_2020_pop_sma <-
     title = "Population in Seoul Metropolitan Area (2020)",
     fill = "Population"
   ) +
-  theme(plot.title = element_text(size = 12))
+  theme(
+    plot.title = element_text(size = 12),
+    axis.text = element_text(size = 7),
+    legend.text = element_text(size = 7),
+    legend.title = element_text(size = 8)
+  )
 
 census_2020_pop_sma
 ```
 
 <img src="man/figures/README-seoul_map-1.png" width="100%" />
+
+## Bivariate map
+
+Moving on to a complex example, the code below demonstrates to generate
+a bivariate map with persons per housing unit and all-cause mortality
+rate.
+
+``` r
+census_housing_2020 <- anycensus(year = 2020, codes = NULL, type = "housing")
+#> Using character codes that are convertible to integers. Automatically converting to integers...
+census_housing_2020 <- census_housing_2020 |>
+  rename(housing_total_units = `housing types_total_cnt`)
+census_pop_housing_2020 <- census_pop_2020 |>
+  left_join(census_housing_2020 |>
+              select(adm2_code, housing_total_units),
+            by = "adm2_code") |>
+  transmute(
+    adm2_code = adm2_code,
+    persons_per_housing = population_total / housing_total_units
+  )
+census_mort_2020 <- anycensus(year = 2020, codes = NULL, type = "mortality")
+#> Using character codes that are convertible to integers. Automatically converting to integers...
+census_mort_2020 <- census_mort_2020 |>
+  rename(mortality_total = `all causes_total_p1p`)
+
+census_pph_mort_2020 <- census_pop_housing_2020 |>
+  left_join(census_mort_2020 |>
+              select(adm2_code, mortality_total),
+            by = "adm2_code")
+
+# merge boundaries and census data
+census_2020_sf <- adm2_2020 |>
+  left_join(census_pph_mort_2020, by = c("adm2_code" = "adm2_code"))
+census_2020_mapbase <-
+  biscale::bi_class(
+    census_2020_sf,
+    x = persons_per_housing,
+    y = mortality_total,
+    style = "quantile",
+    dim = 3
+  )
+
+# draw a bivariate legend
+legend <- bi_legend(pal = "DkCyan",
+                    dim = 3,
+                    xlab = "More Persons per Housing ",
+                    ylab = "All-Cause Mortality ",
+                    size = 6)
+
+# plot population data
+census_2020_bmap <-
+  ggplot(census_2020_mapbase) +
+  geom_sf(
+    aes(fill = bi_class),
+    color = "white",
+    size = 0.1,
+    show.legend = FALSE
+  ) +
+  bi_scale_fill(pal = "DkCyan", dim = 3) +
+  theme_minimal() +
+  labs(title = "Persons per housing unit and all-cause mortality rate (2020)") +
+  bi_theme(base_size = 10) +
+  theme(plot.title = element_text(size = 10))
+
+# combine map with legend
+census_2020_bimap <- cowplot::ggdraw() +
+  cowplot::draw_plot(census_2020_bmap, 0, 0, 1, 1) +
+  cowplot::draw_plot(legend, 0.7, 0.02, 0.3, 0.3)
+
+
+census_2020_bimap
+```
+
+<img src="man/figures/README-final_map-1.png" width="100%" />
