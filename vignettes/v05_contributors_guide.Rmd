@@ -104,8 +104,8 @@ KOSIS cleaning requires special attention to ensure that the `adm2_code` values 
 | sgg_housing | District code for housing data      |
 | sgg_tax_global | District code for global tax data         |
 | sgg_tax_income | District code for income tax data        |
-| sigungu_doj | District code for Ministry of Justice data (i.e., marital migrants)   |
-| sigungu_dcee | District code for Ministry of Climate, Energy, and Environment (i.e., wastewater data) |
+| sgg_doj | District code for Ministry of Justice data (i.e., marital migrants)   |
+| sgg_dcee | District code for Ministry of Climate, Energy, and Environment (i.e., wastewater data) |
 
 To note, `sigungu_kr`, `sigungu_1_kr`, and `sigungu_2_kr` columns provide many versions of district names in Korean with or without the name of basic local governments (기초지방자치단체, upper unit of each district):
 
@@ -117,6 +117,43 @@ To note, `sigungu_kr`, `sigungu_1_kr`, and `sigungu_2_kr` columns provide many v
 This data can be expanded upon addition of new datasets that use different district code systems. For contributors, the target code is to assign is usually `adm2_code` field values. Depending on the retrieved data file's layout, contributors need to match the district names or other code systems to the `adm2_code` values in the lookup table. We reflected the district changes over years by including the `base_year` column in the lookup table. When joining the lookup table to the post-processed data, use the code or name columns **and** the `base_year` column to ensure accurate matching.
 
 It is extremely important to note that year matching should be done with care. The `base_year` column indicates the year when the corresponding `adm2_code` was valid. When joining, ensure that the `year` column in your post-processed data is **less than or equal** to the `base_year` in the lookup table. This ensures that you are using the correct `adm2_code` for the specific year of your dataset.
+
+
+Please refer to the reference table below for guidance on which code or name columns to use based on the source of your data:
+
+| type | class1 | reference_code_field | Sources | Data producer | Table name | Notes |
+|------|--------|---------------------|---------|---------------|------------|-------|
+| economy | company | adm2_code | Economic Census | Ministry of Data and Statistics |  |  |
+| economy | grdp | adm2_code | Regional Income | Ministry of Data and Statistics |  |  |
+| environment | organic_matter, wastewater |  | NA |  |  | Korean only |
+| housing | housing types | sgg_housing | Housing Census | Ministry of Data and Statistics | Housing Units by Type of Housing Units |  |
+|  |  |  | Transaction-based Price Indices | Korea Real Estate Board | NA |  |
+| housing | vacant housing |  | NA |  |  | Korean only |
+|  |  |  | NA |  |  | Korean only |
+|  |  |  | NA |  |  | Korean only |
+| population | all households | sgg_population | Population Census | Ministry of Data and Statistics | Population, Households and Housing Units |  |
+| mortality | All causes | adm2_code | Vital Statistics | Ministry of Data and Statistics | Deaths and Death Rates by Sex and Age Group: Si, Gun, and Gu |  |
+| migration | marital | sgg_doj | Statistics of Arrivals and Departures | Ministry of Justice | Status of Marriage Migrant by Place of Stay |  |
+|  |  |  | Internal Migration Statistics | Ministry of Data and Statistics | Number of internal migrants for city, county, and district |  |
+|  |  | adm2_code | Vital Statistics | Ministry of Data and Statistics | Divorces by Month for city, county and district |  |
+|  |  | adm2_code | Vital Statistics | Ministry of Data and Statistics | Marriages by Month for city, county and district |  |
+| population | fertility | adm2_code | Vital Statistics | Ministry of Data and Statistics | Total Fertility Rates and Age-Specific Fertility Rates for city, county, and district |  |
+| medicine | doctors | adm2_code | National Health Insurance Statistical Yearbook | Health Insurance Review & Assessment Service | NA |  |
+|  |  | adm2_code | National Health Insurance Statistical Yearbook | Health Insurance Review & Assessment Service | NA |  |
+|  |  |  | Community Health Survey | Korea Disease Control and Prevention Agency | Monthly Drinking |  |
+| tax | income | sgg_tax_income | National Tax Statistics | National Tax Service |  | Korean only |
+|  | general | sgg_tax_general | National Tax Statistics | National Tax Service |  | Korean only |
+|  |  |  | National Tax Statistics | National Tax Service | NA | Korean only |
+|  |  |  | National Tax Statistics | National Tax Service | NA | Korean only |
+|  |  |  | National Tax Statistics | National Tax Service | NA | Korean only |
+|  |  |  | Vehicle Kilometer Statistics | Korea Transportation Safety Authority | Vehicle kilometer by city/province and vehicle type |  |
+|  |  |  | Pension Statistics | National Pension Service | NA |  |
+| welfare | facilities | sido_en, sigungu_2_en | Welfare Statistics | Korea Social Security Information Service |  | Korean only |
+| welfare | registered physically mentally challenged | sido_en, sigungu_2_en | Welfare Statistics | Korea Social Security Information Service |  | Korean only |
+| welfare | registered physically mentally challenged severity | sido_en, sigungu_2_en | Welfare Statistics | Korea Social Security Information Service |  | Korean only |
+| social security | basic living security | sido_en, sigungu_2_en | Welfare Statistics | Korea Social Security Information Service |  | Korean only |
+| social security | basic pension | sido_en, sigungu_2_en | Welfare Statistics | Korea Social Security Information Service |  | Korean only |
+
 
 
 ### Example Code for Post-processing

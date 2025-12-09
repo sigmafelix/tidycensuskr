@@ -26,11 +26,11 @@ The `tidycensuskr` package is designed for R users who want to work with South K
 You can install the released version of `tidycensuskr` from CRAN with:
 
 ```r
+# CRAN
+install.packages("tidycensuskr")
+
 # R-universe
 install.packages("tidycensuskr", repos = "https://sigmafelix.r-universe.dev")
-
-# CRAN (to be available soon) 
-install.packages("tidycensuskr")
 ```
 
 To install the development version, `remotes::install_github()` will suffice.
