@@ -351,7 +351,7 @@ Afterwards, we perform PCA on the selected socioeconomic indicators and visualiz
 
 For a biplot, we label the districts with their names and codes for better identification. Looking at the rotation matrix, the first component is moderately correlated with fertility and mortality rates and basic living income beneficiary rate (basic living security hereafter), and negatively correlated with persons per housing unit. The second component is dominantly correlated with sex ratio to the negative and basic living security rate to the positive. The biplot using the first and second principal components is used to visualize these relationships.
 
-```{r pca_demo_2, fig.width=7.5, fig.height=7}
+```{r pca_demo_2, fig.width=7.5, fig.height=7, dpi=200}
 # Run PCA
 prc_df <-
   df_wide_re |>
