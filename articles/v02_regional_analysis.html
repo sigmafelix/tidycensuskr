@@ -61,7 +61,7 @@
 
       <h1>Regional analysis with tidycensuskr</h1>
             
-            <h4 data-toc-skip class="date">December 08, 2025</h4>
+            <h4 data-toc-skip class="date">December 09, 2025</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/sigmafelix/tidycensuskr/blob/main/vignettes/v02_regional_analysis.Rmd" class="external-link"><code>vignettes/v02_regional_analysis.Rmd</code></a></small>
       <div class="d-none name"><code>v02_regional_analysis.Rmd</code></div>
@@ -367,7 +367,7 @@ the characteristics of basic local governments.</p>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/sfirke/janitor" class="external-link">janitor</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Load data</span></span>
-<span><span class="va">sf_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/load_districts.html">load_districts</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
+<span><span class="va">sf_2020</span> <span class="op">&lt;-</span> <span class="va">adm2_sf_2020</span></span>
 <span></span>
 <span><span class="co"># housing</span></span>
 <span><span class="va">df_hou</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>, type <span class="op">=</span> <span class="st">"housing"</span>, level <span class="op">=</span> <span class="st">"adm2"</span><span class="op">)</span></span>

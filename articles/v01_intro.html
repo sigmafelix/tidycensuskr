@@ -61,7 +61,7 @@
 
       <h1>Working with tidycensuskr</h1>
             
-            <h4 data-toc-skip class="date">December 08, 2025</h4>
+            <h4 data-toc-skip class="date">December 09, 2025</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/sigmafelix/tidycensuskr/blob/main/vignettes/v01_intro.Rmd" class="external-link"><code>vignettes/v01_intro.Rmd</code></a></small>
       <div class="d-none name"><code>v01_intro.Rmd</code></div>
@@ -217,13 +217,12 @@ there are 250 <em>Si-Gun-Gu</em> and 17 <em>Si-Do</em>.</p>
 <div style="font-size:80%;">
 <table class="table">
 <colgroup>
-<col width="8%">
-<col width="10%">
-<col width="6%">
-<col width="13%">
-<col width="28%">
 <col width="11%">
-<col width="20%">
+<col width="15%">
+<col width="15%">
+<col width="11%">
+<col width="25%">
+<col width="21%">
 </colgroup>
 <thead><tr class="header">
 <th>type</th>
@@ -231,8 +230,7 @@ there are 250 <em>Si-Gun-Gu</em> and 17 <em>Si-Do</em>.</p>
 <th>class2</th>
 <th>unit</th>
 <th>description</th>
-<th>available_years</th>
-<th>data_provider</th>
+<th>available</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
@@ -240,90 +238,891 @@ there are 250 <em>Si-Gun-Gu</em> and 17 <em>Si-Do</em>.</p>
 <td>all households</td>
 <td>total</td>
 <td>persons</td>
-<td>Total population</td>
+<td>Total population count</td>
 <td>2010, 2015, 2020</td>
-<td>Statistics Korea</td>
 </tr>
 <tr class="even">
 <td>population</td>
 <td>all households</td>
 <td>male</td>
 <td>persons</td>
-<td>Male population</td>
+<td>Male population count</td>
 <td>2010, 2015, 2020</td>
-<td>Statistics Korea</td>
 </tr>
 <tr class="odd">
 <td>population</td>
 <td>all households</td>
 <td>female</td>
 <td>persons</td>
-<td>Female population</td>
+<td>Female population count</td>
 <td>2010, 2015, 2020</td>
-<td>Statistics Korea</td>
-</tr>
-<tr class="even">
-<td>economy</td>
-<td>company</td>
-<td>total</td>
-<td>count</td>
-<td>Number of business entities</td>
-<td>2010, 2015, 2020</td>
-<td>Statistics Korea</td>
-</tr>
-<tr class="odd">
-<td>housing</td>
-<td>housing types</td>
-<td>total</td>
-<td>count</td>
-<td>Total number of housing units</td>
-<td>2010, 2015, 2020</td>
-<td>Statistics Korea</td>
 </tr>
 <tr class="even">
 <td>tax</td>
 <td>income</td>
 <td>general</td>
 <td>million KRW</td>
-<td>Comprehensive Income Tax</td>
+<td>General income tax revenue</td>
 <td>2020</td>
-<td>National Tax Service</td>
 </tr>
 <tr class="odd">
 <td>tax</td>
 <td>income</td>
 <td>labor</td>
 <td>million KRW</td>
-<td>Employment Income Tax</td>
+<td>Labor income tax revenue</td>
 <td>2020</td>
-<td>National Tax Service</td>
 </tr>
 <tr class="even">
 <td>mortality</td>
 <td>All causes</td>
 <td>total</td>
 <td>per 100k population</td>
-<td>Age-standardized mortality rate</td>
+<td>Total mortality rate from all causes</td>
 <td>2020</td>
-<td>Statistics Korea (Survey)</td>
 </tr>
 <tr class="odd">
 <td>mortality</td>
 <td>All causes</td>
 <td>male</td>
 <td>per 100k population</td>
-<td>Age-standardized mortality rate (male)</td>
+<td>Male mortality rate from all causes</td>
 <td>2020</td>
-<td>Statistics Korea (Survey)</td>
 </tr>
 <tr class="even">
 <td>mortality</td>
 <td>All causes</td>
 <td>female</td>
 <td>per 100k population</td>
-<td>Age-standardized mortality rate (female)</td>
+<td>Female mortality rate from all causes</td>
 <td>2020</td>
-<td>Statistics Korea (Survey)</td>
+</tr>
+<tr class="odd">
+<td>economy</td>
+<td>company</td>
+<td>total</td>
+<td>count</td>
+<td>Total number of companies</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>housing</td>
+<td>housing types</td>
+<td>total</td>
+<td>count</td>
+<td>Total number of housing units</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>housing</td>
+<td>housing types</td>
+<td>detached housing</td>
+<td>count</td>
+<td>Number of detached/single-family houses</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>housing</td>
+<td>housing types</td>
+<td>apartment</td>
+<td>count</td>
+<td>Number of apartment units</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>housing</td>
+<td>housing types</td>
+<td>row house</td>
+<td>count</td>
+<td>Number of row house units</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>housing</td>
+<td>housing types</td>
+<td>multiplex</td>
+<td>count</td>
+<td>Number of multiplex housing units</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>housing</td>
+<td>housing types</td>
+<td>non-residential</td>
+<td>count</td>
+<td>Number of non-residential buildings used for housing</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>medicine</td>
+<td>doctors</td>
+<td>anesthesiology and pain medicine</td>
+<td>persons</td>
+<td>Number of anesthesiologists</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>medicine</td>
+<td>doctors</td>
+<td>clinical laboratory medicine</td>
+<td>persons</td>
+<td>Number of clinical laboratory physicians</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>medicine</td>
+<td>doctors</td>
+<td>dermatology</td>
+<td>persons</td>
+<td>Number of dermatologists</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>medicine</td>
+<td>doctors</td>
+<td>emergency medicine</td>
+<td>persons</td>
+<td>Number of emergency medicine physicians</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>medicine</td>
+<td>doctors</td>
+<td>family medicine</td>
+<td>persons</td>
+<td>Number of family medicine physicians</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>medicine</td>
+<td>doctors</td>
+<td>internal medicine</td>
+<td>persons</td>
+<td>Number of internal medicine physicians</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>medicine</td>
+<td>doctors</td>
+<td>neurology</td>
+<td>persons</td>
+<td>Number of neurologists</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>medicine</td>
+<td>doctors</td>
+<td>neurosurgery</td>
+<td>persons</td>
+<td>Number of neurosurgeons</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>medicine</td>
+<td>doctors</td>
+<td>nuclear medicine</td>
+<td>persons</td>
+<td>Number of nuclear medicine physicians</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>medicine</td>
+<td>doctors</td>
+<td>obstetrics and gynecology</td>
+<td>persons</td>
+<td>Number of OB/GYN physicians</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>medicine</td>
+<td>doctors</td>
+<td>occupational and environmental medicine</td>
+<td>persons</td>
+<td>Number of occupational/environmental medicine physicians</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>medicine</td>
+<td>doctors</td>
+<td>ophthalmology</td>
+<td>persons</td>
+<td>Number of ophthalmologists</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>medicine</td>
+<td>doctors</td>
+<td>orthopedics</td>
+<td>persons</td>
+<td>Number of orthopedic surgeons</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>medicine</td>
+<td>doctors</td>
+<td>otorhinolaryngology</td>
+<td>persons</td>
+<td>Number of ENT specialists</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>medicine</td>
+<td>doctors</td>
+<td>pathology</td>
+<td>persons</td>
+<td>Number of pathologists</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>medicine</td>
+<td>doctors</td>
+<td>pediatrics</td>
+<td>persons</td>
+<td>Number of pediatricians</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>medicine</td>
+<td>doctors</td>
+<td>plastic surgery</td>
+<td>persons</td>
+<td>Number of plastic surgeons</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>medicine</td>
+<td>doctors</td>
+<td>preventive medicine</td>
+<td>persons</td>
+<td>Number of preventive medicine physicians</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>medicine</td>
+<td>doctors</td>
+<td>psychiatry</td>
+<td>persons</td>
+<td>Number of psychiatrists</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>medicine</td>
+<td>doctors</td>
+<td>radiation oncology</td>
+<td>persons</td>
+<td>Number of radiation oncologists</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>medicine</td>
+<td>doctors</td>
+<td>radiology</td>
+<td>persons</td>
+<td>Number of radiologists</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>medicine</td>
+<td>doctors</td>
+<td>rehabilitation medicine</td>
+<td>persons</td>
+<td>Number of rehabilitation medicine physicians</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>medicine</td>
+<td>doctors</td>
+<td>surgery</td>
+<td>persons</td>
+<td>Number of general surgeons</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>medicine</td>
+<td>doctors</td>
+<td>thoracic and cardiovascular surgery</td>
+<td>persons</td>
+<td>Number of thoracic/cardiovascular surgeons</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>medicine</td>
+<td>doctors</td>
+<td>total</td>
+<td>persons</td>
+<td>Total number of doctors across all specialties</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>medicine</td>
+<td>doctors</td>
+<td>tuberculosis</td>
+<td>persons</td>
+<td>Number of tuberculosis specialists</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>medicine</td>
+<td>doctors</td>
+<td>urology</td>
+<td>persons</td>
+<td>Number of urologists</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>migration</td>
+<td>marital</td>
+<td>female</td>
+<td>count</td>
+<td>Number of female marriage migrants</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>migration</td>
+<td>marital</td>
+<td>male</td>
+<td>count</td>
+<td>Number of male marriage migrants</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>migration</td>
+<td>marital</td>
+<td>total</td>
+<td>count</td>
+<td>Total number of marriage migrants</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>environment</td>
+<td>organic_matter</td>
+<td>discharge</td>
+<td>kg_day</td>
+<td>Daily organic matter discharge</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>environment</td>
+<td>wastewater</td>
+<td>generation</td>
+<td>m3_day</td>
+<td>Daily wastewater generation volume</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>environment</td>
+<td>wastewater</td>
+<td>discharge</td>
+<td>m3_day</td>
+<td>Daily wastewater discharge volume</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>environment</td>
+<td>organic_matter</td>
+<td>generation</td>
+<td>kg_day</td>
+<td>Daily organic matter generation</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>population</td>
+<td>fertility</td>
+<td>total</td>
+<td>births</td>
+<td>Total number of births</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>population</td>
+<td>fertility</td>
+<td>15-19 (simulated)</td>
+<td>births per 1000</td>
+<td>Age-specific fertility rate for ages 15-19 (simulated)</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>population</td>
+<td>fertility</td>
+<td>20-24</td>
+<td>births per 1000</td>
+<td>Age-specific fertility rate for ages 20-24</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>population</td>
+<td>fertility</td>
+<td>25-29</td>
+<td>births per 1000</td>
+<td>Age-specific fertility rate for ages 25-29</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>population</td>
+<td>fertility</td>
+<td>30-34</td>
+<td>births per 1000</td>
+<td>Age-specific fertility rate for ages 30-34</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>population</td>
+<td>fertility</td>
+<td>35-39</td>
+<td>births per 1000</td>
+<td>Age-specific fertility rate for ages 35-39</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>population</td>
+<td>fertility</td>
+<td>40-44</td>
+<td>births per 1000</td>
+<td>Age-specific fertility rate for ages 40-44</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>population</td>
+<td>fertility</td>
+<td>45-49</td>
+<td>births per 1000</td>
+<td>Age-specific fertility rate for ages 45-49</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>economy</td>
+<td>grdp</td>
+<td>gross regional domestic product at market prices</td>
+<td>million KRW</td>
+<td>Total GRDP at market prices</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>economy</td>
+<td>grdp</td>
+<td>net taxes on products</td>
+<td>million KRW</td>
+<td>Net taxes on products component of GRDP</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>economy</td>
+<td>grdp</td>
+<td>total value added at basic prices</td>
+<td>million KRW</td>
+<td>Total value added at basic prices</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>economy</td>
+<td>grdp</td>
+<td>agriculture, forestry and fishing</td>
+<td>million KRW</td>
+<td>GRDP from agriculture, forestry, and fishing sector</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>economy</td>
+<td>grdp</td>
+<td>mining and quarrying</td>
+<td>million KRW</td>
+<td>GRDP from mining and quarrying sector</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>economy</td>
+<td>grdp</td>
+<td>manufacturing</td>
+<td>million KRW</td>
+<td>GRDP from manufacturing sector</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>economy</td>
+<td>grdp</td>
+<td>electricity, gas, steam and air conditioning supply; water supply
+and waste management</td>
+<td>million KRW</td>
+<td>GRDP from utilities and waste management sector</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>economy</td>
+<td>grdp</td>
+<td>construction</td>
+<td>million KRW</td>
+<td>GRDP from construction sector</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>economy</td>
+<td>grdp</td>
+<td>wholesale and retail trade</td>
+<td>million KRW</td>
+<td>GRDP from wholesale and retail trade sector</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>economy</td>
+<td>grdp</td>
+<td>transportation and storage</td>
+<td>million KRW</td>
+<td>GRDP from transportation and storage sector</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>economy</td>
+<td>grdp</td>
+<td>accommodation and food service activities</td>
+<td>million KRW</td>
+<td>GRDP from accommodation and food services sector</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>economy</td>
+<td>grdp</td>
+<td>information and communication</td>
+<td>million KRW</td>
+<td>GRDP from information and communication sector</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>economy</td>
+<td>grdp</td>
+<td>financial and insurance activities</td>
+<td>million KRW</td>
+<td>GRDP from financial and insurance sector</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>economy</td>
+<td>grdp</td>
+<td>real estate activities; rental and leasing activities</td>
+<td>million KRW</td>
+<td>GRDP from real estate and rental sector</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>economy</td>
+<td>grdp</td>
+<td>professional, scientific and technical activities; business support
+facilities</td>
+<td>million KRW</td>
+<td>GRDP from professional/technical services sector</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>economy</td>
+<td>grdp</td>
+<td>public administration and defence; compulsory social security</td>
+<td>million KRW</td>
+<td>GRDP from public administration sector</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>economy</td>
+<td>grdp</td>
+<td>education</td>
+<td>million KRW</td>
+<td>GRDP from education sector</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>economy</td>
+<td>grdp</td>
+<td>human health and social work activities</td>
+<td>million KRW</td>
+<td>GRDP from health and social work sector</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>economy</td>
+<td>grdp</td>
+<td>arts, sports and recreation; membership organizations and personal
+services</td>
+<td>million KRW</td>
+<td>GRDP from arts, recreation, and personal services sector</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>social security</td>
+<td>basic living security</td>
+<td>female</td>
+<td>persons</td>
+<td>Female recipients of basic living security benefits</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="even">
+<td>social security</td>
+<td>basic living security</td>
+<td>male</td>
+<td>persons</td>
+<td>Male recipients of basic living security benefits</td>
+<td>2010, 2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>social security</td>
+<td>basic pension</td>
+<td>male</td>
+<td>persons</td>
+<td>Male recipients of basic pension</td>
+<td>2015, 2020</td>
+</tr>
+<tr class="even">
+<td>social security</td>
+<td>basic pension</td>
+<td>female</td>
+<td>persons</td>
+<td>Female recipients of basic pension</td>
+<td>2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>welfare</td>
+<td>facilities</td>
+<td>residential facility</td>
+<td>count</td>
+<td>Number of residential welfare facilities</td>
+<td>2015, 2020</td>
+</tr>
+<tr class="even">
+<td>welfare</td>
+<td>facilities</td>
+<td>service facility</td>
+<td>count</td>
+<td>Number of service-oriented welfare facilities</td>
+<td>2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>welfare</td>
+<td>facilities</td>
+<td>other facility</td>
+<td>count</td>
+<td>Number of other welfare facilities</td>
+<td>2015, 2020</td>
+</tr>
+<tr class="even">
+<td>welfare</td>
+<td>registered physically mentally challenged</td>
+<td>female_0-19</td>
+<td>persons</td>
+<td>Registered disabled females aged 0-19</td>
+<td>2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>welfare</td>
+<td>registered physically mentally challenged</td>
+<td>female_20-39</td>
+<td>persons</td>
+<td>Registered disabled females aged 20-39</td>
+<td>2015, 2020</td>
+</tr>
+<tr class="even">
+<td>welfare</td>
+<td>registered physically mentally challenged</td>
+<td>female_40-64</td>
+<td>persons</td>
+<td>Registered disabled females aged 40-64</td>
+<td>2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>welfare</td>
+<td>registered physically mentally challenged</td>
+<td>female_65-79</td>
+<td>persons</td>
+<td>Registered disabled females aged 65-79</td>
+<td>2015, 2020</td>
+</tr>
+<tr class="even">
+<td>welfare</td>
+<td>registered physically mentally challenged</td>
+<td>female_80+</td>
+<td>persons</td>
+<td>Registered disabled females aged 80 and above</td>
+<td>2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>welfare</td>
+<td>registered physically mentally challenged</td>
+<td>male_0-19</td>
+<td>persons</td>
+<td>Registered disabled males aged 0-19</td>
+<td>2015, 2020</td>
+</tr>
+<tr class="even">
+<td>welfare</td>
+<td>registered physically mentally challenged</td>
+<td>male_20-39</td>
+<td>persons</td>
+<td>Registered disabled males aged 20-39</td>
+<td>2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>welfare</td>
+<td>registered physically mentally challenged</td>
+<td>male_40-64</td>
+<td>persons</td>
+<td>Registered disabled males aged 40-64</td>
+<td>2015, 2020</td>
+</tr>
+<tr class="even">
+<td>welfare</td>
+<td>registered physically mentally challenged</td>
+<td>male_65-79</td>
+<td>persons</td>
+<td>Registered disabled males aged 65-79</td>
+<td>2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>welfare</td>
+<td>registered physically mentally challenged</td>
+<td>male_80+</td>
+<td>persons</td>
+<td>Registered disabled males aged 80 and above</td>
+<td>2015, 2020</td>
+</tr>
+<tr class="even">
+<td>welfare</td>
+<td>registered physically mentally challenged severity</td>
+<td>_0-19</td>
+<td>persons</td>
+<td>Total registered disabled persons aged 0-19</td>
+<td>2015</td>
+</tr>
+<tr class="odd">
+<td>welfare</td>
+<td>registered physically mentally challenged severity</td>
+<td>_20-39</td>
+<td>persons</td>
+<td>Total registered disabled persons aged 20-39</td>
+<td>2015</td>
+</tr>
+<tr class="even">
+<td>welfare</td>
+<td>registered physically mentally challenged severity</td>
+<td>_40-64</td>
+<td>persons</td>
+<td>Total registered disabled persons aged 40-64</td>
+<td>2015</td>
+</tr>
+<tr class="odd">
+<td>welfare</td>
+<td>registered physically mentally challenged severity</td>
+<td>_65-79</td>
+<td>persons</td>
+<td>Total registered disabled persons aged 65-79</td>
+<td>2015</td>
+</tr>
+<tr class="even">
+<td>welfare</td>
+<td>registered physically mentally challenged severity</td>
+<td>_80+</td>
+<td>persons</td>
+<td>Total registered disabled persons aged 80 and above</td>
+<td>2015</td>
+</tr>
+<tr class="odd">
+<td>welfare</td>
+<td>registered physically mentally challenged severity</td>
+<td>less severely impaired_0-19</td>
+<td>persons</td>
+<td>Less severely impaired persons aged 0-19</td>
+<td>2020</td>
+</tr>
+<tr class="even">
+<td>welfare</td>
+<td>registered physically mentally challenged severity</td>
+<td>less severely impaired_20-39</td>
+<td>persons</td>
+<td>Less severely impaired persons aged 20-39</td>
+<td>2020</td>
+</tr>
+<tr class="odd">
+<td>welfare</td>
+<td>registered physically mentally challenged severity</td>
+<td>less severely impaired_40-64</td>
+<td>persons</td>
+<td>Less severely impaired persons aged 40-64</td>
+<td>2020</td>
+</tr>
+<tr class="even">
+<td>welfare</td>
+<td>registered physically mentally challenged severity</td>
+<td>less severely impaired_65-79</td>
+<td>persons</td>
+<td>Less severely impaired persons aged 65-79</td>
+<td>2020</td>
+</tr>
+<tr class="odd">
+<td>welfare</td>
+<td>registered physically mentally challenged severity</td>
+<td>less severely impaired_80+</td>
+<td>persons</td>
+<td>Less severely impaired persons aged 80 and above</td>
+<td>2020</td>
+</tr>
+<tr class="even">
+<td>welfare</td>
+<td>registered physically mentally challenged severity</td>
+<td>severely impaired_0-19</td>
+<td>persons</td>
+<td>Severely impaired persons aged 0-19</td>
+<td>2020</td>
+</tr>
+<tr class="odd">
+<td>welfare</td>
+<td>registered physically mentally challenged severity</td>
+<td>severely impaired_20-39</td>
+<td>persons</td>
+<td>Severely impaired persons aged 20-39</td>
+<td>2020</td>
+</tr>
+<tr class="even">
+<td>welfare</td>
+<td>registered physically mentally challenged severity</td>
+<td>severely impaired_40-64</td>
+<td>persons</td>
+<td>Severely impaired persons aged 40-64</td>
+<td>2020</td>
+</tr>
+<tr class="odd">
+<td>welfare</td>
+<td>registered physically mentally challenged severity</td>
+<td>severely impaired_65-79</td>
+<td>persons</td>
+<td>Severely impaired persons aged 65-79</td>
+<td>2020</td>
+</tr>
+<tr class="even">
+<td>welfare</td>
+<td>registered physically mentally challenged severity</td>
+<td>severely impaired_80+</td>
+<td>persons</td>
+<td>Severely impaired persons aged 80 and above</td>
+<td>2020</td>
+</tr>
+<tr class="odd">
+<td>housing</td>
+<td>vacant housing</td>
+<td>fraction</td>
+<td>percent</td>
+<td>Percentage of vacant housing units</td>
+<td>2015, 2020</td>
+</tr>
+<tr class="even">
+<td>housing</td>
+<td>vacant housing</td>
+<td>number of vacant housing</td>
+<td>count</td>
+<td>Total number of vacant housing units</td>
+<td>2015, 2020</td>
+</tr>
+<tr class="odd">
+<td>housing</td>
+<td>vacant housing</td>
+<td>total number of housing</td>
+<td>count</td>
+<td>Total number of housing units (occupied and vacant)</td>
+<td>2015, 2020</td>
 </tr>
 </tbody>
 </table>
@@ -338,11 +1137,12 @@ columns such as:</p>
 <li>
 <code>year</code>: year of the dataset</li>
 <li>
-<code>adm1</code>, <code>adm1_code</code>: Si-Do (province) level
-administrative unit name and its corresponding code</li>
-<li>
-<code>adm2</code>, <code>adm2_code</code>: Si-Gun-Gu (district)
+<code>adm1</code>, <code>adm1_code</code>: <em>Si-Do</em> (province)
 level administrative unit name and its corresponding code</li>
+<li>
+<code>adm2</code>, <code>adm2_code</code>: <em>Si-Gun-Gu</em>
+(district) level administrative unit name and its corresponding
+code</li>
 </ul>
 <p>Columns containing the values are added as a wide form. The column
 <code>adm2_code</code> links census data directly to boundary files

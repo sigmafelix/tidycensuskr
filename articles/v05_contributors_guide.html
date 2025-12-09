@@ -61,7 +61,7 @@
 
       <h1>Using KOSIS Interface for Contributors</h1>
             
-            <h4 data-toc-skip class="date">December 08, 2025</h4>
+            <h4 data-toc-skip class="date">December 09, 2025</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/sigmafelix/tidycensuskr/blob/main/vignettes/v05_contributors_guide.Rmd" class="external-link"><code>vignettes/v05_contributors_guide.Rmd</code></a></small>
       <div class="d-none name"><code>v05_contributors_guide.Rmd</code></div>
@@ -334,12 +334,12 @@ code</td>
 <td>District code for income tax data</td>
 </tr>
 <tr class="even">
-<td>sigungu_doj</td>
+<td>sgg_doj</td>
 <td>District code for Ministry of Justice data (i.e., marital
 migrants)</td>
 </tr>
 <tr class="odd">
-<td>sigungu_dcee</td>
+<td>sgg_dcee</td>
 <td>District code for Ministry of Climate, Energy, and Environment
 (i.e., wastewater data)</td>
 </tr>
@@ -380,6 +380,301 @@ that the <code>year</code> column in your post-processed data is
 <strong>less than or equal</strong> to the <code>base_year</code> in the
 lookup table. This ensures that you are using the correct
 <code>adm2_code</code> for the specific year of your dataset.</p>
+<p>Please refer to the reference table below for guidance on which code
+or name columns to use based on the source of your data:</p>
+<table class="table">
+<colgroup>
+<col width="7%">
+<col width="10%">
+<col width="26%">
+<col width="11%">
+<col width="19%">
+<col width="15%">
+<col width="8%">
+</colgroup>
+<thead><tr class="header">
+<th>type</th>
+<th>class1</th>
+<th>reference_code_field</th>
+<th>Sources</th>
+<th>Data producer</th>
+<th>Table name</th>
+<th>Notes</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>economy</td>
+<td>company</td>
+<td>adm2_code</td>
+<td>Economic Census</td>
+<td>Ministry of Data and Statistics</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>economy</td>
+<td>grdp</td>
+<td>adm2_code</td>
+<td>Regional Income</td>
+<td>Ministry of Data and Statistics</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>environment</td>
+<td>organic_matter, wastewater</td>
+<td></td>
+<td>NA</td>
+<td></td>
+<td></td>
+<td>Korean only</td>
+</tr>
+<tr class="even">
+<td>housing</td>
+<td>housing types</td>
+<td>sgg_housing</td>
+<td>Housing Census</td>
+<td>Ministry of Data and Statistics</td>
+<td>Housing Units by Type of Housing Units</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td>Transaction-based Price Indices</td>
+<td>Korea Real Estate Board</td>
+<td>NA</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>housing</td>
+<td>vacant housing</td>
+<td></td>
+<td>NA</td>
+<td></td>
+<td></td>
+<td>Korean only</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td>NA</td>
+<td></td>
+<td></td>
+<td>Korean only</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>NA</td>
+<td></td>
+<td></td>
+<td>Korean only</td>
+</tr>
+<tr class="odd">
+<td>population</td>
+<td>all households</td>
+<td>sgg_population</td>
+<td>Population Census</td>
+<td>Ministry of Data and Statistics</td>
+<td>Population, Households and Housing Units</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>mortality</td>
+<td>All causes</td>
+<td>adm2_code</td>
+<td>Vital Statistics</td>
+<td>Ministry of Data and Statistics</td>
+<td>Deaths and Death Rates by Sex and Age Group: Si, Gun, and Gu</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>migration</td>
+<td>marital</td>
+<td>sgg_doj</td>
+<td>Statistics of Arrivals and Departures</td>
+<td>Ministry of Justice</td>
+<td>Status of Marriage Migrant by Place of Stay</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>Internal Migration Statistics</td>
+<td>Ministry of Data and Statistics</td>
+<td>Number of internal migrants for city, county, and district</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td>adm2_code</td>
+<td>Vital Statistics</td>
+<td>Ministry of Data and Statistics</td>
+<td>Divorces by Month for city, county and district</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>adm2_code</td>
+<td>Vital Statistics</td>
+<td>Ministry of Data and Statistics</td>
+<td>Marriages by Month for city, county and district</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>population</td>
+<td>fertility</td>
+<td>adm2_code</td>
+<td>Vital Statistics</td>
+<td>Ministry of Data and Statistics</td>
+<td>Total Fertility Rates and Age-Specific Fertility Rates for city,
+county, and district</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>medicine</td>
+<td>doctors</td>
+<td>adm2_code</td>
+<td>National Health Insurance Statistical Yearbook</td>
+<td>Health Insurance Review &amp; Assessment Service</td>
+<td>NA</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td>adm2_code</td>
+<td>National Health Insurance Statistical Yearbook</td>
+<td>Health Insurance Review &amp; Assessment Service</td>
+<td>NA</td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>Community Health Survey</td>
+<td>Korea Disease Control and Prevention Agency</td>
+<td>Monthly Drinking</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>tax</td>
+<td>income</td>
+<td>sgg_tax_income</td>
+<td>National Tax Statistics</td>
+<td>National Tax Service</td>
+<td></td>
+<td>Korean only</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>general</td>
+<td>sgg_tax_general</td>
+<td>National Tax Statistics</td>
+<td>National Tax Service</td>
+<td></td>
+<td>Korean only</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td>National Tax Statistics</td>
+<td>National Tax Service</td>
+<td>NA</td>
+<td>Korean only</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>National Tax Statistics</td>
+<td>National Tax Service</td>
+<td>NA</td>
+<td>Korean only</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td>National Tax Statistics</td>
+<td>National Tax Service</td>
+<td>NA</td>
+<td>Korean only</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td>Vehicle Kilometer Statistics</td>
+<td>Korea Transportation Safety Authority</td>
+<td>Vehicle kilometer by city/province and vehicle type</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td>Pension Statistics</td>
+<td>National Pension Service</td>
+<td>NA</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>welfare</td>
+<td>facilities</td>
+<td>sido_en, sigungu_2_en</td>
+<td>Welfare Statistics</td>
+<td>Korea Social Security Information Service</td>
+<td></td>
+<td>Korean only</td>
+</tr>
+<tr class="odd">
+<td>welfare</td>
+<td>registered physically mentally challenged</td>
+<td>sido_en, sigungu_2_en</td>
+<td>Welfare Statistics</td>
+<td>Korea Social Security Information Service</td>
+<td></td>
+<td>Korean only</td>
+</tr>
+<tr class="even">
+<td>welfare</td>
+<td>registered physically mentally challenged severity</td>
+<td>sido_en, sigungu_2_en</td>
+<td>Welfare Statistics</td>
+<td>Korea Social Security Information Service</td>
+<td></td>
+<td>Korean only</td>
+</tr>
+<tr class="odd">
+<td>social security</td>
+<td>basic living security</td>
+<td>sido_en, sigungu_2_en</td>
+<td>Welfare Statistics</td>
+<td>Korea Social Security Information Service</td>
+<td></td>
+<td>Korean only</td>
+</tr>
+<tr class="even">
+<td>social security</td>
+<td>basic pension</td>
+<td>sido_en, sigungu_2_en</td>
+<td>Welfare Statistics</td>
+<td>Korea Social Security Information Service</td>
+<td></td>
+<td>Korean only</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section level3">
 <h3 id="example-code-for-post-processing">Example Code for Post-processing<a class="anchor" aria-label="anchor" href="#example-code-for-post-processing"></a>

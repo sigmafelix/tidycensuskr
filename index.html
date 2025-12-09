@@ -59,23 +59,23 @@
 <div class="page-header"><h1 id="who-is-the-package-for">Who is the package for?<a class="anchor" aria-label="anchor" href="#who-is-the-package-for"></a>
 </h1></div>
 <p>The <code>tidycensuskr</code> package is designed for R users who want to work with South Korean census and administrative boundary data. It aims to provide an easy-to-use interface for population, housing, and socioeconomic statistics linked with geospatial boundaries.</p>
-<p><a href="https://sigmafelix.github.io/tidycensuskr/"><img src="reference/figures/gat.jpg" align="center" width="200"></a></p>
+<p><a href="https://sigmafelix.github.io/tidycensuskr/"><img src="reference/figures/seoul_ai.jpeg" align="center"></a></p>
 </div>
 <div class="section level1">
 <h1 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h1>
 <p>You can install the released version of <code>tidycensuskr</code> from CRAN with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># CRAN </span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"tidycensuskr"</span><span class="op">)</span></span></code></pre></div>
-<p>To install the development version, you will need a GitHub account and generate a personal access token with <code>repo</code> permissions.</p>
+<code class="sourceCode R"><span><span class="co"># CRAN</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"tidycensuskr"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># R-universe</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"tidycensuskr"</span>, repos <span class="op">=</span> <span class="st">"https://sigmafelix.r-universe.dev"</span><span class="op">)</span></span></code></pre></div>
+<p>To install the development version, <code>remotes::install_github()</code> will suffice.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Development version from GitHub</span></span>
 <span><span class="fu">rlang</span><span class="fu">::</span><span class="fu"><a href="https://rlang.r-lib.org/reference/is_installed.html" class="external-link">check_installed</a></span><span class="op">(</span><span class="st">"remotes"</span><span class="op">)</span></span>
-<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"sigmafelix/tidycensuskr"</span>, auth_token <span class="op">=</span> <span class="st">"__YOUR_GITHUB_TOKEN__"</span><span class="op">)</span></span></code></pre></div>
-<p>After cloning the repository, you can also install the package using:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install</span><span class="op">(</span>quick <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"sigmafelix/tidycensuskr"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level1">
 <h1 id="about-the-data">About the data<a class="anchor" aria-label="anchor" href="#about-the-data"></a>
@@ -98,12 +98,12 @@
 <ul>
 <li>The function <code><a href="reference/anycensus.html">anycensus()</a></code> allows you to query census data for specific district or province codes and types of data (population, tax, mortality, economy, housing) for three census years (2010, 2015, 2020).</li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># loading Seoul population data</span></span>
 <span><span class="fu">tidycensuskr</span><span class="fu">::</span><span class="fu"><a href="reference/anycensus.html">anycensus</a></span><span class="op">(</span>codes <span class="op">=</span> <span class="st">"Seoul"</span>, type <span class="op">=</span> <span class="st">"population"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 25 × 9</span></span>
+<span><span class="co">#&gt; # A tibble: 25 × 17</span></span>
 <span><span class="co">#&gt;     year adm1  adm1_code adm2          adm2_code type     all households_total…¹</span></span>
-<span><span class="co">#&gt;    &lt;int&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;             &lt;dbl&gt; &lt;chr&gt;                     &lt;dbl&gt;</span></span>
+<span><span class="co">#&gt;    &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;             &lt;dbl&gt; &lt;chr&gt;                     &lt;dbl&gt;</span></span>
 <span><span class="co">#&gt;  1  2020 Seoul        11 Dobong-gu         11100 populat…                 312878</span></span>
 <span><span class="co">#&gt;  2  2020 Seoul        11 Dongdaemun-gu     11060 populat…                 332796</span></span>
 <span><span class="co">#&gt;  3  2020 Seoul        11 Dongjak-gu        11200 populat…                 378749</span></span>
@@ -116,8 +116,11 @@
 <span><span class="co">#&gt; 10  2020 Seoul        11 Guro-gu           11170 populat…                 394733</span></span>
 <span><span class="co">#&gt; # ℹ 15 more rows</span></span>
 <span><span class="co">#&gt; # ℹ abbreviated name: ¹​`all households_total_prs`</span></span>
-<span><span class="co">#&gt; # ℹ 2 more variables: `all households_male_prs` &lt;dbl&gt;,</span></span>
-<span><span class="co">#&gt; #   `all households_female_prs` &lt;dbl&gt;</span></span></code></pre></div>
+<span><span class="co">#&gt; # ℹ 10 more variables: `all households_male_prs` &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   `all households_female_prs` &lt;dbl&gt;, fertility_total_brt &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   `fertility_15-19 (simulated)_bp1` &lt;dbl&gt;, `fertility_20-24_bp1` &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   `fertility_25-29_bp1` &lt;dbl&gt;, `fertility_30-34_bp1` &lt;dbl&gt;,</span></span>
+<span><span class="co">#&gt; #   `fertility_35-39_bp1` &lt;dbl&gt;, `fertility_40-44_bp1` &lt;dbl&gt;, …</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="censuskor">
@@ -137,27 +140,12 @@
 </h3>
 <ul>
 <li>The function <code>load_district()</code> allows you to get the <em>Si-Gun-Gu</em> level <code>sf</code> files for the three census years (2010, 2015, 2020).</li>
+<li>The function requires the <code>tidycensuskr.sf</code> package to be installed. Please install it from <a href="https://sigmafelix.r-universe.dev" class="external-link">R-universe</a> using <code>install.packages("tidycensuskr.sf", repos = "https://sigmafelix.r-universe.dev")</code>.</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># loading boundary sf file</span></span>
-<span><span class="fu">tidycensuskr</span><span class="fu">::</span><span class="fu"><a href="reference/load_districts.html">load_districts</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Simple feature collection with 250 features and 2 fields</span></span>
-<span><span class="co">#&gt; Geometry type: GEOMETRY</span></span>
-<span><span class="co">#&gt; Dimension:     XY</span></span>
-<span><span class="co">#&gt; Bounding box:  xmin: 746111 ymin: 1463977 xmax: 1302469 ymax: 2068441</span></span>
-<span><span class="co">#&gt; Projected CRS: KGD2002 / Unified CS</span></span>
-<span><span class="co">#&gt; First 10 features:</span></span>
-<span><span class="co">#&gt;    year adm2_code                       geometry</span></span>
-<span><span class="co">#&gt; 1  2020     21140 POLYGON ((1147104 1689056, ...</span></span>
-<span><span class="co">#&gt; 2  2020     21020 POLYGON ((1137763 1683521, ...</span></span>
-<span><span class="co">#&gt; 3  2020     21010 POLYGON ((1139121 1678921, ...</span></span>
-<span><span class="co">#&gt; 4  2020     21040 POLYGON ((1144618 1676795, ...</span></span>
-<span><span class="co">#&gt; 5  2020     21070 POLYGON ((1142639 1682655, ...</span></span>
-<span><span class="co">#&gt; 6  2020     21130 POLYGON ((1147030 1688822, ...</span></span>
-<span><span class="co">#&gt; 7  2020     21050 POLYGON ((1138992 1683338, ...</span></span>
-<span><span class="co">#&gt; 8  2020     21030 POLYGON ((1142527 1684031, ...</span></span>
-<span><span class="co">#&gt; 9  2020     21150 POLYGON ((1135430 1690583, ...</span></span>
-<span><span class="co">#&gt; 10 2020     21100 MULTIPOLYGON (((1132627 167...</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># loading boundary sf file: 2020 boundaries are included in this package</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">adm2_sf_2020</span><span class="op">)</span></span>
+<span><span class="co"># tidycensuskr.sf::load_districts(year = 2020)</span></span></code></pre></div>
 </div>
 </div>
 </div>
@@ -169,9 +157,11 @@
 <h2 id="simple-map-making">Simple map making<a class="anchor" aria-label="anchor" href="#simple-map-making"></a>
 </h2>
 <p><code><a href="reference/anycensus.html">anycensus()</a></code> will return an analysis-ready data.frame that can be easily merged with the corresponding boundary <code>sf</code> object from <code><a href="reference/load_districts.html">load_districts()</a></code>. Here is a simple example of making maps with population data.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/sigmafelix/tidycensuskr" class="external-link">tidycensuskr</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; tidycensuskr 0.1.2 (2025-09-23)</span></span>
+<span><span class="co">#&gt; tidycensuskr 0.2.6 (2025-12-09)</span></span>
+<span><span class="co">#&gt; Please install the companion data package tidycensuskr.sf to use the district boundaries.</span></span>
+<span><span class="co">#&gt; install.packages('tidycensuskr.sf', repos = 'https://sigmafelix.r-universe.dev')</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -184,7 +174,7 @@
 <span><span class="co">#&gt;     intersect, setdiff, setequal, union</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org" class="external-link">tidyr</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r-spatial.github.io/sf/" class="external-link">sf</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; Linking to GEOS 3.12.2, GDAL 3.11.3, PROJ 9.4.1; sf_use_s2() is TRUE</span></span>
+<span><span class="co">#&gt; Linking to GEOS 3.12.2, GDAL 3.11.4, PROJ 9.4.1; sf_use_s2() is TRUE</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://chris-prener.github.io/biscale/" class="external-link">biscale</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://wilkelab.org/cowplot/" class="external-link">cowplot</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/s2.html" class="external-link">sf_use_s2</a></span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span>
@@ -198,7 +188,8 @@
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html" class="external-link">rename</a></span><span class="op">(</span>population_total <span class="op">=</span> <span class="va">`all households_total_prs`</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># load boundaries</span></span>
-<span><span class="va">adm2_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/load_districts.html">load_districts</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">adm2_sf_2020</span><span class="op">)</span></span>
+<span><span class="va">adm2_2020</span> <span class="op">&lt;-</span> <span class="va">adm2_sf_2020</span></span>
 <span></span>
 <span><span class="co"># merge boundaries and census data</span></span>
 <span><span class="va">census_2020_sf</span> <span class="op">&lt;-</span> <span class="va">adm2_2020</span> <span class="op">|&gt;</span></span>
@@ -213,12 +204,17 @@
 <span>    title <span class="op">=</span> <span class="st">"Population (2020)"</span>,</span>
 <span>    fill <span class="op">=</span> <span class="st">"Population"</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>plot.title <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">12</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span></span>
+<span>    plot.title <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">12</span><span class="op">)</span>,</span>
+<span>    axis.text <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">7</span><span class="op">)</span>,</span>
+<span>    legend.text <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">7</span><span class="op">)</span>,</span>
+<span>    legend.title <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">8</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
 <span></span>
 <span><span class="va">census_2020_pop</span></span></code></pre></div>
 <p><img src="reference/figures/README-mapmaking-1.png" width="100%"></p>
 <p>For Seoul Metropolitan Area (including Seoul, Incheon, and Gyeonggi-do), you can use a character vector in <code>codes</code> argument and merge the retrieved <code>data.frame</code> and <code>sf</code> object with <code><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">inner_join()</a></code>:</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">census_pop_2020_sma</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu"><a href="reference/anycensus.html">anycensus</a></span><span class="op">(</span></span>
 <span>    year <span class="op">=</span> <span class="fl">2020</span>,</span>
@@ -240,10 +236,85 @@
 <span>    title <span class="op">=</span> <span class="st">"Population in Seoul Metropolitan Area (2020)"</span>,</span>
 <span>    fill <span class="op">=</span> <span class="st">"Population"</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>plot.title <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">12</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span></span>
+<span>    plot.title <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">12</span><span class="op">)</span>,</span>
+<span>    axis.text <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">7</span><span class="op">)</span>,</span>
+<span>    legend.text <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">7</span><span class="op">)</span>,</span>
+<span>    legend.title <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">8</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
 <span></span>
 <span><span class="va">census_2020_pop_sma</span></span></code></pre></div>
 <p><img src="reference/figures/README-seoul_map-1.png" width="100%"></p>
+</div>
+<div class="section level2">
+<h2 id="bivariate-map">Bivariate map<a class="anchor" aria-label="anchor" href="#bivariate-map"></a>
+</h2>
+<p>Moving on to a complex example, the code below demonstrates to generate a bivariate map with persons per housing unit and all-cause mortality rate.</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">census_housing_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>, codes <span class="op">=</span> <span class="cn">NULL</span>, type <span class="op">=</span> <span class="st">"housing"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Using character codes that are convertible to integers. Automatically converting to integers...</span></span>
+<span><span class="va">census_housing_2020</span> <span class="op">&lt;-</span> <span class="va">census_housing_2020</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html" class="external-link">rename</a></span><span class="op">(</span>housing_total_units <span class="op">=</span> <span class="va">`housing types_total_cnt`</span><span class="op">)</span></span>
+<span><span class="va">census_pop_housing_2020</span> <span class="op">&lt;-</span> <span class="va">census_pop_2020</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">left_join</a></span><span class="op">(</span><span class="va">census_housing_2020</span> <span class="op">|&gt;</span></span>
+<span>              <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">adm2_code</span>, <span class="va">housing_total_units</span><span class="op">)</span>,</span>
+<span>            by <span class="op">=</span> <span class="st">"adm2_code"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/transmute.html" class="external-link">transmute</a></span><span class="op">(</span></span>
+<span>    adm2_code <span class="op">=</span> <span class="va">adm2_code</span>,</span>
+<span>    persons_per_housing <span class="op">=</span> <span class="va">population_total</span> <span class="op">/</span> <span class="va">housing_total_units</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="va">census_mort_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>, codes <span class="op">=</span> <span class="cn">NULL</span>, type <span class="op">=</span> <span class="st">"mortality"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Using character codes that are convertible to integers. Automatically converting to integers...</span></span>
+<span><span class="va">census_mort_2020</span> <span class="op">&lt;-</span> <span class="va">census_mort_2020</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html" class="external-link">rename</a></span><span class="op">(</span>mortality_total <span class="op">=</span> <span class="va">`all causes_total_p1p`</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">census_pph_mort_2020</span> <span class="op">&lt;-</span> <span class="va">census_pop_housing_2020</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">left_join</a></span><span class="op">(</span><span class="va">census_mort_2020</span> <span class="op">|&gt;</span></span>
+<span>              <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">adm2_code</span>, <span class="va">mortality_total</span><span class="op">)</span>,</span>
+<span>            by <span class="op">=</span> <span class="st">"adm2_code"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># merge boundaries and census data</span></span>
+<span><span class="va">census_2020_sf</span> <span class="op">&lt;-</span> <span class="va">adm2_2020</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">left_join</a></span><span class="op">(</span><span class="va">census_pph_mort_2020</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"adm2_code"</span> <span class="op">=</span> <span class="st">"adm2_code"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">census_2020_mapbase</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu">biscale</span><span class="fu">::</span><span class="fu"><a href="https://chris-prener.github.io/biscale/reference/bi_class.html" class="external-link">bi_class</a></span><span class="op">(</span></span>
+<span>    <span class="va">census_2020_sf</span>,</span>
+<span>    x <span class="op">=</span> <span class="va">persons_per_housing</span>,</span>
+<span>    y <span class="op">=</span> <span class="va">mortality_total</span>,</span>
+<span>    style <span class="op">=</span> <span class="st">"quantile"</span>,</span>
+<span>    dim <span class="op">=</span> <span class="fl">3</span></span>
+<span>  <span class="op">)</span></span>
+<span></span>
+<span><span class="co"># draw a bivariate legend</span></span>
+<span><span class="va">legend</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://chris-prener.github.io/biscale/reference/bi_legend.html" class="external-link">bi_legend</a></span><span class="op">(</span>pal <span class="op">=</span> <span class="st">"DkCyan"</span>,</span>
+<span>                    dim <span class="op">=</span> <span class="fl">3</span>,</span>
+<span>                    xlab <span class="op">=</span> <span class="st">"More Persons per Housing "</span>,</span>
+<span>                    ylab <span class="op">=</span> <span class="st">"All-Cause Mortality "</span>,</span>
+<span>                    size <span class="op">=</span> <span class="fl">6</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># plot population data</span></span>
+<span><span class="va">census_2020_bmap</span> <span class="op">&lt;-</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">census_2020_mapbase</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span></span>
+<span>    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">bi_class</span><span class="op">)</span>,</span>
+<span>    color <span class="op">=</span> <span class="st">"white"</span>,</span>
+<span>    size <span class="op">=</span> <span class="fl">0.1</span>,</span>
+<span>    show.legend <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://chris-prener.github.io/biscale/reference/bi_scale_fill.html" class="external-link">bi_scale_fill</a></span><span class="op">(</span>pal <span class="op">=</span> <span class="st">"DkCyan"</span>, dim <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Persons per housing unit and all-cause mortality rate (2020)"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://chris-prener.github.io/biscale/reference/bi_theme.html" class="external-link">bi_theme</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>plot.title <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># combine map with legend</span></span>
+<span><span class="va">census_2020_bimap</span> <span class="op">&lt;-</span> <span class="fu">cowplot</span><span class="fu">::</span><span class="fu"><a href="https://wilkelab.org/cowplot/reference/ggdraw.html" class="external-link">ggdraw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">cowplot</span><span class="fu">::</span><span class="fu"><a href="https://wilkelab.org/cowplot/reference/draw_plot.html" class="external-link">draw_plot</a></span><span class="op">(</span><span class="va">census_2020_bmap</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">1</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">cowplot</span><span class="fu">::</span><span class="fu"><a href="https://wilkelab.org/cowplot/reference/draw_plot.html" class="external-link">draw_plot</a></span><span class="op">(</span><span class="va">legend</span>, <span class="fl">0.7</span>, <span class="fl">0.02</span>, <span class="fl">0.3</span>, <span class="fl">0.3</span><span class="op">)</span></span>
+<span></span>
+<span></span>
+<span><span class="va">census_2020_bimap</span></span></code></pre></div>
+<p><img src="reference/figures/README-final_map-1.png" width="100%"></p>
 </div>
 </div>
 
