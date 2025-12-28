@@ -123,11 +123,20 @@ industrial and business units in peripheral provinces.
 
 ## Example 2: Population change by sex and districts
 
+### Design idea
+
+1.  Load `censuskor` bundled in `tidycensuskr`, focusing on population
+    counts by sex at the adm2 level
+2.  Clean and align administrative codes to account for district name
+    changes, promotions, and boundary adjustments over time
+3.  Convert population counts into comparable units (thousands) and
+    retain the most recent district names for consistent labeling
+4.  Prepare a `geofacet` grid based on 2020 administrative boundaries
+5.  Plot population trends over time separately for males and females
+    using line charts
+
 ``` r
 # load packages
-library(tidycensuskr)
-library(sf)
-library(ggplot2)
 library(geofacet)
 
 # load bundled data in tidycensuskr
@@ -142,15 +151,15 @@ pop <- censuskor |>
     type == "population"
   ) |>
   dplyr::rename(code = adm2_code) |>
-  dplyr::filter(class2 != "total") |>
+  dplyr::filter(class1 == "all households", class2 != "total") |>
   dplyr::mutate(
     value = value / 1000,
     code = dplyr::case_when(
-      # Michuhol (23030 to 23090)
+      # Michuhol-gu (i.e., 23030 to 23090)
       code == 23030 ~ 23090,
-      # Yeoju
+      # Yeoju-si
       code == 31320 ~ 31280,
-      # Dangjin
+      # Dangjin-si
       code == 34390 ~ 34080,
       TRUE ~ code
     )
@@ -160,7 +169,21 @@ pop <- censuskor |>
   dplyr::mutate(adm2 = adm2[which.max(year)]) |>
   dplyr::ungroup()
 
-# geofacet plot
+head(pop)
+```
+
+    ## # A tibble: 6 × 10
+    ##    year adm1  adm1_code adm2       code type       class1     class2 unit  value
+    ##   <dbl> <chr>     <dbl> <chr>     <dbl> <chr>      <chr>      <chr>  <chr> <dbl>
+    ## 1  2020 Seoul        11 Jongno-gu 11010 population all house… female pers…  72.6
+    ## 2  2015 Seoul        11 Jongno-gu 11010 population all house… female pers…  73.8
+    ## 3  2010 Seoul        11 Jongno-gu 11010 population all house… female pers…  76.5
+    ## 4  2020 Seoul        11 Jongno-gu 11010 population all house… male   pers…  67.3
+    ## 5  2015 Seoul        11 Jongno-gu 11010 population all house… male   pers…  69.5
+    ## 6  2010 Seoul        11 Jongno-gu 11010 population all house… male   pers…  71.3
+
+``` r
+# for a geofacet plot
 # map codes to district names for facet labels
 pop_name_map <- pop %>%
   dplyr::distinct(code, adm2) %>%
@@ -206,20 +229,26 @@ kr_grid_adm2_sgis_2020 <-
       TRUE ~ name
     )
   )
+```
 
-pop_gfgg <-
-  ggplot(data = pop) +
+### Small multiples
+
+This design highlights heterogeneous local population trajectories while
+preserving a sense of national spatial structure.
+
+``` r
+ggplot(data = pop) +
   geom_line(
     aes(x = year, y = value, group = interaction(adm2, class2), color = class2),
     alpha = 0.5,
-    linewidth = 2.5
+    linewidth = 1.5
   ) +
   facet_geo(~ code, grid = kr_grid_adm2_sgis_2020, label = "name", scale = "free_y") +
   labs(
-    title = "Population Trends in South Korea by Municipalities/Counties/Districts and Sex",
+    title = "Population Trends in South Korea by Sex and District",
     x = "Year",
     y = "",
-    color = "District and Population Class",
+    color = "Population Class",
     caption = "Y-axis values are not commensurate with the original scale"
   ) +
   scale_color_manual(values = c(female = "#F44336", male = "#2196F3")) +
@@ -239,8 +268,6 @@ pop_gfgg <-
     panel.spacing = grid::unit(1, "pt"),
     plot.margin = margin(1, 1, 1, 1, "mm")
   )
-
-pop_gfgg
 ```
 
-![](v03_gallery_files/figure-html/pop-change-1.png)
+![](v03_gallery_files/figure-html/pop-change-3-1.png)

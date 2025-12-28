@@ -61,7 +61,7 @@
 
       <h1>Regional analysis with tidycensuskr</h1>
             
-            <h4 data-toc-skip class="date">December 09, 2025</h4>
+            <h4 data-toc-skip class="date">December 28, 2025</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/sigmafelix/tidycensuskr/blob/main/vignettes/v02_regional_analysis.Rmd" class="external-link"><code>vignettes/v02_regional_analysis.Rmd</code></a></small>
       <div class="d-none name"><code>v02_regional_analysis.Rmd</code></div>
@@ -143,7 +143,7 @@ region.</li>
 <span>  <span class="fu">cowplot</span><span class="fu">::</span><span class="fu"><a href="https://wilkelab.org/cowplot/reference/draw_plot.html" class="external-link">draw_plot</a></span><span class="op">(</span><span class="va">korea_inset</span>, x <span class="op">=</span> <span class="fl">0.7</span>, y <span class="op">=</span> <span class="fl">0.05</span>, width <span class="op">=</span> <span class="fl">0.25</span>, height <span class="op">=</span> <span class="fl">0.25</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://wilkelab.org/cowplot/reference/draw_grob.html" class="external-link">draw_grob</a></span><span class="op">(</span><span class="fu">grid</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/grid/grid.rect.html" class="external-link">rectGrob</a></span><span class="op">(</span>gp <span class="op">=</span> <span class="fu">gpar</span><span class="op">(</span>col <span class="op">=</span> <span class="st">"black"</span>, fill <span class="op">=</span> <span class="cn">NA</span>, lwd <span class="op">=</span> <span class="fl">0.6</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>            x <span class="op">=</span> <span class="fl">0.7</span>, y <span class="op">=</span> <span class="fl">0.05</span>, width <span class="op">=</span> <span class="fl">0.25</span>, height <span class="op">=</span> <span class="fl">0.25</span><span class="op">)</span></span></code></pre></div>
-<p><img src="v02_regional_analysis_files/figure-html/choropleth_1-1.png" class="r-plt" width="672">
+<p><img src="v02_regional_analysis_files/figure-html/choropleth_1-1.png" class="r-plt" alt="" width="672">
 In the Gyeongsangnam-do region, large metropolitan cities such as Busan
 and Ulsan show population decline, while surrounding suburban areas
 demonstrate notable population gains. Rural areas in the western part of
@@ -238,7 +238,7 @@ classification of population (x) vs. tax (y).</li>
 <span>      <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html" class="external-link">theme</a></span><span class="op">(</span>plot.title <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">element_text</a></span><span class="op">(</span>size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span><span class="op">)</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">cowplot</span><span class="fu">::</span><span class="fu"><a href="https://wilkelab.org/cowplot/reference/draw_plot.html" class="external-link">draw_plot</a></span><span class="op">(</span><span class="va">legend</span>, x <span class="op">=</span> <span class="fl">0.7</span>, y <span class="op">=</span> <span class="fl">0.1</span>, width <span class="op">=</span> <span class="fl">0.3</span>, height <span class="op">=</span> <span class="fl">0.3</span><span class="op">)</span></span></code></pre></div>
-<p><img src="v02_regional_analysis_files/figure-html/bivariate_2-1.png" class="r-plt" width="672"></p>
+<p><img src="v02_regional_analysis_files/figure-html/bivariate_2-1.png" class="r-plt" alt="" width="672"></p>
 <p>The bivariate map highlights the strong centrality of the Seoul
 Metropolitan Area. Both the capital region and the southeastern
 manufacturing hubs exhibit high population and high tax revenues. In
@@ -315,7 +315,7 @@ centered on 100 (balanced sex ratio).</li>
 <span>    y <span class="op">=</span> <span class="st">"Density"</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<p><img src="v02_regional_analysis_files/figure-html/histogram_3-1.png" class="r-plt" width="672"></p>
+<p><img src="v02_regional_analysis_files/figure-html/histogram_3-1.png" class="r-plt" alt="" width="672"></p>
 </div>
 <div class="section level3">
 <h3 id="a-choropleth-map">A choropleth map<a class="anchor" aria-label="anchor" href="#a-choropleth-map"></a>
@@ -335,7 +335,7 @@ centered on 100 (balanced sex ratio).</li>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Sex ratio in the Seoul Metropolitan Area (2020)"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_void</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<p><img src="v02_regional_analysis_files/figure-html/choropleth_3-1.png" class="r-plt" width="672"></p>
+<p><img src="v02_regional_analysis_files/figure-html/choropleth_3-1.png" class="r-plt" alt="" width="672"></p>
 <p>Within the Seoul Metropolitan Area, the central city districts
 (Seoul) show a higher proportion of females, whereas the outer suburban
 areas tend to show male-dominated populations. This highlights spatial
@@ -345,21 +345,35 @@ differences in gender distribution across the metropolitan region.</p>
 <div class="section level2">
 <h2 id="example-4-socioeconomic-profiling">Example 4: Socioeconomic profiling<a class="anchor" aria-label="anchor" href="#example-4-socioeconomic-profiling"></a>
 </h2>
-<p>Socioeconomic status can be profiled using multiple indicators such
-as housing conditions, population characteristics, mortality rates, and
-social security usage. Principal Component Analysis (PCA) is a useful
-technique to reduce the dimensionality of such multivariate data and
-identify key underlying factors. Here is an example of performing PCA on
-various socioeconomic indicators at the basic local government level in
-South Korea using <code>tidycensuskr</code>.</p>
-<p>First, we load and combine multiple datasets from the 2020 census,
-including housing, population, mortality, and social security data. We
-then aggregate the data to the basic local government level (4-digit
-prefix of <code>adm2_code</code>) and compute several socioeconomic
-indicators. Using <code><a href="../reference/anycensus.html">anycensus()</a></code> function for multiple times,
-we merge the datasets into a single wide-format data frame. Variables
-are aggregaed appropriately (summing counts, averaging rates) to reflect
-the characteristics of basic local governments.</p>
+<div class="section level3">
+<h3 id="context">Context<a class="anchor" aria-label="anchor" href="#context"></a>
+</h3>
+<p>Regional socioeconomic status can be profiled using multiple
+indicators such as housing conditions, population characteristics,
+mortality rates, and social security usage. Principal Component Analysis
+(PCA) is a useful technique to reduce the dimensionality of such
+multivariate data. It helps identify groups of correlated variables and
+summarize them into a small set of interpretable components.</p>
+</div>
+<div class="section level3">
+<h3 id="design-idea-3">Design idea<a class="anchor" aria-label="anchor" href="#design-idea-3"></a>
+</h3>
+<ol style="list-style-type: decimal">
+<li>Using <code><a href="../reference/anycensus.html">anycensus()</a></code> function for multiple times, load
+multiple datasets from the 2020 census, including housing, population,
+mortality, and social security data.</li>
+<li>Aggregate the data to the basic local government level using the
+4-digit prefix of <code>adm2_code</code> into a single wide-format data
+frame</li>
+<li>Variables are aggregated (summing counts, averaging rates) to
+reflect the characteristics of basic local governments.</li>
+<li>Perform PCA on the selected socioeconomic indicators and visualize
+the results using a biplot</li>
+</ol>
+</div>
+<div class="section level3">
+<h3 id="data-prep-3">data prep<a class="anchor" aria-label="anchor" href="#data-prep-3"></a>
+</h3>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/sigmafelix/tidycensuskr" class="external-link">tidycensuskr</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
@@ -367,7 +381,7 @@ the characteristics of basic local governments.</p>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/sfirke/janitor" class="external-link">janitor</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Load data</span></span>
-<span><span class="va">sf_2020</span> <span class="op">&lt;-</span> <span class="va">adm2_sf_2020</span></span>
+<span><span class="va">sf_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">adm2_sf_2020</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># housing</span></span>
 <span><span class="va">df_hou</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>, type <span class="op">=</span> <span class="st">"housing"</span>, level <span class="op">=</span> <span class="st">"adm2"</span><span class="op">)</span></span>
@@ -432,20 +446,16 @@ the characteristics of basic local governments.</p>
 <span>    security_rate <span class="op">=</span> <span class="fl">100</span> <span class="op">*</span> <span class="op">(</span><span class="va">`basic living security_female_prs`</span> <span class="op">+</span> <span class="va">`basic living security_male_prs`</span><span class="op">)</span> <span class="op">/</span></span>
 <span>      <span class="va">`all households_total_prs`</span></span>
 <span>  <span class="op">)</span></span></code></pre></div>
-<p>Afterwards, we perform PCA on the selected socioeconomic indicators
-and visualize the results using a biplot. The biplot displays both the
-districts (points) and the variables (arrows), allowing us to interpret
-the relationships between different socioeconomic factors and how they
-vary across regions.</p>
-<p>For a biplot, we label the districts with their names and codes for
-better identification. Looking at the rotation matrix, the first
-component is moderately correlated with fertility and mortality rates
-and basic living income beneficiary rate (basic living security
-hereafter), and negatively correlated with persons per housing unit. The
-second component is dominantly correlated with sex ratio to the negative
-and basic living security rate to the positive. The biplot using the
-first and second principal components is used to visualize these
-relationships.</p>
+</div>
+<div class="section level3">
+<h3 id="pca-results">PCA results<a class="anchor" aria-label="anchor" href="#pca-results"></a>
+</h3>
+<p>Looking at the rotation matrix, the first component is moderately
+correlated with fertility and mortality rates and basic living income
+beneficiary rate (basic living security hereafter), and negatively
+correlated with persons per housing unit. The second component is
+dominantly correlated with sex ratio to the negative and basic living
+security rate to the positive.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Run PCA</span></span>
 <span><span class="va">prc_df</span> <span class="op">&lt;-</span></span>
@@ -462,14 +472,24 @@ relationships.</p>
 <span><span class="co">## mortality_rate       0.560  0.090 -0.362 -0.009  0.739</span></span>
 <span><span class="co">## fertility_rate       0.418 -0.368  0.678  0.475  0.065</span></span>
 <span><span class="co">## security_rate        0.397  0.600 -0.205  0.471 -0.468</span></span></code></pre>
+</div>
+<div class="section level3">
+<h3 id="biplot">Biplot<a class="anchor" aria-label="anchor" href="#biplot"></a>
+</h3>
+<p>The biplot using the first and second principal components is used to
+visualize these relationships. The biplot displays both the districts
+(points) and the variables (arrows), allowing us to interpret the
+relationships between different socioeconomic factors and how they vary
+across regions. We label the districts with their names and codes for
+better identification.</p>
 <div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Proper labeling for biplot for BLGs</span></span>
 <span><span class="va">adm2labels</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">df_wide_re</span><span class="op">$</span><span class="va">adm2</span>, <span class="st">" ("</span>, <span class="va">df_wide_re</span><span class="op">$</span><span class="va">adm2_code_</span>, <span class="st">")"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">prc_df</span><span class="op">$</span><span class="va">x</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="va">adm2labels</span></span>
 <span></span>
-<span><span class="co"># Biplot with PC1 and PC3</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/biplot.html" class="external-link">biplot</a></span><span class="op">(</span><span class="va">prc_df</span>, choices <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="v02_regional_analysis_files/figure-html/pca_demo_2-1.png" class="r-plt" width="720"></p>
+<span><span class="co"># Biplot with PC1 and PC2</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/biplot.html" class="external-link">biplot</a></span><span class="op">(</span><span class="va">prc_df</span>, choices <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span><span class="op">)</span>, cex <span class="op">=</span> <span class="fl">0.5</span>, arrow.len <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span></span></code></pre></div>
+<p><img src="v02_regional_analysis_files/figure-html/pca_demo_3-1.png" class="r-plt" alt="" width="720"></p>
 <p>Interestingly, the biplot reveals that sex ratio is independent of
 crowding and mortality rate, whereas basic living security rate is
 negatively correlated, as evidenced by the orientation of each
@@ -477,11 +497,11 @@ component’s vectors compared to others. Districts in Seoul are mostly
 located in the upper left quadrant, indicating lower sex ratios and
 higher basic living security rates, while suburban areas in Gyeonggi-do
 tend to have higher sex ratios and lower basic living security rates.
-This analysis provides insights into the socioeconomic disparities
-across different regions within the Seoul Metropolitan Area. Inland and
-border areas are generally associated with higher basic living security
-rates, indicating potential socioeconomic challenges in these
-regions.</p>
+Inland and border areas are generally associated with higher basic
+living security rates, indicating potential socioeconomic challenges in
+these regions. This analysis provides insights into the socioeconomic
+disparities across different regions within South Korea.</p>
+</div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>

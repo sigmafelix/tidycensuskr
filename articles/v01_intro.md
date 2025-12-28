@@ -73,12 +73,12 @@ or regional data.
 | **Si/Gun/Gu**      | County                                     | NUTS2              | County                         |
 | **Eup/Myeon/Dong** | Townships / Towns / Census County Division | NUTS3              | Districts / Wards / Boroughs   |
 
-![](reference/figures/korea_map.png)
+![](%22man/figures/korea_map.png%22)
 
 Because administrative boundaries and coding systems can vary across
-years and data sources, `tidycensuskr` harmonizes codes to allow
-consistent integration of statistics. Currently, for 2020 data there are
-250 *Si-Gun-Gu* and 17 *Si-Do*.
+years and data sources, `tidycensuskr` standardizes administrative codes
+to allow consistent integration of statistics. Currently, for 2020 data
+there are 250 *Si-Gun-Gu* and 17 *Si-Do*.
 
 ``` r
 data(adm2_sf_2020)
@@ -253,19 +253,19 @@ districts.
 df_2020_sido <- anycensus(year = 2020, 
                           type = "mortality",
                           level = "adm1",
-                          aggregator = sum,
+                          aggregator = mean,
                           na.rm = TRUE)
 head(df_2020_sido)
 #> # A tibble: 6 × 7
 #> # Groups:   year, type, adm1, adm1_code [6]
 #>    year type      adm1    adm1_code `all causes_total_p1p` `all causes_male_p1p`
 #>   <dbl> <chr>     <chr>       <dbl>                  <dbl>                 <dbl>
-#> 1  2020 mortality Busan          21                  5367.                 7327.
-#> 2  2020 mortality Chungc…        33                  5160.                 7037.
-#> 3  2020 mortality Chungc…        34                  5707.                 7646.
-#> 4  2020 mortality Daegu          22                  2486.                 3405.
-#> 5  2020 mortality Daejeon        25                  1529.                 1996 
-#> 6  2020 mortality Gangwo…        32                  6125.                 8382.
+#> 1  2020 mortality Busan          21                   335.                  458.
+#> 2  2020 mortality Chungc…        33                   344.                  469.
+#> 3  2020 mortality Chungc…        34                   336.                  450.
+#> 4  2020 mortality Daegu          22                   311.                  426.
+#> 5  2020 mortality Daejeon        25                   306.                  399.
+#> 6  2020 mortality Gangwo…        32                   340.                  466.
 #> # ℹ 1 more variable: `all causes_female_p1p` <dbl>
 ```
 
