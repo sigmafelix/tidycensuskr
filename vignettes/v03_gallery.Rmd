@@ -106,11 +106,15 @@ The results reveal a strong metropolitan concentration of economic activity. Hig
 
 ## Example 2: Population change by sex and districts
 
-```{r pop-change, fig.width = 8.2, fig.height = 10}
+### Design idea
+1. Load `censuskor` bundled in `tidycensuskr`, focusing on population counts by sex at the adm2 level
+2. Clean and align administrative codes to account for district name changes, promotions, and boundary adjustments over time
+3. Convert population counts into comparable units (thousands) and retain the most recent district names for consistent labeling
+4. Prepare a `geofacet` grid based on 2020 administrative boundaries
+5. Plot population trends over time separately for males and females using line charts
+
+```{r pop-change-1, fig.width = 8.2, fig.height = 10}
 # load packages
-library(tidycensuskr)
-library(sf)
-library(ggplot2)
 library(geofacet)
 
 # load bundled data in tidycensuskr
@@ -125,15 +129,15 @@ pop <- censuskor |>
     type == "population"
   ) |>
   dplyr::rename(code = adm2_code) |>
-  dplyr::filter(class2 != "total") |>
+  dplyr::filter(class1 == "all households", class2 != "total") |>
   dplyr::mutate(
     value = value / 1000,
     code = dplyr::case_when(
-      # Michuhol (23030 to 23090)
+      # Michuhol-gu (i.e., 23030 to 23090)
       code == 23030 ~ 23090,
-      # Yeoju
+      # Yeoju-si
       code == 31320 ~ 31280,
-      # Dangjin
+      # Dangjin-si
       code == 34390 ~ 34080,
       TRUE ~ code
     )
@@ -143,7 +147,11 @@ pop <- censuskor |>
   dplyr::mutate(adm2 = adm2[which.max(year)]) |>
   dplyr::ungroup()
 
-# geofacet plot
+head(pop)
+```
+
+```{r pop-change-2, fig.width = 8.2, fig.height = 10}
+# for a geofacet plot
 # map codes to district names for facet labels
 pop_name_map <- pop %>%
   dplyr::distinct(code, adm2) %>%
@@ -189,20 +197,26 @@ kr_grid_adm2_sgis_2020 <-
       TRUE ~ name
     )
   )
+```
 
-pop_gfgg <-
-  ggplot(data = pop) +
+### Small multiples 
+
+This design highlights heterogeneous local population trajectories while preserving a sense of national spatial structure.
+
+```{r pop-change-3, fig.width = 8.2, fig.height = 10}
+
+ggplot(data = pop) +
   geom_line(
     aes(x = year, y = value, group = interaction(adm2, class2), color = class2),
     alpha = 0.5,
-    linewidth = 2.5
+    linewidth = 1.5
   ) +
   facet_geo(~ code, grid = kr_grid_adm2_sgis_2020, label = "name", scale = "free_y") +
   labs(
-    title = "Population Trends in South Korea by Municipalities/Counties/Districts and Sex",
+    title = "Population Trends in South Korea by Sex and District",
     x = "Year",
     y = "",
-    color = "District and Population Class",
+    color = "Population Class",
     caption = "Y-axis values are not commensurate with the original scale"
   ) +
   scale_color_manual(values = c(female = "#F44336", male = "#2196F3")) +
@@ -222,7 +236,5 @@ pop_gfgg <-
     panel.spacing = grid::unit(1, "pt"),
     plot.margin = margin(1, 1, 1, 1, "mm")
   )
-
-pop_gfgg
 
 ```
