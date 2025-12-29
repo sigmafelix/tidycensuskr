@@ -11,7 +11,7 @@ anycensus(
   year = 2020,
   codes = NULL,
   type = c("population", "housing", "tax", "mortality", "economy", "medicine",
-    "migration", "environment", "welfare", "social security"),
+    "migration", "environment", "welfare", "social security", "landuse"),
   level = c("adm2", "adm1"),
   aggregator = sum,
   geometry = FALSE,
@@ -33,8 +33,8 @@ anycensus(
 - type:
 
   character(1). "population", "housing", "tax", "economy", "medicine",
-  "migration", "environment", "mortality", or "social security".
-  Defaults to "population".
+  "migration", "environment", "mortality", "social security", or
+  "landuse". Defaults to "population".
 
 - level:
 

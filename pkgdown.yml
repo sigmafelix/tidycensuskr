@@ -7,7 +7,7 @@ articles:
   v03_gallery: v03_gallery.html
   v04_data_cleaning_kosis: v04_data_cleaning_kosis.html
   v05_contributors_guide: v05_contributors_guide.html
-last_built: 2025-12-28T07:26Z
+last_built: 2025-12-29T08:43Z
 urls:
   reference: https://sigmafelix.github.io/tidycensuskr/reference
   article: https://sigmafelix.github.io/tidycensuskr/articles

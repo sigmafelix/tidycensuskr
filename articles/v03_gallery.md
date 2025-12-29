@@ -148,7 +148,7 @@ data(kr_grid_adm2_sgis_2020)
 # Use the newest adm2_code and name if one got its name changed or promoted
 pop <- censuskor |>
   dplyr::filter(
-    type == "population"
+    type == "population" & class1 == "all households"
   ) |>
   dplyr::rename(code = adm2_code) |>
   dplyr::filter(class1 == "all households", class2 != "total") |>
