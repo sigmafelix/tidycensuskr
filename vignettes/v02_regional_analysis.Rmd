@@ -269,10 +269,17 @@ Within the Seoul Metropolitan Area, the central city districts (Seoul) show a hi
 
 ## Example 4: Socioeconomic profiling
 
-Socioeconomic status can be profiled using multiple indicators such as housing conditions, population characteristics, mortality rates, and social security usage. Principal Component Analysis (PCA) is a useful technique to reduce the dimensionality of such multivariate data and identify key underlying factors. Here is an example of performing PCA on various socioeconomic indicators at the basic local government level in South Korea using `tidycensuskr`.
+### Context
+Regional socioeconomic status can be profiled using multiple indicators such as housing conditions, population characteristics, mortality rates, and social security usage. Principal Component Analysis (PCA) is a useful technique to reduce the dimensionality of such multivariate data. It helps identify groups of correlated variables and summarize them into a small set of interpretable components.
 
-First, we load and combine multiple datasets from the 2020 census, including housing, population, mortality, and social security data. We then aggregate the data to the basic local government level (4-digit prefix of `adm2_code`) and compute several socioeconomic indicators. Using `anycensus()` function for multiple times, we merge the datasets into a single wide-format data frame. Variables are aggregaed appropriately (summing counts, averaging rates) to reflect the characteristics of basic local governments.
+### Design idea
 
+1. Using `anycensus()` function for multiple times, load multiple datasets from the 2020 census, including housing, population, mortality, and social security data.
+2. Aggregate the data to the basic local government level using the 4-digit prefix of `adm2_code` into a single wide-format data frame
+3. Variables are aggregated (summing counts, averaging rates) to reflect the characteristics of basic local governments.
+4. Perform PCA on the selected socioeconomic indicators and visualize the results using a biplot
+
+### data prep
 ```{r pca_demo_1, fig.width=7.5, fig.height=7}
 library(tidycensuskr)
 library(dplyr)
@@ -280,7 +287,7 @@ library(ggplot2)
 library(janitor)
 
 # Load data
-sf_2020 <- adm2_sf_2020
+sf_2020 <- data(adm2_sf_2020)
 
 # housing
 df_hou <- anycensus(year = 2020, type = "housing", level = "adm2")
@@ -347,9 +354,10 @@ df_wide_re <-
   )
 ```
 
-Afterwards, we perform PCA on the selected socioeconomic indicators and visualize the results using a biplot. The biplot displays both the districts (points) and the variables (arrows), allowing us to interpret the relationships between different socioeconomic factors and how they vary across regions.
 
-For a biplot, we label the districts with their names and codes for better identification. Looking at the rotation matrix, the first component is moderately correlated with fertility and mortality rates and basic living income beneficiary rate (basic living security hereafter), and negatively correlated with persons per housing unit. The second component is dominantly correlated with sex ratio to the negative and basic living security rate to the positive. The biplot using the first and second principal components is used to visualize these relationships.
+### PCA results
+
+Looking at the rotation matrix, the first component is moderately correlated with fertility and mortality rates and basic living income beneficiary rate (basic living security hereafter), and negatively correlated with persons per housing unit. The second component is dominantly correlated with sex ratio to the negative and basic living security rate to the positive. 
 
 ```{r pca_demo_2, fig.width=7.5, fig.height=7, dpi=200}
 # Run PCA
@@ -361,13 +369,19 @@ prc_df <-
 
 # Rotation by variables
 prc_df$rotation |> as.data.frame() |> round(3)
+```
 
+### Biplot
+
+The biplot using the first and second principal components is used to visualize these relationships. The biplot displays both the districts (points) and the variables (arrows), allowing us to interpret the relationships between different socioeconomic factors and how they vary across regions. We label the districts with their names and codes for better identification. 
+
+```{r pca_demo_3, fig.width=7.5, fig.height=7}
 # Proper labeling for biplot for BLGs
 adm2labels <- paste0(df_wide_re$adm2, " (", df_wide_re$adm2_code_, ")")
 rownames(prc_df$x) <- adm2labels
 
-# Biplot with PC1 and PC3
-biplot(prc_df, choices = c(1, 2))
+# Biplot with PC1 and PC2
+biplot(prc_df, choices = c(1, 2), cex = 0.5, arrow.len = 0.2)
 ```
 
-Interestingly, the biplot reveals that sex ratio is independent of crowding and mortality rate, whereas basic living security rate is negatively correlated, as evidenced by the orientation of each component's vectors compared to others. Districts in Seoul are mostly located in the upper left quadrant, indicating lower sex ratios and higher basic living security rates, while suburban areas in Gyeonggi-do tend to have higher sex ratios and lower basic living security rates. This analysis provides insights into the socioeconomic disparities across different regions within the Seoul Metropolitan Area. Inland and border areas are generally associated with higher basic living security rates, indicating potential socioeconomic challenges in these regions.
+Interestingly, the biplot reveals that sex ratio is independent of crowding and mortality rate, whereas basic living security rate is negatively correlated, as evidenced by the orientation of each component's vectors compared to others. Districts in Seoul are mostly located in the upper left quadrant, indicating lower sex ratios and higher basic living security rates, while suburban areas in Gyeonggi-do tend to have higher sex ratios and lower basic living security rates. Inland and border areas are generally associated with higher basic living security rates, indicating potential socioeconomic challenges in these regions. This analysis provides insights into the socioeconomic disparities across different regions within South Korea. 

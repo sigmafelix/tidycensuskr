@@ -81,10 +81,10 @@ The table below provides a rough comparison of administrative divisions across S
 [^1]: NUTS: *Nomenclature of Territorial Units for Statistics*, a geocode standard for referencing the subdivisions of countries for statistical purposes.  
 
 
-![](man/figures/korea_map.png)
+![]("man/figures/korea_map.png")
 
 
-Because administrative boundaries and coding systems can vary across years and data sources, `tidycensuskr` harmonizes codes to allow consistent integration of statistics. 
+Because administrative boundaries and coding systems can vary across years and data sources, `tidycensuskr` standardizes administrative codes to allow consistent integration of statistics. 
 Currently, for 2020 data there are 250 _Si-Gun-Gu_ and 17 _Si-Do_.
 ```{r, include = TRUE}
 data(adm2_sf_2020)
@@ -240,7 +240,7 @@ The function can also aggregate values to higher administrative units. By specif
 df_2020_sido <- anycensus(year = 2020, 
                           type = "mortality",
                           level = "adm1",
-                          aggregator = sum,
+                          aggregator = mean,
                           na.rm = TRUE)
 head(df_2020_sido)
 
