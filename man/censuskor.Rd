@@ -5,7 +5,7 @@
 \alias{censuskor}
 \title{South Korea Census Data}
 \format{
-A data.frame with 67232 rows and 10 variables:
+A data.frame with 103,626 rows and 10 variables:
 }
 \source{
 \itemize{

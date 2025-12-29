@@ -214,6 +214,12 @@ The package provides census and survey data through:
 | housing | vacant housing | fraction | percent | Percentage of vacant housing units | 2015, 2020 |
 | housing | vacant housing | number of vacant housing | count | Total number of vacant housing units | 2015, 2020 |
 | housing | vacant housing | total number of housing | count | Total number of housing units (occupied and vacant) | 2015, 2020 |
+| landuse | greenspace | number of greenspace | count | Number of greenspaces | 2010, 2015, 2020 |
+| landuse | greenspace | area of greenspace | square meters | Total area of greenspaces | 2010, 2015, 2020 |
+| landuse | parks | number of parks | count | Number of parks | 2010, 2015, 2020 |
+| landuse | parks | area of parks | square meters | Total area of parks | 2010, 2015, 2020 |
+| landuse | road | length of roads | meters | Total length of roads | 2010, 2015, 2020 |
+| landuse | road | area of roads | square meters | Total area of roads | 2010, 2015, 2020 |
 </div>
 
 
