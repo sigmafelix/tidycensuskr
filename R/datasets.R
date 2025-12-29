@@ -5,7 +5,7 @@
 #' and mortality in South Korea in 2010, 2015, and/or 2020. The availble
 #' years and variables depend on the type of data.
 #'
-#' @format A data.frame with 67232 rows and 10 variables:
+#' @format A data.frame with 103,626 rows and 10 variables:
 #' @details
 #' * year Year of the census data, e.g., 2010, 2015, or 2020
 #' * adm1 Name of the province-level (Sido) administrative unit
