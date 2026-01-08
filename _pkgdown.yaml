@@ -1,7 +1,9 @@
 url: https://sigmafelix.github.io/tidycensuskr/
 
+
 template:
   bootstrap: 5
+  bootswatch: simplex
   params:
     mathjax: true
 
@@ -9,3 +11,5 @@ navbar:
   structure:
     left:  [home, reference, articles]
     right: [search, github]
+      - text: "한국어"
+        href: ko/

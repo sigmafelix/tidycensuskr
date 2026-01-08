@@ -1,0 +1,21 @@
+lang: ko
+url: https://sigmafelix.github.io/tidycensuskr/ko
+destination: docs/ko
+
+template:
+  bootstrap: 5
+  bootswatch: simplex
+  params:
+    mathjax: true
+
+articles:
+  - title: "안내서"
+    contents:
+      - v01_intro-ko
+
+navbar:
+  structure:
+    left:  [home, reference, articles]
+    right: [search, github]
+      - text: "English"
+        href: https://sigmafelix.github.io/tidycensuskr

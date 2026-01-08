@@ -6,7 +6,7 @@ South Korean census and administrative boundary data. It aims to provide
 an easy-to-use interface for population, housing, and socioeconomic
 statistics linked with geospatial boundaries.
 
-<a href='https://sigmafelix.github.io/tidycensuskr/'><img src='man/figures/seoul_ai.jpeg' align="center"  /></a>
+<a href='https://sigmafelix.github.io/tidycensuskr/'><img src='man/figures/gat.jpg' align="center" width="200" /></a>
 
 # Installation
 
@@ -109,7 +109,7 @@ population data.
 
 ``` r
 library(tidycensuskr)
-#> tidycensuskr 0.2.6 (2025-12-09)
+#> tidycensuskr 0.2.7 (2026-01-08)
 #> Please install the companion data package tidycensuskr.sf to use the district boundaries.
 #> install.packages('tidycensuskr.sf', repos = 'https://sigmafelix.r-universe.dev')
 library(ggplot2)

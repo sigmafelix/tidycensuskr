@@ -10,3 +10,4 @@
 ^README*\.Rmd$
 ^.vscode
 ^tools
+vignettes/*-ko.Rmd$
