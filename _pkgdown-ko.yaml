@@ -16,6 +16,8 @@ articles:
 navbar:
   structure:
     left:  [home, reference, articles]
-    right: [search, github]
-      - text: "English"
-        href: https://sigmafelix.github.io/tidycensuskr
+    right: [lang, search, github]
+  components:
+    lang:
+    - text: "English"
+      href: https://sigmafelix.github.io/tidycensuskr
