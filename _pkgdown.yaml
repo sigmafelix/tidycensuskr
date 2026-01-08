@@ -8,13 +8,14 @@ template:
     mathjax: true
 
 articles:
-  - title: "Vignettes"
-    contents:
-      - v01_intro
-      - v02_regional_analysis
-      - v03_gallery
-      - v04_data_cleaning_kosis
-      - v05_contributors_guide
+- title: Vignettes
+  navbar: ~
+  contents:
+  - v01_intro
+  - v02_regional_analysis
+  - v03_gallery
+  - v04_data_cleaning_kosis
+  - v05_contributors_guide
 
 navbar:
   structure:

@@ -9,9 +9,9 @@ template:
     mathjax: true
 
 articles:
-  - title: "안내서"
-    contents:
-      - v01_intro-ko
+- title: "안내서"
+  contents:
+  - v01_intro-ko
 
 navbar:
   structure:
