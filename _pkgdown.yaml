@@ -7,6 +7,15 @@ template:
   params:
     mathjax: true
 
+articles:
+  - title: "Vignettes"
+    contents:
+      - v01_intro
+      - v02_regional_analysis
+      - v03_gallery
+      - v04_data_cleaning_kosis
+      - v05_contributors_guide
+
 navbar:
   structure:
     left:  [home, reference, articles]
