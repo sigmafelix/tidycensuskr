@@ -48,12 +48,9 @@ jobs:
 
       - name: Build Korean site
         run: |
-          pkgdown::build_site(
-            config = "_pkgdown-ko.yml",
-            new_process = FALSE,
-            install = FALSE,
-            override = list(destination = "docs/ko")
-          )
+          file.rename("_pkgdown.yaml", "_pkgdown-en.yaml")
+          file.rename("_pkgdown-ko.yaml", "_pkgdown.yaml")
+          pkgdown::build_site(new_process = FALSE, install = FALSE, override = list(destination = "docs/ko"))
         shell: Rscript {0}
 
         

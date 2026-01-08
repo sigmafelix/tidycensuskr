@@ -9,9 +9,16 @@ template:
     mathjax: true
 
 articles:
-- title: "안내서"
+- title: 안내서
   contents:
   - v01_intro-ko
+- title: internal
+  contents:
+  - v01_intro
+  - v02_regional_analysis
+  - v03_gallery
+  - v04_data_cleaning_kosis
+  - v05_contributors_guide
 
 navbar:
   structure:
@@ -19,5 +26,5 @@ navbar:
     right: [lang, search, github]
   components:
     lang:
-    - text: "English"
+      text: English
       href: https://sigmafelix.github.io/tidycensuskr
