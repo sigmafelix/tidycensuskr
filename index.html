@@ -40,10 +40,13 @@
     <li><a class="dropdown-item" href="articles/v03_gallery.html">Analytics Gallery with tidycensuskr</a></li>
     <li><a class="dropdown-item" href="articles/v04_data_cleaning_kosis.html">Data Cleaning: From KOSIS Raw Data to Tidy Format</a></li>
     <li><a class="dropdown-item" href="articles/v05_contributors_guide.html">Using KOSIS Interface for Contributors</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="articles/index.html">More articles...</a></li>
   </ul>
 </li>
       </ul>
 <ul class="navbar-nav">
+<li class="nav-item"><a class="nav-link" href="ko/">한국어</a></li>
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="search.json">
 </form></li>
@@ -59,7 +62,7 @@
 <div class="page-header"><h1 id="who-is-the-package-for">Who is the package for?<a class="anchor" aria-label="anchor" href="#who-is-the-package-for"></a>
 </h1></div>
 <p>The <code>tidycensuskr</code> package is designed for R users who want to work with South Korean census and administrative boundary data. It aims to provide an easy-to-use interface for population, housing, and socioeconomic statistics linked with geospatial boundaries.</p>
-<p><a href="https://sigmafelix.github.io/tidycensuskr/"><img src="reference/figures/seoul_ai.jpeg" align="center"></a></p>
+<p><a href="https://sigmafelix.github.io/tidycensuskr/"><img src="reference/figures/gat.jpg" align="center" width="200"></a></p>
 </div>
 <div class="section level1">
 <h1 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
@@ -159,7 +162,7 @@
 <p><code><a href="reference/anycensus.html">anycensus()</a></code> will return an analysis-ready data.frame that can be easily merged with the corresponding boundary <code>sf</code> object from <code><a href="reference/load_districts.html">load_districts()</a></code>. Here is a simple example of making maps with population data.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/sigmafelix/tidycensuskr" class="external-link">tidycensuskr</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; tidycensuskr 0.2.6 (2025-12-09)</span></span>
+<span><span class="co">#&gt; tidycensuskr 0.2.7 (2026-01-08)</span></span>
 <span><span class="co">#&gt; Please install the companion data package tidycensuskr.sf to use the district boundaries.</span></span>
 <span><span class="co">#&gt; install.packages('tidycensuskr.sf', repos = 'https://sigmafelix.r-universe.dev')</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>

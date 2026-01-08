@@ -1,6 +1,6 @@
 # Articles
 
-### All vignettes
+### Vignettes
 
 - [Working with
   tidycensuskr](https://sigmafelix.github.io/tidycensuskr/articles/v01_intro.md):
