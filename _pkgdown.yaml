@@ -1,11 +1,34 @@
 url: https://sigmafelix.github.io/tidycensuskr/
 
+
 template:
   bootstrap: 5
+  bootswatch: simplex
   params:
     mathjax: true
+
+articles:
+- title: Vignettes
+  navbar: ~
+  contents:
+  - v01_intro
+  - v02_regional_analysis
+  - v03_gallery
+  - v04_data_cleaning_kosis
+  - v05_contributors_guide
+- title: internal
+  contents:
+    - starts_with("v01_intro-ko")
+    - starts_with("v02_regional_analysis-ko")
+    - starts_with("v03_gallery-ko")
+    - starts_with("v04_data_cleaning_kosis-ko")
+    - starts_with("v05_contributors_guide-ko")
 
 navbar:
   structure:
     left:  [home, reference, articles]
-    right: [search, github]
+    right: [lang, search, github]
+  components:
+    lang:
+      text: "한국어"
+      href: ko/
