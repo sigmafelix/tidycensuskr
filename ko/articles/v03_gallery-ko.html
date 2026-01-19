@@ -5,12 +5,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Analytics Gallery with tidycensuskr • tidycensuskr</title>
+<title>tidycensuskr 분석 갤러리 • tidycensuskr</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Analytics Gallery with tidycensuskr">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="tidycensuskr 분석 갤러리">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -51,58 +51,58 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
 
-      <h1>Analytics Gallery with tidycensuskr</h1>
+      <h1>tidycensuskr 분석 갤러리</h1>
             
             <h4 data-toc-skip class="date">January 19, 2026</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/sigmafelix/tidycensuskr/blob/main/vignettes/v03_gallery.Rmd" class="external-link"><code>vignettes/v03_gallery.Rmd</code></a></small>
-      <div class="d-none name"><code>v03_gallery.Rmd</code></div>
+      <small class="dont-index">Source: <a href="https://github.com/sigmafelix/tidycensuskr/blob/main/vignettes/v03_gallery-ko.Rmd" class="external-link"><code>vignettes/v03_gallery-ko.Rmd</code></a></small>
+      <div class="d-none name"><code>v03_gallery-ko.Rmd</code></div>
     </div>
 
     
     
 <div class="section level2">
-<h2 id="example-1-spatial-autocorrelation-of-economic-activity-in-south-korea">Example 1: Spatial autocorrelation of economic activity in South
-Korea<a class="anchor" aria-label="anchor" href="#example-1-spatial-autocorrelation-of-economic-activity-in-south-korea"></a>
+<h2 id="예제-1-한국-경제-활동의-공간적-자기상관">예제 1: 한국 경제 활동의 공간적 자기상관<a class="anchor" aria-label="anchor" href="#%EC%98%88%EC%A0%9C-1-%ED%95%9C%EA%B5%AD-%EA%B2%BD%EC%A0%9C-%ED%99%9C%EB%8F%99%EC%9D%98-%EA%B3%B5%EA%B0%84%EC%A0%81-%EC%9E%90%EA%B8%B0%EC%83%81%EA%B4%80"></a>
 </h2>
 <div class="section level3">
-<h3 id="design-idea">Design idea<a class="anchor" aria-label="anchor" href="#design-idea"></a>
+<h3 id="설계-아이디어">설계 아이디어<a class="anchor" aria-label="anchor" href="#%EC%84%A4%EA%B3%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4"></a>
 </h3>
-<p>In this example, we use Moran’s <em>I</em> statistics to analyze the
-spatial distribution of economic activity (measured by the number of
-registered companies) across South Korea in 2020.</p>
+<p>이 예제에서는 모란 <em>I</em> 통계량을 사용하여 2020년 한국의 경제
+활동의 공간적 분포를 분석합니다. 경제 활동 지표는 시군구 별 사업체 수로
+측정합니다.</p>
 <ul>
-<li>Global Moran’s I evaluates whether there is overall spatial
-autocorrelation, i.e., whether areas with similar company counts tend to
-cluster together nationwide.</li>
-<li>Local Moran’s I (LISA) identifies local clusters and outliers by
-classifying each district into four types:
+<li>전역적 모란 <em>I</em> 지수는 전체적인 공간적 자기상관이 존재하는지,
+즉 기업 수가 비슷한 지역들이 전국적으로 뭉쳐 있는 경향이 있는지를
+평가합니다.</li>
+<li>국지적 모란 <em>I</em> 지수 (또는 국지적 자기상관지표, LISA)는 각
+구역을 네 가지 유형으로 분류하여 국지적인 군집과 이상치를 식별합니다:
 <ul>
-<li>High-High (H-H): districts with high values surrounded by other
-high-value districts.</li>
-<li>Low-Low (L-L): districts with low values surrounded by other
-low-value districts.</li>
-<li>High-Low (H-L): potential spatial outliers with high values
-surrounded by low-value neighbors.</li>
-<li>Low-High (L-H): potential spatial outliers with low values
-surrounded by high-value neighbors.</li>
+<li>높음-높음 (H-H): 높은 값을 가진 구역이 다른 높은 값을 가진 구역들로
+둘러싸인 경우.</li>
+<li>낮음-낮음 (L-L): 낮은 값을 가진 구역이 다른 낮은 값을 가진 구역들로
+둘러싸인 경우.</li>
+<li>높음-낮음 (H-L): 높은 값을 가졌으나 낮은 값을 가진 이웃들로 둘러싸인
+잠재적 공간 이상치.</li>
+<li>낮음-높음 (L-H): 낮은 값을 가졌으나 높은 값을 가진 이웃들로 둘러싸인
+잠재적 공간 이상치.</li>
 </ul>
 </li>
 </ul>
-<p>The resulting LISA cluster map highlights where economic activities
-are concentrated and where they are sparse relative to neighboring
-areas.</p>
+<p>결과로 얻어지는 LISA 군집 지도는 주변 지역에 비해 경제 활동이 집중된
+곳과 희소한 곳을 강조합니다.</p>
 </div>
 <div class="section level3">
-<h3 id="data-prep">Data prep<a class="anchor" aria-label="anchor" href="#data-prep"></a>
+<h3 id="데이터-준비">데이터 준비<a class="anchor" aria-label="anchor" href="#%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A4%80%EB%B9%84"></a>
 </h3>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load 2020 boundaries</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">adm2_sf_2020</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Load 2020 economy data</span></span>
-<span><span class="va">df_2020_economy</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>,</span>
-<span>                             type <span class="op">=</span> <span class="st">"economy"</span><span class="op">)</span></span>
+<span><span class="va">df_2020_economy</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/anycensus.html">anycensus</a></span><span class="op">(</span></span>
+<span>  year <span class="op">=</span> <span class="fl">2020</span>,</span>
+<span>  type <span class="op">=</span> <span class="st">"economy"</span></span>
+<span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Merge with spatial data</span></span>
 <span><span class="va">adm2_sf_2020_economy</span> <span class="op">&lt;-</span> <span class="va">adm2_sf_2020</span> <span class="op">|&gt;</span></span>
@@ -112,7 +112,7 @@ areas.</p>
 <span><span class="va">var</span> <span class="op">&lt;-</span> <span class="va">adm2_sf_2020_economy</span><span class="op">$</span><span class="va">company_total_cnt</span></span></code></pre></div>
 </div>
 <div class="section level3">
-<h3 id="global-morans-i">Global Moran’s I<a class="anchor" aria-label="anchor" href="#global-morans-i"></a>
+<h3 id="전역적global-morans-i">전역적(Global) Moran’s I<a class="anchor" aria-label="anchor" href="#%EC%A0%84%EC%97%AD%EC%A0%81global-morans-i"></a>
 </h3>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Build neighbors (queen contiguity) and spatial weights</span></span>
@@ -136,7 +136,7 @@ areas.</p>
 <span><span class="co">##       0.424571643      -0.004149378       0.001715960</span></span></code></pre>
 </div>
 <div class="section level3">
-<h3 id="local-morans-i-and-lisa-map">Local Moran’s I and LISA map<a class="anchor" aria-label="anchor" href="#local-morans-i-and-lisa-map"></a>
+<h3 id="국지적local-morans-i-및-lisa-지도">국지적(Local) Moran’s I 및 LISA 지도<a class="anchor" aria-label="anchor" href="#%EA%B5%AD%EC%A7%80%EC%A0%81local-morans-i-%EB%B0%8F-lisa-%EC%A7%80%EB%8F%84"></a>
 </h3>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Local Moran's I</span></span>
@@ -166,44 +166,45 @@ areas.</p>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsf.html" class="external-link">geom_sf</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="va">cluster</span><span class="op">)</span>, color <span class="op">=</span> <span class="st">"grey70"</span>, size <span class="op">=</span> <span class="fl">0.05</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_fill_manual</a></span><span class="op">(</span></span>
 <span>    values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
-<span>      <span class="st">"High-High"</span>     <span class="op">=</span> <span class="st">"red"</span>,</span>
-<span>      <span class="st">"Low-Low"</span>       <span class="op">=</span> <span class="st">"blue"</span>,</span>
-<span>      <span class="st">"High-Low"</span>      <span class="op">=</span> <span class="st">"pink"</span>,</span>
-<span>      <span class="st">"Low-High"</span>      <span class="op">=</span> <span class="st">"lightblue"</span>,</span>
+<span>      <span class="st">"High-High"</span> <span class="op">=</span> <span class="st">"red"</span>,</span>
+<span>      <span class="st">"Low-Low"</span> <span class="op">=</span> <span class="st">"blue"</span>,</span>
+<span>      <span class="st">"High-Low"</span> <span class="op">=</span> <span class="st">"pink"</span>,</span>
+<span>      <span class="st">"Low-High"</span> <span class="op">=</span> <span class="st">"lightblue"</span>,</span>
 <span>      <span class="st">"Not significant"</span> <span class="op">=</span> <span class="st">"white"</span></span>
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"LISA Cluster Map of Company units (2020)"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<p><img src="v03_gallery_files/figure-html/local_moran_1,%20-1.png" class="r-plt" alt="" width="672"></p>
-<p>The results reveal a strong metropolitan concentration of economic
-activity. High-High (H-H) clusters are predominantly located in the
-Seoul Metropolitan Area, reflecting its central role in South Korea’s
-economy. Low-Low (L-L) clusters appear in Gangwon Province and along the
-borders of Jeollabuk-do, Jeollanam-do, Gyeongsangbuk-do, and
-Chungcheongnam-do, indicating regions with consistently low levels of
-company presence. This spatial pattern highlights the dominance of the
-capital region in economic activity and the relative sparsity of
-industrial and business units in peripheral provinces.</p>
+<p><img src="v03_gallery-ko_files/figure-html/local_moran_1,%20-1.png" class="r-plt" alt="" width="672"></p>
+<p>결과는 경제 활동이 고도로 수도권에 집중되어 있음을 보여줍니다.
+높음-높음 (H-H) 군집은 주로 서울 수도권 지역에 위치하여 이 지역이 한국
+경제에서 차지하는 중심적인 역할을 보여줍니다. 낮음-낮음 (L-L) 군집은
+강원도와 전라북도, 전라남도, 경상북도, 충청남도의 경계 지역에 나타나며,
+이는 기업 출현이 지속적으로 낮은 지역임을 나타냅니다. 이러한 공간적
+패턴은 경제 활동에서의 수도권의 우위와 외곽 지역의 기업의 상대적
+희소성을 반영합니다.</p>
 </div>
 </div>
 <div class="section level2">
-<h2 id="example-2-population-change-by-sex-and-districts">Example 2: Population change by sex and districts<a class="anchor" aria-label="anchor" href="#example-2-population-change-by-sex-and-districts"></a>
+<h2 id="예제-2-성별-및-지역별-인구-변화">예제 2: 성별 및 지역별 인구 변화<a class="anchor" aria-label="anchor" href="#%EC%98%88%EC%A0%9C-2-%EC%84%B1%EB%B3%84-%EB%B0%8F-%EC%A7%80%EC%97%AD%EB%B3%84-%EC%9D%B8%EA%B5%AC-%EB%B3%80%ED%99%94"></a>
 </h2>
 <div class="section level3">
-<h3 id="design-idea-1">Design idea<a class="anchor" aria-label="anchor" href="#design-idea-1"></a>
+<h3 id="설계-아이디어-1">설계 아이디어<a class="anchor" aria-label="anchor" href="#%EC%84%A4%EA%B3%84-%EC%95%84%EC%9D%B4%EB%94%94%EC%96%B4-1"></a>
 </h3>
 <ol style="list-style-type: decimal">
-<li>Load <code>censuskor</code> bundled in <code>tidycensuskr</code>,
-focusing on population counts by sex at the adm2 level</li>
-<li>Clean and align administrative codes to account for district name
-changes, promotions, and boundary adjustments over time</li>
-<li>Convert population counts into comparable units (thousands) and
-retain the most recent district names for consistent labeling</li>
-<li>Prepare a <code>geofacet</code> grid based on 2020 administrative
-boundaries</li>
-<li>Plot population trends over time separately for males and females
-using line charts</li>
+<li>
+<code>tidycensuskr</code>에 포함된 <code>censuskor</code> 데이터를
+불러와 adm2 레벨의 성별 인구수에 집중합니다.</li>
+<li>시간이 지남에 따른 지역명 변경, 승격, 경계 조정을 반영하여 행정 구역
+코드를 정리하고 정렬합니다.</li>
+<li>인구수를 비교 가능한 단위(천 명)로 변환하고 일관된 라벨링을 위해
+가장 최근의 지역명을 유지합니다. 중복 지역명 (예, 남구, 서구, 고성군
+등)을 구분하기 위해 시군구 이름을 시도 약칭을 붙인 이름으로
+재구성합니다.</li>
+<li>2020년 행정 구역 경계를 기반으로 <code>geofacet</code> 그리드를
+준비합니다.</li>
+<li>남성과 여성의 인구 추세를 선형 차트를 사용하여 중첩
+시각화합니다.</li>
 </ol>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># load packages</span></span>
@@ -254,7 +255,9 @@ using line charts</li>
 <span><span class="co"># map codes to district names for facet labels</span></span>
 <span><span class="va">pop_name_map</span> <span class="op">&lt;-</span> <span class="va">pop</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html" class="external-link">distinct</a></span><span class="op">(</span><span class="va">code</span>, <span class="va">adm2</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span>  <span class="op">{</span> <span class="fu"><a href="https://rdrr.io/r/stats/setNames.html" class="external-link">setNames</a></span><span class="op">(</span><span class="va">.</span><span class="op">$</span><span class="va">adm2</span>, <span class="va">.</span><span class="op">$</span><span class="va">code</span><span class="op">)</span> <span class="op">}</span></span>
+<span>  <span class="op">{</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/stats/setNames.html" class="external-link">setNames</a></span><span class="op">(</span><span class="va">.</span><span class="op">$</span><span class="va">adm2</span>, <span class="va">.</span><span class="op">$</span><span class="va">code</span><span class="op">)</span></span>
+<span>  <span class="op">}</span></span>
 <span></span>
 <span><span class="va">pop_labels</span> <span class="op">&lt;-</span> <span class="va">pop</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/distinct.html" class="external-link">distinct</a></span><span class="op">(</span><span class="va">code</span>, <span class="va">adm2</span><span class="op">)</span></span>
 <span></span>
@@ -298,10 +301,10 @@ using line charts</li>
 <span>  <span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
-<h3 id="small-multiples">Small multiples<a class="anchor" aria-label="anchor" href="#small-multiples"></a>
+<h3 id="스몰-멀티플small-multiples">스몰 멀티플(Small multiples)<a class="anchor" aria-label="anchor" href="#%EC%8A%A4%EB%AA%B0-%EB%A9%80%ED%8B%B0%ED%94%8Csmall-multiples"></a>
 </h3>
-<p>This design highlights heterogeneous local population trajectories
-while preserving a sense of national spatial structure.</p>
+<p>이 디자인은 각 시군구의 상대적 위치를 반영하는 공간 구조를 최대한
+유지하면서 이질적인 지역 인구 변화 추이를 강조합니다.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">pop</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_path.html" class="external-link">geom_line</a></span><span class="op">(</span></span>
@@ -309,7 +312,7 @@ while preserving a sense of national spatial structure.</p>
 <span>    alpha <span class="op">=</span> <span class="fl">0.5</span>,</span>
 <span>    linewidth <span class="op">=</span> <span class="fl">1.5</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu"><a href="https://hafen.github.io/geofacet/reference/facet_geo.html" class="external-link">facet_geo</a></span><span class="op">(</span><span class="op">~</span> <span class="va">code</span>, grid <span class="op">=</span> <span class="va">kr_grid_adm2_sgis_2020</span>, label <span class="op">=</span> <span class="st">"name"</span>, scale <span class="op">=</span> <span class="st">"free_y"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://hafen.github.io/geofacet/reference/facet_geo.html" class="external-link">facet_geo</a></span><span class="op">(</span><span class="op">~</span><span class="va">code</span>, grid <span class="op">=</span> <span class="va">kr_grid_adm2_sgis_2020</span>, label <span class="op">=</span> <span class="st">"name"</span>, scale <span class="op">=</span> <span class="st">"free_y"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span></span>
 <span>    title <span class="op">=</span> <span class="st">"Population Trends in South Korea by Sex and District"</span>,</span>
 <span>    x <span class="op">=</span> <span class="st">"Year"</span>,</span>
@@ -334,7 +337,7 @@ while preserving a sense of national spatial structure.</p>
 <span>    panel.spacing <span class="op">=</span> <span class="fu">grid</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/grid/unit.html" class="external-link">unit</a></span><span class="op">(</span><span class="fl">1</span>, <span class="st">"pt"</span><span class="op">)</span>,</span>
 <span>    plot.margin <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html" class="external-link">margin</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="fl">1</span>, <span class="st">"mm"</span><span class="op">)</span></span>
 <span>  <span class="op">)</span></span></code></pre></div>
-<p><img src="v03_gallery_files/figure-html/pop-change-3-1.png" class="r-plt" alt="" width="787.2"></p>
+<p><img src="v03_gallery-ko_files/figure-html/pop-change-3-1.png" class="r-plt" alt="" width="787.2"></p>
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

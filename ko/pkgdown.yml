@@ -4,11 +4,15 @@ pkgdown_sha: ~
 articles:
   v01_intro-ko: v01_intro-ko.html
   v01_intro: v01_intro.html
+  v02_regional_analysis-ko: v02_regional_analysis-ko.html
   v02_regional_analysis: v02_regional_analysis.html
+  v03_gallery-ko: v03_gallery-ko.html
   v03_gallery: v03_gallery.html
+  v04_data_cleaning_kosis-ko: v04_data_cleaning_kosis-ko.html
   v04_data_cleaning_kosis: v04_data_cleaning_kosis.html
+  v05_contributors_guide-ko: v05_contributors_guide-ko.html
   v05_contributors_guide: v05_contributors_guide.html
-last_built: 2026-01-08T08:20Z
+last_built: 2026-01-19T04:07Z
 urls:
   reference: https://sigmafelix.github.io/tidycensuskr/ko/reference
   article: https://sigmafelix.github.io/tidycensuskr/ko/articles
