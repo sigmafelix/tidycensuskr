@@ -1,0 +1,349 @@
+---
+title: "데이터 정제: KOSIS 원시 데이터에서 Tidy 포맷으로"
+output: rmarkdown::html_vignette
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
+vignette: >
+  %\VignetteIndexEntry{Data Cleaning: From KOSIS Raw Data to Tidy Format} 
+  %\VignetteEngine{knitr::rmarkdown}
+  %\usepackage[utf8]{inputenc}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  warning = FALSE,
+  message = FALSE,
+  eval = FALSE,
+  # Set to FALSE since this requires API keys and large data downloads
+  out.width = "100%"
+)
+```
+
+```r
+library(tidycensuskr)
+library(dplyr)
+library(tidyr)
+library(plyr)
+library(kosis)
+
+```
+
+## 소개
+
+이 도움 문서에서는 KOSIS(국가통계포털) API의 한국 센서스 원시 데이터를 정제하여 분석 가능한 깔끔한(tidy) 형식으로 변환하는 방법을 보여줍니다. 한국 통계 데이터에 접근하기 위한 기존 R 패키지들(예: 일반적인 KOSIS 데이터 접근을 위한 `kosis` 패키지)이 있지만, **인구학적 및 사회경제적 연구를 위해 한국 센서스 데이터를 깔끔하고 분석 친화적인 형식으로 검색하고 처리하도록 설계된 소프트웨어 솔루션은 현재 없습니다**.
+
+### 과제
+
+한국 센서스 및 행정 데이터는 연구자들에게 몇 가지 과제를 안겨줍니다:
+
+1. **복잡한 API URL**: KOSIS API는 코드로 된 상세한 매개변수 사양을 요구합니다.
+2. **다양한 데이터 소스**: 서로 다른 데이터셋(인구, 세금, 사망률)은 서로 다른 API 엔드포인트에서 제공됩니다.
+3. **일관성 없는 형식**: 원시 데이터는 종종 한글 컬럼명을 가진 가로로 긴 데이터 프레임 형식으로 제공됩니다.
+4. **행정 코드 매핑**: 데이터셋마다 서로 다른 행정 구역 코드 체계를 사용합니다.
+5. **데이터 통합**: 여러 데이터셋을 결합하려면 행정 구역 단위를 일치시켜야 합니다.
+
+이 문서는 `tidycensuskr` 패키지가 전처리된 깔끔한 데이터셋을 제공하고, 그 이면에 있는 데이터 정제 워크플로우를 보여줌으로써 이러한 과제들을 어떻게 해결하는지 보여줍니다.
+
+## 원시 데이터 소스
+
+데이터 정제 과정은 여러 KOSIS API 엔드포인트에서 데이터를 검색하는 것으로 시작합니다. KOSIS API에서 데이터를 검색하려면 다음 정보를 알아야 합니다:
+
+- **API 키**: KOSIS에서 API 키를 발급받아야 합니다. 이 경우 대한민국에서 사용할 수 있는 본인 명의의 휴대전화번호가 필요합니다.
+- **API 매개변수**: 각 API 엔드포인트는 `itmId`, `objL1`, `objL2` 등과 같은 특정 매개변수를 요구합니다. 이 매개변수들은 검색하려는 데이터를 정의합니다.
+- **출력 형식**: API는 다양한 출력 형식을 지원하지만, R에서 처리하기 쉽도록 JSON을 사용할 것입니다.
+
+
+### API 호출 매개변수
+
+| 매개변수 | 타입 | 설명 | 필수 여부 |
+|-----------|------|-------------|-----|
+| `apiKey` | String | KOSIS API 키 | 예 |
+| `orgId` | String | 기관 식별자 | 예 |
+| `tblId` | String | 테이블 식별자 | 예 |
+| `objL1` | String | 대분류 코드 | 예 |
+| `objL2`-`objL8` | String | 중분류~8분류 코드 | 선택 |
+| `itmId` | String | 항목 식별자 | 예 |
+| `prdSe` | String | 갱신 주기 | 예 |
+| `format` | String | 출력 형식 (예: JSON) | 예 |
+
+
+### 데이터 변수
+
+참고로, 출력에는 다음 변수들이 포함될 수 있습니다:
+
+| 필드명 (대문자) | 설명 | 데이터 타입 | 비고 |
+|-----|--------------|-------|------|
+| ORG_ID | 기관 코드 | VARCHAR2(40) | 예 |
+| TBL_ID | 테이블 식별자 | VARCHAR2(40) |  |
+| TBL_NM | 테이블 이름 | VARCHAR2(300) |  |
+| C1 - C8 | 분류 식별자 (1-8) | VARCHAR2(40) | 존재하지 않으면 2-8은 생략될 수 있음 |
+| C1_OBJ_NM - C8_OBJ_NM | 분류 코드 (1-8) | VARCHAR2(3000) |  |
+| C1_OBJ_NM_ENG - C8_OBJ_NM_ENG | 분류 코드 (영문) (1-8) | VARCHAR2(3000) |  |
+| C1_NM - C8_NM | 분류명 (1-8) | VARCHAR2(3000) |  |
+| C1_NM_ENG - C8_NM_ENG | 분류명 (영문) (1-8) | VARCHAR2(3000) |  |
+| ITM_ID | 항목 식별자 | VARCHAR2(40) |  |
+| ITM_NM | 항목명 | VARCHAR2(3000) |  |
+| ITM_NM_ENG | 항목명 (영문) | VARCHAR2(3000) |  |
+| UNIT_ID | 단위 식별자 | VARCHAR2(40) |  |
+| UNIT_NM | 단위명 | VARCHAR2(1000) |  |
+| UNIT_NM_ENG | 단위명 (영문) | VARCHAR2(1000) |  |
+| PRD_SE | 데이터 갱신 주기 | VARCHAR2(20) |  |
+| PRD_DE | 데이터 기간 | VARCHAR2(8) |  |
+| DT | 데이터 값 | VARCHAR2(100) |  |
+| LST_CHN_DE | 변경 일자 | VARCHAR2(8) |  |
+
+모든 필드는 문자형이며, 숫자 값도 문자열로 저장된다는 점에 유의해야 합니다. 즉, 데이터를 불러온 후 숫자형으로 변환해야 합니다.
+
+
+### API 키
+KOSIS API를 사용하려면 API 키를 등록해야 합니다. [KOSIS API 등록 페이지](https://kosis.kr/openapi/serviceUse/serviceUseUnityReg_01Detail.do)를 방문하여 지침을 따르면 키를 발급받을 수 있습니다.
+
+해당 웹페이지는 한국어로만 제공되며 한국 외에서는 접속이 제한될 수 있습니다.
+
+
+### 예제 URL
+
+아래 URL은 KOSIS에서 일반 세금 데이터를 검색하는 예제입니다. `인증키없음`을 실제 API 키로 교체해야 합니다. 이 URL을 분석하면 자신만의 API 호출을 구성하는 방법을 이해하는 데 도움이 됩니다.
+
+```{r tax-url}
+url_tax_general <-
+  "https://kosis.kr/openapi/Param/statisticsParameterData.do?method=getList&apiKey=인증키없음&itmId=T001+&objL1=A0201+A0202+A0203+A0204+A0205+A0206+A0207+A0208+A0209+A0210+A0211+A0212+A0213+A0214+A0215+A0216+A0217+A0218+A0219+A0220+A0221+A0222+A0223+A0224+A0225+A0301+A0302+A0303+A0304+A0305+A0306+A0307+A0308+A0309+A0310+A0401+A0402+A0403+A0404+A0405+A0406+A0407+A0408+A0409+A0410+A0411+A0412+A0413+A0414+A0415+A0416+A0417+A0418+A0419+A0420+A0421+A0422+A0423+A0424+A0425+A0426+A0427+A0428+A0429+A0430+A0431+A0501+A0502+A0503+A0504+A0505+A0506+A0507+A0508+A0509+A0510+A0511+A0512+A0513+A0514+A0515+A0516+A0517+A0518+A0601+A0602+A0603+A0604+A0605+A0701+A0702+A0703+A0704+A0705+A0706+A0707+A0708+A0709+A0710+A0711+A0801+A0802+A0803+A0804+A0805+A0806+A0807+A0808+A0809+A0810+A0811+A0812+A0813+A0814+A0815+A09+A1001+A1002+A1003+A1004+A1005+A1101+A1102+A1103+A1104+A1105+A1106+A1107+A1108+A1109+A1110+A1111+A1112+A1113+A1114+A1201+A1202+A1203+A1204+A1205+A1206+A1207+A1208+A1209+A1210+A1211+A1212+A1213+A1214+A1215+A1216+A1217+A1218+A1219+A1220+A1221+A1222+A1309+A1301+A1302+A1303+A1304+A1305+A1306+A1307+A1308+A1401+A1402+A1403+A1404+A1405+A1406+A1407+A1408+A1409+A1410+A1411+A1412+A1413+A1414+A1415+A1416+A1417+A1418+A1419+A1420+A1421+A1422+A1423+A1501+A1502+A1503+A1504+A1505+A1506+A1507+A1508+A1509+A1510+A1511+A1512+A1513+A1514+A1515+A1516+A1601+A1602+A1603+A1604+A1605+A1701+A1702+A1703+A1704+A1705+A1706+A1707+A1708+A1709+A1710+A1711+A1712+A1713+A1714+A1715+A1716+A1717+A1718+A1802+A1801+&objL2=15133SGH0M+&objL3=&objL4=&objL5=&objL6=&objL7=&objL8=&format=json&jsonVD=Y&prdSe=Y&newEstPrdCnt=1&outputFields=TBL_ID+TBL_NM+OBJ_ID+OBJ_NM+OBJ_NM_ENG+NM+NM_ENG+ITM_ID+ITM_NM+ITM_NM_ENG+UNIT_NM+UNIT_NM_ENG+&orgId=133&tblId=DT_133N_A3212"
+```
+
+
+| 매개변수 | 값 |
+|-----------|-------------------|
+| `apiKey` | "인증키없음" (예시용)이며 실제로는 본인의 키를 사용해야 합니다. |
+| `orgId` | "133" |
+| `tblId` | "DT_133N_A3212" |
+| `objL1` | "A0201", "A0202", ... , "A1801" |
+| `objL2` | "15133SGH0M" |
+| `itmId` | "T001" |
+| `prdSe` | "Y" |
+| `newEstPrdCnt` | "1" |
+| `outputFields` | "TBL_ID", "TBL_NM", ... , "UNIT_NM_ENG" |
+
+
+덧붙이자면, `objL1`과 `itmId`에 대해 플러스 기호(`+`)로 구분하여 여러 값을 지정할 수 있습니다. 예를 들어, `itmId=T001+T002+T003`은 여러 항목에 대한 데이터를 검색합니다.
+
+필요한 API 호출을 구성하는 방법을 이해하기 위해 다음 URL을 해석해 보십시오. 1분 정도 멈추어서 문자열을 찬찬히 읽어 보시기 바랍니다:
+
+```{r pop-url}
+url_pop <-
+  "https://kosis.kr/openapi/Param/statisticsParameterData.do?method=getList&apiKey=인증키없음&itmId=T00+T60+&objL1=11010+11020+11030+11040+11050+11060+11070+11080+11090+11100+11110+11120+11130+11140+11150+11160+11170+11180+11190+11200+11210+11220+11230+11240+11250+21010+21020+21030+21040+21050+21060+21070+21080+21090+21100+21110+21120+21130+21140+21150+21510+22010+22020+22030+22040+22050+22060+22070+22510+22520+23010+23020+23030+23040+23050+23060+23070+23080+23090+23510+23520+24010+24020+24030+24040+24050+25010+25020+25030+25040+25050+26010+26020+26030+26040+26510+29010+31010+31011+31012+31013+31014+31020+31021+31022+31023+31030+31040+31041+31042+31050+31051+31052+31053+31060+31070+31080+31090+31091+31092+31100+31101+31103+31104+31110+31120+31130+31140+31150+31160+31170+31180+31190+31191+31192+31193+31200+31210+31220+31230+31240+31250+31260+31270+31280+31550+31570+31580+32010+32020+32030+32040+32050+32060+32070+32510+32520+32530+32540+32550+32560+32570+32580+32590+32600+32610+33020+33030+33040+33041+33042+33043+33044+33520+33530+33540+33550+33560+33570+33580+33590+34010+34011+34012+34020+34030+34040+34050+34060+34070+34080+34510+34530+34540+34550+34560+34570+34580+35010+35011+35012+35020+35030+35040+35050+35060+35510+35520+35530+35540+35550+35560+35570+35580+36010+36020+36030+36040+36060+36510+36520+36530+36550+36560+36570+36580+36590+36600+36610+36620+36630+36640+36650+36660+36670+36680+37010+37011+37012+37020+37030+37040+37050+37060+37070+37080+37090+37100+37510+37520+37530+37540+37550+37560+37570+37580+37590+37600+37610+37620+37630+38030+38050+38060+38070+38080+38090+38100+38110+38111+38112+38113+38114+38115+38510+38520+38530+38540+38550+38560+38570+38580+38590+38600+39010+39020+&objL2=ALL&objL3=000+&objL4=&objL5=&objL6=&objL7=&objL8=&format=json&jsonVD=Y&prdSe=Y&newEstPrdCnt=1&outputFields=TBL_ID+TBL_NM+OBJ_ID+OBJ_NM+OBJ_NM_ENG+NM+NM_ENG+ITM_ID+ITM_NM+ITM_NM_ENG+UNIT_NM+UNIT_NM_ENG+&orgId=101&tblId=DT_1IN1509"
+```
+
+
+## 데이터 검색
+
+### API 접근 설정
+```r
+library(tidycensuskr)
+library(dplyr)
+library(tidyr)
+library(kosis)
+
+# Set KOSIS API key (stored in a secure file)
+kosiskey <- readLines("~/.kosiskey")[1]
+tidycensuskr::set_kosis_key("~/.kosiskey")
+```
+
+### 원시 데이터 다운로드
+```r
+# Download raw datasets from KOSIS API
+df_tax <- kosis::getStatDataFromURL(url_tax_general)
+
+# Load administrative district lookup table
+sgg_lookup <-
+  read.csv(
+    system.file(
+      file.path("extdata", "lookup_district_code.csv"),
+      package = "tidycensuskr"
+    ),
+    fileEncoding = "EUC-KR"
+  )
+```
+
+## 데이터 정제 워크플로우
+
+### 1. 행정 구역 코드 매핑
+
+워크플로우의 첫 번째 단계는 데이터셋 전반에 걸쳐 사용되는 서로 다른 행정 구역 코드 체계 간에 일관된 대응 테이블을 생성하는 것입니다:
+
+```r
+# Create administrative code mapping for provinces (sido)
+sidocd_range <- tibble::tribble(
+  ~sido_kr, ~sido_cd, ~sido_txcd,
+  "서울특별시", "11", "02",
+  "부산광역시", "21", "15", 
+  "대구광역시", "22", "13",
+  "인천광역시", "23", "03",
+  "광주광역시", "24", "10",
+  "대전광역시", "25", "06",
+  "울산광역시", "26", "16",
+  "세종특별자치시", "29", "09",
+  "경기도", "31", "04",
+  "강원특별자치도", "32", "05",
+  "충청북도", "33", "07",
+  "충청남도", "34", "08",
+  "전라북도", "35", "11",
+  "전라남도", "36", "12",
+  "경상북도", "37", "14",
+  "경상남도", "38", "17",
+  "제주특별자치도", "39", "18"
+)
+```
+
+### 2. 국세 데이터 처리
+
+시군구 별 국세 데이터를 표준화된 포맷으로 변환합니다:
+
+```r
+df_tax_compact <- df_tax |>
+  dplyr::transmute(
+    adm2_code = C1,           # Administrative code
+    value = DT   # Tax value in million KRW
+  ) |>
+  dplyr::inner_join(
+    sgg_lookup[, c("sgg_tax_global", "sido_en", "sigungu_1_en", "adm2_code")],
+    multiple = "first"
+  )
+
+```
+
+### 3. 인구 데이터 처리
+
+성별 분리가 포함된 인구 데이터를 정제하고 형태를 변경합니다:
+
+```r
+df_pop2 <- df_pop |>
+  dplyr::mutate(
+    sex = plyr::mapvalues(C2, c(0, 1, 2), c("total", "male", "female")),
+    type = plyr::mapvalues(ITM_ID, c("T00", "T60"), c("population_total", "population_nonrelative"))
+  ) |>
+  dplyr::select(C1, C1_NM, sex, type, DT) |>
+  tidyr::pivot_wider(
+    names_from = c(type, sex),
+    values_from = DT
+  ) |>
+  dplyr::rename(
+    sigungu_cd = C1,
+    sigungu_kr = C1_NM
+  ) |>
+  dplyr::mutate(
+    adm2_code = as.integer(adm2_code)
+  ) |>
+  dplyr::inner_join(
+    sgg_lookup[, c("adm2_code", "sido_en", "sigungu_1_en")],
+    by = "adm2_code",
+    multiple = "first"
+  )
+```
+
+## Tidy 포맷으로 변환
+
+`tidycensuskr`의 핵심 기능은 가로로 긴 포맷의 다중 데이터셋 구조를 단일한, 세로로 긴 포맷의 '깔끔한' 데이터셋으로 변환하는 것입니다:
+
+### 1. 각 데이터셋을 가로로 긴 포맷으로 변환
+
+```r
+# Tax data to long format
+df_tax_long <- df_tax_compact |>
+  dplyr::select(2:5) |>
+  tidyr::pivot_longer(
+    cols = "value"
+  ) |>
+  dplyr::mutate(
+    type = "tax",
+    class1 = "global",
+    class2 = "total",
+    unit = "million KRW"
+  ) |>
+  dplyr::select(-name)
+
+# Population data to long format
+df_pop_long <- df_pop2 |>
+  dplyr::select(-2) |>
+  tidyr::pivot_longer(
+    cols = 2:7
+  ) |>
+  tidyr::separate(col = "name", into = c("type", "class1", "class2"), sep = "_")
+
+```
+
+### 2. 단일한 '깔끔한' 데이터셋으로 결합
+
+```r
+# Bind all datasets into one comprehensive long-format dataset
+censuskor <- dplyr::bind_rows(
+    df_tax_long,
+    df_pop_long
+  ) |>
+  dplyr::rename(
+    adm1 = sido_en,
+    adm2 = sigungu_1_en
+  ) |>
+  dplyr::mutate(
+    year = 2020
+  ) |>
+  dplyr::select(
+    year, adm1, adm2, adm2_other, adm2_code,
+    type, class1, class2, unit, value
+  )
+```
+
+## 결과: '깔끔한' 데이터셋
+
+최종 `censuskor` 데이터셋은 일관된 구조로 되어 있습니다:
+
+- **year**: 센서스 연도 (2020)
+- **adm1**: 시도 수준 행정 구역명 (영문)
+- **adm2**: 시군구 수준 행정 구역명 (영문)  
+- **adm2_code**: 숫자형 행정 구역 코드
+- **type**: 데이터 타입 ("population", "tax", "mortality" 등)
+- **class1**: 1단계 분류 (예: "global", "income", "All causes")
+- **class2**: 2단계 분류 (예: "total", "male", "female")
+- **unit**: 측정 단위
+- **value**: 숫자형 값
+
+### 사용 예제
+
+```r
+library(tidycensuskr)
+library(dplyr)
+
+# Load the cleaned dataset
+data(censuskor)
+
+# View the structure
+head(censuskor)
+
+# Filter for Seoul population data
+seoul_pop <- censuskor |>
+  filter(adm1 == "Seoul", type == "population", class1 == "population") |>
+  select(adm2, class2, value) |>
+  pivot_wider(names_from = class2, values_from = value)
+
+head(seoul_pop)
+```
+
+이 데이터는 패키지에 포함된 `sf` 객체와 결합하여 지도를 만들고 공간 분석을 수행할 수 있습니다.
+
+## `adm2_code` 변경에 대한 참고사항
+시군구는 한국의 두 번째 단계 행정 구역 단위입니다. 각 구역에는 `adm2_code`라는 고유 코드가 할당됩니다. 그러나 이 코드들은 행정 구역 경계 변경, 통합 또는 재분류로 인해 시간이 지남에 따라 변경될 수 있습니다.
+
+2022년 모든 군 지역에서 상당한 변경이 있었는데, `adm2_code`의 세 번째 자리에 2가 더해졌습니다. 예를 들어, 울릉군은 `37430`에서 `37630`으로 변경되었습니다. 이러한 변경은 다시점 종단 연구에 영향을 주며, 개발자가 `censuskor` 데이터셋을 업데이트하는 데 어려움을 줄 수 있습니다. KOSIS의 일부 데이터셋은 새로운 코드를 반영하여 **소급**(즉, 현재 기준을 과거에까지 적용하는 것을 말합니다) 업데이트되지만, 대부분의 KOSIS 데이터셋은 구 코드를 유지합니다. 따라서 개발자는 다음 코드를 사용하여 각 데이터셋과 연도의 `adm2_code`를 확인하는 것이 좋습니다.
+
+```r
+# imported data
+some_census_table
+
+# check adm2_code
+any(substr(some_census_table$adm2_code, 3, 3) %in% c("5", "6"))
+```
+
+`TRUE`이면, 원시 데이터 연도와 관계없이 데이터셋이 **새로운** `adm2_code` 체계(2022년 이후)를 사용함을 의미합니다. `FALSE`이면, **구** 체계(2022년 이전)를 사용함을 의미합니다.
+
+
+**참고**: 이 문서는 개발자를 위한 데이터 정제 과정을 보여줍니다. 패키지의 실제 `censuskor` 데이터셋은 이 워크플로우의 결과물이며 즉시 사용할 수 있도록 준비되어 있습니다.

@@ -12,6 +12,10 @@ articles:
 - title: 안내서
   contents:
   - v01_intro-ko
+  - v02_regional_analysis-ko
+  - v03_gallery-ko
+  - v04_data_cleaning_kosis-ko
+  - v05_contributors_guide-ko
 - title: internal
   contents:
   - v01_intro
