@@ -64,7 +64,7 @@
 
       <h1>Analytics Gallery with tidycensuskr</h1>
             
-            <h4 data-toc-skip class="date">January 19, 2026</h4>
+            <h4 data-toc-skip class="date">February 26, 2026</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/sigmafelix/tidycensuskr/blob/main/vignettes/v03_gallery.Rmd" class="external-link"><code>vignettes/v03_gallery.Rmd</code></a></small>
       <div class="d-none name"><code>v03_gallery.Rmd</code></div>
@@ -164,7 +164,7 @@ areas.</p>
 <span></span>
 <span><span class="va">adm2_sf_2020_economy</span> <span class="op">&lt;-</span> <span class="va">adm2_sf_2020_economy</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span></span>
-<span>    cluster <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html" class="external-link">case_when</a></span><span class="op">(</span></span>
+<span>    cluster <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case-and-replace-when.html" class="external-link">case_when</a></span><span class="op">(</span></span>
 <span>      <span class="va">var</span> <span class="op">&gt;</span> <span class="va">mean_var</span> <span class="op">&amp;</span> <span class="va">Ii</span> <span class="op">&gt;</span> <span class="fl">0</span> <span class="op">&amp;</span> <span class="va">pval</span> <span class="op">&lt;=</span> <span class="fl">0.05</span> <span class="op">~</span> <span class="st">"High-High"</span>,</span>
 <span>      <span class="va">var</span> <span class="op">&lt;</span> <span class="va">mean_var</span> <span class="op">&amp;</span> <span class="va">Ii</span> <span class="op">&gt;</span> <span class="fl">0</span> <span class="op">&amp;</span> <span class="va">pval</span> <span class="op">&lt;=</span> <span class="fl">0.05</span> <span class="op">~</span> <span class="st">"Low-Low"</span>,</span>
 <span>      <span class="va">var</span> <span class="op">&gt;</span> <span class="va">mean_var</span> <span class="op">&amp;</span> <span class="va">Ii</span> <span class="op">&lt;</span> <span class="fl">0</span> <span class="op">&amp;</span> <span class="va">pval</span> <span class="op">&lt;=</span> <span class="fl">0.05</span> <span class="op">~</span> <span class="st">"High-Low"</span>,</span>
@@ -235,7 +235,7 @@ using line charts</li>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">class1</span> <span class="op">==</span> <span class="st">"all households"</span>, <span class="va">class2</span> <span class="op">!=</span> <span class="st">"total"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span></span>
 <span>    value <span class="op">=</span> <span class="va">value</span> <span class="op">/</span> <span class="fl">1000</span>,</span>
-<span>    code <span class="op">=</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html" class="external-link">case_when</a></span><span class="op">(</span></span>
+<span>    code <span class="op">=</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/case-and-replace-when.html" class="external-link">case_when</a></span><span class="op">(</span></span>
 <span>      <span class="co"># Michuhol-gu (i.e., 23030 to 23090)</span></span>
 <span>      <span class="va">code</span> <span class="op">==</span> <span class="fl">23030</span> <span class="op">~</span> <span class="fl">23090</span>,</span>
 <span>      <span class="co"># Yeoju-si</span></span>
@@ -273,7 +273,7 @@ using line charts</li>
 <span><span class="va">kr_grid_adm2_sgis_2020</span> <span class="op">&lt;-</span></span>
 <span>  <span class="va">kr_grid_adm2_sgis_2020</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span></span>
-<span>    name <span class="op">=</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html" class="external-link">case_when</a></span><span class="op">(</span></span>
+<span>    name <span class="op">=</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/case-and-replace-when.html" class="external-link">case_when</a></span><span class="op">(</span></span>
 <span>      <span class="fu"><a href="https://rdrr.io/r/base/grep.html" class="external-link">grepl</a></span><span class="op">(</span><span class="st">"^32"</span>, <span class="va">code</span><span class="op">)</span> <span class="op">&amp;</span> <span class="va">name</span> <span class="op">==</span> <span class="st">"Goseong-gun"</span> <span class="op">~</span> <span class="st">"Goseong-gun (GW)"</span>,</span>
 <span>      <span class="fu"><a href="https://rdrr.io/r/base/grep.html" class="external-link">grepl</a></span><span class="op">(</span><span class="st">"^38"</span>, <span class="va">code</span><span class="op">)</span> <span class="op">&amp;</span> <span class="va">name</span> <span class="op">==</span> <span class="st">"Goseong-gun"</span> <span class="op">~</span> <span class="st">"Goseong-gun (GN)"</span>,</span>
 <span>      <span class="fu"><a href="https://rdrr.io/r/base/grep.html" class="external-link">grepl</a></span><span class="op">(</span><span class="st">"^11"</span>, <span class="va">code</span><span class="op">)</span> <span class="op">&amp;</span> <span class="va">name</span> <span class="op">==</span> <span class="st">"Jung-gu"</span> <span class="op">~</span> <span class="st">"Jung-gu (SE)"</span>,</span>

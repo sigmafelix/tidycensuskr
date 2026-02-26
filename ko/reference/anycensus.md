@@ -126,6 +126,22 @@ anycensus(
   aggregator = sum,
   na.rm = TRUE
 )
+#> Warning: There was 1 warning in `dplyr::summarise()`.
+#> ℹ In argument: `dplyr::across(...)`.
+#> ℹ In group 1: `year = 2020`, `type = "tax"`, `adm1 = "Gyeonggi-do"`, `adm1_code
+#>   = 31`.
+#> Caused by warning:
+#> ! The `...` argument of `across()` is deprecated as of dplyr 1.1.0.
+#> Supply arguments directly to `.fns` through an anonymous function instead.
+#> 
+#>   # Previously
+#>   across(a:b, mean, na.rm = TRUE)
+#> 
+#>   # Now
+#>   across(a:b, \(x) mean(x, na.rm = TRUE))
+#> ℹ The deprecated feature was likely used in the tidycensuskr package.
+#>   Please report the issue at
+#>   <https://github.com/sigmafelix/tidycensuskr/issues>.
 #> # A tibble: 3 × 6
 #> # Groups:   year, type, adm1, adm1_code [3]
 #>    year type  adm1        adm1_code income_general_mkr income_labor_mkr

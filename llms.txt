@@ -110,7 +110,7 @@ Here is a simple example of making maps with population data.
 
 ``` r
 library(tidycensuskr)
-#> tidycensuskr 0.2.7 (2026-01-08)
+#> tidycensuskr 0.2.7 (2026-02-26)
 #> Please install the companion data package tidycensuskr.sf to use the district boundaries.
 #> install.packages('tidycensuskr.sf', repos = 'https://sigmafelix.r-universe.dev')
 library(ggplot2)
@@ -125,7 +125,7 @@ library(dplyr)
 #>     intersect, setdiff, setequal, union
 library(tidyr)
 library(sf)
-#> Linking to GEOS 3.12.2, GDAL 3.11.4, PROJ 9.4.1; sf_use_s2() is TRUE
+#> Linking to GEOS 3.12.1, GDAL 3.8.4, PROJ 9.4.0; sf_use_s2() is TRUE
 library(biscale)
 library(cowplot)
 sf_use_s2(FALSE)
@@ -218,9 +218,11 @@ census_housing_2020 <- anycensus(year = 2020, codes = NULL, type = "housing")
 census_housing_2020 <- census_housing_2020 |>
   rename(housing_total_units = `housing types_total_cnt`)
 census_pop_housing_2020 <- census_pop_2020 |>
-  left_join(census_housing_2020 |>
-              select(adm2_code, housing_total_units),
-            by = "adm2_code") |>
+  left_join(
+    census_housing_2020 |>
+      select(adm2_code, housing_total_units),
+    by = "adm2_code"
+  ) |>
   transmute(
     adm2_code = adm2_code,
     persons_per_housing = population_total / housing_total_units
@@ -231,9 +233,11 @@ census_mort_2020 <- census_mort_2020 |>
   rename(mortality_total = `all causes_total_p1p`)
 
 census_pph_mort_2020 <- census_pop_housing_2020 |>
-  left_join(census_mort_2020 |>
-              select(adm2_code, mortality_total),
-            by = "adm2_code")
+  left_join(
+    census_mort_2020 |>
+      select(adm2_code, mortality_total),
+    by = "adm2_code"
+  )
 
 # merge boundaries and census data
 census_2020_sf <- adm2_2020 |>
@@ -248,11 +252,13 @@ census_2020_mapbase <-
   )
 
 # draw a bivariate legend
-legend <- bi_legend(pal = "DkCyan",
-                    dim = 3,
-                    xlab = "More Persons per Housing ",
-                    ylab = "All-Cause Mortality ",
-                    size = 6)
+legend <- bi_legend(
+  pal = "DkCyan",
+  dim = 3,
+  xlab = "More Persons per Housing ",
+  ylab = "All-Cause Mortality ",
+  size = 6
+)
 
 # plot population data
 census_2020_bmap <-
