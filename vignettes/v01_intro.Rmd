@@ -234,7 +234,7 @@ The function `anycensus()` returns a tidy tibble with columns such as:
 Columns containing the values are added as a wide form. The column `adm2_code` links census data directly to boundary files retrieved with `load_districts()`.
 
 ```{r, include = TRUE}
-df_2020 <- anycensus(year = 2020, 
+df_2020 <- anycensus(year = 2020,
                      type = "mortality",
                      level = "adm2")
 head(df_2020)
@@ -243,7 +243,7 @@ head(df_2020)
 The function can also aggregate values to higher administrative units. By specifying `level = "adm1"` and providing an aggregation function, we obtain province-level (`adm1`) results that summarize across all districts.
 
 ```{r, include = TRUE}
-df_2020_sido <- anycensus(year = 2020, 
+df_2020_sido <- anycensus(year = 2020,
                           type = "mortality",
                           level = "adm1",
                           aggregator = mean,
@@ -283,5 +283,4 @@ ggplot(df_2020, aes(x = `all causes_male_p1p`, y = `all causes_female_p1p`)) +
     title = "Male vs. Female Age-standardized Mortality Rates in South Korea (2020)"
   ) +
   theme_minimal(base_size = 10)
-
 ```

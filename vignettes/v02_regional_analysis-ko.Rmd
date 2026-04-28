@@ -28,7 +28,7 @@ library(ggspatial)
 ### 디자인 아이디어
 1. 2010년과 2020년 인구 센서스 데이터를 불러옵니다.
 2. 2020년 행정구역 경계와 병합합니다.
-3. 인구 변화(`change = 2020 − 2010`)를 계산합니다.
+3. 인구 변화(`change = 2020 - 2010`)를 계산합니다.
 4. 경상남도, 부산, 울산으로 하위셋을 만듭니다.
 5. 인구 증감을 보여주는 발산형 색상 지도와, 해당 지역을 강조한 대한민국 인셋 지도를 만듭니다.
 
@@ -45,10 +45,10 @@ data(adm2_sf_2020)
 ```{r filter-merge_1}
 # Load census population data for 2010 and 2020
 df_2010_pop <- anycensus(year = 2010,
-                         codes = c("Gyeongsangnam-do", "Busan", "Ulsan"), 
+                         codes = c("Gyeongsangnam-do", "Busan", "Ulsan"),
                          type = "population")
 df_2020_pop <- anycensus(year = 2020,
-                         codes = c("Gyeongsangnam-do", "Busan", "Ulsan"), 
+                         codes = c("Gyeongsangnam-do", "Busan", "Ulsan"),
                          type = "population")
 
 # Merge with spatial data and compute population change
@@ -72,7 +72,9 @@ map <- ggplot(sf_target) +
     name = "Change"
   ) +
   theme_void() +
-  annotation_scale(location = "tr", width_hint = 0.25, text_cex = 0.7, line_width = 0.7)
+  annotation_scale(
+    location = "tr", width_hint = 0.25, text_cex = 0.7, line_width = 0.7
+  )
 
 # National boundary (union of all districts)
 sf_korea_boundary <- adm2_sf_2020 |>
@@ -91,7 +93,9 @@ korea_inset <- ggplot() +
 # Combine main map and inset
 cowplot::ggdraw() +
   cowplot::draw_plot(map) +
-  cowplot::draw_plot(korea_inset, x = 0.7, y = 0.05, width = 0.25, height = 0.25) +
+  cowplot::draw_plot(
+    korea_inset, x = 0.7, y = 0.05, width = 0.25, height = 0.25
+  ) +
   draw_grob(grid::rectGrob(gp = gpar(col = "black", fill = NA, lwd = 0.6)),
             x = 0.7, y = 0.05, width = 0.25, height = 0.25)
 ```
@@ -104,7 +108,7 @@ cowplot::ggdraw() +
 1. 2020년 인구와 조세 데이터를 불러옵니다.
 2. 일반구가 있는 대도시의 구 단위 데이터가 없으므로, 4자리 접두 수준으로 집계합니다.
 3. 인구와 조세 데이터를 병합합니다.
-4. `biscale::bi_class()` 함수를 사용하여 인구(x)와 조세(y)의 3×3 이변량 분류를 만듭니다.
+4. `biscale::bi_class()` 함수를 사용하여 인구(x)와 조세(y)의 3*3 이변량 분류를 만듭니다.
 5. 사용자 정의 범례와 함께 이변량 단계구분도를 그립니다.
 
 
@@ -207,7 +211,9 @@ df_sma <- anycensus(
 
 # Calculate sex ratio (males per 100 females)
 df_sma <- df_sma |>
-  mutate(sex_ratio = `all households_male_prs` / `all households_female_prs` * 100)
+  mutate(
+    sex_ratio = `all households_male_prs` / `all households_female_prs` * 100
+  )
 
 # Extract overall distribution (all SMA combined)
 df_all <- df_sma |>
@@ -315,10 +321,12 @@ df_ss <- anycensus(year = 2020, type = "social security", level = "adm2")
 
 # Combine data frames
 df_wide <- Reduce(
-  function(x, y) left_join(
-    x, y,
-    by = c("adm1", "adm1_code", "adm2", "adm2_code", "year")
-  ),
+  function(x, y) {
+    left_join(
+      x, y,
+      by = c("adm1", "adm1_code", "adm2", "adm2_code", "year")
+    )
+  },
   list(
     df_hou,
     df_pop,
