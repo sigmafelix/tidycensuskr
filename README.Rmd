@@ -244,3 +244,24 @@ census_2020_bimap <- cowplot::ggdraw() +
 
 census_2020_bimap
 ```
+
+
+## Filter nonautonomous districts
+`detect_adm2_type()` can be used to detect nonautonomous districts (i.e., districts that are not independent administrative units but are part of larger cities, per _Local Autonomy Act_). This is particularly useful when you want to focus on autonomous or nonautonomous districts for analysis.
+
+```{r filter-nonauto}
+# detect nonautonomous districts
+census_pop_2020 <- anycensus(year = 2020, type = "population")
+census_housing_2020 <- anycensus(year = 2020, type = "housing")
+
+census_pop_2020_auto <- detect_adm2_type(census_pop_2020, mode = "atn")
+census_pop_2020_nonauto <- detect_adm2_type(census_pop_2020, mode = "non")
+unique(census_pop_2020_auto$adm2_code)
+unique(census_pop_2020_nonauto$adm2_code)
+
+
+census_housing_2020_auto <- detect_adm2_type(census_housing_2020, mode = "atn")
+census_housing_2020_nonauto <- detect_adm2_type(census_housing_2020, mode = "non")
+unique(census_housing_2020_auto$adm2_code)
+unique(census_housing_2020_nonauto$adm2_code)
+```
