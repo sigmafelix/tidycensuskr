@@ -9,6 +9,8 @@
   and year
 - [`censuskor`](https://sigmafelix.github.io/tidycensuskr/ko/reference/censuskor.md)
   : South Korea Census Data
+- [`detect_adm2_type()`](https://sigmafelix.github.io/tidycensuskr/ko/reference/detect_adm2_type.md)
+  : Detect adm2 type from adm2_code field then return the exact codes
 - [`kr_grid_adm2_sgis_2020`](https://sigmafelix.github.io/tidycensuskr/ko/reference/kr_grid_adm2_sgis_2020.md)
   : geofacet Grid for South Korea Administrative Districts (SGIS
   Standard, 2020)

@@ -233,7 +233,7 @@ Columns containing the values are added as a wide form. The column
 [`load_districts()`](https://sigmafelix.github.io/tidycensuskr/ko/reference/load_districts.md).
 
 ``` r
-df_2020 <- anycensus(year = 2020, 
+df_2020 <- anycensus(year = 2020,
                      type = "mortality",
                      level = "adm2")
 head(df_2020)
@@ -256,7 +256,7 @@ obtain province-level (`adm1`) results that summarize across all
 districts.
 
 ``` r
-df_2020_sido <- anycensus(year = 2020, 
+df_2020_sido <- anycensus(year = 2020,
                           type = "mortality",
                           level = "adm1",
                           aggregator = mean,

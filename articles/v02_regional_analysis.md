@@ -6,7 +6,7 @@
 
 1.  Load 2010 and 2020 census population data.
 2.  Merge with 2020 district boundaries.
-3.  Calculate the population change (`change = 2020 − 2010`).
+3.  Calculate the population change (`change = 2020 - 2010`).
 4.  Subset to Gyeongsangnam-do, Busan, and Ulsan.
 5.  Create a diverging choropleth map to show population
     increase/decrease, with an inset map of Korea highlighting the
@@ -21,11 +21,11 @@ data(adm2_sf_2020)
 
 ``` r
 # Load census population data for 2010 and 2020
-df_2010_pop <- anycensus(year = 2010, 
-                         codes = c("Gyeongsangnam-do", "Busan", "Ulsan"), 
+df_2010_pop <- anycensus(year = 2010,
+                         codes = c("Gyeongsangnam-do", "Busan", "Ulsan"),
                          type = "population")
-df_2020_pop <- anycensus(year = 2020, 
-                         codes = c("Gyeongsangnam-do", "Busan", "Ulsan"), 
+df_2020_pop <- anycensus(year = 2020,
+                         codes = c("Gyeongsangnam-do", "Busan", "Ulsan"),
                          type = "population")
 
 # Merge with spatial data and compute population change
@@ -44,11 +44,13 @@ map <- ggplot(sf_target) +
   labs(title = "Population change between 2010 and 2020") +
   scale_fill_gradient2(
     low = "#2C7BB6", mid = "white", high = "#D7191C",
-    midpoint = 0,                 
+    midpoint = 0,
     name = "Change"
   ) +
   theme_void() +
-  annotation_scale(location = "tr", width_hint = 0.25, text_cex = 0.7, line_width = 0.7)
+  annotation_scale(
+    location = "tr", width_hint = 0.25, text_cex = 0.7, line_width = 0.7
+  )
 
 # National boundary (union of all districts)
 sf_korea_boundary <- adm2_sf_2020 |>
@@ -67,7 +69,9 @@ korea_inset <- ggplot() +
 # Combine main map and inset
 cowplot::ggdraw() +
   cowplot::draw_plot(map) +
-  cowplot::draw_plot(korea_inset, x = 0.7, y = 0.05, width = 0.25, height = 0.25) +
+  cowplot::draw_plot(
+    korea_inset, x = 0.7, y = 0.05, width = 0.25, height = 0.25
+  ) +
   draw_grob(grid::rectGrob(gp = gpar(col = "black", fill = NA, lwd = 0.6)),
             x = 0.7, y = 0.05, width = 0.25, height = 0.25)
 ```
@@ -89,7 +93,7 @@ the province exhibit relatively stable population trends.
 3.  Merge population and tax data.
 4.  Use
     [`biscale::bi_class()`](https://chris-prener.github.io/biscale/reference/bi_class.html)
-    to create a 3×3 bivariate classification of population (x) vs. tax
+    to create a 3\*3 bivariate classification of population (x) vs. tax
     (y).
 5.  Draw a bivariate choropleth map with a custom legend.
 
@@ -97,9 +101,9 @@ the province exhibit relatively stable population trends.
 
 ``` r
 # Load census data
-df_2020_pop <- anycensus(year = 2020, 
+df_2020_pop <- anycensus(year = 2020,
                          type = "population")
-df_2020_tax <- anycensus(year = 2020, 
+df_2020_tax <- anycensus(year = 2020,
                          type = "tax")
 
 # Merge population with boundaries
@@ -178,7 +182,7 @@ few metropolitan centers—fall into the low population–low tax category.
 ### Design idea
 
 1.  Load 2020 population data for Seoul, Gyeonggi-do, and Incheon.
-2.  Calculate the sex ratio (`male/female × 100`).
+2.  Calculate the sex ratio (`male/female * 100`).
 3.  Visualize the distribution of sex ratios:
     - Show the overall distribution as a grey background histogram.
     - Overlay regional distributions (Seoul, Incheon, Gyeonggi-do) in
@@ -198,7 +202,9 @@ df_sma <- anycensus(
 
 # Calculate sex ratio (males per 100 females)
 df_sma <- df_sma |>
-  mutate(sex_ratio = `all households_male_prs` / `all households_female_prs` * 100)
+  mutate(
+    sex_ratio = `all households_male_prs` / `all households_female_prs` * 100
+  )
 
 # Extract overall distribution (all SMA combined)
 df_all <- df_sma |>
@@ -322,10 +328,12 @@ df_ss <- anycensus(year = 2020, type = "social security", level = "adm2")
 
 # Combine data frames
 df_wide <- Reduce(
-  function(x, y) left_join(
-    x, y,
-    by = c("adm1", "adm1_code", "adm2", "adm2_code", "year")
-  ),
+  function(x, y) {
+    left_join(
+      x, y,
+      by = c("adm1", "adm1_code", "adm2", "adm2_code", "year")
+    )
+  },
   list(
     df_hou,
     df_pop,

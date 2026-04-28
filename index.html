@@ -22,7 +22,7 @@
 
     <a class="navbar-brand me-2" href="index.html">tidycensuskr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.7</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.8</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -163,7 +163,7 @@
 <p><code><a href="reference/anycensus.html">anycensus()</a></code> will return an analysis-ready data.frame that can be easily merged with the corresponding boundary <code>sf</code> object from <code><a href="reference/load_districts.html">load_districts()</a></code>. Here is a simple example of making maps with population data.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/sigmafelix/tidycensuskr" class="external-link">tidycensuskr</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; tidycensuskr 0.2.7 (2026-02-26)</span></span>
+<span><span class="co">#&gt; tidycensuskr 0.2.8 (2026-04-28)</span></span>
 <span><span class="co">#&gt; Please install the companion data package tidycensuskr.sf to use the district boundaries.</span></span>
 <span><span class="co">#&gt; install.packages('tidycensuskr.sf', repos = 'https://sigmafelix.r-universe.dev')</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
@@ -325,6 +325,110 @@
 <span></span>
 <span><span class="va">census_2020_bimap</span></span></code></pre></div>
 <p><img src="reference/figures/README-final_map-1.png" alt="" width="100%"></p>
+</div>
+<div class="section level2">
+<h2 id="filter-nonautonomous-districts">Filter nonautonomous districts<a class="anchor" aria-label="anchor" href="#filter-nonautonomous-districts"></a>
+</h2>
+<p><code><a href="reference/detect_adm2_type.html">detect_adm2_type()</a></code> can be used to detect nonautonomous districts (i.e., districts that are not independent administrative units but are part of larger cities, per <em>Local Autonomy Act</em>). This is particularly useful when you want to focus on autonomous or nonautonomous districts for analysis.</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># detect nonautonomous districts</span></span>
+<span><span class="va">census_pop_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>, type <span class="op">=</span> <span class="st">"population"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Using character codes that are convertible to integers. Automatically converting to integers...</span></span>
+<span><span class="va">census_housing_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>, type <span class="op">=</span> <span class="st">"housing"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Using character codes that are convertible to integers. Automatically converting to integers...</span></span>
+<span></span>
+<span><span class="va">census_pop_2020_auto</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/detect_adm2_type.html">detect_adm2_type</a></span><span class="op">(</span><span class="va">census_pop_2020</span>, mode <span class="op">=</span> <span class="st">"atn"</span><span class="op">)</span></span>
+<span><span class="va">census_pop_2020_nonauto</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/detect_adm2_type.html">detect_adm2_type</a></span><span class="op">(</span><span class="va">census_pop_2020</span>, mode <span class="op">=</span> <span class="st">"non"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">census_pop_2020_auto</span><span class="op">$</span><span class="va">adm2_code</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   [1] 33040 34010 37010 38110 35010 37040 31090 31220 31040 34040 33320 37410</span></span>
+<span><span class="co">#&gt;  [13] 34030 36360 35380 31050 21080 22050 24040 26040 23060 21050 34330 38330</span></span>
+<span><span class="co">#&gt;  [25] 37360 37330 34350 32360 37390 32010 33020 25050 22070 22310 36310 34080</span></span>
+<span><span class="co">#&gt;  [37] 33380 11100 21030 22020 25010 24010 23020 26030 11060 31080 32040 11200</span></span>
+<span><span class="co">#&gt;  [49] 21060 33370 11120 11090 11250 23310 36390 11230 32030 21120 11160 31370</span></span>
+<span><span class="co">#&gt;  [61] 38390 38090 11180 21110 34310 21310 37030 38070 35060 31230 35370 33360</span></span>
+<span><span class="co">#&gt;  [73] 36350 36320 34020 37370 32400 38340 31100 37050 31160 35020 37310 31120</span></span>
+<span><span class="co">#&gt;  [85] 11170 36330 31110 11210 11050 31250 31060 24050 36060 37020 37100 34070</span></span>
+<span><span class="co">#&gt;  [97] 23070 38360 36400 21090 38320 36430 38380 31180 38400 32320 32310 34360</span></span>
+<span><span class="co">#&gt; [109] 32370 31240 36370 31210 35030 35350 32390 36380 36450 35340 33030 39010</span></span>
+<span><span class="co">#&gt; [121] 35040 32350 33390 35320 33350 36470 38030 11010 21010 22010 25020 23010</span></span>
+<span><span class="co">#&gt; [133] 11020 26010 11070 11140 23090 38080 36010 36420 35330 37090 36040 21070</span></span>
+<span><span class="co">#&gt; [145] 22040 24030 26020 23050 38350 35050 31130 34060 11110 33330 23320 31140</span></span>
+<span><span class="co">#&gt; [157] 31200 31270 32340 31070 38060 21100 32070 38370 37080 21150 29010 21020</span></span>
+<span><span class="co">#&gt; [169] 22030 25030 24020 23080 34340 11220 11130 39020 11080 11040 37380 31020</span></span>
+<span><span class="co">#&gt; [181] 34050 31150 36480 32060 11240 35360 36030 22060 31010 21140 34380 32050</span></span>
+<span><span class="co">#&gt; [193] 38050 31030 38310 37320 31170 37420 26310 37430 36460 35310 32020 11150</span></span>
+<span><span class="co">#&gt; [205] 32380 31260 31380 38100 32410 37400 31280 31350 36410 37070 37350 11190</span></span>
+<span><span class="co">#&gt; [217] 21040 33340 36440 37060 32330 37340 21130 23040 36020 34370 31190 11030</span></span>
+<span><span class="co">#&gt; [229] 25040</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">census_pop_2020_nonauto</span><span class="op">$</span><span class="va">adm2_code</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   [1] 37040 31220 34040 33320 37410 34030 36360 35380 31050 21080 22050 24040</span></span>
+<span><span class="co">#&gt;  [13] 26040 37012 31023 23060 21050 34330 38330 31191 37360 37330 33044 34350</span></span>
+<span><span class="co">#&gt;  [25] 32360 37390 32010 33020 25050 22070 22310 36310 34080 31092 33380 31101</span></span>
+<span><span class="co">#&gt;  [37] 35012 11100 21030 22020 25010 24010 23020 26030 31042 11060 31080 32040</span></span>
+<span><span class="co">#&gt;  [49] 11200 21060 34011 33370 11120 11090 11250 23310 36390 11230 32030 21120</span></span>
+<span><span class="co">#&gt;  [61] 11160 31370 38390 38090 11180 21110 34310 31192 21310 37030 38070 35060</span></span>
+<span><span class="co">#&gt;  [73] 31230 35370 33360 36350 36320 34020 37370 32400 38340 37050 31160 35020</span></span>
+<span><span class="co">#&gt;  [85] 37310 31120 11170 36330 31110 11210 11050 31250 31060 24050 36060 31012</span></span>
+<span><span class="co">#&gt;  [97] 37020 37100 34070 23070 38360 36400 21090 38320 36430 38380 31180 38400</span></span>
+<span><span class="co">#&gt; [109] 33043 32320 32310 34360 32370 31240 36370 31210 35030 31103 31104 35350</span></span>
+<span><span class="co">#&gt; [121] 32390 31011 36380 36450 35340 33030 39010 35040 32350 33390 35320 33350</span></span>
+<span><span class="co">#&gt; [133] 36470 38115 38030 11010 21010 22010 25020 23010 11020 26010 11070 31022</span></span>
+<span><span class="co">#&gt; [145] 31041 11140 38113 38114 23090 38080 36010 36420 35330 37090 36040 21070</span></span>
+<span><span class="co">#&gt; [157] 22040 24030 26020 37011 23050 38350 35050 31130 34060 11110 33330 23320</span></span>
+<span><span class="co">#&gt; [169] 31140 31200 31013 31270 32340 31070 38060 21100 32070 38370 33041 37080</span></span>
+<span><span class="co">#&gt; [181] 31091 21150 29010 21020 22030 25030 24020 23080 34012 34340 11220 11130</span></span>
+<span><span class="co">#&gt; [193] 39020 11080 11040 37380 38112 34050 33042 31150 36480 32060 11240 31021</span></span>
+<span><span class="co">#&gt; [205] 31193 35360 36030 22060 21140 34380 32050 38050 38111 31030 38310 37320</span></span>
+<span><span class="co">#&gt; [217] 31170 37420 26310 37430 36460 35310 35011 32020 11150 32380 31260 31380</span></span>
+<span><span class="co">#&gt; [229] 38100 32410 37400 31280 31350 36410 37070 37350 11190 21040 33340 36440</span></span>
+<span><span class="co">#&gt; [241] 37060 31014 32330 37340 21130 23040 36020 34370 11030 25040</span></span>
+<span></span>
+<span></span>
+<span><span class="va">census_housing_2020_auto</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/detect_adm2_type.html">detect_adm2_type</a></span><span class="op">(</span><span class="va">census_housing_2020</span>, mode <span class="op">=</span> <span class="st">"atn"</span><span class="op">)</span></span>
+<span><span class="va">census_housing_2020_nonauto</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/detect_adm2_type.html">detect_adm2_type</a></span><span class="op">(</span><span class="va">census_housing_2020</span>, mode <span class="op">=</span> <span class="st">"non"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">census_housing_2020_auto</span><span class="op">$</span><span class="va">adm2_code</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   [1] 33040 34010 35010 37010 38110 37040 31090 31220 31040 34040 33320 37410</span></span>
+<span><span class="co">#&gt;  [13] 34030 36360 35380 31050 21080 22050 24040 26040 23060 21050 34330 38330</span></span>
+<span><span class="co">#&gt;  [25] 37360 37330 34350 32360 37390 32010 33020 25050 22070 22310 36310 34080</span></span>
+<span><span class="co">#&gt;  [37] 33380 11100 21030 22020 23020 24010 25010 26030 11060 31080 32040 11200</span></span>
+<span><span class="co">#&gt;  [49] 21060 33370 11120 11090 11250 23310 36390 11230 32030 11160 21120 31370</span></span>
+<span><span class="co">#&gt;  [61] 38390 38090 11180 21110 34310 21310 37030 38070 35060 31230 35370 33360</span></span>
+<span><span class="co">#&gt;  [73] 36350 36320 34020 37370 32400 38340 31100 37050 31160 35020 37310 31120</span></span>
+<span><span class="co">#&gt;  [85] 11170 36330 31110 11210 11050 31250 31060 24050 36060 37020 37100 34070</span></span>
+<span><span class="co">#&gt;  [97] 23070 38360 36400 21090 38320 36430 38380 31180 38400 32320 32310 34360</span></span>
+<span><span class="co">#&gt; [109] 32370 31240 36370 31210 35030 35350 32390 36380 36450 35340 33030 39010</span></span>
+<span><span class="co">#&gt; [121] 35040 32350 33390 35320 33350 36470 38030 11010 11020 21010 22010 23010</span></span>
+<span><span class="co">#&gt; [133] 25020 26010 11070 11140 23090 38080 36010 36420 35330 37090 36040 21070</span></span>
+<span><span class="co">#&gt; [145] 22040 24030 26020 23050 38350 35050 31130 34060 11110 33330 23320 31140</span></span>
+<span><span class="co">#&gt; [157] 31200 31270 32340 31070 38060 21100 32070 38370 37080 21150 29010 21020</span></span>
+<span><span class="co">#&gt; [169] 22030 23080 24020 25030 34340 11220 11130 39020 11080 11040 37380 31020</span></span>
+<span><span class="co">#&gt; [181] 34050 31150 36480 32060 11240 35360 36030 22060 31010 21140 34380 32050</span></span>
+<span><span class="co">#&gt; [193] 38050 31030 38310 37320 31170 37420 26310 37430 36460 35310 32020 11150</span></span>
+<span><span class="co">#&gt; [205] 32380 31260 31380 38100 32410 37400 31280 31350 36410 37070 37350 11190</span></span>
+<span><span class="co">#&gt; [217] 21040 33340 36440 37060 32330 37340 21130 23040 36020 34370 31190 11030</span></span>
+<span><span class="co">#&gt; [229] 25040</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">census_housing_2020_nonauto</span><span class="op">$</span><span class="va">adm2_code</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   [1] 37040 31220 34040 33320 37410 34030 36360 35380 31050 21080 22050 24040</span></span>
+<span><span class="co">#&gt;  [13] 26040 37012 31023 23060 21050 34330 38330 31191 37360 37330 33044 34350</span></span>
+<span><span class="co">#&gt;  [25] 32360 37390 32010 33020 25050 22070 22310 36310 34080 31092 33380 31101</span></span>
+<span><span class="co">#&gt;  [37] 35012 11100 21030 22020 23020 24010 25010 26030 31042 11060 31080 32040</span></span>
+<span><span class="co">#&gt;  [49] 11200 21060 34011 33370 11120 11090 11250 23310 36390 11230 32030 11160</span></span>
+<span><span class="co">#&gt;  [61] 21120 31370 38390 38090 11180 21110 34310 31192 21310 37030 38070 35060</span></span>
+<span><span class="co">#&gt;  [73] 31230 35370 33360 36350 36320 34020 37370 32400 38340 37050 31160 35020</span></span>
+<span><span class="co">#&gt;  [85] 37310 31120 11170 36330 31110 11210 11050 31250 31060 24050 36060 31012</span></span>
+<span><span class="co">#&gt;  [97] 37020 37100 34070 23070 38360 36400 21090 38320 36430 38380 31180 38400</span></span>
+<span><span class="co">#&gt; [109] 33043 32320 32310 34360 32370 31240 36370 31210 35030 31103 31104 35350</span></span>
+<span><span class="co">#&gt; [121] 32390 31011 36380 36450 35340 33030 39010 35040 32350 33390 35320 33350</span></span>
+<span><span class="co">#&gt; [133] 36470 38115 38030 11010 11020 21010 22010 23010 25020 26010 11070 31022</span></span>
+<span><span class="co">#&gt; [145] 31041 11140 38113 38114 23090 38080 36010 36420 35330 37090 36040 21070</span></span>
+<span><span class="co">#&gt; [157] 22040 24030 26020 37011 23050 38350 35050 31130 34060 11110 33330 23320</span></span>
+<span><span class="co">#&gt; [169] 31140 31200 31013 31270 32340 31070 38060 21100 32070 38370 33041 37080</span></span>
+<span><span class="co">#&gt; [181] 31091 21150 29010 21020 22030 23080 24020 25030 34012 34340 11220 11130</span></span>
+<span><span class="co">#&gt; [193] 39020 11080 11040 37380 38112 34050 33042 31150 36480 32060 11240 31021</span></span>
+<span><span class="co">#&gt; [205] 31193 35360 36030 22060 21140 34380 32050 38050 38111 31030 38310 37320</span></span>
+<span><span class="co">#&gt; [217] 31170 37420 26310 37430 36460 35310 35011 32020 11150 32380 31260 31380</span></span>
+<span><span class="co">#&gt; [229] 38100 32410 37400 31280 31350 36410 37070 37350 11190 21040 33340 36440</span></span>
+<span><span class="co">#&gt; [241] 37060 31014 32330 37340 21130 23040 36020 34370 11030 25040</span></span></code></pre></div>
 </div>
 </div>
 

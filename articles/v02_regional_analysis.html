@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">tidycensuskr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.7</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.8</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,7 +64,7 @@
 
       <h1>Regional analysis with tidycensuskr</h1>
             
-            <h4 data-toc-skip class="date">February 26, 2026</h4>
+            <h4 data-toc-skip class="date">April 28, 2026</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/sigmafelix/tidycensuskr/blob/main/vignettes/v02_regional_analysis.Rmd" class="external-link"><code>vignettes/v02_regional_analysis.Rmd</code></a></small>
       <div class="d-none name"><code>v02_regional_analysis.Rmd</code></div>
@@ -82,7 +82,7 @@
 <li>Load 2010 and 2020 census population data.</li>
 <li>Merge with 2020 district boundaries.</li>
 <li>Calculate the population change
-(<code>change = 2020 − 2010</code>).</li>
+(<code>change = 2020 - 2010</code>).</li>
 <li>Subset to Gyeongsangnam-do, Busan, and Ulsan.</li>
 <li>Create a diverging choropleth map to show population
 increase/decrease, with an inset map of Korea highlighting the
@@ -97,11 +97,11 @@ region.</li>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">adm2_sf_2020</span><span class="op">)</span></span></code></pre></div>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load census population data for 2010 and 2020</span></span>
-<span><span class="va">df_2010_pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2010</span>, </span>
-<span>                         codes <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Gyeongsangnam-do"</span>, <span class="st">"Busan"</span>, <span class="st">"Ulsan"</span><span class="op">)</span>, </span>
+<span><span class="va">df_2010_pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2010</span>,</span>
+<span>                         codes <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Gyeongsangnam-do"</span>, <span class="st">"Busan"</span>, <span class="st">"Ulsan"</span><span class="op">)</span>,</span>
 <span>                         type <span class="op">=</span> <span class="st">"population"</span><span class="op">)</span></span>
-<span><span class="va">df_2020_pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>, </span>
-<span>                         codes <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Gyeongsangnam-do"</span>, <span class="st">"Busan"</span>, <span class="st">"Ulsan"</span><span class="op">)</span>, </span>
+<span><span class="va">df_2020_pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>,</span>
+<span>                         codes <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Gyeongsangnam-do"</span>, <span class="st">"Busan"</span>, <span class="st">"Ulsan"</span><span class="op">)</span>,</span>
 <span>                         type <span class="op">=</span> <span class="st">"population"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Merge with spatial data and compute population change</span></span>
@@ -120,11 +120,13 @@ region.</li>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Population change between 2010 and 2020"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_gradient.html" class="external-link">scale_fill_gradient2</a></span><span class="op">(</span></span>
 <span>    low <span class="op">=</span> <span class="st">"#2C7BB6"</span>, mid <span class="op">=</span> <span class="st">"white"</span>, high <span class="op">=</span> <span class="st">"#D7191C"</span>,</span>
-<span>    midpoint <span class="op">=</span> <span class="fl">0</span>,                 </span>
+<span>    midpoint <span class="op">=</span> <span class="fl">0</span>,</span>
 <span>    name <span class="op">=</span> <span class="st">"Change"</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_void</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">annotation_scale</span><span class="op">(</span>location <span class="op">=</span> <span class="st">"tr"</span>, width_hint <span class="op">=</span> <span class="fl">0.25</span>, text_cex <span class="op">=</span> <span class="fl">0.7</span>, line_width <span class="op">=</span> <span class="fl">0.7</span><span class="op">)</span></span>
+<span>  <span class="fu">annotation_scale</span><span class="op">(</span></span>
+<span>    location <span class="op">=</span> <span class="st">"tr"</span>, width_hint <span class="op">=</span> <span class="fl">0.25</span>, text_cex <span class="op">=</span> <span class="fl">0.7</span>, line_width <span class="op">=</span> <span class="fl">0.7</span></span>
+<span>  <span class="op">)</span></span>
 <span></span>
 <span><span class="co"># National boundary (union of all districts)</span></span>
 <span><span class="va">sf_korea_boundary</span> <span class="op">&lt;-</span> <span class="va">adm2_sf_2020</span> <span class="op">|&gt;</span></span>
@@ -143,7 +145,9 @@ region.</li>
 <span><span class="co"># Combine main map and inset</span></span>
 <span><span class="fu">cowplot</span><span class="fu">::</span><span class="fu"><a href="https://wilkelab.org/cowplot/reference/ggdraw.html" class="external-link">ggdraw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu">cowplot</span><span class="fu">::</span><span class="fu"><a href="https://wilkelab.org/cowplot/reference/draw_plot.html" class="external-link">draw_plot</a></span><span class="op">(</span><span class="va">map</span><span class="op">)</span> <span class="op">+</span></span>
-<span>  <span class="fu">cowplot</span><span class="fu">::</span><span class="fu"><a href="https://wilkelab.org/cowplot/reference/draw_plot.html" class="external-link">draw_plot</a></span><span class="op">(</span><span class="va">korea_inset</span>, x <span class="op">=</span> <span class="fl">0.7</span>, y <span class="op">=</span> <span class="fl">0.05</span>, width <span class="op">=</span> <span class="fl">0.25</span>, height <span class="op">=</span> <span class="fl">0.25</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu">cowplot</span><span class="fu">::</span><span class="fu"><a href="https://wilkelab.org/cowplot/reference/draw_plot.html" class="external-link">draw_plot</a></span><span class="op">(</span></span>
+<span>    <span class="va">korea_inset</span>, x <span class="op">=</span> <span class="fl">0.7</span>, y <span class="op">=</span> <span class="fl">0.05</span>, width <span class="op">=</span> <span class="fl">0.25</span>, height <span class="op">=</span> <span class="fl">0.25</span></span>
+<span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://wilkelab.org/cowplot/reference/draw_grob.html" class="external-link">draw_grob</a></span><span class="op">(</span><span class="fu">grid</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/grid/grid.rect.html" class="external-link">rectGrob</a></span><span class="op">(</span>gp <span class="op">=</span> <span class="fu">gpar</span><span class="op">(</span>col <span class="op">=</span> <span class="st">"black"</span>, fill <span class="op">=</span> <span class="cn">NA</span>, lwd <span class="op">=</span> <span class="fl">0.6</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>            x <span class="op">=</span> <span class="fl">0.7</span>, y <span class="op">=</span> <span class="fl">0.05</span>, width <span class="op">=</span> <span class="fl">0.25</span>, height <span class="op">=</span> <span class="fl">0.25</span><span class="op">)</span></span></code></pre></div>
 <p><img src="v02_regional_analysis_files/figure-html/choropleth_1-1.png" class="r-plt" alt="" width="672">
@@ -165,7 +169,7 @@ the province exhibit relatively stable population trends.</p>
 cities, aggregate district-level (<code>adm2_code</code>) data to the
 4-digit prefix level.</li>
 <li>Merge population and tax data.</li>
-<li>Use <code><a href="https://chris-prener.github.io/biscale/reference/bi_class.html" class="external-link">biscale::bi_class()</a></code> to create a 3×3 bivariate
+<li>Use <code><a href="https://chris-prener.github.io/biscale/reference/bi_class.html" class="external-link">biscale::bi_class()</a></code> to create a 3*3 bivariate
 classification of population (x) vs. tax (y).</li>
 <li>Draw a bivariate choropleth map with a custom legend.</li>
 </ol>
@@ -175,9 +179,9 @@ classification of population (x) vs. tax (y).</li>
 </h3>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Load census data</span></span>
-<span><span class="va">df_2020_pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>, </span>
+<span><span class="va">df_2020_pop</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>,</span>
 <span>                         type <span class="op">=</span> <span class="st">"population"</span><span class="op">)</span></span>
-<span><span class="va">df_2020_tax</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>, </span>
+<span><span class="va">df_2020_tax</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>,</span>
 <span>                         type <span class="op">=</span> <span class="st">"tax"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Merge population with boundaries</span></span>
@@ -258,7 +262,7 @@ category.</p>
 </h3>
 <ol style="list-style-type: decimal">
 <li>Load 2020 population data for Seoul, Gyeonggi-do, and Incheon.</li>
-<li>Calculate the sex ratio (<code>male/female × 100</code>).</li>
+<li>Calculate the sex ratio (<code>male/female * 100</code>).</li>
 <li>Visualize the distribution of sex ratios:
 <ul>
 <li>Show the overall distribution as a grey background histogram.</li>
@@ -283,7 +287,9 @@ centered on 100 (balanced sex ratio).</li>
 <span></span>
 <span><span class="co"># Calculate sex ratio (males per 100 females)</span></span>
 <span><span class="va">df_sma</span> <span class="op">&lt;-</span> <span class="va">df_sma</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>sex_ratio <span class="op">=</span> <span class="va">`all households_male_prs`</span> <span class="op">/</span> <span class="va">`all households_female_prs`</span> <span class="op">*</span> <span class="fl">100</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span></span>
+<span>    sex_ratio <span class="op">=</span> <span class="va">`all households_male_prs`</span> <span class="op">/</span> <span class="va">`all households_female_prs`</span> <span class="op">*</span> <span class="fl">100</span></span>
+<span>  <span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Extract overall distribution (all SMA combined)</span></span>
 <span><span class="va">df_all</span> <span class="op">&lt;-</span> <span class="va">df_sma</span> <span class="op">|&gt;</span></span>
@@ -409,10 +415,12 @@ the results using a biplot</li>
 <span></span>
 <span><span class="co"># Combine data frames</span></span>
 <span><span class="va">df_wide</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/funprog.html" class="external-link">Reduce</a></span><span class="op">(</span></span>
-<span>  <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">left_join</a></span><span class="op">(</span></span>
-<span>    <span class="va">x</span>, <span class="va">y</span>,</span>
-<span>    by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"adm1"</span>, <span class="st">"adm1_code"</span>, <span class="st">"adm2"</span>, <span class="st">"adm2_code"</span>, <span class="st">"year"</span><span class="op">)</span></span>
-<span>  <span class="op">)</span>,</span>
+<span>  <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span> <span class="op">{</span></span>
+<span>    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">left_join</a></span><span class="op">(</span></span>
+<span>      <span class="va">x</span>, <span class="va">y</span>,</span>
+<span>      by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"adm1"</span>, <span class="st">"adm1_code"</span>, <span class="st">"adm2"</span>, <span class="st">"adm2_code"</span>, <span class="st">"year"</span><span class="op">)</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">}</span>,</span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
 <span>    <span class="va">df_hou</span>,</span>
 <span>    <span class="va">df_pop</span>,</span>
