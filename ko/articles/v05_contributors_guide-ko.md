@@ -181,38 +181,38 @@ KOSIS 데이터 정제는 `adm2_code` 값이 올바르게 할당되도록 특별
 데이터 소스에 따라 어떤 코드나 이름 컬럼을 사용할지에 대한 가이드는 아래
 참조 테이블을 확인하세요:
 
-| type            | class1                                             | reference_code_field  | Sources            | Data producer      | Table name               | Notes       |
-|-----------------|----------------------------------------------------|-----------------------|--------------------|--------------------|--------------------------|-------------|
-| economy         | company                                            | adm2_code             | 경제총조사         | 통계청             |                          |             |
-| economy         | grdp                                               | adm2_code             | 지역소득           | 통계청             |                          |             |
-| environment     | organic_matter, wastewater                         |                       | NA                 |                    |                          | Korean only |
-| housing         | housing types                                      | sgg_housing           | 주택총조사         | 통계청             | 주택유형별 주택수        |             |
-|                 |                                                    |                       | 실거래가격지수     | 한국부동산원       | NA                       |             |
-| housing         | vacant housing                                     |                       | NA                 |                    |                          | Korean only |
-|                 |                                                    |                       | NA                 |                    |                          | Korean only |
-|                 |                                                    |                       | NA                 |                    |                          | Korean only |
-| population      | all households                                     | sgg_population        | 인구총조사         | 통계청             | 인구, 가구 및 주택       |             |
-| mortality       | All causes                                         | adm2_code             | 인구동태통계       | 통계청             | 사망 및 사망률…          |             |
-| migration       | marital                                            | sgg_doj               | 출입국통계         | 법무부             | 체류지별 결혼이민자 현황 |             |
-|                 |                                                    |                       | 국내이동통계       | 통계청             | 시군구별 이동자 수       |             |
-|                 |                                                    | adm2_code             | 인구동태통계       | 통계청             | 시군구별 월별 이혼       |             |
-|                 |                                                    | adm2_code             | 인구동태통계       | 통계청             | 시군구별 월별 혼인       |             |
-| population      | fertility                                          | adm2_code             | 인구동태통계       | 통계청             | 시군구별 합계출산율…     |             |
-| medicine        | doctors                                            | adm2_code             | 건강보험통계연보   | 건강보험심사평가원 | NA                       |             |
-|                 |                                                    | adm2_code             | 건강보험통계연보   | 건강보험심사평가원 | NA                       |             |
-|                 |                                                    |                       | 지역사회건강조사   | 질병관리청         | 월간 음주율              |             |
-| tax             | income                                             | sgg_tax_income        | 국세통계           | 국세청             |                          | Korean only |
-|                 | general                                            | sgg_tax_general       | 국세통계           | 국세청             |                          | Korean only |
-|                 |                                                    |                       | 국세통계           | 국세청             | NA                       | Korean only |
-|                 |                                                    |                       | 국세통계           | 국세청             | NA                       | Korean only |
-|                 |                                                    |                       | 국세통계           | 국세청             | NA                       | Korean only |
-|                 |                                                    |                       | 자동차주행거리통계 | 한국교통안전공단   | 시군구별 차종별 주행거리 |             |
-|                 |                                                    |                       | 국민연금통계       | 국민연금공단       | NA                       |             |
-| welfare         | facilities                                         | sido_en, sigungu_2_en | 복지통계           | 한국사회보장정보원 |                          | Korean only |
-| welfare         | registered physically mentally challenged          | sido_en, sigungu_2_en | 복지통계           | 한국사회보장정보원 |                          | Korean only |
-| welfare         | registered physically mentally challenged severity | sido_en, sigungu_2_en | 복지통계           | 한국사회보장정보원 |                          | Korean only |
-| social security | basic living security                              | sido_en, sigungu_2_en | 복지통계           | 한국사회보장정보원 |                          | Korean only |
-| social security | basic pension                                      | sido_en, sigungu_2_en | 복지통계           | 한국사회보장정보원 |                          | Korean only |
+| type | class1 | reference_code_field | Sources | Data producer | Table name | Notes |
+|----|----|----|----|----|----|----|
+| economy | company | adm2_code | 경제총조사 | 통계청 |  |  |
+| economy | grdp | adm2_code | 지역소득 | 통계청 |  |  |
+| environment | organic_matter, wastewater |  | NA |  |  | Korean only |
+| housing | housing types | sgg_housing | 주택총조사 | 통계청 | 주택유형별 주택수 |  |
+|  |  |  | 실거래가격지수 | 한국부동산원 | NA |  |
+| housing | vacant housing |  | NA |  |  | Korean only |
+|  |  |  | NA |  |  | Korean only |
+|  |  |  | NA |  |  | Korean only |
+| population | all households | sgg_population | 인구총조사 | 통계청 | 인구, 가구 및 주택 |  |
+| mortality | All causes | adm2_code | 인구동태통계 | 통계청 | 사망 및 사망률… |  |
+| migration | marital | sgg_doj | 출입국통계 | 법무부 | 체류지별 결혼이민자 현황 |  |
+|  |  |  | 국내이동통계 | 통계청 | 시군구별 이동자 수 |  |
+|  |  | adm2_code | 인구동태통계 | 통계청 | 시군구별 월별 이혼 |  |
+|  |  | adm2_code | 인구동태통계 | 통계청 | 시군구별 월별 혼인 |  |
+| population | fertility | adm2_code | 인구동태통계 | 통계청 | 시군구별 합계출산율… |  |
+| medicine | doctors | adm2_code | 건강보험통계연보 | 건강보험심사평가원 | NA |  |
+|  |  | adm2_code | 건강보험통계연보 | 건강보험심사평가원 | NA |  |
+|  |  |  | 지역사회건강조사 | 질병관리청 | 월간 음주율 |  |
+| tax | income | sgg_tax_income | 국세통계 | 국세청 |  | Korean only |
+|  | general | sgg_tax_general | 국세통계 | 국세청 |  | Korean only |
+|  |  |  | 국세통계 | 국세청 | NA | Korean only |
+|  |  |  | 국세통계 | 국세청 | NA | Korean only |
+|  |  |  | 국세통계 | 국세청 | NA | Korean only |
+|  |  |  | 자동차주행거리통계 | 한국교통안전공단 | 시군구별 차종별 주행거리 |  |
+|  |  |  | 국민연금통계 | 국민연금공단 | NA |  |
+| welfare | facilities | sido_en, sigungu_2_en | 복지통계 | 한국사회보장정보원 |  | Korean only |
+| welfare | registered physically mentally challenged | sido_en, sigungu_2_en | 복지통계 | 한국사회보장정보원 |  | Korean only |
+| welfare | registered physically mentally challenged severity | sido_en, sigungu_2_en | 복지통계 | 한국사회보장정보원 |  | Korean only |
+| social security | basic living security | sido_en, sigungu_2_en | 복지통계 | 한국사회보장정보원 |  | Korean only |
+| social security | basic pension | sido_en, sigungu_2_en | 복지통계 | 한국사회보장정보원 |  | Korean only |
 
 ### 후처리 예제 코드
 
@@ -225,6 +225,7 @@ KOSIS 데이터 정제는 `adm2_code` 값이 올바르게 할당되도록 특별
 가정합니다.
 
 ``` r
+
 library(dplyr)
 
 # fixed path to the lookup table
@@ -254,6 +255,7 @@ cleaned_data <- pratedata |>
 컬럼이 포함되어 있다고 합시다.
 
 ``` r
+
 library(dplyr)
 
 # fixed path to the lookup table

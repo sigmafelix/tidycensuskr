@@ -28,6 +28,7 @@ concentrated and where they are sparse relative to neighboring areas.
 ### Data prep
 
 ``` r
+
 # Load 2020 boundaries
 data(adm2_sf_2020)
 
@@ -46,6 +47,7 @@ var <- adm2_sf_2020_economy$company_total_cnt
 ### Global Moran’s I
 
 ``` r
+
 # Build neighbors (queen contiguity) and spatial weights
 nb <- poly2nb(adm2_sf_2020_economy, queen = TRUE)
 lw <- nb2listw(nb, style = "W", zero.policy = TRUE)
@@ -71,6 +73,7 @@ global_moran
 ### Local Moran’s I and LISA map
 
 ``` r
+
 # Local Moran's I
 local_moran <- localmoran(var, lw, zero.policy = TRUE)
 
@@ -136,6 +139,7 @@ industrial and business units in peripheral provinces.
     using line charts
 
 ``` r
+
 # load packages
 library(geofacet)
 
@@ -183,6 +187,7 @@ head(pop)
     ## 6  2010 Seoul        11 Jongno-gu 11010 population all house… male   pers…  71.3
 
 ``` r
+
 # for a geofacet plot
 # map codes to district names for facet labels
 pop_name_map <- pop %>%
@@ -237,6 +242,7 @@ This design highlights heterogeneous local population trajectories while
 preserving a sense of national spatial structure.
 
 ``` r
+
 ggplot(data = pop) +
   geom_line(
     aes(x = year, y = value, group = interaction(adm2, class2), color = class2),

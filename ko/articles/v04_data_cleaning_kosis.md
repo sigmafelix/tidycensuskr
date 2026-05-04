@@ -1,6 +1,7 @@
 # Data Cleaning: From KOSIS Raw Data to Tidy Format
 
 ``` r
+
 library(tidycensuskr)
 library(dplyr)
 library(tidyr)
@@ -70,26 +71,26 @@ You need to know following information to retrieve data from KOSIS API:
 
 To note, an output can include the following variables:
 
-| Field name (all caps)         | Description                 | Data type      | Remarks                           |
-|-------------------------------|-----------------------------|----------------|-----------------------------------|
-| ORG_ID                        | Organization code           | VARCHAR2(40)   | Yes                               |
-| TBL_ID                        | Table identifier            | VARCHAR2(40)   |                                   |
-| TBL_NM                        | Table name                  | VARCHAR2(300)  |                                   |
-| C1 - C8                       | Class identifier (1-8)      | VARCHAR2(40)   | 2-8 may be omitted if nonexisting |
-| C1_OBJ_NM - C8_OBJ_NM         | Class code (1-8)            | VARCHAR2(3000) |                                   |
-| C1_OBJ_NM_ENG - C8_OBJ_NM_ENG | Class code in English (1-8) | VARCHAR2(3000) |                                   |
-| C1_NM - C8_NM                 | Class name (1-8)            | VARCHAR2(3000) |                                   |
-| C1_NM_ENG - C8_NM_ENG         | Class name in English (1-8) | VARCHAR2(3000) |                                   |
-| ITM_ID                        | Item identifier             | VARCHAR2(40)   |                                   |
-| ITM_NM                        | Item name                   | VARCHAR2(3000) |                                   |
-| ITM_NM_ENG                    | Item name in English        | VARCHAR2(3000) |                                   |
-| UNIT_ID                       | Unit identifier             | VARCHAR2(40)   |                                   |
-| UNIT_NM                       | Unit name                   | VARCHAR2(1000) |                                   |
-| UNIT_NM_ENG                   | Unit name in English        | VARCHAR2(1000) |                                   |
-| PRD_SE                        | Data update cycle           | VARCHAR2(20)   |                                   |
-| PRD_DE                        | Data period                 | VARCHAR2(8)    |                                   |
-| DT                            | Data value                  | VARCHAR2(100)  |                                   |
-| LST_CHN_DE                    | Date of change              | VARCHAR2(8)    |                                   |
+| Field name (all caps) | Description | Data type | Remarks |
+|----|----|----|----|
+| ORG_ID | Organization code | VARCHAR2(40) | Yes |
+| TBL_ID | Table identifier | VARCHAR2(40) |  |
+| TBL_NM | Table name | VARCHAR2(300) |  |
+| C1 - C8 | Class identifier (1-8) | VARCHAR2(40) | 2-8 may be omitted if nonexisting |
+| C1_OBJ_NM - C8_OBJ_NM | Class code (1-8) | VARCHAR2(3000) |  |
+| C1_OBJ_NM_ENG - C8_OBJ_NM_ENG | Class code in English (1-8) | VARCHAR2(3000) |  |
+| C1_NM - C8_NM | Class name (1-8) | VARCHAR2(3000) |  |
+| C1_NM_ENG - C8_NM_ENG | Class name in English (1-8) | VARCHAR2(3000) |  |
+| ITM_ID | Item identifier | VARCHAR2(40) |  |
+| ITM_NM | Item name | VARCHAR2(3000) |  |
+| ITM_NM_ENG | Item name in English | VARCHAR2(3000) |  |
+| UNIT_ID | Unit identifier | VARCHAR2(40) |  |
+| UNIT_NM | Unit name | VARCHAR2(1000) |  |
+| UNIT_NM_ENG | Unit name in English | VARCHAR2(1000) |  |
+| PRD_SE | Data update cycle | VARCHAR2(20) |  |
+| PRD_DE | Data period | VARCHAR2(8) |  |
+| DT | Data value | VARCHAR2(100) |  |
+| LST_CHN_DE | Date of change | VARCHAR2(8) |  |
 
 It is worth noting that all fields are character, and numeric values are
 stored as strings. This means that you will need to convert them to
@@ -113,21 +114,22 @@ Dissecting this URL can help you understand how to construct your own
 API calls.
 
 ``` r
+
 url_tax_general <- 
   "https://kosis.kr/openapi/Param/statisticsParameterData.do?method=getList&apiKey=인증키없음&itmId=T001+&objL1=A0201+A0202+A0203+A0204+A0205+A0206+A0207+A0208+A0209+A0210+A0211+A0212+A0213+A0214+A0215+A0216+A0217+A0218+A0219+A0220+A0221+A0222+A0223+A0224+A0225+A0301+A0302+A0303+A0304+A0305+A0306+A0307+A0308+A0309+A0310+A0401+A0402+A0403+A0404+A0405+A0406+A0407+A0408+A0409+A0410+A0411+A0412+A0413+A0414+A0415+A0416+A0417+A0418+A0419+A0420+A0421+A0422+A0423+A0424+A0425+A0426+A0427+A0428+A0429+A0430+A0431+A0501+A0502+A0503+A0504+A0505+A0506+A0507+A0508+A0509+A0510+A0511+A0512+A0513+A0514+A0515+A0516+A0517+A0518+A0601+A0602+A0603+A0604+A0605+A0701+A0702+A0703+A0704+A0705+A0706+A0707+A0708+A0709+A0710+A0711+A0801+A0802+A0803+A0804+A0805+A0806+A0807+A0808+A0809+A0810+A0811+A0812+A0813+A0814+A0815+A09+A1001+A1002+A1003+A1004+A1005+A1101+A1102+A1103+A1104+A1105+A1106+A1107+A1108+A1109+A1110+A1111+A1112+A1113+A1114+A1201+A1202+A1203+A1204+A1205+A1206+A1207+A1208+A1209+A1210+A1211+A1212+A1213+A1214+A1215+A1216+A1217+A1218+A1219+A1220+A1221+A1222+A1309+A1301+A1302+A1303+A1304+A1305+A1306+A1307+A1308+A1401+A1402+A1403+A1404+A1405+A1406+A1407+A1408+A1409+A1410+A1411+A1412+A1413+A1414+A1415+A1416+A1417+A1418+A1419+A1420+A1421+A1422+A1423+A1501+A1502+A1503+A1504+A1505+A1506+A1507+A1508+A1509+A1510+A1511+A1512+A1513+A1514+A1515+A1516+A1601+A1602+A1603+A1604+A1605+A1701+A1702+A1703+A1704+A1705+A1706+A1707+A1708+A1709+A1710+A1711+A1712+A1713+A1714+A1715+A1716+A1717+A1718+A1802+A1801+&objL2=15133SGH0M+&objL3=&objL4=&objL5=&objL6=&objL7=&objL8=&format=json&jsonVD=Y&prdSe=Y&newEstPrdCnt=1&outputFields=TBL_ID+TBL_NM+OBJ_ID+OBJ_NM+OBJ_NM_ENG+NM+NM_ENG+ITM_ID+ITM_NM+ITM_NM_ENG+UNIT_NM+UNIT_NM_ENG+&orgId=133&tblId=DT_133N_A3212"
 ```
 
-| Parameter      | Value                                                                  |
-|----------------|------------------------------------------------------------------------|
-| `apiKey`       | “인증키없음” (meaning “no authentication”) as it is for demonstration. |
-| `orgId`        | “133”                                                                  |
-| `tblId`        | “DT_133N_A3212”                                                        |
-| `objL1`        | “A0201”, “A0202”, … , “A1801”                                          |
-| `objL2`        | “15133SGH0M”                                                           |
-| `itmId`        | “T001”                                                                 |
-| `prdSe`        | “Y”                                                                    |
-| `newEstPrdCnt` | “1”                                                                    |
-| `outputFields` | “TBL_ID”, “TBL_NM”, … , “UNIT_NM_ENG”                                  |
+| Parameter | Value |
+|----|----|
+| `apiKey` | “인증키없음” (meaning “no authentication”) as it is for demonstration. |
+| `orgId` | “133” |
+| `tblId` | “DT_133N_A3212” |
+| `objL1` | “A0201”, “A0202”, … , “A1801” |
+| `objL2` | “15133SGH0M” |
+| `itmId` | “T001” |
+| `prdSe` | “Y” |
+| `newEstPrdCnt` | “1” |
+| `outputFields` | “TBL_ID”, “TBL_NM”, … , “UNIT_NM_ENG” |
 
 Adding more context, multiple values for `objL1` and `itmId` can be
 specified by separating them with a plus sign (`+`). For example,
@@ -137,6 +139,7 @@ Try interpreting the following URL to understand how to construct your
 own API calls:
 
 ``` r
+
 url_pop <-
   "https://kosis.kr/openapi/Param/statisticsParameterData.do?method=getList&apiKey=인증키없음&itmId=T00+T60+&objL1=11010+11020+11030+11040+11050+11060+11070+11080+11090+11100+11110+11120+11130+11140+11150+11160+11170+11180+11190+11200+11210+11220+11230+11240+11250+21010+21020+21030+21040+21050+21060+21070+21080+21090+21100+21110+21120+21130+21140+21150+21510+22010+22020+22030+22040+22050+22060+22070+22510+22520+23010+23020+23030+23040+23050+23060+23070+23080+23090+23510+23520+24010+24020+24030+24040+24050+25010+25020+25030+25040+25050+26010+26020+26030+26040+26510+29010+31010+31011+31012+31013+31014+31020+31021+31022+31023+31030+31040+31041+31042+31050+31051+31052+31053+31060+31070+31080+31090+31091+31092+31100+31101+31103+31104+31110+31120+31130+31140+31150+31160+31170+31180+31190+31191+31192+31193+31200+31210+31220+31230+31240+31250+31260+31270+31280+31550+31570+31580+32010+32020+32030+32040+32050+32060+32070+32510+32520+32530+32540+32550+32560+32570+32580+32590+32600+32610+33020+33030+33040+33041+33042+33043+33044+33520+33530+33540+33550+33560+33570+33580+33590+34010+34011+34012+34020+34030+34040+34050+34060+34070+34080+34510+34530+34540+34550+34560+34570+34580+35010+35011+35012+35020+35030+35040+35050+35060+35510+35520+35530+35540+35550+35560+35570+35580+36010+36020+36030+36040+36060+36510+36520+36530+36550+36560+36570+36580+36590+36600+36610+36620+36630+36640+36650+36660+36670+36680+37010+37011+37012+37020+37030+37040+37050+37060+37070+37080+37090+37100+37510+37520+37530+37540+37550+37560+37570+37580+37590+37600+37610+37620+37630+38030+38050+38060+38070+38080+38090+38100+38110+38111+38112+38113+38114+38115+38510+38520+38530+38540+38550+38560+38570+38580+38590+38600+39010+39020+&objL2=ALL&objL3=000+&objL4=&objL5=&objL6=&objL7=&objL8=&format=json&jsonVD=Y&prdSe=Y&newEstPrdCnt=1&outputFields=TBL_ID+TBL_NM+OBJ_ID+OBJ_NM+OBJ_NM_ENG+NM+NM_ENG+ITM_ID+ITM_NM+ITM_NM_ENG+UNIT_NM+UNIT_NM_ENG+&orgId=101&tblId=DT_1IN1509"
 ```
@@ -146,6 +149,7 @@ url_pop <-
 ### Setting up API Access
 
 ``` r
+
 library(tidycensuskr)
 library(dplyr)
 library(tidyr)
@@ -159,6 +163,7 @@ tidycensuskr::set_kosis_key("~/.kosiskey")
 ### Downloading Raw Data
 
 ``` r
+
 # Download raw datasets from KOSIS API
 df_tax <- kosis::getStatDataFromURL(url_tax_general)
 
@@ -181,6 +186,7 @@ The first challenge is creating a consistent mapping between different
 administrative code systems used across datasets:
 
 ``` r
+
 # Create administrative code mapping for provinces (sido)
 sidocd_range <- tibble::tribble(
   ~sido_kr, ~sido_cd, ~sido_txcd,
@@ -209,6 +215,7 @@ sidocd_range <- tibble::tribble(
 Transform raw tax data into a standardized format:
 
 ``` r
+
 df_tax_compact <- df_tax |>
   dplyr::transmute(
     adm2_code = C1,           # Administrative code
@@ -225,6 +232,7 @@ df_tax_compact <- df_tax |>
 Clean and reshape population data with gender disaggregation:
 
 ``` r
+
 df_pop2 <- df_pop |>
   dplyr::mutate(
     sex = plyr::mapvalues(C2, c(0, 1, 2), c("total", "male", "female")),
@@ -257,6 +265,7 @@ multiple-dataset structure into a single, long-format tidy dataset:
 ### 1. Convert Each Dataset to Long Format
 
 ``` r
+
 # Tax data to long format
 df_tax_long <- df_tax_compact |>
   dplyr::select(2:5) |>
@@ -283,6 +292,7 @@ df_pop_long <- df_pop2 |>
 ### 2. Combine into Single Tidy Dataset
 
 ``` r
+
 # Bind all datasets into one comprehensive long-format dataset
 censuskor <- dplyr::bind_rows(
     df_tax_long,
@@ -320,6 +330,7 @@ The final `censuskor` dataset has a consistent structure:
 ### Example Usage
 
 ``` r
+
 library(tidycensuskr)
 library(dplyr)
 
@@ -358,6 +369,7 @@ datasets retain the old codes. Therefore, developers should be advised
 to check the `adm2_code` for each dataset and year with this code:
 
 ``` r
+
 # imported data
 some_census_table
 

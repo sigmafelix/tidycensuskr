@@ -12,6 +12,7 @@ statistics linked with geospatial boundaries.
 You can install the released version of `tidycensuskr` from CRAN with:
 
 ``` r
+
 # CRAN
 install.packages("tidycensuskr")
 
@@ -23,6 +24,7 @@ To install the development version, `remotes::install_github()` will
 suffice.
 
 ``` r
+
 # Development version from GitHub
 rlang::check_installed("remotes")
 remotes::install_github("sigmafelix/tidycensuskr")
@@ -48,6 +50,7 @@ As of September 2025, this package contains two datasets: Census data
   for three census years (2010, 2015, 2020).
 
 ``` r
+
 # loading Seoul population data
 tidycensuskr::anycensus(codes = "Seoul", type = "population")
 #> # A tibble: 25 × 17
@@ -90,6 +93,7 @@ tidycensuskr::anycensus(codes = "Seoul", type = "population")
   `install.packages("tidycensuskr.sf", repos = "https://sigmafelix.r-universe.dev")`.
 
 ``` r
+
 # loading boundary sf file: 2020 boundaries are included in this package
 data(adm2_sf_2020)
 # tidycensuskr.sf::load_districts(year = 2020)
@@ -109,6 +113,7 @@ the corresponding boundary `sf` object from
 Here is a simple example of making maps with population data.
 
 ``` r
+
 library(tidycensuskr)
 #> tidycensuskr 0.2.8 (2026-04-28)
 #> Please install the companion data package tidycensuskr.sf to use the district boundaries.
@@ -173,6 +178,7 @@ retrieved `data.frame` and `sf` object with
 [`inner_join()`](https://dplyr.tidyverse.org/reference/mutate-joins.html):
 
 ``` r
+
 census_pop_2020_sma <-
   anycensus(
     year = 2020,
@@ -213,6 +219,7 @@ a bivariate map with persons per housing unit and all-cause mortality
 rate.
 
 ``` r
+
 census_housing_2020 <- anycensus(year = 2020, codes = NULL, type = "housing")
 #> Using character codes that are convertible to integers. Automatically converting to integers...
 census_housing_2020 <- census_housing_2020 |>
@@ -295,6 +302,7 @@ not independent administrative units but are part of larger cities, per
 focus on autonomous or nonautonomous districts for analysis.
 
 ``` r
+
 # detect nonautonomous districts
 census_pop_2020 <- anycensus(year = 2020, type = "population")
 #> Using character codes that are convertible to integers. Automatically converting to integers...

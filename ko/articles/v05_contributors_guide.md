@@ -141,27 +141,27 @@ namely in `extdata/lookup_district_code.csv` in the package installation
 directory or `inst/extdata/lookup_district_code.csv` if you cloned the
 GitHub repository. The lookup table contains the following columns:
 
-| Column name    | Description                                                                            |
-|----------------|----------------------------------------------------------------------------------------|
-| sido_kr        | Province name in Korean                                                                |
-| sigungu_kr     | District name in Korean                                                                |
-| sigungu_1_kr   | Alternative district name in Korean                                                    |
-| sigungu_2_kr   | Alternative district name in Korean                                                    |
-| sido_en        | Province name in English                                                               |
-| sigun_en       | District name in English                                                               |
-| sigungu_1_en   | Alternative district name in English                                                   |
-| sigungu_2_en   | Alternative district name in English                                                   |
-| sdsgg_en       | Combined province and district name in English                                         |
-| base_year      | Base year for the code                                                                 |
-| tax_exclude    | Indicator for tax exclusion                                                            |
-| adm2_code      | Official *Si-Gun-Gu* (district) level administrative unit code                         |
-| adm2_code_new  | New *Si-Gun-Gu* (district) level administrative unit code                              |
-| sgg_population | District code for population data                                                      |
-| sgg_housing    | District code for housing data                                                         |
-| sgg_tax_global | District code for global tax data                                                      |
-| sgg_tax_income | District code for income tax data                                                      |
-| sgg_doj        | District code for Ministry of Justice data (i.e., marital migrants)                    |
-| sgg_dcee       | District code for Ministry of Climate, Energy, and Environment (i.e., wastewater data) |
+| Column name | Description |
+|----|----|
+| sido_kr | Province name in Korean |
+| sigungu_kr | District name in Korean |
+| sigungu_1_kr | Alternative district name in Korean |
+| sigungu_2_kr | Alternative district name in Korean |
+| sido_en | Province name in English |
+| sigun_en | District name in English |
+| sigungu_1_en | Alternative district name in English |
+| sigungu_2_en | Alternative district name in English |
+| sdsgg_en | Combined province and district name in English |
+| base_year | Base year for the code |
+| tax_exclude | Indicator for tax exclusion |
+| adm2_code | Official *Si-Gun-Gu* (district) level administrative unit code |
+| adm2_code_new | New *Si-Gun-Gu* (district) level administrative unit code |
+| sgg_population | District code for population data |
+| sgg_housing | District code for housing data |
+| sgg_tax_global | District code for global tax data |
+| sgg_tax_income | District code for income tax data |
+| sgg_doj | District code for Ministry of Justice data (i.e., marital migrants) |
+| sgg_dcee | District code for Ministry of Climate, Energy, and Environment (i.e., wastewater data) |
 
 To note, `sigungu_kr`, `sigungu_1_kr`, and `sigungu_2_kr` columns
 provide many versions of district names in Korean with or without the
@@ -198,38 +198,38 @@ the lookup table. This ensures that you are using the correct
 Please refer to the reference table below for guidance on which code or
 name columns to use based on the source of your data:
 
-| type            | class1                                             | reference_code_field  | Sources                                        | Data producer                                | Table name                                                                            | Notes       |
-|-----------------|----------------------------------------------------|-----------------------|------------------------------------------------|----------------------------------------------|---------------------------------------------------------------------------------------|-------------|
-| economy         | company                                            | adm2_code             | Economic Census                                | Ministry of Data and Statistics              |                                                                                       |             |
-| economy         | grdp                                               | adm2_code             | Regional Income                                | Ministry of Data and Statistics              |                                                                                       |             |
-| environment     | organic_matter, wastewater                         |                       | NA                                             |                                              |                                                                                       | Korean only |
-| housing         | housing types                                      | sgg_housing           | Housing Census                                 | Ministry of Data and Statistics              | Housing Units by Type of Housing Units                                                |             |
-|                 |                                                    |                       | Transaction-based Price Indices                | Korea Real Estate Board                      | NA                                                                                    |             |
-| housing         | vacant housing                                     |                       | NA                                             |                                              |                                                                                       | Korean only |
-|                 |                                                    |                       | NA                                             |                                              |                                                                                       | Korean only |
-|                 |                                                    |                       | NA                                             |                                              |                                                                                       | Korean only |
-| population      | all households                                     | sgg_population        | Population Census                              | Ministry of Data and Statistics              | Population, Households and Housing Units                                              |             |
-| mortality       | All causes                                         | adm2_code             | Vital Statistics                               | Ministry of Data and Statistics              | Deaths and Death Rates by Sex and Age Group: Si, Gun, and Gu                          |             |
-| migration       | marital                                            | sgg_doj               | Statistics of Arrivals and Departures          | Ministry of Justice                          | Status of Marriage Migrant by Place of Stay                                           |             |
-|                 |                                                    |                       | Internal Migration Statistics                  | Ministry of Data and Statistics              | Number of internal migrants for city, county, and district                            |             |
-|                 |                                                    | adm2_code             | Vital Statistics                               | Ministry of Data and Statistics              | Divorces by Month for city, county and district                                       |             |
-|                 |                                                    | adm2_code             | Vital Statistics                               | Ministry of Data and Statistics              | Marriages by Month for city, county and district                                      |             |
-| population      | fertility                                          | adm2_code             | Vital Statistics                               | Ministry of Data and Statistics              | Total Fertility Rates and Age-Specific Fertility Rates for city, county, and district |             |
-| medicine        | doctors                                            | adm2_code             | National Health Insurance Statistical Yearbook | Health Insurance Review & Assessment Service | NA                                                                                    |             |
-|                 |                                                    | adm2_code             | National Health Insurance Statistical Yearbook | Health Insurance Review & Assessment Service | NA                                                                                    |             |
-|                 |                                                    |                       | Community Health Survey                        | Korea Disease Control and Prevention Agency  | Monthly Drinking                                                                      |             |
-| tax             | income                                             | sgg_tax_income        | National Tax Statistics                        | National Tax Service                         |                                                                                       | Korean only |
-|                 | general                                            | sgg_tax_general       | National Tax Statistics                        | National Tax Service                         |                                                                                       | Korean only |
-|                 |                                                    |                       | National Tax Statistics                        | National Tax Service                         | NA                                                                                    | Korean only |
-|                 |                                                    |                       | National Tax Statistics                        | National Tax Service                         | NA                                                                                    | Korean only |
-|                 |                                                    |                       | National Tax Statistics                        | National Tax Service                         | NA                                                                                    | Korean only |
-|                 |                                                    |                       | Vehicle Kilometer Statistics                   | Korea Transportation Safety Authority        | Vehicle kilometer by city/province and vehicle type                                   |             |
-|                 |                                                    |                       | Pension Statistics                             | National Pension Service                     | NA                                                                                    |             |
-| welfare         | facilities                                         | sido_en, sigungu_2_en | Welfare Statistics                             | Korea Social Security Information Service    |                                                                                       | Korean only |
-| welfare         | registered physically mentally challenged          | sido_en, sigungu_2_en | Welfare Statistics                             | Korea Social Security Information Service    |                                                                                       | Korean only |
-| welfare         | registered physically mentally challenged severity | sido_en, sigungu_2_en | Welfare Statistics                             | Korea Social Security Information Service    |                                                                                       | Korean only |
-| social security | basic living security                              | sido_en, sigungu_2_en | Welfare Statistics                             | Korea Social Security Information Service    |                                                                                       | Korean only |
-| social security | basic pension                                      | sido_en, sigungu_2_en | Welfare Statistics                             | Korea Social Security Information Service    |                                                                                       | Korean only |
+| type | class1 | reference_code_field | Sources | Data producer | Table name | Notes |
+|----|----|----|----|----|----|----|
+| economy | company | adm2_code | Economic Census | Ministry of Data and Statistics |  |  |
+| economy | grdp | adm2_code | Regional Income | Ministry of Data and Statistics |  |  |
+| environment | organic_matter, wastewater |  | NA |  |  | Korean only |
+| housing | housing types | sgg_housing | Housing Census | Ministry of Data and Statistics | Housing Units by Type of Housing Units |  |
+|  |  |  | Transaction-based Price Indices | Korea Real Estate Board | NA |  |
+| housing | vacant housing |  | NA |  |  | Korean only |
+|  |  |  | NA |  |  | Korean only |
+|  |  |  | NA |  |  | Korean only |
+| population | all households | sgg_population | Population Census | Ministry of Data and Statistics | Population, Households and Housing Units |  |
+| mortality | All causes | adm2_code | Vital Statistics | Ministry of Data and Statistics | Deaths and Death Rates by Sex and Age Group: Si, Gun, and Gu |  |
+| migration | marital | sgg_doj | Statistics of Arrivals and Departures | Ministry of Justice | Status of Marriage Migrant by Place of Stay |  |
+|  |  |  | Internal Migration Statistics | Ministry of Data and Statistics | Number of internal migrants for city, county, and district |  |
+|  |  | adm2_code | Vital Statistics | Ministry of Data and Statistics | Divorces by Month for city, county and district |  |
+|  |  | adm2_code | Vital Statistics | Ministry of Data and Statistics | Marriages by Month for city, county and district |  |
+| population | fertility | adm2_code | Vital Statistics | Ministry of Data and Statistics | Total Fertility Rates and Age-Specific Fertility Rates for city, county, and district |  |
+| medicine | doctors | adm2_code | National Health Insurance Statistical Yearbook | Health Insurance Review & Assessment Service | NA |  |
+|  |  | adm2_code | National Health Insurance Statistical Yearbook | Health Insurance Review & Assessment Service | NA |  |
+|  |  |  | Community Health Survey | Korea Disease Control and Prevention Agency | Monthly Drinking |  |
+| tax | income | sgg_tax_income | National Tax Statistics | National Tax Service |  | Korean only |
+|  | general | sgg_tax_general | National Tax Statistics | National Tax Service |  | Korean only |
+|  |  |  | National Tax Statistics | National Tax Service | NA | Korean only |
+|  |  |  | National Tax Statistics | National Tax Service | NA | Korean only |
+|  |  |  | National Tax Statistics | National Tax Service | NA | Korean only |
+|  |  |  | Vehicle Kilometer Statistics | Korea Transportation Safety Authority | Vehicle kilometer by city/province and vehicle type |  |
+|  |  |  | Pension Statistics | National Pension Service | NA |  |
+| welfare | facilities | sido_en, sigungu_2_en | Welfare Statistics | Korea Social Security Information Service |  | Korean only |
+| welfare | registered physically mentally challenged | sido_en, sigungu_2_en | Welfare Statistics | Korea Social Security Information Service |  | Korean only |
+| welfare | registered physically mentally challenged severity | sido_en, sigungu_2_en | Welfare Statistics | Korea Social Security Information Service |  | Korean only |
+| social security | basic living security | sido_en, sigungu_2_en | Welfare Statistics | Korea Social Security Information Service |  | Korean only |
+| social security | basic pension | sido_en, sigungu_2_en | Welfare Statistics | Korea Social Security Information Service |  | Korean only |
 
 ### Example Code for Post-processing
 
@@ -242,6 +242,7 @@ Assume that the post-processed data includes `adm2kr` (district name in
 Korean) and `year` columns.
 
 ``` r
+
 library(dplyr)
 
 # fixed path to the lookup table
@@ -271,6 +272,7 @@ Let’s say the post-processed data includes `sggcd` (alternative district
 code for Ministry of Justice data) and `year` columns.
 
 ``` r
+
 library(dplyr)
 
 # fixed path to the lookup table

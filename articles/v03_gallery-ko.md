@@ -27,6 +27,7 @@
 ### 데이터 준비
 
 ``` r
+
 # Load 2020 boundaries
 data(adm2_sf_2020)
 
@@ -47,6 +48,7 @@ var <- adm2_sf_2020_economy$company_total_cnt
 ### 전역적(Global) Moran’s I
 
 ``` r
+
 # Build neighbors (queen contiguity) and spatial weights
 nb <- poly2nb(adm2_sf_2020_economy, queen = TRUE)
 lw <- nb2listw(nb, style = "W", zero.policy = TRUE)
@@ -72,6 +74,7 @@ global_moran
 ### 국지적(Local) Moran’s I 및 LISA 지도
 
 ``` r
+
 # Local Moran's I
 local_moran <- localmoran(var, lw, zero.policy = TRUE)
 
@@ -136,6 +139,7 @@ ggplot(adm2_sf_2020_economy) +
 5.  남성과 여성의 인구 추세를 선형 차트를 사용하여 중첩 시각화합니다.
 
 ``` r
+
 # load packages
 library(geofacet)
 
@@ -183,6 +187,7 @@ head(pop)
     ## 6  2010 Seoul        11 Jongno-gu 11010 population all house… male   pers…  71.3
 
 ``` r
+
 # for a geofacet plot
 # map codes to district names for facet labels
 pop_name_map <- pop %>%
@@ -239,6 +244,7 @@ kr_grid_adm2_sgis_2020 <-
 유지하면서 이질적인 지역 인구 변화 추이를 강조합니다.
 
 ``` r
+
 ggplot(data = pop) +
   geom_line(
     aes(x = year, y = value, group = interaction(adm2, class2), color = class2),

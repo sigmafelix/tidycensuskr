@@ -15,11 +15,13 @@
 ### Data prep
 
 ``` r
+
 # Load 2020 boundaries
 data(adm2_sf_2020)
 ```
 
 ``` r
+
 # Load census population data for 2010 and 2020
 df_2010_pop <- anycensus(year = 2010,
                          codes = c("Gyeongsangnam-do", "Busan", "Ulsan"),
@@ -38,6 +40,7 @@ sf_target <- adm2_sf_2020 |>
 ### A choropleth map with an inset map
 
 ``` r
+
 # Choropleth map for population change
 map <- ggplot(sf_target) +
   geom_sf(aes(fill = change), color = "gray80", size = 0.1) +
@@ -100,6 +103,7 @@ the province exhibit relatively stable population trends.
 ### Data prep
 
 ``` r
+
 # Load census data
 df_2020_pop <- anycensus(year = 2020,
                          type = "population")
@@ -139,6 +143,7 @@ sf_final <- adm2_sf_2020_unioned |>
 ### A bivariate choropleth map
 
 ``` r
+
 # Create 3x3 bivariate classes (population vs tax)
 bi_data <- bi_class(
   sf_final,
@@ -193,6 +198,7 @@ few metropolitan centers—fall into the low population–low tax category.
 ### Data prep
 
 ``` r
+
 # Load population data for the Seoul Metropolitan Area (SMA)
 df_sma <- anycensus(
   year  = 2020,
@@ -214,6 +220,7 @@ df_all <- df_sma |>
 ### Histograms
 
 ``` r
+
 ggplot() +
   # Background: overall distribution across all SMA
   geom_histogram(
@@ -246,6 +253,7 @@ ggplot() +
 ### A choropleth map
 
 ``` r
+
 # Merge SMA population data with boundaries
 adm2_sf_2020_sma <- adm2_sf_2020 |>
   inner_join(df_sma, by = "adm2_code")
@@ -297,6 +305,7 @@ a small set of interpretable components.
 ### data prep
 
 ``` r
+
 library(tidycensuskr)
 library(dplyr)
 library(ggplot2)
@@ -382,6 +391,7 @@ dominantly correlated with sex ratio to the negative and basic living
 security rate to the positive.
 
 ``` r
+
 # Run PCA
 prc_df <-
   df_wide_re |>
@@ -410,6 +420,7 @@ across regions. We label the districts with their names and codes for
 better identification.
 
 ``` r
+
 # Proper labeling for biplot for BLGs
 adm2labels <- paste0(df_wide_re$adm2, " (", df_wide_re$adm2_code_, ")")
 rownames(prc_df$x) <- adm2labels

@@ -16,11 +16,13 @@
 ### 데이터 준비
 
 ``` r
+
 # 2020년 경계 불러오기
 data(adm2_sf_2020)
 ```
 
 ``` r
+
 # Load census population data for 2010 and 2020
 df_2010_pop <- anycensus(year = 2010,
                          codes = c("Gyeongsangnam-do", "Busan", "Ulsan"),
@@ -39,6 +41,7 @@ sf_target <- adm2_sf_2020 |>
 ### 삽입도가 있는 단계구분도
 
 ``` r
+
 # Choropleth map for population change
 map <- ggplot(sf_target) +
   geom_sf(aes(fill = change), color = "gray80", size = 0.1) +
@@ -99,6 +102,7 @@ cowplot::ggdraw() +
 ### 데이터 준비
 
 ``` r
+
 # Load census data
 df_2020_pop <- anycensus(year = 2020, 
                          type = "population")
@@ -138,6 +142,7 @@ sf_final <- adm2_sf_2020_unioned |>
 ### 이변량 지도
 
 ``` r
+
 # Create 3x3 bivariate classes (population vs tax)
 bi_data <- bi_class(
   sf_final,
@@ -191,6 +196,7 @@ cowplot::ggdraw() +
 ### 데이터 준비
 
 ``` r
+
 # Load population data for the Seoul Metropolitan Area (SMA)
 df_sma <- anycensus(
   year  = 2020,
@@ -212,6 +218,7 @@ df_all <- df_sma |>
 ### 히스토그램 그리기
 
 ``` r
+
 ggplot() +
   # Background: overall distribution across all SMA
   geom_histogram(
@@ -244,6 +251,7 @@ ggplot() +
 ### 단계구분도
 
 ``` r
+
 # Merge SMA population data with boundaries
 adm2_sf_2020_sma <- adm2_sf_2020 |>
   inner_join(df_sma, by = "adm2_code")
@@ -291,6 +299,7 @@ ggplot(adm2_sf_2020_sma) +
 ### 데이터 준비
 
 ``` r
+
 library(tidycensuskr)
 library(dplyr)
 library(ggplot2)
@@ -375,6 +384,7 @@ df_wide_re <-
 있습니다.
 
 ``` r
+
 # Run PCA
 prc_df <-
   df_wide_re |>
@@ -402,6 +412,7 @@ prc_df$rotation |> as.data.frame() |> round(3)
 시군구의 이름과 코드를 라벨로 표시합니다.
 
 ``` r
+
 # Proper labeling for biplot for BLGs
 adm2labels <- paste0(df_wide_re$adm2, " (", df_wide_re$adm2_code_, ")")
 rownames(prc_df$x) <- adm2labels
