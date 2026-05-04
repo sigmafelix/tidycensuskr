@@ -10,4 +10,6 @@
 ^README*\.Rmd$
 ^.vscode
 ^tools
-vignettes/*-ko.Rmd$
+_pkgdown-ko.yaml
+vignettes/.*\-ko.Rmd$
+tests
