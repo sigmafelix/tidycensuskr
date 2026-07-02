@@ -50,7 +50,7 @@ remotes::install_github("sigmafelix/tidycensuskr")
 
 # About the data
 
-As of September 2025, this package contains two datasets: Census data (`censuskor`) and the corresponding geospatial data.
+As of version 0.2.8.1, this package contains two datasets: Census data (`censuskor`) and the corresponding geospatial data.
 
 
 ## 1. Census data
@@ -265,3 +265,10 @@ census_housing_2020_nonauto <- detect_adm2_type(census_housing_2020, mode = "non
 unique(census_housing_2020_auto$adm2_code)
 unique(census_housing_2020_nonauto$adm2_code)
 ```
+
+
+## License disclaimer
+![](inst/extdata/kogl_type1.jpg){style="fig-align: center; width: 200px;"}
+
+This package's data is derived from the Korean Statistical Information Service ([KOSIS](https://kosis.kr)) and Public Data Portal ([data.go.kr](https://data.go.kr)). The data is provided under the [Korea Open Government License Type 1 (Attribution)](https://www.kogl.or.kr/info/license.do) (Note: in Korean).
+

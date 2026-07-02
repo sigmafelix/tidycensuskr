@@ -223,6 +223,11 @@ The package provides census and survey data through:
 </div>
 
 
+* The data is provided under the [Korea Open Government License Type 1 (Attribution)](https://www.kogl.or.kr/info/license.do) (Note: in Korean). Each raw data table is available for download from the [Public Data Portal](https://www.data.go.kr/) and [KOSIS](https://kosis.kr/) with no cost.
+
+![](inst/extdata/kogl_type1.jpg){style="fig-align: center; width: 200px;"}
+
+
 ### Query data using `anycensus()`
 
 The function `anycensus()` returns a tidy tibble with columns such as:

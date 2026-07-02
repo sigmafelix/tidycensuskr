@@ -225,6 +225,9 @@ print(length(unique(adm2_sf_2020$adm2_code)))
 | landuse | road | area of roads | square meters | Total area of roads | 2010, 2015, 2020 |
 </div>
 
+* 이 패키지에서 제공하는 자료는 대한민국 통계데이터처에서 2010년-2020년 작성하여 공공누리 제1유형으로 개방한 통계표를 이용하였으며, 해당 자료는 [공공데이터포털](https://www.data.go.kr/)과 [KOSIS](https://kosis.kr/)에서 무료로 내려받으실 수 있습니다.
+
+![](inst/extdata/kogl_type1.jpg){style="fig-align: center; width: 200px;"}
 
 ### `anycensus()`로 데이터 쿼리하기
 
