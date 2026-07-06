@@ -257,6 +257,56 @@ head(df_2020_sido)
 
 ```
 
+For rate variables, weighted aggregation is also available. The example below computes a population-weighted mortality rate using the total population column from a separate `type = "population"` query.
+
+```{r, include = TRUE}
+df_2020_sido_weighted <- anycensus(year = 2020,
+                                   codes = "Seoul",
+                                   type = "mortality",
+                                   level = "adm1",
+                                   aggregator = stats::weighted.mean,
+                                   weight_type = "population",
+                                   weight_column = "all households_total_prs",
+                                   na.rm = TRUE)
+head(df_2020_sido_weighted)
+
+```
+
+For provinces that contain both autonomous/basic local government codes and
+non-autonomous `Gu` codes, use `adm2_type = "atn"` to clean to the
+autonomous/basic local government level. In weighted aggregation, rate rows for
+those autonomous units are recalculated from the non-autonomous component
+districts using the supplied weights. This can be returned at `level = "adm2"`
+or further aggregated to `level = "adm1"`.
+
+```{r, include = TRUE}
+df_2020_adm2_weighted_atn <- anycensus(year = 2020,
+                                       codes = "Gyeonggi-do",
+                                       type = "mortality",
+                                       level = "adm2",
+                                       adm2_type = "atn",
+                                       aggregator = stats::weighted.mean,
+                                       weight_type = "population",
+                                       weight_column = "all households_total_prs",
+                                       na.rm = TRUE)
+head(df_2020_adm2_weighted_atn)
+
+```
+
+```{r, include = TRUE}
+df_2020_sido_weighted_atn <- anycensus(year = 2020,
+                                       codes = "Gyeonggi-do",
+                                       type = "mortality",
+                                       level = "adm1",
+                                       adm2_type = "atn",
+                                       aggregator = stats::weighted.mean,
+                                       weight_type = "population",
+                                       weight_column = "all households_total_prs",
+                                       na.rm = TRUE)
+head(df_2020_sido_weighted_atn)
+
+```
+
 ### Built-in dataset `censuskor`
 
 You can access the whole dataset directly using the function `data(censuskor)` which returns the built-in dataset in a long form. 
