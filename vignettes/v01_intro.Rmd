@@ -223,6 +223,11 @@ The package provides census and survey data through:
 </div>
 
 
+* The data is provided under the [Korea Open Government License Type 1 (Attribution)](https://www.kogl.or.kr/info/license.do) (Note: in Korean). Each raw data table is available for download from the [Public Data Portal](https://www.data.go.kr/) and [KOSIS](https://kosis.kr/) with no cost.
+
+![](inst/extdata/kogl_type1.jpg){style="fig-align: center; width: 200px;"}
+
+
 ### Query data using `anycensus()`
 
 The function `anycensus()` returns a tidy tibble with columns such as:
@@ -249,6 +254,56 @@ df_2020_sido <- anycensus(year = 2020,
                           aggregator = mean,
                           na.rm = TRUE)
 head(df_2020_sido)
+
+```
+
+For rate variables, weighted aggregation is also available. The example below computes a population-weighted mortality rate using the total population column from a separate `type = "population"` query.
+
+```{r, include = TRUE}
+df_2020_sido_weighted <- anycensus(year = 2020,
+                                   codes = "Seoul",
+                                   type = "mortality",
+                                   level = "adm1",
+                                   aggregator = stats::weighted.mean,
+                                   weight_type = "population",
+                                   weight_column = "all households_total_prs",
+                                   na.rm = TRUE)
+head(df_2020_sido_weighted)
+
+```
+
+For provinces that contain both autonomous/basic local government codes and
+non-autonomous `Gu` codes, use `adm2_type = "atn"` to clean to the
+autonomous/basic local government level. In weighted aggregation, rate rows for
+those autonomous units are recalculated from the non-autonomous component
+districts using the supplied weights. This can be returned at `level = "adm2"`
+or further aggregated to `level = "adm1"`.
+
+```{r, include = TRUE}
+df_2020_adm2_weighted_atn <- anycensus(year = 2020,
+                                       codes = "Gyeonggi-do",
+                                       type = "mortality",
+                                       level = "adm2",
+                                       adm2_type = "atn",
+                                       aggregator = stats::weighted.mean,
+                                       weight_type = "population",
+                                       weight_column = "all households_total_prs",
+                                       na.rm = TRUE)
+head(df_2020_adm2_weighted_atn)
+
+```
+
+```{r, include = TRUE}
+df_2020_sido_weighted_atn <- anycensus(year = 2020,
+                                       codes = "Gyeonggi-do",
+                                       type = "mortality",
+                                       level = "adm1",
+                                       adm2_type = "atn",
+                                       aggregator = stats::weighted.mean,
+                                       weight_type = "population",
+                                       weight_column = "all households_total_prs",
+                                       na.rm = TRUE)
+head(df_2020_sido_weighted_atn)
 
 ```
 

@@ -1,0 +1,11 @@
+bibentry(
+  bibtype = "Misc",
+  title = "tidycensuskr: Easy Access for South Korea Census Data and Boundaries",
+  author = c(
+    person("Insang", "Song"),
+    person("Sohyun", "Park"),
+    person("Hyesop", "Shin")
+  ),
+  year = "2026",
+  url = "https://CRAN.R-project.org/package=tidycensuskr"
+)

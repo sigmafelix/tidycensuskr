@@ -29,7 +29,7 @@ detect_adm2_type <-
     mode = "non",
     adm2_code = "adm2_code"
   ) {
-    match.arg(mode, c("atn", "non"))
+    mode <- match.arg(mode, c("atn", "non"))
     if (!is.null(year)) {
       df <- df[df$year == year, ]
     }
