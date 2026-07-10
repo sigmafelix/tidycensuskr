@@ -220,6 +220,14 @@ for querying subsets
 | landuse | road | length of roads | meters | Total length of roads | 2010, 2015, 2020 |
 | landuse | road | area of roads | square meters | Total area of roads | 2010, 2015, 2020 |
 
+- The data is provided under the [Korea Open Government License Type 1
+  (Attribution)](https://www.kogl.or.kr/info/license.do) (Note: in
+  Korean). Each raw data table is available for download from the
+  [Public Data Portal](https://www.data.go.kr/) and
+  [KOSIS](https://kosis.kr/) with no cost.
+
+![](inst/extdata/kogl_type1.jpg)
+
 ### Query data using `anycensus()`
 
 The function
@@ -281,6 +289,81 @@ head(df_2020_sido)
 #> # ℹ 1 more variable: `all causes_female_p1p` <dbl>
 ```
 
+For rate variables, weighted aggregation is also available. The example
+below computes a population-weighted mortality rate using the total
+population column from a separate `type = "population"` query.
+
+``` r
+
+df_2020_sido_weighted <- anycensus(year = 2020,
+                                   codes = "Seoul",
+                                   type = "mortality",
+                                   level = "adm1",
+                                   aggregator = stats::weighted.mean,
+                                   weight_type = "population",
+                                   weight_column = "all households_total_prs",
+                                   na.rm = TRUE)
+head(df_2020_sido_weighted)
+#> # A tibble: 1 × 8
+#>    year type      adm1  adm1_code `all causes_total_p1p` `all causes_male_p1p`
+#>   <dbl> <chr>     <chr>     <dbl>                  <dbl>                 <dbl>
+#> 1  2020 mortality Seoul        11                   256.                  347.
+#> # ℹ 2 more variables: `all causes_female_p1p` <dbl>,
+#> #   `all households_total_prs` <dbl>
+```
+
+For provinces that contain both autonomous/basic local government codes
+and non-autonomous `Gu` codes, use `adm2_type = "atn"` to clean to the
+autonomous/basic local government level. In weighted aggregation, rate
+rows for those autonomous units are recalculated from the non-autonomous
+component districts using the supplied weights. This can be returned at
+`level = "adm2"` or further aggregated to `level = "adm1"`.
+
+``` r
+
+df_2020_adm2_weighted_atn <- anycensus(year = 2020,
+                                       codes = "Gyeonggi-do",
+                                       type = "mortality",
+                                       level = "adm2",
+                                       adm2_type = "atn",
+                                       aggregator = stats::weighted.mean,
+                                       weight_type = "population",
+                                       weight_column = "all households_total_prs",
+                                       na.rm = TRUE)
+head(df_2020_adm2_weighted_atn)
+#> # A tibble: 6 × 10
+#>    year adm1        adm1_code adm2        adm2_code type  `all causes_total_p1p`
+#>   <dbl> <chr>           <dbl> <chr>           <dbl> <chr>                  <dbl>
+#> 1  2020 Gyeonggi-do        31 Ansan-si        31090 mort…                   336.
+#> 2  2020 Gyeonggi-do        31 Anseong-si      31220 mort…                   316.
+#> 3  2020 Gyeonggi-do        31 Anyang-si       31040 mort…                   256.
+#> 4  2020 Gyeonggi-do        31 Bucheon-si      31050 mort…                   296.
+#> 5  2020 Gyeonggi-do        31 Dongducheo…     31080 mort…                   368 
+#> 6  2020 Gyeonggi-do        31 Gapyeong-g…     31370 mort…                   353.
+#> # ℹ 3 more variables: `all causes_male_p1p` <dbl>,
+#> #   `all causes_female_p1p` <dbl>, `all households_total_prs` <dbl>
+```
+
+``` r
+
+df_2020_sido_weighted_atn <- anycensus(year = 2020,
+                                       codes = "Gyeonggi-do",
+                                       type = "mortality",
+                                       level = "adm1",
+                                       adm2_type = "atn",
+                                       aggregator = stats::weighted.mean,
+                                       weight_type = "population",
+                                       weight_column = "all households_total_prs",
+                                       na.rm = TRUE)
+head(df_2020_sido_weighted_atn)
+#> # A tibble: 1 × 8
+#>    year type      adm1    adm1_code `all causes_total_p1p` `all causes_male_p1p`
+#>   <dbl> <chr>     <chr>       <dbl>                  <dbl>                 <dbl>
+#> 1  2020 mortality Gyeong…        31                   286.                  379.
+#> # ℹ 2 more variables: `all causes_female_p1p` <dbl>,
+#> #   `all households_total_prs` <dbl>
+```
+
 ### Built-in dataset `censuskor`
 
 You can access the whole dataset directly using the function
@@ -331,7 +414,7 @@ ggplot(df_2020, aes(x = `all causes_male_p1p`, y = `all causes_female_p1p`)) +
   theme_minimal(base_size = 10)
 ```
 
-![](v01_intro_files/figure-html/unnamed-chunk-7-1.png)
+![](v01_intro_files/figure-html/unnamed-chunk-10-1.png)
 
 [^1]: NUTS: *Nomenclature of Territorial Units for Statistics*, a
     geocode standard for referencing the subdivisions of countries for

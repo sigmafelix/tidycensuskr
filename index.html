@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Easy Access for South Korea Census Data and Boundaries • tidycensuskr</title>
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
+<script src="deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Easy Access for South Korea Census Data and Boundaries">
 <meta name="description" content="Census and administrative data in South Korea are a basic source of quantitative and mixed-methods research for social and urban scientists. This package provides a sf (Pebesma et al., 2024 &lt;doi:10.32614/CRAN.package.sf&gt;) based standardized workflow based on direct open API access to the major census and administrative data sources and pre-generated files in South Korea.">
@@ -22,7 +22,7 @@
 
     <a class="navbar-brand me-2" href="index.html">tidycensuskr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.8</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.9</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -84,7 +84,7 @@
 <div class="section level1">
 <h1 id="about-the-data">About the data<a class="anchor" aria-label="anchor" href="#about-the-data"></a>
 </h1>
-<p>As of September 2025, this package contains two datasets: Census data (<code>censuskor</code>) and the corresponding geospatial data.</p>
+<p>As of version 0.2.8.1, this package contains two datasets: Census data (<code>censuskor</code>) and the corresponding geospatial data.</p>
 <div class="section level2">
 <h2 id="id_1-census-data">1. Census data<a class="anchor" aria-label="anchor" href="#id_1-census-data"></a>
 </h2>
@@ -163,7 +163,7 @@
 <p><code><a href="reference/anycensus.html">anycensus()</a></code> will return an analysis-ready data.frame that can be easily merged with the corresponding boundary <code>sf</code> object from <code><a href="reference/load_districts.html">load_districts()</a></code>. Here is a simple example of making maps with population data.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/sigmafelix/tidycensuskr" class="external-link">tidycensuskr</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; tidycensuskr 0.2.8 (2026-04-28)</span></span>
+<span><span class="co">#&gt; tidycensuskr 0.2.8.1 (2026-07-02)</span></span>
 <span><span class="co">#&gt; Please install the companion data package tidycensuskr.sf to use the district boundaries.</span></span>
 <span><span class="co">#&gt; install.packages('tidycensuskr.sf', repos = 'https://sigmafelix.r-universe.dev')</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
@@ -178,7 +178,7 @@
 <span><span class="co">#&gt;     intersect, setdiff, setequal, union</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyr.tidyverse.org" class="external-link">tidyr</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://r-spatial.github.io/sf/" class="external-link">sf</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; Linking to GEOS 3.12.1, GDAL 3.8.4, PROJ 9.4.0; sf_use_s2() is TRUE</span></span>
+<span><span class="co">#&gt; Linking to GEOS 3.14.1, GDAL 3.13.1, PROJ 9.8.1; sf_use_s2() is TRUE</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://chris-prener.github.io/biscale/" class="external-link">biscale</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://wilkelab.org/cowplot/" class="external-link">cowplot</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/s2.html" class="external-link">sf_use_s2</a></span><span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span></span>
@@ -430,6 +430,12 @@
 <span><span class="co">#&gt; [229] 38100 32410 37400 31280 31350 36410 37070 37350 11190 21040 33340 36440</span></span>
 <span><span class="co">#&gt; [241] 37060 31014 32330 37340 21130 23040 36020 34370 11030 25040</span></span></code></pre></div>
 </div>
+<div class="section level2">
+<h2 id="license-disclaimer">License disclaimer<a class="anchor" aria-label="anchor" href="#license-disclaimer"></a>
+</h2>
+<p><img src="inst/extdata/kogl_type1.jpg" style="fig-align: center; width: 200px;"></p>
+<p>This package’s data is derived from the Korean Statistical Information Service (<a href="https://kosis.kr" class="external-link">KOSIS</a>) and Public Data Portal (<a href="https://data.go.kr" class="external-link">data.go.kr</a>). The data is provided under the <a href="https://www.kogl.or.kr/info/license.do" class="external-link">Korea Open Government License Type 1 (Attribution)</a> (Note: in Korean).</p>
+</div>
 </div>
 
   </main><aside class="col-md-3"><div class="links">
@@ -485,7 +491,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
     </footer>

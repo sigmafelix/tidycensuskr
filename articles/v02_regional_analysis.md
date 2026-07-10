@@ -315,7 +315,7 @@ library(janitor)
 sf_2020 <- data(adm2_sf_2020)
 
 # housing
-df_hou <- anycensus(year = 2020, type = "housing", level = "adm2")
+df_hou <- anycensus(year = 2020, type = "housing", level = "adm2", adm2_type = "atn", aggregator = sum)
 df_hou <- df_hou |>
   dplyr::group_by(adm1_code, adm2_code, year, type) |>
   dplyr::mutate(dplyr::across(
@@ -326,10 +326,16 @@ df_hou <- df_hou |>
   dplyr::distinct()
 
 # population
-df_pop <- anycensus(year = 2020, type = "population", level = "adm2")
+df_pop <- anycensus(year = 2020, type = "population", level = "adm2", adm2_type = "atn", aggregator = sum) |>
+  dplyr::select(adm1, adm1_code, adm2, adm2_code, year, dplyr::starts_with("all households"))
+
+df_fert <- anycensus(year = 2020, type = "population", level = "adm2", adm2_type = "atn", aggregator = mean, weight_type = "population", weight_col = "all households_total_prs") |>
+  dplyr::select(dplyr::matches("(adm|year|fertility)"))
+
 
 # mortality
-df_mort <- anycensus(year = 2020, type = "mortality", level = "adm2")
+df_mort <- anycensus(year = 2020, type = "mortality", level = "adm2", adm2_type = "atn", aggregator = mean, weight_type = "population", weight_col = "all households_total_prs") |>
+  dplyr::select(-`all households_total_prs`)
 
 # social security
 df_ss <- anycensus(year = 2020, type = "social security", level = "adm2")
@@ -346,6 +352,7 @@ df_wide <- Reduce(
   list(
     df_hou,
     df_pop,
+    df_fert,
     df_mort,
     df_ss
   )
@@ -403,12 +410,12 @@ prc_df <-
 prc_df$rotation |> as.data.frame() |> round(3)
 ```
 
-    ##                        PC1    PC2    PC3    PC4    PC5
-    ## persons_per_housing -0.554 -0.032 -0.221  0.733  0.324
-    ## sex_ratio            0.216 -0.704 -0.565  0.119 -0.353
-    ## mortality_rate       0.560  0.090 -0.362 -0.009  0.739
-    ## fertility_rate       0.418 -0.368  0.678  0.475  0.065
-    ## security_rate        0.397  0.600 -0.205  0.471 -0.468
+    ##                        PC1    PC2    PC3   PC4    PC5
+    ## persons_per_housing -0.554 -0.024 -0.229 0.744 -0.296
+    ## sex_ratio            0.215 -0.698 -0.573 0.103  0.356
+    ## mortality_rate       0.563  0.096 -0.360 0.018 -0.737
+    ## fertility_rate       0.418 -0.371  0.669 0.488 -0.044
+    ## security_rate        0.394  0.604 -0.203 0.445  0.490
 
 ### Biplot
 

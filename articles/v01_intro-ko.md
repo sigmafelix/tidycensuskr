@@ -221,6 +221,13 @@ print(length(unique(adm2_sf_2020$adm2_code)))
 | landuse | road | length of roads | meters | Total length of roads | 2010, 2015, 2020 |
 | landuse | road | area of roads | square meters | Total area of roads | 2010, 2015, 2020 |
 
+- 이 패키지에서 제공하는 자료는 대한민국 통계데이터처에서 2010년-2020년
+  작성하여 공공누리 제1유형으로 개방한 통계표를 이용하였으며, 해당
+  자료는 [공공데이터포털](https://www.data.go.kr/)과
+  [KOSIS](https://kosis.kr/)에서 무료로 내려받으실 수 있습니다.
+
+![](inst/extdata/kogl_type1.jpg)
+
 ### `anycensus()`로 데이터 쿼리하기
 
 [`anycensus()`](https://sigmafelix.github.io/tidycensuskr/reference/anycensus.md)
@@ -286,6 +293,59 @@ head(df_2020_sido)
 #> # ℹ 1 more variable: `all causes_female_p1p` <dbl>
 ```
 
+비율 변수는 가중 집계도 가능합니다. 아래 예시는
+`type = "population"`에서 가져온 총인구 열을 가중치로 사용해 사망률을
+인구가중평균으로 집계합니다. 자치 시군구 코드와 비자치구 코드가 함께
+있는 시도에서는 `adm2_type = "atn"`을 사용하면 자치 시군구 단위로 코드를
+정리한 뒤, 비자치구 구성 행정구역의 값을 인구가중평균해 비율 변수를
+계산합니다. 이 결과는 `level = "adm2"`로 반환할 수도 있고,
+`level = "adm1"`로 한 번 더 집계할 수도 있습니다.
+
+``` r
+
+df_2020_adm2_weighted_atn <- anycensus(year = 2020,
+                                       codes = "Gyeonggi-do",
+                                       type = "mortality",
+                                       level = "adm2",
+                                       adm2_type = "atn",
+                                       aggregator = stats::weighted.mean,
+                                       weight_type = "population",
+                                       weight_column = "all households_total_prs",
+                                       na.rm = TRUE)
+head(df_2020_adm2_weighted_atn)
+#> # A tibble: 6 × 10
+#>    year adm1        adm1_code adm2        adm2_code type  `all causes_total_p1p`
+#>   <dbl> <chr>           <dbl> <chr>           <dbl> <chr>                  <dbl>
+#> 1  2020 Gyeonggi-do        31 Ansan-si        31090 mort…                   336.
+#> 2  2020 Gyeonggi-do        31 Anseong-si      31220 mort…                   316.
+#> 3  2020 Gyeonggi-do        31 Anyang-si       31040 mort…                   256.
+#> 4  2020 Gyeonggi-do        31 Bucheon-si      31050 mort…                   296.
+#> 5  2020 Gyeonggi-do        31 Dongducheo…     31080 mort…                   368 
+#> 6  2020 Gyeonggi-do        31 Gapyeong-g…     31370 mort…                   353.
+#> # ℹ 3 more variables: `all causes_male_p1p` <dbl>,
+#> #   `all causes_female_p1p` <dbl>, `all households_total_prs` <dbl>
+```
+
+``` r
+
+df_2020_sido_weighted_atn <- anycensus(year = 2020,
+                                       codes = "Gyeonggi-do",
+                                       type = "mortality",
+                                       level = "adm1",
+                                       adm2_type = "atn",
+                                       aggregator = stats::weighted.mean,
+                                       weight_type = "population",
+                                       weight_column = "all households_total_prs",
+                                       na.rm = TRUE)
+head(df_2020_sido_weighted_atn)
+#> # A tibble: 1 × 8
+#>    year type      adm1    adm1_code `all causes_total_p1p` `all causes_male_p1p`
+#>   <dbl> <chr>     <chr>       <dbl>                  <dbl>                 <dbl>
+#> 1  2020 mortality Gyeong…        31                   286.                  379.
+#> # ℹ 2 more variables: `all causes_female_p1p` <dbl>,
+#> #   `all households_total_prs` <dbl>
+```
+
 ### `censuskor` 내장 데이터셋
 
 `data(censuskor)`을 이용하면 패키지에 내장된 전체 센서스 데이터를 긴
@@ -339,7 +399,7 @@ ggplot(df_2020, aes(x = `all causes_male_p1p`, y = `all causes_female_p1p`)) +
   theme_minimal(base_size = 10)
 ```
 
-![](v01_intro-ko_files/figure-html/unnamed-chunk-7-1.png)
+![](v01_intro-ko_files/figure-html/unnamed-chunk-9-1.png)
 
 [^1]: NUTS: 통계 수집을 위한 영역분류체계 (*Nomenclature of Territorial
     Units for Statistics*)의 준말로, 유럽연합 내 국가들의 행정구역을

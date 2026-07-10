@@ -32,7 +32,7 @@ remotes::install_github("sigmafelix/tidycensuskr")
 
 # About the data
 
-As of September 2025, this package contains two datasets: Census data
+As of version 0.2.8.1, this package contains two datasets: Census data
 (`censuskor`) and the corresponding geospatial data.
 
 ## 1. Census data
@@ -115,7 +115,7 @@ Here is a simple example of making maps with population data.
 ``` r
 
 library(tidycensuskr)
-#> tidycensuskr 0.2.8 (2026-04-28)
+#> tidycensuskr 0.2.8.1 (2026-07-02)
 #> Please install the companion data package tidycensuskr.sf to use the district boundaries.
 #> install.packages('tidycensuskr.sf', repos = 'https://sigmafelix.r-universe.dev')
 library(ggplot2)
@@ -130,7 +130,7 @@ library(dplyr)
 #>     intersect, setdiff, setequal, union
 library(tidyr)
 library(sf)
-#> Linking to GEOS 3.12.1, GDAL 3.8.4, PROJ 9.4.0; sf_use_s2() is TRUE
+#> Linking to GEOS 3.14.1, GDAL 3.13.1, PROJ 9.8.1; sf_use_s2() is TRUE
 library(biscale)
 library(cowplot)
 sf_use_s2(FALSE)
@@ -402,6 +402,17 @@ unique(census_housing_2020_nonauto$adm2_code)
 #> [229] 38100 32410 37400 31280 31350 36410 37070 37350 11190 21040 33340 36440
 #> [241] 37060 31014 32330 37340 21130 23040 36020 34370 11030 25040
 ```
+
+## License disclaimer
+
+![](inst/extdata/kogl_type1.jpg)
+
+This package’s data is derived from the Korean Statistical Information
+Service ([KOSIS](https://kosis.kr)) and Public Data Portal
+([data.go.kr](https://data.go.kr)). The data is provided under the
+[Korea Open Government License Type 1
+(Attribution)](https://www.kogl.or.kr/info/license.do) (Note: in
+Korean).
 
 # Package index
 

@@ -13,7 +13,10 @@ anycensus(
   type = c("population", "housing", "tax", "mortality", "economy", "medicine",
     "migration", "environment", "welfare", "social security", "landuse"),
   level = c("adm2", "adm1"),
+  adm2_type = c("all", "atn", "non"),
   aggregator = sum,
+  weight_type = NULL,
+  weight_column = NULL,
   geometry = FALSE,
   ...
 )
@@ -41,9 +44,34 @@ anycensus(
   character(1). "adm1" for province-level or "adm2" for municipal-level.
   Defaults to "adm2".
 
+- adm2_type:
+
+  character(1). Which municipal code type to keep before returning
+  `adm2` results or aggregating to `adm1`. `"all"` keeps the current
+  data, `"atn"` keeps autonomous/basic local government rows, and
+  `"non"` keeps non-autonomous rows where they are available. For
+  weighted `"atn"` aggregation, autonomous/basic local government rate
+  rows are recalculated from their non-autonomous component rows using
+  the supplied weights before returning `adm2` or aggregating to `adm1`.
+
 - aggregator:
 
-  function to aggregate values when `level = "adm1"`.
+  function to aggregate values when `level = "adm1"` or when weighted
+  `adm2_type = "atn"` recalculates autonomous/basic local government
+  rows.
+
+- weight_type:
+
+  character(1). Optional data type used to supply weights when
+  aggregating. For example, rate variables in `type = "mortality"` can
+  be aggregated with population weights from
+  `weight_type = "population"`.
+
+- weight_column:
+
+  character(1). Optional column name used as weights when aggregating.
+  If `weight_type = "population"` and `weight_column` is omitted,
+  `"all households_total_prs"` is used.
 
 - geometry:
 
@@ -53,7 +81,9 @@ anycensus(
 - ...:
 
   additional arguments passed to the `aggregator` function. (e.g.,
-  `na.rm = TRUE`).
+  `na.rm = TRUE`). When `weight_type` or `weight_column` is supplied,
+  `aggregator` must accept a `w` argument such as
+  [`stats::weighted.mean()`](https://rdrr.io/r/stats/weighted.mean.html).
 
 ## Value
 
@@ -126,22 +156,6 @@ anycensus(
   aggregator = sum,
   na.rm = TRUE
 )
-#> Warning: There was 1 warning in `dplyr::summarise()`.
-#> ℹ In argument: `dplyr::across(...)`.
-#> ℹ In group 1: `year = 2020`, `type = "tax"`, `adm1 = "Gyeonggi-do"`, `adm1_code
-#>   = 31`.
-#> Caused by warning:
-#> ! The `...` argument of `across()` is deprecated as of dplyr 1.1.0.
-#> Supply arguments directly to `.fns` through an anonymous function instead.
-#> 
-#>   # Previously
-#>   across(a:b, mean, na.rm = TRUE)
-#> 
-#>   # Now
-#>   across(a:b, \(x) mean(x, na.rm = TRUE))
-#> ℹ The deprecated feature was likely used in the tidycensuskr package.
-#>   Please report the issue at
-#>   <https://github.com/sigmafelix/tidycensuskr/issues>.
 #> # A tibble: 3 × 6
 #> # Groups:   year, type, adm1, adm1_code [3]
 #>    year type  adm1        adm1_code income_general_mkr income_labor_mkr
@@ -149,4 +163,70 @@ anycensus(
 #> 1  2020 tax   Gyeonggi-do        31           12367363         14767906
 #> 2  2020 tax   Incheon            23            1994065          2111882
 #> 3  2020 tax   Seoul              11           20923255         24311772
+
+# Aggregate mortality rates to adm1 using population weights
+anycensus(
+  codes = "Seoul",
+  type = "mortality",
+  year = 2020,
+  level = "adm1",
+  aggregator = stats::weighted.mean,
+  weight_type = "population",
+  weight_column = "all households_total_prs",
+  na.rm = TRUE
+)
+#> # A tibble: 1 × 8
+#>    year type      adm1  adm1_code `all causes_total_p1p` `all causes_male_p1p`
+#>   <dbl> <chr>     <chr>     <dbl>                  <dbl>                 <dbl>
+#> 1  2020 mortality Seoul        11                   256.                  347.
+#> # ℹ 2 more variables: `all causes_female_p1p` <dbl>,
+#> #   `all households_total_prs` <dbl>
+
+# Aggregate rates to adm1 after cleaning to autonomous/basic local governments
+anycensus(
+  codes = "Gyeonggi-do",
+  type = "mortality",
+  year = 2020,
+  level = "adm1",
+  adm2_type = "atn",
+  aggregator = stats::weighted.mean,
+  weight_type = "population",
+  weight_column = "all households_total_prs",
+  na.rm = TRUE
+)
+#> # A tibble: 1 × 8
+#>    year type      adm1    adm1_code `all causes_total_p1p` `all causes_male_p1p`
+#>   <dbl> <chr>     <chr>       <dbl>                  <dbl>                 <dbl>
+#> 1  2020 mortality Gyeong…        31                   286.                  379.
+#> # ℹ 2 more variables: `all causes_female_p1p` <dbl>,
+#> #   `all households_total_prs` <dbl>
+
+# Recalculate adm2 rates after cleaning to autonomous/basic local governments
+anycensus(
+  codes = "Gyeonggi-do",
+  type = "mortality",
+  year = 2020,
+  level = "adm2",
+  adm2_type = "atn",
+  aggregator = stats::weighted.mean,
+  weight_type = "population",
+  weight_column = "all households_total_prs",
+  na.rm = TRUE
+)
+#> # A tibble: 31 × 10
+#>     year adm1        adm1_code adm2       adm2_code type  `all causes_total_p1p`
+#>    <dbl> <chr>           <dbl> <chr>          <dbl> <chr>                  <dbl>
+#>  1  2020 Gyeonggi-do        31 Ansan-si       31090 mort…                   336.
+#>  2  2020 Gyeonggi-do        31 Anseong-si     31220 mort…                   316.
+#>  3  2020 Gyeonggi-do        31 Anyang-si      31040 mort…                   256.
+#>  4  2020 Gyeonggi-do        31 Bucheon-si     31050 mort…                   296.
+#>  5  2020 Gyeonggi-do        31 Dongduche…     31080 mort…                   368 
+#>  6  2020 Gyeonggi-do        31 Gapyeong-…     31370 mort…                   353.
+#>  7  2020 Gyeonggi-do        31 Gimpo-si       31230 mort…                   272 
+#>  8  2020 Gyeonggi-do        31 Goyang-si      31100 mort…                   258.
+#>  9  2020 Gyeonggi-do        31 Gunpo-si       31160 mort…                   277 
+#> 10  2020 Gyeonggi-do        31 Guri-si        31120 mort…                   291.
+#> # ℹ 21 more rows
+#> # ℹ 3 more variables: `all causes_male_p1p` <dbl>,
+#> #   `all causes_female_p1p` <dbl>, `all households_total_prs` <dbl>
 ```

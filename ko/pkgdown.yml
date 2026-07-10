@@ -1,5 +1,5 @@
 pandoc: 3.8.3
-pkgdown: 2.2.0
+pkgdown: 2.2.1
 pkgdown_sha: ~
 articles:
   v01_intro-ko: v01_intro-ko.html
@@ -12,7 +12,7 @@ articles:
   v04_data_cleaning_kosis: v04_data_cleaning_kosis.html
   v05_contributors_guide-ko: v05_contributors_guide-ko.html
   v05_contributors_guide: v05_contributors_guide.html
-last_built: 2026-05-04T07:39Z
+last_built: 2026-07-10T11:28Z
 urls:
   reference: https://sigmafelix.github.io/tidycensuskr/ko/reference
   article: https://sigmafelix.github.io/tidycensuskr/ko/articles
