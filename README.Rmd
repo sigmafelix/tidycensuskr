@@ -14,12 +14,16 @@ knitr::opts_chunk$set(
 )
 ```
 
+[![runiverse-package](https://ropensci.r-universe.dev/badges/tidycensuskr?scale=1&color=pink&style=round)](https://sigmafelix.r-universe.dev/tidycensuskr)
+[![CRAN](https://www.r-pkg.org/badges/version/tidycensuskr?color=blue)](https://cran.r-project.org/package=tidycensuskr)
+[![downloads](https://cranlogs.r-pkg.org/badges/grand-total/tidycensuskr)](https://cran.r-project.org/package=tidycensuskr)
+
+
 
 # Who is the package for?
 The `tidycensuskr` package is designed for R users who want to work with South Korean census and administrative boundary data. It aims to provide an easy-to-use interface for population, housing, and socioeconomic statistics linked with geospatial boundaries.
 
-<a href='https://sigmafelix.github.io/tidycensuskr/'><img src='man/figures/seoul_ai.jpeg' align="center"  /></a>
-
+<a href='https://sigmafelix.github.io/tidycensuskr/'><img src='man/figures/gat.jpg' align="center" width="200" /></a>
 
 
 # Installation
@@ -46,7 +50,7 @@ remotes::install_github("sigmafelix/tidycensuskr")
 
 # About the data
 
-As of September 2025, this package contains two datasets: Census data (`censuskor`) and the corresponding geospatial data.
+As of version 0.2.8.1, this package contains two datasets: Census data (`censuskor`) and the corresponding geospatial data.
 
 
 ## 1. Census data
@@ -130,7 +134,6 @@ census_2020_pop <-
   )
 
 census_2020_pop
-
 ```
 
 
@@ -177,9 +180,11 @@ census_housing_2020 <- anycensus(year = 2020, codes = NULL, type = "housing")
 census_housing_2020 <- census_housing_2020 |>
   rename(housing_total_units = `housing types_total_cnt`)
 census_pop_housing_2020 <- census_pop_2020 |>
-  left_join(census_housing_2020 |>
-              select(adm2_code, housing_total_units),
-            by = "adm2_code") |>
+  left_join(
+    census_housing_2020 |>
+      select(adm2_code, housing_total_units),
+    by = "adm2_code"
+  ) |>
   transmute(
     adm2_code = adm2_code,
     persons_per_housing = population_total / housing_total_units
@@ -189,9 +194,11 @@ census_mort_2020 <- census_mort_2020 |>
   rename(mortality_total = `all causes_total_p1p`)
 
 census_pph_mort_2020 <- census_pop_housing_2020 |>
-  left_join(census_mort_2020 |>
-              select(adm2_code, mortality_total),
-            by = "adm2_code")
+  left_join(
+    census_mort_2020 |>
+      select(adm2_code, mortality_total),
+    by = "adm2_code"
+  )
 
 # merge boundaries and census data
 census_2020_sf <- adm2_2020 |>
@@ -206,11 +213,13 @@ census_2020_mapbase <-
   )
 
 # draw a bivariate legend
-legend <- bi_legend(pal = "DkCyan",
-                    dim = 3,
-                    xlab = "More Persons per Housing ",
-                    ylab = "All-Cause Mortality ",
-                    size = 6)
+legend <- bi_legend(
+  pal = "DkCyan",
+  dim = 3,
+  xlab = "More Persons per Housing ",
+  ylab = "All-Cause Mortality ",
+  size = 6
+)
 
 # plot population data
 census_2020_bmap <-
@@ -235,3 +244,31 @@ census_2020_bimap <- cowplot::ggdraw() +
 
 census_2020_bimap
 ```
+
+
+## Filter nonautonomous districts
+`detect_adm2_type()` can be used to detect nonautonomous districts (i.e., districts that are not independent administrative units but are part of larger cities, per _Local Autonomy Act_). This is particularly useful when you want to focus on autonomous or nonautonomous districts for analysis.
+
+```{r filter-nonauto}
+# detect nonautonomous districts
+census_pop_2020 <- anycensus(year = 2020, type = "population")
+census_housing_2020 <- anycensus(year = 2020, type = "housing")
+
+census_pop_2020_auto <- detect_adm2_type(census_pop_2020, mode = "atn")
+census_pop_2020_nonauto <- detect_adm2_type(census_pop_2020, mode = "non")
+unique(census_pop_2020_auto$adm2_code)
+unique(census_pop_2020_nonauto$adm2_code)
+
+
+census_housing_2020_auto <- detect_adm2_type(census_housing_2020, mode = "atn")
+census_housing_2020_nonauto <- detect_adm2_type(census_housing_2020, mode = "non")
+unique(census_housing_2020_auto$adm2_code)
+unique(census_housing_2020_nonauto$adm2_code)
+```
+
+
+## License disclaimer
+![](inst/extdata/kogl_type1.jpg){style="fig-align: center; width: 200px;"}
+
+This package's data is derived from the Korean Statistical Information Service ([KOSIS](https://kosis.kr)) and Public Data Portal ([data.go.kr](https://data.go.kr)). The data is provided under the [Korea Open Government License Type 1 (Attribution)](https://www.kogl.or.kr/info/license.do) (Note: in Korean).
+

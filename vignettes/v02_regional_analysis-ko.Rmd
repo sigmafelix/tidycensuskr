@@ -1,9 +1,9 @@
 ---
-title: "Regional analysis with tidycensuskr"
+title: "지역분석 예제"
 output: rmarkdown::html_vignette
 date: "`r format(Sys.Date(), '%B %d, %Y')`"
 vignette: >
-  %\VignetteIndexEntry{Regional analysis with tidycensuskr} 
+  %\VignetteIndexEntry{지역분석 예제} 
   %\VignetteEngine{knitr::rmarkdown}
   %\usepackage[utf8]{inputenc}
 ---
@@ -21,21 +21,22 @@ library(grid)
 library(ggspatial)
 ```
 
+
 ## Example 1: Population change in the Gyeongsangnam-do region
+## 예제 1: 경상남도의 인구 변화
 
-### Design idea
-1. Load 2010 and 2020 census population data.
-2. Merge with 2020 district boundaries.
-3. Calculate the population change (`change = 2020 - 2010`).
-4. Subset to Gyeongsangnam-do, Busan, and Ulsan.
-5. Create a diverging choropleth map to show population increase/decrease, with an inset map of Korea highlighting the region.
+### 디자인 아이디어
+1. 2010년과 2020년 인구 센서스 데이터를 불러옵니다.
+2. 2020년 행정구역 경계와 병합합니다.
+3. 인구 변화(`change = 2020 - 2010`)를 계산합니다.
+4. 경상남도, 부산, 울산으로 하위셋을 만듭니다.
+5. 인구 증감을 보여주는 발산형 색상 지도와, 해당 지역을 강조한 대한민국 인셋 지도를 만듭니다.
 
 
-
-### Data prep
+### 데이터 준비
 ```{r load-data_1}
 
-# Load 2020 boundaries
+# 2020년 경계 불러오기
 data(adm2_sf_2020)
 
 ```
@@ -59,7 +60,7 @@ sf_target <- adm2_sf_2020 |>
 ```
 
 
-### A choropleth map with an inset map
+### 삽입도가 있는 단계구분도
 ```{r choropleth_1, fig.width=7, fig.height=5}
 # Choropleth map for population change
 map <- ggplot(sf_target) +
@@ -98,25 +99,26 @@ cowplot::ggdraw() +
   draw_grob(grid::rectGrob(gp = gpar(col = "black", fill = NA, lwd = 0.6)),
             x = 0.7, y = 0.05, width = 0.25, height = 0.25)
 ```
-In the Gyeongsangnam-do region, large metropolitan cities such as Busan and Ulsan show population decline, while surrounding suburban areas demonstrate notable population gains. Rural areas in the western part of the province exhibit relatively stable population trends.
 
-## Example 2: Bivariate mapping of population vs. tax
+경상남도에서는 해안가 지역과 대도시 주변에서 인구가 두드러지게 감소했고, 특히 부산과 울산의 중심지구에서 그 경향이 뚜렷합니다. 반면, 내륙의 일부 농촌 지역에서는 인구 증가가 관찰됩니다. 서부에서는 인구 추이가 비교적 안정적입니다.
 
-### Design idea
-1. Load 2020 population and tax datasets.
-2. Because tax data is not available at the _Gu_ level of large cities, aggregate district-level (`adm2_code`) data to the 4-digit prefix level.
-3. Merge population and tax data.
-4. Use `biscale::bi_class()` to create a 3*3 bivariate classification of population (x) vs. tax (y).
-5. Draw a bivariate choropleth map with a custom legend.
+## 예시 2: 인구와 조세의 이변량 지도
+
+### 디자인 아이디어
+1. 2020년 인구와 조세 데이터를 불러옵니다.
+2. 일반구가 있는 대도시의 구 단위 데이터가 없으므로, 4자리 접두 수준으로 집계합니다.
+3. 인구와 조세 데이터를 병합합니다.
+4. `biscale::bi_class()` 함수를 사용하여 인구(x)와 조세(y)의 3*3 이변량 분류를 만듭니다.
+5. 사용자 정의 범례와 함께 이변량 단계구분도를 그립니다.
 
 
-### Data prep
+### 데이터 준비
 
 ```{r filter-merge_2}
 # Load census data
-df_2020_pop <- anycensus(year = 2020,
+df_2020_pop <- anycensus(year = 2020, 
                          type = "population")
-df_2020_tax <- anycensus(year = 2020,
+df_2020_tax <- anycensus(year = 2020, 
                          type = "tax")
 
 # Merge population with boundaries
@@ -150,7 +152,7 @@ sf_final <- adm2_sf_2020_unioned |>
 
 ```
 
-### A bivariate choropleth map
+### 이변량 지도
 ```{r bivariate_2, fig.width=7, fig.height=5}
 # Create 3x3 bivariate classes (population vs tax)
 bi_data <- bi_class(
@@ -182,25 +184,23 @@ cowplot::ggdraw() +
   cowplot::draw_plot(legend, x = 0.7, y = 0.1, width = 0.3, height = 0.3)
 ```
 
-The bivariate map highlights the strong centrality of the Seoul Metropolitan Area. Both the capital region and the southeastern manufacturing hubs exhibit high population and high tax revenues. In contrast, most other regions—such as Gangwon and Gyeongbuk, apart from a few metropolitan centers—fall into the low population–low tax category.
-
-
+이변량 단계구분도로부터 높은 값들이 수도권에 집중되어 있음을 알 수 있습니다. 서울특별시 및 그 동남부의 경기도 시군에서 인구와 조세 수입이 모두 높게 나타납니다. 반면에 강원특별자치도와 경상북도 등 대부분 지역에서는 인구와 조세 수입이 모두 낮습니다.
  
 
 
-## Example 3: Sex ratio in Seoul Metropolitan Area
+## 예시 3: 수도권의 성비
 
-### Design idea
+### 디자인 아이디어
 
-1. Load 2020 population data for Seoul, Gyeonggi-do, and Incheon.
-2. Calculate the sex ratio (`male/female * 100`).
-3. Visualize the distribution of sex ratios:
-    - Show the overall distribution as a grey background histogram.
-    - Overlay regional distributions (Seoul, Incheon, Gyeonggi-do) in color with facets.
-4. Map the sex ratio across districts, using a diverging color scale centered on 100 (balanced sex ratio).
+1. 2020년 수도권(서울, 인천, 경기)의 인구 데이터를 불러옵니다.
+2. 성비(`남성/여성 × 100`)를 계산합니다.
+3. 성비 분포를 시각화합니다:
+    - 전체 분포는 회색 배경 히스토그램으로 표시합니다.
+    - 지역별 분포(서울, 인천, 경기)는 색상을 주어 겹쳐 표시하고, 각각을 분할면(facet)으로 나눕니다.
+4. 구 단위로 성비를 나타내는 단계구분도를 만듭니다. 동일 성비(100)를 중심으로 발산형 색상 척도를 사용합니다.
 
 
-### Data prep
+### 데이터 준비
 ```{r data_load_3, include=TRUE}
 # Load population data for the Seoul Metropolitan Area (SMA)
 df_sma <- anycensus(
@@ -220,7 +220,7 @@ df_all <- df_sma |>
   select(sex_ratio)
 ```
 
-### Histograms
+### 히스토그램 그리기
 ```{r histogram_3, include=TRUE, fig.width=7, fig.height=3}
 ggplot() +
   # Background: overall distribution across all SMA
@@ -250,7 +250,7 @@ ggplot() +
 ```
 
 
-### A choropleth map
+### 단계구분도
 
 ```{r choropleth_3, fig.width=7, fig.height=3.5}
 
@@ -270,22 +270,25 @@ ggplot(adm2_sf_2020_sma) +
   theme_void()
 ```
 
-Within the Seoul Metropolitan Area, the central city districts (Seoul) show a higher proportion of females, whereas the outer suburban areas tend to show male-dominated populations. This highlights spatial differences in gender distribution across the metropolitan region.
+수도권 지역에서 서울 주요 구에서는 성비가 낮지만 (여성 인구가 더 많음), 외곽 지역으로 갈수록 성비가 높아지는 경향이 있습니다. 이로부터 수도권 내에서 성비의 공간적 분포가 다름을 알 수 있습니다.
 
 
-## Example 4: Socioeconomic profiling
+## 예시 4: 사회경제적 상태를 종합적으로 파악하기 (프로파일링)
 
-### Context
-Regional socioeconomic status can be profiled using multiple indicators such as housing conditions, population characteristics, mortality rates, and social security usage. Principal Component Analysis (PCA) is a useful technique to reduce the dimensionality of such multivariate data. It helps identify groups of correlated variables and summarize them into a small set of interpretable components.
+### 배경
 
-### Design idea
+지역 단위의 사회경제적 상태는 주거 여건, 인구 특성, 사망률, 사회보장 이용률 등 다양한 지표를 통해 파악할 수 있습니다. 이러한 다변량 자료의 차원을 축소하는 데에 주성분 분석(PCA)이 유용합니다. PCA는 상관된 변수들의 그룹을 찾아내고, 이를 소수의 해석 가능한 성분들로 요약하는 데 도움을 줍니다.
 
-1. Using `anycensus()` function for multiple times, load multiple datasets from the 2020 census, including housing, population, mortality, and social security data.
-2. Aggregate the data to the basic local government level using the 4-digit prefix of `adm2_code` into a single wide-format data frame
-3. Variables are aggregated (summing counts, averaging rates) to reflect the characteristics of basic local governments.
-4. Perform PCA on the selected socioeconomic indicators and visualize the results using a biplot
 
-### data prep
+### 디자인 아이디어
+
+1. `anycensus()` 함수를 여러 번 사용하여 2020년 인구, 주거, 사망률, 사회보장 데이터를 불러옵니다.
+2. `adm2_code`의 4자리 접두 수준, 즉 기초지방자치단체(BLG) 단위로 집계하여 가로로 긴 형식의 데이터 프레임을 만듭니다.
+3. 기초지방자치단체의 특성을 반영하도록 변수를 집계합니다(인구수 합계, 비율 평균 등).
+4. 선택한 사회경제적 지표들에 대해 PCA를 수행하고, 결과를 이분도(바이플롯)로 시각화합니다.
+
+
+### 데이터 준비
 ```{r pca_demo_1, fig.width=7.5, fig.height=7}
 library(tidycensuskr)
 library(dplyr)
@@ -370,9 +373,9 @@ df_wide_re <-
 ```
 
 
-### PCA results
+### 주성분분석 결과
 
-Looking at the rotation matrix, the first component is moderately correlated with fertility and mortality rates and basic living income beneficiary rate (basic living security hereafter), and negatively correlated with persons per housing unit. The second component is dominantly correlated with sex ratio to the negative and basic living security rate to the positive. 
+주성분 분석(PCA)을 수행한 후, 회전 행렬을 살펴보면 첫 번째 성분이 출산율, 사망률, 기초생활보장 수급률과 중간 정도의 상관관계를 가지며, 주택당 인구수와는 음의 상관관계를 나타냅니다. 두 번째 성분은 성비와 기초생활보장 수급률과 각각 음의 상관관계와 양의 상관관계를 지니고 있습니다.
 
 ```{r pca_demo_2, fig.width=7.5, fig.height=7, dpi=200}
 # Run PCA
@@ -386,9 +389,10 @@ prc_df <-
 prc_df$rotation |> as.data.frame() |> round(3)
 ```
 
-### Biplot
+### 이분도(biplot)
 
-The biplot using the first and second principal components is used to visualize these relationships. The biplot displays both the districts (points) and the variables (arrows), allowing us to interpret the relationships between different socioeconomic factors and how they vary across regions. We label the districts with their names and codes for better identification. 
+첫 번째와 두 번째 주성분을 이용해서 이분도를 그려봅니다. 이 그림은 각 시군구를 점으로 표시하고, 개별 변수를 화살표로 나타내 주성분분석에 사용된 여러 변수들 간의 관계를 이해하는 데 도움을 줍니다. 또한 그 관계가 지역별로 어떻게 다른지도 파악할 수 있습니다. 해석의 편의를 위해서 각 시군구의 이름과 코드를 라벨로 표시합니다.
+
 
 ```{r pca_demo_3, fig.width=7.5, fig.height=7}
 # Proper labeling for biplot for BLGs
@@ -399,4 +403,4 @@ rownames(prc_df$x) <- adm2labels
 biplot(prc_df, choices = c(1, 2), cex = 0.5, arrow.len = 0.2)
 ```
 
-Interestingly, the biplot reveals that sex ratio is independent of crowding and mortality rate, whereas basic living security rate is negatively correlated, as evidenced by the orientation of each component's vectors compared to others. Districts in Seoul are mostly located in the upper left quadrant, indicating lower sex ratios and higher basic living security rates, while suburban areas in Gyeonggi-do tend to have higher sex ratios and lower basic living security rates. Inland and border areas are generally associated with higher basic living security rates, indicating potential socioeconomic challenges in these regions. This analysis provides insights into the socioeconomic disparities across different regions within South Korea. 
+이분도에서는 흥미로운 점을 찾아볼 수 있습니다. 성비는 주택당 인구 과밀도나 사망률과는 독립적(즉, 화살표가 거의 직각을 이룸)이며 기초생활수급자 비율과는 음의 상관관계를 보입니다(즉, 화살표가 반대 방향을 향함). 서울특별시의 구는 대부분 제2사분면에 위치하여 낮은 성비와 높은 기초생활수급자 비율을 나타내고, 경기도 외곽의 시군에서는 높은 성비와 낮은 기초생활수급자 비율이 관찰됩니다. 내륙과 접경 지역은 대체로 높은 기초생활수급자 비율과 관련이 있어 해당 지역의 사회경제적 어려움을 시사합니다. 이 분석은 한국 내 다양한 지역 간의 사회경제적 격차에 대한 통찰을 제공합니다.

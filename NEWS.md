@@ -1,6 +1,10 @@
 # NEWS
 
 ## 0.2
+- Added license information in vignettes and citations
+- `detect_adm2_type()`: autodetect non-autonomous adm2 and filter for data cleaning
+- Database update (0.2.7): 103K+ rows in `censuskor`
+  - Added new variable type: `landuse`
 - Database update (0.2.4): 67K+ rows in `censuskor`
   - Added new variable types: `welfare`
   - Added vacant housing statistics

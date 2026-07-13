@@ -8,9 +8,12 @@ anycensus(
   year = 2020,
   codes = NULL,
   type = c("population", "housing", "tax", "mortality", "economy", "medicine",
-    "migration", "environment", "welfare", "social security"),
+    "migration", "environment", "welfare", "social security", "landuse"),
   level = c("adm2", "adm1"),
+  adm2_type = c("all", "atn", "non"),
   aggregator = sum,
+  weight_type = NULL,
+  weight_column = NULL,
   geometry = FALSE,
   ...
 )
@@ -22,19 +25,41 @@ anycensus(
 or character administrative area names (e.g. \code{c("Seoul", "Daejeon")}).}
 
 \item{type}{character(1). "population", "housing", "tax", "economy",
-"medicine", "migration", "environment", "mortality", or "social security".
+"medicine", "migration", "environment", "mortality", "social security",
+or "landuse".
 Defaults to "population".}
 
 \item{level}{character(1). "adm1" for province-level or
 "adm2" for municipal-level. Defaults to "adm2".}
 
-\item{aggregator}{function to aggregate values when \code{level = "adm1"}.}
+\item{adm2_type}{character(1). Which municipal code type to keep before
+returning \code{adm2} results or aggregating to \code{adm1}. \code{"all"} keeps the
+current data, \code{"atn"} keeps autonomous/basic local government rows, and
+\code{"non"} keeps non-autonomous rows where they are available. For weighted
+\code{"atn"} aggregation, autonomous/basic local government rate rows are
+recalculated from their non-autonomous component rows using the supplied
+weights before returning \code{adm2} or aggregating to \code{adm1}.}
+
+\item{aggregator}{function to aggregate values when \code{level = "adm1"} or
+when weighted \code{adm2_type = "atn"} recalculates autonomous/basic local
+government rows.}
+
+\item{weight_type}{character(1). Optional data type used to supply
+weights when aggregating. For example, rate variables in
+\code{type = "mortality"} can be aggregated with population weights from
+\code{weight_type = "population"}.}
+
+\item{weight_column}{character(1). Optional column name used as weights
+when aggregating. If \code{weight_type = "population"} and
+\code{weight_column} is omitted, \code{"all households_total_prs"} is used.}
 
 \item{geometry}{logical(1). If \code{TRUE}, returns an \code{sf} object
 with geometries attached. Defaults to \code{FALSE}.}
 
 \item{...}{additional arguments passed to the \code{aggregator} function.
-(e.g., \code{na.rm = TRUE}).}
+(e.g., \code{na.rm = TRUE}). When \code{weight_type} or \code{weight_column} is
+supplied, \code{aggregator} must accept a \code{w} argument such as
+\code{stats::weighted.mean()}.}
 }
 \value{
 A data.frame object containing census data
@@ -64,6 +89,44 @@ anycensus(
   year = 2020,
   level = "adm1",
   aggregator = sum,
+  na.rm = TRUE
+)
+
+# Aggregate mortality rates to adm1 using population weights
+anycensus(
+  codes = "Seoul",
+  type = "mortality",
+  year = 2020,
+  level = "adm1",
+  aggregator = stats::weighted.mean,
+  weight_type = "population",
+  weight_column = "all households_total_prs",
+  na.rm = TRUE
+)
+
+# Aggregate rates to adm1 after cleaning to autonomous/basic local governments
+anycensus(
+  codes = "Gyeonggi-do",
+  type = "mortality",
+  year = 2020,
+  level = "adm1",
+  adm2_type = "atn",
+  aggregator = stats::weighted.mean,
+  weight_type = "population",
+  weight_column = "all households_total_prs",
+  na.rm = TRUE
+)
+
+# Recalculate adm2 rates after cleaning to autonomous/basic local governments
+anycensus(
+  codes = "Gyeonggi-do",
+  type = "mortality",
+  year = 2020,
+  level = "adm2",
+  adm2_type = "atn",
+  aggregator = stats::weighted.mean,
+  weight_type = "population",
+  weight_column = "all households_total_prs",
   na.rm = TRUE
 )
 }

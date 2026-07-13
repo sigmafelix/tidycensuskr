@@ -1,0 +1,34 @@
+lang: ko
+url: https://sigmafelix.github.io/tidycensuskr/ko
+destination: docs/ko
+
+template:
+  bootstrap: 5
+  bootswatch: simplex
+  params:
+    mathjax: true
+
+articles:
+- title: 안내서
+  contents:
+  - v01_intro-ko
+  - v02_regional_analysis-ko
+  - v03_gallery-ko
+  - v04_data_cleaning_kosis-ko
+  - v05_contributors_guide-ko
+- title: internal
+  contents:
+  - v01_intro
+  - v02_regional_analysis
+  - v03_gallery
+  - v04_data_cleaning_kosis
+  - v05_contributors_guide
+
+navbar:
+  structure:
+    left:  [home, reference, articles]
+    right: [lang, search, github]
+  components:
+    lang:
+      text: English
+      href: https://sigmafelix.github.io/tidycensuskr

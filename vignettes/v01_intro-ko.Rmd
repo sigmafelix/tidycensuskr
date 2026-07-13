@@ -1,9 +1,9 @@
 ---
-title: "Working with tidycensuskr"
+title: "tidycensuskr로 작업하기"
 output: rmarkdown::html_vignette
 date: "`r format(Sys.Date(), '%B %d, %Y')`"
 vignette: >
-  %\VignetteIndexEntry{Working with tidycensuskr} 
+  %\VignetteIndexEntry{tidycensuskr로 작업하기} 
   %\VignetteEngine{knitr::rmarkdown}
   %\usepackage[utf8]{inputenc}
 ---
@@ -25,22 +25,23 @@ library(tidyr)
 
 
 
-## Getting Started with tidycensuskr
+## tidycensuskr 시작
 
-The `tidycensuskr` package provides easy access to South Korean census and socioeconomic statistics, along with corresponding geospatial boundary data. With this package, R users can query and visualize population, housing, economy, tax, and mortality data linked to administrative districts.
+`tidycensuskr` 패키지로 대한민국의 인구주택총조사와 각종 사회경제, 도시 통계치를 시군구 단위로 쉽게 사용할 수 있습니다. 그리고 통계치와 시군구 경계 도형을 함께 제공하여 사용자들이 인구, 주택, 경제, 조세, 사망률 자료 등을 행정구역 경계와 연결하여 쿼리할 수 있습니다.
 
-Load the package:
+패키지를 사용하려면 먼저 README를 따라서 패키지를 설치한 다음 불러오십시오.
 ```{r, include = TRUE}
 library(tidycensuskr)
 
 ```
 
-tidycensuskr will work at its full potential with the companion data package `tidycensuskr.sf`, which contains the district boundaries of South Korea. The package can be installed from R-universe:
+`tidycensuskr`을 최대한 활용하려면 대한민국 시군구 경계 도형을 포함하는 동반 데이터 패키지 `tidycensuskr.sf`가 필요합니다. 이 패키지는 R-universe에서 설치할 수 있습니다:
+
 ```r
 install.packages("tidycensuskr.sf", repos = "https://sigmafelix.r-universe.dev")
 ```
 
-After installing the companion package, three RDS files for 2010, 2015, and 2020 will be accessible through the function `system.file()`. For example, the RDS file path of the 2010 district boundaries can be loaded as follows:
+동반 패키지를 설치하고 나면, `system.file()` 함수를 이용해 2010년, 2015년, 2020년의 시군구 경계를 각각 포함한 세 개의 RDS 파일을 불러올 수 있습니다. 예를 들어, 2010년 시군구 경계 도형의 RDS 파일 경로는 다음과 같이 불러올 수 있습니다:
 
 ```r
 fs10 <- system.file("extdata", "adm2_sf_2010.rds", package = "tidycensuskr.sf")
@@ -50,42 +51,43 @@ adm2_sf_2010 <- readRDS(fs10)
 
 
 
-## 1. Understanding Korean Geographic Hierarchies
+## 1. 한국 행정구역 체계
 
-South Korean census data is organized by three levels of administrative divisions:
+한국의 지역통계 자료는 세 가지 행정구역 단위로 구성됩니다.
 
-- **_Si-Do_**: The highest level of administrative division.
-  - Metropolitan cities are treated as provinces.
-  - Jeju-do, Gangwon-do, and Jeollabuk-do have special self-governing status under Korean law.
-- **_Si-Gun-Gu_**: The second level, which includes cities and counties.
-  - **_Si_**: Cities (urban administrative units)
-  - **_Gun_**: Counties (rural areas, typically <50,000 population)
-  - **_Gu_**: Districts (urban subdivisions of metropolitan cities or large cities).
-    - _Gu_ under metropolitan cities are autonomous districts
-    - _Gu_ under 11 large cities, as of 2025 (i.e., Suwon-si, Seongnam-si, Anyang-si, Goyang-si, Ansan-si, Yongin-si, Cheongju-si, Cheonan-si, Pohang-si, Changwon-si, Jeonju-si), are administraitve districts 
-- **_Eup-Myeon-Dong_**: The third level, which includes town and districts. (_planned for future releases_)
-  - **_Eup_**: Towns (urban, >20,000 population, within a county)
-  - **_Myeon_**: Townships (rural, <20,000 population, within a county)
-  - **_Dong_**: Neighborhoods (smallest units within cities and districts)
+- **시도**: 가장 높은 수준의 행정구역 단위입니다.
+  - 광역시는 도와 동등한 수준으로 취급됩니다.
+  - 제주도, 강원도, 전라북도는 특별자치도의 지위를 가지고 있습니다. 다만 사용하는 영문명은 조금씩 다릅니다.
+- **시군구**: 두 번째 수준의 행정구역 단위로, 시(도시)와 군(농촌), 구(대도시 내 구역)를 포함합니다.
+  - **시**: 도시 지역을 나타내는 행정구역 단위입니다.
+  - **군**: 농촌 지역을 나타내며, 일반적으로 인구가 5만 명 미만인 지역입니다.
+  - **구**: 대도시나 큰 도시 내의 하위 구역으로, 광역시 내의 자치구와 11개 대도시 내의 자치구가 아닌 구(일반구)로 나뉩니다.
+    - 광역시 내의 구는 자치구입니다.
+    - 2025년 기준 수원시, 성남시, 안양시, 고양시, 안산시, 용인시, 청주시, 천안시, 포항시, 창원시, 전주시 내의 구는 "자치구가 아닌 구"입니다.
+- **읍면동**: 세 번째 수준의 행정구역 단위로, 읍(도시 지역 내의 작은 단위), 면(농촌 지역 내의 작은 단위), 동(도시 내의 가장 작은 단위)을 포함합니다.
+  - **읍**: 군 내의 도시 지역으로, 일반적으로 인구가 2만 명 이상인 지역입니다.
+  - **면**: 군 내의 농촌 지역으로, 일반적으로 인구가 2만 명 미만인 지역입니다.
+  - **동**: 시와 구 내의 가장 작은 행정구역 단위입니다.
+  - 기타 단위로는 리(농촌 지역 내의 더 작은 단위)가 있습니다.
 
-### Comparison of Administrative Divisions  
 
-The table below provides a rough comparison of administrative divisions across South Korea, the United States, the European Union, and the United Kingdom (England). While the correspondence is not exact, it can be helpful to understand the approximate levels when working with census or regional data.  
+### 행정구역분류의 국제적 비교
 
-| South Korea       | US                                         | EU (NUTS[^1]) | UK (England)                     |
+아래 표는 대한민국의 행정구역 단위를 미국, 유럽연합, 영국(잉글랜드)과 대략적으로 비교한 것입니다. 각 단위가 일대일로 대응되지는 않을 수 있지만, 인구조사나 지역 데이터를 다룰 때 자료가 조사, 수집된 수준을 대략적으로 이해하는 데 도움이 될 수 있습니다.
+
+| 한국 | 미국 | 유럽연합 (NUTS[^1]) | 영국 (잉글랜드) |
 |-------------------|-------------------------------------------|---------------|----------------------------------|
-| **Si/Do**         | State                                     | NUTS1         | Regions / Combined Authorities   |
-| **Si/Gun/Gu**     | County                                    | NUTS2         | County                           |
-| **Eup/Myeon/Dong**| Townships / Towns / Census County Division | NUTS3         | Districts / Wards / Boroughs     |
+| **시도**         | State                                     | NUTS1         | Regions / Combined Authorities   |
+| **시군구**     | County                                    | NUTS2         | | County                           |
+| **읍면동**| Townships / Towns / Census County Division | NUTS3         | Districts / Wards / Boroughs     | 
 
-[^1]: NUTS: *Nomenclature of Territorial Units for Statistics*, a geocode standard for referencing the subdivisions of countries for statistical purposes.  
+[^1]: NUTS: 통계 수집을 위한 영역분류체계 (*Nomenclature of Territorial Units for Statistics*)의 준말로, 유럽연합 내 국가들의 행정구역을 통계 목적으로 분류한 체계입니다.
 
 
 ![]("man/figures/korea_map.png")
 
+행정구역 경계와 코드 체계는 조사 연도나 자료원에 따라서 다릅니다. `tidycensuskr`에서는 일관된 행정구역 코드를 제공하여 통계치를 통합적으로 사용할 수 있도록 합니다. 예를 들어, 2020년 기준으로 대한민국에는 250개의 시군구와 17개의 시도가 있습니다.
 
-Because administrative boundaries and coding systems can vary across years and data sources, `tidycensuskr` standardizes administrative codes to allow consistent integration of statistics. 
-Currently, for 2020 data there are 250 _Si-Gun-Gu_ and 17 _Si-Do_.
 ```{r, include = TRUE}
 data(adm2_sf_2020)
 print(length(unique(adm2_sf_2020$adm2_code)))
@@ -93,10 +95,11 @@ print(length(unique(adm2_sf_2020$adm2_code)))
 ```
 
 
-## 2. Available census data
-The package provides census and survey data through:  
-  - The function `anycensus()` for querying subsets  
-  - The built-in dataset `censuskor` in long format  
+## 2. 가용 센서스 데이터
+
+이 패키지는 센서스 및 조사 데이터를 다음과 같은 방식으로 제공합니다:  
+  - 특정 하위 집합을 쿼리하기 위한 함수 `anycensus()`  
+  - 긴 테이블 (long table) 포맷의 내장 데이터셋 `censuskor`
 
 
 ### Data types
@@ -222,33 +225,34 @@ The package provides census and survey data through:
 | landuse | road | area of roads | square meters | Total area of roads | 2010, 2015, 2020 |
 </div>
 
-
-* The data is provided under the [Korea Open Government License Type 1 (Attribution)](https://www.kogl.or.kr/info/license.do) (Note: in Korean). Each raw data table is available for download from the [Public Data Portal](https://www.data.go.kr/) and [KOSIS](https://kosis.kr/) with no cost.
+* 이 패키지에서 제공하는 자료는 대한민국 통계데이터처에서 2010년-2020년 작성하여 공공누리 제1유형으로 개방한 통계표를 이용하였으며, 해당 자료는 [공공데이터포털](https://www.data.go.kr/)과 [KOSIS](https://kosis.kr/)에서 무료로 내려받으실 수 있습니다.
 
 ![](inst/extdata/kogl_type1.jpg){style="fig-align: center; width: 200px;"}
 
+### `anycensus()`로 데이터 쿼리하기
 
-### Query data using `anycensus()`
+`anycensus()` 함수는 사용자가 원하는 연도, 행정구역 단위, 통계 유형을 지정하여 시군구 단위의 센서스 데이터를 쉽게 쿼리할 수 있도록 합니다.
 
-The function `anycensus()` returns a tidy tibble with columns such as:
+- `year`: 센서스 데이터의 연도 (예: 2010, 2015, 2020)
+- `codes`: 시도 또는 시군구 이름 또는 코드를 벡터로 지정 (예: `c("Seoul", "Incheon")` 또는 `c("11000", "28000")`). `NULL`로 설정하면 모든 지역을 반환합니다.
+- `type`: 조회할 센서스 데이터의 유형 (예: "population", "mortality", "housing" 등)
+- `level`: 반환할 행정구역 수준 ("adm2": 시군구 수준, "adm1": 시도 수준). 기본값은 "adm2"입니다.
 
-- `year`: year of the dataset
-- `adm1`, `adm1_code`: _Si-Do_ (province) level administrative unit name and its corresponding code 
-- `adm2`, `adm2_code`: _Si-Gun-Gu_ (district) level administrative unit name and its corresponding code 
+자료값을 포함한 필드는 가로로 긴 형태 (wide form)로 반환됩니다. `adm2_code` 열은 `load_districts()`로 불러온 경계 도형 파일과 센서스 데이터를 직접 연결하는 역할을 하고, 통계데이터처의 각 연도 행정구역 코드를 따릅니다.
 
-Columns containing the values are added as a wide form. The column `adm2_code` links census data directly to boundary files retrieved with `load_districts()`.
 
 ```{r, include = TRUE}
-df_2020 <- anycensus(year = 2020,
+df_2020 <- anycensus(year = 2020, 
                      type = "mortality",
                      level = "adm2")
 head(df_2020)
 
 ```
-The function can also aggregate values to higher administrative units. By specifying `level = "adm1"` and providing an aggregation function, we obtain province-level (`adm1`) results that summarize across all districts.
+
+상위 행정구역 단위로 자료값이 집계되는 기능도 제공됩니다. `level = "adm1"`로 설정하고 집계 함수를 지정하면, 시도(`adm1`) 수준에서 각 구역의 통계치를 요약한 결과를 얻을 수 있습니다.
 
 ```{r, include = TRUE}
-df_2020_sido <- anycensus(year = 2020,
+df_2020_sido <- anycensus(year = 2020, 
                           type = "mortality",
                           level = "adm1",
                           aggregator = mean,
@@ -257,27 +261,12 @@ head(df_2020_sido)
 
 ```
 
-For rate variables, weighted aggregation is also available. The example below computes a population-weighted mortality rate using the total population column from a separate `type = "population"` query.
-
-```{r, include = TRUE}
-df_2020_sido_weighted <- anycensus(year = 2020,
-                                   codes = "Seoul",
-                                   type = "mortality",
-                                   level = "adm1",
-                                   aggregator = stats::weighted.mean,
-                                   weight_type = "population",
-                                   weight_column = "all households_total_prs",
-                                   na.rm = TRUE)
-head(df_2020_sido_weighted)
-
-```
-
-For provinces that contain both autonomous/basic local government codes and
-non-autonomous `Gu` codes, use `adm2_type = "atn"` to clean to the
-autonomous/basic local government level. In weighted aggregation, rate rows for
-those autonomous units are recalculated from the non-autonomous component
-districts using the supplied weights. This can be returned at `level = "adm2"`
-or further aggregated to `level = "adm1"`.
+비율 변수는 가중 집계도 가능합니다. 아래 예시는 `type = "population"`에서
+가져온 총인구 열을 가중치로 사용해 사망률을 인구가중평균으로 집계합니다.
+자치 시군구 코드와 비자치구 코드가 함께 있는 시도에서는 `adm2_type = "atn"`을
+사용하면 자치 시군구 단위로 코드를 정리한 뒤, 비자치구 구성 행정구역의
+값을 인구가중평균해 비율 변수를 계산합니다. 이 결과는 `level = "adm2"`로
+반환할 수도 있고, `level = "adm1"`로 한 번 더 집계할 수도 있습니다.
 
 ```{r, include = TRUE}
 df_2020_adm2_weighted_atn <- anycensus(year = 2020,
@@ -307,17 +296,23 @@ head(df_2020_sido_weighted_atn)
 
 ```
 
-### Built-in dataset `censuskor`
+### `censuskor` 내장 데이터셋
 
-You can access the whole dataset directly using the function `data(censuskor)` which returns the built-in dataset in a long form. 
+`data(censuskor)`을 이용하면 패키지에 내장된 전체 센서스 데이터를 긴 형태로 불러올 수 있습니다. 이 데이터셋은 `anycensus()` 함수로 쿼리할 수 있는 모든 연도, 행정구역, 통계 유형을 포함합니다.
 
-- `year`: year of the dataset
-- `adm1`, `adm1_code`: Si-Do (province) level administrative unit name and its corresponding code  
-- `adm2`, `adm2_code`: Si-Gun-Gu (district) level administrative unit name and its corresponding code 
-- `type`: Types of census or survey
-- `class1`, `class2`: Classification variables providing further breakdowns
-- `unit`: Measurement unit for the value
-- `value`: The observed census value for the given combination of year, region, and category  
+각 열의 의미는 다음과 같습니다:
+
+- `year`: 연도
+- `adm1`: 시도 이름
+- `adm1_code`: 시도 코드
+- `adm2`: 시군구 이름
+- `adm2_code`: 시군구 코드
+- `type`: 센서스 또는 조사 유형
+- `class1`: 추가 분류 변수 1
+- `class2`: 추가 분류 변수 2
+- `unit`: 측정 단위
+- `value`: 관측된 자료값
+
 
 ```{r, include = TRUE}
 data(censuskor)
@@ -325,9 +320,9 @@ head(censuskor)
 
 ```
 
-### Quick Visualization
+### 시각화 예제
 
-Since `anycensus()` returns tidy data, visualization with `ggplot2` is straightforward.
+`anycensus()` 함수는 정돈된 데이터를 반환하므로, `ggplot2`로 시각화하는 것이 간단합니다.
 
 ```{r, include = TRUE, fig.width=7, fig.height=4}
 ggplot(df_2020, aes(x = `all causes_male_p1p`, y = `all causes_female_p1p`)) +
@@ -338,4 +333,5 @@ ggplot(df_2020, aes(x = `all causes_male_p1p`, y = `all causes_female_p1p`)) +
     title = "Male vs. Female Age-standardized Mortality Rates in South Korea (2020)"
   ) +
   theme_minimal(base_size = 10)
+
 ```
