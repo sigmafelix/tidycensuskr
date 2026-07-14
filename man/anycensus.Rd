@@ -36,7 +36,7 @@ Defaults to "population".}
 returning \code{adm2} results or aggregating to \code{adm1}. \code{"all"} keeps the
 current data, \code{"atn"} keeps autonomous/basic local government rows, and
 \code{"non"} keeps non-autonomous rows where they are available. For weighted
-\code{"atn"} aggregation, autonomous/basic local government rate rows are
+aggregation with \code{"atn"}, autonomous/basic local government rate rows are
 recalculated from their non-autonomous component rows using the supplied
 weights before returning \code{adm2} or aggregating to \code{adm1}.}
 
@@ -59,7 +59,7 @@ with geometries attached. Defaults to \code{FALSE}.}
 \item{...}{additional arguments passed to the \code{aggregator} function.
 (e.g., \code{na.rm = TRUE}). When \code{weight_type} or \code{weight_column} is
 supplied, \code{aggregator} must accept a \code{w} argument such as
-\code{stats::weighted.mean()}.}
+\code{\link[stats:weighted.mean]{stats::weighted.mean()}}.}
 }
 \value{
 A data.frame object containing census data

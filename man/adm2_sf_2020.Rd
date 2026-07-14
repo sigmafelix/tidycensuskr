@@ -22,7 +22,7 @@ can be used to join with an \code{\link[=anycensus]{anycensus()}} output.
 \details{
 \itemize{
 \item year Year of the census data, e.g., 2010, 2015, or 2020
-\item adm2_code  Code of the district/municipal-level (Sigungu) administrative unit
+\item adm2_code  Code of the district/municipal-level (Si-Gun-Gu) administrative unit
 \item geometry Geometry list-column
 }
 }

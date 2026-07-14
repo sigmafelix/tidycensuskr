@@ -25,8 +25,8 @@ package to create faceted visualizations based on geographic layout.
 }
 \details{
 \itemize{
-\item name Name of the district/municipal-level (Sigungu) administrative unit
-\item code SGIS code of the district/municipal-level (Sigungu) administrative unit
+\item name Name of the district/municipal-level (Si-Gun-Gu) administrative unit
+\item code SGIS code of the district/municipal-level (Si-Gun-Gu) administrative unit
 \item row Row position in the geofacet grid
 \item col Column position in the geofacet grid
 }

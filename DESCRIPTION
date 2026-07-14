@@ -1,6 +1,6 @@
 Package: tidycensuskr 
 Title: Easy Access for South Korea Census Data and Boundaries
-Version: 0.2.9
+Version: 0.2.9.9000
 Authors@R: c(
     person(given = "Insang", 
           family = "Song", 
@@ -29,7 +29,6 @@ LazyData: true
 Depends:
     R (>= 4.2.0)
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.3
 Imports:
     sf,
     dplyr,
@@ -57,3 +56,4 @@ Encoding: UTF-8
 VignetteBuilder: knitr
 URL: https://github.com/sigmafelix/tidycensuskr, https://sigmafelix.github.io/tidycensuskr/, https://sigmafelix.r-universe.dev/tidycensuskr/
 BugReports: https://github.com/sigmafelix/tidycensuskr/issues
+Config/roxygen2/version: 8.0.0
