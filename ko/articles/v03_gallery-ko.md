@@ -176,15 +176,16 @@ pop <- censuskor |>
 head(pop)
 ```
 
-    ## # A tibble: 6 × 10
-    ##    year adm1  adm1_code adm2       code type       class1     class2 unit  value
-    ##   <dbl> <chr>     <dbl> <chr>     <dbl> <chr>      <chr>      <chr>  <chr> <dbl>
-    ## 1  2020 Seoul        11 Jongno-gu 11010 population all house… female pers…  72.6
-    ## 2  2015 Seoul        11 Jongno-gu 11010 population all house… female pers…  73.8
-    ## 3  2010 Seoul        11 Jongno-gu 11010 population all house… female pers…  76.5
-    ## 4  2020 Seoul        11 Jongno-gu 11010 population all house… male   pers…  67.3
-    ## 5  2015 Seoul        11 Jongno-gu 11010 population all house… male   pers…  69.5
-    ## 6  2010 Seoul        11 Jongno-gu 11010 population all house… male   pers…  71.3
+    ## # A tibble: 6 × 12
+    ##    year adm1  adm1_code adm2       code type     class1 class2 unit  value adm3 
+    ##   <dbl> <chr>     <dbl> <chr>     <dbl> <chr>    <chr>  <chr>  <chr> <dbl> <chr>
+    ## 1  2020 Seoul        11 Jongno-gu 11010 populat… all h… female pers… 72.6  NA   
+    ## 2  2020 Seoul        11 Jongno-gu 11010 populat… all h… female pers…  4.75 Saji…
+    ## 3  2020 Seoul        11 Jongno-gu 11010 populat… all h… female pers…  1.25 Samc…
+    ## 4  2020 Seoul        11 Jongno-gu 11010 populat… all h… female pers…  5.04 Buam…
+    ## 5  2020 Seoul        11 Jongno-gu 11010 populat… all h… female pers…  9.27 Pyeo…
+    ## 6  2020 Seoul        11 Jongno-gu 11010 populat… all h… female pers…  4.32 Muak…
+    ## # ℹ 1 more variable: adm3_code <dbl>
 
 ``` r
 

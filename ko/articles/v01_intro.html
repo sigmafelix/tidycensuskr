@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">tidycensuskr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.9</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.9.9001</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,7 +53,7 @@
 
       <h1>Working with tidycensuskr</h1>
             
-            <h4 data-toc-skip class="date">July 13, 2026</h4>
+            <h4 data-toc-skip class="date">July 17, 2026</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/sigmafelix/tidycensuskr/blob/main/vignettes/v01_intro.Rmd" class="external-link"><code>vignettes/v01_intro.Rmd</code></a></small>
       <div class="d-none name"><code>v01_intro.Rmd</code></div>
@@ -191,7 +191,9 @@ countries for statistical purposes.&lt;/p&gt;"><sup>1</sup></a>)</th>
 years and data sources, <code>tidycensuskr</code> standardizes
 administrative codes to allow consistent integration of statistics.
 Currently, for 2020 data there are 250 <em>Si-Gun-Gu</em> and 17
-<em>Si-Do</em>.</p>
+<em>Si-Do</em>. The package is provided with a built-in dataset of 2020
+<em>Si-Gun-Gu</em> boundaries, which can be loaded using the function
+<code><a href="https://rdrr.io/r/utils/data.html" class="external-link">data()</a></code>.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">adm2_sf_2020</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html" class="external-link">unique</a></span><span class="op">(</span><span class="va">adm2_sf_2020</span><span class="op">$</span><span class="va">adm2_code</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
@@ -1169,9 +1171,16 @@ services</td>
 </table>
 </div>
 <ul>
-<li>The data is provided under the <a href="https://www.kogl.or.kr/info/license.do" class="external-link">Korea Open Government
-License Type 1 (Attribution)</a> (Note: in Korean). Each raw data table
-is available for download from the <a href="https://www.data.go.kr/" class="external-link">Public Data Portal</a> and <a href="https://kosis.kr/" class="external-link">KOSIS</a> with no cost.</li>
+<li><p>As of version 0.3.0, <code>tidycensuskr</code> comes with ADM3
+level variables for types <code>population</code>,
+<code>mortality</code>, <code>housing</code>, and <code>economy</code>
+in 2020 census.</p></li>
+<li><p>The data is provided under the <a href="https://www.kogl.or.kr/info/license.do" class="external-link">Korea Open Government
+License (KOGL) Type 1 (Attribution)</a> (Note: in Korean). Each raw data
+table is available for download from the <a href="https://www.data.go.kr/" class="external-link">Public Data Portal</a> and <a href="https://kosis.kr/" class="external-link">KOSIS</a> with no cost. KOGL Type 1 is similar
+to the Creative Commons Attribution 4.0 International License (CC BY
+4.0), which allows for free use, distribution, and adaptation of the
+data as long as proper attribution is given.</p></li>
 </ul>
 <p><img src="inst/extdata/kogl_type1.jpg" style="fig-align: center; width: 200px;"></p>
 </div>
@@ -1190,10 +1199,15 @@ level administrative unit name and its corresponding code</li>
 <code>adm2</code>, <code>adm2_code</code>: <em>Si-Gun-Gu</em>
 (district) level administrative unit name and its corresponding
 code</li>
+<li>
+<code>adm3</code>, <code>adm3_code</code>: <em>Eup-Myeon-Dong</em>
+(neighborhood) level administrative unit name and its corresponding
+code</li>
 </ul>
 <p>Columns containing the values are added as a wide form. The column
-<code>adm2_code</code> links census data directly to boundary files
-retrieved with <code><a href="../reference/load_districts.html">load_districts()</a></code>.</p>
+<code>adm2_code</code> or <code>adm3_code</code> links census data
+directly to boundary files retrieved with <code><a href="../reference/load_districts.html">load_districts()</a></code>,
+depending on the spatial level of data collection.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>,</span>
 <span>                     type <span class="op">=</span> <span class="st">"mortality"</span>,</span>
@@ -1299,6 +1313,26 @@ districts using the supplied weights. This can be returned at
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>  <span style="text-decoration: underline;">2</span>020 mortality Gyeong…        31                   286.                  379.</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 2 more variables: `all causes_female_p1p` &lt;dbl&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   `all households_total_prs` &lt;dbl&gt;</span></span></span></code></pre></div>
+<p>For ADM3 level data, use <code>level = "adm3"</code> and provide the
+corresponding <code>adm3_code</code> to retrieve neighborhood-level
+data.</p>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">df_2020_adm3</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>,</span>
+<span>                          codes <span class="op">=</span> <span class="st">"Seoul"</span>,</span>
+<span>                          type <span class="op">=</span> <span class="st">"mortality"</span>,</span>
+<span>                          level <span class="op">=</span> <span class="st">"adm3"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">df_2020_adm3</span><span class="op">)</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 11</span></span></span>
+<span><span class="co">#&gt;    year adm1  adm1_code adm2      adm2_code type      adm3             adm3_code</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>  <span style="text-decoration: underline;">2</span>020 Seoul        11 Jongno-gu     <span style="text-decoration: underline;">11</span>010 mortality Sajik-dong        11<span style="text-decoration: underline;">010</span>530</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>  <span style="text-decoration: underline;">2</span>020 Seoul        11 Jongno-gu     <span style="text-decoration: underline;">11</span>010 mortality Samcheong-dong    11<span style="text-decoration: underline;">010</span>540</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>  <span style="text-decoration: underline;">2</span>020 Seoul        11 Jongno-gu     <span style="text-decoration: underline;">11</span>010 mortality Buam-dong         11<span style="text-decoration: underline;">010</span>550</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>  <span style="text-decoration: underline;">2</span>020 Seoul        11 Jongno-gu     <span style="text-decoration: underline;">11</span>010 mortality Pyeongchang-dong  11<span style="text-decoration: underline;">010</span>560</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>  <span style="text-decoration: underline;">2</span>020 Seoul        11 Jongno-gu     <span style="text-decoration: underline;">11</span>010 mortality Muak-dong         11<span style="text-decoration: underline;">010</span>570</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span>  <span style="text-decoration: underline;">2</span>020 Seoul        11 Jongno-gu     <span style="text-decoration: underline;">11</span>010 mortality Gyonam-dong       11<span style="text-decoration: underline;">010</span>580</span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 3 more variables: `all causes_total_p1p` &lt;dbl&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   `all causes_male_p1p` &lt;dbl&gt;, `all causes_female_p1p` &lt;dbl&gt;</span></span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="built-in-dataset-censuskor">Built-in dataset <code>censuskor</code><a class="anchor" aria-label="anchor" href="#built-in-dataset-censuskor"></a>
@@ -1317,6 +1351,10 @@ administrative unit name and its corresponding code<br>
 <code>adm2</code>, <code>adm2_code</code>: Si-Gun-Gu (district)
 level administrative unit name and its corresponding code</li>
 <li>
+<code>adm3</code>, <code>adm3_code</code>: Eup-Myeon-Dong
+(neighborhood) level administrative unit name and its corresponding
+code</li>
+<li>
 <code>type</code>: Types of census or survey</li>
 <li>
 <code>class1</code>, <code>class2</code>: Classification variables
@@ -1327,25 +1365,26 @@ providing further breakdowns</li>
 <code>value</code>: The observed census value for the given
 combination of year, region, and category</li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">censuskor</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">censuskor</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A data frame: 6 × 10</span></span></span>
-<span><span class="co">#&gt;    year adm1          adm1_code adm2  adm2_code type  class1 class2 unit   value</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">*</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>             <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>  <span style="text-decoration: underline;">2</span>010 Chungcheongb…        33 Cheo…     <span style="text-decoration: underline;">33</span>010 popu… all h… total  pers… <span style="text-decoration: underline;">646</span>939</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>  <span style="text-decoration: underline;">2</span>010 Chungcheongb…        33 Cheo…     <span style="text-decoration: underline;">33</span>010 popu… all h… male   pers… <span style="text-decoration: underline;">318</span>355</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>  <span style="text-decoration: underline;">2</span>010 Chungcheongb…        33 Cheo…     <span style="text-decoration: underline;">33</span>010 popu… all h… female pers… <span style="text-decoration: underline;">328</span>584</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>  <span style="text-decoration: underline;">2</span>020 Chungcheongb…        33 Cheo…     <span style="text-decoration: underline;">33</span>040 tax   income gener… mill… <span style="text-decoration: underline;">524</span>478</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>  <span style="text-decoration: underline;">2</span>020 Chungcheongb…        33 Cheo…     <span style="text-decoration: underline;">33</span>040 tax   income labor  mill… <span style="text-decoration: underline;">598</span>560</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span>  <span style="text-decoration: underline;">2</span>015 Chungcheongb…        33 Cheo…     <span style="text-decoration: underline;">33</span>040 popu… all h… total  pers… <span style="text-decoration: underline;">797</span>099</span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># A data frame: 6 × 12</span></span></span>
+<span><span class="co">#&gt;    year adm1    adm1_code adm2  adm2_code type  class1 class2 unit   value adm3 </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">*</span> <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>  <span style="text-decoration: underline;">2</span>010 Chungc…        33 Cheo…     <span style="text-decoration: underline;">33</span>010 popu… all h… total  pers… <span style="text-decoration: underline;">646</span>939 <span style="color: #BB0000;">NA</span>   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>  <span style="text-decoration: underline;">2</span>010 Chungc…        33 Cheo…     <span style="text-decoration: underline;">33</span>010 popu… all h… male   pers… <span style="text-decoration: underline;">318</span>355 <span style="color: #BB0000;">NA</span>   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>  <span style="text-decoration: underline;">2</span>010 Chungc…        33 Cheo…     <span style="text-decoration: underline;">33</span>010 popu… all h… female pers… <span style="text-decoration: underline;">328</span>584 <span style="color: #BB0000;">NA</span>   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>  <span style="text-decoration: underline;">2</span>020 Chungc…        33 Cheo…     <span style="text-decoration: underline;">33</span>040 tax   income gener… mill… <span style="text-decoration: underline;">524</span>478 <span style="color: #BB0000;">NA</span>   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>  <span style="text-decoration: underline;">2</span>020 Chungc…        33 Cheo…     <span style="text-decoration: underline;">33</span>040 tax   income labor  mill… <span style="text-decoration: underline;">598</span>560 <span style="color: #BB0000;">NA</span>   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span>  <span style="text-decoration: underline;">2</span>015 Chungc…        33 Cheo…     <span style="text-decoration: underline;">33</span>040 popu… all h… total  pers… <span style="text-decoration: underline;">797</span>099 <span style="color: #BB0000;">NA</span>   </span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 1 more variable: adm3_code &lt;dbl&gt;</span></span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="quick-visualization">Quick Visualization<a class="anchor" aria-label="anchor" href="#quick-visualization"></a>
 </h3>
 <p>Since <code><a href="../reference/anycensus.html">anycensus()</a></code> returns tidy data, visualization with
 <code>ggplot2</code> is straightforward.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html" class="external-link">ggplot</a></span><span class="op">(</span><span class="va">df_2020</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html" class="external-link">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">`all causes_male_p1p`</span>, y <span class="op">=</span> <span class="va">`all causes_female_p1p`</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external-link">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span></span>
@@ -1354,7 +1393,7 @@ combination of year, region, and category</li>
 <span>    title <span class="op">=</span> <span class="st">"Male vs. Female Age-standardized Mortality Rates in South Korea (2020)"</span></span>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal</a></span><span class="op">(</span>base_size <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
-<p><img src="v01_intro_files/figure-html/unnamed-chunk-10-1.png" class="r-plt" alt="" width="100%"></p>
+<p><img src="v01_intro_files/figure-html/unnamed-chunk-11-1.png" class="r-plt" alt="" width="100%"></p>
 </div>
 </div>
 

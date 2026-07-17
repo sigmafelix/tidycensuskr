@@ -83,7 +83,10 @@ adm2_sf_2010 <- readRDS(fs10)
 행정구역 경계와 코드 체계는 조사 연도나 자료원에 따라서 다릅니다.
 `tidycensuskr`에서는 일관된 행정구역 코드를 제공하여 통계치를 통합적으로
 사용할 수 있도록 합니다. 예를 들어, 2020년 기준으로 대한민국에는 250개의
-시군구와 17개의 시도가 있습니다.
+시군구와 17개의 시도가 있습니다. `tidycensuskr.sf` 패키지에는 2010년,
+2015년, 2020년의 시군구(ADM2), 읍면도(ADM3) 경계 도형이 제공되며,
+[`data()`](https://rdrr.io/r/utils/data.html) 함수를 통해 불러올 수
+있습니다.
 
 ``` r
 
@@ -221,10 +224,16 @@ print(length(unique(adm2_sf_2020$adm2_code)))
 | landuse | road | length of roads | meters | Total length of roads | 2010, 2015, 2020 |
 | landuse | road | area of roads | square meters | Total area of roads | 2010, 2015, 2020 |
 
+- 0.3.0 버전부터는 2020년 기준으로 읍면동 단위의 센서스 자료도
+  제공됩니다. `population`, `mortality`, `housing`, `economy`를 `type`로
+  지정하면, `level = "adm3"`로 읍면동 단위 자료를 조회할 수 있습니다.
+
 - 이 패키지에서 제공하는 자료는 대한민국 통계데이터처에서 2010년-2020년
   작성하여 공공누리 제1유형으로 개방한 통계표를 이용하였으며, 해당
   자료는 [공공데이터포털](https://www.data.go.kr/)과
-  [KOSIS](https://kosis.kr/)에서 무료로 내려받으실 수 있습니다.
+  [KOSIS](https://kosis.kr/)에서 무료로 내려받으실 수 있습니다. 공공누리
+  제1유형은 Creative Commons 저작자표시 (CC BY)와 동일한 조건으로,
+  출처를 표시하면 누구나 자유롭게 이용할 수 있습니다.
 
 ![](inst/extdata/kogl_type1.jpg)
 
@@ -251,7 +260,7 @@ print(length(unique(adm2_sf_2020$adm2_code)))
 
 ``` r
 
-df_2020 <- anycensus(year = 2020, 
+df_2020 <- anycensus(year = 2020,
                      type = "mortality",
                      level = "adm2")
 head(df_2020)
@@ -274,7 +283,7 @@ head(df_2020)
 
 ``` r
 
-df_2020_sido <- anycensus(year = 2020, 
+df_2020_sido <- anycensus(year = 2020,
                           type = "mortality",
                           level = "adm1",
                           aggregator = mean,
@@ -346,6 +355,29 @@ head(df_2020_sido_weighted_atn)
 #> #   `all households_total_prs` <dbl>
 ```
 
+읍면동 수준 자료를 조회할 수 있는 기능도 제공합니다. `level = "adm3"`로
+설정하면, 시군구 내의 읍면동 단위로 자료값을 조회할 수 있습니다.
+
+``` r
+
+df_2020_adm3 <- anycensus(year = 2020,
+                          codes = "Seoul",
+                          type = "mortality",
+                          level = "adm3")
+head(df_2020_adm3)
+#> # A tibble: 6 × 11
+#>    year adm1  adm1_code adm2      adm2_code type      adm3             adm3_code
+#>   <dbl> <chr>     <dbl> <chr>         <dbl> <chr>     <chr>                <dbl>
+#> 1  2020 Seoul        11 Jongno-gu     11010 mortality Sajik-dong        11010530
+#> 2  2020 Seoul        11 Jongno-gu     11010 mortality Samcheong-dong    11010540
+#> 3  2020 Seoul        11 Jongno-gu     11010 mortality Buam-dong         11010550
+#> 4  2020 Seoul        11 Jongno-gu     11010 mortality Pyeongchang-dong  11010560
+#> 5  2020 Seoul        11 Jongno-gu     11010 mortality Muak-dong         11010570
+#> 6  2020 Seoul        11 Jongno-gu     11010 mortality Gyonam-dong       11010580
+#> # ℹ 3 more variables: `all causes_total_p1p` <dbl>,
+#> #   `all causes_male_p1p` <dbl>, `all causes_female_p1p` <dbl>
+```
+
 ### `censuskor` 내장 데이터셋
 
 `data(censuskor)`을 이용하면 패키지에 내장된 전체 센서스 데이터를 긴
@@ -360,6 +392,8 @@ head(df_2020_sido_weighted_atn)
 - `adm1_code`: 시도 코드
 - `adm2`: 시군구 이름
 - `adm2_code`: 시군구 코드
+- `adm3`: 읍면동 이름
+- `adm3_code`: 읍면동 코드
 - `type`: 센서스 또는 조사 유형
 - `class1`: 추가 분류 변수 1
 - `class2`: 추가 분류 변수 2
@@ -370,15 +404,16 @@ head(df_2020_sido_weighted_atn)
 
 data(censuskor)
 head(censuskor)
-#> # A data frame: 6 × 10
-#>    year adm1          adm1_code adm2  adm2_code type  class1 class2 unit   value
-#> * <dbl> <chr>             <dbl> <chr>     <dbl> <chr> <chr>  <chr>  <chr>  <dbl>
-#> 1  2010 Chungcheongb…        33 Cheo…     33010 popu… all h… total  pers… 646939
-#> 2  2010 Chungcheongb…        33 Cheo…     33010 popu… all h… male   pers… 318355
-#> 3  2010 Chungcheongb…        33 Cheo…     33010 popu… all h… female pers… 328584
-#> 4  2020 Chungcheongb…        33 Cheo…     33040 tax   income gener… mill… 524478
-#> 5  2020 Chungcheongb…        33 Cheo…     33040 tax   income labor  mill… 598560
-#> 6  2015 Chungcheongb…        33 Cheo…     33040 popu… all h… total  pers… 797099
+#> # A data frame: 6 × 12
+#>    year adm1    adm1_code adm2  adm2_code type  class1 class2 unit   value adm3 
+#> * <dbl> <chr>       <dbl> <chr>     <dbl> <chr> <chr>  <chr>  <chr>  <dbl> <chr>
+#> 1  2010 Chungc…        33 Cheo…     33010 popu… all h… total  pers… 646939 NA   
+#> 2  2010 Chungc…        33 Cheo…     33010 popu… all h… male   pers… 318355 NA   
+#> 3  2010 Chungc…        33 Cheo…     33010 popu… all h… female pers… 328584 NA   
+#> 4  2020 Chungc…        33 Cheo…     33040 tax   income gener… mill… 524478 NA   
+#> 5  2020 Chungc…        33 Cheo…     33040 tax   income labor  mill… 598560 NA   
+#> 6  2015 Chungc…        33 Cheo…     33040 popu… all h… total  pers… 797099 NA   
+#> # ℹ 1 more variable: adm3_code <dbl>
 ```
 
 ### 시각화 예제
@@ -399,7 +434,7 @@ ggplot(df_2020, aes(x = `all causes_male_p1p`, y = `all causes_female_p1p`)) +
   theme_minimal(base_size = 10)
 ```
 
-![](v01_intro-ko_files/figure-html/unnamed-chunk-9-1.png)
+![](v01_intro-ko_files/figure-html/unnamed-chunk-10-1.png)
 
 [^1]: NUTS: 통계 수집을 위한 영역분류체계 (*Nomenclature of Territorial
     Units for Statistics*)의 준말로, 유럽연합 내 국가들의 행정구역을

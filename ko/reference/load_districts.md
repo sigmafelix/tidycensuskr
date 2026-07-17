@@ -5,7 +5,7 @@ Load district boundaries for a specific year
 ## Usage
 
 ``` r
-load_districts(year = 2020)
+load_districts(year = 2020, level = "adm2")
 ```
 
 ## Arguments
@@ -13,6 +13,10 @@ load_districts(year = 2020)
 - year:
 
   The year for which to load district boundaries (2010, 2015, or 2020)
+
+- level:
+
+  The administrative level, one of "adm2" and "adm3"
 
 ## Value
 

@@ -1,4 +1,4 @@
-# Query Korean census data by admin code (province or municipality) and year
+# Query Korean census data by administrative code and year
 
 The function queries a long format census data frame
 ([`censuskor`](https://sigmafelix.github.io/tidycensuskr/ko/reference/censuskor.md))
@@ -12,7 +12,7 @@ anycensus(
   codes = NULL,
   type = c("population", "housing", "tax", "mortality", "economy", "medicine",
     "migration", "environment", "welfare", "social security", "landuse"),
-  level = c("adm2", "adm1"),
+  level = c("adm2", "adm3", "adm1"),
   adm2_type = c("all", "atn", "non"),
   aggregator = sum,
   weight_type = NULL,
@@ -35,14 +35,14 @@ anycensus(
 
 - type:
 
-  character(1). "population", "housing", "tax", "economy", "medicine",
-  "migration", "environment", "mortality", "social security", or
-  "landuse". Defaults to "population".
+  character vector. One or more of "population", "housing", "tax",
+  "economy", "medicine", "migration", "environment", "mortality",
+  "social security", or "landuse". Defaults to "population".
 
 - level:
 
-  character(1). "adm1" for province-level or "adm2" for municipal-level.
-  Defaults to "adm2".
+  character(1). "adm1" for province-level, "adm2" for municipal-level,
+  or "adm3" for neighborhood/town-level. Defaults to "adm2".
 
 - adm2_type:
 
@@ -50,9 +50,10 @@ anycensus(
   `adm2` results or aggregating to `adm1`. `"all"` keeps the current
   data, `"atn"` keeps autonomous/basic local government rows, and
   `"non"` keeps non-autonomous rows where they are available. For
-  weighted `"atn"` aggregation, autonomous/basic local government rate
-  rows are recalculated from their non-autonomous component rows using
-  the supplied weights before returning `adm2` or aggregating to `adm1`.
+  weighted aggregation with `"atn"`, autonomous/basic local government
+  rate rows are recalculated from their non-autonomous component rows
+  using the supplied weights before returning `adm2` or aggregating to
+  `adm1`.
 
 - aggregator:
 
@@ -92,10 +93,9 @@ year.
 
 ## Note
 
-Using characters in `codes` has a side effect of returning all rows in
-the dataset that match year and type. The 'wide' table is returned with
-separate columns for each `class1` and `class2` and `unit` (abbreviated
-whereof) combination.
+Character names are resolved to their administrative codes before
+filtering. The 'wide' table is returned with separate columns for each
+`class1` and `class2` and `unit` (abbreviated whereof) combination.
 
 ## Examples
 
@@ -146,6 +146,36 @@ anycensus(codes = c("Seoul", "Daejeon"), type = "housing", year = 2015)
 #> #   `housing types_multiplex_cnt` <dbl>,
 #> #   `housing types_non-residential_cnt` <dbl>,
 #> #   `vacant housing_fraction_prc` <dbl>, …
+
+# Query adm3 population data within Jongno-gu
+anycensus(
+  codes = 11010,
+  type = "population",
+  year = 2020,
+  level = "adm3"
+)
+#> # A tibble: 17 × 11
+#>     year adm1  adm1_code adm2      adm2_code type       adm3           adm3_code
+#>    <dbl> <chr>     <dbl> <chr>         <dbl> <chr>      <chr>              <dbl>
+#>  1  2020 Seoul        11 Jongno-gu     11010 population Sajik-dong      11010530
+#>  2  2020 Seoul        11 Jongno-gu     11010 population Samcheong-dong  11010540
+#>  3  2020 Seoul        11 Jongno-gu     11010 population Buam-dong       11010550
+#>  4  2020 Seoul        11 Jongno-gu     11010 population Pyeongchang-d…  11010560
+#>  5  2020 Seoul        11 Jongno-gu     11010 population Muak-dong       11010570
+#>  6  2020 Seoul        11 Jongno-gu     11010 population Gyonam-dong     11010580
+#>  7  2020 Seoul        11 Jongno-gu     11010 population Gahoe-dong      11010600
+#>  8  2020 Seoul        11 Jongno-gu     11010 population Jongno 1.2.3.…  11010610
+#>  9  2020 Seoul        11 Jongno-gu     11010 population Jongno 5.6(or…  11010630
+#> 10  2020 Seoul        11 Jongno-gu     11010 population Ihwa-dong       11010640
+#> 11  2020 Seoul        11 Jongno-gu     11010 population Changsin 1(il…  11010670
+#> 12  2020 Seoul        11 Jongno-gu     11010 population Changsin 2(i)…  11010680
+#> 13  2020 Seoul        11 Jongno-gu     11010 population Changsin 3(sa…  11010690
+#> 14  2020 Seoul        11 Jongno-gu     11010 population Sungin 1(il)-…  11010700
+#> 15  2020 Seoul        11 Jongno-gu     11010 population Sungin 2(i)-d…  11010710
+#> 16  2020 Seoul        11 Jongno-gu     11010 population Cheongunhyoja…  11010720
+#> 17  2020 Seoul        11 Jongno-gu     11010 population Hyehwa-dong     11010730
+#> # ℹ 3 more variables: `all households_total_prs` <dbl>,
+#> #   `all households_male_prs` <dbl>, `all households_female_prs` <dbl>
 
 # Aggregate to adm1 level tax (province-level) using sum
 anycensus(

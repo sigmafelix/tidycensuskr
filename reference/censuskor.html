@@ -13,7 +13,7 @@ years and variables depend on the type of data."></head><body>
 
     <a class="navbar-brand me-2" href="../index.html">tidycensuskr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.9</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.9.9001</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,7 +63,8 @@ years and variables depend on the type of data.</p>
 
     <div class="section level2">
     <h2 id="format">Format<a class="anchor" aria-label="anchor" href="#format"></a></h2>
-    <p>A data.frame with 103,626 rows and 10 variables:</p>
+    <p>A data.frame with 155,291 rows and 12 columns,
+out of which 103,626 rows for adm2, and 51,665 rows for adm3 data.</p>
     </div>
     <div class="section level2">
     <h2 id="source">Source<a class="anchor" aria-label="anchor" href="#source"></a></h2>
@@ -74,12 +75,14 @@ years and variables depend on the type of data.</p>
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
 
 <ul><li><p>year Year of the census data, e.g., 2010, 2015, or 2020</p></li>
-<li><p>adm1 Name of the province-level (Sido) administrative unit</p></li>
-<li><p>adm1_code Code of the province-level (Sido) administrative unit</p></li>
-<li><p>adm2 Name of the district/municipal-level (Sigungu) administrative unit</p></li>
-<li><p>adm2_code  Code of the district/municipal-level (Sigungu) administrative unit</p></li>
+<li><p>adm1 Name of the province-level (Si-Do) administrative unit</p></li>
+<li><p>adm1_code Code of the province-level (Si-Do) administrative unit</p></li>
+<li><p>adm2 Name of the district/municipal-level (Si-Gun-Gu) administrative unit</p></li>
+<li><p>adm2_code  Code of the district/municipal-level (Si-Gun-Gu) administrative unit</p></li>
 <li><p>type Type of variable,
 e.g., "population", "tax", "mortality", "housing", "medicine", "migration", "environment", "welfare", or "economy"</p></li>
+<li><p>adm3 Name of neighborhood/town-level (Eup-Myeon-Dong) administrative unit</p></li>
+<li><p>adm3_code  Code of the neighborhood/town-level (Eup-Myeon-Dong) administrative unit</p></li>
 <li><p>class1 First-level classification of the variable depending on the type</p></li>
 <li><p>class2 Second-level classification of the variable depending on the type</p></li>
 <li><p>unit Unit of measurement for the variable</p></li>

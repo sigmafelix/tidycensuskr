@@ -81,7 +81,9 @@ or regional data.
 Because administrative boundaries and coding systems can vary across
 years and data sources, `tidycensuskr` standardizes administrative codes
 to allow consistent integration of statistics. Currently, for 2020 data
-there are 250 *Si-Gun-Gu* and 17 *Si-Do*.
+there are 250 *Si-Gun-Gu* and 17 *Si-Do*. The package is provided with a
+built-in dataset of 2020 *Si-Gun-Gu* boundaries, which can be loaded
+using the function [`data()`](https://rdrr.io/r/utils/data.html).
 
 ``` r
 
@@ -220,11 +222,18 @@ for querying subsets
 | landuse | road | length of roads | meters | Total length of roads | 2010, 2015, 2020 |
 | landuse | road | area of roads | square meters | Total area of roads | 2010, 2015, 2020 |
 
-- The data is provided under the [Korea Open Government License Type 1
-  (Attribution)](https://www.kogl.or.kr/info/license.do) (Note: in
-  Korean). Each raw data table is available for download from the
+- As of version 0.3.0, `tidycensuskr` comes with ADM3 level variables
+  for types `population`, `mortality`, `housing`, and `economy` in 2020
+  census.
+
+- The data is provided under the [Korea Open Government License (KOGL)
+  Type 1 (Attribution)](https://www.kogl.or.kr/info/license.do) (Note:
+  in Korean). Each raw data table is available for download from the
   [Public Data Portal](https://www.data.go.kr/) and
-  [KOSIS](https://kosis.kr/) with no cost.
+  [KOSIS](https://kosis.kr/) with no cost. KOGL Type 1 is similar to the
+  Creative Commons Attribution 4.0 International License (CC BY 4.0),
+  which allows for free use, distribution, and adaptation of the data as
+  long as proper attribution is given.
 
 ![](inst/extdata/kogl_type1.jpg)
 
@@ -239,10 +248,14 @@ returns a tidy tibble with columns such as:
   and its corresponding code
 - `adm2`, `adm2_code`: *Si-Gun-Gu* (district) level administrative unit
   name and its corresponding code
+- `adm3`, `adm3_code`: *Eup-Myeon-Dong* (neighborhood) level
+  administrative unit name and its corresponding code
 
 Columns containing the values are added as a wide form. The column
-`adm2_code` links census data directly to boundary files retrieved with
-[`load_districts()`](https://sigmafelix.github.io/tidycensuskr/reference/load_districts.md).
+`adm2_code` or `adm3_code` links census data directly to boundary files
+retrieved with
+[`load_districts()`](https://sigmafelix.github.io/tidycensuskr/reference/load_districts.md),
+depending on the spatial level of data collection.
 
 ``` r
 
@@ -364,6 +377,29 @@ head(df_2020_sido_weighted_atn)
 #> #   `all households_total_prs` <dbl>
 ```
 
+For ADM3 level data, use `level = "adm3"` and provide the corresponding
+`adm3_code` to retrieve neighborhood-level data.
+
+``` r
+
+df_2020_adm3 <- anycensus(year = 2020,
+                          codes = "Seoul",
+                          type = "mortality",
+                          level = "adm3")
+head(df_2020_adm3)
+#> # A tibble: 6 × 11
+#>    year adm1  adm1_code adm2      adm2_code type      adm3             adm3_code
+#>   <dbl> <chr>     <dbl> <chr>         <dbl> <chr>     <chr>                <dbl>
+#> 1  2020 Seoul        11 Jongno-gu     11010 mortality Sajik-dong        11010530
+#> 2  2020 Seoul        11 Jongno-gu     11010 mortality Samcheong-dong    11010540
+#> 3  2020 Seoul        11 Jongno-gu     11010 mortality Buam-dong         11010550
+#> 4  2020 Seoul        11 Jongno-gu     11010 mortality Pyeongchang-dong  11010560
+#> 5  2020 Seoul        11 Jongno-gu     11010 mortality Muak-dong         11010570
+#> 6  2020 Seoul        11 Jongno-gu     11010 mortality Gyonam-dong       11010580
+#> # ℹ 3 more variables: `all causes_total_p1p` <dbl>,
+#> #   `all causes_male_p1p` <dbl>, `all causes_female_p1p` <dbl>
+```
+
 ### Built-in dataset `censuskor`
 
 You can access the whole dataset directly using the function
@@ -374,6 +410,8 @@ You can access the whole dataset directly using the function
   and its corresponding code  
 - `adm2`, `adm2_code`: Si-Gun-Gu (district) level administrative unit
   name and its corresponding code
+- `adm3`, `adm3_code`: Eup-Myeon-Dong (neighborhood) level
+  administrative unit name and its corresponding code
 - `type`: Types of census or survey
 - `class1`, `class2`: Classification variables providing further
   breakdowns
@@ -385,15 +423,16 @@ You can access the whole dataset directly using the function
 
 data(censuskor)
 head(censuskor)
-#> # A data frame: 6 × 10
-#>    year adm1          adm1_code adm2  adm2_code type  class1 class2 unit   value
-#> * <dbl> <chr>             <dbl> <chr>     <dbl> <chr> <chr>  <chr>  <chr>  <dbl>
-#> 1  2010 Chungcheongb…        33 Cheo…     33010 popu… all h… total  pers… 646939
-#> 2  2010 Chungcheongb…        33 Cheo…     33010 popu… all h… male   pers… 318355
-#> 3  2010 Chungcheongb…        33 Cheo…     33010 popu… all h… female pers… 328584
-#> 4  2020 Chungcheongb…        33 Cheo…     33040 tax   income gener… mill… 524478
-#> 5  2020 Chungcheongb…        33 Cheo…     33040 tax   income labor  mill… 598560
-#> 6  2015 Chungcheongb…        33 Cheo…     33040 popu… all h… total  pers… 797099
+#> # A data frame: 6 × 12
+#>    year adm1    adm1_code adm2  adm2_code type  class1 class2 unit   value adm3 
+#> * <dbl> <chr>       <dbl> <chr>     <dbl> <chr> <chr>  <chr>  <chr>  <dbl> <chr>
+#> 1  2010 Chungc…        33 Cheo…     33010 popu… all h… total  pers… 646939 NA   
+#> 2  2010 Chungc…        33 Cheo…     33010 popu… all h… male   pers… 318355 NA   
+#> 3  2010 Chungc…        33 Cheo…     33010 popu… all h… female pers… 328584 NA   
+#> 4  2020 Chungc…        33 Cheo…     33040 tax   income gener… mill… 524478 NA   
+#> 5  2020 Chungc…        33 Cheo…     33040 tax   income labor  mill… 598560 NA   
+#> 6  2015 Chungc…        33 Cheo…     33040 popu… all h… total  pers… 797099 NA   
+#> # ℹ 1 more variable: adm3_code <dbl>
 ```
 
 ### Quick Visualization
@@ -414,7 +453,7 @@ ggplot(df_2020, aes(x = `all causes_male_p1p`, y = `all causes_female_p1p`)) +
   theme_minimal(base_size = 10)
 ```
 
-![](v01_intro_files/figure-html/unnamed-chunk-10-1.png)
+![](v01_intro_files/figure-html/unnamed-chunk-11-1.png)
 
 [^1]: NUTS: *Nomenclature of Territorial Units for Statistics*, a
     geocode standard for referencing the subdivisions of countries for

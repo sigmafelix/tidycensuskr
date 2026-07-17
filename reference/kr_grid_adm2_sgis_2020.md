@@ -26,10 +26,10 @@ A data.frame with 250 rows and 6 variables
 
 ## Details
 
-- name Name of the district/municipal-level (Sigungu) administrative
+- name Name of the district/municipal-level (Si-Gun-Gu) administrative
   unit
 
-- code SGIS code of the district/municipal-level (Sigungu)
+- code SGIS code of the district/municipal-level (Si-Gun-Gu)
   administrative unit
 
 - row Row position in the geofacet grid

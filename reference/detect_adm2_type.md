@@ -40,7 +40,6 @@ filtered data frame with exact codes
 ``` r
 # Load 2020 census population
 pop20 <- anycensus(year = 2020, type = "population")
-#> Using character codes that are convertible to integers. Automatically converting to integers...
 pop20_nonauto <- detect_adm2_type(pop20, mode = "non")
 pop20_auto <- detect_adm2_type(pop20, mode = "atn")
 unique(pop20_nonauto$adm2_code)
