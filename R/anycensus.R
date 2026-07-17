@@ -78,18 +78,20 @@
   list(data = atn_df, weights = collapsed_weights)
 }
 
-#' Query Korean census data by admin code (province or municipality) and year
+#' Query Korean census data by administrative code and year
 #' @description The function queries a long format census data frame
 #' ([`censuskor`]) for specific administrative codes (if provided)
 #' @param codes integer vector of admin codes (e.g. `c(11, 26)`)
 #'   or character administrative area names (e.g. `c("Seoul", "Daejeon")`).
-#' @param type character(1). "population", "housing", "tax", "economy",
+#' @param type character vector. One or more of "population", "housing",
+#'   "tax", "economy",
 #'   "medicine", "migration", "environment", "mortality", "social security",
 #'   or "landuse".
 #'   Defaults to "population".
 #' @param year  integer(1). One of 2010, 2015, or 2020.
-#' @param level character(1). "adm1" for province-level or
-#'   "adm2" for municipal-level. Defaults to "adm2".
+#' @param level character(1). "adm1" for province-level, "adm2" for
+#'   municipal-level, or "adm3" for neighborhood/town-level. Defaults to
+#'   "adm2".
 #' @param adm2_type character(1). Which municipal code type to keep before
 #'   returning `adm2` results or aggregating to `adm1`. `"all"` keeps the
 #'   current data, `"atn"` keeps autonomous/basic local government rows, and
@@ -113,9 +115,8 @@
 #'   (e.g., `na.rm = TRUE`). When `weight_type` or `weight_column` is
 #'   supplied, `aggregator` must accept a `w` argument such as
 #'   [stats::weighted.mean()].
-#' @note Using characters in `codes` has a side effect of returning
-#'   all rows in the dataset that match year and type.
-#'   The 'wide' table is returned with separate columns for each
+#' @note Character names are resolved to their administrative codes before
+#'   filtering. The 'wide' table is returned with separate columns for each
 #'   `class1` and `class2` and `unit` (abbreviated whereof) combination.
 #' @return A data.frame object containing census data
 #'   for the specified codes and year.
@@ -125,6 +126,14 @@
 #'
 #' # Query population data for adm1 "Seoul" or "Daejeon"
 #' anycensus(codes = c("Seoul", "Daejeon"), type = "housing", year = 2015)
+#'
+#' # Query adm3 population data within Jongno-gu
+#' anycensus(
+#'   codes = 11010,
+#'   type = "population",
+#'   year = 2020,
+#'   level = "adm3"
+#' )
 #'
 #' # Aggregate to adm1 level tax (province-level) using sum
 #' anycensus(
@@ -185,7 +194,7 @@ anycensus <- function(
     "medicine", "migration", "environment", "welfare",
     "social security", "landuse"
   ),
-  level = c("adm2", "adm1"),
+  level = c("adm2", "adm3", "adm1"),
   adm2_type = c("all", "atn", "non"),
   aggregator = sum,
   weight_type = NULL,
@@ -196,29 +205,43 @@ anycensus <- function(
   censuskor <- NULL
   .data <- NULL
   data("censuskor", package = "tidycensuskr", envir = environment())
-  type     <- match.arg(type)
+  type_choices <- c(
+    "population", "housing", "tax", "mortality", "economy",
+    "medicine", "migration", "environment", "welfare",
+    "social security", "landuse"
+  )
+  if (missing(type)) {
+    type <- type_choices[[1]]
+  } else {
+    type <- unique(vapply(
+      type,
+      match.arg,
+      choices = type_choices,
+      FUN.VALUE = character(1)
+    ))
+  }
   level    <- match.arg(level)
   adm2_type <- match.arg(adm2_type)
   if (!is.null(weight_type)) {
     weight_type <- match.arg(
       weight_type,
-      choices = c(
-        "population", "housing", "tax", "mortality", "economy",
-        "medicine", "migration", "environment", "welfare",
-        "social security", "landuse"
-      )
+      choices = type_choices
     )
   }
   df       <- censuskor
 
   has_weighting <- !is.null(weight_type) || !is.null(weight_column)
 
+  if (length(type) > 1 && has_weighting) {
+    stop("Weighted computation requires a single `type` value.")
+  }
+
   if (level == "adm2" && has_weighting && !identical(adm2_type, "atn")) {
     stop("Weighted adm2 computation is only available when `adm2_type = 'atn'`.")
   }
 
   unit <- NULL
-  is_int_code <- all(is.numeric(codes))
+  is_int_code <- is.null(codes) || all(is.numeric(codes))
   suppressWarnings(try_code_integer <- as.integer(codes))
   try_code_all_alpha <- all(grepl("[A-Za-z]+", codes))
   if (!is_int_code) {
@@ -235,51 +258,62 @@ anycensus <- function(
     }
   }
 
-  query_col <- if (is_int_code) paste0(level, "_code") else level
-
-  # Default NULL codes: all admx codes are used
-  if (is.null(codes)) {
-    codes <- unique(df[[query_col]])
+  # adm1 is aggregated from adm2 rows. Explicitly separating adm2 and adm3
+  # rows prevents child observations from being mixed with their parents.
+  source_level <- if (level == "adm3") "adm3" else "adm2"
+  admN_code <- paste0(level, "_code")
+  source_code <- paste0(source_level, "_code")
+  source_rows <- if (source_level == "adm3") {
+    !is.na(df[[source_code]])
   } else {
-    codes <- as.character(codes)
-    # search for both adm1 and adm2 if level is adm2 and codes are names
-    if (!is_int_code && level == "adm2") {
-      codes <- unique(
-        df[
-          grepl(
-            sprintf("^(%s)", paste(codes, collapse = "|")),
-            gsub(" ", "", df[["adm1"]])
-          ),
-          "adm1"
-        ]
-      )
-      if (length(codes) == 0) {
-        codes <- unique(
-          df[
-            grepl(
-              sprintf("^(%s)", paste(codes, collapse = "|")),
-              gsub(" ", "", df[["adm2"]])
-            ),
-            "adm2"
-          ]
+    is.na(df[["adm3_code"]])
+  }
+  df <- df[source_rows, , drop = FALSE]
+
+  # Resolve names to codes first so admN_code is the standard reference for
+  # both numeric and character queries.
+  if (!is.null(codes) && !is_int_code) {
+    requested_names <- gsub(" ", "", codes)
+    name_levels <- switch(
+      level,
+      adm1 = "adm1",
+      adm2 = c("adm1", "adm2"),
+      adm3 = c("adm1", "adm2", "adm3")
+    )
+    resolved_codes <- unlist(
+      lapply(name_levels, function(name_level) {
+        matches <- grepl(
+          sprintf("^(%s)", paste(requested_names, collapse = "|")),
+          gsub(" ", "", df[[name_level]])
         )
-      } else {
-        query_col <- "adm1"
-      }
+        df[[paste0(name_level, "_code")]][matches]
+      }),
+      use.names = FALSE
+    )
+    codes <- unique(resolved_codes[!is.na(resolved_codes)])
+  }
+
+  dfe <- df[
+    df[["year"]] == year & df[["type"]] %in% type,
+    ,
+    drop = FALSE
+  ]
+  if (!is.null(codes)) {
+    if (length(codes) == 0) {
+      dfe <- dfe[FALSE, , drop = FALSE]
+    } else {
+      code_pattern <- sprintf("^(%s)", paste(codes, collapse = "|"))
+      dfe <- dfe[
+        grepl(code_pattern, as.character(dfe[[admN_code]])),
+        ,
+        drop = FALSE
+      ]
     }
   }
-  dfe <- df[
-    df[["year"]] == year & df[["type"]] == type,
-  ] |>
-    dplyr::filter(
-      grepl(
-        sprintf(
-          "^(%s)",
-          paste(codes, collapse = "|")
-        ),
-        gsub(" ", "", .data[[query_col]])
-      ) | .data[[query_col]] %in% codes
-    )
+  dfe <- dfe[!duplicated(dfe), , drop = FALSE]
+  if (source_level == "adm2") {
+    dfe[c("adm3", "adm3_code")] <- NULL
+  }
   # post-processing when levels are multiple
   dfe <- dfe |>
     dplyr::mutate(

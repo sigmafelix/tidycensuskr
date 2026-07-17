@@ -2,14 +2,14 @@
 % Please edit documentation in R/anycensus.R
 \name{anycensus}
 \alias{anycensus}
-\title{Query Korean census data by admin code (province or municipality) and year}
+\title{Query Korean census data by administrative code and year}
 \usage{
 anycensus(
   year = 2020,
   codes = NULL,
   type = c("population", "housing", "tax", "mortality", "economy", "medicine",
     "migration", "environment", "welfare", "social security", "landuse"),
-  level = c("adm2", "adm1"),
+  level = c("adm2", "adm3", "adm1"),
   adm2_type = c("all", "atn", "non"),
   aggregator = sum,
   weight_type = NULL,
@@ -24,19 +24,21 @@ anycensus(
 \item{codes}{integer vector of admin codes (e.g. \code{c(11, 26)})
 or character administrative area names (e.g. \code{c("Seoul", "Daejeon")}).}
 
-\item{type}{character(1). "population", "housing", "tax", "economy",
+\item{type}{character vector. One or more of "population", "housing",
+"tax", "economy",
 "medicine", "migration", "environment", "mortality", "social security",
 or "landuse".
 Defaults to "population".}
 
-\item{level}{character(1). "adm1" for province-level or
-"adm2" for municipal-level. Defaults to "adm2".}
+\item{level}{character(1). "adm1" for province-level, "adm2" for
+municipal-level, or "adm3" for neighborhood/town-level. Defaults to
+"adm2".}
 
 \item{adm2_type}{character(1). Which municipal code type to keep before
 returning \code{adm2} results or aggregating to \code{adm1}. \code{"all"} keeps the
 current data, \code{"atn"} keeps autonomous/basic local government rows, and
 \code{"non"} keeps non-autonomous rows where they are available. For weighted
-\code{"atn"} aggregation, autonomous/basic local government rate rows are
+aggregation with \code{"atn"}, autonomous/basic local government rate rows are
 recalculated from their non-autonomous component rows using the supplied
 weights before returning \code{adm2} or aggregating to \code{adm1}.}
 
@@ -59,7 +61,7 @@ with geometries attached. Defaults to \code{FALSE}.}
 \item{...}{additional arguments passed to the \code{aggregator} function.
 (e.g., \code{na.rm = TRUE}). When \code{weight_type} or \code{weight_column} is
 supplied, \code{aggregator} must accept a \code{w} argument such as
-\code{stats::weighted.mean()}.}
+\code{\link[stats:weighted.mean]{stats::weighted.mean()}}.}
 }
 \value{
 A data.frame object containing census data
@@ -70,9 +72,8 @@ The function queries a long format census data frame
 (\code{\link{censuskor}}) for specific administrative codes (if provided)
 }
 \note{
-Using characters in \code{codes} has a side effect of returning
-all rows in the dataset that match year and type.
-The 'wide' table is returned with separate columns for each
+Character names are resolved to their administrative codes before
+filtering. The 'wide' table is returned with separate columns for each
 \code{class1} and \code{class2} and \code{unit} (abbreviated whereof) combination.
 }
 \examples{
@@ -81,6 +82,14 @@ anycensus(codes = 21, type = "mortality")
 
 # Query population data for adm1 "Seoul" or "Daejeon"
 anycensus(codes = c("Seoul", "Daejeon"), type = "housing", year = 2015)
+
+# Query adm3 population data within Jongno-gu
+anycensus(
+  codes = 11010,
+  type = "population",
+  year = 2020,
+  level = "adm3"
+)
 
 # Aggregate to adm1 level tax (province-level) using sum
 anycensus(

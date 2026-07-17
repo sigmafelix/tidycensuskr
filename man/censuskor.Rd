@@ -5,7 +5,8 @@
 \alias{censuskor}
 \title{South Korea Census Data}
 \format{
-A data.frame with 103,626 rows and 10 variables:
+A data.frame with 155,291 rows and 12 columns,
+out of which 103,626 rows for adm2, and 51,665 rows for adm3 data.
 }
 \source{
 \itemize{
@@ -24,12 +25,14 @@ years and variables depend on the type of data.
 \details{
 \itemize{
 \item year Year of the census data, e.g., 2010, 2015, or 2020
-\item adm1 Name of the province-level (Sido) administrative unit
-\item adm1_code Code of the province-level (Sido) administrative unit
-\item adm2 Name of the district/municipal-level (Sigungu) administrative unit
-\item adm2_code  Code of the district/municipal-level (Sigungu) administrative unit
+\item adm1 Name of the province-level (Si-Do) administrative unit
+\item adm1_code Code of the province-level (Si-Do) administrative unit
+\item adm2 Name of the district/municipal-level (Si-Gun-Gu) administrative unit
+\item adm2_code  Code of the district/municipal-level (Si-Gun-Gu) administrative unit
 \item type Type of variable,
 e.g., "population", "tax", "mortality", "housing", "medicine", "migration", "environment", "welfare", or "economy"
+\item adm3 Name of neighborhood/town-level (Eup-Myeon-Dong) administrative unit
+\item adm3_code  Code of the neighborhood/town-level (Eup-Myeon-Dong) administrative unit
 \item class1 First-level classification of the variable depending on the type
 \item class2 Second-level classification of the variable depending on the type
 \item unit Unit of measurement for the variable

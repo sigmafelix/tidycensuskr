@@ -85,7 +85,8 @@ The table below provides a rough comparison of administrative divisions across S
 
 
 Because administrative boundaries and coding systems can vary across years and data sources, `tidycensuskr` standardizes administrative codes to allow consistent integration of statistics. 
-Currently, for 2020 data there are 250 _Si-Gun-Gu_ and 17 _Si-Do_.
+Currently, for 2020 data there are 250 _Si-Gun-Gu_ and 17 _Si-Do_. The package is provided with a built-in dataset of 2020 _Si-Gun-Gu_ boundaries, which can be loaded using the function `data()`.
+
 ```{r, include = TRUE}
 data(adm2_sf_2020)
 print(length(unique(adm2_sf_2020$adm2_code)))
@@ -223,7 +224,9 @@ The package provides census and survey data through:
 </div>
 
 
-* The data is provided under the [Korea Open Government License Type 1 (Attribution)](https://www.kogl.or.kr/info/license.do) (Note: in Korean). Each raw data table is available for download from the [Public Data Portal](https://www.data.go.kr/) and [KOSIS](https://kosis.kr/) with no cost.
+* As of version 0.3.0, `tidycensuskr` comes with ADM3 level variables for types `population`, `mortality`, `housing`, and `economy` in 2020 census.
+
+* The data is provided under the [Korea Open Government License (KOGL) Type 1 (Attribution)](https://www.kogl.or.kr/info/license.do) (Note: in Korean). Each raw data table is available for download from the [Public Data Portal](https://www.data.go.kr/) and [KOSIS](https://kosis.kr/) with no cost. KOGL Type 1 is similar to the Creative Commons Attribution 4.0 International License (CC BY 4.0), which allows for free use, distribution, and adaptation of the data as long as proper attribution is given.
 
 ![](inst/extdata/kogl_type1.jpg){style="fig-align: center; width: 200px;"}
 
@@ -235,8 +238,9 @@ The function `anycensus()` returns a tidy tibble with columns such as:
 - `year`: year of the dataset
 - `adm1`, `adm1_code`: _Si-Do_ (province) level administrative unit name and its corresponding code 
 - `adm2`, `adm2_code`: _Si-Gun-Gu_ (district) level administrative unit name and its corresponding code 
+- `adm3`, `adm3_code`: _Eup-Myeon-Dong_ (neighborhood) level administrative unit name and its corresponding code
 
-Columns containing the values are added as a wide form. The column `adm2_code` links census data directly to boundary files retrieved with `load_districts()`.
+Columns containing the values are added as a wide form. The column `adm2_code` or `adm3_code` links census data directly to boundary files retrieved with `load_districts()`, depending on the spatial level of data collection.
 
 ```{r, include = TRUE}
 df_2020 <- anycensus(year = 2020,
@@ -307,13 +311,26 @@ head(df_2020_sido_weighted_atn)
 
 ```
 
+For ADM3 level data, use `level = "adm3"` and provide the corresponding `adm3_code` to retrieve neighborhood-level data.
+
+```{r, include = TRUE}
+df_2020_adm3 <- anycensus(year = 2020,
+                          codes = "Seoul",
+                          type = "mortality",
+                          level = "adm3")
+head(df_2020_adm3)
+```
+
+
+
 ### Built-in dataset `censuskor`
 
 You can access the whole dataset directly using the function `data(censuskor)` which returns the built-in dataset in a long form. 
 
 - `year`: year of the dataset
 - `adm1`, `adm1_code`: Si-Do (province) level administrative unit name and its corresponding code  
-- `adm2`, `adm2_code`: Si-Gun-Gu (district) level administrative unit name and its corresponding code 
+- `adm2`, `adm2_code`: Si-Gun-Gu (district) level administrative unit name and its corresponding code
+- `adm3`, `adm3_code`: Eup-Myeon-Dong (neighborhood) level administrative unit name and its corresponding code
 - `type`: Types of census or survey
 - `class1`, `class2`: Classification variables providing further breakdowns
 - `unit`: Measurement unit for the value

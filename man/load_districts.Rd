@@ -4,10 +4,12 @@
 \alias{load_districts}
 \title{Load district boundaries for a specific year}
 \usage{
-load_districts(year = 2020)
+load_districts(year = 2020, level = "adm2")
 }
 \arguments{
 \item{year}{The year for which to load district boundaries (2010, 2015, or 2020)}
+
+\item{level}{The administrative level, one of "adm2" and "adm3"}
 }
 \value{
 An \code{sf} object containing district boundaries for the specified year

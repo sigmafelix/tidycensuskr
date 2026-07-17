@@ -86,7 +86,7 @@ adm2_sf_2010 <- readRDS(fs10)
 
 ![]("man/figures/korea_map.png")
 
-행정구역 경계와 코드 체계는 조사 연도나 자료원에 따라서 다릅니다. `tidycensuskr`에서는 일관된 행정구역 코드를 제공하여 통계치를 통합적으로 사용할 수 있도록 합니다. 예를 들어, 2020년 기준으로 대한민국에는 250개의 시군구와 17개의 시도가 있습니다.
+행정구역 경계와 코드 체계는 조사 연도나 자료원에 따라서 다릅니다. `tidycensuskr`에서는 일관된 행정구역 코드를 제공하여 통계치를 통합적으로 사용할 수 있도록 합니다. 예를 들어, 2020년 기준으로 대한민국에는 250개의 시군구와 17개의 시도가 있습니다. `tidycensuskr.sf` 패키지에는 2010년, 2015년, 2020년의 시군구(ADM2), 읍면도(ADM3) 경계 도형이 제공되며, `data()` 함수를 통해 불러올 수 있습니다.
 
 ```{r, include = TRUE}
 data(adm2_sf_2020)
@@ -225,7 +225,9 @@ print(length(unique(adm2_sf_2020$adm2_code)))
 | landuse | road | area of roads | square meters | Total area of roads | 2010, 2015, 2020 |
 </div>
 
-* 이 패키지에서 제공하는 자료는 대한민국 통계데이터처에서 2010년-2020년 작성하여 공공누리 제1유형으로 개방한 통계표를 이용하였으며, 해당 자료는 [공공데이터포털](https://www.data.go.kr/)과 [KOSIS](https://kosis.kr/)에서 무료로 내려받으실 수 있습니다.
+* 0.3.0 버전부터는 2020년 기준으로 읍면동 단위의 센서스 자료도 제공됩니다. `population`, `mortality`, `housing`,  `economy`를 `type`로 지정하면, `level = "adm3"`로 읍면동 단위 자료를 조회할 수 있습니다.
+
+* 이 패키지에서 제공하는 자료는 대한민국 통계데이터처에서 2010년-2020년 작성하여 공공누리 제1유형으로 개방한 통계표를 이용하였으며, 해당 자료는 [공공데이터포털](https://www.data.go.kr/)과 [KOSIS](https://kosis.kr/)에서 무료로 내려받으실 수 있습니다. 공공누리 제1유형은 Creative Commons 저작자표시 (CC BY)와 동일한 조건으로, 출처를 표시하면 누구나 자유롭게 이용할 수 있습니다.
 
 ![](inst/extdata/kogl_type1.jpg){style="fig-align: center; width: 200px;"}
 
@@ -242,7 +244,7 @@ print(length(unique(adm2_sf_2020$adm2_code)))
 
 
 ```{r, include = TRUE}
-df_2020 <- anycensus(year = 2020, 
+df_2020 <- anycensus(year = 2020,
                      type = "mortality",
                      level = "adm2")
 head(df_2020)
@@ -252,7 +254,7 @@ head(df_2020)
 상위 행정구역 단위로 자료값이 집계되는 기능도 제공됩니다. `level = "adm1"`로 설정하고 집계 함수를 지정하면, 시도(`adm1`) 수준에서 각 구역의 통계치를 요약한 결과를 얻을 수 있습니다.
 
 ```{r, include = TRUE}
-df_2020_sido <- anycensus(year = 2020, 
+df_2020_sido <- anycensus(year = 2020,
                           type = "mortality",
                           level = "adm1",
                           aggregator = mean,
@@ -296,6 +298,18 @@ head(df_2020_sido_weighted_atn)
 
 ```
 
+읍면동 수준 자료를 조회할 수 있는 기능도 제공합니다. `level = "adm3"`로 설정하면, 시군구 내의 읍면동 단위로 자료값을 조회할 수 있습니다.
+
+```{r, include = TRUE}
+df_2020_adm3 <- anycensus(year = 2020,
+                          codes = "Seoul",
+                          type = "mortality",
+                          level = "adm3")
+head(df_2020_adm3)
+```
+
+
+
 ### `censuskor` 내장 데이터셋
 
 `data(censuskor)`을 이용하면 패키지에 내장된 전체 센서스 데이터를 긴 형태로 불러올 수 있습니다. 이 데이터셋은 `anycensus()` 함수로 쿼리할 수 있는 모든 연도, 행정구역, 통계 유형을 포함합니다.
@@ -307,6 +321,8 @@ head(df_2020_sido_weighted_atn)
 - `adm1_code`: 시도 코드
 - `adm2`: 시군구 이름
 - `adm2_code`: 시군구 코드
+- `adm3`: 읍면동 이름
+- `adm3_code`: 읍면동 코드
 - `type`: 센서스 또는 조사 유형
 - `class1`: 추가 분류 변수 1
 - `class2`: 추가 분류 변수 2

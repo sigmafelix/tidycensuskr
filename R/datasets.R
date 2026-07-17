@@ -5,15 +5,18 @@
 #' and mortality in South Korea in 2010, 2015, and/or 2020. The availble
 #' years and variables depend on the type of data.
 #'
-#' @format A data.frame with 103,626 rows and 10 variables:
+#' @format A data.frame with 155,291 rows and 12 columns,
+#'   out of which 103,626 rows for adm2, and 51,665 rows for adm3 data.
 #' @details
 #' * year Year of the census data, e.g., 2010, 2015, or 2020
-#' * adm1 Name of the province-level (Sido) administrative unit
-#' * adm1_code Code of the province-level (Sido) administrative unit
-#' * adm2 Name of the district/municipal-level (Sigungu) administrative unit
-#' * adm2_code  Code of the district/municipal-level (Sigungu) administrative unit
+#' * adm1 Name of the province-level (Si-Do) administrative unit
+#' * adm1_code Code of the province-level (Si-Do) administrative unit
+#' * adm2 Name of the district/municipal-level (Si-Gun-Gu) administrative unit
+#' * adm2_code  Code of the district/municipal-level (Si-Gun-Gu) administrative unit
 #' * type Type of variable,
 #'   e.g., "population", "tax", "mortality", "housing", "medicine", "migration", "environment", "welfare", or "economy"
+#' * adm3 Name of neighborhood/town-level (Eup-Myeon-Dong) administrative unit
+#' * adm3_code  Code of the neighborhood/town-level (Eup-Myeon-Dong) administrative unit
 #' * class1 First-level classification of the variable depending on the type
 #' * class2 Second-level classification of the variable depending on the type
 #' * unit Unit of measurement for the variable
@@ -44,7 +47,7 @@
 #' @format A sf object with 250 rows and 3 variables:
 #' @details
 #' * year Year of the census data, e.g., 2010, 2015, or 2020
-#' * adm2_code  Code of the district/municipal-level (Sigungu) administrative unit
+#' * adm2_code  Code of the district/municipal-level (Si-Gun-Gu) administrative unit
 #' * geometry Geometry list-column
 #'
 #' @source
@@ -63,8 +66,8 @@
 #'
 #' @format A data.frame with 250 rows and 6 variables
 #' @details
-#' * name Name of the district/municipal-level (Sigungu) administrative unit
-#' * code SGIS code of the district/municipal-level (Sigungu) administrative unit
+#' * name Name of the district/municipal-level (Si-Gun-Gu) administrative unit
+#' * code SGIS code of the district/municipal-level (Si-Gun-Gu) administrative unit
 #' * row Row position in the geofacet grid
 #' * col Column position in the geofacet grid
 #'
