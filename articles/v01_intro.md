@@ -389,13 +389,13 @@ df_2020_adm3 <- anycensus(year = 2020,
 head(df_2020_adm3)
 #> # A tibble: 6 × 11
 #>    year adm1  adm1_code adm2      adm2_code type      adm3             adm3_code
-#>   <dbl> <chr>     <dbl> <chr>         <dbl> <chr>     <chr>                <dbl>
-#> 1  2020 Seoul        11 Jongno-gu     11010 mortality Sajik-dong        11010530
-#> 2  2020 Seoul        11 Jongno-gu     11010 mortality Samcheong-dong    11010540
-#> 3  2020 Seoul        11 Jongno-gu     11010 mortality Buam-dong         11010550
-#> 4  2020 Seoul        11 Jongno-gu     11010 mortality Pyeongchang-dong  11010560
-#> 5  2020 Seoul        11 Jongno-gu     11010 mortality Muak-dong         11010570
-#> 6  2020 Seoul        11 Jongno-gu     11010 mortality Gyonam-dong       11010580
+#>   <dbl> <chr>     <dbl> <chr>         <dbl> <chr>     <chr>            <chr>    
+#> 1  2020 Seoul        11 Jongno-gu     11010 mortality Sajik-dong       1101053  
+#> 2  2020 Seoul        11 Jongno-gu     11010 mortality Samcheong-dong   1101054  
+#> 3  2020 Seoul        11 Jongno-gu     11010 mortality Buam-dong        1101055  
+#> 4  2020 Seoul        11 Jongno-gu     11010 mortality Pyeongchang-dong 1101056  
+#> 5  2020 Seoul        11 Jongno-gu     11010 mortality Muak-dong        1101057  
+#> 6  2020 Seoul        11 Jongno-gu     11010 mortality Gyonam-dong      1101058  
 #> # ℹ 3 more variables: `all causes_total_p1p` <dbl>,
 #> #   `all causes_male_p1p` <dbl>, `all causes_female_p1p` <dbl>
 ```
@@ -432,7 +432,7 @@ head(censuskor)
 #> 4  2020 Chungc…        33 Cheo…     33040 tax   income gener… mill… 524478 NA   
 #> 5  2020 Chungc…        33 Cheo…     33040 tax   income labor  mill… 598560 NA   
 #> 6  2015 Chungc…        33 Cheo…     33040 popu… all h… total  pers… 797099 NA   
-#> # ℹ 1 more variable: adm3_code <dbl>
+#> # ℹ 1 more variable: adm3_code <chr>
 ```
 
 ### Quick Visualization
