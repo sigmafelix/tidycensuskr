@@ -1,6 +1,10 @@
 # NEWS
+## 0.3
+- Database update: Added 2020 adm3 level data to `censuskor` (155K+ rows)
+- `anycensus()` update for adm3 query
 
 ## 0.2
+- `anycensus()` update for aggregating nonautonomous district data rows into basic local government level
 - Added license information in vignettes and citations
 - `detect_adm2_type()`: autodetect non-autonomous adm2 and filter for data cleaning
 - Database update (0.2.7): 103K+ rows in `censuskor`
