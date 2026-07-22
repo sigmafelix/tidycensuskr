@@ -398,6 +398,6 @@ unique(census_housing_2020_nonauto$adm2_code)
 style="fig-align: center; width: 200px;" />
 
 This package’s data is derived from the Korean Statistical Information
-Service ([KOSIS](https://kosis.kr)) and Public Data Portal
-([data.go.kr](https://data.go.kr)). The data is provided under the Korea
-Open Government License Type 1 (Attribution).
+Service (<https://kosis.kr>) and Public Data Portal
+(<https://www.data.go.kr>). The data is provided under the Korea Open
+Government License Type 1 (Attribution).
