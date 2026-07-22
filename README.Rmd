@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-[![runiverse-package](https://ropensci.r-universe.dev/badges/tidycensuskr?scale=1&color=pink&style=round)](https://sigmafelix.r-universe.dev/tidycensuskr)
+[![runiverse-package](https://sigmafelix.r-universe.dev/badges/tidycensuskr?scale=1&color=pink&style=round)](https://sigmafelix.r-universe.dev/tidycensuskr)
 [![CRAN](https://www.r-pkg.org/badges/version/tidycensuskr?color=blue)](https://cran.r-project.org/package=tidycensuskr)
 [![downloads](https://cranlogs.r-pkg.org/badges/grand-total/tidycensuskr)](https://cran.r-project.org/package=tidycensuskr)
 
@@ -270,5 +270,5 @@ unique(census_housing_2020_nonauto$adm2_code)
 ## License disclaimer
 ![](inst/extdata/kogl_type1.jpg){style="fig-align: center; width: 200px;"}
 
-This package's data is derived from the Korean Statistical Information Service ([KOSIS](https://kosis.kr)) and Public Data Portal ([data.go.kr](https://data.go.kr)). The data is provided under the [Korea Open Government License Type 1 (Attribution)](https://www.kogl.or.kr/info/license.do) (Note: in Korean).
+This package's data is derived from the Korean Statistical Information Service (https://kosis.kr) and Public Data Portal (https://www.data.go.kr). The data is provided under the Korea Open Government License Type 1 (Attribution).
 
