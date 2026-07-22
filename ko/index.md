@@ -83,10 +83,12 @@ tidycensuskr::anycensus(codes = "Seoul", type = "population")
 
 ## 2. Administrative boundaries
 
-### `load_district()`
+### `load_districts()`
 
-- The function `load_district()` allows you to get the *Si-Gun-Gu* level
-  `sf` files for the three census years (2010, 2015, 2020).
+- The function
+  [`load_districts()`](https://sigmafelix.github.io/tidycensuskr/ko/reference/load_districts.md)
+  allows you to get the *Si-Gun-Gu* level `sf` files for the three
+  census years (2010, 2015, 2020).
 - The function requires the `tidycensuskr.sf` package to be installed.
   Please install it from [R-universe](https://sigmafelix.r-universe.dev)
   using
@@ -115,7 +117,7 @@ Here is a simple example of making maps with population data.
 ``` r
 
 library(tidycensuskr)
-#> tidycensuskr 0.2.8.1 (2026-07-02)
+#> tidycensuskr 0.3.0 (2026-07-22)
 #> Please install the companion data package tidycensuskr.sf to use the district boundaries.
 #> install.packages('tidycensuskr.sf', repos = 'https://sigmafelix.r-universe.dev')
 library(ggplot2)
@@ -139,7 +141,6 @@ options(scipen = 100)
 
 # load census data
 census_pop_2020 <- anycensus(year = 2020, codes = NULL, type = "population")
-#> Using character codes that are convertible to integers. Automatically converting to integers...
 census_pop_2020 <- census_pop_2020 |>
   rename(population_total = `all households_total_prs`)
 
@@ -221,7 +222,6 @@ rate.
 ``` r
 
 census_housing_2020 <- anycensus(year = 2020, codes = NULL, type = "housing")
-#> Using character codes that are convertible to integers. Automatically converting to integers...
 census_housing_2020 <- census_housing_2020 |>
   rename(housing_total_units = `housing types_total_cnt`)
 census_pop_housing_2020 <- census_pop_2020 |>
@@ -235,7 +235,6 @@ census_pop_housing_2020 <- census_pop_2020 |>
     persons_per_housing = population_total / housing_total_units
   )
 census_mort_2020 <- anycensus(year = 2020, codes = NULL, type = "mortality")
-#> Using character codes that are convertible to integers. Automatically converting to integers...
 census_mort_2020 <- census_mort_2020 |>
   rename(mortality_total = `all causes_total_p1p`)
 
@@ -305,9 +304,7 @@ focus on autonomous or nonautonomous districts for analysis.
 
 # detect nonautonomous districts
 census_pop_2020 <- anycensus(year = 2020, type = "population")
-#> Using character codes that are convertible to integers. Automatically converting to integers...
 census_housing_2020 <- anycensus(year = 2020, type = "housing")
-#> Using character codes that are convertible to integers. Automatically converting to integers...
 
 census_pop_2020_auto <- detect_adm2_type(census_pop_2020, mode = "atn")
 census_pop_2020_nonauto <- detect_adm2_type(census_pop_2020, mode = "non")
@@ -408,8 +405,6 @@ unique(census_housing_2020_nonauto$adm2_code)
 ![](inst/extdata/kogl_type1.jpg)
 
 This package’s data is derived from the Korean Statistical Information
-Service ([KOSIS](https://kosis.kr)) and Public Data Portal
-([data.go.kr](https://data.go.kr)). The data is provided under the
-[Korea Open Government License Type 1
-(Attribution)](https://www.kogl.or.kr/info/license.do) (Note: in
-Korean).
+Service (<https://kosis.kr>) and Public Data Portal
+(<https://www.data.go.kr>). The data is provided under the Korea Open
+Government License Type 1 (Attribution).

@@ -128,11 +128,11 @@
 <h2 id="id_2-administrative-boundaries">2. Administrative boundaries<a class="anchor" aria-label="anchor" href="#id_2-administrative-boundaries"></a>
 </h2>
 <div class="section level3">
-<h3 id="load_district">
-<code>load_district()</code><a class="anchor" aria-label="anchor" href="#load_district"></a>
+<h3 id="load_districts">
+<code>load_districts()</code><a class="anchor" aria-label="anchor" href="#load_districts"></a>
 </h3>
 <ul>
-<li>The function <code>load_district()</code> allows you to get the <em>Si-Gun-Gu</em> level <code>sf</code> files for the three census years (2010, 2015, 2020).</li>
+<li>The function <code><a href="reference/load_districts.html">load_districts()</a></code> allows you to get the <em>Si-Gun-Gu</em> level <code>sf</code> files for the three census years (2010, 2015, 2020).</li>
 <li>The function requires the <code>tidycensuskr.sf</code> package to be installed. Please install it from <a href="https://sigmafelix.r-universe.dev" class="external-link">R-universe</a> using <code>install.packages("tidycensuskr.sf", repos = "https://sigmafelix.r-universe.dev")</code>.</li>
 </ul>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
@@ -152,7 +152,7 @@
 <p><code><a href="reference/anycensus.html">anycensus()</a></code> will return an analysis-ready data.frame that can be easily merged with the corresponding boundary <code>sf</code> object from <code><a href="reference/load_districts.html">load_districts()</a></code>. Here is a simple example of making maps with population data.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/sigmafelix/tidycensuskr" class="external-link">tidycensuskr</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; tidycensuskr 0.2.8.1 (2026-07-02)</span></span>
+<span><span class="co">#&gt; tidycensuskr 0.3.0 (2026-07-22)</span></span>
 <span><span class="co">#&gt; Please install the companion data package tidycensuskr.sf to use the district boundaries.</span></span>
 <span><span class="co">#&gt; install.packages('tidycensuskr.sf', repos = 'https://sigmafelix.r-universe.dev')</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
@@ -176,7 +176,6 @@
 <span></span>
 <span><span class="co"># load census data</span></span>
 <span><span class="va">census_pop_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>, codes <span class="op">=</span> <span class="cn">NULL</span>, type <span class="op">=</span> <span class="st">"population"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Using character codes that are convertible to integers. Automatically converting to integers...</span></span>
 <span><span class="va">census_pop_2020</span> <span class="op">&lt;-</span> <span class="va">census_pop_2020</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html" class="external-link">rename</a></span><span class="op">(</span>population_total <span class="op">=</span> <span class="va">`all households_total_prs`</span><span class="op">)</span></span>
 <span></span>
@@ -245,7 +244,6 @@
 <p>Moving on to a complex example, the code below demonstrates to generate a bivariate map with persons per housing unit and all-cause mortality rate.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">census_housing_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>, codes <span class="op">=</span> <span class="cn">NULL</span>, type <span class="op">=</span> <span class="st">"housing"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Using character codes that are convertible to integers. Automatically converting to integers...</span></span>
 <span><span class="va">census_housing_2020</span> <span class="op">&lt;-</span> <span class="va">census_housing_2020</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html" class="external-link">rename</a></span><span class="op">(</span>housing_total_units <span class="op">=</span> <span class="va">`housing types_total_cnt`</span><span class="op">)</span></span>
 <span><span class="va">census_pop_housing_2020</span> <span class="op">&lt;-</span> <span class="va">census_pop_2020</span> <span class="op">|&gt;</span></span>
@@ -259,7 +257,6 @@
 <span>    persons_per_housing <span class="op">=</span> <span class="va">population_total</span> <span class="op">/</span> <span class="va">housing_total_units</span></span>
 <span>  <span class="op">)</span></span>
 <span><span class="va">census_mort_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>, codes <span class="op">=</span> <span class="cn">NULL</span>, type <span class="op">=</span> <span class="st">"mortality"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Using character codes that are convertible to integers. Automatically converting to integers...</span></span>
 <span><span class="va">census_mort_2020</span> <span class="op">&lt;-</span> <span class="va">census_mort_2020</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html" class="external-link">rename</a></span><span class="op">(</span>mortality_total <span class="op">=</span> <span class="va">`all causes_total_p1p`</span><span class="op">)</span></span>
 <span></span>
@@ -322,9 +319,7 @@
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># detect nonautonomous districts</span></span>
 <span><span class="va">census_pop_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>, type <span class="op">=</span> <span class="st">"population"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Using character codes that are convertible to integers. Automatically converting to integers...</span></span>
 <span><span class="va">census_housing_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>, type <span class="op">=</span> <span class="st">"housing"</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Using character codes that are convertible to integers. Automatically converting to integers...</span></span>
 <span></span>
 <span><span class="va">census_pop_2020_auto</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/detect_adm2_type.html">detect_adm2_type</a></span><span class="op">(</span><span class="va">census_pop_2020</span>, mode <span class="op">=</span> <span class="st">"atn"</span><span class="op">)</span></span>
 <span><span class="va">census_pop_2020_nonauto</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/detect_adm2_type.html">detect_adm2_type</a></span><span class="op">(</span><span class="va">census_pop_2020</span>, mode <span class="op">=</span> <span class="st">"non"</span><span class="op">)</span></span>
@@ -423,7 +418,7 @@
 <h2 id="license-disclaimer">License disclaimer<a class="anchor" aria-label="anchor" href="#license-disclaimer"></a>
 </h2>
 <p><img src="inst/extdata/kogl_type1.jpg" style="fig-align: center; width: 200px;"></p>
-<p>This package’s data is derived from the Korean Statistical Information Service (<a href="https://kosis.kr" class="external-link">KOSIS</a>) and Public Data Portal (<a href="https://data.go.kr" class="external-link">data.go.kr</a>). The data is provided under the <a href="https://www.kogl.or.kr/info/license.do" class="external-link">Korea Open Government License Type 1 (Attribution)</a> (Note: in Korean).</p>
+<p>This package’s data is derived from the Korean Statistical Information Service (<a href="https://kosis.kr" class="external-link uri">https://kosis.kr</a>) and Public Data Portal (<a href="https://www.data.go.kr" class="external-link uri">https://www.data.go.kr</a>). The data is provided under the Korea Open Government License Type 1 (Attribution).</p>
 </div>
 </div>
 
@@ -465,7 +460,7 @@
 <div class="dev-status">
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://sigmafelix.r-universe.dev/tidycensuskr" class="external-link"><img src="https://ropensci.r-universe.dev/badges/tidycensuskr?scale=1&amp;color=pink&amp;style=round" alt="runiverse-package"></a></li>
+<li><a href="https://sigmafelix.r-universe.dev/tidycensuskr" class="external-link"><img src="https://sigmafelix.r-universe.dev/badges/tidycensuskr?scale=1&amp;color=pink&amp;style=round" alt="runiverse-package"></a></li>
 <li><a href="https://cran.r-project.org/package=tidycensuskr" class="external-link"><img src="https://www.r-pkg.org/badges/version/tidycensuskr?color=blue" alt="CRAN"></a></li>
 <li><a href="https://cran.r-project.org/package=tidycensuskr" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/grand-total/tidycensuskr" alt="downloads"></a></li>
 </ul>
