@@ -226,7 +226,7 @@ The package provides census and survey data through:
 
 * As of version 0.3.0, `tidycensuskr` comes with ADM3 level variables for types `population`, `mortality`, `housing`, and `economy` in 2020 census.
 
-* The data is provided under the [Korea Open Government License (KOGL) Type 1 (Attribution)](https://www.kogl.or.kr/info/license.do) (Note: in Korean). Each raw data table is available for download from the [Public Data Portal](https://www.data.go.kr/) and [KOSIS](https://kosis.kr/) with no cost. KOGL Type 1 is similar to the Creative Commons Attribution 4.0 International License (CC BY 4.0), which allows for free use, distribution, and adaptation of the data as long as proper attribution is given.
+* The data is provided under the Korea Open Government License (KOGL) Type 1 (Attribution) (Note: in Korean). Each raw data table is available for download from the Public Data Portal and Korea Statistical Information System (KOSIS) with no cost. KOGL Type 1 is similar to the Creative Commons Attribution 4.0 International License (CC BY 4.0), which allows for free use, distribution, and adaptation of the data as long as proper attribution is given.
 
 ![](inst/extdata/kogl_type1.jpg){style="fig-align: center; width: 200px;"}
 
