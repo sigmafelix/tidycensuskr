@@ -154,7 +154,7 @@ The package provides census and survey data through:
 | environment | wastewater | discharge | m3_day | Daily wastewater discharge volume | 2010, 2015, 2020 |
 | environment | organic_matter | generation | kg_day | Daily organic matter generation | 2010, 2015, 2020 |
 | population | fertility | total | births | Total number of births | 2010, 2015, 2020 |
-| population | fertility | 15-19 (simulated) | births per 1000 | Age-specific fertility rate for ages 15-19 (simulated) | 2010, 2015, 2020 |
+| population | fertility | 15-19 | births per 1000 | Age-specific fertility rate for ages 15-19 | 2010, 2015, 2020 |
 | population | fertility | 20-24 | births per 1000 | Age-specific fertility rate for ages 20-24 | 2010, 2015, 2020 |
 | population | fertility | 25-29 | births per 1000 | Age-specific fertility rate for ages 25-29 | 2010, 2015, 2020 |
 | population | fertility | 30-34 | births per 1000 | Age-specific fertility rate for ages 30-34 | 2010, 2015, 2020 |
@@ -197,11 +197,11 @@ The package provides census and survey data through:
 | welfare | registered physically mentally challenged | male_40-64 | persons | Registered disabled males aged 40-64 | 2015, 2020 |
 | welfare | registered physically mentally challenged | male_65-79 | persons | Registered disabled males aged 65-79 | 2015, 2020 |
 | welfare | registered physically mentally challenged | male_80+ | persons | Registered disabled males aged 80 and above | 2015, 2020 |
-| welfare | registered physically mentally challenged severity | _0-19 | persons | Total registered disabled persons aged 0-19 | 2015 |
-| welfare | registered physically mentally challenged severity | _20-39 | persons | Total registered disabled persons aged 20-39 | 2015 |
-| welfare | registered physically mentally challenged severity | _40-64 | persons | Total registered disabled persons aged 40-64 | 2015 |
-| welfare | registered physically mentally challenged severity | _65-79 | persons | Total registered disabled persons aged 65-79 | 2015 |
-| welfare | registered physically mentally challenged severity | _80+ | persons | Total registered disabled persons aged 80 and above | 2015 |
+| welfare | registered physically mentally challenged | total_0-19 | persons | Total registered disabled persons aged 0-19 | 2015 |
+| welfare | registered physically mentally challenged | total_20-39 | persons | Total registered disabled persons aged 20-39 | 2015 |
+| welfare | registered physically mentally challenged | total_40-64 | persons | Total registered disabled persons aged 40-64 | 2015 |
+| welfare | registered physically mentally challenged | total_65-79 | persons | Total registered disabled persons aged 65-79 | 2015 |
+| welfare | registered physically mentally challenged | total_80+ | persons | Total registered disabled persons aged 80 and above | 2015 |
 | welfare | registered physically mentally challenged severity | less severely impaired_0-19 | persons | Less severely impaired persons aged 0-19 | 2020 |
 | welfare | registered physically mentally challenged severity | less severely impaired_20-39 | persons | Less severely impaired persons aged 20-39 | 2020 |
 | welfare | registered physically mentally challenged severity | less severely impaired_40-64 | persons | Less severely impaired persons aged 40-64 | 2020 |
@@ -226,7 +226,7 @@ The package provides census and survey data through:
 
 * As of version 0.3.0, `tidycensuskr` comes with ADM3 level variables for types `population`, `mortality`, `housing`, and `economy` in 2020 census.
 
-* The data is provided under the [Korea Open Government License (KOGL) Type 1 (Attribution)](https://www.kogl.or.kr/info/license.do) (Note: in Korean). Each raw data table is available for download from the [Public Data Portal](https://www.data.go.kr/) and [KOSIS](https://kosis.kr/) with no cost. KOGL Type 1 is similar to the Creative Commons Attribution 4.0 International License (CC BY 4.0), which allows for free use, distribution, and adaptation of the data as long as proper attribution is given.
+* The data is provided under the Korea Open Government License (KOGL) Type 1 (Attribution) (Note: in Korean). Each raw data table is available for download from the Public Data Portal and Korea Statistical Information System (KOSIS) with no cost. KOGL Type 1 is similar to the Creative Commons Attribution 4.0 International License (CC BY 4.0), which allows for free use, distribution, and adaptation of the data as long as proper attribution is given.
 
 ![](inst/extdata/kogl_type1.jpg){style="fig-align: center; width: 200px;"}
 

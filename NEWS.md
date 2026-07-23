@@ -2,6 +2,9 @@
 ## 0.3
 - Database update: Added 2020 adm3 level data to `censuskor` (155K+ rows)
 - `anycensus()` update for adm3 query
+- `censuskor` rectification
+  - registered physically and mentally challenged: data `class2` "_YY-YY" value to "total_YY-YY"
+  - fertility: `class2` "15-19 (simulated)" to "15-19"
 
 ## 0.2
 - `anycensus()` update for aggregating nonautonomous district data rows into basic local government level
