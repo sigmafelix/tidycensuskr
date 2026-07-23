@@ -64,7 +64,7 @@
 
       <h1>Working with tidycensuskr</h1>
             
-            <h4 data-toc-skip class="date">July 22, 2026</h4>
+            <h4 data-toc-skip class="date">July 23, 2026</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/sigmafelix/tidycensuskr/blob/main/vignettes/v01_intro.Rmd" class="external-link"><code>vignettes/v01_intro.Rmd</code></a></small>
       <div class="d-none name"><code>v01_intro.Rmd</code></div>
@@ -642,9 +642,9 @@ Currently, for 2020 data there are 250 <em>Si-Gun-Gu</em> and 17
 <tr class="odd">
 <td>population</td>
 <td>fertility</td>
-<td>15-19 (simulated)</td>
+<td>15-19</td>
 <td>births per 1000</td>
-<td>Age-specific fertility rate for ages 15-19 (simulated)</td>
+<td>Age-specific fertility rate for ages 15-19</td>
 <td>2010, 2015, 2020</td>
 </tr>
 <tr class="even">
@@ -988,40 +988,40 @@ services</td>
 </tr>
 <tr class="even">
 <td>welfare</td>
-<td>registered physically mentally challenged severity</td>
-<td>_0-19</td>
+<td>registered physically mentally challenged</td>
+<td>total_0-19</td>
 <td>persons</td>
 <td>Total registered disabled persons aged 0-19</td>
 <td>2015</td>
 </tr>
 <tr class="odd">
 <td>welfare</td>
-<td>registered physically mentally challenged severity</td>
-<td>_20-39</td>
+<td>registered physically mentally challenged</td>
+<td>total_20-39</td>
 <td>persons</td>
 <td>Total registered disabled persons aged 20-39</td>
 <td>2015</td>
 </tr>
 <tr class="even">
 <td>welfare</td>
-<td>registered physically mentally challenged severity</td>
-<td>_40-64</td>
+<td>registered physically mentally challenged</td>
+<td>total_40-64</td>
 <td>persons</td>
 <td>Total registered disabled persons aged 40-64</td>
 <td>2015</td>
 </tr>
 <tr class="odd">
 <td>welfare</td>
-<td>registered physically mentally challenged severity</td>
-<td>_65-79</td>
+<td>registered physically mentally challenged</td>
+<td>total_65-79</td>
 <td>persons</td>
 <td>Total registered disabled persons aged 65-79</td>
 <td>2015</td>
 </tr>
 <tr class="even">
 <td>welfare</td>
-<td>registered physically mentally challenged severity</td>
-<td>_80+</td>
+<td>registered physically mentally challenged</td>
+<td>total_80+</td>
 <td>persons</td>
 <td>Total registered disabled persons aged 80 and above</td>
 <td>2015</td>
@@ -1186,12 +1186,13 @@ services</td>
 level variables for types <code>population</code>,
 <code>mortality</code>, <code>housing</code>, and <code>economy</code>
 in 2020 census.</p></li>
-<li><p>The data is provided under the <a href="https://www.kogl.or.kr/info/license.do" class="external-link">Korea Open Government
-License (KOGL) Type 1 (Attribution)</a> (Note: in Korean). Each raw data
-table is available for download from the <a href="https://www.data.go.kr/" class="external-link">Public Data Portal</a> and <a href="https://kosis.kr/" class="external-link">KOSIS</a> with no cost. KOGL Type 1 is similar
-to the Creative Commons Attribution 4.0 International License (CC BY
-4.0), which allows for free use, distribution, and adaptation of the
-data as long as proper attribution is given.</p></li>
+<li><p>The data is provided under the Korea Open Government License
+(KOGL) Type 1 (Attribution) (Note: in Korean). Each raw data table is
+available for download from the Public Data Portal and Korea Statistical
+Information System (KOSIS) with no cost. KOGL Type 1 is similar to the
+Creative Commons Attribution 4.0 International License (CC BY 4.0),
+which allows for free use, distribution, and adaptation of the data as
+long as proper attribution is given.</p></li>
 </ul>
 <p><img src="inst/extdata/kogl_type1.jpg" style="fig-align: center; width: 200px;"></p>
 </div>
@@ -1335,13 +1336,13 @@ data.</p>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">df_2020_adm3</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 11</span></span></span>
 <span><span class="co">#&gt;    year adm1  adm1_code adm2      adm2_code type      adm3             adm3_code</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>  <span style="text-decoration: underline;">2</span>020 Seoul        11 Jongno-gu     <span style="text-decoration: underline;">11</span>010 mortality Sajik-dong       1101053  </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>  <span style="text-decoration: underline;">2</span>020 Seoul        11 Jongno-gu     <span style="text-decoration: underline;">11</span>010 mortality Samcheong-dong   1101054  </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>  <span style="text-decoration: underline;">2</span>020 Seoul        11 Jongno-gu     <span style="text-decoration: underline;">11</span>010 mortality Buam-dong        1101055  </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>  <span style="text-decoration: underline;">2</span>020 Seoul        11 Jongno-gu     <span style="text-decoration: underline;">11</span>010 mortality Pyeongchang-dong 1101056  </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>  <span style="text-decoration: underline;">2</span>020 Seoul        11 Jongno-gu     <span style="text-decoration: underline;">11</span>010 mortality Muak-dong        1101057  </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span>  <span style="text-decoration: underline;">2</span>020 Seoul        11 Jongno-gu     <span style="text-decoration: underline;">11</span>010 mortality Gyonam-dong      1101058  </span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>         <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>  <span style="text-decoration: underline;">2</span>020 Seoul        11 Jongno-gu     <span style="text-decoration: underline;">11</span>010 mortality Sajik-dong        11<span style="text-decoration: underline;">010</span>530</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span>  <span style="text-decoration: underline;">2</span>020 Seoul        11 Jongno-gu     <span style="text-decoration: underline;">11</span>010 mortality Samcheong-dong    11<span style="text-decoration: underline;">010</span>540</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>  <span style="text-decoration: underline;">2</span>020 Seoul        11 Jongno-gu     <span style="text-decoration: underline;">11</span>010 mortality Buam-dong         11<span style="text-decoration: underline;">010</span>550</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>  <span style="text-decoration: underline;">2</span>020 Seoul        11 Jongno-gu     <span style="text-decoration: underline;">11</span>010 mortality Pyeongchang-dong  11<span style="text-decoration: underline;">010</span>560</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>  <span style="text-decoration: underline;">2</span>020 Seoul        11 Jongno-gu     <span style="text-decoration: underline;">11</span>010 mortality Muak-dong         11<span style="text-decoration: underline;">010</span>570</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span>  <span style="text-decoration: underline;">2</span>020 Seoul        11 Jongno-gu     <span style="text-decoration: underline;">11</span>010 mortality Gyonam-dong       11<span style="text-decoration: underline;">010</span>580</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># ℹ 3 more variables: `all causes_total_p1p` &lt;dbl&gt;,</span></span></span>
 <span><span class="co">#&gt; <span style="color: #949494;">#   `all causes_male_p1p` &lt;dbl&gt;, `all causes_female_p1p` &lt;dbl&gt;</span></span></span></code></pre></div>
 </div>
@@ -1388,7 +1389,7 @@ combination of year, region, and category</li>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>  <span style="text-decoration: underline;">2</span>020 Chungc…        33 Cheo…     <span style="text-decoration: underline;">33</span>040 tax   income gener… mill… <span style="text-decoration: underline;">524</span>478 <span style="color: #BB0000;">NA</span>   </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>  <span style="text-decoration: underline;">2</span>020 Chungc…        33 Cheo…     <span style="text-decoration: underline;">33</span>040 tax   income labor  mill… <span style="text-decoration: underline;">598</span>560 <span style="color: #BB0000;">NA</span>   </span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span>  <span style="text-decoration: underline;">2</span>015 Chungc…        33 Cheo…     <span style="text-decoration: underline;">33</span>040 popu… all h… total  pers… <span style="text-decoration: underline;">797</span>099 <span style="color: #BB0000;">NA</span>   </span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 1 more variable: adm3_code &lt;chr&gt;</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 1 more variable: adm3_code &lt;dbl&gt;</span></span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="quick-visualization">Quick Visualization<a class="anchor" aria-label="anchor" href="#quick-visualization"></a>

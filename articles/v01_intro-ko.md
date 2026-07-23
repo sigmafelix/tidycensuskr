@@ -156,7 +156,7 @@ print(length(unique(adm2_sf_2020$adm2_code)))
 | environment | wastewater | discharge | m3_day | Daily wastewater discharge volume | 2010, 2015, 2020 |
 | environment | organic_matter | generation | kg_day | Daily organic matter generation | 2010, 2015, 2020 |
 | population | fertility | total | births | Total number of births | 2010, 2015, 2020 |
-| population | fertility | 15-19 (simulated) | births per 1000 | Age-specific fertility rate for ages 15-19 (simulated) | 2010, 2015, 2020 |
+| population | fertility | 15-19 | births per 1000 | Age-specific fertility rate for ages 15-19 | 2010, 2015, 2020 |
 | population | fertility | 20-24 | births per 1000 | Age-specific fertility rate for ages 20-24 | 2010, 2015, 2020 |
 | population | fertility | 25-29 | births per 1000 | Age-specific fertility rate for ages 25-29 | 2010, 2015, 2020 |
 | population | fertility | 30-34 | births per 1000 | Age-specific fertility rate for ages 30-34 | 2010, 2015, 2020 |
@@ -199,11 +199,11 @@ print(length(unique(adm2_sf_2020$adm2_code)))
 | welfare | registered physically mentally challenged | male_40-64 | persons | Registered disabled males aged 40-64 | 2015, 2020 |
 | welfare | registered physically mentally challenged | male_65-79 | persons | Registered disabled males aged 65-79 | 2015, 2020 |
 | welfare | registered physically mentally challenged | male_80+ | persons | Registered disabled males aged 80 and above | 2015, 2020 |
-| welfare | registered physically mentally challenged severity | \_0-19 | persons | Total registered disabled persons aged 0-19 | 2015 |
-| welfare | registered physically mentally challenged severity | \_20-39 | persons | Total registered disabled persons aged 20-39 | 2015 |
-| welfare | registered physically mentally challenged severity | \_40-64 | persons | Total registered disabled persons aged 40-64 | 2015 |
-| welfare | registered physically mentally challenged severity | \_65-79 | persons | Total registered disabled persons aged 65-79 | 2015 |
-| welfare | registered physically mentally challenged severity | \_80+ | persons | Total registered disabled persons aged 80 and above | 2015 |
+| welfare | registered physically mentally challenged | total_0-19 | persons | Total registered disabled persons aged 0-19 | 2015 |
+| welfare | registered physically mentally challenged | total_20-39 | persons | Total registered disabled persons aged 20-39 | 2015 |
+| welfare | registered physically mentally challenged | total_40-64 | persons | Total registered disabled persons aged 40-64 | 2015 |
+| welfare | registered physically mentally challenged | total_65-79 | persons | Total registered disabled persons aged 65-79 | 2015 |
+| welfare | registered physically mentally challenged | total_80+ | persons | Total registered disabled persons aged 80 and above | 2015 |
 | welfare | registered physically mentally challenged severity | less severely impaired_0-19 | persons | Less severely impaired persons aged 0-19 | 2020 |
 | welfare | registered physically mentally challenged severity | less severely impaired_20-39 | persons | Less severely impaired persons aged 20-39 | 2020 |
 | welfare | registered physically mentally challenged severity | less severely impaired_40-64 | persons | Less severely impaired persons aged 40-64 | 2020 |
@@ -230,10 +230,9 @@ print(length(unique(adm2_sf_2020$adm2_code)))
 
 - 이 패키지에서 제공하는 자료는 대한민국 통계데이터처에서 2010년-2020년
   작성하여 공공누리 제1유형으로 개방한 통계표를 이용하였으며, 해당
-  자료는 [공공데이터포털](https://www.data.go.kr/)과
-  [KOSIS](https://kosis.kr/)에서 무료로 내려받으실 수 있습니다. 공공누리
-  제1유형은 Creative Commons 저작자표시 (CC BY)와 동일한 조건으로,
-  출처를 표시하면 누구나 자유롭게 이용할 수 있습니다.
+  자료는 공공데이터포털과 국가통계포털(KOSIS)에서 무료로 내려받으실 수
+  있습니다. 공공누리 제1유형은 Creative Commons 저작자표시 (CC BY)와
+  동일한 조건으로, 출처를 표시하면 누구나 자유롭게 이용할 수 있습니다.
 
 ![](inst/extdata/kogl_type1.jpg)
 
@@ -367,13 +366,13 @@ df_2020_adm3 <- anycensus(year = 2020,
 head(df_2020_adm3)
 #> # A tibble: 6 × 11
 #>    year adm1  adm1_code adm2      adm2_code type      adm3             adm3_code
-#>   <dbl> <chr>     <dbl> <chr>         <dbl> <chr>     <chr>            <chr>    
-#> 1  2020 Seoul        11 Jongno-gu     11010 mortality Sajik-dong       1101053  
-#> 2  2020 Seoul        11 Jongno-gu     11010 mortality Samcheong-dong   1101054  
-#> 3  2020 Seoul        11 Jongno-gu     11010 mortality Buam-dong        1101055  
-#> 4  2020 Seoul        11 Jongno-gu     11010 mortality Pyeongchang-dong 1101056  
-#> 5  2020 Seoul        11 Jongno-gu     11010 mortality Muak-dong        1101057  
-#> 6  2020 Seoul        11 Jongno-gu     11010 mortality Gyonam-dong      1101058  
+#>   <dbl> <chr>     <dbl> <chr>         <dbl> <chr>     <chr>                <dbl>
+#> 1  2020 Seoul        11 Jongno-gu     11010 mortality Sajik-dong        11010530
+#> 2  2020 Seoul        11 Jongno-gu     11010 mortality Samcheong-dong    11010540
+#> 3  2020 Seoul        11 Jongno-gu     11010 mortality Buam-dong         11010550
+#> 4  2020 Seoul        11 Jongno-gu     11010 mortality Pyeongchang-dong  11010560
+#> 5  2020 Seoul        11 Jongno-gu     11010 mortality Muak-dong         11010570
+#> 6  2020 Seoul        11 Jongno-gu     11010 mortality Gyonam-dong       11010580
 #> # ℹ 3 more variables: `all causes_total_p1p` <dbl>,
 #> #   `all causes_male_p1p` <dbl>, `all causes_female_p1p` <dbl>
 ```
@@ -413,7 +412,7 @@ head(censuskor)
 #> 4  2020 Chungc…        33 Cheo…     33040 tax   income gener… mill… 524478 NA   
 #> 5  2020 Chungc…        33 Cheo…     33040 tax   income labor  mill… 598560 NA   
 #> 6  2015 Chungc…        33 Cheo…     33040 popu… all h… total  pers… 797099 NA   
-#> # ℹ 1 more variable: adm3_code <chr>
+#> # ℹ 1 more variable: adm3_code <dbl>
 ```
 
 ### 시각화 예제

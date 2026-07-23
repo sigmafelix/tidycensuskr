@@ -156,24 +156,24 @@ anycensus(
 )
 #> # A tibble: 17 × 11
 #>     year adm1  adm1_code adm2      adm2_code type       adm3           adm3_code
-#>    <dbl> <chr>     <dbl> <chr>         <dbl> <chr>      <chr>          <chr>    
-#>  1  2020 Seoul        11 Jongno-gu     11010 population Sajik-dong     1101053  
-#>  2  2020 Seoul        11 Jongno-gu     11010 population Samcheong-dong 1101054  
-#>  3  2020 Seoul        11 Jongno-gu     11010 population Buam-dong      1101055  
-#>  4  2020 Seoul        11 Jongno-gu     11010 population Pyeongchang-d… 1101056  
-#>  5  2020 Seoul        11 Jongno-gu     11010 population Muak-dong      1101057  
-#>  6  2020 Seoul        11 Jongno-gu     11010 population Gyonam-dong    1101058  
-#>  7  2020 Seoul        11 Jongno-gu     11010 population Gahoe-dong     1101060  
-#>  8  2020 Seoul        11 Jongno-gu     11010 population Jongno 1.2.3.… 1101061  
-#>  9  2020 Seoul        11 Jongno-gu     11010 population Jongno 5.6(or… 1101063  
-#> 10  2020 Seoul        11 Jongno-gu     11010 population Ihwa-dong      1101064  
-#> 11  2020 Seoul        11 Jongno-gu     11010 population Changsin 1(il… 1101067  
-#> 12  2020 Seoul        11 Jongno-gu     11010 population Changsin 2(i)… 1101068  
-#> 13  2020 Seoul        11 Jongno-gu     11010 population Changsin 3(sa… 1101069  
-#> 14  2020 Seoul        11 Jongno-gu     11010 population Sungin 1(il)-… 1101070  
-#> 15  2020 Seoul        11 Jongno-gu     11010 population Sungin 2(i)-d… 1101071  
-#> 16  2020 Seoul        11 Jongno-gu     11010 population Cheongunhyoja… 1101072  
-#> 17  2020 Seoul        11 Jongno-gu     11010 population Hyehwa-dong    1101073  
+#>    <dbl> <chr>     <dbl> <chr>         <dbl> <chr>      <chr>              <dbl>
+#>  1  2020 Seoul        11 Jongno-gu     11010 population Sajik-dong      11010530
+#>  2  2020 Seoul        11 Jongno-gu     11010 population Samcheong-dong  11010540
+#>  3  2020 Seoul        11 Jongno-gu     11010 population Buam-dong       11010550
+#>  4  2020 Seoul        11 Jongno-gu     11010 population Pyeongchang-d…  11010560
+#>  5  2020 Seoul        11 Jongno-gu     11010 population Muak-dong       11010570
+#>  6  2020 Seoul        11 Jongno-gu     11010 population Gyonam-dong     11010580
+#>  7  2020 Seoul        11 Jongno-gu     11010 population Gahoe-dong      11010600
+#>  8  2020 Seoul        11 Jongno-gu     11010 population Jongno 1.2.3.…  11010610
+#>  9  2020 Seoul        11 Jongno-gu     11010 population Jongno 5.6(or…  11010630
+#> 10  2020 Seoul        11 Jongno-gu     11010 population Ihwa-dong       11010640
+#> 11  2020 Seoul        11 Jongno-gu     11010 population Changsin 1(il…  11010670
+#> 12  2020 Seoul        11 Jongno-gu     11010 population Changsin 2(i)…  11010680
+#> 13  2020 Seoul        11 Jongno-gu     11010 population Changsin 3(sa…  11010690
+#> 14  2020 Seoul        11 Jongno-gu     11010 population Sungin 1(il)-…  11010700
+#> 15  2020 Seoul        11 Jongno-gu     11010 population Sungin 2(i)-d…  11010710
+#> 16  2020 Seoul        11 Jongno-gu     11010 population Cheongunhyoja…  11010720
+#> 17  2020 Seoul        11 Jongno-gu     11010 population Hyehwa-dong     11010730
 #> # ℹ 3 more variables: `all households_total_prs` <dbl>,
 #> #   `all households_male_prs` <dbl>, `all households_female_prs` <dbl>
 
