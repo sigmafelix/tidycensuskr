@@ -156,7 +156,7 @@ print(length(unique(adm2_sf_2020$adm2_code)))
 | environment | wastewater | discharge | m3_day | Daily wastewater discharge volume | 2010, 2015, 2020 |
 | environment | organic_matter | generation | kg_day | Daily organic matter generation | 2010, 2015, 2020 |
 | population | fertility | total | births | Total number of births | 2010, 2015, 2020 |
-| population | fertility | 15-19 (simulated) | births per 1000 | Age-specific fertility rate for ages 15-19 (simulated) | 2010, 2015, 2020 |
+| population | fertility | 15-19 | births per 1000 | Age-specific fertility rate for ages 15-19 | 2010, 2015, 2020 |
 | population | fertility | 20-24 | births per 1000 | Age-specific fertility rate for ages 20-24 | 2010, 2015, 2020 |
 | population | fertility | 25-29 | births per 1000 | Age-specific fertility rate for ages 25-29 | 2010, 2015, 2020 |
 | population | fertility | 30-34 | births per 1000 | Age-specific fertility rate for ages 30-34 | 2010, 2015, 2020 |
@@ -199,11 +199,11 @@ print(length(unique(adm2_sf_2020$adm2_code)))
 | welfare | registered physically mentally challenged | male_40-64 | persons | Registered disabled males aged 40-64 | 2015, 2020 |
 | welfare | registered physically mentally challenged | male_65-79 | persons | Registered disabled males aged 65-79 | 2015, 2020 |
 | welfare | registered physically mentally challenged | male_80+ | persons | Registered disabled males aged 80 and above | 2015, 2020 |
-| welfare | registered physically mentally challenged severity | _0-19 | persons | Total registered disabled persons aged 0-19 | 2015 |
-| welfare | registered physically mentally challenged severity | _20-39 | persons | Total registered disabled persons aged 20-39 | 2015 |
-| welfare | registered physically mentally challenged severity | _40-64 | persons | Total registered disabled persons aged 40-64 | 2015 |
-| welfare | registered physically mentally challenged severity | _65-79 | persons | Total registered disabled persons aged 65-79 | 2015 |
-| welfare | registered physically mentally challenged severity | _80+ | persons | Total registered disabled persons aged 80 and above | 2015 |
+| welfare | registered physically mentally challenged | total_0-19 | persons | Total registered disabled persons aged 0-19 | 2015 |
+| welfare | registered physically mentally challenged | total_20-39 | persons | Total registered disabled persons aged 20-39 | 2015 |
+| welfare | registered physically mentally challenged | total_40-64 | persons | Total registered disabled persons aged 40-64 | 2015 |
+| welfare | registered physically mentally challenged | total_65-79 | persons | Total registered disabled persons aged 65-79 | 2015 |
+| welfare | registered physically mentally challenged | total_80+ | persons | Total registered disabled persons aged 80 and above | 2015 |
 | welfare | registered physically mentally challenged severity | less severely impaired_0-19 | persons | Less severely impaired persons aged 0-19 | 2020 |
 | welfare | registered physically mentally challenged severity | less severely impaired_20-39 | persons | Less severely impaired persons aged 20-39 | 2020 |
 | welfare | registered physically mentally challenged severity | less severely impaired_40-64 | persons | Less severely impaired persons aged 40-64 | 2020 |
