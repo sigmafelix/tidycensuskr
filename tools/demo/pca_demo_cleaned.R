@@ -42,8 +42,8 @@ df_wide <- Reduce(
     df_mort,
     df_ss
   )
-) |>
-  dplyr::select(-type)
+)# |>
+ # dplyr::select(-type)
 
 
 # reorganize the variables by basic local governments
