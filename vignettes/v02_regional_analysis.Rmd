@@ -34,7 +34,6 @@ library(ggspatial)
 
 ### Data prep
 ```{r load-data_1}
-
 # Load 2020 boundaries
 data(adm2_sf_2020)
 
@@ -184,8 +183,6 @@ cowplot::ggdraw() +
 
 The bivariate map highlights the strong centrality of the Seoul Metropolitan Area. Both the capital region and the southeastern manufacturing hubs exhibit high population and high tax revenues. In contrast, most other regions—such as Gangwon and Gyeongbuk, apart from a few metropolitan centers—fall into the low population–low tax category.
 
-
- 
 
 
 ## Example 3: Sex ratio in Seoul Metropolitan Area
