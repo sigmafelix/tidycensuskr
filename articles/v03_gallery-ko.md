@@ -242,22 +242,24 @@ kr_grid_adm2_sgis_2020 <-
 ### 스몰 멀티플(Small multiples)
 
 이 디자인은 각 시군구의 상대적 위치를 반영하는 공간 구조를 최대한
-유지하면서 이질적인 지역 인구 변화 추이를 강조합니다.
+유지하면서 이질적인 지역 인구 변화 추이를 강조합니다. 세로축은 연도에
+따른 상대적 인구를 나타내고, 성별 추세선은 투명도를 넣어서 중첩되는
+차트로 성비를 비교할 수 있도록 합니다.
 
 ``` r
 
-ggplot(data = pop) +
+pop_gfgg <- ggplot(data = pop) +
   geom_line(
     aes(x = year, y = value, group = interaction(adm2, class2), color = class2),
     alpha = 0.5,
-    linewidth = 1.5
+    linewidth = 2.5
   ) +
-  facet_geo(~code, grid = kr_grid_adm2_sgis_2020, label = "name", scale = "free_y") +
+  facet_geo(~ code, grid = kr_grid_adm2_sgis_2020, label = "name", scale = "free_y") +
   labs(
-    title = "Population Trends in South Korea by Sex and District",
+    title = "Population Trends in South Korea by Municipalities / Counties / Districts and Sex",
     x = "Year",
     y = "",
-    color = "Population Class",
+    color = "District and Population Class",
     caption = "Y-axis values are not commensurate with the original scale"
   ) +
   scale_color_manual(values = c(female = "#F44336", male = "#2196F3")) +
@@ -277,6 +279,10 @@ ggplot(data = pop) +
     panel.spacing = grid::unit(1, "pt"),
     plot.margin = margin(1, 1, 1, 1, "mm")
   )
+
+# geofacet 0.2.4 removes populated panels when printing with ggplot2 4.0.
+# Draw the correctly constructed ggplot grob without that post-processing step.
+grid::grid.draw(ggplot2::ggplotGrob(pop_gfgg))
 ```
 
 ![](v03_gallery-ko_files/figure-html/pop-change-3-1.png)
