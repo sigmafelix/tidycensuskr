@@ -26,7 +26,8 @@ anycensus(
 
 - year:
 
-  integer(1). One of 2010, 2015, or 2020.
+  integer(1). One of 2010, 2015, 2020, or 2025. 2025 data is currently
+  available only for ADM3 population and housing.
 
 - codes:
 
@@ -42,7 +43,9 @@ anycensus(
 - level:
 
   character(1). "adm1" for province-level, "adm2" for municipal-level,
-  or "adm3" for neighborhood/town-level. Defaults to "adm2".
+  or "adm3" for neighborhood/town-level. ADM3 population and housing
+  data is available for 2015, 2020, and 2025; ADM3 economy and mortality
+  data is available for 2020. Defaults to "adm2".
 
 - adm2_type:
 
@@ -76,8 +79,9 @@ anycensus(
 
 - geometry:
 
-  logical(1). If `TRUE`, returns an `sf` object with geometries
-  attached. Defaults to `FALSE`.
+  logical(1). If `TRUE`, returns an `sf` object with ADM2 geometries
+  attached. Geometry is available for 2010, 2015, and 2020; 2025 census
+  data is tabular only. Defaults to `FALSE`.
 
 - ...:
 
@@ -154,7 +158,7 @@ anycensus(
   year = 2020,
   level = "adm3"
 )
-#> # A tibble: 17 × 11
+#> # A tibble: 34 × 17
 #>     year adm1  adm1_code adm2      adm2_code type       adm3           adm3_code
 #>    <dbl> <chr>     <dbl> <chr>         <dbl> <chr>      <chr>              <dbl>
 #>  1  2020 Seoul        11 Jongno-gu     11010 population Sajik-dong      11010530
@@ -167,15 +171,48 @@ anycensus(
 #>  8  2020 Seoul        11 Jongno-gu     11010 population Jongno 1.2.3.…  11010610
 #>  9  2020 Seoul        11 Jongno-gu     11010 population Jongno 5.6(or…  11010630
 #> 10  2020 Seoul        11 Jongno-gu     11010 population Ihwa-dong       11010640
-#> 11  2020 Seoul        11 Jongno-gu     11010 population Changsin 1(il…  11010670
-#> 12  2020 Seoul        11 Jongno-gu     11010 population Changsin 2(i)…  11010680
-#> 13  2020 Seoul        11 Jongno-gu     11010 population Changsin 3(sa…  11010690
-#> 14  2020 Seoul        11 Jongno-gu     11010 population Sungin 1(il)-…  11010700
-#> 15  2020 Seoul        11 Jongno-gu     11010 population Sungin 2(i)-d…  11010710
-#> 16  2020 Seoul        11 Jongno-gu     11010 population Cheongunhyoja…  11010720
-#> 17  2020 Seoul        11 Jongno-gu     11010 population Hyehwa-dong     11010730
-#> # ℹ 3 more variables: `all households_total_prs` <dbl>,
-#> #   `all households_male_prs` <dbl>, `all households_female_prs` <dbl>
+#> # ℹ 24 more rows
+#> # ℹ 9 more variables: `all households_total_prs` <dbl>,
+#> #   `all households_male_prs` <dbl>, `all households_female_prs` <dbl>,
+#> #   `domestic population_total_prs` <dbl>,
+#> #   `domestic population_male_prs` <dbl>,
+#> #   `domestic population_female_prs` <dbl>,
+#> #   `foreign population_total_prs` <dbl>, …
+
+# Query 2025 neighborhood-level housing data (without geometry)
+anycensus(
+  codes = 11010,
+  type = "housing",
+  year = 2025,
+  level = "adm3"
+)
+#> # A tibble: 17 × 63
+#>     year adm1  adm1_code adm2      adm2_code type    adm3              adm3_code
+#>    <dbl> <chr>     <dbl> <chr>         <dbl> <chr>   <chr>                 <dbl>
+#>  1  2025 Seoul        11 Jongno-gu     11010 housing Sajik-dong         11010530
+#>  2  2025 Seoul        11 Jongno-gu     11010 housing Samcheong-dong     11010540
+#>  3  2025 Seoul        11 Jongno-gu     11010 housing Buam-dong          11010550
+#>  4  2025 Seoul        11 Jongno-gu     11010 housing Pyeongchang-dong   11010560
+#>  5  2025 Seoul        11 Jongno-gu     11010 housing Muak-dong          11010570
+#>  6  2025 Seoul        11 Jongno-gu     11010 housing Gyonam-dong        11010580
+#>  7  2025 Seoul        11 Jongno-gu     11010 housing Gahoe-dong         11010600
+#>  8  2025 Seoul        11 Jongno-gu     11010 housing Jongno1.2.3.4ga-…  11010610
+#>  9  2025 Seoul        11 Jongno-gu     11010 housing Jongno5.6ga-dong   11010630
+#> 10  2025 Seoul        11 Jongno-gu     11010 housing Ewha-dong          11010640
+#> 11  2025 Seoul        11 Jongno-gu     11010 housing Changsin1-dong     11010670
+#> 12  2025 Seoul        11 Jongno-gu     11010 housing Changsin2-dong     11010680
+#> 13  2025 Seoul        11 Jongno-gu     11010 housing Changsin3-dong     11010690
+#> 14  2025 Seoul        11 Jongno-gu     11010 housing Soongin1-dong      11010700
+#> 15  2025 Seoul        11 Jongno-gu     11010 housing Soongin2-dong      11010710
+#> 16  2025 Seoul        11 Jongno-gu     11010 housing Cheongunhyoja-do…  11010720
+#> 17  2025 Seoul        11 Jongno-gu     11010 housing Hyehwa-dong        11010730
+#> # ℹ 55 more variables:
+#> #   `household composition_total household households_hsh` <dbl>,
+#> #   `household composition_total household household members total_prs` <dbl>,
+#> #   `household composition_total household household members male_prs` <dbl>,
+#> #   `household composition_total household household members female_prs` <dbl>,
+#> #   `household composition_general housing households_hsh` <dbl>,
+#> #   `household composition_general housing household members total_prs` <dbl>, …
 
 # Aggregate to adm1 level tax (province-level) using sum
 anycensus(

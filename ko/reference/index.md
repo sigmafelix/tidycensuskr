@@ -6,6 +6,8 @@
   : South Korea Census Boundary in 2020
 - [`anycensus()`](https://sigmafelix.github.io/tidycensuskr/ko/reference/anycensus.md)
   : Query Korean census data by administrative code and year
+- [`catalog()`](https://sigmafelix.github.io/tidycensuskr/ko/reference/catalog.md)
+  : Catalog available census variables
 - [`censuskor`](https://sigmafelix.github.io/tidycensuskr/ko/reference/censuskor.md)
   : South Korea Census Data
 - [`detect_adm2_type()`](https://sigmafelix.github.io/tidycensuskr/ko/reference/detect_adm2_type.md)
