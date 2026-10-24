@@ -33,10 +33,22 @@ rlang::check_installed("remotes")
 remotes::install_github("sigmafelix/tidycensuskr")
 ```
 
+# Reproducible examples
+
+## Small multiple example
+
+Small multiples are a great way to visualize data across multiple
+geographic units. The following example demonstrates how to create small
+multiples of population density maps for South Korea’s districts in
+2020. Our vignette
+[here](https://sigmafelix.github.io/tidycensuskr/articles/v03_gallery.html#small-multiples)
+provides a more detailed explanation of the code and the resulting
+visualizations.
+
 # About the data
 
-As of version 0.2.8.1, this package contains two datasets: Census data
-(`censuskor`) and the corresponding geospatial data.
+This package contains two datasets: Census data (`censuskor`) and the
+corresponding geospatial data.
 
 ## 1. Census data
 
@@ -50,8 +62,9 @@ As of version 0.2.8.1, this package contains two datasets: Census data
 - The function `anycensus()` allows you to query census data for
   specific district, neighborhood, or province codes. Coverage varies by
   type, year (2010, 2015, 2020, and 2025), and geographic level.
-- The function `catalog()` lists available years, geographic levels, `type`,
-  `class1`, and `class2` combinations, with units and row counts.
+- The function `catalog()` lists available years, geographic levels,
+  `type`, `class1`, and `class2` combinations, with units and row
+  counts.
 
 ``` r
 # loading Seoul population data
@@ -73,7 +86,7 @@ tidycensuskr::anycensus(codes = "Seoul", type = "population")
 #> # ℹ abbreviated name: ¹​`all households_total_prs`
 #> # ℹ 10 more variables: `all households_male_prs` <dbl>,
 #> #   `all households_female_prs` <dbl>, fertility_total_brt <dbl>,
-#> #   `fertility_15-19 (simulated)_bp1` <dbl>, `fertility_20-24_bp1` <dbl>,
+#> #   `fertility_15-19_bp1` <dbl>, `fertility_20-24_bp1` <dbl>,
 #> #   `fertility_25-29_bp1` <dbl>, `fertility_30-34_bp1` <dbl>,
 #> #   `fertility_35-39_bp1` <dbl>, `fertility_40-44_bp1` <dbl>, …
 ```
@@ -115,7 +128,7 @@ population data.
 
 ``` r
 library(tidycensuskr)
-#> tidycensuskr 0.3.0 (2026-07-22)
+#> tidycensuskr 0.4.0 (2026-10-24)
 #> Please install the companion data package tidycensuskr.sf to use the district boundaries.
 #> install.packages('tidycensuskr.sf', repos = 'https://sigmafelix.r-universe.dev')
 library(ggplot2)
@@ -130,7 +143,7 @@ library(dplyr)
 #>     intersect, setdiff, setequal, union
 library(tidyr)
 library(sf)
-#> Linking to GEOS 3.14.1, GDAL 3.13.1, PROJ 9.8.1; sf_use_s2() is TRUE
+#> Linking to GEOS 3.15.0, GDAL 3.13.3, PROJ 9.9.0; sf_use_s2() is TRUE
 library(biscale)
 library(cowplot)
 sf_use_s2(FALSE)

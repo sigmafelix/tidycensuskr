@@ -46,11 +46,14 @@ rlang::check_installed("remotes")
 remotes::install_github("sigmafelix/tidycensuskr")
 ```
 
+# Reproducible examples
+## Small multiple example
+Small multiples are a great way to visualize data across multiple geographic units. The following example demonstrates how to create small multiples of population density maps for South Korea's districts in 2020. Our vignette [here](https://sigmafelix.github.io/tidycensuskr/articles/v03_gallery.html#small-multiples) provides a more detailed explanation of the code and the resulting visualizations.
 
 
 # About the data
 
-As of version 0.2.8.1, this package contains two datasets: Census data (`censuskor`) and the corresponding geospatial data.
+This package contains two datasets: Census data (`censuskor`) and the corresponding geospatial data.
 
 
 ## 1. Census data

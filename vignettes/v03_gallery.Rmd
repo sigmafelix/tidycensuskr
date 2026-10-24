@@ -203,7 +203,7 @@ kr_grid_adm2_sgis_2020 <-
   )
 ```
 
-### Small multiples 
+### Small multiples {#small-multiples}
 
 This design highlights heterogeneous local population trajectories while preserving a sense of national spatial structure.
 
