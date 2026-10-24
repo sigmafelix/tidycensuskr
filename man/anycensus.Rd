@@ -19,7 +19,8 @@ anycensus(
 )
 }
 \arguments{
-\item{year}{integer(1). One of 2010, 2015, or 2020.}
+\item{year}{integer(1). One of 2010, 2015, 2020, or 2025. 2025 data is
+currently available only for ADM3 population and housing.}
 
 \item{codes}{integer vector of admin codes (e.g. \code{c(11, 26)})
 or character administrative area names (e.g. \code{c("Seoul", "Daejeon")}).}
@@ -31,8 +32,9 @@ or "landuse".
 Defaults to "population".}
 
 \item{level}{character(1). "adm1" for province-level, "adm2" for
-municipal-level, or "adm3" for neighborhood/town-level. Defaults to
-"adm2".}
+municipal-level, or "adm3" for neighborhood/town-level. ADM3 population
+and housing data is available for 2015, 2020, and 2025; ADM3 economy and
+mortality data is available for 2020. Defaults to "adm2".}
 
 \item{adm2_type}{character(1). Which municipal code type to keep before
 returning \code{adm2} results or aggregating to \code{adm1}. \code{"all"} keeps the
@@ -55,8 +57,9 @@ weights when aggregating. For example, rate variables in
 when aggregating. If \code{weight_type = "population"} and
 \code{weight_column} is omitted, \code{"all households_total_prs"} is used.}
 
-\item{geometry}{logical(1). If \code{TRUE}, returns an \code{sf} object
-with geometries attached. Defaults to \code{FALSE}.}
+\item{geometry}{logical(1). If \code{TRUE}, returns an \code{sf} object with ADM2
+geometries attached. Geometry is available for 2010, 2015, and 2020;
+2025 census data is tabular only. Defaults to \code{FALSE}.}
 
 \item{...}{additional arguments passed to the \code{aggregator} function.
 (e.g., \code{na.rm = TRUE}). When \code{weight_type} or \code{weight_column} is
@@ -88,6 +91,14 @@ anycensus(
   codes = 11010,
   type = "population",
   year = 2020,
+  level = "adm3"
+)
+
+# Query 2025 neighborhood-level housing data (without geometry)
+anycensus(
+  codes = 11010,
+  type = "housing",
+  year = 2025,
   level = "adm3"
 )
 

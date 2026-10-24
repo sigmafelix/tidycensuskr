@@ -40,16 +40,18 @@ As of version 0.2.8.1, this package contains two datasets: Census data
 
 ## 1. Census data
 
-- Sigungu dataset of three census years (2010, 2015, 2020)
+- District-level data for 2010, 2015, and 2020, with neighborhood-level
+  household and housing data for 2015, 2020, and 2025
   - The curated dataset is a **long** table (i.e., one row per
-    district-year-variable)
+    geographic unit-year-variable)
 
 ### `anycensus()`
 
 - The function `anycensus()` allows you to query census data for
-  specific district or province codes and types of data (population,
-  tax, mortality, economy, housing) for three census years (2010, 2015,
-  2020).
+  specific district, neighborhood, or province codes. Coverage varies by
+  type, year (2010, 2015, 2020, and 2025), and geographic level.
+- The function `catalog()` lists available years, geographic levels, `type`,
+  `class1`, and `class2` combinations, with units and row counts.
 
 ``` r
 # loading Seoul population data

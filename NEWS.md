@@ -1,4 +1,8 @@
 # NEWS
+## 0.4
+- Database update: adm3-level data addition to `censuskor` (836K+ rows)
+- `catalog()`: return a catalog of supported variables and adm levels
+
 ## 0.3
 - Database update: Added 2020 adm3 level data to `censuskor` (155K+ rows)
 - `anycensus()` update for adm3 query

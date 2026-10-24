@@ -88,10 +88,12 @@
 #'   "medicine", "migration", "environment", "mortality", "social security",
 #'   or "landuse".
 #'   Defaults to "population".
-#' @param year  integer(1). One of 2010, 2015, or 2020.
+#' @param year integer(1). One of 2010, 2015, 2020, or 2025. 2025 data is
+#'   currently available only for ADM3 population and housing.
 #' @param level character(1). "adm1" for province-level, "adm2" for
-#'   municipal-level, or "adm3" for neighborhood/town-level. Defaults to
-#'   "adm2".
+#'   municipal-level, or "adm3" for neighborhood/town-level. ADM3 population
+#'   and housing data is available for 2015, 2020, and 2025; ADM3 economy and
+#'   mortality data is available for 2020. Defaults to "adm2".
 #' @param adm2_type character(1). Which municipal code type to keep before
 #'   returning `adm2` results or aggregating to `adm1`. `"all"` keeps the
 #'   current data, `"atn"` keeps autonomous/basic local government rows, and
@@ -109,8 +111,9 @@
 #' @param weight_column character(1). Optional column name used as weights
 #'   when aggregating. If `weight_type = "population"` and
 #'   `weight_column` is omitted, `"all households_total_prs"` is used.
-#' @param geometry logical(1). If `TRUE`, returns an `sf` object
-#'   with geometries attached. Defaults to `FALSE`.
+#' @param geometry logical(1). If `TRUE`, returns an `sf` object with ADM2
+#'   geometries attached. Geometry is available for 2010, 2015, and 2020;
+#'   2025 census data is tabular only. Defaults to `FALSE`.
 #' @param ... additional arguments passed to the `aggregator` function.
 #'   (e.g., `na.rm = TRUE`). When `weight_type` or `weight_column` is
 #'   supplied, `aggregator` must accept a `w` argument such as
@@ -132,6 +135,14 @@
 #'   codes = 11010,
 #'   type = "population",
 #'   year = 2020,
+#'   level = "adm3"
+#' )
+#'
+#' # Query 2025 neighborhood-level housing data (without geometry)
+#' anycensus(
+#'   codes = 11010,
+#'   type = "housing",
+#'   year = 2025,
 #'   level = "adm3"
 #' )
 #'
@@ -479,7 +490,12 @@ anycensus <- function(
   }
 
   if (geometry) {
-    stopifnot(level == "adm2")
+    if (level != "adm2") {
+      stop("Geometry is currently supported only for level = 'adm2'.")
+    }
+    if (!year %in% c(2010, 2015, 2020)) {
+      stop("Boundary data is available only for 2010, 2015, and 2020.")
+    }
     boundaries <- load_districts(year = year)
     boundaries <-
       dplyr::left_join(
