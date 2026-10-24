@@ -7,3 +7,6 @@ inst/doc
 /Meta/
 .vscode
 **/*.pkl
+AGENTS.md
+CLAUDE.md
+**/*.sh

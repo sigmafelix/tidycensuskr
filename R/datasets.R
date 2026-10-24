@@ -1,14 +1,14 @@
 #' South Korea Census Data
 #'
-#' District level data including tax, population, business entities,
-#' housing, economy, medicine
-#' and mortality in South Korea in 2010, 2015, and/or 2020. The availble
-#' years and variables depend on the type of data.
+#' District and neighborhood level data including tax, population, business
+#' entities, housing, economy, medicine and mortality in South Korea in 2010,
+#' 2015, 2020, and 2025. The available years and variables depend on the type
+#' and geographic level of data.
 #'
-#' @format A data.frame with 155,291 rows and 12 columns,
-#'   out of which 103,626 rows for adm2, and 51,665 rows for adm3 data.
+#' @format A data.frame with 836,761 rows and 12 columns,
+#'   out of which 103,626 rows for adm2, and 733,135 rows for adm3 data.
 #' @details
-#' * year Year of the census data, e.g., 2010, 2015, or 2020
+#' * year Year of the census data, e.g., 2010, 2015, 2020, or 2025
 #' * adm1 Name of the province-level (Si-Do) administrative unit
 #' * adm1_code Code of the province-level (Si-Do) administrative unit
 #' * adm2 Name of the district/municipal-level (Si-Gun-Gu) administrative unit

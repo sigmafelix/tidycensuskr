@@ -1,11 +1,11 @@
 Package: tidycensuskr 
 Title: Easy Access for South Korea Census Data and Boundaries
-Version: 0.3.0
+Version: 0.4.0
 Authors@R: c(
     person(given = "Insang", 
           family = "Song", 
           role = c("aut", "cre"), 
-          email = "geoissong@snu.ac.kr", 
+          email = "geoissong@gmail.com", 
           comment = c(ORCID = "0000-0001-8732-3256")),
     person(given = "Sohyun", 
           family = "Park", 
