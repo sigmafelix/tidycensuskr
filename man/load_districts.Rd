@@ -7,7 +7,7 @@
 load_districts(year = 2020, level = "adm2")
 }
 \arguments{
-\item{year}{The year for which to load district boundaries (2010, 2015, or 2020)}
+\item{year}{The year for which to load district boundaries (2010, 2015, 2020, or 2025)}
 
 \item{level}{The administrative level, one of "adm2" and "adm3"}
 }
@@ -18,7 +18,7 @@ An \code{sf} object containing district boundaries for the specified year
 Load district boundaries for a specific year
 }
 \note{
-This function requires the \code{tidycensuskr.sf} package to be installed.
+Other ADM2 years and ADM3 boundaries require the \code{tidycensuskr.sf} package to be installed.
 No explicit dependency is defind; but users should install the package following
 the instructions at vignette('v01_intro') or more succinctly:
 \code{install.packages('tidycensuskr.sf', repos = 'https://sigmafelix.r-universe.dev')}

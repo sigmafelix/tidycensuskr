@@ -5,25 +5,25 @@
 \alias{adm2_sf_2020}
 \title{South Korea Census Boundary in 2020}
 \format{
-A sf object with 250 rows and 3 variables:
+An sf object with 250 rows and three fields: \code{year}, \code{adm2_code},
+and \code{geometry}. Coordinates use EPSG:5179.
 }
 \source{
-\itemize{
-\item Statistical Geographic Information Service (SGIS)
-}
+Statistical Geographic Information Service (SGIS).
 }
 \usage{
 adm2_sf_2020
 }
 \description{
-District level boundary data in South Korea in 2020. \code{adm2_code} column
-can be used to join with an \code{\link[=anycensus]{anycensus()}} output.
+District level boundary data in 2020, repaired using 2015 historical adjacency
+evidence and 2020 geometry only. Original attributes and row order are retained.
+Polygon overlaps are removed and the Guro/Yeongdeungpo/Dongjak/Gwanak junction
+is one shared point. Eight unresolved historical reference pairs and two
+historically unconfirmed contacts remain documented for review.
 }
 \details{
-\itemize{
-\item year Year of the census data, e.g., 2010, 2015, or 2020
-\item adm2_code  Code of the district/municipal-level (Si-Gun-Gu) administrative unit
-\item geometry Geometry list-column
-}
+Validated 2010, 2015 and 2025 boundaries are registered datasets in
+the companion \code{tidycensuskr.sf} package; \code{\link[=load_districts]{load_districts()}} selects their
+package automatically. Codes can be used to join \code{\link[=anycensus]{anycensus()}} output.
 }
 \keyword{datasets}
