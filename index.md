@@ -16,7 +16,7 @@ You can install the released version of `tidycensuskr` from CRAN with:
 # CRAN
 install.packages("tidycensuskr")
 
-# R-universe
+# R-universe (up-to-date development version)
 install.packages("tidycensuskr", repos = "https://sigmafelix.r-universe.dev")
 ```
 
@@ -44,8 +44,8 @@ visualizations.
 
 # About the data
 
-This package contains two datasets: Census data (`censuskor`) and the
-corresponding geospatial data.
+This package contains census data (`censuskor`), geospatial data, and
+supplemental spatial-weight matrices.
 
 ## 1. Census data
 
@@ -104,18 +104,42 @@ tidycensuskr::anycensus(codes = "Seoul", type = "population")
 
 - The function
   [`load_districts()`](https://sigmafelix.github.io/tidycensuskr/reference/load_districts.md)
-  allows you to get the *Si-Gun-Gu* level `sf` files for the three
-  census years (2010, 2015, 2020).
-- The function requires the `tidycensuskr.sf` package to be installed.
-  Please install it from [R-universe](https://sigmafelix.r-universe.dev)
-  using
+  allows you to get the *Si-Gun-Gu* level `sf` files for 2010, 2015,
+  2020, and 2025.
+- The validated 2020 ADM2 boundary is bundled here; other ADM2 years and
+  ADM3 boundaries require the `tidycensuskr.sf` package. Please install
+  it from [R-universe](https://sigmafelix.r-universe.dev) using
   `install.packages("tidycensuskr.sf", repos = "https://sigmafelix.r-universe.dev")`.
 
 ``` r
 
 # loading boundary sf file: 2020 boundaries are included in this package
 data(adm2_sf_2020)
-# tidycensuskr.sf::load_districts(year = 2020)
+# tidycensuskr::load_districts(year = 2020)
+```
+
+## 3. Spatial weights
+
+`w_mat_2020` and `w_mat_o_2020` are bundled here. The corresponding
+2010, 2015 and 2025 matrices and boundaries are registered datasets in
+`tidycensuskr.sf`.
+
+The `w_mat_` variant includes marine road bridges and subsea tunnels
+open by each December 31. `w_mat_o_` uses Queen adjacency with
+documented junction corrections. Both have zero diagonals and
+code-labelled rows/columns in boundary order. The 2010/2015 overlap
+repairs use their own geometry; the 2020 repair uses 2015 historical
+evidence, and the 2025 coverage was checked against its same-year
+unsimplified source. Original holes are retained without evidence for
+filling. See
+[`?spatial_weights`](https://sigmafelix.github.io/tidycensuskr/reference/spatial_weights.md)
+for limitations.
+
+``` r
+
+data(w_mat_2020, package = "tidycensuskr")
+data(w_mat_o_2020, package = "tidycensuskr")
+# Align observations to rownames(w_mat_2020) before spatial analysis.
 ```
 
 # Examples
@@ -134,8 +158,8 @@ Here is a simple example of making maps with population data.
 ``` r
 
 library(tidycensuskr)
-#> tidycensuskr 0.4.0 (2026-10-24)
-#> Please install the companion data package tidycensuskr.sf to use the district boundaries.
+#> tidycensuskr 0.4.1 (2026-11-03)
+#> Please install the companion data package tidycensuskr.sf to use the 2010/2015/2025 district (ADM2) and neighborhood (ADM3) boundaries.
 #> install.packages('tidycensuskr.sf', repos = 'https://sigmafelix.r-universe.dev')
 library(ggplot2)
 library(dplyr)

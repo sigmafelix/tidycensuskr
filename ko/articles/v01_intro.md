@@ -24,16 +24,21 @@ South Korea. The package can be installed from R-universe:
 install.packages("tidycensuskr.sf", repos = "https://sigmafelix.r-universe.dev")
 ```
 
-After installing the companion package, three RDS files for 2010, 2015,
-and 2020 will be accessible through the function
-[`system.file()`](https://rdrr.io/r/base/system.file.html). For example,
-the RDS file path of the 2010 district boundaries can be loaded as
-follows:
+The validated 2020 ADM2 boundary and spatial weights are bundled here.
+The corresponding 2010, 2015 and 2025 datasets are registered in
+`tidycensuskr.sf`; `load_districts(year)` selects the appropriate
+package. Binary weights are available for 2010, 2015, 2020 and 2025:
+`data(w_mat_2020)` includes marine road bridges/subsea tunnels open by
+December 31, while `data(w_mat_o_2020)` contains Queen adjacency alone.
+Align observations with the matrix code dimnames. See
+[`?spatial_weights`](https://sigmafelix.github.io/tidycensuskr/ko/reference/spatial_weights.md)
+for islands, overlap ownership rules, and retained source holes.
+
+Load the validated 2010 ADM2 boundary used by the bundled matrices:
 
 ``` r
 
-fs10 <- system.file("extdata", "adm2_sf_2010.rds", package = "tidycensuskr.sf")
-adm2_sf_2010 <- readRDS(fs10)
+adm2_sf_2010 <- tidycensuskr::load_districts(2010)
 ```
 
 ## 1. Understanding Korean Geographic Hierarchies

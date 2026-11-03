@@ -24,16 +24,22 @@ R-universe에서 설치할 수 있습니다:
 install.packages("tidycensuskr.sf", repos = "https://sigmafelix.r-universe.dev")
 ```
 
-동반 패키지를 설치하고 나면,
-[`system.file()`](https://rdrr.io/r/base/system.file.html) 함수를 이용해
-2010년, 2015년, 2020년의 시군구 경계를 각각 포함한 세 개의 RDS 파일을
-불러올 수 있습니다. 예를 들어, 2010년 시군구 경계 도형의 RDS 파일 경로는
-다음과 같이 불러올 수 있습니다:
+위상 수정·검증을 마친 2020년 시군구 경계와 가중행렬은 이 패키지에
+포함됩니다. 2010·2015·2025년 경계와 가중행렬은 `tidycensuskr.sf`의 정식
+데이터셋이며, `load_districts(year)`는 해당 패키지에서 경계를
+불러옵니다. 2010·2015·2020·2025년 이진 공간가중행렬도 제공합니다.
+`data(w_mat_2020)`은 해당 연도 12월 31일까지 개통한 해상 도로
+교량·해저터널을 포함하며, `data(w_mat_o_2020)`은 Queen 인접만
+포함합니다. 관측치는 행렬의 코드 차원명 순서에 맞춰 정렬하십시오. 고립
+지역, 겹친 면의 소속 결정 방법과 원본 구멍 유지 원칙은
+[`?spatial_weights`](https://sigmafelix.github.io/tidycensuskr/ko/reference/spatial_weights.md)를
+참고하십시오.
+
+가중행렬과 동일한 위상 수정·검증 경계를 불러오는 방법은 다음과 같습니다:
 
 ``` r
 
-fs10 <- system.file("extdata", "adm2_sf_2010.rds", package = "tidycensuskr.sf")
-adm2_sf_2010 <- readRDS(fs10)
+adm2_sf_2010 <- tidycensuskr::load_districts(2010)
 ```
 
 ## 1. 한국 행정구역 체계

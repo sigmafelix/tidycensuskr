@@ -19,7 +19,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">tidycensuskr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,7 +52,7 @@
 
       <h1>Analytics Gallery with tidycensuskr</h1>
             
-            <h4 data-toc-skip class="date">October 24, 2026</h4>
+            <h4 data-toc-skip class="date">November 03, 2026</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/sigmafelix/tidycensuskr/blob/main/vignettes/v03_gallery.Rmd" class="external-link"><code>vignettes/v03_gallery.Rmd</code></a></small>
       <div class="d-none name"><code>v03_gallery.Rmd</code></div>
@@ -128,11 +128,11 @@ areas.</p>
 <span><span class="co">## weights: lw  </span></span>
 <span><span class="co">## n reduced by no-neighbour observations  </span></span>
 <span><span class="co">## </span></span>
-<span><span class="co">## Moran I statistic standard deviate = 10.35, p-value &lt; 2.2e-16</span></span>
+<span><span class="co">## Moran I statistic standard deviate = 10.34, p-value &lt; 2.2e-16</span></span>
 <span><span class="co">## alternative hypothesis: greater</span></span>
 <span><span class="co">## sample estimates:</span></span>
 <span><span class="co">## Moran I statistic       Expectation          Variance </span></span>
-<span><span class="co">##       0.424571643      -0.004149378       0.001715960</span></span></code></pre>
+<span><span class="co">##       0.423699222      -0.004149378       0.001712010</span></span></code></pre>
 </div>
 <div class="section level3">
 <h3 id="local-morans-i-and-lisa-map">Local Moran’s I and LISA map<a class="anchor" aria-label="anchor" href="#local-morans-i-and-lisa-map"></a>
@@ -174,7 +174,7 @@ areas.</p>
 <span>  <span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"LISA Cluster Map of Company units (2020)"</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<p><img src="v03_gallery_files/figure-html/local_moran_1,%20-1.png" class="r-plt" alt="" width="672"></p>
+<p><img src="v03_gallery_files/figure-html/local_moran_1,%20-1.png" class="r-plt" alt="" width="420"></p>
 <p>The results reveal a strong metropolitan concentration of economic
 activity. High-High (H-H) clusters are predominantly located in the
 Seoul Metropolitan Area, reflecting its central role in South Korea’s
@@ -342,7 +342,7 @@ while preserving a sense of national spatial structure.</p>
 <span><span class="co"># geofacet 0.2.4 removes populated panels when printing with ggplot2 4.0.</span></span>
 <span><span class="co"># Draw the correctly constructed ggplot grob without that post-processing step.</span></span>
 <span><span class="fu">grid</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/r/grid/grid.draw.html" class="external-link">grid.draw</a></span><span class="op">(</span><span class="fu">ggplot2</span><span class="fu">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplotGrob.html" class="external-link">ggplotGrob</a></span><span class="op">(</span><span class="va">pop_gfgg</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<p><img src="v03_gallery_files/figure-html/pop-change-3-1.png" class="r-plt" alt="" width="1344"></p>
+<p><img src="v03_gallery_files/figure-html/pop-change-3-1.png" class="r-plt" alt="" width="840"></p>
 </div>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

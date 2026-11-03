@@ -19,7 +19,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">tidycensuskr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,7 +63,7 @@
 
       <h1>Working with tidycensuskr</h1>
             
-            <h4 data-toc-skip class="date">October 24, 2026</h4>
+            <h4 data-toc-skip class="date">November 03, 2026</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/sigmafelix/tidycensuskr/blob/main/vignettes/v01_intro.Rmd" class="external-link"><code>vignettes/v01_intro.Rmd</code></a></small>
       <div class="d-none name"><code>v01_intro.Rmd</code></div>
@@ -88,13 +88,20 @@ boundaries of South Korea. The package can be installed from
 R-universe:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"tidycensuskr.sf"</span>, repos <span class="op">=</span> <span class="st">"https://sigmafelix.r-universe.dev"</span><span class="op">)</span></span></code></pre></div>
-<p>After installing the companion package, three RDS files for 2010,
-2015, and 2020 will be accessible through the function
-<code><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file()</a></code>. For example, the RDS file path of the 2010
-district boundaries can be loaded as follows:</p>
+<p>The validated 2020 ADM2 boundary and spatial weights are bundled
+here. The corresponding 2010, 2015 and 2025 datasets are registered in
+<code>tidycensuskr.sf</code>; <code>load_districts(year)</code> selects
+the appropriate package. Binary weights are available for 2010, 2015,
+2020 and 2025: <code>data(w_mat_2020)</code> includes marine road
+bridges/subsea tunnels open by December 31, while
+<code>data(w_mat_o_2020)</code> contains Queen adjacency alone. Align
+observations with the matrix code dimnames. See
+<code><a href="../reference/spatial_weights.html">?spatial_weights</a></code> for islands, overlap ownership rules, and
+retained source holes.</p>
+<p>Load the validated 2010 ADM2 boundary used by the bundled
+matrices:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">fs10</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"adm2_sf_2010.rds"</span>, package <span class="op">=</span> <span class="st">"tidycensuskr.sf"</span><span class="op">)</span></span>
-<span><span class="va">adm2_sf_2010</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/readRDS.html" class="external-link">readRDS</a></span><span class="op">(</span><span class="va">fs10</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">adm2_sf_2010</span> <span class="op">&lt;-</span> <span class="fu">tidycensuskr</span><span class="fu">::</span><span class="fu"><a href="../reference/load_districts.html">load_districts</a></span><span class="op">(</span><span class="fl">2010</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="understanding-korean-geographic-hierarchies">1. Understanding Korean Geographic Hierarchies<a class="anchor" aria-label="anchor" href="#understanding-korean-geographic-hierarchies"></a>

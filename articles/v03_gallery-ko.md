@@ -65,11 +65,11 @@ global_moran
     ## weights: lw  
     ## n reduced by no-neighbour observations  
     ## 
-    ## Moran I statistic standard deviate = 10.35, p-value < 2.2e-16
+    ## Moran I statistic standard deviate = 10.34, p-value < 2.2e-16
     ## alternative hypothesis: greater
     ## sample estimates:
     ## Moran I statistic       Expectation          Variance 
-    ##       0.424571643      -0.004149378       0.001715960
+    ##       0.423699222      -0.004149378       0.001712010
 
 ### 국지적(Local) Moran’s I 및 LISA 지도
 

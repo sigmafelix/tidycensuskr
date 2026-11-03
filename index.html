@@ -21,7 +21,7 @@
 
     <a class="navbar-brand me-2" href="index.html">tidycensuskr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -72,7 +72,7 @@
 <code class="sourceCode R"><span><span class="co"># CRAN</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"tidycensuskr"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="co"># R-universe</span></span>
+<span><span class="co"># R-universe (up-to-date development version)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"tidycensuskr"</span>, repos <span class="op">=</span> <span class="st">"https://sigmafelix.r-universe.dev"</span><span class="op">)</span></span></code></pre></div>
 <p>To install the development version, <code>remotes::install_github()</code> will suffice.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
@@ -92,7 +92,7 @@
 <div class="section level1">
 <h1 id="about-the-data">About the data<a class="anchor" aria-label="anchor" href="#about-the-data"></a>
 </h1>
-<p>This package contains two datasets: Census data (<code>censuskor</code>) and the corresponding geospatial data.</p>
+<p>This package contains census data (<code>censuskor</code>), geospatial data, and supplemental spatial-weight matrices.</p>
 <div class="section level2">
 <h2 id="id_1-census-data">1. Census data<a class="anchor" aria-label="anchor" href="#id_1-census-data"></a>
 </h2>
@@ -152,14 +152,24 @@
 <code>load_districts()</code><a class="anchor" aria-label="anchor" href="#load_districts"></a>
 </h3>
 <ul>
-<li>The function <code><a href="reference/load_districts.html">load_districts()</a></code> allows you to get the <em>Si-Gun-Gu</em> level <code>sf</code> files for the three census years (2010, 2015, 2020).</li>
-<li>The function requires the <code>tidycensuskr.sf</code> package to be installed. Please install it from <a href="https://sigmafelix.r-universe.dev" class="external-link">R-universe</a> using <code>install.packages("tidycensuskr.sf", repos = "https://sigmafelix.r-universe.dev")</code>.</li>
+<li>The function <code><a href="reference/load_districts.html">load_districts()</a></code> allows you to get the <em>Si-Gun-Gu</em> level <code>sf</code> files for 2010, 2015, 2020, and 2025.</li>
+<li>The validated 2020 ADM2 boundary is bundled here; other ADM2 years and ADM3 boundaries require the <code>tidycensuskr.sf</code> package. Please install it from <a href="https://sigmafelix.r-universe.dev" class="external-link">R-universe</a> using <code>install.packages("tidycensuskr.sf", repos = "https://sigmafelix.r-universe.dev")</code>.</li>
 </ul>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># loading boundary sf file: 2020 boundaries are included in this package</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">adm2_sf_2020</span><span class="op">)</span></span>
-<span><span class="co"># tidycensuskr.sf::load_districts(year = 2020)</span></span></code></pre></div>
+<span><span class="co"># tidycensuskr::load_districts(year = 2020)</span></span></code></pre></div>
 </div>
+</div>
+<div class="section level2">
+<h2 id="id_3-spatial-weights">3. Spatial weights<a class="anchor" aria-label="anchor" href="#id_3-spatial-weights"></a>
+</h2>
+<p><code>w_mat_2020</code> and <code>w_mat_o_2020</code> are bundled here. The corresponding 2010, 2015 and 2025 matrices and boundaries are registered datasets in <code>tidycensuskr.sf</code>.</p>
+<p>The <code>w_mat_</code> variant includes marine road bridges and subsea tunnels open by each December 31. <code>w_mat_o_</code> uses Queen adjacency with documented junction corrections. Both have zero diagonals and code-labelled rows/columns in boundary order. The 2010/2015 overlap repairs use their own geometry; the 2020 repair uses 2015 historical evidence, and the 2025 coverage was checked against its same-year unsimplified source. Original holes are retained without evidence for filling. See <code><a href="reference/spatial_weights.html">?spatial_weights</a></code> for limitations.</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">w_mat_2020</span>, package <span class="op">=</span> <span class="st">"tidycensuskr"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">w_mat_o_2020</span>, package <span class="op">=</span> <span class="st">"tidycensuskr"</span><span class="op">)</span></span>
+<span><span class="co"># Align observations to rownames(w_mat_2020) before spatial analysis.</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level1">
@@ -170,10 +180,10 @@
 <h2 id="simple-map-making">Simple map making<a class="anchor" aria-label="anchor" href="#simple-map-making"></a>
 </h2>
 <p><code><a href="reference/anycensus.html">anycensus()</a></code> will return an analysis-ready data.frame that can be easily merged with the corresponding boundary <code>sf</code> object from <code><a href="reference/load_districts.html">load_districts()</a></code>. Here is a simple example of making maps with population data.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/sigmafelix/tidycensuskr" class="external-link">tidycensuskr</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; tidycensuskr 0.4.0 (2026-10-24)</span></span>
-<span><span class="co">#&gt; Please install the companion data package tidycensuskr.sf to use the district boundaries.</span></span>
+<span><span class="co">#&gt; tidycensuskr 0.4.1 (2026-11-03)</span></span>
+<span><span class="co">#&gt; Please install the companion data package tidycensuskr.sf to use the 2010/2015/2025 district (ADM2) and neighborhood (ADM3) boundaries.</span></span>
 <span><span class="co">#&gt; install.packages('tidycensuskr.sf', repos = 'https://sigmafelix.r-universe.dev')</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
@@ -226,7 +236,7 @@
 <span><span class="va">census_2020_pop</span></span></code></pre></div>
 <p><img src="reference/figures/README-mapmaking-1.png" alt="" width="100%"></p>
 <p>For Seoul Metropolitan Area (including Seoul, Incheon, and Gyeonggi-do), you can use a character vector in <code>codes</code> argument and merge the retrieved <code>data.frame</code> and <code>sf</code> object with <code><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html" class="external-link">inner_join()</a></code>:</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">census_pop_2020_sma</span> <span class="op">&lt;-</span></span>
 <span>  <span class="fu"><a href="reference/anycensus.html">anycensus</a></span><span class="op">(</span></span>
 <span>    year <span class="op">=</span> <span class="fl">2020</span>,</span>
@@ -262,7 +272,7 @@
 <h2 id="bivariate-map">Bivariate map<a class="anchor" aria-label="anchor" href="#bivariate-map"></a>
 </h2>
 <p>Moving on to a complex example, the code below demonstrates to generate a bivariate map with persons per housing unit and all-cause mortality rate.</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">census_housing_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>, codes <span class="op">=</span> <span class="cn">NULL</span>, type <span class="op">=</span> <span class="st">"housing"</span><span class="op">)</span></span>
 <span><span class="va">census_housing_2020</span> <span class="op">&lt;-</span> <span class="va">census_housing_2020</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/rename.html" class="external-link">rename</a></span><span class="op">(</span>housing_total_units <span class="op">=</span> <span class="va">`housing types_total_cnt`</span><span class="op">)</span></span>
@@ -336,7 +346,7 @@
 <h2 id="filter-nonautonomous-districts">Filter nonautonomous districts<a class="anchor" aria-label="anchor" href="#filter-nonautonomous-districts"></a>
 </h2>
 <p><code><a href="reference/detect_adm2_type.html">detect_adm2_type()</a></code> can be used to detect nonautonomous districts (i.e., districts that are not independent administrative units but are part of larger cities, per <em>Local Autonomy Act</em>). This is particularly useful when you want to focus on autonomous or nonautonomous districts for analysis.</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># detect nonautonomous districts</span></span>
 <span><span class="va">census_pop_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>, type <span class="op">=</span> <span class="st">"population"</span><span class="op">)</span></span>
 <span><span class="va">census_housing_2020</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>, type <span class="op">=</span> <span class="st">"housing"</span><span class="op">)</span></span>

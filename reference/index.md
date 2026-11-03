@@ -19,3 +19,6 @@
   : Load district boundaries for a specific year
 - [`set_kosis_key()`](https://sigmafelix.github.io/tidycensuskr/reference/set_kosis_key.md)
   : Set KOSIS API Key from a File
+- [`w_mat_2020`](https://sigmafelix.github.io/tidycensuskr/reference/spatial_weights.md)
+  [`w_mat_o_2020`](https://sigmafelix.github.io/tidycensuskr/reference/spatial_weights.md)
+  : Binary district spatial-weight matrices
