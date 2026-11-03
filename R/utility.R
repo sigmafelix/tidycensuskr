@@ -8,7 +8,7 @@
 #' @param df A head data frame containing the full dataset.
 #'   i.e., `censuskor`
 #' @param year The year for which to filter the data.
-#'   If not specified, the function will use the data.frame as is.
+#'   If not specified, each year in the data frame is processed separately.
 #' @param mode A character vector of "atn" (autonomous) and
 #'   "non" (non-autonomous).
 #' @param adm2_code A character vector of adm2_code field
@@ -34,31 +34,32 @@ detect_adm2_type <-
       df <- df[df$year == year, ]
     }
 
-    # adm2_code values always consist of five digits
-    adm2_nonauto_flag <- substr(df[[adm2_code]], 5, 5) != "0"
-    if (sum(adm2_nonauto_flag) > 0) {
-      # check if auto vs nonauto all match
-      adm2_nonauto <- unique(df[adm2_nonauto_flag, ][[adm2_code]])
-      adm2_nonauto_upper <- substr(adm2_nonauto, 1, 4)
-      adm2_nonauto_upper_str <- paste0(adm2_nonauto_upper, "0")
-      adm2_auto <- df[df[[adm2_code]] %in% adm2_nonauto_upper_str, ]
-      adm2_auto_upper <- substr(unique(adm2_auto[[adm2_code]]), 1, 4)
-      adm2_auto_upper_str <- paste0(adm2_auto_upper, "0")
-      if (mode == "atn") {
-        filtered_df <- df[!adm2_nonauto_flag, ]
-      }
-      if (mode == "non") {
-        auto_nonauto_cond <- adm2_nonauto_upper %in% adm2_auto_upper
-        if (!all(auto_nonauto_cond)) {
+    # Compare parents and non-autonomous districts within the same year.
+    groups <- if ("year" %in% names(df)) {
+      split(seq_len(nrow(df)), match(df$year, unique(df$year)))
+    } else {
+      list(seq_len(nrow(df)))
+    }
+    keep <- rep(FALSE, nrow(df))
+    for (indices in groups) {
+      codes <- df[[adm2_code]][indices]
+      nonauto <- substr(codes, 5, 5) != "0"
+      if (!any(nonauto)) {
+        keep[indices] <- TRUE
+      } else if (mode == "atn") {
+        keep[indices] <- !nonauto
+      } else {
+        parents <- paste0(substr(unique(codes[nonauto]), 1, 4), "0")
+        present_parents <- parents[parents %in% codes]
+        if (!all(parents %in% present_parents)) {
           warning(
             "Inconsistent codes: Some non-autonomous Gu codes ",
-            "do not have corresponding upper level administrative codes."
+            "do not have corresponding upper level unit codes."
           )
         }
-        filtered_df <- df[!df[[adm2_code]] %in% adm2_auto_upper_str, ]
+        keep[indices] <- !codes %in% present_parents
       }
-      return(filtered_df)
     }
 
-    return(df)
+    df[keep, , drop = FALSE]
   }

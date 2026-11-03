@@ -13,6 +13,7 @@
 #' @export
 load_districts <- function(year = 2020, level = "adm2") {
   requireNamespace("sf", quietly = TRUE)
+  level <- match.arg(level, c("adm2", "adm3"))
   if (!year %in% c(2010, 2015, 2020, 2025)) {
     stop("Year must be one of 2010, 2015, 2020, or 2025")
   }
@@ -32,11 +33,5 @@ load_districts <- function(year = 2020, level = "adm2") {
     )
   }
   if (level == "adm2") return(tidycensuskr.sf::load_districts(year))
-
-  file_path <- system.file(sprintf("extdata/%s_sf_%d.rds", level, year),
-    package = "tidycensuskr.sf"
-  )
-
-  boundary <- readRDS(file_path)
-  boundary
+  tidycensuskr.sf::load_districts(year = year, level = level)
 }

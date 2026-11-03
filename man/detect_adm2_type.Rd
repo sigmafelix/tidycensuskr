@@ -11,7 +11,7 @@ detect_adm2_type(df, year = NULL, mode = "non", adm2_code = "adm2_code")
 i.e., \code{censuskor}}
 
 \item{year}{The year for which to filter the data.
-If not specified, the function will use the data.frame as is.}
+If not specified, each year in the data frame is processed separately.}
 
 \item{mode}{A character vector of "atn" (autonomous) and
 "non" (non-autonomous).}

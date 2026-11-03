@@ -1,5 +1,6 @@
 # NEWS
 ## 0.4
+- Process each year separately in `detect_adm2_type()` so district changes in one year do not remove another year's parent rows.
 - Move 2010/2015/2025 ADM2 boundaries and both weight variants to registered tidycensuskr.sf datasets; keep 2020 datasets here and delegate boundary lookup by year.
 - Replace the bundled 2020 ADM2 boundary with historically constrained topology repairs.
 - Add binary Queen and marine-connection binary weight matrices for 2010, 2015, 2020 and 2025.
