@@ -10,3 +10,15 @@ inst/doc
 AGENTS.md
 CLAUDE.md
 **/*.sh
+# Reproducible mirrors of the sibling Python package
+/tools/spatial_weights/pycensuskr/
+/tools/spatial_weights/python_data/
+
+# Reproducible boundary export used for the link-count investigation
+/tools/weight_trend_audit/boundaries.gpkg
+/tools/junction_2025_update/
+
+# Reproducible ADM3 repair inputs and working geometry exports
+/tools/adm3_topology/*.gpkg
+/tools/adm3_topology/source/
+/tools/adm3_topology/candidate/

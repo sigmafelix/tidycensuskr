@@ -12,4 +12,11 @@
 ^tools
 _pkgdown-ko.yaml
 vignettes/.*\-ko.Rmd$
+^vignettes/v05_contributors_guide(-ko)?\.Rmd$
+^man/figures/vig05-[^/]*\.png$
+^man/figures/gg\.png$
 tests
+examples
+^doc$
+AGENTS.md
+CLAUDE.md

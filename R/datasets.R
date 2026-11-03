@@ -41,20 +41,19 @@
 
 #' South Korea Census Boundary in 2020
 #'
-#' District level boundary data in South Korea in 2020. `adm2_code` column
-#' can be used to join with an [anycensus()] output.
-#'
-#' @format A sf object with 250 rows and 3 variables:
-#' @details
-#' * year Year of the census data, e.g., 2010, 2015, or 2020
-#' * adm2_code  Code of the district/municipal-level (Si-Gun-Gu) administrative unit
-#' * geometry Geometry list-column
-#'
-#' @source
-#' * Statistical Geographic Information Service (SGIS)
+#' District level boundary data in 2020, repaired using 2015 historical adjacency
+#' evidence and 2020 geometry only. Original attributes and row order are retained.
+#' Polygon overlaps are removed and the Guro/Yeongdeungpo/Dongjak/Gwanak junction
+#' is one shared point. Eight unresolved historical reference pairs and two
+#' historically unconfirmed contacts remain documented for review.
+#' @format An sf object with 250 rows and three fields: `year`, `adm2_code`,
+#'   and `geometry`. Coordinates use EPSG:5179.
+#' @details Validated 2010, 2015 and 2025 boundaries are registered datasets in
+#'   the companion `tidycensuskr.sf` package; [load_districts()] selects their
+#'   package automatically. Codes can be used to join [anycensus()] output.
+#' @source Statistical Geographic Information Service (SGIS).
 #' @keywords datasets
 "adm2_sf_2020"
-
 
 #' geofacet Grid for South Korea Administrative Districts (SGIS Standard, 2020)
 #'
@@ -76,3 +75,49 @@
 #' * GitHub username chichead in [GitHub geofacet issue page](https://github.com/hafen/geofacet/issues/358)
 #' @keywords datasets
 "kr_grid_adm2_sgis_2020"
+
+#' Binary district spatial-weight matrices
+#'
+#' Symmetric, unstandardized integer matrices for 2020.
+#' `w_mat_YYYY` combines exact Queen adjacency with documented marine road
+#' bridges and subsea tunnels open by December 31 of that year.
+#' `w_mat_o_YYYY` contains exact Queen adjacency alone.
+#'
+#' @format Square 250 by 250 integer matrices. Values are 0 or 1, the
+#'   diagonal is zero, and dimnames are five-digit SGIS ADM2 codes.
+#' @details
+#' Rows follow [adm2_sf_2020], not sorted code order. Align observations by
+#' code before analysis. The 2010, 2015 and 2025 versions are registered in
+#' `tidycensuskr.sf`, with their corresponding boundaries.
+#'
+#' Parallel facilities between the same districts contribute one edge.
+#' Within-district facilities contribute no diagonal entries. Ordinary inland
+#' river bridges, dykes, railway tunnels and facilities opening after the
+#' cutoff are not added. Marine bay and estuary crossings are included.
+#' Islands may have zero neighbors; row standardization is left to the user.
+#'
+#' Exact Queen adjacency uses `sf::st_touches()` with no snapping tolerance.
+#' The 2020 coverage has no polygon overlaps. Unresolved historical contacts
+#' are documented with the repair artifacts.
+#' These matrices represent the supplied geometry plus the researched transport
+#' inventory, rather than a guarantee of complete real-world connectivity.
+#'
+#' The connection inventory and code-order metadata are distributed under
+#' `system.file("extdata", "spatial_weights", package = "tidycensuskr.sf")`.
+#' @source SGIS/KOSTAT boundaries; Ministry of Land, Infrastructure and
+#'   Transport, local government and National Archives facility records.
+#'   Reproducible scripts and the source-linked inventory are in the source
+#'   repository's `tools/sgg_connection_list.md` and `tools/create_w_mat.R`.
+#' @examples
+#' data(w_mat_2020)
+#' data(adm2_sf_2020)
+#' stopifnot(identical(rownames(w_mat_2020), as.character(adm2_sf_2020$adm2_code)))
+#' @name spatial_weights
+#' @keywords datasets
+NULL
+
+#' @rdname spatial_weights
+"w_mat_2020"
+
+#' @rdname spatial_weights
+"w_mat_o_2020"

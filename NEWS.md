@@ -1,6 +1,10 @@
 # NEWS
 ## 0.4
-- Database update: adm3-level data addition to `censuskor` (836K+ rows)
+- Move 2010/2015/2025 ADM2 boundaries and both weight variants to registered tidycensuskr.sf datasets; keep 2020 datasets here and delegate boundary lookup by year.
+- Replace the bundled 2020 ADM2 boundary with historically constrained topology repairs.
+- Add binary Queen and marine-connection binary weight matrices for 2010, 2015, 2020 and 2025.
+- `load_districts()` returns the local validated 2020 ADM2 boundary and delegates other ADM2 years to tidycensuskr.sf; ADM3 boundaries also use the companion package.
+- Database update (0.4.0): adm3-level data addition to `censuskor` (836K+ rows)
 - `catalog()`: return a catalog of supported variables and adm levels
 
 ## 0.3
