@@ -1,6 +1,16 @@
 ## ---------------------------------------------------------------
 ## R (tidycensuskr >= 0.3.0; tidycensuskr.sf optional)
 ## ---------------------------------------------------------------
+# package installation
+if (!require("tidycensuskr")) {
+  install.packages("tidycensuskr", repos = "https://sigmafelix.r-universe.dev")
+}
+if (!require("pacman")) {
+  install.packages("pacman", repos = "https://cloud.r-project.org")
+}
+library(pacman)
+p_load(dplyr, sf, tmap, ggplot2, geofacet)
+
 library(tidycensuskr)
 library(dplyr)
 library(sf)
@@ -71,7 +81,11 @@ gf <- ggplot(pop) +
   theme(strip.text = element_text(size = 5),
         axis.text.x = element_text(size = 5, angle = 90),
         panel.spacing = grid::unit(1, "pt"))
-grid::grid.draw(ggplot2::ggplotGrob(gf))   # avoids a geofacet/ggplot2 4.0 printing issue
+
+# resolve ggplot2 4.0.0+ compatibility issue with geofacet
+grid::grid.draw(ggplot2::ggplotGrob(gf))
+
+
 
 ## ---- Case 2: PCA of a five-variable socioeconomic profile, 2020 ----
 # Each query returns a wide table; aggregated to basic local governments
@@ -98,6 +112,7 @@ df_wide <- Reduce(function(x, y) left_join(x, y, by = keys),
                   list(df_hou, df_pop, df_fert, df_mort, df_ss)) |>
   select(-starts_with("type"))
 
+# Join the five-variable profile to the 2020 ADM2 boundaries for PCA and mapping
 profile <- df_wide |>
   mutate(blg_code = paste0(substr(adm2_code, 1, 4), "0")) |>
   group_by(blg_code) |>
