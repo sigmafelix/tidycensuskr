@@ -29,9 +29,8 @@ load_districts <- function(year = 2020, level = "adm2") {
     stop(
       "Package 'tidycensuskr.sf' is required for this function.",
       "Please install it by running:",
-      "install.packages('tidycensuskr.sf', repos = 'https://sigmafelix.r-universe.dev')"
+      "install.packages('tidycensuskr.sf', repos = 'https://sigmafelix.r-universe.dev')\\n",
+      "then run load_districts() in tidycensuskr.sf to load the data."
     )
   }
-  if (level == "adm2") return(tidycensuskr.sf::load_districts(year))
-  tidycensuskr.sf::load_districts(year = year, level = level)
 }
