@@ -101,22 +101,14 @@ anycensus(
 )
 
 # Query 2025 neighborhood-level housing data (without geometry)
+\dontrun{
 anycensus(
   codes = 11010,
   type = "housing",
   year = 2025,
   level = "adm3"
 )
-
-# Aggregate to adm1 level tax (province-level) using sum
-anycensus(
-  codes = c(11, 23, 31),
-  type = "tax",
-  year = 2020,
-  level = "adm1",
-  aggregator = sum,
-  na.rm = TRUE
-)
+}
 
 # Aggregate mortality rates to adm1 using population weights
 anycensus(
@@ -130,7 +122,9 @@ anycensus(
   na.rm = TRUE
 )
 
-# Aggregate rates to adm1 after cleaning to autonomous/basic local governments
+# Aggregate rates to adm1 after cleaning to autonomous/
+# basic local governments
+\dontrun{
 anycensus(
   codes = "Gyeonggi-do",
   type = "mortality",
@@ -142,6 +136,7 @@ anycensus(
   weight_column = "all households_total_prs",
   na.rm = TRUE
 )
+}
 
 # Recalculate adm2 rates after cleaning to autonomous/basic local governments
 anycensus(

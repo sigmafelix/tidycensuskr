@@ -9,12 +9,19 @@
 #' catalog()
 #' @export
 catalog <- function() {
+  .data <- NULL
   utils::data("censuskor", package = "tidycensuskr", envir = environment())
 
-  censuskor |>
+  get("censuskor", envir = environment(), inherits = FALSE) |>
     dplyr::mutate(
-      level = ifelse(is.na(adm3_code), "adm2", "adm3")
+      level = ifelse(is.na(.data[["adm3_code"]]), "adm2", "adm3")
     ) |>
-    dplyr::count(year, level, type, class1, class2, unit, name = "n") |>
-    dplyr::arrange(year, level, type, class1, class2, unit)
+    dplyr::count(
+      .data[["year"]], .data[["level"]], .data[["type"]], .data[["class1"]],
+      .data[["class2"]], .data[["unit"]], name = "n"
+    ) |>
+    dplyr::arrange(
+      .data[["year"]], .data[["level"]], .data[["type"]], .data[["class1"]],
+      .data[["class2"]], .data[["unit"]]
+    )
 }
