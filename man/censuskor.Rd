@@ -5,8 +5,8 @@
 \alias{censuskor}
 \title{South Korea Census Data}
 \format{
-A data.frame with 836,761 rows and 12 columns,
-out of which 103,626 rows for adm2, and 733,135 rows for adm3 data.
+A data.frame with 836,707 rows and 12 columns,
+out of which 103,572 rows for adm2, and 733,135 rows for adm3 data.
 }
 \source{
 \itemize{

@@ -5,8 +5,8 @@
 #' 2015, 2020, and 2025. The available years and variables depend on the type
 #' and geographic level of data.
 #'
-#' @format A data.frame with 836,761 rows and 12 columns,
-#'   out of which 103,626 rows for adm2, and 733,135 rows for adm3 data.
+#' @format A data.frame with 836,707 rows and 12 columns,
+#'   out of which 103,572 rows for adm2, and 733,135 rows for adm3 data.
 #' @details
 #' * year Year of the census data, e.g., 2010, 2015, 2020, or 2025
 #' * adm1 Name of the province-level (Si-Do) administrative unit

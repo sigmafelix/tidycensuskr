@@ -106,15 +106,18 @@ testthat::test_that(
       level = "adm2",
       adm2_type = "atn"
     )
-    expected <- anycensus(
+    districts <- anycensus(
       codes = "Gyeonggi-do",
       type = "population",
       year = 2020,
-      level = "adm2"
-    ) |>
-      detect_adm2_type(mode = "atn")
+      level = "adm2",
+      adm2_type = "non"
+    )
 
-    testthat::expect_equal(res, expected)
+    testthat::expect_equal(
+      res[["all households_total_prs"]][res$adm2_code == 31010],
+      sum(districts[["all households_total_prs"]][districts$adm2_code %in% 31011:31014])
+    )
     testthat::expect_false(any(substr(res$adm2_code, 5, 5) != "0"))
   }
 )
@@ -325,3 +328,71 @@ testthat::test_that("anycensus rejects multiple weighted type values", {
 #     testthat::expect_true(all(res2010[["year"]] == 2010))
 #   }
 # )
+
+testthat::test_that(
+  "anycensus() rebuilds cities that only report non-autonomous Gu rows",
+  {
+    # medicine reports only the Gu of cities such as Suwon-si (31011-31014)
+    col <- "doctors_anesthesiology and pain medicine_prs"
+    res <- anycensus(2020, type = "medicine", level = "adm2", adm2_type = "atn")
+    suwon <- res[res$adm2_code == 31010, ]
+    testthat::expect_equal(nrow(suwon), 1)
+    testthat::expect_equal(suwon$adm2, "Suwon-si")
+    testthat::expect_equal(suwon[[col]], 16 + 11 + 45 + 44)
+    testthat::expect_false(any(res$adm2_code %in% 31011:31019))
+
+    atn <- anycensus(2020, type = "medicine", level = "adm1", adm2_type = "atn")
+    testthat::expect_warning(
+      non <- anycensus(2020, type = "medicine", level = "adm1", adm2_type = "non"),
+      "Inconsistent codes"
+    )
+    testthat::expect_equal(atn[[col]][atn$adm1_code == 31], 998)
+    testthat::expect_equal(non[[col]][non$adm1_code == 31], 998)
+
+    weighted <- anycensus(
+      2020, type = "medicine", level = "adm2", adm2_type = "atn",
+      aggregator = weighted.mean, weight_type = "population",
+      weight_col = "all households_total_prs"
+    )
+    testthat::expect_true(31010 %in% weighted$adm2_code)
+  }
+)
+
+testthat::test_that(
+  "adm2_type = 'atn' resolves cities with Gu variable by variable",
+  {
+    value <- function(d, code, col) unlist(d[[col]][d$adm2_code == code])
+
+    # landuse city rows hold the mean of their Gu (Suwon-si: 89 = 356 / 4)
+    landuse <- anycensus(2020, type = "landuse", adm2_type = "atn")
+    testthat::expect_equal(value(landuse, 31010, "park_neighborhood_parks_cnt"), 356)
+
+    # Bucheon-si 2015 medicine city row is all zeros
+    medicine <- anycensus(2015, type = "medicine", adm2_type = "atn")
+    testthat::expect_equal(
+      value(medicine, 31050, "doctors_anesthesiology and pain medicine_prs"), 48 + 19 + 2
+    )
+
+    # Seongnam-si 2015: population only in its Gu, fertility rate in the city row
+    population <- anycensus(2015, type = "population", adm2_type = "atn")
+    testthat::expect_equal(value(population, 31020, "all households_total_prs"), 918710)
+    testthat::expect_equal(value(population, 31020, "fertility_total_bpw"), 1.159)
+
+    # Cheongju-si 2015 environment has 2 of its 4 Gu
+    # (environment also raises the pivot_wider() list-column warning)
+    warnings <- testthat::capture_warnings(
+      environment <- anycensus(2015, type = "environment", adm2_type = "atn")
+    )
+    testthat::expect_true(any(grepl("incomplete set of non-autonomous Gu", warnings)))
+    testthat::expect_equal(value(environment, 33040, "organic_matter_discharge_kg_"), 892)
+
+    # Weighted queries sum counts and recalculate rates from the Gu
+    weighted <- anycensus(
+      2020, type = "population", adm2_type = "atn",
+      aggregator = weighted.mean, weight_type = "population",
+      weight_column = "all households_total_prs"
+    )
+    testthat::expect_equal(value(weighted, 31010, "all households_male_prs"), 576792)
+    testthat::expect_equal(value(weighted, 31010, "fertility_total_bpw"), 0.787, tolerance = 1e-3)
+  }
+)

@@ -27,12 +27,18 @@ map2020 <- adm2_sf_2020 |>
 
 tm_shape(map2020) +
   tm_polygons(
-    "all households_total_prs",
-    style = "quantile", n = 7, palette = "Blues",
-    title = "Total population, 2020",
-    border.col = "grey60", lwd = 0.2
+    fill = "all households_total_prs", col = "grey60", lwd = 0.2,
+    fill.scale = tm_scale_intervals(n = 5, style = "quantile", values = "brewer.blues"),
+    fill.legend = tm_legend(
+      title = "Total population, 2020", na.show = FALSE, frame = FALSE,
+      position = tm_pos_in(0.97, 0.15, just.h = "right", just.v = "bottom"),
+      text.size = 0.85, title.size = 1.05
+    )
   ) +
-  tm_layout(frame = FALSE, legend.outside = TRUE)
+  tm_scalebar(breaks = c(0, 50, 100), position = tm_pos_in("right", "bottom"),
+              text.size = 1, lwd = 1.5) +
+  tm_compass(type = "arrow", position = tm_pos_in("right", "top"), size = 1.1) +
+  tm_layout(frame = FALSE)
 
 ## ---- Case 1b: small multiples of population by sex, 2010-2020 ----
 data(censuskor)
@@ -69,17 +75,33 @@ grid2020 <- kr_grid_adm2_sgis_2020 |>
            paste0(name, " (", prov_abbr[substr(code, 1, 2)], ")") else name) |>
   ungroup()
 
+plot_labels <- c(title = "Population trends by district and sex, 2010-2020",
+                 caption = "Y-axis values are not commensurate with the original scale")
+plot_width <- grid::convertWidth(grid::unit(1, "npc"), "in", valueOnly = TRUE)
+label_widths <- vapply(plot_labels, function(label) {
+  grid::convertWidth(grid::grobWidth(grid::textGrob(label, gp = grid::gpar(fontsize = 20))),
+                     "in", valueOnly = TRUE)
+}, numeric(1))
+label_sizes <- 20 * plot_width * c(title = 0.85, caption = 0.5) / label_widths
+
 gf <- ggplot(pop) +
   geom_line(aes(x = year, y = value, group = interaction(adm2, class2),
                 color = class2), alpha = 0.5, linewidth = 2) +
   facet_geo(~ code, grid = grid2020, label = "name", scale = "free_y") +
-  scale_color_manual(values = c(female = "#F44336", male = "#2196F3")) +
+  scale_color_manual(values = c(female = "#F44336", male = "#2196F3"),
+                     labels = c(female = "Female", male = "Male")) +
   scale_x_continuous(breaks = c(2010, 2015, 2020)) +
-  labs(title = "Population trends by district and sex, 2010-2020",
+  labs(title = plot_labels["title"], caption = plot_labels["caption"],
        x = NULL, y = NULL, color = "Sex") +
   theme_void() +
   theme(strip.text = element_text(size = 5),
-        axis.text.x = element_text(size = 5, angle = 90),
+        axis.text.x = element_text(size = 6, angle = 90),
+        plot.title = element_text(size = label_sizes["title"]),
+        plot.caption = element_text(size = label_sizes["caption"]),
+        legend.title = element_text(size = 16, face = "bold", margin = margin(b = 8)),
+        legend.text = element_text(size = 16),
+        legend.key.spacing.y = grid::unit(6, "pt"),
+        plot.title.position = "plot", plot.caption.position = "plot",
         panel.spacing = grid::unit(1, "pt"))
 
 # resolve ggplot2 4.0.0+ compatibility issue with geofacet
@@ -126,7 +148,7 @@ profile <- df_wide |>
     persons_per_housing = `all households_total_prs` / `housing types_total_cnt`,
     sex_ratio      = 100 * `all households_male_prs` / `all households_female_prs`,
     mortality_rate = `all causes_total_p1p`,
-    fertility_rate = fertility_total_brt,
+    fertility_rate = fertility_total_bpw,
     security_rate  = 100 * (`basic living security_female_prs` +
                             `basic living security_male_prs`) /
                            `all households_total_prs`

@@ -26,6 +26,7 @@ Description:
     administrative data sources and pre-generated files in South Korea.
 License: MIT + file LICENSE
 LazyData: true
+LazyDataCompression: xz
 Depends:
     R (>= 4.2.0)
 Roxygen: list(markdown = TRUE)

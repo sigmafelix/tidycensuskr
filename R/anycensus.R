@@ -1,81 +1,151 @@
+# Units whose values are rates; every other unit is treated as an additive count
+.rate_units <- c("per 100k population", "births per 1000", "births per woman", "percent")
+
+# Identify city count records for which the same indicator has Gu records.
+.city_count_keys <- function(df) {
+  codes <- as.character(df[["adm2_code"]])
+  count <- !is.na(codes) & !is.na(df[["value"]]) & !df[["unit"]] %in% .rate_units
+  child <- count & substr(codes, 5, 5) != "0"
+  paste(df[["year"]][child], df[["type"]][child], df[["class1"]][child],
+        df[["class2"]][child], df[["unit"]][child],
+        paste0(substr(codes[child], 1, 4), "0"), sep = "\r")
+}
+
+.city_count_record_keys <- function(df) {
+  paste(df[["year"]], df[["type"]], df[["class1"]], df[["class2"]],
+        df[["unit"]], as.character(df[["adm2_code"]]), sep = "\r")
+}
+
+# Non-autonomous Gu codes of each city in `df` (all types), named "<year> <city code>"
+.reference_gu <- function(df) {
+  code_chr <- as.character(df[["adm2_code"]])
+  is_gu <- !is.na(code_chr) & substr(code_chr, 5, 5) != "0"
+  key <- paste(df[["year"]][is_gu], paste0(substr(code_chr[is_gu], 1, 4), "0"))
+  lapply(split(code_chr[is_gu], key), unique)
+}
+
+# Values of a wide column as numbers. pivot_wider() leaves duplicated raw rows
+# as list cells; they are summed, as pivot_table() does in pycensuskr.
+.cell_values <- function(x) {
+  if (!is.list(x)) {
+    return(as.numeric(x))
+  }
+  vapply(x, function(e) if (all(is.na(e))) NA_real_ else sum(e, na.rm = TRUE), numeric(1))
+}
+
+# Return autonomous/basic local government rows of `df`, resolving each city
+# with non-autonomous Gu variable by variable within a year and type.
+# * Count variables use the sum of the Gu when every Gu of that year
+#   (`ref_gu`) has a value, since city rows can be missing, zero or averaged.
+#   When only some Gu have values, their partial sum is used with a warning.
+# * Rate variables (`rate_columns`) are recalculated from the Gu with
+#   `aggregator` when `weights` (named by Gu code) are given. Otherwise the
+#   city rate is kept, or the unweighted Gu mean is used when it is missing.
+# Values built from an incomplete set of Gu are reported in one warning.
+.collapse_to_atn <- function(
+  df,
+  ref_gu,
+  rate_columns = character(0),
+  weights = NULL,
+  aggregator = NULL,
+  ...
+) {
+  id_columns <- intersect(c("year", "type", "adm1", "adm1_code", "adm2", "adm2_code"), names(df))
+  value_columns <- setdiff(names(df), id_columns)
+  code_chr <- as.character(df[["adm2_code"]])
+  parent_code <- paste0(substr(code_chr, 1, 4), "0")
+  is_gu <- code_chr != parent_code
+
+  out <- df[!is_gu, , drop = FALSE]
+  out_key <- paste(out[["year"]], out[["type"]], code_chr[!is_gu])
+  gu_key <- paste(df[["year"]], df[["type"]], parent_code)
+  partial <- character(0)
+
+  for (key in unique(gu_key[is_gu])) {
+    g <- df[is_gu & gu_key == key, , drop = FALSE]
+    g_code <- as.character(g[["adm2_code"]])
+    parent <- paste0(substr(g_code[1], 1, 4), "0")
+    expected <- ref_gu[[paste(g[["year"]][1], parent)]]
+    if (is.null(expected)) {
+      expected <- g_code
+    }
+
+    i <- match(key, out_key)
+    if (is.na(i)) {
+      # The city row is missing: start from its first Gu row
+      new_row <- g[1, , drop = FALSE]
+      new_row[["adm2_code"]] <- if (is.numeric(df[["adm2_code"]])) as.numeric(parent) else parent
+      # Gu names read "<gu> <city>", e.g. "Jangan-gu Suwon-si"
+      new_row[["adm2"]] <- sub("^\\S+\\s+", "", new_row[["adm2"]])
+      for (col in value_columns) {
+        new_row[[col]] <- if (is.list(new_row[[col]])) list(NA_real_) else NA_real_
+      }
+      out <- dplyr::bind_rows(out, new_row)
+      out_key <- c(out_key, key)
+      i <- nrow(out)
+    }
+    w <- if (is.null(weights)) NULL else unname(weights[g_code])
+
+    for (col in value_columns) {
+      v <- .cell_values(g[[col]])
+      ok <- !is.na(v)
+      if (!any(ok)) {
+        next
+      }
+      city <- .cell_values(out[[col]][i])
+      complete <- all(expected %in% g_code[ok])
+      if (col %in% rate_columns) {
+        if (!is.null(w)) {
+          value <- aggregator(v[ok], w = w[ok], ...)
+        } else if (is.na(city)) {
+          value <- mean(v[ok])
+        } else {
+          next
+        }
+      } else {
+        value <- sum(v[ok])
+      }
+      if (!complete) {
+        partial <- c(partial, sprintf("%s %s: %s", g[["year"]][1], out[["adm2"]][i], col))
+      }
+      if (is.list(out[[col]])) out[[col]][i] <- list(value) else out[[col]][i] <- value
+    }
+  }
+
+  if (length(partial) > 0) {
+    warning(
+      sprintf(
+        "adm2_type = 'atn' used an incomplete set of non-autonomous Gu for %d value(s), e.g. %s.",
+        length(partial), partial[1]
+      ),
+      call. = FALSE
+    )
+  }
+  out
+}
+
+# Weighted adm2_type = "atn" collapse of `df` (see `.collapse_to_atn()`).
+# Rate columns are recalculated from the Gu with weights from `weight_df`;
+# the weight column itself is resolved as a count.
 .collapse_weighted_adm2_to_atn <- function(
   df,
   weight_df,
   weight_column,
   aggregator,
+  ref_gu,
+  rate_columns,
   ...
 ) {
-  adm2_code <- "adm2_code"
-  value_columns <- setdiff(
-    names(df),
-    c("year", "adm1", "adm1_code", "adm2", "adm2_code", "type", weight_column)
+  weight_codes <- as.character(weight_df[["adm2_code"]])
+  weights <- stats::setNames(.cell_values(weight_df[[weight_column]]), weight_codes)
+  weights <- weights[!duplicated(weight_codes)]
+  data <- .collapse_to_atn(
+    df[setdiff(names(df), weight_column)],
+    ref_gu, rate_columns, weights, aggregator, ...
   )
-
-  atn_df <- detect_adm2_type(df, mode = "atn")
-  atn_weight_df <- detect_adm2_type(weight_df, mode = "atn")
-
-  code_chr <- as.character(df[[adm2_code]])
-  parent_code <- paste0(substr(code_chr, 1, 4), "0")
-  nonauto <- substr(code_chr, 5, 5) != "0"
-  parent_has_atn <- parent_code %in% as.character(atn_df[[adm2_code]])
-  nonauto_df <- df[nonauto & parent_has_atn, , drop = FALSE]
-
-  if (nrow(nonauto_df) == 0) {
-    return(list(data = atn_df, weights = atn_weight_df[, c(adm2_code, weight_column)]))
-  }
-
-  weight_values <- weight_df[, c(adm2_code, weight_column)]
-  names(weight_values)[names(weight_values) == weight_column] <- ".aggregation_weight"
-  nonauto_df <- dplyr::left_join(nonauto_df, weight_values, by = adm2_code)
-  nonauto_df[[".parent_adm2_code"]] <-
-    paste0(substr(as.character(nonauto_df[[adm2_code]]), 1, 4), "0")
-
-  parent_codes <- unique(nonauto_df[[".parent_adm2_code"]])
-  for (parent in parent_codes) {
-    parent_rows <- nonauto_df[nonauto_df[[".parent_adm2_code"]] == parent, , drop = FALSE]
-    parent_weights <- parent_rows[[".aggregation_weight"]]
-    parent_idx <- match(parent, as.character(atn_df[[adm2_code]]))
-
-    if (is.na(parent_idx)) {
-      next
-    }
-
-    for (column in value_columns) {
-      atn_df[[column]][parent_idx] <- aggregator(
-        parent_rows[[column]],
-        w = parent_weights,
-        ...
-      )
-    }
-  }
-
-  weight_code_chr <- as.character(weight_df[[adm2_code]])
-  weight_parent_code <- paste0(substr(weight_code_chr, 1, 4), "0")
-  weight_nonauto <- substr(weight_code_chr, 5, 5) != "0"
-  weight_parent_has_atn <- weight_parent_code %in% as.character(atn_weight_df[[adm2_code]])
-  nonauto_weight_df <- weight_df[weight_nonauto & weight_parent_has_atn, , drop = FALSE]
-
-  collapsed_weights <- atn_weight_df[, c(adm2_code, weight_column)]
-  if (nrow(nonauto_weight_df) > 0) {
-    nonauto_weight_df[[".parent_adm2_code"]] <-
-      paste0(substr(as.character(nonauto_weight_df[[adm2_code]]), 1, 4), "0")
-
-    for (parent in unique(nonauto_weight_df[[".parent_adm2_code"]])) {
-      parent_rows <- nonauto_weight_df[
-        nonauto_weight_df[[".parent_adm2_code"]] == parent,
-        ,
-        drop = FALSE
-      ]
-      parent_idx <- match(parent, as.character(collapsed_weights[[adm2_code]]))
-
-      if (!is.na(parent_idx)) {
-        collapsed_weights[[weight_column]][parent_idx] <-
-          sum(parent_rows[[weight_column]], na.rm = TRUE)
-      }
-    }
-  }
-
-  list(data = atn_df, weights = collapsed_weights)
+  id_columns <- intersect(c("year", "type", "adm1", "adm1_code", "adm2", "adm2_code"), names(weight_df))
+  collapsed_weights <- .collapse_to_atn(weight_df[c(id_columns, weight_column)], ref_gu)
+  list(data = data, weights = collapsed_weights[, c("adm2_code", weight_column)])
 }
 
 #' Query Korean census data by administrative code and year
@@ -94,13 +164,19 @@
 #'   municipal-level, or "adm3" for neighborhood/town-level. ADM3 population
 #'   and housing data is available for 2015, 2020, and 2025; ADM3 economy and
 #'   mortality data is available for 2020. Defaults to "adm2".
-#' @param adm2_type character(1). Which municipal code type to keep before
-#'   returning `adm2` results or aggregating to `adm1`. `"all"` keeps the
-#'   current data, `"atn"` keeps autonomous/basic local government rows, and
-#'   `"non"` keeps non-autonomous rows where they are available. For weighted
-#'   aggregation with `"atn"`, autonomous/basic local government rate rows are
-#'   recalculated from their non-autonomous component rows using the supplied
-#'   weights before returning `adm2` or aggregating to `adm1`.
+#' @param adm2_type character(1). Municipal level to return or aggregate.
+#'   For a city and its non-autonomous Gu with the same indicator, `"all"`
+#'   removes the source city count when Gu values are available, but retains
+#'   city and Gu rates; the city count is `NA` in a mixed wide row. `"atn"`
+#'   returns city rows, summing available Gu counts and retaining the city rate;
+#'   `"non"` returns Gu rows where they are available. Incomplete Gu sums emit
+#'   a warning. When a city rate is missing, `"atn"` uses the Gu mean; with
+#'   weights, it recalculates city rates from Gu values.
+#'   Rates are identified by units per 100,000 population, births per 1,000,
+#'   births per woman, and percent; other units are treated as additive counts.
+#'   Selecting a city code with `"atn"` or `"non"` also selects its Gu.
+#'   `"all"` retains both city and Gu rates, so choose the intended geographic
+#'   level and a suitable aggregator when aggregating rates to `"adm1"`.
 #' @param aggregator function to aggregate values when `level = "adm1"` or
 #'   when weighted `adm2_type = "atn"` recalculates autonomous/basic local
 #'   government rows.
@@ -309,22 +385,42 @@ anycensus <- function(
     ,
     drop = FALSE
   ]
+  count_keys <- if (source_level == "adm2" && adm2_type == "all") {
+    .city_count_keys(dfe)
+  } else character(0)
   if (!is.null(codes)) {
     if (length(codes) == 0) {
       dfe <- dfe[FALSE, , drop = FALSE]
     } else {
       code_pattern <- sprintf("^(%s)", paste(codes, collapse = "|"))
-      dfe <- dfe[
-        grepl(code_pattern, as.character(dfe[[admN_code]])),
-        ,
-        drop = FALSE
-      ]
+      selected <- grepl(code_pattern, as.character(dfe[[admN_code]]))
+      if (level == "adm2" && adm2_type %in% c("atn", "non")) {
+        ids <- as.character(dfe[["adm2_code"]])
+        cities <- unique(substr(ids[selected & substr(ids, 5, 5) == "0"], 1, 4))
+        selected <- selected | (substr(ids, 1, 4) %in% cities & substr(ids, 5, 5) != "0")
+      }
+      dfe <- dfe[selected, , drop = FALSE]
     }
   }
   dfe <- dfe[!duplicated(dfe), , drop = FALSE]
+  excluded_counts <- dfe[FALSE, , drop = FALSE]
+  if (length(count_keys)) {
+    ids <- as.character(dfe[["adm2_code"]])
+    excluded <- !is.na(ids) & substr(ids, 5, 5) == "0" &
+      !dfe[["unit"]] %in% .rate_units & .city_count_record_keys(dfe) %in% count_keys
+    excluded_counts <- dfe[excluded, , drop = FALSE]
+    dfe <- dfe[!excluded, , drop = FALSE]
+  }
   if (source_level == "adm2") {
     dfe[c("adm3", "adm3_code")] <- NULL
   }
+  # Columns holding rates; abbreviate() is applied to the same vector as below
+  rate_columns <- unique(gsub("_NA", "", tolower(paste(
+    dfe[["class1"]], dfe[["class2"]], abbreviate(dfe[["unit"]], minlength = 3),
+    sep = "_"
+  ))[dfe[["unit"]] %in% .rate_units]))
+  # Gu codes of each city in the requested year, taken from all types
+  ref_gu <- .reference_gu(df[df[["year"]] == year, , drop = FALSE])
   # post-processing when levels are multiple
   dfe <- dfe |>
     dplyr::mutate(
@@ -341,7 +437,24 @@ anycensus <- function(
     perl = TRUE,
     x = tolower(names(dfe))
   )
-  if (adm2_type == "non" || (adm2_type == "atn" && !has_weighting)) {
+  excluded_count_cells <- if (nrow(excluded_counts)) {
+    excluded_columns <- gsub("_NA", "", tolower(paste(
+      excluded_counts[["class1"]], excluded_counts[["class2"]],
+      abbreviate(excluded_counts[["unit"]], minlength = 3), sep = "_"
+    )))
+    paste(excluded_counts[["year"]], excluded_counts[["type"]],
+          as.character(excluded_counts[["adm2_code"]]), excluded_columns, sep = "\r")
+  } else character(0)
+  if (nrow(excluded_counts)) {
+    for (column in setdiff(unique(excluded_columns), names(dfe))) {
+      dfe[[column]] <- rep(NA_real_, nrow(dfe))
+    }
+  }
+  # Non-weighted adm2_type handling (weighted "atn" is resolved below, since
+  # rate variables are then recalculated with the supplied weights)
+  if (adm2_type == "atn" && !has_weighting && source_level == "adm2") {
+    dfe <- .collapse_to_atn(dfe, ref_gu, rate_columns)
+  } else if (adm2_type == "non" || (adm2_type == "atn" && !has_weighting)) {
     dfe <- detect_adm2_type(dfe, year = year, mode = adm2_type)
   }
 
@@ -355,9 +468,10 @@ anycensus <- function(
     }
 
     if (!is.null(weight_type) && !identical(weight_type, type)) {
+      weight_codes <- if (!is.null(codes)) unique(dfe[["adm2_code"]]) else codes
       weight_df <- anycensus(
         year = year,
-        codes = codes,
+        codes = weight_codes,
         type = weight_type,
         level = "adm2",
         adm2_type = "all",
@@ -376,6 +490,8 @@ anycensus <- function(
       weight_df = weight_df,
       weight_column = weight_column,
       aggregator = aggregator,
+      ref_gu = ref_gu,
+      rate_columns = rate_columns,
       ...
     )
     dfe <- collapsed_adm2[["data"]]
@@ -387,6 +503,7 @@ anycensus <- function(
   }
   # if level is adm1, aggregate adm2 to adm1
   if (level == "adm1") {
+    aggregate_args <- list(...)
     if (has_weighting) {
       if (is.null(weight_column)) {
         if (identical(weight_type, "population")) {
@@ -414,6 +531,8 @@ anycensus <- function(
             weight_df = weight_df,
             weight_column = weight_column,
             aggregator = aggregator,
+            ref_gu = ref_gu,
+            rate_columns = rate_columns,
             ...
           )
           dfe <- collapsed_adm2[["data"]]
@@ -434,6 +553,8 @@ anycensus <- function(
             weight_df = dfe,
             weight_column = weight_column,
             aggregator = aggregator,
+            ref_gu = ref_gu,
+            rate_columns = rate_columns,
             ...
           )
           dfe <- collapsed_adm2[["data"]]
@@ -455,17 +576,20 @@ anycensus <- function(
         dplyr::group_modify(
           ~ {
             weight_values <- .x[[".aggregation_weight"]]
-            summary_values <- lapply(
-              .x[
-                setdiff(
-                  names(.x),
-                  c("adm2", "adm2_code", weight_column, ".aggregation_weight")
-                )
-              ],
-              function(column_values) {
-                aggregator(column_values, w = weight_values, ...)
-              }
+            value_names <- setdiff(
+              names(.x), c("adm2", "adm2_code", weight_column, ".aggregation_weight")
             )
+            ids <- as.character(.x[["adm2_code"]])
+            parent <- paste0(substr(ids, 1, 4), "0")
+            unweighted_parent <- is.na(weight_values) & ids == parent &
+              parent %in% parent[ids != parent & !is.na(weight_values)]
+            summary_values <- lapply(value_names, function(column) {
+              cell <- paste(.y[["year"]], .y[["type"]], ids, column, sep = "\r")
+              keep <- !unweighted_parent & !cell %in% excluded_count_cells
+              do.call(aggregator, c(list(.cell_values(.x[[column]])[keep],
+                                         w = weight_values[keep]), aggregate_args))
+            })
+            names(summary_values) <- value_names
             summary_values[[weight_column]] <- sum(weight_values, na.rm = TRUE)
             as.data.frame(summary_values, check.names = FALSE)
           }
@@ -479,13 +603,19 @@ anycensus <- function(
         dplyr::group_by(
           .data[["year"]], .data[["type"]], .data[["adm1"]], .data[["adm1_code"]]
         ) |>
-        dplyr::summarise(
-          dplyr::across(
-            .cols = -c("adm2", "adm2_code"),
-            .fns = ~ aggregator(.x, ...)
-          ),
-          .groups = "keep"
-        )
+        dplyr::group_modify(~ {
+          ids <- as.character(.x[["adm2_code"]])
+          value_names <- setdiff(names(.x), c("adm2", "adm2_code"))
+          values <- lapply(value_names, function(column) {
+            cell <- paste(.y[["year"]], .y[["type"]], ids, column, sep = "\r")
+            do.call(aggregator, c(list(.cell_values(.x[[column]])[
+              !cell %in% excluded_count_cells
+            ]), aggregate_args))
+          })
+          names(values) <- value_names
+          as.data.frame(values, check.names = FALSE)
+        }) |>
+        dplyr::ungroup()
     }
   }
 

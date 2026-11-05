@@ -163,7 +163,7 @@ print(length(unique(adm2_sf_2020$adm2_code)))
 | environment | wastewater | generation | m3_day | Daily wastewater generation volume | 2010, 2015, 2020 |
 | environment | wastewater | discharge | m3_day | Daily wastewater discharge volume | 2010, 2015, 2020 |
 | environment | organic_matter | generation | kg_day | Daily organic matter generation | 2010, 2015, 2020 |
-| population | fertility | total | births | Total number of births | 2010, 2015, 2020 |
+| population | fertility | total | births per woman | Total fertility rate | 2010, 2015, 2020 |
 | population | fertility | 15-19 | births per 1000 | Age-specific fertility rate for ages 15-19 | 2010, 2015, 2020 |
 | population | fertility | 20-24 | births per 1000 | Age-specific fertility rate for ages 20-24 | 2010, 2015, 2020 |
 | population | fertility | 25-29 | births per 1000 | Age-specific fertility rate for ages 25-29 | 2010, 2015, 2020 |
@@ -277,6 +277,12 @@ head(df_2020_sido)
 사용하면 자치 시군구 단위로 코드를 정리한 뒤, 비자치구 구성 행정구역의
 값을 인구가중평균해 비율 변수를 계산합니다. 이 결과는 `level = "adm2"`로
 반환할 수도 있고, `level = "adm1"`로 한 번 더 집계할 수도 있습니다.
+
+상위 시와 일반구 자료가 함께 있을 때 기본값 `adm2_type = "all"`은 일반구 값이
+있는 지표의 상위 시 count를 제외하고 시와 구의 비율은 유지합니다. `"atn"`은
+일반구 count를 합산해 시 단위로 반환하고, `"non"`은 일반구 행을 반환합니다.
+일부 일반구 값만 합산한 경우 경고가 발생합니다. 시도 단위로 비율을 집계할 때는
+원하는 공간 단위와 집계 방법을 선택해야 합니다.
 
 ```{r, include = TRUE}
 df_2020_adm2_weighted_atn <- anycensus(year = 2020,

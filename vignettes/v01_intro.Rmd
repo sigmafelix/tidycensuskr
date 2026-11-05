@@ -161,7 +161,7 @@ The package provides census and survey data through:
 | environment | wastewater | generation | m3_day | Daily wastewater generation volume | 2010, 2015, 2020 |
 | environment | wastewater | discharge | m3_day | Daily wastewater discharge volume | 2010, 2015, 2020 |
 | environment | organic_matter | generation | kg_day | Daily organic matter generation | 2010, 2015, 2020 |
-| population | fertility | total | births | Total number of births | 2010, 2015, 2020 |
+| population | fertility | total | births per woman | Total fertility rate | 2010, 2015, 2020 |
 | population | fertility | 15-19 | births per 1000 | Age-specific fertility rate for ages 15-19 | 2010, 2015, 2020 |
 | population | fertility | 20-24 | births per 1000 | Age-specific fertility rate for ages 20-24 | 2010, 2015, 2020 |
 | population | fertility | 25-29 | births per 1000 | Age-specific fertility rate for ages 25-29 | 2010, 2015, 2020 |
@@ -290,6 +290,12 @@ autonomous/basic local government level. In weighted aggregation, rate rows for
 those autonomous units are recalculated from the non-autonomous component
 districts using the supplied weights. This can be returned at `level = "adm2"`
 or further aggregated to `level = "adm1"`.
+
+When city and Gu observations overlap, the default `adm2_type = "all"`
+excludes the city count for each indicator with available Gu values and retains
+both city and Gu rates. `"atn"` sums available Gu counts into the city; `"non"`
+returns Gu rows. An incomplete Gu sum raises a warning. Choose the intended
+geographic level and aggregator when combining rates at ADM1 level.
 
 ```{r, include = TRUE}
 df_2020_adm2_weighted_atn <- anycensus(year = 2020,

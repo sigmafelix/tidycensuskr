@@ -1,5 +1,6 @@
 # NEWS
 ## 0.4
+- Handle overlapping city and non-autonomous district observations by indicator: retain city rates and avoid double-counting city counts.
 - Process each year separately in `detect_adm2_type()` so district changes in one year do not remove another year's parent rows.
 - Move 2010/2015/2025 ADM2 boundaries and both weight variants to registered tidycensuskr.sf datasets; keep 2020 datasets here and delegate boundary lookup by year.
 - Replace the bundled 2020 ADM2 boundary with historically constrained topology repairs.
