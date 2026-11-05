@@ -19,7 +19,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">tidycensuskr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,7 +63,7 @@
 
       <h1>Working with tidycensuskr</h1>
             
-            <h4 data-toc-skip class="date">November 03, 2026</h4>
+            <h4 data-toc-skip class="date">November 05, 2026</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/sigmafelix/tidycensuskr/blob/main/vignettes/v01_intro.Rmd" class="external-link"><code>vignettes/v01_intro.Rmd</code></a></small>
       <div class="d-none name"><code>v01_intro.Rmd</code></div>
@@ -641,8 +641,8 @@ Currently, for 2020 data there are 250 <em>Si-Gun-Gu</em> and 17
 <td>population</td>
 <td>fertility</td>
 <td>total</td>
-<td>births</td>
-<td>Total number of births</td>
+<td>births per woman</td>
+<td>Total fertility rate</td>
 <td>2010, 2015, 2020</td>
 </tr>
 <tr class="odd">
@@ -1254,7 +1254,6 @@ results that summarize across all districts.</p>
 <span>                          na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">df_2020_sido</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 7</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># Groups:   year, type, adm1, adm1_code [6]</span></span></span>
 <span><span class="co">#&gt;    year type      adm1    adm1_code `all causes_total_p1p` `all causes_male_p1p`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>  <span style="text-decoration: underline;">2</span>020 mortality Busan          21                   335.                  458.</span></span>
@@ -1292,6 +1291,13 @@ autonomous units are recalculated from the non-autonomous component
 districts using the supplied weights. This can be returned at
 <code>level = "adm2"</code> or further aggregated to
 <code>level = "adm1"</code>.</p>
+<p>When city and Gu observations overlap, the default
+<code>adm2_type = "all"</code> excludes the city count for each
+indicator with available Gu values and retains both city and Gu rates.
+<code>"atn"</code> sums available Gu counts into the city;
+<code>"non"</code> returns Gu rows. An incomplete Gu sum raises a
+warning. Choose the intended geographic level and aggregator when
+combining rates at ADM1 level.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_2020_adm2_weighted_atn</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>,</span>
 <span>                                       codes <span class="op">=</span> <span class="st">"Gyeonggi-do"</span>,</span>

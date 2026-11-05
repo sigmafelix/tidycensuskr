@@ -13,7 +13,7 @@ censuskor
 
 ## Format
 
-A data.frame with 836,761 rows and 12 columns, out of which 103,626 rows
+A data.frame with 836,707 rows and 12 columns, out of which 103,572 rows
 for adm2, and 733,135 rows for adm3 data.
 
 ## Source

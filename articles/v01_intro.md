@@ -158,7 +158,7 @@ for querying subsets
 | environment | wastewater | generation | m3_day | Daily wastewater generation volume | 2010, 2015, 2020 |
 | environment | wastewater | discharge | m3_day | Daily wastewater discharge volume | 2010, 2015, 2020 |
 | environment | organic_matter | generation | kg_day | Daily organic matter generation | 2010, 2015, 2020 |
-| population | fertility | total | births | Total number of births | 2010, 2015, 2020 |
+| population | fertility | total | births per woman | Total fertility rate | 2010, 2015, 2020 |
 | population | fertility | 15-19 | births per 1000 | Age-specific fertility rate for ages 15-19 | 2010, 2015, 2020 |
 | population | fertility | 20-24 | births per 1000 | Age-specific fertility rate for ages 20-24 | 2010, 2015, 2020 |
 | population | fertility | 25-29 | births per 1000 | Age-specific fertility rate for ages 25-29 | 2010, 2015, 2020 |
@@ -294,7 +294,6 @@ df_2020_sido <- anycensus(year = 2020,
                           na.rm = TRUE)
 head(df_2020_sido)
 #> # A tibble: 6 × 7
-#> # Groups:   year, type, adm1, adm1_code [6]
 #>    year type      adm1    adm1_code `all causes_total_p1p` `all causes_male_p1p`
 #>   <dbl> <chr>     <chr>       <dbl>                  <dbl>                 <dbl>
 #> 1  2020 mortality Busan          21                   335.                  458.
@@ -335,6 +334,13 @@ autonomous/basic local government level. In weighted aggregation, rate
 rows for those autonomous units are recalculated from the non-autonomous
 component districts using the supplied weights. This can be returned at
 `level = "adm2"` or further aggregated to `level = "adm1"`.
+
+When city and Gu observations overlap, the default `adm2_type = "all"`
+excludes the city count for each indicator with available Gu values and
+retains both city and Gu rates. `"atn"` sums available Gu counts into
+the city; `"non"` returns Gu rows. An incomplete Gu sum raises a
+warning. Choose the intended geographic level and aggregator when
+combining rates at ADM1 level.
 
 ``` r
 

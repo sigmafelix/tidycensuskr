@@ -21,7 +21,7 @@
 
     <a class="navbar-brand me-2" href="index.html">tidycensuskr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -334,6 +334,7 @@
 <div class="section level2">
 <h2 id="filter-nonautonomous-districts">Filter nonautonomous districts<a class="anchor" aria-label="anchor" href="#filter-nonautonomous-districts"></a>
 </h2>
+<p>For overlapping city and nonautonomous district observations, <code>anycensus(adm2_type = "all")</code> excludes the city count for each indicator with district values while retaining city and district rates. <code>"atn"</code> sums available district counts into the city and keeps its rate unless weights are supplied; <code>"non"</code> returns district rows. Incomplete district sums produce a warning.</p>
 <p><code><a href="reference/detect_adm2_type.html">detect_adm2_type()</a></code> can be used to detect nonautonomous districts (i.e., districts that are not independent administrative units but are part of larger cities, per <em>Local Autonomy Act</em>). This is particularly useful when you want to focus on autonomous or nonautonomous districts for analysis.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># detect nonautonomous districts</span></span>

@@ -19,7 +19,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">tidycensuskr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,7 +52,7 @@
 
       <h1>tidycensuskr로 작업하기</h1>
             
-            <h4 data-toc-skip class="date">November 03, 2026</h4>
+            <h4 data-toc-skip class="date">November 05, 2026</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/sigmafelix/tidycensuskr/blob/main/vignettes/v01_intro-ko.Rmd" class="external-link"><code>vignettes/v01_intro-ko.Rmd</code></a></small>
       <div class="d-none name"><code>v01_intro-ko.Rmd</code></div>
@@ -624,8 +624,8 @@ Territorial Units for Statistics&lt;/em&gt;)의 준말로, 유럽연합 내 국�
 <td>population</td>
 <td>fertility</td>
 <td>total</td>
-<td>births</td>
-<td>Total number of births</td>
+<td>births per woman</td>
+<td>Total fertility rate</td>
 <td>2010, 2015, 2020</td>
 </tr>
 <tr class="odd">
@@ -1239,7 +1239,6 @@ services</td>
 <span>                          na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">df_2020_sido</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 7</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># Groups:   year, type, adm1, adm1_code [6]</span></span></span>
 <span><span class="co">#&gt;    year type      adm1    adm1_code `all causes_total_p1p` `all causes_male_p1p`</span></span>
 <span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>       <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>                  <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>                 <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span>  <span style="text-decoration: underline;">2</span>020 mortality Busan          21                   335.                  458.</span></span>
@@ -1257,6 +1256,12 @@ services</td>
 인구가중평균해 비율 변수를 계산합니다. 이 결과는
 <code>level = "adm2"</code>로 반환할 수도 있고,
 <code>level = "adm1"</code>로 한 번 더 집계할 수도 있습니다.</p>
+<p>상위 시와 일반구 자료가 함께 있을 때 기본값
+<code>adm2_type = "all"</code>은 일반구 값이 있는 지표의 상위 시 count를
+제외하고 시와 구의 비율은 유지합니다. <code>"atn"</code>은 일반구
+count를 합산해 시 단위로 반환하고, <code>"non"</code>은 일반구 행을
+반환합니다. 일부 일반구 값만 합산한 경우 경고가 발생합니다. 시도 단위로
+비율을 집계할 때는 원하는 공간 단위와 집계 방법을 선택해야 합니다.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df_2020_adm2_weighted_atn</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/anycensus.html">anycensus</a></span><span class="op">(</span>year <span class="op">=</span> <span class="fl">2020</span>,</span>
 <span>                                       codes <span class="op">=</span> <span class="st">"Gyeonggi-do"</span>,</span>

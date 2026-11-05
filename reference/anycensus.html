@@ -9,7 +9,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">tidycensuskr</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.4.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -97,13 +97,19 @@ mortality data is available for 2020. Defaults to "adm2".</p></dd>
 
 
 <dt id="arg-adm-type">adm2_type<a class="anchor" aria-label="anchor" href="#arg-adm-type"></a></dt>
-<dd><p>character(1). Which municipal code type to keep before
-returning <code>adm2</code> results or aggregating to <code>adm1</code>. <code>"all"</code> keeps the
-current data, <code>"atn"</code> keeps autonomous/basic local government rows, and
-<code>"non"</code> keeps non-autonomous rows where they are available. For weighted
-aggregation with <code>"atn"</code>, autonomous/basic local government rate rows are
-recalculated from their non-autonomous component rows using the supplied
-weights before returning <code>adm2</code> or aggregating to <code>adm1</code>.</p></dd>
+<dd><p>character(1). Municipal level to return or aggregate.
+For a city and its non-autonomous Gu with the same indicator, <code>"all"</code>
+removes the source city count when Gu values are available, but retains
+city and Gu rates; the city count is <code>NA</code> in a mixed wide row. <code>"atn"</code>
+returns city rows, summing available Gu counts and retaining the city rate;
+<code>"non"</code> returns Gu rows where they are available. Incomplete Gu sums emit
+a warning. When a city rate is missing, <code>"atn"</code> uses the Gu mean; with
+weights, it recalculates city rates from Gu values.
+Rates are identified by units per 100,000 population, births per 1,000,
+births per woman, and percent; other units are treated as additive counts.
+Selecting a city code with <code>"atn"</code> or <code>"non"</code> also selects its Gu.
+<code>"all"</code> retains both city and Gu rates, so choose the intended geographic
+level and a suitable aggregator when aggregating rates to <code>"adm1"</code>.</p></dd>
 
 
 <dt id="arg-aggregator">aggregator<a class="anchor" aria-label="anchor" href="#arg-aggregator"></a></dt>
@@ -272,7 +278,6 @@ filtering. The 'wide' table is returned with separate columns for each
 <span class="r-in"><span>  na.rm <span class="op">=</span> <span class="cn">TRUE</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># A tibble: 3 × 6</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #949494;"># Groups:   year, type, adm1, adm1_code [3]</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    year type  adm1        adm1_code income_general_mkr income_labor_mkr</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>              <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>            <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BCBCBC;">1</span>  <span style="text-decoration: underline;">2</span>020 tax   Gyeonggi-do        31           12<span style="text-decoration: underline;">367</span>363         14<span style="text-decoration: underline;">767</span>906</span>

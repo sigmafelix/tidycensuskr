@@ -49,14 +49,20 @@ anycensus(
 
 - adm2_type:
 
-  character(1). Which municipal code type to keep before returning
-  `adm2` results or aggregating to `adm1`. `"all"` keeps the current
-  data, `"atn"` keeps autonomous/basic local government rows, and
-  `"non"` keeps non-autonomous rows where they are available. For
-  weighted aggregation with `"atn"`, autonomous/basic local government
-  rate rows are recalculated from their non-autonomous component rows
-  using the supplied weights before returning `adm2` or aggregating to
-  `adm1`.
+  character(1). Municipal level to return or aggregate. For a city and
+  its non-autonomous Gu with the same indicator, `"all"` removes the
+  source city count when Gu values are available, but retains city and
+  Gu rates; the city count is `NA` in a mixed wide row. `"atn"` returns
+  city rows, summing available Gu counts and retaining the city rate;
+  `"non"` returns Gu rows where they are available. Incomplete Gu sums
+  emit a warning. When a city rate is missing, `"atn"` uses the Gu mean;
+  with weights, it recalculates city rates from Gu values. Rates are
+  identified by units per 100,000 population, births per 1,000, births
+  per woman, and percent; other units are treated as additive counts.
+  Selecting a city code with `"atn"` or `"non"` also selects its Gu.
+  `"all"` retains both city and Gu rates, so choose the intended
+  geographic level and a suitable aggregator when aggregating rates to
+  `"adm1"`.
 
 - aggregator:
 
@@ -224,7 +230,6 @@ anycensus(
   na.rm = TRUE
 )
 #> # A tibble: 3 × 6
-#> # Groups:   year, type, adm1, adm1_code [3]
 #>    year type  adm1        adm1_code income_general_mkr income_labor_mkr
 #>   <dbl> <chr> <chr>           <dbl>              <dbl>            <dbl>
 #> 1  2020 tax   Gyeonggi-do        31           12367363         14767906
