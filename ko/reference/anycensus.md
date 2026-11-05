@@ -186,55 +186,14 @@ anycensus(
 #> #   `foreign population_total_prs` <dbl>, …
 
 # Query 2025 neighborhood-level housing data (without geometry)
+if (FALSE) { # \dontrun{
 anycensus(
   codes = 11010,
   type = "housing",
   year = 2025,
   level = "adm3"
 )
-#> # A tibble: 17 × 63
-#>     year adm1  adm1_code adm2      adm2_code type    adm3              adm3_code
-#>    <dbl> <chr>     <dbl> <chr>         <dbl> <chr>   <chr>                 <dbl>
-#>  1  2025 Seoul        11 Jongno-gu     11010 housing Sajik-dong         11010530
-#>  2  2025 Seoul        11 Jongno-gu     11010 housing Samcheong-dong     11010540
-#>  3  2025 Seoul        11 Jongno-gu     11010 housing Buam-dong          11010550
-#>  4  2025 Seoul        11 Jongno-gu     11010 housing Pyeongchang-dong   11010560
-#>  5  2025 Seoul        11 Jongno-gu     11010 housing Muak-dong          11010570
-#>  6  2025 Seoul        11 Jongno-gu     11010 housing Gyonam-dong        11010580
-#>  7  2025 Seoul        11 Jongno-gu     11010 housing Gahoe-dong         11010600
-#>  8  2025 Seoul        11 Jongno-gu     11010 housing Jongno1.2.3.4ga-…  11010610
-#>  9  2025 Seoul        11 Jongno-gu     11010 housing Jongno5.6ga-dong   11010630
-#> 10  2025 Seoul        11 Jongno-gu     11010 housing Ewha-dong          11010640
-#> 11  2025 Seoul        11 Jongno-gu     11010 housing Changsin1-dong     11010670
-#> 12  2025 Seoul        11 Jongno-gu     11010 housing Changsin2-dong     11010680
-#> 13  2025 Seoul        11 Jongno-gu     11010 housing Changsin3-dong     11010690
-#> 14  2025 Seoul        11 Jongno-gu     11010 housing Soongin1-dong      11010700
-#> 15  2025 Seoul        11 Jongno-gu     11010 housing Soongin2-dong      11010710
-#> 16  2025 Seoul        11 Jongno-gu     11010 housing Cheongunhyoja-do…  11010720
-#> 17  2025 Seoul        11 Jongno-gu     11010 housing Hyehwa-dong        11010730
-#> # ℹ 55 more variables:
-#> #   `household composition_total household households_hsh` <dbl>,
-#> #   `household composition_total household household members total_prs` <dbl>,
-#> #   `household composition_total household household members male_prs` <dbl>,
-#> #   `household composition_total household household members female_prs` <dbl>,
-#> #   `household composition_general housing households_hsh` <dbl>,
-#> #   `household composition_general housing household members total_prs` <dbl>, …
-
-# Aggregate to adm1 level tax (province-level) using sum
-anycensus(
-  codes = c(11, 23, 31),
-  type = "tax",
-  year = 2020,
-  level = "adm1",
-  aggregator = sum,
-  na.rm = TRUE
-)
-#> # A tibble: 3 × 6
-#>    year type  adm1        adm1_code income_general_mkr income_labor_mkr
-#>   <dbl> <chr> <chr>           <dbl>              <dbl>            <dbl>
-#> 1  2020 tax   Gyeonggi-do        31           12367363         14767906
-#> 2  2020 tax   Incheon            23            1994065          2111882
-#> 3  2020 tax   Seoul              11           20923255         24311772
+} # }
 
 # Aggregate mortality rates to adm1 using population weights
 anycensus(
@@ -254,7 +213,9 @@ anycensus(
 #> # ℹ 2 more variables: `all causes_female_p1p` <dbl>,
 #> #   `all households_total_prs` <dbl>
 
-# Aggregate rates to adm1 after cleaning to autonomous/basic local governments
+# Aggregate rates to adm1 after cleaning to autonomous/
+# basic local governments
+if (FALSE) { # \dontrun{
 anycensus(
   codes = "Gyeonggi-do",
   type = "mortality",
@@ -266,12 +227,7 @@ anycensus(
   weight_column = "all households_total_prs",
   na.rm = TRUE
 )
-#> # A tibble: 1 × 8
-#>    year type      adm1    adm1_code `all causes_total_p1p` `all causes_male_p1p`
-#>   <dbl> <chr>     <chr>       <dbl>                  <dbl>                 <dbl>
-#> 1  2020 mortality Gyeong…        31                   286.                  379.
-#> # ℹ 2 more variables: `all causes_female_p1p` <dbl>,
-#> #   `all households_total_prs` <dbl>
+} # }
 
 # Recalculate adm2 rates after cleaning to autonomous/basic local governments
 anycensus(
