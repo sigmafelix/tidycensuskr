@@ -106,8 +106,6 @@
 #' `system.file("extdata", "spatial_weights", package = "tidycensuskr.sf")`.
 #' @source SGIS/KOSTAT boundaries; Ministry of Land, Infrastructure and
 #'   Transport, local government and National Archives facility records.
-#'   Reproducible scripts and the source-linked inventory are in the source
-#'   repository's `tools/sgg_connection_list.md` and `tools/create_w_mat.R`.
 #' @examples
 #' data(w_mat_2020)
 #' data(adm2_sf_2020)
