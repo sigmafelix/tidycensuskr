@@ -360,7 +360,7 @@ df_wide_re <-
     persons_per_housing = `all households_total_prs` / `housing types_total_cnt`,
     sex_ratio = 100 * `all households_male_prs` / `all households_female_prs`,
     mortality_rate = `all causes_total_p1p`,
-    fertility_rate = fertility_total_brt,
+    fertility_rate = fertility_total_bpw,
     security_rate = 100 * (`basic living security_female_prs` + `basic living security_male_prs`) /
       `all households_total_prs`
   )

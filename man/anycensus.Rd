@@ -36,13 +36,19 @@ municipal-level, or "adm3" for neighborhood/town-level. ADM3 population
 and housing data is available for 2015, 2020, and 2025; ADM3 economy and
 mortality data is available for 2020. Defaults to "adm2".}
 
-\item{adm2_type}{character(1). Which municipal code type to keep before
-returning \code{adm2} results or aggregating to \code{adm1}. \code{"all"} keeps the
-current data, \code{"atn"} keeps autonomous/basic local government rows, and
-\code{"non"} keeps non-autonomous rows where they are available. For weighted
-aggregation with \code{"atn"}, autonomous/basic local government rate rows are
-recalculated from their non-autonomous component rows using the supplied
-weights before returning \code{adm2} or aggregating to \code{adm1}.}
+\item{adm2_type}{character(1). Municipal level to return or aggregate.
+For a city and its non-autonomous Gu with the same indicator, \code{"all"}
+removes the source city count when Gu values are available, but retains
+city and Gu rates; the city count is \code{NA} in a mixed wide row. \code{"atn"}
+returns city rows, summing available Gu counts and retaining the city rate;
+\code{"non"} returns Gu rows where they are available. Incomplete Gu sums emit
+a warning. When a city rate is missing, \code{"atn"} uses the Gu mean; with
+weights, it recalculates city rates from Gu values.
+Rates are identified by units per 100,000 population, births per 1,000,
+births per woman, and percent; other units are treated as additive counts.
+Selecting a city code with \code{"atn"} or \code{"non"} also selects its Gu.
+\code{"all"} retains both city and Gu rates, so choose the intended geographic
+level and a suitable aggregator when aggregating rates to \code{"adm1"}.}
 
 \item{aggregator}{function to aggregate values when \code{level = "adm1"} or
 when weighted \code{adm2_type = "atn"} recalculates autonomous/basic local

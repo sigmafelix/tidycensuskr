@@ -323,6 +323,13 @@ census_2020_bimap
 
 ## Filter nonautonomous districts
 
+For overlapping city and nonautonomous district observations,
+`anycensus(adm2_type = "all")` excludes the city count for each indicator
+with district values while retaining city and district rates. `"atn"` sums
+available district counts into the city and keeps its rate unless weights
+are supplied; `"non"` returns district rows. Incomplete district sums
+produce a warning.
+
 `detect_adm2_type()` can be used to detect nonautonomous districts
 (i.e., districts that are not independent administrative units but are
 part of larger cities, per *Local Autonomy Act*). This is particularly

@@ -1,6 +1,6 @@
 Package: tidycensuskr 
 Title: Easy Access for South Korea Census Data and Boundaries
-Version: 0.4.1
+Version: 0.4.2
 Authors@R: c(
     person(given = "Insang", 
           family = "Song", 
@@ -26,6 +26,7 @@ Description:
     administrative data sources and pre-generated files in South Korea.
 License: MIT + file LICENSE
 LazyData: true
+LazyDataCompression: xz
 Depends:
     R (>= 4.2.0)
 Roxygen: list(markdown = TRUE)

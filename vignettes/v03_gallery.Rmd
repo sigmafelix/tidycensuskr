@@ -209,6 +209,17 @@ This design highlights heterogeneous local population trajectories while preserv
 
 ```{r pop-change-3, fig.width = 14, fig.height = 15}
 
+plot_labels <- c(
+  title = "Population Trends in South Korea by Municipalities / Counties / Districts and Sex",
+  caption = "Y-axis values are not commensurate with the original scale"
+)
+plot_width <- grid::convertWidth(grid::unit(1, "npc"), "in", valueOnly = TRUE)
+label_widths <- vapply(plot_labels, function(label) {
+  grid::convertWidth(grid::grobWidth(grid::textGrob(label, gp = grid::gpar(fontsize = 20))),
+                     "in", valueOnly = TRUE)
+}, numeric(1))
+label_sizes <- 20 * plot_width * c(title = 0.85, caption = 0.5) / label_widths
+
 pop_gfgg <- ggplot(data = pop) +
   geom_line(
     aes(x = year, y = value, group = interaction(adm2, class2), color = class2),
@@ -217,13 +228,14 @@ pop_gfgg <- ggplot(data = pop) +
   ) +
   facet_geo(~ code, grid = kr_grid_adm2_sgis_2020, label = "name", scale = "free_y") +
   labs(
-    title = "Population Trends in South Korea by Municipalities / Counties / Districts and Sex",
+    title = plot_labels["title"],
     x = "Year",
     y = "",
-    color = "District and Population Class",
-    caption = "Y-axis values are not commensurate with the original scale"
+    color = "Sex",
+    caption = plot_labels["caption"]
   ) +
-  scale_color_manual(values = c(female = "#F44336", male = "#2196F3")) +
+  scale_color_manual(values = c(female = "#F44336", male = "#2196F3"),
+                     labels = c(female = "Female", male = "Male")) +
   theme_void() +
   scale_x_continuous(
     breaks = sort(unique(pop$year)),
@@ -235,8 +247,14 @@ pop_gfgg <- ggplot(data = pop) +
       margin = margin(0.05, 0.05, 0.05, 0.05, "cm")
     ),
     strip.background = element_blank(),
-    axis.text.x = element_text(size = 6, angle = 90, hjust = 1),
+    axis.text.x = element_text(size = 7.2, angle = 90, hjust = 1),
     axis.text.y = element_blank(),
+    plot.title = element_text(size = label_sizes["title"]),
+    plot.caption = element_text(size = label_sizes["caption"]),
+    legend.title = element_text(size = 16, face = "bold", margin = margin(b = 8)),
+    legend.text = element_text(size = 16),
+    legend.key.spacing.y = grid::unit(6, "pt"),
+    plot.title.position = "plot", plot.caption.position = "plot",
     panel.spacing = grid::unit(1, "pt"),
     plot.margin = margin(1, 1, 1, 1, "mm")
   )
