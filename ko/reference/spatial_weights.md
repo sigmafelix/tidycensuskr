@@ -27,9 +27,7 @@ An object of class `matrix` (inherits from `array`) with 250 rows and
 ## Source
 
 SGIS/KOSTAT boundaries; Ministry of Land, Infrastructure and Transport,
-local government and National Archives facility records. Reproducible
-scripts and the source-linked inventory are in the source repository's
-`tools/sgg_connection_list.md` and `tools/create_w_mat.R`.
+local government and National Archives facility records.
 
 ## Details
 
