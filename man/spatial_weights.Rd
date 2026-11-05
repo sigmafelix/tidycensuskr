@@ -17,8 +17,6 @@ An object of class \code{matrix} (inherits from \code{array}) with 250 rows and 
 \source{
 SGIS/KOSTAT boundaries; Ministry of Land, Infrastructure and
 Transport, local government and National Archives facility records.
-Reproducible scripts and the source-linked inventory are in the source
-repository's \code{tools/sgg_connection_list.md} and \code{tools/create_w_mat.R}.
 }
 \usage{
 w_mat_2020
