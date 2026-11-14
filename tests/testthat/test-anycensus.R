@@ -265,6 +265,21 @@ testthat::test_that("anycensus resolves parent names for adm3 queries", {
   testthat::expect_equal(sort(by_name$adm3_code), sort(by_code$adm3_code))
 })
 
+testthat::test_that("repeated queries do not alter cached census data", {
+  original <- anycensus(
+    year = 2020, codes = "Jongno-gu", type = "population", level = "adm3"
+  )
+  modified <- original
+  modified[["adm3"]][1] <- "changed"
+  invisible(anycensus(year = 2015, codes = "Seoul", type = "housing"))
+  repeated <- anycensus(
+    year = 2020, codes = "Jongno-gu", type = "population", level = "adm3"
+  )
+
+  testthat::expect_identical(repeated, original)
+  testthat::expect_false(identical(repeated, modified))
+})
+
 testthat::test_that("anycensus supports NULL codes at adm3 level", {
   res <- anycensus(codes = NULL, type = "population", level = "adm3")
 

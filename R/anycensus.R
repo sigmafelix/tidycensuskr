@@ -3,6 +3,17 @@
   "per 100k population", "births per 1000", "births per woman", "percent"
 )
 
+# Keep the decompressed bundled data for subsequent queries in this session.
+.censuskor_data <- local({
+  cache <- new.env(parent = emptyenv())
+  function() {
+    if (!exists("censuskor", envir = cache, inherits = FALSE)) {
+      data("censuskor", package = "tidycensuskr", envir = cache)
+    }
+    get("censuskor", envir = cache, inherits = FALSE)
+  }
+})
+
 # Identify city count records for which the same indicator has Gu records.
 .city_count_keys <- function(df) {
   codes <- as.character(df[["adm2_code"]])
@@ -321,9 +332,7 @@ anycensus <- function(
   geometry = FALSE,
   ...
 ) {
-  censuskor <- NULL
   .data <- NULL
-  data("censuskor", package = "tidycensuskr", envir = environment())
   type_choices <- c(
     "population", "housing", "tax", "mortality", "economy",
     "medicine", "migration", "environment", "welfare",
@@ -347,7 +356,7 @@ anycensus <- function(
       choices = type_choices
     )
   }
-  df <- censuskor
+  df <- .censuskor_data()
 
   has_weighting <- !is.null(weight_type) || !is.null(weight_column)
 
@@ -403,10 +412,12 @@ anycensus <- function(
     )
     resolved_codes <- unlist(
       lapply(name_levels, function(name_level) {
-        matches <- grepl(
+        names_to_match <- unique(df[[name_level]])
+        matched_names <- names_to_match[grepl(
           sprintf("^(%s)", paste(requested_names, collapse = "|")),
-          gsub(" ", "", df[[name_level]])
-        )
+          gsub(" ", "", names_to_match)
+        )]
+        matches <- df[[name_level]] %in% matched_names
         df[[paste0(name_level, "_code")]][matches]
       }),
       use.names = FALSE
@@ -456,8 +467,12 @@ anycensus <- function(
     dfe[["class1"]], dfe[["class2"]], abbreviate(dfe[["unit"]], minlength = 3),
     sep = "_"
   ))[dfe[["unit"]] %in% .rate_units]))
-  # Gu codes of each city in the requested year, taken from all types
-  ref_gu <- .reference_gu(df[df[["year"]] == year, , drop = FALSE])
+  # Gu codes are needed only when collapsing ADM2 rows to cities.
+  ref_gu <- if (source_level == "adm2" && adm2_type == "atn") {
+    .reference_gu(df[df[["year"]] == year, , drop = FALSE])
+  } else {
+    NULL
+  }
   # post-processing when levels are multiple
   dfe <- dfe |>
     dplyr::mutate(
